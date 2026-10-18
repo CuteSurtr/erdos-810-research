@@ -5,25 +5,25 @@ oscillatory affine-operator estimate over prime fields.
 
 ## Setting
 
-Let $p$ tend to infinity through odd primes. A color $a$ is a partial
-affine map $x\mapsto ax+\beta(a)$, with one color per nonzero slope.
+Let $`p`$ tend to infinity through odd primes. A color $`a`$ is a partial
+affine map $`x\mapsto ax+\beta(a)`$, with one color per nonzero slope.
 Assume that the resulting bipartite graph is simple, properly colored,
-and every four-cycle is rainbow. Write $D_a$ for the actual row domain
-of color $a$, and $m=\sum_a|D_a|$.
+and every four-cycle is rainbow. Write $`D_a`$ for the actual row domain
+of color $`a`$, and $`m=\sum_a|D_a|`$.
 
 ## Main results
 
 ### Bounded-VC supports
 
-If the family $\{D_a\}$ has uniformly bounded VC dimension, then
-$m=o(p^2)$, with arbitrary intercepts $\beta(a)$. The same conclusion
+If the family $`\{D_a\}`$ has uniformly bounded VC dimension, then
+$`m=o(p^2)`$, with arbitrary intercepts $`\beta(a)`$. The same conclusion
 holds when the color–row incidence bigraph omits a fixed induced
 bipartite pattern.
 
 ### Nearly common supports
 
-If $D_a\subseteq X$ and $\sum_a|X\setminus D_a|=o(p^2)$, then
-$m=o(p^2)$. For polynomial intercepts of fixed degree $D\ge2$,
+If $`D_a\subseteq X`$ and $`\sum_a|X\setminus D_a|=o(p^2)`$, then
+$`m=o(p^2)`$. For polynomial intercepts of fixed degree $`D\ge2`$,
 
 ```math
 m\le C_Dp^{19/10}+\sqrt{2}\,p\sqrt{\sum_a|X\setminus D_a|}.
@@ -31,7 +31,7 @@ m\le C_Dp^{19/10}+\sqrt{2}\,p\sqrt{\sum_a|X\setminus D_a|}.
 
 ### Oscillatory affine operators
 
-For $s\ne0$ and arbitrary complex weights $|w(a)|\le1$, the operator
+For $`s\ne0`$ and arbitrary complex weights $`|w(a)|\le1`$, the operator
 
 ```math
 C_{s,w}f(x)=\sum_{a\ne0}w(a)e_p\!\left(s(a^2x+a^3)\right)f(ax+a^2)
@@ -64,7 +64,7 @@ sums. Published inputs and their precise roles are cited in the notes.
 
 These are analytic research proofs, not Lean-certified results.
 Historical novelty has not been established, and external review is
-pending. No solution of unrestricted Erdős #810, universal $o(N^2)$
+pending. No solution of unrestricted Erdős #810, universal $`o(N^2)`$
 bound, or new record is claimed.
 
 The remaining obstacle is controlling arbitrary actual support sets.
