@@ -69,7 +69,7 @@ e_p\!\left((r-s)\frac{\beta(rs/t)}{rs/t}\right).
 \tag{3}
 ```
 
-It is Hermitian. Write $`F(a)=\beta(a)/a`$. Expand $`\operatorname{tr}(M_t^4)`$ over $`r,s,u,v`$, and make the bijective change of variables
+It is Hermitian. Write $`F(a)=\beta(a)/a`$. Expand $`\mathrm{tr}(M_t^4)`$ over $`r,s,u,v`$, and make the bijective change of variables
 
 ```math
 a=\frac{rs}t,\qquad q=\frac ur,\qquad h=\frac vs,
@@ -146,7 +146,7 @@ E_\times(A)=\#\{(a,b,c,e)\in A^4:ae=bc\}\le d^3.
 Therefore
 
 ```math
-\operatorname{tr}(M_t^4)
+\mathrm{tr}(M_t^4)
 \le(D+2)pd^2+2\sqrt p\,E_\times(A).
 \tag{6}
 ```
@@ -180,7 +180,7 @@ E_{\mathrm{aff}}(A)
 \tag{8}
 ```
 
-The character of the mean-zero permutation representation of $`\operatorname{Aff}(\mathbb F_p)`$ is $`p-1`$ at the identity, $`-1`$ at a nontrivial translation, and zero elsewhere. Expanding $`\operatorname{tr}((C_AC_A^*)^2)`$ and dropping the negative translation terms proves
+The character of the mean-zero permutation representation of $`\mathrm{Aff}(\mathbb F_p)`$ is $`p-1`$ at the identity, $`-1`$ at a nontrivial translation, and zero elsewhere. Expanding $`\mathrm{tr}((C_AC_A^*)^2)`$ and dropping the negative translation terms proves
 
 ```math
 \|N\|^4\le(p-1)E_{\mathrm{aff}}(A).
