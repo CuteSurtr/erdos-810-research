@@ -4,7 +4,7 @@
 
 Consider a bipartite graph over a prime field whose edge of color $`a`$ and potential $`h`$ joins $`h/a^2-a`$ to $`h/a`$. Every color draws its potentials from the same arbitrary set $`H`$. If the palette contains a complete multiplicative coset of bounded index, and every eligible incidence in that coset is retained, then a simple proper coloring with every four-cycle rainbow has $`O_L(p^{2-1/32})`$ edges. A quantitative version allows missing colors and incidences. The proof combines an explicit three-color rectangle with an adaptation of Tao's algebraic expansion argument to a prescribed power-residue condition.
 
-**Scope and status.** The result concerns the specified common-potential model. It gives no bound for unrestricted Erdős problem #810. The argument is a written mathematical proof, not a Lean certificate. Historical novelty is unestablished: the analytic machinery and its exponent are inherited from [Tao](#references), and the closely related 2026 paper on perfect colorings has not yet been compared in full. No priority or record claim is made.
+**Scope and status.** The result concerns the specified common-potential model. It gives no bound for unrestricted Erdős problem #810. The argument is a written mathematical proof, not a Lean certificate. The full 2026 paper on perfect colorings has been compared with this result; the distinctions are given in Section 6. Broader historical novelty remains unestablished. The analytic machinery and its exponent are inherited from [Tao](#references), and no priority or record claim is made.
 
 ## 1. The theorem
 
@@ -322,10 +322,34 @@ The proof uses the framework and quantitative loss of Tao's algebraic regularity
 
 The common potential condition differs from the common **row** support condition in the [companion note](common-affine-supports.md): here the row domain is $`H/a^2-a`$ and varies with the color. An arbitrary positive-density palette need not contain almost all of any bounded-index coset. No argument above replaces its three coupled color memberships by independent densities, and no structural reduction puts general #810 colorings into this model.
 
-The exact application was not located in the literature comparison, but that does not establish priority. The equal-size matching theorem in Gyárfás–Sárközy requires matching size greater than two thirds of a vertex class, whereas $`|H|`$ here may be a small fraction of $`p`$. The accessible description of Gyárfás–Sárközy–Wagner concerns perfect matchings and translation-invariant colorings; without a complete comparison of that paper, possible overlap remains unresolved. These qualifications concern historical novelty, not additional hypotheses of Theorem 1.
+The equal-size matching theorem in Gyárfás–Sárközy requires matching size greater than two thirds of a vertex class, whereas $`|H|`$ here may be a small fraction of $`p`$.
+
+### Comparison with perfect colorings
+
+In Gyárfás–Sárközy–Wagner (2026), Theorem 2.3 concerns shifted perfect matchings and modular three-term progressions. Theorem 2.7 treats a broader class of perfect B-colorings with a fixed-fraction translation-invariance condition: a positive fraction of vertices each have a positive fraction of colors such that every relevant pair satisfies a specified five-edge path-closing condition. This is stronger than requiring merely a positive density of successful paths. Its proof uses perfectness to construct the auxiliary matchings in Claim 3.2 and to supply cross-color edges in the induced-matching argument.
+
+Our complete coset subsystem generally fails perfectness for a structural reason. Color $`a\in tC`$ has endpoint sets
+
+```math
+Y_a=H/a,\qquad X_a=H/a^2-a.
+```
+
+Suppose $`\varnothing\ne H\ne\mathbb F_p`$ and $`|C|\ge2`$. If all $`Y_a`$ agree, comparison with $`a=t`$ makes $`H`$ invariant under multiplication by $`C`$. Consequently $`H/a^2=H/t^2`$. If all $`X_a`$ also agree, then $`H/t^2`$ is invariant under translation by $`a-b\ne0`$ for two distinct colors. A nonzero element generates the additive group of $`\mathbb F_p`$, forcing $`H`$ to be empty or the whole field, a contradiction. Thus even independent common relabelings of the two vertex classes cannot make these matchings perfect on common endpoint sets.
+
+The proof-level distinction is equally concrete. Choose the natural base bijection $`f_\beta(x)=\beta x+\beta^2`$, with $`\beta\ne0`$. Starting from a color-$`b`$ incidence with potential $`h\in H`$, following the base bijection backwards from its column and then following color $`b`$ again would require
+
+```math
+h'=(b/\beta)h+b^2(b-\beta)\in H.
+```
+
+The arbitrary set $`H`$ need not have this invariance. Hence perfectness cannot simply be dropped from that construction. This calculation concerns the stated base choice; it does not exclude a different completion or an additional incidence-preserving reduction.
+
+The Behrend-type examples accompanying Theorem 2.3 have $`n^{2-o(1)}`$ edges, so that entire shifted class cannot admit a fixed power saving. Our bound concerns a different restricted family, rather than strengthening their estimate on its original domain.
+
+Comparison with the full paper, including its proofs and appendix, found neither the quadratic-coset theorem nor a direct implication yielding it. This resolves the specific comparison with that paper. The exact application was not located in the wider literature comparison, but comprehensive historical priority remains unverified. The result is a potentially new concrete application of established methods; it is not a new general expansion method or a solution of unrestricted #810.
 
 ## References
 
 1. T. Tao, *Expanding polynomials over finite fields of large characteristic, and a regularity lemma for definable sets*, Contributions to Discrete Mathematics **10**(1) (2015), 22–98. [Published version](https://doi.org/10.55016/ojs/cdm.v10i1.62182); [preprint](https://arxiv.org/pdf/1211.2894). Inputs: Lemma 23, Theorem 25, Corollary 37, Remark 39, and the proofs of Theorems 38 and 40. In the published pagination, Theorem 38 and its proof occupy pp. 61–64, Remark 39 pp. 64–65, and Theorem 40 and its proof pp. 65–67. The present restricted-source lower bound is derived in Section 4, rather than attributed to the literal statement of Theorem 40.
 2. A. Gyárfás and G. N. Sárközy, *“Less” Strong Chromatic Indices and the (7,4)-Conjecture*, Studia Scientiarum Mathematicarum Hungarica **60** (2023), 109–122. [Published PDF](https://real.mtak.hu/191892/1/012-article-p109.pdf). See Theorem 2.2 for the matching-size comparison.
-3. A. Gyárfás, G. N. Sárközy, and A. Z. Wagner, *Perfect proper edge colorings of regular bipartite graphs with rainbow C4-s*, Discrete Mathematics **349**(6) (2026), 115005. [DOI](https://doi.org/10.1016/j.disc.2026.115005). Full-text comparison remains outstanding.
+3. A. Gyárfás, G. N. Sárközy, and A. Z. Wagner, *Perfect proper edge colorings of regular bipartite graphs with rainbow C4-s*, Discrete Mathematics **349**(6) (2026), 115005. [Published article](https://doi.org/10.1016/j.disc.2026.115005). See Theorems 2.3 and 2.7, Claim 3.2 and the proof of Theorem 2.7 in Section 3, and the open questions in Section 4.
