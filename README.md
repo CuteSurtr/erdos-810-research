@@ -46,27 +46,36 @@ satisfies
 An exact decomposition gives the same bound for the corresponding
 two-dimensional crossed operator.
 
-### Quadratic palettes with a common potential set
+### Fixed-formula quadratic palettes or potential sets
 
 For colors $`y=ax+a^2`$, suppose every color uses a common potential set
-$`H`$ through $`ay\in H`$. If the palette contains a full multiplicative
-coset of index at most a fixed $`L`$, and all its eligible incidences are
-retained, then
+$`H`$ through $`ay\in H`$, and all eligible incidences are retained. If
+either the palette or $`H\setminus\{0\}`$ is defined by one fixed
+ring-language formula, then
 
 ```math
-m=O_L(p^{2-1/32}).
+m=O_\varphi(p^{2-1/32}).
 ```
 
-The set $`H`$ is arbitrary. A robust version permits $`D`$ missing coset
-colors and $`R`$ missing incidences within that coset:
+The other set is arbitrary. Parameter values may vary with the prime;
+formula complexity and parameter count remain fixed. This includes
+fixed-degree polynomial images and fixed-exponent residue conditions.
+A fixed-index palette coset is a special case.
+
+A robust version starts from a definable palette or support core of
+size at least $`\delta p`$. It permits $`d`$ missing core elements and
+$`R`$ omitted incidences in the designated core subsystem:
 
 ```math
-m\ll_L p^{63/32}+p^{4/3}(R+pD)^{1/3}.
+m\ll_{\varphi,\delta}p^{63/32}+p^{4/3}(R+pd)^{1/3}.
 ```
 
-This concerns a specified support model, not unrestricted #810. Its proof
-adapts Tao's algebraic expansion argument; historical novelty remains
-unestablished.
+All retained edges are counted, including those outside the core. The
+precise omission domains and assumptions are in Theorem 5 of the note.
+This concerns a specified support model, not unrestricted #810. The
+analytic framework and exponent come from Tao's algebraic expansion
+argument; the extension verifies compatibility of the specific finite
+covers. Historical novelty remains unestablished.
 
 ## Proofs
 
@@ -76,7 +85,7 @@ unestablished.
 | [Common affine supports](common-affine-supports.md) | Arbitrary intercepts, the affine-energy estimate, group-table reduction, and an explicit common-support rate |
 | [Polynomial affine supports](polynomial-affine-supports.md) | Crossed involutions, Fourier fourth moments, and a power saving |
 | [Oscillatory affine operators](oscillatory-affine-operator.md) | Uniform weighted norm estimate and exact Fourier–character decomposition |
-| [Quadratic coset palettes](quadratic-coset-palettes.md) | Arbitrary common potential sets, a root-restricted counting argument, and a robust power saving for a fixed-index palette coset |
+| [Quadratic palettes and potential sets](quadratic-coset-palettes.md) | A power saving when either set has fixed formula complexity, finite-cover compatibility, robust omission bounds, and comparisons with the primary literature |
 
 The bounded-VC result uses the common-support theorem. Its spectral
 calculation is expanded in the polynomial-support note. The oscillatory
