@@ -1,0 +1,33 @@
+name = "erdos810"
+defaultTargets = ["AntiRamsey", "Erdos810", "Audit"]
+
+[leanOptions]
+pp.unicode.fun = true
+autoImplicit = false
+relaxedAutoImplicit = false
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.33.1"
+
+# Pinned to the formal-conjectures commit this formalisation was written against.
+# It provides `answer()` and the `category` and `AMS` attributes.
+[[require]]
+name = "formal_conjectures"
+git = "https://github.com/google-deepmind/formal-conjectures"
+rev = "b3f26411f06b0b0ec1923da80b62585f23288d39"
+
+# Definitions and lemmas. Everything here is fully proved.
+[[lean_lib]]
+name = "AntiRamsey"
+
+# The problem statements. Open problems are stated with `sorry`.
+[[lean_lib]]
+name = "Erdos810"
+[lean_lib.leanOptions]
+warn.sorry = false
+
+# Checks that the proved results use no `sorry`.
+[[lean_lib]]
+name = "Audit"
