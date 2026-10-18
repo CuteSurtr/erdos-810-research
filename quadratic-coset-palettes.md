@@ -12,7 +12,7 @@ A **B-coloring** is a proper edge-coloring in which every four-cycle is rainbow.
 
 ```math
 (x,y)=\left(\frac{h}{a^2}-a,\frac{h}{a}\right).
-\tag{1}
+\qquad\text{(1)}
 ```
 
 Equivalently, the edge lies on $`y=ax+a^2`$ and satisfies $`ay=h`$. Distinct eligible incidences can represent the same uncolored edge. Only the retained incidences are required to form a simple properly colored graph.
@@ -31,7 +31,7 @@ Then
 ```math
 m\le B_Lp^{63/32}
        +B_Lp^{4/3}(R+pD)^{1/3}.
-\tag{2}
+\qquad\text{(2)}
 ```
 
 Here $`H`$ is arbitrary, other colors in $`A`$ are unrestricted, and $`m`$ counts **all** retained edges. The deficit $`R`$ concerns only the designated coset.
@@ -48,7 +48,7 @@ Set
 K(u,v)=\frac{uv(u+v)}{u^2+v^2},
 \qquad
 G(u,v)=-\frac{(u^2+uv+v^2)(u^2+v^2)}{uv(u+v)}.
-\tag{3}
+\qquad\text{(3)}
 ```
 
 Throughout, the *admissible open set* excludes zeros of $`uv(u+v)(u^2+v^2)(u^2+uv+v^2)`$. A nondegenerate configuration also requires $`u\ne v`$.
@@ -63,7 +63,7 @@ The four incidences
 
 ```math
 (a,u),\quad(a,v),\quad(b,k),\quad(c,k)
-\tag{4}
+\qquad\text{(4)}
 ```
 
 form a nondegenerate four-cycle with color matrix $`\begin{pmatrix}a&b\\c&a\end{pmatrix}`$. Its three colors are distinct. Among all such ordered configurations, a fixed colored incidence occurs at most sixteen times, and a fixed color occurs at most $`3p`$ times.
@@ -74,7 +74,7 @@ form a nondegenerate four-cycle with color matrix $`\begin{pmatrix}a&b\\c&a\end{
 Q=q^2+1,\qquad B=q^2+q+1,\qquad
 r=\frac{q+1}{Q},\qquad
 F=-\frac{BQ}{q(q+1)}.
-\tag{5}
+\qquad\text{(5)}
 ```
 
 The hypotheses exclude $`q=0,1,-1`$ and $`QB=0`$. They give
@@ -90,7 +90,7 @@ Direct substitution gives the two cross-edge identities
 v=ru+a^3r(r-1),
 \qquad
 u=qr\,v+a^3qr(qr-1).
-\tag{6}
+\qquad\text{(6)}
 ```
 
 Consequently the rectangle has rows $`u/a^2-a,v/a^2-a`$ and columns $`u/a,v/a`$, with the asserted color matrix. The rows and columns are distinct. The equations $`r=1`$, $`qr=1`$, and $`r=qr`$ are excluded by the restrictions on $`q`$, so the colors are distinct.
@@ -105,7 +105,7 @@ For the four possible roles of a fixed color/potential incidence, respectively, 
 \frac{b^3}{k}=-\frac{B(q+1)}{q^2Q},
 \qquad
 \frac{c^3}{k}=-\frac{qB(q+1)}Q.
-\tag{7}
+\qquad\text{(7)}
 ```
 
 Each prescribed-value equation becomes a nonzero polynomial of degree at most four after clearing denominators. The first, second, and fourth numerators have degree four and larger degree than their denominators. In the third equation the denominator has degree four, the numerator degree three, and the prescribed value is nonzero. Each role therefore permits at most four values of $`q`$. The role and $`q`$ recover the entire configuration, proving the bound sixteen. A fixed color has three possible roles $`a,b,c`$, each with at most $`p`$ choices of $`q`$; the corresponding repeated color is recovered as $`a`$, $`b/r`$, or $`c/(qr)`$. This proves the second bound. $`\square`$
@@ -119,14 +119,14 @@ The following verification supplies the geometric hypotheses for the counting ar
 ```math
 (u,u',v,v')\longmapsto
 \bigl(K(u,v),K(u,v'),K(u',v),K(u',v')\bigr)
-\tag{8}
+\qquad\text{(8)}
 ```
 
 is dominant and generically finite. Moreover, for every fixed integer $`n\ge1`$ and $`\eta\ne0`$, the surface
 
 ```math
 z=K(u,v),\qquad s^n=G(u,v)/\eta
-\tag{9}
+\qquad\text{(9)}
 ```
 
 remains geometrically integral after arbitrary separate covers of $`u,v,z`$.
@@ -144,7 +144,7 @@ For the base relation $`z=K(u,v)`$, use reciprocals $`r=1/u`$, $`s_0=1/v`$, $`w=
 
 ```math
 r^2+s_0^2=w(r+s_0).
-\tag{10}
+\qquad\text{(10)}
 ```
 
 Thus $`F=k_0(u,v)`$ is regular over $`k_0(z)`$. For every $`z_0\in\mathbb P^1(k_0)`$, the fiber has a multiplicity-one divisor on which both $`u`$ and $`v`$ vary: for finite nonzero $`z_0`$, use the conic (10); for zero, use $`u+v=0`$; for infinity, use either component $`v=\pm iu`$ of $`u^2+v^2=0`$. The indicated numerator or denominator has a simple zero at the generic point of each chosen component.
@@ -165,7 +165,7 @@ It remains to adjoin the root in (9). Let $`\omega`$ be a primitive cube root of
 K(u,\omega u)=\omega^2u,
 \qquad
 \operatorname{ord}_{v=\omega u}G=1.
-\tag{11}
+\qquad\text{(11)}
 ```
 
 The second equality follows by factoring $`u^2+uv+v^2=(v-\omega u)(v-\omega^2u)`$; all other factors in (3) are nonzero generically on this divisor. All three coordinates $`u,v,z`$ vary along it, so the separate covers and their compositum are unramified there. Any extended valuation still assigns value one to $`G/\eta`$. The polynomial $`T^n-G/\eta`$ is Eisenstein at that valuation and is irreducible, including for composite $`n`$. This proves the final integrality assertion. $`\square`$
@@ -182,7 +182,7 @@ T_{n,\eta}(X,Y,Z)
 &\ge c_n\frac{|X||Y||Z|}{p}
        -C_np^{15/16}\sqrt{|X||Y|}.
 \end{aligned}
-\tag{12}
+\qquad\text{(12)}
 ```
 
 Only pairs in the admissible open set of Section 2 are counted. All constants are uniform in $`\eta`$ and the three sets.
@@ -205,7 +205,7 @@ Apply Tao's product regularity statement to those level sets. Refining the four 
 \left|\sum_{\mathbf z}N_E(\mathbf z)
              f(z_{11})f(z_{12})f(z_{21})f(z_{22})\right|
 \ll q^{15/4}.
-\tag{13}
+\qquad\text{(13)}
 ```
 
 The sum is over the nonexceptional outputs. Two Cauchy–Schwarz inequalities, with $`B_f(u,v)=E(u,v)f(K(u,v))`$, give
@@ -224,7 +224,7 @@ The final sum is a sum of squares. Equation (13) and the $`O(q^3)`$ exceptional 
 ```math
 \left|\sum_{u\in X,v\in Y}E(u,v)f(K(u,v))\right|
 \ll q^{15/16}\sqrt{|X||Y|}.
-\tag{14}
+\qquad\text{(14)}
 ```
 
 Define
@@ -238,7 +238,7 @@ and let $`\mu_j`$ be its average on $`U_j`$. Taking the sign of $`\mu-\mu_j`$, s
 ```math
 \sum_{z\in U_j}|\mu(z)-\mu_j|
 \ll q^{15/16}\sqrt{|X||Y|}.
-\tag{15}
+\qquad\text{(15)}
 ```
 
 The remaining issue is a **positive lower bound for every cell mean**. The total mass of $`\mu`$ need not be $`|X||Y|`$, so the unrestricted pigeonhole argument would not suffice.
@@ -253,7 +253,7 @@ It partitions the input curves into finitely many linear-size definable cells $`
 
 ```math
 \sigma_{ik,j}|V'||W'|+O(q^{7/4}),
-\tag{16}
+\qquad\text{(16)}
 ```
 
 where $`\sigma_{ik,j}\ge0`$ is standard. We claim every coefficient is positive.
@@ -275,7 +275,7 @@ T_{n,\eta}(X,Y,Z)
 \ge c_1\frac{|X||Y||Z|}{q}
  -C_1q^{3/4}|Z|
  -C_1q^{15/16}\sqrt{|X||Y|}.
-\tag{17}
+\qquad\text{(17)}
 ```
 
 If $`|X||Y|\ge q^{15/8}`$, the middle error is absorbed by the last one. If $`|X||Y|\le q^{15/8}`$, the proposed main term in (12) is already at most a constant times the last error, so (12) is vacuous after enlarging that constant. This proves the nonstandard estimate in every size range.
@@ -304,14 +304,14 @@ Count configurations using their actual repeated color $`a`$, not their witnesse
 
 ```math
 T\ge c_Lh^3/p-C_Lp^{15/16}h.
-\tag{18}
+\qquad\text{(18)}
 ```
 
 Every such configuration must have either a color in $`tC\setminus A`$ or an eligible incidence in $`(A\cap tC)\times H`$ that is not retained. Otherwise all four edges occur in the actual graph, contradicting the B condition. Lemma 2 gives
 
 ```math
 c_Lh^3/p-C_Lp^{15/16}h\le T\le3pD+16R.
-\tag{19}
+\qquad\text{(19)}
 ```
 
 If the error in the lower bound is at least half its main term, then $`h\ll_Lp^{31/32}`$. Otherwise $`h^3\ll_Lp(R+pD)`$. Since $`m\le p(h+1)`$, both alternatives imply (2). Potential zero contributes at most $`p-1`$ incidences and is absorbed. Taking maxima and minima over the finitely many $`1\le\ell\le L`$ makes all constants depend only on $`L`$. $`\square`$
