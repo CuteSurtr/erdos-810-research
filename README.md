@@ -46,6 +46,28 @@ satisfies
 An exact decomposition gives the same bound for the corresponding
 two-dimensional crossed operator.
 
+### Quadratic palettes with a common potential set
+
+For colors $`y=ax+a^2`$, suppose every color uses a common potential set
+$`H`$ through $`ay\in H`$. If the palette contains a full multiplicative
+coset of index at most a fixed $`L`$, and all its eligible incidences are
+retained, then
+
+```math
+m=O_L(p^{2-1/32}).
+```
+
+The set $`H`$ is arbitrary. A robust version permits $`D`$ missing coset
+colors and $`R`$ missing incidences within that coset:
+
+```math
+m\ll_L p^{63/32}+p^{4/3}(R+pD)^{1/3}.
+```
+
+This concerns a specified support model, not unrestricted #810. Its proof
+adapts Tao's algebraic expansion argument; historical novelty remains
+unestablished.
+
 ## Proofs
 
 | Note | Contents |
@@ -54,6 +76,7 @@ two-dimensional crossed operator.
 | [Common affine supports](common-affine-supports.md) | Arbitrary intercepts, the affine-energy estimate, group-table reduction, and an explicit common-support rate |
 | [Polynomial affine supports](polynomial-affine-supports.md) | Crossed involutions, Fourier fourth moments, and a power saving |
 | [Oscillatory affine operators](oscillatory-affine-operator.md) | Uniform weighted norm estimate and exact Fourier–character decomposition |
+| [Quadratic coset palettes](quadratic-coset-palettes.md) | Arbitrary common potential sets, a root-restricted counting argument, and a robust power saving for a fixed-index palette coset |
 
 The bounded-VC result uses the common-support theorem. Its spectral
 calculation is expanded in the polynomial-support note. The oscillatory
