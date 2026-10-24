@@ -126,26 +126,31 @@ n	edges	family	detail	check
 41	246	(7,4)-free triple system (BEGS) + local search on its pairs	begs_41	VALID
 41	180	sum-set colouring on Z_n (exact optimum over S)	S=[0, 6, 8, 22, 25, 26, 29, 34, 40]	VALID
 41	82	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+42	420	best structured/other example of this n + general local search	b42_s7	VALID
 42	420	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[3, 0], [4, 15], [8, 38], [10, 13], [11, 33], [12, 36], [13, 29], [14, 32], [17, 6], [20, 12]] (SAT)	VALID
 42	345	sum colouring (colour = i+j in group 42), edge set by local search	sum_42_42	VALID
 42	258	(7,4)-free triple system (BEGS) + local search on its pairs	begs_42	VALID
 42	185	sum-set colouring on Z_n (exact optimum over S)	S=[0, 17, 19, 20, 27, 29, 32, 33, 36]	VALID
 42	86	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+43	430	best structured/other example of this n + general local search	b43_s7	VALID
 43	430	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(3, 22), (5, 14), (7, 39), (11, 29), (12, 33), (14, 41), (15, 38), (16, 20), (17, 17), (20, 28)]	VALID
 43	349	sum colouring (colour = i+j in group 43), edge set by local search	sum_43_43	VALID
 43	273	(7,4)-free triple system (BEGS) + local search on its pairs	begs_43	VALID
 43	189	sum-set colouring on Z_n (exact optimum over S)	S=[0, 6, 7, 10, 11, 34, 38, 40, 41]	VALID
 43	91	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+44	440	best structured/other example of this n + general local search	b44_s7	VALID
 44	440	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 13), (3, 37), (4, 43), (6, 18), (7, 28), (12, 10), (14, 17), (15, 1), (17, 36), (21, 29)]	VALID
 44	382	sum colouring (colour = i+j in group 44), edge set by local search	sum_44_44	VALID
 44	279	(7,4)-free triple system (BEGS) + local search on its pairs	begs_44	VALID
 44	195	sum-set colouring on Z_n (exact optimum over S)	S=[0, 1, 5, 7, 15, 16, 19, 21, 24]	VALID
 44	93	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+45	450	best structured/other example of this n + general local search	b45_s7	VALID
 45	450	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 27), (4, 10), (11, 24), (12, 26), (13, 20), (14, 0), (15, 30), (17, 1), (18, 36), (22, 5)]	VALID
 45	379	sum colouring (colour = i+j in group 45), edge set by local search	sum_45_45	VALID
 45	294	(7,4)-free triple system (BEGS) + local search on its pairs	begs_45	VALID
 45	220	sum-set colouring on Z_n (exact optimum over S)	S=[0, 21, 23, 26, 28, 32, 37, 39, 40, 44]	VALID
 45	98	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+46	506	best structured/other example of this n + general local search	b46_s7	VALID
 46	506	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[3, 0], [6, 24], [7, 8], [8, 30], [10, 13], [11, 16], [12, 33], [14, 2], [19, 12], [20, 26], [22, 17]] (SAT)	VALID
 46	399	sum colouring (colour = i+j in group 46), edge set by local search	sum_46_46	VALID
 46	306	(7,4)-free triple system (BEGS) + local search on its pairs	begs_46	VALID
@@ -156,57 +161,68 @@ n	edges	family	detail	check
 46	224	bipartite affine over F_q, beta=inv, supports by local search	aff_46_inv	VALID
 46	224	bipartite affine over F_q, beta=sq, supports by local search	aff_46_sq	VALID
 46	102	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+47	518	best structured/other example of this n + general local search	b47_s7	VALID
 47	517	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[1, 0], [3, 23], [7, 11], [11, 6], [13, 32], [15, 37], [16, 2], [18, 30], [19, 28], [22, 14], [23, 16]] (SAT)	VALID
 47	406	sum colouring (colour = i+j in group 47), edge set by local search	sum_47_47	VALID
 47	315	(7,4)-free triple system (BEGS) + local search on its pairs	begs_47	VALID
 47	230	sum-set colouring on Z_n (exact optimum over S)	S=[0, 11, 15, 17, 24, 26, 27, 38, 40, 46]	VALID
 47	105	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+48	528	best structured/other example of this n + general local search	b48_s7	VALID
 48	528	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[1, 0], [3, 24], [4, 32], [5, 22], [9, 6], [12, 43], [13, 14], [14, 30], [18, 9], [20, 13], [23, 38]] (SAT)	VALID
 48	446	sum colouring (colour = i+j in group 48), edge set by local search	sum_48_48	VALID
 48	321	(7,4)-free triple system (BEGS) + local search on its pairs	begs_48	VALID
 48	236	sum-set colouring on Z_n (exact optimum over S)	S=[0, 5, 15, 19, 26, 28, 31, 35, 45, 46]	VALID
 48	107	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
-49	490	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 29), (4, 30), (6, 15), (8, 5), (9, 45), (14, 13), (15, 17), (22, 38), (23, 33), (24, 0)]	VALID
+49	539	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[4, 0], [6, 38], [7, 31], [9, 42], [10, 37], [18, 17], [19, 10], [20, 15], [22, 23], [23, 35], [24, 4]] (SAT)	VALID
+49	520	best structured/other example of this n + general local search	b49_s7	VALID
 49	439	sum colouring (colour = i+j in group 49), edge set by local search	sum_49_49	VALID
 49	435	sum colouring (colour = i+j in group 7x7), edge set by local search	sum_49_7x7	VALID
 49	339	(7,4)-free triple system (BEGS) + local search on its pairs	begs_49	VALID
 49	240	sum-set colouring on Z_n (exact optimum over S)	S=[0, 5, 7, 23, 24, 29, 32, 33, 38, 45]	VALID
 49	113	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
-50	500	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 17), (3, 9), (4, 35), (6, 40), (7, 25), (10, 5), (16, 49), (18, 44), (19, 39), (20, 42)]	VALID
+50	550	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[1, 0], [2, 3], [5, 7], [7, 4], [9, 26], [11, 20], [12, 36], [15, 28], [17, 40], [22, 6], [24, 46]] (SAT)	VALID
+50	539	best structured/other example of this n + general local search	b50_s7	VALID
 50	471	sum colouring (colour = i+j in group 50), edge set by local search	sum_50_50	VALID
 50	351	(7,4)-free triple system (BEGS) + local search on its pairs	begs_50	VALID
 50	246	sum-set colouring on Z_n (exact optimum over S)	S=[0, 5, 7, 13, 16, 17, 20, 39, 46, 49]	VALID
 50	117	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+51	561	best structured/other example of this n + general local search	b51_s7	VALID
 51	561	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 4), (4, 37), (7, 8), (8, 49), (10, 39), (13, 9), (14, 38), (15, 35), (17, 10), (18, 30), (19, 26)]	VALID
 51	469	sum colouring (colour = i+j in group 51), edge set by local search	sum_51_51	VALID
 51	357	(7,4)-free triple system (BEGS) + local search on its pairs	begs_51	VALID
 51	275	sum-set colouring on Z_n (exact optimum over S)	S=[0, 13, 15, 16, 18, 22, 24, 39, 46, 47, 50]	VALID
 51	119	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
-52	572	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(3, 21), (6, 15), (7, 42), (13, 16), (14, 25), (18, 23), (20, 1), (21, 28), (22, 14), (23, 49), (25, 45)]	VALID
+52	624	best structured/other example of this n + general local search	b52_s7	VALID
+52	624	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[1, 0], [2, 20], [4, 11], [6, 2], [7, 28], [8, 25], [9, 31], [15, 44], [17, 43], [19, 3], [21, 16], [24, 13]] (SAT)	VALID
 52	515	sum colouring (colour = i+j in group 52), edge set by local search	sum_52_52	VALID
 52	369	(7,4)-free triple system (BEGS) + local search on its pairs	begs_52	VALID
 52	306	sum-set colouring on Z_n (exact optimum over S)	S=[0, 5, 19, 27, 29, 30, 34, 36, 37, 46, 48, 51]	VALID
 52	123	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
-53	583	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 52), (8, 38), (9, 1), (13, 32), (15, 40), (17, 51), (20, 4), (23, 3), (24, 26), (25, 16), (26, 21)]	VALID
+53	636	best structured/other example of this n + general local search	b53_s7	VALID
+53	636	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[2, 0], [5, 14], [7, 6], [8, 26], [11, 38], [12, 40], [15, 37], [17, 29], [18, 49], [19, 43], [21, 15], [23, 48]] (SAT)	VALID
 53	500	sum colouring (colour = i+j in group 53), edge set by local search	sum_53_53	VALID
 53	378	(7,4)-free triple system (BEGS) + local search on its pairs	begs_53	VALID
 53	286	sum-set colouring on Z_n (exact optimum over S)	S=[0, 4, 16, 21, 22, 27, 30, 36, 43, 46, 47]	VALID
 53	126	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
-54	594	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 42), (4, 39), (5, 2), (14, 34), (17, 44), (19, 32), (20, 16), (21, 43), (22, 4), (24, 52), (26, 3)]	VALID
+54	648	best structured/other example of this n + general local search	b54_s7	VALID
+54	648	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[2, 0], [10, 48], [12, 46], [13, 45], [14, 9], [15, 4], [16, 31], [18, 3], [20, 7], [23, 6], [24, 26], [25, 35]] (SAT)	VALID
 54	519	sum colouring (colour = i+j in group 54), edge set by local search	sum_54_54	VALID
 54	399	(7,4)-free triple system (BEGS) + local search on its pairs	begs_54	VALID
 54	292	sum-set colouring on Z_n (exact optimum over S)	S=[0, 2, 6, 11, 13, 14, 18, 19, 21, 49, 51]	VALID
 54	133	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
-55	605	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 13), (2, 23), (8, 7), (15, 47), (16, 20), (18, 44), (20, 36), (23, 48), (24, 6), (25, 3), (26, 40)]	VALID
+55	660	best structured/other example of this n + general local search	b55_s7	VALID
+55	660	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[1, 0], [3, 34], [6, 17], [7, 8], [8, 44], [10, 23], [11, 6], [12, 28], [13, 32], [14, 52], [20, 49], [26, 4]] (SAT)	VALID
 55	532	sum colouring (colour = i+j in group 55), edge set by local search	sum_55_55	VALID
 55	408	(7,4)-free triple system (BEGS) + local search on its pairs	begs_55	VALID
 55	297	sum-set colouring on Z_n (exact optimum over S)	S=[0, 17, 19, 20, 27, 29, 30, 44, 48, 50, 53]	VALID
 55	136	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+56	672	best structured/other example of this n + general local search	b56_s7	VALID
 56	672	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 1), (4, 44), (9, 6), (11, 16), (13, 22), (14, 8), (16, 23), (23, 43), (24, 52), (25, 4), (26, 15), (27, 27)]	VALID
 56	584	sum colouring (colour = i+j in group 56), edge set by local search	sum_56_56	VALID
 56	423	(7,4)-free triple system (BEGS) + local search on its pairs	begs_56	VALID
 56	304	sum-set colouring on Z_n (exact optimum over S)	S=[0, 5, 15, 17, 21, 23, 32, 40, 52, 53, 55]	VALID
 56	141	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+57	684	best structured/other example of this n + general local search	b57_s7	VALID
 57	684	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 34), (3, 9), (8, 7), (9, 42), (10, 46), (12, 40), (15, 27), (16, 29), (18, 2), (19, 22), (22, 8), (27, 47)]	VALID
 57	565	sum colouring (colour = i+j in group 57), edge set by local search	sum_57_57	VALID
 57	429	(7,4)-free triple system (BEGS) + local search on its pairs	begs_57	VALID
@@ -252,6 +268,7 @@ n	edges	family	detail	check
 63	510	(7,4)-free triple system (BEGS) + local search on its pairs	begs_63	VALID
 63	403	sum-set colouring on Z_n (exact optimum over S)	S=[0, 7, 12, 13, 18, 32, 33, 42, 43, 49, 58, 60, 61]	VALID
 63	170	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+64	832	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 7), (3, 29), (4, 20), (5, 46), (9, 40), (12, 5), (16, 27), (19, 63), (22, 9), (24, 61), (26, 38), (27, 50), (28, 58)]	VALID
 64	793	sum colouring (colour = i+j in group 2x2x2x2x2x2), edge set by local search	sum_64_2x2x2x2x2x2	VALID
 64	782	sum colouring (colour = i+j in group 4x4x4), edge set by local search	sum_64_4x4x4	VALID
 64	761	sum colouring (colour = i+j in group 8x8), edge set by local search	sum_64_8x8	VALID
@@ -259,68 +276,93 @@ n	edges	family	detail	check
 64	534	(7,4)-free triple system (BEGS) + local search on its pairs	begs_64	VALID
 64	409	sum-set colouring on Z_n (heuristic S, exact solver timed out)	S=[10, 14, 16, 20, 21, 29, 31, 39, 43, 51, 54, 56, 60]	VALID
 64	178	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+67	871	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 2), (3, 24), (7, 49), (9, 43), (12, 10), (13, 63), (14, 7), (20, 12), (25, 44), (27, 17), (28, 53), (30, 18), (33, 4)]	VALID
 67	748	sum colouring (colour = i+j in group 67), edge set by local search	sum_67_67	VALID
 67	567	(7,4)-free triple system (BEGS) + local search on its pairs	begs_67	VALID
 67	429	sum-set colouring on Z_n (exact optimum over S)	S=[0, 1, 5, 11, 13, 16, 23, 29, 37, 49, 55, 59, 65]	VALID
 67	189	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+71	994	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 8), (5, 46), (6, 53), (9, 29), (11, 16), (13, 37), (14, 0), (19, 17), (23, 13), (26, 58), (27, 7), (28, 1), (32, 15), (33, 30)]	VALID
 71	823	sum colouring (colour = i+j in group 71), edge set by local search	sum_71_71	VALID
 71	627	(7,4)-free triple system (BEGS) + local search on its pairs	begs_71	VALID
 71	490	sum-set colouring on Z_n (exact optimum over S)	S=[0, 3, 12, 17, 19, 25, 27, 30, 32, 40, 56, 62, 66, 67]	VALID
 71	209	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+73	1022	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(3, 7), (5, 3), (7, 60), (9, 48), (10, 51), (14, 9), (15, 55), (16, 33), (19, 15), (20, 38), (23, 46), (26, 5), (27, 13), (32, 63)]	VALID
 73	861	sum colouring (colour = i+j in group 73), edge set by local search	sum_73_73	VALID
 73	657	(7,4)-free triple system (BEGS) + local search on its pairs	begs_73	VALID
 73	504	sum-set colouring on Z_n (exact optimum over S)	S=[0, 1, 11, 18, 20, 26, 28, 31, 33, 54, 58, 60, 68, 70]	VALID
 73	219	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+79	1185	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 78), (4, 4), (8, 2), (9, 56), (11, 35), (13, 41), (15, 33), (16, 32), (27, 57), (31, 5), (33, 34), (34, 61), (35, 6), (36, 11), (38, 55)]	VALID
 79	987	sum colouring (colour = i+j in group 79), edge set by local search	sum_79_79	VALID
 79	756	(7,4)-free triple system (BEGS) + local search on its pairs	begs_79	VALID
 79	585	sum-set colouring on Z_n (heuristic S, exact solver timed out)	S=[9, 13, 24, 29, 38, 41, 43, 46, 55, 60, 61, 70, 71, 75, 78]	VALID
 79	252	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+81	1215	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 27), (4, 4), (8, 2), (12, 77), (14, 19), (17, 3), (23, 72), (26, 14), (28, 70), (32, 41), (34, 80), (35, 8), (36, 57), (39, 24), (40, 18)]	VALID
 81	1027	sum colouring (colour = i+j in group 9x9), edge set by local search	sum_81_9x9	VALID
 81	1026	sum colouring (colour = i+j in group 81), edge set by local search	sum_81_81	VALID
 81	1003	sum colouring (colour = i+j in group 3x3x3x3), edge set by local search	sum_81_3x3x3x3	VALID
 81	801	(7,4)-free triple system (BEGS) + local search on its pairs	begs_81	VALID
 81	640	sum-set colouring on Z_n (heuristic S, exact solver timed out)	S=[12, 16, 18, 22, 27, 39, 40, 43, 48, 52, 54, 67, 72, 75, 76, 79]	VALID
 81	267	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+83	1245	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 82), (14, 70), (15, 35), (17, 62), (18, 9), (23, 61), (25, 65), (28, 71), (29, 5), (31, 72), (32, 51), (34, 18), (37, 32), (38, 49), (39, 31)]	VALID
 83	1077	sum colouring (colour = i+j in group 83), edge set by local search	sum_83_83	VALID
 83	828	(7,4)-free triple system (BEGS) + local search on its pairs	begs_83	VALID
 83	656	sum-set colouring on Z_n (heuristic S, exact solver timed out)	S=[3, 4, 9, 17, 22, 24, 34, 37, 43, 47, 53, 56, 66, 68, 73, 81]	VALID
 83	276	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+89	1513	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(6, 0), (11, 36), (16, 75), (17, 21), (18, 11), (19, 17), (21, 24), (23, 55), (24, 29), (31, 51), (32, 46), (33, 41), (34, 71), (37, 12), (40, 79), (41, 2), (44, 22)]	VALID
 89	1207	sum colouring (colour = i+j in group 89), edge set by local search	sum_89_89	VALID
 89	936	(7,4)-free triple system (BEGS) + local search on its pairs	begs_89	VALID
 89	704	sum-set colouring on Z_n (heuristic S, exact solver timed out)	S=[9, 10, 12, 17, 28, 29, 33, 35, 36, 45, 51, 52, 70, 82, 83, 86]	VALID
 89	312	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+97	1552	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 63), (5, 72), (7, 42), (9, 15), (16, 84), (17, 13), (27, 78), (28, 74), (30, 90), (31, 23), (33, 7), (37, 57), (38, 65), (39, 12), (41, 58), (47, 9)]	VALID
 97	1395	sum colouring (colour = i+j in group 97), edge set by local search	sum_97_97	VALID
 97	1086	(7,4)-free triple system (BEGS) + local search on its pairs	begs_97	VALID
 97	816	sum-set colouring on Z_n (heuristic S, exact solver timed out)	S=[9, 14, 16, 17, 24, 36, 40, 43, 57, 59, 67, 76, 80, 81, 83, 87, 92]	VALID
 97	362	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+101	1717	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 46), (2, 55), (6, 33), (9, 59), (16, 15), (17, 77), (18, 9), (19, 30), (22, 3), (23, 19), (25, 8), (29, 47), (31, 1), (33, 90), (35, 58), (36, 5), (43, 72)]	VALID
 101	1496	sum colouring (colour = i+j in group 101), edge set by local search	sum_101_101	VALID
 101	1164	(7,4)-free triple system (BEGS) + local search on its pairs	begs_101	VALID
 101	850	sum-set colouring on Z_n (heuristic S, exact solver timed out)	S=[1, 22, 23, 31, 35, 38, 44, 46, 52, 55, 56, 63, 76, 78, 83, 86, 98]	VALID
 101	388	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+103	1751	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 51), (12, 64), (13, 67), (16, 26), (17, 21), (21, 11), (25, 69), (26, 59), (28, 101), (29, 3), (31, 74), (33, 1), (34, 58), (36, 63), (44, 30), (50, 13), (51, 29)]	VALID
 103	1547	sum colouring (colour = i+j in group 103), edge set by local search	sum_103_103	VALID
 103	1191	(7,4)-free triple system (BEGS) + local search on its pairs	begs_103	VALID
 103	918	sum-set colouring on Z_n (heuristic S, exact solver timed out)	S=[12, 16, 23, 32, 33, 37, 38, 45, 46, 49, 56, 68, 70, 73, 77, 83, 85, 88]	VALID
 103	397	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+107	1926	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 81), (11, 100), (12, 76), (14, 101), (17, 94), (18, 6), (25, 91), (29, 57), (31, 86), (32, 68), (36, 1), (38, 80), (41, 22), (46, 0), (47, 99), (48, 85), (50, 35), (51, 7)]	VALID
 107	1651	sum colouring (colour = i+j in group 107), edge set by local search	sum_107_107	VALID
 107	1284	(7,4)-free triple system (BEGS) + local search on its pairs	begs_107	VALID
 107	954	sum-set colouring on Z_n (heuristic S, exact solver timed out)	S=[2, 10, 13, 21, 25, 34, 41, 50, 53, 54, 60, 62, 63, 78, 82, 84, 88, 100]	VALID
 107	428	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+109	1962	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(3, 33), (5, 100), (15, 59), (19, 64), (22, 6), (24, 101), (25, 85), (26, 9), (28, 26), (32, 51), (38, 13), (39, 12), (40, 42), (41, 34), (45, 88), (50, 72), (52, 68), (53, 35)]	VALID
 109	1697	sum colouring (colour = i+j in group 109), edge set by local search	sum_109_109	VALID
 109	1311	(7,4)-free triple system (BEGS) + local search on its pairs	begs_109	VALID
 109	972	sum-set colouring on Z_n (heuristic S, exact solver timed out)	S=[7, 14, 16, 17, 26, 29, 31, 37, 63, 72, 73, 75, 84, 85, 90, 91, 101, 102]	VALID
 109	437	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+113	2034	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 79), (3, 94), (6, 69), (8, 37), (13, 3), (16, 54), (17, 76), (18, 74), (23, 12), (28, 43), (29, 22), (31, 48), (33, 33), (37, 41), (45, 87), (46, 90), (49, 73), (55, 65)]	VALID
 113	1809	sum colouring (colour = i+j in group 113), edge set by local search	sum_113_113	VALID
 113	1386	(7,4)-free triple system (BEGS) + local search on its pairs	begs_113	VALID
 113	1064	sum-set colouring on Z_n (heuristic S, exact solver timed out)	S=[9, 11, 15, 17, 33, 45, 50, 56, 59, 60, 63, 65, 69, 77, 96, 99, 100, 106, 108]	VALID
 113	462	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+121	2420	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 50), (3, 2), (5, 83), (16, 89), (20, 29), (24, 51), (25, 18), (26, 34), (31, 111), (34, 13), (41, 30), (43, 87), (45, 20), (46, 113), (48, 107), (53, 90), (54, 95), (56, 6), (57, 45), (58, 101)]	VALID
 121	2036	sum colouring (colour = i+j in group 121), edge set by local search	sum_121_121	VALID
 121	2027	sum colouring (colour = i+j in group 11x11), edge set by local search	sum_121_11x11	VALID
+121	1584	(7,4)-free triple system (BEGS) + local search on its pairs	begs_121	VALID
 121	1200	sum-set colouring on Z_n (heuristic S, exact solver timed out)	S=[1, 2, 6, 9, 14, 29, 33, 34, 41, 50, 58, 61, 70, 74, 77, 85, 95, 97, 101, 103]	VALID
+121	528	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+125	2375	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(6, 94), (7, 108), (9, 6), (16, 27), (17, 89), (18, 34), (22, 25), (27, 55), (32, 67), (36, 13), (44, 46), (45, 77), (48, 20), (49, 103), (52, 111), (54, 14), (59, 26), (60, 84), (62, 63)]	VALID
 125	2154	sum colouring (colour = i+j in group 5x5x5), edge set by local search	sum_125_5x5x5	VALID
 125	2143	sum colouring (colour = i+j in group 125), edge set by local search	sum_125_125	VALID
+125	1668	(7,4)-free triple system (BEGS) + local search on its pairs	begs_125	VALID
 125	1302	sum-set colouring on Z_n (heuristic S, exact solver timed out)	S=[3, 5, 6, 8, 14, 26, 32, 34, 35, 37, 53, 70, 75, 76, 79, 86, 89, 90, 95, 112, 122]	VALID
+125	556	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
+127	2540	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(5, 31), (7, 23), (10, 67), (12, 8), (16, 88), (18, 6), (21, 12), (23, 82), (24, 0), (28, 61), (33, 116), (36, 104), (37, 108), (39, 37), (43, 30), (46, 63), (50, 102), (54, 1), (58, 43), (63, 42)]	VALID
 127	2199	sum colouring (colour = i+j in group 127), edge set by local search	sum_127_127	VALID
+127	1707	(7,4)-free triple system (BEGS) + local search on its pairs	begs_127	VALID
 127	1323	sum-set colouring on Z_n (heuristic S, exact solver timed out)	S=[0, 1, 6, 14, 21, 24, 26, 29, 61, 72, 75, 79, 82, 84, 88, 99, 102, 109, 111, 112, 117]	VALID
+127	569	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
 128	2626	sum colouring (colour = i+j in group 2x2x2x2x2x2x2), edge set by local search	sum_128_2x2x2x2x2x2x2	VALID
+128	2560	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 23), (9, 94), (15, 54), (18, 97), (19, 5), (21, 29), (24, 12), (26, 78), (33, 14), (34, 47), (37, 69), (41, 81), (44, 2), (45, 113), (46, 84), (47, 58), (51, 16), (53, 36), (54, 17), (59, 101)]	VALID
 128	2238	sum colouring (colour = i+j in group 128), edge set by local search	sum_128_128	VALID
+128	1761	(7,4)-free triple system (BEGS) + local search on its pairs	begs_128	VALID
 128	1271	sum-set colouring on Z_n (heuristic S, exact solver timed out)	S=[3, 33, 34, 36, 41, 43, 51, 54, 55, 58, 60, 71, 78, 81, 89, 90, 94, 95, 103, 114]	VALID
+128	587	(7,4)-free triple system (BEGS), one edge per triple	greedy	VALID
