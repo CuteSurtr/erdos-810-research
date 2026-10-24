@@ -19,3 +19,4 @@ RESULT n=14 e=55 m=13 j=0 seed=0 UNSAT
 vars 1471 clauses 15717 x-orbits 13
 RESULT n=14 e=56 m=7 j=0 seed=0 UNSAT
 vars 2513 clauses 30331 x-orbits 31
+vars 1939 clauses 21283 x-orbits 26

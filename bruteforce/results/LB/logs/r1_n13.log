@@ -146,3 +146,5 @@ t=247 it=102760448 e=48 cost=11 best=2
 t=250 it=103809024 e=48 cost=7 best=3
 t=252 it=104857600 e=48 cost=8 best=1
 t=255 it=105906176 e=48 cost=9 best=2
+t=257 it=106954752 e=48 cost=11 best=2
+t=260 it=108003328 e=48 cost=10 best=2

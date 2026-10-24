@@ -1,0 +1,25 @@
+vars 6280 clauses 132011 x-orbits 24
+144 edges
+RESULT n=24 e=144 m=12 j=2 seed=0 SAT check=True
+vars 7788 clauses 181394 x-orbits 25
+169 edges
+RESULT n=26 e=169 m=13 j=2 seed=0 SAT check=True
+vars 9539 clauses 242952 x-orbits 28
+vars 6280 clauses 132011 x-orbits 24
+196 edges
+RESULT n=28 e=196 m=14 j=2 seed=0 SAT check=True
+vars 11465 clauses 319495 x-orbits 29
+225 edges
+RESULT n=30 e=225 m=15 j=2 seed=0 SAT check=True
+vars 6280 clauses 132011 x-orbits 24
+150 edges
+RESULT n=24 e=150 m=12 j=2 seed=0 SAT check=True
+vars 7196 clauses 159597 x-orbits 26
+156 edges
+RESULT n=25 e=156 m=12 j=2 seed=0 SAT check=True
+vars 11266 clauses 284765 x-orbits 39
+180 edges
+RESULT n=27 e=180 m=9 j=3 seed=0 SAT check=True
+vars 10719 clauses 285983 x-orbits 30
+203 edges
+RESULT n=29 e=203 m=14 j=2 seed=0 SAT check=True

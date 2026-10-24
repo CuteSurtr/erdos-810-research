@@ -1,0 +1,18 @@
+t=15 it=1048576 e=179 cost=9 best=4
+t=26 it=2097152 e=179 cost=11 best=4
+t=40 it=3145728 e=179 cost=14 best=3
+t=52 it=4194304 e=179 cost=14 best=4
+t=64 it=5242880 e=179 cost=13 best=6
+t=76 it=6291456 e=179 cost=14 best=3
+t=88 it=7340032 e=179 cost=17 best=4
+t=101 it=8388608 e=179 cost=18 best=4
+t=115 it=9437184 e=179 cost=14 best=3
+t=128 it=10485760 e=179 cost=12 best=4
+t=141 it=11534336 e=179 cost=11 best=4
+t=161 it=12582912 e=179 cost=14 best=2
+t=185 it=13631488 e=179 cost=12 best=3
+t=211 it=14680064 e=179 cost=14 best=4
+t=235 it=15728640 e=179 cost=20 best=3
+t=258 it=16777216 e=179 cost=14 best=3
+t=284 it=17825792 e=179 cost=12 best=3
+Terminated
