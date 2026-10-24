@@ -1,0 +1,6 @@
+FIXED {"p": 11, "beta": "sq", "status": "FEASIBLE", "m": 55.0, "bound": 65.0, "wall": 300.0}
+FIXED {"p": 11, "beta": "inv", "status": "FEASIBLE", "m": 55.0, "bound": 65.0, "wall": 300.0}
+FIXED {"p": 11, "beta": "cube", "status": "FEASIBLE", "m": 59.0, "bound": 75.0, "wall": 300.0}
+FIXED {"p": 11, "beta": "zero", "status": "FEASIBLE", "m": 56.0, "bound": 101.0, "wall": 300.0}
+
+[exited with code 0]
