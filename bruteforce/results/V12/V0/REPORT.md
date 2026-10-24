@@ -11,7 +11,7 @@ Mem:              15           0          15           0           0          15
 Swap:              0           0           0
 ```
 
-All computation ran in this cloud container (2026-10-24, 17:49–UTC).
+All computation ran in this cloud container (2026-10-24, 17:49–19:25 UTC).
 
 ## 2. Results
 
@@ -20,7 +20,7 @@ All computation ran in this cloud container (2026-10-24, 17:49–UTC).
 | Validation n=7..11 (10 rows) | all match | proved (exhaustive, matches known table) |
 | Shards r ≡ 0 mod 4 of `geng -q 12 41:41 r/512` (128 shards) | 605,033,974 graphs, **0 good** | exhaustive over this shard set (my 1/4 share) |
 | Clique+DSATUR breakdown | bad_by_clique 605,033,789; bad_by_search 185; good 0 | — |
-| DSATUR-only second pass (`-noclique`) | see §4.4 | see §4.4 |
+| DSATUR-only second pass (`-noclique`), same 128 shards | 605,033,974 graphs, all bad_by_search, **0 good**; per-shard graph and good counts identical to the main run | exhaustive over this shard set |
 
 M(12) = 40 follows only once all four V12 agents report 0 good and their graph totals sum
 to 2,411,961,516. **My total: 605,033,974 graphs, 0 good.**
@@ -75,3 +75,35 @@ Sum over 128 shards: graphs **605,033,974**, bad_by_clique **605,033,789**, bad_
 good **0**. Per-shard wall 38.5–54.6 s (4 jobs concurrently), total 5,870 core-s, ~25 min wall
 (17:55–18:19 UTC). Every shard satisfies graphs = bad_by_clique + bad_by_search + good;
 all 128 residues present.
+
+### 4.5 Second method: DSATUR alone
+I ran the same 128 shards again with `checker 12 -noclique`, so exact DSATUR decides every graph
+and the clique search is never used (`shards_noclique.tsv`). Result: 605,033,974 graphs,
+605,033,974 bad_by_search, 0 good. Graph and good counts match `shards.tsv` shard by shard
+(128/128). Wall per shard 98–146 s (4 concurrent), 15,322 core-s, 18:20–19:24 UTC.
+This pass checks the clique fast path independently. It does not check Q-construction or geng,
+which both passes share; for those the evidence is the n ≤ 11 validation above (and, for n ≤ 10,
+`-noclique` also matches).
+
+## 5. Code and files
+- `src/checker.c`: checker (`gcc -O3 -march=native -o checker checker.c`; binary is gitignored).
+- `src/run_shard.sh`: one shard → one TSV row (env `GENG`, `CHECKFLAGS`, `OUTDIR`, `TSV`).
+- `src/val11.sh`: n = 11 validation, 16 shards.
+- `src/verify_good.py`: independent re-checker for GOOD lines.
+- `shards.tsv`: main run (clique + DSATUR). `shards_noclique.tsv`: DSATUR-only run.
+- `certs.json`: `{}` (no good graph).
+
+Reproduce one shard:
+`geng -q 12 41:41 r/512 | src/checker 12` (≈45 s on one core) or with `-noclique` (≈120 s).
+
+## 6. Surprises and next steps
+- The fast path settles nearly everything. Only 185 of 605M graphs lack a 13-clique in Q, and
+  DSATUR proves each of those 185 non-12-colourable.
+- DSATUR alone is also cheap (about 25 µs per graph). An unpruned exhaustive run of all
+  2.41e9 graphs takes about 4.3 core-hours with either method.
+- Operational note: my first launch wrote shard outputs inside the repo. A `git pull --rebase`
+  then replaced files that running jobs held open, so the first 4 shards produced empty outputs
+  and the shard script reported them as failed. No rows were recorded. I killed that run, moved
+  outputs to /tmp, and restarted from scratch. All numbers above come from the clean restart.
+- Next step: add the four V12 totals and check they sum to 2,411,961,516. If they do and all
+  report 0 good, M(12) = 40 has an unpruned confirmation (lower bound already Lean-certified).
