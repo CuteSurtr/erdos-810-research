@@ -98,5 +98,55 @@
 "sat": 0,
 "unsat": 9,
 "unknown": null
+},
+"33": {
+"sat": 0,
+"unsat": 9,
+"unknown": null
+},
+"34": {
+"sat": 0,
+"unsat": 9,
+"unknown": null
+},
+"36": {
+"sat": 0,
+"unsat": 10,
+"unknown": null
+},
+"37": {
+"sat": 9,
+"unsat": null,
+"unknown": null
+},
+"40": {
+"sat": 10,
+"unsat": null,
+"unknown": null
+},
+"41": {
+"sat": 10,
+"unsat": null,
+"unknown": null
+},
+"42": {
+"sat": 10,
+"unsat": null,
+"unknown": null
+},
+"46": {
+"sat": 11,
+"unsat": null,
+"unknown": null
+},
+"47": {
+"sat": 11,
+"unsat": null,
+"unknown": null
+},
+"48": {
+"sat": 11,
+"unsat": null,
+"unknown": null
 }
 }

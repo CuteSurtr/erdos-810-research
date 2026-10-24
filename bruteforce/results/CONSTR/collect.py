@@ -37,6 +37,13 @@ if os.path.exists('runs/sumset.jsonl'):
         if l.strip():
             d = json.loads(l); sumset[d['n']] = d
             add(d['n'], 'sum-set colouring on Z_n (exact optimum over S)', 'S=%s' % d['S'], sumset_edges(d['n'], d['S']))
+if os.path.exists('runs/sumset_heur.jsonl'):
+    for l in open('runs/sumset_heur.jsonl'):
+        if l.strip():
+            d = json.loads(l)
+            if d['n'] in sumset: continue
+            sumset[d['n']] = d
+            add(d['n'], 'sum-set colouring on Z_n (heuristic S, exact solver timed out)', 'S=%s' % d['S'], sumset_edges(d['n'], d['S']))
 for fn in glob.glob('runs/fam/*.txt'):
     lab = os.path.basename(fn)[:-4]; parts = lab.split('_'); n = int(parts[1])
     fam = {'sum': 'sum colouring (colour = i+j in group %s), edge set by local search' % parts[2] if parts[0] == 'sum' else '',

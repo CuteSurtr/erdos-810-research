@@ -38,3 +38,10 @@ n=62 600s TIMEOUT
 n=63 22s {"n": 63, "S": [0, 7, 12, 13, 18, 32, 33, 42, 43, 49, 58, 60, 61], "edges": 403, "optimal": true}
 n=64 600s TIMEOUT
 n=67 119s {"n": 67, "S": [0, 1, 5, 11, 13, 16, 23, 29, 37, 49, 55, 59, 65], "edges": 429, "optimal": true}
+n=71 170s {"n": 71, "S": [0, 3, 12, 17, 19, 25, 27, 30, 32, 40, 56, 62, 66, 67], "edges": 490, "optimal": true}
+n=73 402s {"n": 73, "S": [0, 1, 11, 18, 20, 26, 28, 31, 33, 54, 58, 60, 68, 70], "edges": 504, "optimal": true}
+n=79 600s TIMEOUT
+n=81 600s TIMEOUT
+n=83 600s TIMEOUT
+n=89 600s TIMEOUT
+n=97.. not run: killed at 18:03 (RC2 timeouts from n=79)
