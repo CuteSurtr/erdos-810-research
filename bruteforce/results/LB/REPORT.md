@@ -10,7 +10,7 @@ Mem:              15           0          15           0           0          15
 Swap:              0           0           0
 ```
 
-All computation ran in this cloud container (4 cores, 15 GB) on 2026-10-24, 16:05 to 20:40 UTC.
+All computation ran in this cloud container (4 cores, 15 GB) on 2026-10-24, 16:05 to 20:33 UTC.
 The routine started late, so the deadline was moved from 16:30 to 21:00 UTC.
 
 ## 2. Results
@@ -20,13 +20,34 @@ Every new bound is **certificate-verified**: `check.py` (all 4-sets × 3 cyclic 
 0..n−1) passes on each entry of `certs.json`, and so do `../SAT/check.py` (ordered 4-tuples) and
 `../SAT/check_q.py` (proper colouring of Q(G)). Output is in `logs/final_check.log`.
 
-TABLE
+| n | old LB | new LB | e/n² | status | method (source file) |
+|---|---|---|---|---|---|
+| 13 | 47 | **47** (=) | 0.278 | certificate-verified | tabu search (ls810) (`out/r1_n13_e47.txt`) |
+| 14 | 54 | **55** | 0.281 | certificate-verified | tabu search (ls810) (`out/r1_n14_e55.txt`) |
+| 15 | 60 | **63** | 0.280 | certificate-verified | symmetric SAT: σ = 5×C3, τ = 5×C3 (`out/sym_m3j5s0_n15_e63.txt`) |
+| 16 | 68 | **70** | 0.273 | certificate-verified | symmetric SAT: σ = 4×C4, τ = 4×C4 (`out/sym_m4j4s0_n16_e70.txt`) |
+| 17 | 76 | **78** | 0.270 | certificate-verified | symmetric SAT: σ = 4×C4 + 1 fixed, τ = 4×C4 (`out/sym_m4j4s0_n17_e78.txt`) |
+| 18 | 85 | **90** | 0.278 | certificate-verified | symmetric SAT: σ = 3×C6, τ = 3×C6 (`out/sym_m6j3s0_n18_e88.txt`) |
+| 19 | 93 | **96** | 0.266 | certificate-verified | symmetric SAT: σ = 3×C6 + 1 fixed, τ = 3×C6 (`out/sym_m6j3s0_n19_e95.txt`) |
+| 20 | 102 | **109** | 0.273 | certificate-verified | deletion of a vertex and a colour from the n=21 certificate (`out/del_n20_e109.txt`) |
+| 21 | 110 | **126** | 0.286 | certificate-verified | symmetric SAT: σ = 3×C7, τ = 3×C7 (`out/sym_m7j3s0_n21_e120.txt`) |
+| 22 | 121 | **133** | 0.275 | certificate-verified | tabu search seeded from the n=21 certificate plus one vertex (`out/r5_n22_e133.txt`) |
+| 23 | 132 | **141** | 0.267 | certificate-verified | tabu search seeded from the n=22 certificate plus one vertex (`out/r6_n23_e141.txt`) |
+| 24 | 141 | **150** | 0.260 | certificate-verified | symmetric SAT: σ = 2×C12, τ = 2×C12 (`out/sym_m12j2s0_n24_e150.txt`) |
+| 25 | 152 | **160** | 0.256 | certificate-verified | symmetric SAT: σ = 3×C8 + 1 fixed, τ = 3×C8 (`out/sym_m8j3s0_n25_e157.txt`) |
+| 26 | — | **169** | 0.250 | certificate-verified | symmetric SAT: σ = 2×C13, τ = 2×C13 (`out/sym_m13j2s0_n26_e169.txt`) |
+| 27 | — | **182** | 0.250 | certificate-verified | symmetric SAT: σ = 2×C13 + 1 fixed, τ = 2×C13 (`out/sym_m13j2s0_n27_e181.txt`) |
+| 28 | — | **196** | 0.250 | certificate-verified | symmetric SAT: σ = 2×C14, τ = 2×C14 (`out/sym_m14j2s0_n28_e196.txt`) |
+| 29 | — | **210** | 0.250 | certificate-verified | symmetric SAT: σ = 2×C14 + 1 fixed, τ = 2×C14 (`out/sym_m14j2s0_n29_e204.txt`) |
+| 30 | — | **225** | 0.250 | certificate-verified | symmetric SAT: σ = 2×C15, τ = 2×C15 (`out/sym_m15j2s0_n30_e225.txt`) |
 
 Nothing here is an upper bound. No exact values are claimed.
 
 **Targets from the task notes:**
-- n = 13, e = 48: not found (*unfinished*). The tabu search reaches cost 2 to 4 (that many
-  monochromatic 4-cycle pairs) but never 0. Runs that imposed symmetry reported UNSAT for
+- n = 13, e = 48: not found (*unfinished*). The tabu search reaches cost 1 (a single
+  monochromatic pair on one 4-cycle) but never 0. That took 4 runs: 2 × 45 min seeded from the
+  47-edge certificate and 1 × 30 min from empty, after a 10 min sweep. The best for n = 14 at
+  e = 56 was cost 2. Runs that imposed symmetry reported UNSAT for
   σ = C12+fix, 3×C4+fix and 2×C6+fix. Runs with 4×C3+fix (2400 s) and 6×C2+fix (2400 s) stopped
   with no answer.
 - n = 14, e = 55: **found** (tabu search, 10 min). e = 56 was not found. With σ = 2×C7 it is
@@ -103,7 +124,7 @@ known values. `sources.json` maps each entry to the run that produced it.
 | 16:58–17:05 | symmetric SAT, 2 orbits, n = 24..30 (`symbig1.txt`): 24→144/150, 25→156, 26→169, 27→180, 28→196, 29→203, 30→225, each within seconds to minutes |
 | 17:05–19:40 | escalation batches `esc1..esc4.txt` (3 parallel) |
 | 19:00–19:40 | deletion/extension seeds plus tabu (`derive.py`, `chain.sh`) |
-| 19:50–20:35 | long tabu runs for n = 13 (e = 48) and n = 14 (e = 56) |
+| 19:40–20:33 | long tabu runs for n = 13 (e = 48) and n = 14 (e = 56); escalation `esc5.txt` (n = 17 → 78 with 4×C4+1) |
 
 ## 5. Code and files (this folder)
 
@@ -119,7 +140,32 @@ known values. `sources.json` maps each entry to the run that produced it.
 
 ## 6. Structure, surprises and next steps
 
-STRUCTURE
+Structure of every certificate (`analyze.py`; |Aut| is for the uncoloured graph, from a VF2 count):
+
+| n | e | e/n^2 | degree sequence | bipartite | triangles | |Aut(G)| | colour class sizes |
+|---|---|---|---|---|---|---|---|
+| 9 | 23 | 0.284 | 6^1 5^8 | False | 18 | 4 | 3 3 3 3 3 2 2 2 2 |
+| 10 | 30 | 0.300 | 6^10 | False | 30 | 20 | 3 3 3 3 3 3 3 3 3 3 |
+| 11 | 34 | 0.281 | 7^4 6^6 4^1 | False | 34 | 2 | 4 4 4 3 3 3 3 3 3 2 2 |
+| 12 | 40 | 0.278 | 8^1 7^7 6^3 5^1 | False | 42 | 1 | 4 4 4 4 3 3 3 3 3 3 3 3 |
+| 13 | 47 | 0.278 | 8^3 7^10 | False | 53 | 1 | 4 4 4 4 4 4 4 4 3 3 3 3 3 |
+| 14 | 55 | 0.281 | 8^12 7^2 | False | 70 | 2 | 5 5 5 4 4 4 4 4 4 4 3 3 3 3 |
+| 15 | 63 | 0.280 | 9^6 8^9 | False | 87 | 3 | 5 5 5 5 5 5 4 4 4 4 4 4 3 3 3 |
+| 16 | 70 | 0.273 | 10^4 9^4 8^8 | False | 100 | 8 | 5 5 5 5 5 5 4 4 4 4 4 4 4 4 4 4 |
+| 17 | 78 | 0.270 | 10^4 9^12 8^1 | False | 114 | 4 | 5 5 5 5 5 5 5 5 5 5 5 5 4 4 4 3 3 |
+| 18 | 90 | 0.278 | 10^18 | False | 150 | 36 | 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 |
+| 19 | 96 | 0.266 | 12^1 10^18 | False | 156 | 6 | 6 6 6 6 6 6 5 5 5 5 5 5 5 5 5 5 5 5 0 |
+| 20 | 109 | 0.273 | 12^4 11^10 10^6 | False | 203 | 1 | 6 6 6 6 6 6 6 6 6 5 5 5 5 5 5 5 5 5 5 5 |
+| 21 | 126 | 0.286 | 12^21 | False | 273 | 126 | 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 |
+| 22 | 133 | 0.275 | 13^7 12^14 7^1 | False | 282 | 1 | 7 7 7 7 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 5 4 |
+| 23 | 141 | 0.267 | 14^2 13^9 12^10 9^1 8^1 | False | 291 | 1 | 7 7 7 7 7 7 7 7 7 6 6 6 6 6 6 6 6 6 6 6 5 4 3 |
+| 24 | 150 | 0.260 | 13^12 12^12 | False | 296 | 24 | 7 7 7 7 7 7 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 |
+| 25 | 160 | 0.256 | 16^1 14^8 13^8 11^8 | False | 312 | 8 | 8 7 7 7 7 7 7 7 7 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 |
+| 26 | 169 | 0.250 | 13^26 | False | 364 | 13 | 7 7 7 7 7 7 7 7 7 7 7 7 7 6 6 6 6 6 6 6 6 6 6 6 6 6 |
+| 27 | 182 | 0.250 | 14^13 13^14 | False | 390 | 26 | 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 0 |
+| 28 | 196 | 0.250 | 15^14 13^14 | False | 406 | 14 | 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 |
+| 29 | 210 | 0.250 | 15^14 14^15 | False | 462 | 14 | 8 8 8 8 8 8 8 8 8 8 8 8 8 8 7 7 7 7 7 7 7 7 7 7 7 7 7 7 0 |
+| 30 | 225 | 0.250 | 15^30 | False | 540 | 15 | 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 |
 
 - **Imposed symmetry is the strongest method above n ≈ 15.** Unstructured tabu search fell
   behind fast. For n = 21 it gave 114, while σ = τ = 3×C7 gave 126 (0.286 n², the highest

@@ -317,3 +317,7 @@ t=1239 it=331350016 e=48 cost=9 best=3
 t=1243 it=332398592 e=48 cost=6 best=4
 t=1246 it=333447168 e=48 cost=9 best=2
 t=1250 it=334495744 e=48 cost=8 best=2
+t=1255 it=335544320 e=48 cost=13 best=3
+t=1258 it=336592896 e=48 cost=9 best=1
+t=1261 it=337641472 e=48 cost=10 best=4
+t=1266 it=338690048 e=48 cost=7 best=2

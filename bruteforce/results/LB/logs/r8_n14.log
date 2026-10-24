@@ -265,3 +265,6 @@ t=1240 it=276824064 e=56 cost=10 best=4
 t=1244 it=277872640 e=56 cost=16 best=5
 t=1248 it=278921216 e=56 cost=14 best=6
 t=1253 it=279969792 e=56 cost=16 best=5
+t=1257 it=281018368 e=56 cost=14 best=5
+t=1261 it=282066944 e=56 cost=16 best=4
+t=1265 it=283115520 e=56 cost=10 best=7
