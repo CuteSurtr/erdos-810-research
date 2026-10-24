@@ -1,0 +1,11 @@
+cd /home/user/erdos-810-research/bruteforce/results/AFFARB
+python3 - <<'PY'
+import subprocess, sys
+from concurrent.futures import ProcessPoolExecutor
+from run_ls import job, save
+jobs = [(13, s, 15000 * 13**3, "rand", 0, "1.5") for s in range(100, 200)] + [(17, s, 8000 * 17**3, "rand", 0, "1.5") for s in range(100, 160)]
+with ProcessPoolExecutor(4) as ex:
+    for args, (p, m, beta, D) in ex.map(job, jobs):
+        new = save(p, m, beta, D, f"ls seed={args[1]} iters={args[2]} init={args[3]} fixb=0 lam=1.5")
+        print(args, m, "NEW" if new else "", flush=True)
+PY

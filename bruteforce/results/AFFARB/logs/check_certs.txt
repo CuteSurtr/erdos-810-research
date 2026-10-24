@@ -3,7 +3,7 @@ n=10: 12 edges, 2 4-cycles, all rainbow, colours used 4 <= n
 n=14: 25 edges, 14 4-cycles, all rainbow, colours used 6 <= n
 n=22: 61 edges, 129 4-cycles, all rainbow, colours used 10 <= n
 n=26: 82 edges, 230 4-cycles, all rainbow, colours used 12 <= n
-n=34: 132 edges, 588 4-cycles, all rainbow, colours used 16 <= n
+n=34: 134 edges, 642 4-cycles, all rainbow, colours used 16 <= n
 n=38: 161 edges, 874 4-cycles, all rainbow, colours used 18 <= n
 n=46: 226 edges, 1674 4-cycles, all rainbow, colours used 22 <= n
 n=58: 343 edges, 3741 4-cycles, all rainbow, colours used 28 <= n

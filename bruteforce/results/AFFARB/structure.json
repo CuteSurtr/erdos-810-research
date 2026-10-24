@@ -49,14 +49,14 @@
 },
 {
 "p": 17,
-"m": 132,
+"m": 134,
 "used": 16,
 "L": 5,
 "randL_median": 5,
-"deg": 14,
-"size_min": 6,
+"deg": 15,
+"size_min": 7,
 "size_max": 10,
-"rowdeg_min": 7,
+"rowdeg_min": 6,
 "rowdeg_max": 9
 },
 {

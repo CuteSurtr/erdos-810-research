@@ -24,7 +24,7 @@ Maximum of m = Σ_a |D_a| over all β: F_p^× → F_p and all supports D_a ⊆ F
 | 7 | 25 | 25 | **proved** | 0.5102 | M(14) ≥ 25 | M(14) ≥ 53 (LB table) |
 | 11 | 61 | 81 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.5041 | M(22) ≥ 61 | M(22) ≥ 121 (LB table) |
 | 13 | 82 | 113 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.4852 | M(26) ≥ 82 | — (no entry for n > 25) |
-| 17 | 132 | 194 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.4567 | M(34) ≥ 132 | — (no entry for n > 25) |
+| 17 | 134 | 194 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.4637 | M(34) ≥ 134 | — (no entry for n > 25) |
 | 19 | 161 | 242 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.4460 | M(38) ≥ 161 | — (no entry for n > 25) |
 | 23 | 226 | 354 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.4272 | M(46) ≥ 226 | — (no entry for n > 25) |
 | 29 | 343 | 563 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.4078 | M(58) ≥ 343 | — (no entry for n > 25) |
@@ -197,7 +197,8 @@ them, and on p = 7 they slow the core-guided search (16 s → 75–174 s on one 
 - **Single SA runs do not reliably reach the best value.** A final many-seed sweep
   (`logs/many_seeds_11_13.log`, itf 15000) found m = 61 at p = 11. The outcomes over 150
   seeds were 59: 83, 60: 65, 61: 2. At p = 13 the outcomes over 100 seeds were 79: 2, 80: 43,
-  81: 44, 82: 11. So the values for p ≥ 13, found with 3–6 runs each, may well be 1–2% below
+  81: 44, 82: 11. A second sweep (`logs/many_seeds_13_17.log`) of 100 more seeds at p = 13 gave
+  the same maximum, 82, and 60 seeds at p = 17 (itf 8000) improved 132 to 134 (1 of 60 runs). So the values for p ≥ 17, found with 3–6 runs each, may well be 1–2% below
   what more search would give.
 - β seeds: random; β ≡ 0; a²; a³; 1/a; exponential g^a; discrete log log_g a (graph of a
   Sidon-type map); and an AP-free seed, β = 0 on g^A for a greedy 3AP-free A ⊆ Z_(p−1) and
@@ -238,7 +239,7 @@ the joint best. "seed" columns are free-β SA started from that β:
 |---|---|---|---|---|---|---|---|---|---|
 | 11 | 61 | 59 | 55 | 59 | 55 | 59 | – | – | – |
 | 13 | 82 | 77 | 77 | 76 | 77 | 80 | 79 | 81 | 79 |
-| 17 | 132 | 129 | 126 | 132 | 126 | 129 | 128 | 131 | 131 |
+| 17 | 134 | 129 | 126 | 132 | 126 | 129 | 128 | 131 | 131 |
 | 19 | 161 | 155 | 156 | 155 | 155 | 158 | 160 | 158 | 157 |
 | 23 | 226 | 219 | 222 | 223 | 222 | 225 | 225 | 224 | 223 |
 | 29 | 343 | 333 | 331 | 340 | 328 | 338 | 336 | 339 | 341 |
@@ -271,8 +272,8 @@ Observations (all *heuristic* for p ≥ 11):
   cosets, which would have much larger energy. Pairwise overlaps |D_a ∩ D_b| are slightly
   below the random expectation, by a factor of 0.94–0.97.
 - **Decay fit.** Fitting best m/p² for p ≥ 11 (`fit.py`, `fit.json`): the power law
-  m/p² ≈ 0.872·p^(−0.228), i.e. m ≈ 0.87·p^1.77, has rms 0.0014. a + b/√p gives a = 0.226,
-  rms 0.0043; a + b/log p gives a = 0.118, rms 0.0058; a + b/p gives rms 0.0099. The power
+  m/p² ≈ 0.879·p^(−0.230), i.e. m ≈ 0.88·p^1.77, has rms 0.0021. a + b/√p gives a = 0.225,
+  rms 0.0048; a + b/log p gives a = 0.116, rms 0.0063; a + b/p gives rms 0.0104. The power
   law fits best, which is consistent with m = o(p²) in this model. It is still a fit to
   heuristic lower bounds over p ≤ 61 and cannot separate p^(2−δ) from slowly decaying
   forms with a positive limit.
@@ -338,4 +339,4 @@ outside the results folder. The 190 MB DRAT proof was not committed; its sha256 
   viable at p = 11; (ii) longer or parallel-tempering SA at p ≥ 61 to firm up the decay
   exponent; (iii) the supports and β both look random-like, so a random-model heuristic (each
   incidence kept independently, then repaired) could predict the decay exponent and be
-  compared with the fit m ≈ 0.87·p^1.77.
+  compared with the fit m ≈ 0.88·p^1.77.
