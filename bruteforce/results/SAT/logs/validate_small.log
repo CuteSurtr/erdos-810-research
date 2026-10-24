@@ -8,3 +8,7 @@
 5 degcol 7 {7: (True, True, 0.0), 8: (False, None, 0.0)} MATCH
 6 none 11 {11: (True, True, 0.01), 12: (False, None, 3.04)} MATCH
 6 degcol 11 {11: (True, True, 0.0), 12: (False, None, 0.0)} MATCH
+7 none 14 {14: (True, True, 0.01), 15: (False, None, 1074.21)} MATCH
+7 degcol 14 {14: (True, True, 0.01), 15: (False, None, 0.03)} MATCH
+8 degcol 17 {17: (True, True, 0.02), 18: (False, None, 1.59)} MATCH
+8 none: skipped (n=7 none already took 1074 s)

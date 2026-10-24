@@ -4,9 +4,11 @@ import json, time
 from pysat.solvers import Solver
 from enc import build, decode
 from check import check
-known = {2: 1, 3: 3, 4: 5, 5: 7, 6: 11, 7: 14, 8: 17}
+import sys
+SBS = sys.argv[1:] or ['none', 'degcol']
+known = {2: 1, 3: 3, 4: 5, 5: 7, 6: 11, 7: 14, 8: 17, 9: 23}
 for n, M in known.items():
-    for sb in ('none', 'degcol'):
+    for sb in SBS:
         res = {}
         for e in (M, M + 1):
             cnf, pool, x, y, edges = build(n, e, sb)

@@ -14,7 +14,7 @@ from pysat.card import CardEnc, EncType
 from pysat.formula import IDPool, CNF
 
 
-def build(n, e, sb='degcol', k=None, maxdeg=None, degseq=None):
+def build(n, e, sb='degcol', k=None, maxdeg=None, degseq=None, amo=False, kst=False):
     k = n if k is None else k
     pool = IDPool()
     cnf = CNF()
@@ -28,6 +28,9 @@ def build(n, e, sb='degcol', k=None, maxdeg=None, degseq=None):
         cnf.append([-x[ed]] + [y[ed, c] for c in range(k)])
         for c in range(k):
             cnf.append([-y[ed, c], x[ed]])
+        if amo:
+            for c1, c2 in itertools.combinations(range(k), 2):
+                cnf.append([-y[ed, c1], -y[ed, c2]])
     # 4-cycles: a-b-c-d-a with a the minimum vertex, b < d (3 per 4-set)
     cyc = []
     for q in itertools.combinations(V, 4):
@@ -46,6 +49,25 @@ def build(n, e, sb='degcol', k=None, maxdeg=None, degseq=None):
     for p, zv in z.items():
         for c in range(k):
             cnf.append([-zv, -y[p[0], c], -y[p[1], c]])
+    if kst:
+        # Lemma: if G contains K_{s,t} (s,t >= 2) then Q(G) contains a clique on its
+        # s*t edges, so G needs >= s*t colours.  Forbid every K_{s,t} with s*t > k.
+        for s_ in range(2, n):
+            for t_ in range(s_, n - s_ + 1):
+                if s_ * t_ <= k:
+                    continue
+                if any(s2 <= s_ and t2 <= t_ and s2 * t2 > k and (s2, t2) != (s_, t_)
+                       for s2 in range(2, s_ + 1) for t2 in range(s2, t_ + 1)):
+                    continue  # implied by a smaller forbidden K_{s2,t2}
+                seen = set()
+                for A in itertools.combinations(V, s_):
+                    rest = [v for v in V if v not in A]
+                    for B in itertools.combinations(rest, t_):
+                        key = frozenset([frozenset(A), frozenset(B)])
+                        if key in seen:
+                            continue
+                        seen.add(key)
+                        cnf.append([-x[E(a, b)] for a in A for b in B])
     # sum x >= e
     xs = [x[ed] for ed in edges]
     if e > len(xs):
@@ -54,7 +76,10 @@ def build(n, e, sb='degcol', k=None, maxdeg=None, degseq=None):
         card = CardEnc.atleast(lits=xs, bound=e, vpool=pool, encoding=EncType.totalizer)
         cnf.extend(card.clauses)
 
-    if sb in ('deg', 'degcol') or maxdeg is not None or degseq is not None:
+    VDEG = sb in ('deg', 'degcol', 'degcollex')
+    COL = sb in ('col', 'degcol', 'degcollex')
+    LEX = sb == 'degcollex'
+    if VDEG or maxdeg is not None or degseq is not None:
         # exact unary degree counters via sequential counter: s[v][i][j] <-> (|N(v) cap first i| >= j)
         D = {}
         for v in V:
@@ -87,7 +112,7 @@ def build(n, e, sb='degcol', k=None, maxdeg=None, degseq=None):
         def ge(v, j):
             return D[v][j]
 
-    if sb in ('deg', 'degcol'):
+    if VDEG:
         # Canonical labelling: vertex 0 has maximum degree; N(0) = {1..deg(0)};
         # within N(0) and within V\N(0)\{0} degrees are non-increasing.
         for j in range(2, n):
@@ -101,7 +126,34 @@ def build(n, e, sb='degcol', k=None, maxdeg=None, degseq=None):
                 # if x0v == x0w then deg(v) >= deg(w)
                 cnf.append([x[E(0, v)], x[E(0, w)], -ge(w, t), ge(v, t)])
                 cnf.append([-x[E(0, v)], -x[E(0, w)], -ge(w, t), ge(v, t)])
-    if sb == 'degcol':
+    if LEX:
+        # Among labellings satisfying the degree rules above, take the one whose
+        # x-string (row-major order of `edges`) is lex-maximal.  For 1 <= i < j in the
+        # same block with deg(i) = deg(j), the transposition (i j) maps a labelling
+        # satisfying the degree rules to another one, so x >=lex x o (i j), which
+        # reduces to: row i >=lex row j, both restricted to columns != i, j.
+        for i in range(1, n):
+            for j in range(i + 1, n):
+                W = []
+                for t in range(1, n):
+                    w_ = pool.id(('w', i, j, t))
+                    W.append(w_)
+                    cnf.append([-w_, ge(i, t)])
+                    cnf.append([-w_, -ge(j, t)])
+                q0 = pool.id(('q', i, j, 0))
+                cnf.append([q0, x[E(0, i)], x[E(0, j)]] + W)
+                cnf.append([q0, -x[E(0, i)], -x[E(0, j)]] + W)
+                cols = [b for b in range(1, n) if b not in (i, j)]
+                prev = q0
+                for idx, b in enumerate(cols):
+                    X, Y = x[E(i, b)], x[E(j, b)]
+                    cnf.append([-prev, X, -Y])  # X >= Y while prefix equal
+                    if idx + 1 < len(cols):
+                        q = pool.id(('q', i, j, idx + 1))
+                        cnf.append([-prev, -X, -Y, q])
+                        cnf.append([-prev, X, Y, q])
+                        prev = q
+    if COL:
         # colour first-occurrence order along the fixed edge order `edges`
         u = {}
         for i, ed in enumerate(edges):
@@ -154,7 +206,9 @@ if __name__ == '__main__':
     ap.add_argument('--sb', default='degcol')
     ap.add_argument('--k', type=int)
     ap.add_argument('--maxdeg', type=int)
+    ap.add_argument('--amo', action='store_true')
+    ap.add_argument('--kst', action='store_true')
     a = ap.parse_args()
-    cnf, pool, *_ = build(a.n, a.e, a.sb, a.k, a.maxdeg)
+    cnf, pool, *_ = build(a.n, a.e, a.sb, a.k, a.maxdeg, amo=a.amo, kst=a.kst)
     cnf.to_file(a.out)
     print(a.out, 'vars', cnf.nv, 'clauses', len(cnf.clauses), file=sys.stderr)

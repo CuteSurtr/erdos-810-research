@@ -1,0 +1,8 @@
+2 degcollex 1 {1: (True, True, 0.0), 2: (False, None, 0.0)} MATCH
+3 degcollex 3 {3: (True, True, 0.0), 4: (False, None, 0.0)} MATCH
+4 degcollex 5 {5: (True, True, 0.0), 6: (False, None, 0.0)} MATCH
+5 degcollex 7 {7: (True, True, 0.0), 8: (False, None, 0.0)} MATCH
+6 degcollex 11 {11: (True, True, 0.0), 12: (False, None, 0.0)} MATCH
+7 degcollex 14 {14: (True, True, 0.01), 15: (False, None, 0.01)} MATCH
+8 degcollex 17 {17: (True, True, 0.01), 18: (False, None, 0.18)} MATCH
+9 degcollex 23 {23: (True, True, 0.35), 24: (False, None, 0.92)} MATCH
