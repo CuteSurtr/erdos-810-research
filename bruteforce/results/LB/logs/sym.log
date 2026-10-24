@@ -2,3 +2,20 @@ vars 921 clauses 7795 x-orbits 7
 RESULT n=13 e=48 m=12 j=1 seed=0 UNSAT
 vars 1471 clauses 15717 x-orbits 13
 RESULT n=14 e=56 m=7 j=2 seed=0 UNSAT
+vars 927 clauses 7858 x-orbits 7
+RESULT n=13 e=48 m=12 j=0 seed=0 UNSAT
+vars 1939 clauses 21283 x-orbits 26
+RESULT n=13 e=48 m=3 j=4 seed=0 UNKNOWN
+vars 1615 clauses 16829 x-orbits 21
+RESULT n=13 e=48 m=4 j=3 seed=0 UNSAT
+vars 1267 clauses 12367 x-orbits 14
+RESULT n=13 e=48 m=6 j=2 seed=0 UNSAT
+vars 2653 clauses 30113 x-orbits 42
+RESULT n=13 e=48 m=2 j=6 seed=0 UNKNOWN
+vars 1111 clauses 10413 x-orbits 7
+RESULT n=14 e=55 m=13 j=1 seed=0 UNSAT
+vars 1111 clauses 10413 x-orbits 7
+RESULT n=14 e=55 m=13 j=0 seed=0 UNSAT
+vars 1471 clauses 15717 x-orbits 13
+RESULT n=14 e=56 m=7 j=0 seed=0 UNSAT
+vars 2513 clauses 30331 x-orbits 31
