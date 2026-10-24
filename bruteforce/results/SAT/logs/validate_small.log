@@ -1,0 +1,10 @@
+2 none 1 {1: (True, True, 0.0), 2: (False, None, 0.0)} MATCH
+2 degcol 1 {1: (True, True, 0.0), 2: (False, None, 0.0)} MATCH
+3 none 3 {3: (True, True, 0.0), 4: (False, None, 0.0)} MATCH
+3 degcol 3 {3: (True, True, 0.0), 4: (False, None, 0.0)} MATCH
+4 none 5 {5: (True, True, 0.0), 6: (False, None, 0.0)} MATCH
+4 degcol 5 {5: (True, True, 0.0), 6: (False, None, 0.0)} MATCH
+5 none 7 {7: (True, True, 0.0), 8: (False, None, 0.09)} MATCH
+5 degcol 7 {7: (True, True, 0.0), 8: (False, None, 0.0)} MATCH
+6 none 11 {11: (True, True, 0.01), 12: (False, None, 3.04)} MATCH
+6 degcol 11 {11: (True, True, 0.0), 12: (False, None, 0.0)} MATCH

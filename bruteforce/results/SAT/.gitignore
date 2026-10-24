@@ -1,0 +1,5 @@
+cadical_bin
+kissat_bin
+drat_bin
+cnf/
+__pycache__/
