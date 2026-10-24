@@ -1,0 +1,9 @@
+RESULT n=18 e=87 m=6 j=3 seed=0 SAT check=True
+RESULT n=16 e=70 m=8 j=2 seed=0 UNSAT
+RESULT n=21 e=115 m=7 j=3 seed=0 SAT check=True
+RESULT n=18 e=88 m=6 j=3 seed=0 SAT check=True
+RESULT n=21 e=120 m=7 j=3 seed=0 SAT check=True
+RESULT n=18 e=91 m=6 j=3 seed=0 UNKNOWN
+RESULT n=17 e=78 m=8 j=2 seed=0 UNSAT
+RESULT n=21 e=127 m=7 j=3 seed=0 UNKNOWN
+RESULT n=22 e=124 m=7 j=3 seed=0 SAT check=True
