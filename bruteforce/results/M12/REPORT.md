@@ -27,7 +27,7 @@ The schedule changes of 16:05 UTC applied:
 | **No 12-vertex graph with 41 edges is 12-good** | **proved** (exhaustive checker A, all 512 shards; independent checker B on Δ ≤ 9, 512/512 shards; Δ = 10, 11 by SAT's DRAT-checked cubes) | §4.3 |
 | M(12) ≥ 40 | **certificate-verified** (`certs.json["12"]`) | §3 |
 | **M(12) = 40** | **proved** | the two rows above |
-| Good 12-vertex 40-edge graphs with Δ ≤ 9: exactly 3 330 (Δ=7: 1 202, Δ=8: 2 126, Δ=9: 2) | **proved** by checker A (exhaustive `-D9`, 512/512 shards); SAT re-check (independent) of 18 of them, including both Δ=9 graphs: all GOOD, 0 BAD. The planned 302-graph sample was stopped at the deadline (~3–30 s per graph in Python) | §2.3 |
+| Good 12-vertex 40-edge graphs with Δ ≤ 9: exactly 3 330 (Δ=7: 1 202, Δ=8: 2 126, Δ=9: 2) | *heuristic-grade count*: exhaustive with one method only (checker A, `-D9`, 512/512 shards), not re-counted by a second method; SAT re-check (independent) of 18 of them, including both Δ=9 graphs: all GOOD, 0 BAD. The planned 302-graph sample was stopped at the deadline (~3–30 s per graph in Python) | §2.3 |
 | Good 12-vertex 40-edge graphs with Δ ≥ 10 | *partial*: none in 181/512 full-range shards (35 % of the space) | §2.3 |
 | n = 13, e = 48 | **unfinished**: 3 of 16 384 shards finished (0 graphs); plan in `M13_PLAN.md` | §2.4 |
 
