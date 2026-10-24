@@ -1,0 +1,3 @@
+{"3": {"value": 4, "how": "brute force over all 9 beta and all supports (brute.c); joint CP-SAT optimal with and without symmetry breaking"},
+ "5": {"value": 12, "how": "brute force over all 625 beta and all supports (brute.c); joint CP-SAT optimal with and without symmetry breaking; per-beta CP-SAT == brute force for all 625 beta; RC2 MaxSAT optimum 12"},
+ "7": {"value": 25, "how": "joint CP-SAT OPTIMAL without symmetry breaking (39 s) and with both canonical forms; RC2 MaxSAT (independent CNF solver, core-guided) optimum 25 in 661 s; CaDiCaL: m>=25 SAT, m>=26 UNSAT (232 s)"}}
