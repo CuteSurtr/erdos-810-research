@@ -14,7 +14,22 @@ All computation ran in this cloud container (4 cores, 15 GB RAM), 11:45 to 16:30
 
 ## 2. Results
 
-__RESULTS__
+| Claim | Status | Evidence |
+|---|---|---|
+| M(9) = 23 (validation) | **proved** | e=23 SAT, certificate-verified. e=24 UNSAT with a checked DRAT proof (`degcollex`, logged). It was also checked under `degcol` (drat-trim `s VERIFIED`, 34 s), but that output went only to the console |
+| M(10) ≥ 30 | **certificate-verified** | `certs.json["10"]` |
+| M(10) ≤ 30 (e=31 UNSAT) | **proved** (DRAT-checked) | full formula plus all 10 cubes Δ=0..9, each with a drat-trim `s VERIFIED` proof. The older `degcol` encoding agrees (CaDiCaL with checked DRAT on cubes Δ=7,8,9; Kissat 53 s on the full formula) |
+| **M(10) = 30** | **proved** | agrees with the unverified first run |
+| M(11) ≥ 34 | **certificate-verified** | `certs.json["11"]` |
+| M(11) ≤ 34 (e=35 UNSAT) | **proved** (DRAT-checked) | 11 cubes Δ=0..10, each with a drat-trim `s VERIFIED` proof (Δ=7: 926 s solve, 1645 s check) |
+| **M(11) = 34** | **proved** | agrees with the unverified first run |
+| n=12, e=41 UNSAT | **unfinished** | Δ=0..6, 10, 11: UNSAT and DRAT-checked. Δ=9: CaDiCaL stopped at 11132 s with no answer. Δ=7, 8: split by march_cu, partly probed (see 4.4). No 41-edge good graph was found |
+| **M(13) ≥ 47** (previous LB 46) | **certificate-verified** | `certs.json["13"]`, Kissat `--sat` on n=13, e=47 (`degcollex`), 999 s |
+| **M(14) ≥ 54** (previous LB 53) | **certificate-verified** | `certs.json["14"]`, Kissat `--sat` on n=14, e=54, 1005 s |
+| n=13, e=48; n=12, e=41; n=15, e=61 | **unfinished** | Kissat `--sat` seed 1 stopped at 7888 s, 7888 s and 4769 s with no answer (`logs/stopped_runs.txt`) |
+
+Neither the upper bounds nor the cube proofs use the K_{s,t} lemma (`--kst`), and they use
+nothing from the M12 task or `data/first-run/src`.
 
 ## 3. Certificates
 
@@ -29,7 +44,13 @@ colours 0..n−1. Both checkers pass on every entry (`logs/check*.log`):
 New lower bound, n = 13, 47 edges (previous best 46):
 
 ```
-__CERT13__
+[[0, 1, 0], [0, 2, 1], [0, 3, 2], [0, 4, 3], [0, 5, 4], [0, 6, 5], [0, 7, 6], [0, 8, 7], [0, 9, 8], [1, 2, 9], [1, 3, 10], [1, 4, 11], [1, 5, 6], [1, 6, 12], [1, 11, 1], [1, 12, 5], [2, 3, 12], [2, 4, 5], [2, 5, 8], [2, 7, 7], [2, 10, 0], [3, 4, 4], [3, 7, 11], [3, 11, 6], [3, 12, 3], [4, 9, 10], [4, 10, 2], [4, 11, 8], [5, 6, 2], [5, 8, 3], [5, 10, 12], [5, 12, 11], [6, 7, 3], [6, 8, 10], [6, 9, 1], [6, 11, 4], [7, 9, 12], [7, 10, 9], [7, 12, 1], [8, 9, 0], [8, 10, 5], [8, 11, 9], [8, 12, 8], [9, 10, 11], [10, 11, 7], [10, 12, 10], [11, 12, 0]]
+```
+
+New lower bound, n = 14, 54 edges (previous best 53):
+
+```
+[[0, 1, 0], [0, 2, 1], [0, 3, 2], [0, 4, 3], [0, 5, 4], [0, 6, 5], [0, 7, 6], [0, 8, 7], [1, 2, 8], [1, 3, 9], [1, 4, 10], [1, 6, 4], [1, 7, 11], [1, 9, 12], [1, 10, 13], [2, 3, 7], [2, 4, 11], [2, 6, 6], [2, 9, 3], [2, 10, 2], [2, 11, 13], [3, 5, 8], [3, 7, 3], [3, 9, 10], [3, 11, 5], [3, 12, 0], [4, 8, 2], [4, 10, 9], [4, 11, 6], [4, 12, 8], [4, 13, 1], [5, 7, 1], [5, 9, 6], [5, 10, 10], [5, 11, 11], [5, 12, 13], [5, 13, 2], [6, 8, 8], [6, 9, 11], [6, 10, 7], [6, 13, 12], [7, 8, 13], [7, 10, 12], [7, 12, 7], [8, 9, 9], [8, 11, 0], [8, 13, 10], [9, 11, 1], [9, 12, 4], [10, 12, 5], [10, 13, 0], [11, 12, 12], [11, 13, 7], [12, 13, 3]]
 ```
 
 The n = 9 (23 edges), 10 (30) and 11 (34) certificates are in `certs.json`.
@@ -119,7 +140,63 @@ Also n = 10, e = 30 and n = 11, e = 34 are SAT under `degcollex`.
   (CnC, Heule). `mkcubes.py` writes one CNF per cube plus a *cover* CNF: the base formula plus
   the negation of every cube. Cover UNSAT ⇒ the cubes cover the base formula's models.
 
-__TABLES__
+Per-cube timings: CaDiCaL solve / drat-trim check, wall-clock seconds. Up to 4 jobs ran at
+once on 4 cores, so the times include contention.
+
+| instance | Δ cubes 0..6 | Δ=7 | Δ=8 | Δ=9 | Δ=10 | Δ=11 | full formula |
+|---|---|---|---|---|---|---|---|
+| n=9, e=24 | — | — | — | — | — | — | 1 / 1 |
+| n=10, e=31 | each ≤ 1 / ≤ 1 | 2 / 1 | 2 / 1 | 2 / 1 | — | — | 5 / 3 |
+| n=11, e=35 | each ≤ 1 / ≤ 1 | 926 / 1645 | 160 / 203 | 59 / 60 | 23 / 18 | — | not run |
+| n=12, e=41 | each ≤ 1 / ≤ 1 | split (4.4) | split (4.4) | >11132 (stopped) | 2556 / 2753 | 506 / 929 | not run |
+
+The symmetry breaking matters a great deal. On n=10, e=31 (single core):
+
+| SB | time |
+|---|---|
+| `deg` only (V1) | >600 s, stopped |
+| `col` only (C) | >600 s, stopped |
+| `degcol` (V1+C) | 67 s |
+| `degcollex` (V1+V2+C) | 5 s |
+
+On n=9, e=24 the times are 27 s (`degcol`) and 1 s (`degcollex`). On n=11, the `degcol` cubes ran
+65 min without finishing; with `degcollex` the hardest cube took 926 s.
+
+### 4.4 n = 12, e = 41: state and sharding plan
+
+Done: cubes Δ ∈ {0,…,6, 10, 11} are UNSAT with checked DRAT proofs (hashes in the logs).
+
+Remaining: Δ = 7, 8, 9. All commands run from `bruteforce/results/SAT/`, after building
+CaDiCaL, drat-trim and CnC/march_cu (`-fcommon`) and symlinking them as `cadical_bin`,
+`drat_bin` and `march_bin`:
+
+```bash
+python3 enc.py 12 41 cnf/n12e41_lex_d$D.cnf --sb degcollex --maxdeg $D   # sha256 in cnf_sha256.txt
+```
+
+- **Δ = 9:** one CaDiCaL run went past 3.1 h with no answer, and its DRAT reached 6.2 GB.
+  Split it first:
+  `./march_bin cnf/n12e41_lex_d9.cnf -d 10 -o cubes/n12e41_lex_d9.d10.icnf`.
+  Then `python3 mkcubes.py cnf/n12e41_lex_d9.cnf cubes/n12e41_lex_d9.d10.icnf cnf/cub n12d9`,
+  and run `./run_cube.sh <name> cnf/cub/<name>.cnf <proofdir>` on each cube and on `n12d9_cover`.
+- **Δ = 8:** `cubes/n12e41_lex_d8.d10.icnf` has 509 cubes. Regenerate the CNFs with
+  `python3 mkcubes.py cnf/n12e41_lex_d8.cnf cubes/n12e41_lex_d8.d10.icnf cnf/cub n12d8`.
+  Probe at a 60 s cap (`logs/probe_n12d8.log`, first 187 cubes): 168 UNSAT, 49 s in total, and
+  19 hit the cap (≈10%). Extrapolated, about 50 of the 509 need more than 60 s and should be
+  re-split with march at depth 10–12. The cover CNF `n12d8_cover` was not yet run.
+- **Δ = 7:** `cubes/n12e41_lex_d7.d9.icnf` has 66 cubes. 65 cubes and the cover CNF are UNSAT
+  in ≤ 1 s each (`logs/probe_n12d7.log`, not yet DRAT-checked). Cube 65 is hard. It was re-split
+  as `cubes/n12e41_lex_d7_c0065.d12.icnf` (997 cubes) with
+  `python3 mkcubes.py cnf/cub/n12d7_c0065.cnf cubes/n12e41_lex_d7_c0065.d12.icnf cnf/cub2 n12d7c65`.
+  Probe at 60 s (`logs/probe_n12d7c65.log`, first 125): 107 UNSAT in 208 s total and 18 at the
+  cap (≈14%), so about 140 hard subcubes. One of them (c0041) was still open after 400 s even
+  with the K_{s,t} lemma clauses.
+- **Proof obligations per shard:** every cube CNF and every cover CNF needs `s VERIFIED` from
+  drat-trim. Then F_D is UNSAT because F_D ∧ ¬C_1 ∧ … ∧ ¬C_m is UNSAT (cover) and each
+  F_D ∧ C_i is UNSAT. Nested splits compose the same way.
+- **Rough cost** with the current encoding: one to a few hundred core-hours for Δ = 7 + 8 + 9,
+  plus about as much again for DRAT checking. This is a guess from the probes, not a measurement.
+  Δ = 9 is the most uncertain part.
 
 ## 5. Files
 
@@ -143,4 +220,23 @@ CnC (705b60c, built with `-fcommon`) and python-sat 1.9.dev17, all built from Gi
 
 ## 6. Surprises and next steps
 
-__NEXT__
+- **New lower bounds from plain SAT:** M(13) ≥ 47 and M(14) ≥ 54 each beat the local-search
+  table by one, and each took about 1000 s of Kissat with full symmetry breaking. The rest of the
+  local-search table (n = 15..25) is probably not tight either. Next step: Kissat/CaDiCaL `--sat`
+  with several seeds on n = 13, e = 48 (stopped at 2.2 h); n = 14, e = 55; and n = 15, e = 61
+  (stopped at 1.3 h) and up. Seeding with the known certificates (phase hints) may help.
+- **The lex rule V2 is the decisive speedup:** 13–27× on n = 9, 10. It is Codish et al.'s row
+  comparison, made sound on top of the degree canonical form by guarding it with "same block and
+  equal degree".
+- **n = 12 hardness:** the rare cubes are hard because, with ≥ 10 vertices of degree 7 (Δ = 7,
+  41 edges), the degree rules carry almost no information. Stronger graph symmetry breaking
+  (SAT Modulo Symmetries) should pay off most there. `pysms` failed to build from pip
+  (setuptools `install_layout` error); the source is at
+  github.com/markirch/sat-modulo-symmetries.
+- **Pigeonhole cores:** K_{s,t} ⊆ G forces a clique of size st in Q(G), because all its edges
+  pairwise conflict, so for k = n graphs are K_{s,t}-free whenever st > n. Adding these clauses
+  (`--kst`, lemma proved in `enc.py`) gave ≈2× on n = 9, 10 but did not settle the hard
+  n = 12 subcubes. No claim uses it.
+- **Cross-check with M12:** these SAT results independently confirm M(10) = 30 and M(11) = 34.
+  They are compatible with the first run's "no good 41-edge graph on 12 vertices", which is not
+  yet settled here.
