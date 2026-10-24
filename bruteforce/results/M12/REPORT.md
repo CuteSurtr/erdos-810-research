@@ -27,9 +27,9 @@ The schedule changes of 16:05 UTC applied:
 | **No 12-vertex graph with 41 edges is 12-good** | **proved** (exhaustive checker A, all 512 shards; independent checker B on Δ ≤ 9, 512/512 shards; Δ = 10, 11 by SAT's DRAT-checked cubes) | §4.3 |
 | M(12) ≥ 40 | **certificate-verified** (`certs.json["12"]`) | §3 |
 | **M(12) = 40** | **proved** | the two rows above |
-| Good 12-vertex 40-edge graphs with Δ ≤ 9: exactly 3 330 (Δ=7: 1 202, Δ=8: 2 126, Δ=9: 2) | **proved** by checker A (exhaustive `-D9`, 512/512 shards); goodness of a random sample of 302, including both Δ=9 graphs, confirmed by SAT (§2.3) | §2.3 |
+| Good 12-vertex 40-edge graphs with Δ ≤ 9: exactly 3 330 (Δ=7: 1 202, Δ=8: 2 126, Δ=9: 2) | **proved** by checker A (exhaustive `-D9`, 512/512 shards); SAT re-check (independent) of 18 of them, including both Δ=9 graphs: all GOOD, 0 BAD. The planned 302-graph sample was stopped at the deadline (~3–30 s per graph in Python) | §2.3 |
 | Good 12-vertex 40-edge graphs with Δ ≥ 10 | *partial*: none in 181/512 full-range shards (35 % of the space) | §2.3 |
-| n = 13, e = 48 | **unfinished**: 3 shards of 16 384 done (0 graphs), plan in `M13_PLAN.md` | §2.4 |
+| n = 13, e = 48 | **unfinished**: 3 of 16 384 shards finished (0 graphs); plan in `M13_PLAN.md` | §2.4 |
 
 A good 41-edge graph would have been an output of the pruned run, and there were none, so the
 task's request for "a second checker on every graph output at 41 edges" is vacuous.
@@ -94,10 +94,11 @@ hard to refute.
 Pruned checker A with `geng 13 48:48 r/16384`:
 
 - shards 5000, 10000 and 6000 finished in 585, 420 and 619 CPU-s, with 0 graphs;
-- shard 2500 passed 80 CPU-min without finishing;
-- shards 0 and 3000 died without output (cause unknown) and are **not counted**.
+- shard 2500 passed 120 CPU-min without finishing and was stopped at the deadline;
+- shard 11000 was stopped at the deadline;
+- shards 0, 3000, 9000 and 13000 died without output (cause unknown) and are **not counted**.
 
-The estimate is at least about 7 300 CPU-h for the whole space. See `M13_PLAN.md` for exact
+The estimate is at least about 9 800 CPU-h for the whole space. See `M13_PLAN.md` for exact
 commands, the split and cheaper routes.
 
 ## 3. Certificates
@@ -225,11 +226,12 @@ n = 10, 11 it checks the good outputs.
   handling the high-Δ cubes, is a good recipe for n = 13. Note that res/mod shard numbering
   depends on every geng option, so a shard set only counts as complete when one option set
   covers all of its residues.
-- **Process deaths.** Three geng processes died silently: n = 13 probes 0 and 3000, and
+- **Process deaths.** Several background processes died silently: n = 13 probes 0, 3000,
+  9000 and 13000, and 12/40 `-D9` shards 317, 445 and 446 (re-run), and
   n = 12/40 shards killed by my own `pkill -f` patterns, which also matched the parent shell.
   Every shard counted above has a `>Z` line in its log. Use PIDs, not `pkill -f`.
 - **Next for SAT's n = 12, e = 41 cubes.** They are now redundant for the M(12) result: A alone
   is exhaustive, and B plus SAT's finished cubes form a second complete method. Finishing
   Δ = 7, 8, 9 with DRAT would add a third, proof-checked method.
-- **M(13).** Do not brute-force e = 48 blindly (about 7 300+ CPU-h). Follow `M13_PLAN.md`:
+- **M(13).** Do not brute-force e = 48 blindly (about 10 000 CPU-h or more). Follow `M13_PLAN.md`:
   sample about 64 shards at MOD = 65536 first, then split by Δ.

@@ -25,22 +25,24 @@ Every output graph is 13-good. Re-check outputs with `./src/filt 13` and `src/sa
 | 5000 | 0 | 585 | finished |
 | 10000 | 0 | 420 | finished |
 | 6000 | 0 | 619 | finished |
-| 2500 | — | > 4 750 (still running at 20:25 UTC) | unfinished |
+| 2500 | — | > 7 000 (stopped at the 21:00 deadline) | unfinished |
+| 11000 | — | stopped at the deadline | unfinished |
+| 9000, 13000 | — | processes died without output | unfinished |
 | 0 | — | > 750 when the process died | unfinished, died without output (cause unknown) |
 | 3000 | — | process died after under 8 min | unfinished, died without output |
 
 The final list of finished shards is in `shards_n13_e48.tsv`. Shards are very uneven:
-three took 7–10 CPU-minutes and one took more than 80 CPU-minutes.
+three took 7–10 CPU-minutes and one took more than 2 CPU-hours.
 
 ## Cost estimate
 
-Taking the sample mean as a lower bound (the slow shard counted at its elapsed time) gives
-about 1 600 CPU-s per shard. Then
+Taking the sample mean as a lower bound (the slow shard counted at its elapsed time,
+7 000 s) gives about (420 + 585 + 619 + 7 000)/4 ≈ 2 150 CPU-s per shard. Then
 
-- 16 384 shards × ~1 600 s ≈ **7 300 CPU-hours**. This is a lower bound, because the sample is
+- 16 384 shards × ~2 150 s ≈ **9 800 CPU-hours**. This is a lower bound, because the sample is
   tiny and the distribution has a heavy tail.
 - With N cloud agents of 4 cores and about 4.5 usable hours each (~18 CPU-h per agent),
-  this needs **about 400 agent-sessions**: N = 50 agents would take about 8 rounds.
+  this needs **about 550 agent-sessions**: N = 50 agents would take about 11 rounds.
 - Before committing to that, run about 64 random shards to pin down the mean. That costs about
   30 CPU-h, so 2 agents for one session.
 
