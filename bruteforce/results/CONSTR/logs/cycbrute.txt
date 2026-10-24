@@ -1,0 +1,6 @@
+8 brute max |D| = 2 cycsat: ['SAT', 'UNSAT'] AGREE
+9 brute max |D| = 2 cycsat: ['SAT', 'UNSAT'] AGREE
+10 brute max |D| = 3 cycsat: ['SAT', 'UNSAT'] AGREE
+11 brute max |D| = 3 cycsat: ['SAT', 'UNSAT'] AGREE
+12 brute max |D| = 3 cycsat: ['SAT', 'UNSAT'] AGREE
+13 brute max |D| = 3 cycsat: ['SAT', 'UNSAT'] AGREE

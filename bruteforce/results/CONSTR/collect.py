@@ -48,6 +48,19 @@ for fn in glob.glob('runs/cyc/c*.txt'):
     Dg = [tuple(map(int, l.split())) for l in open(fn) if l.strip()]
     E = sorted([[min(i, (i + d) % n), max(i, (i + d) % n), (i + g) % n] for d, g in Dg for i in range(n)])
     add(n, 'cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)', 'D,g=%s' % Dg, E)
+cycopt = {}
+for fn in glob.glob('runs/cycsat/n*.jsonl'):
+    for l in open(fn):
+        if not l.strip().startswith('{'): continue
+        d = json.loads(l); n = d['n']
+        st = cycopt.setdefault(n, {'sat': 0, 'unsat': None, 'unknown': None})
+        if d['res'] == 'SAT':
+            st['sat'] = max(st['sat'], d['k'])
+            E = sorted([[min(i, (i + dd) % n), max(i, (i + dd) % n), (i + g) % n] for dd, g in d['Dg'] for i in range(n)])
+            add(n, 'cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)', 'D,g=%s (SAT)' % d['Dg'], E)
+        elif d['res'] == 'UNSAT': st['unsat'] = d['k'] if st['unsat'] is None else min(st['unsat'], d['k'])
+        else: st['unknown'] = d['k']
+json.dump({str(k): v for k, v in sorted(cycopt.items())}, open('cyclic_family_status.json', 'w'), indent=0)
 for fn in glob.glob('runs/begs/b*.txt'):
     n = int(os.path.basename(fn)[1:-4]); add(n, '(7,4)-free triple system (BEGS), one edge per triple', 'greedy', load(fn))
 
@@ -61,7 +74,11 @@ for n in NS:
     for fam, (k, det, E) in sorted(bestfam.items(), key=lambda x: -x[1][0]):
         ok, msg = check(n, E)
         fams.append((n, k, fam, det, 'VALID' if ok else 'INVALID:' + msg))
-    for k, fam, det, E in sorted(cands[n], key=lambda x: -x[0]):
+    def prio(fam):
+        for i, w in enumerate(('sum-set', 'cyclic', 'sum colouring', 'bipartite affine', '(7,4)')):
+            if fam.startswith(w): return i
+        return 9
+    for k, fam, det, E in sorted(cands[n], key=lambda x: (-x[0], prio(x[1]))):
         ok, msg = check(n, E)
         if ok: break
     else: continue

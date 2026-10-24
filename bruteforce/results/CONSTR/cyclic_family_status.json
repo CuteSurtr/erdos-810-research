@@ -1,0 +1,102 @@
+{
+"13": {
+"sat": 0,
+"unsat": 4,
+"unknown": null
+},
+"14": {
+"sat": 0,
+"unsat": 4,
+"unknown": null
+},
+"15": {
+"sat": 0,
+"unsat": 5,
+"unknown": null
+},
+"16": {
+"sat": 0,
+"unsat": 5,
+"unknown": null
+},
+"17": {
+"sat": 0,
+"unsat": 5,
+"unknown": null
+},
+"18": {
+"sat": 0,
+"unsat": 6,
+"unknown": null
+},
+"19": {
+"sat": 0,
+"unsat": 6,
+"unknown": null
+},
+"20": {
+"sat": 0,
+"unsat": 6,
+"unknown": null
+},
+"21": {
+"sat": 0,
+"unsat": 7,
+"unknown": null
+},
+"22": {
+"sat": 0,
+"unsat": 6,
+"unknown": null
+},
+"23": {
+"sat": 0,
+"unsat": 7,
+"unknown": null
+},
+"24": {
+"sat": 0,
+"unsat": 7,
+"unknown": null
+},
+"25": {
+"sat": 0,
+"unsat": 7,
+"unknown": null
+},
+"26": {
+"sat": 0,
+"unsat": 7,
+"unknown": null
+},
+"27": {
+"sat": 0,
+"unsat": 8,
+"unknown": null
+},
+"28": {
+"sat": 0,
+"unsat": 8,
+"unknown": null
+},
+"29": {
+"sat": 0,
+"unsat": 8,
+"unknown": null
+},
+"30": {
+"sat": 0,
+"unsat": 8,
+"unknown": null
+},
+"31": {
+"sat": 8,
+"unsat": 9,
+"unknown": null
+},
+"32": {
+"sat": 0,
+"unsat": 9,
+"unknown": null
+}
+}

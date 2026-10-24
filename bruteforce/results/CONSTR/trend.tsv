@@ -1,16 +1,16 @@
 n	best_LB	LB/n^2	family	detail	sha256_sorted_edges
-26	169	0.2500	general local search (SA/tabu, random start)	g26_s1	73feb7e075dfcff22790f5bc06d81fc4d1d1f18aff9a3b65b2868beb4c694fcd
+26	169	0.2500	best structured/other example of this n + general local search	b26_s7	73feb7e075dfcff22790f5bc06d81fc4d1d1f18aff9a3b65b2868beb4c694fcd
 27	189	0.2593	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 12), (4, 3), (6, 14), (7, 13), (11, 5), (12, 9), (13, 2)]	9713d7396e684a3f5a3f5521f52c16e0a3a5731c7e8b00ac8f79c4f26ca6f91f
 28	196	0.2500	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(3, 5), (4, 24), (5, 18), (6, 10), (9, 21), (11, 14), (12, 23)]	4366fde89a10fd5f7e5afb608b332b3d82ffd64b644544f30ab3f149b456fb5c
 29	206	0.2449	general local search (SA/tabu, random start)	g29_s1	d394244d1de49be182a2efca159992a329b6686c8e192852769b2074cc341f06
 30	219	0.2433	general local search (SA/tabu, random start)	g30_s1	4a13845139d3198d8220f295d39eef16517cc149a81dfadd694426a98ec8c327
-31	232	0.2414	general local search (SA/tabu, random start)	g31_s1	92647dd06cd61e24ae0d126ecfad8c9aa1c832f7419ea2378ea95065a48093e2
+31	248	0.2581	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[2, 0], [6, 5], [7, 3], [9, 2], [12, 6], [13, 26], [14, 4], [15, 16]] (SAT)	efbcb898b2047a9c213590cf17700ef6f9cc775ced4c86f35204fb3d1004592f
 32	256	0.2500	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 28), (3, 18), (5, 4), (9, 20), (12, 22), (13, 0), (14, 21), (15, 12)]	64f6532ff0908ea3f1b28b3b1269b18d06304a741a0ee22d4c428c143d37ef9a
 33	264	0.2424	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 25), (5, 16), (7, 2), (10, 10), (11, 9), (12, 27), (14, 7), (15, 1)]	aa4d04fd9222b9da6453ab835ae4be9589f9afc6b6a0be5f74b947bb65440953
 34	273	0.2362	general local search (SA/tabu, random start)	g34_s1	3ff3b7a69944fdedd031ad2432a9194e13ca97697991612fa67a2f17cad096ac
-35	283	0.2310	general local search (SA/tabu, random start)	g35_s1	3ba9c394eab173f844d0a026ebb49f83ec825ef284f0a898f9ac2951edbfa588
+35	287	0.2343	general local search (SA/tabu, random start)	g35_s1	07f798043b6e148d6706206921dd5a28a3690cf3fea650bfc91d6c270e1ddfae
 36	324	0.2500	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 31), (3, 7), (6, 5), (7, 21), (8, 11), (11, 20), (13, 2), (14, 8), (15, 34)]	20909c0375e30f9923852fa4b0120f29e2fcad5fe7d2d0b01fec3db3748a3998
-37	296	0.2162	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(3, 3), (6, 15), (7, 32), (8, 12), (9, 23), (10, 27), (17, 16), (18, 20)]	c80a748c3c6aa3b4a74ae1824f07ab01dd111964bc18372300867f769b19447a
+37	317	0.2316	general local search (SA/tabu, random start)	g37_s1	28283a8bb13ee5e1e07c28f555a88690be1db0504e60a97649bec9c00f802978
 38	342	0.2368	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(4, 34), (6, 23), (9, 29), (10, 36), (11, 22), (12, 25), (15, 8), (16, 6), (18, 27)]	825717ee5c3b4747d211322be9b4e4e9494bbff311e7857cd2402e33b7cf5679
 39	351	0.2308	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 33), (5, 22), (6, 7), (9, 20), (14, 30), (16, 29), (17, 5), (18, 3), (19, 19)]	3f5c78e77a53038db56c7e137072b9340ad1b8b8a27619fef9c41189cfc6ce5c
 40	360	0.2250	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 0), (3, 32), (6, 34), (7, 21), (9, 36), (10, 26), (12, 22), (14, 19), (15, 23)]	a5d99bf31755b332d7f69876fc3d87120a5a08cdc527c59154b7892ef905bc4c
@@ -23,8 +23,8 @@ n	best_LB	LB/n^2	family	detail	sha256_sorted_edges
 47	470	0.2128	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(3, 37), (4, 12), (5, 31), (9, 5), (12, 4), (13, 19), (17, 24), (19, 33), (22, 10), (23, 1)]	8c4e02e1fcc332b303ff7fce643e6bd58b57a80421764ae9a54407c7a0febacf
 48	480	0.2083	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(3, 24), (6, 7), (8, 0), (9, 34), (13, 4), (17, 44), (18, 41), (19, 16), (21, 29), (22, 33)]	41c836b9518706fd83d7be5873fa832cbbca3d82f7c8dd8f64cf1c8040185ff5
 49	490	0.2041	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 29), (4, 30), (6, 15), (8, 5), (9, 45), (14, 13), (15, 17), (22, 38), (23, 33), (24, 0)]	585d1da88162a77c135c366c4b477c69949762cf882f9905b3bc121e90532a98
-50	471	0.1884	sum colouring (colour = i+j in group 50), edge set by local search	sum_50_50	12a9e1e53f8a0f0cf739fd33eebbaad0f2d4710ce7aac5c36c89b0a6db751c33
-51	469	0.1803	sum colouring (colour = i+j in group 51), edge set by local search	sum_51_51	07113f1e5d471e6b9d0ce14245e8a379b8001b8d8624c80a43e40fc91e0b669f
+50	500	0.2000	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 17), (3, 9), (4, 35), (6, 40), (7, 25), (10, 5), (16, 49), (18, 44), (19, 39), (20, 42)]	df33e3e582cd75c3f8486796e97f62c34206b901e2bc0a7d7e874442fdbe7eaf
+51	561	0.2157	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 4), (4, 37), (7, 8), (8, 49), (10, 39), (13, 9), (14, 38), (15, 35), (17, 10), (18, 30), (19, 26)]	cd6e36b4951e1f2bd9f59d2040cf1219ec5da4e8b28b59fcf0a4076877cf46a9
 52	515	0.1905	sum colouring (colour = i+j in group 52), edge set by local search	sum_52_52	20c361492265481518e21aec3cda99488d22bf653ee5b2b9deea7f6d83808737
 53	500	0.1780	sum colouring (colour = i+j in group 53), edge set by local search	sum_53_53	479129726eeff0cd685165fe6948d2b11afface8422422a21f612fba7eb60dc6
 54	519	0.1780	sum colouring (colour = i+j in group 54), edge set by local search	sum_54_54	95703ab52c1cc7a5302a44155ff45b821cda715acdce71e3d502c47849391065
@@ -43,4 +43,15 @@ n	best_LB	LB/n^2	family	detail	sha256_sorted_edges
 73	861	0.1616	sum colouring (colour = i+j in group 73), edge set by local search	sum_73_73	3afa013a61c696836b61e4b0b67efaa1fbc7bff42c0ebe7981996398ad58934c
 79	987	0.1581	sum colouring (colour = i+j in group 79), edge set by local search	sum_79_79	24be976ffddb7a42f84619fc08a49761753b36066d1b15fc3ef2d4e5786d4581
 81	1026	0.1564	sum colouring (colour = i+j in group 81), edge set by local search	sum_81_81	d08b71d456e494b1cf120c6d0332b39a668bfaad54b753ad202590063bcd3630
-83	1074	0.1559	sum colouring (colour = i+j in group 83), edge set by local search	sum_83_83	91f786e135b6b0d537fa2c0891ca87f4ff81953466789b4456de50598a614172
+83	1077	0.1563	sum colouring (colour = i+j in group 83), edge set by local search	sum_83_83	3829b1f2eec4f1747490aded3b4a42506a0ad5ae9e43244a68499ea8df6c2c8f
+89	1207	0.1524	sum colouring (colour = i+j in group 89), edge set by local search	sum_89_89	350e51996f288ab898216adccaa7cd390a5ca878f9b1e2eff6ad5fac98ea6ec7
+97	1395	0.1483	sum colouring (colour = i+j in group 97), edge set by local search	sum_97_97	244154bc5fa8c18a8e06852f5cd1de3772a9eed66ddeab84e1d54865540172aa
+101	1496	0.1467	sum colouring (colour = i+j in group 101), edge set by local search	sum_101_101	0a5de6be06c516d5c0a40d14347aec08b85e65a1e29babaac95889b67d0afe69
+103	1547	0.1458	sum colouring (colour = i+j in group 103), edge set by local search	sum_103_103	16d26e58cba2e2f18627b52e34dab2f234d99890b0bb82ebbc194a2f5f5d8e43
+107	1651	0.1442	sum colouring (colour = i+j in group 107), edge set by local search	sum_107_107	835ff3f9e38c6444eac8fe3d5b1d13eb20f2d25da0072e91d113f653e1316130
+109	1697	0.1428	sum colouring (colour = i+j in group 109), edge set by local search	sum_109_109	5a8c81de6670a0ca62980216d43ee5de4ea449755c70e8cacc9d594bf62763a3
+113	1809	0.1417	sum colouring (colour = i+j in group 113), edge set by local search	sum_113_113	453e2312ec90904338b9d17f55bcaf48d53277c82230bd5b0ce171d3596b8f29
+121	2036	0.1391	sum colouring (colour = i+j in group 121), edge set by local search	sum_121_121	4940e7b06f3ab6bce92a47373263de1a224e0eefd48b3c70b06d0217dc30c744
+125	2143	0.1372	sum colouring (colour = i+j in group 125), edge set by local search	sum_125_125	bc6808581e670f3435e506b4c9d1084ee578a83520b5766bb367a9649d638902
+127	2199	0.1363	sum colouring (colour = i+j in group 127), edge set by local search	sum_127_127	ef059fbac12aac9feb67aa6999ea43ee0d6dd06f8d1f6d67afc0eb63792e2bc4
+128	2229	0.1360	sum colouring (colour = i+j in group 128), edge set by local search	sum_128_128	e597d7e4bac1c0a938772fe29f9e906bffc2d9acf69df5b5ba6556e25d9091ee
