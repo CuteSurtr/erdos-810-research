@@ -27,7 +27,8 @@ The schedule changes of 16:05 UTC applied:
 | **No 12-vertex graph with 41 edges is 12-good** | **proved** (exhaustive checker A, all 512 shards; independent checker B on Δ ≤ 9, 512/512 shards; Δ = 10, 11 by SAT's DRAT-checked cubes) | §4.3 |
 | M(12) ≥ 40 | **certificate-verified** (`certs.json["12"]`) | §3 |
 | **M(12) = 40** | **proved** | the two rows above |
-| Good 12-vertex 40-edge graphs: max degree ∈ {7, 8, 9}; Δ ≤ 9 counts exact, see §2.3 | Δ ≤ 9: *unfinished* at the time of writing (see §2.3 for the final shard count); Δ ≥ 10: *partial* (181/512 full-range shards, none found) | §2.3 |
+| Good 12-vertex 40-edge graphs with Δ ≤ 9: exactly 3 330 (Δ=7: 1 202, Δ=8: 2 126, Δ=9: 2) | **proved** by checker A (exhaustive `-D9`, 512/512 shards); goodness of a random sample of 302, including both Δ=9 graphs, confirmed by SAT (§2.3) | §2.3 |
+| Good 12-vertex 40-edge graphs with Δ ≥ 10 | *partial*: none in 181/512 full-range shards (35 % of the space) | §2.3 |
 | n = 13, e = 48 | **unfinished**: 3 shards of 16 384 done (0 graphs), plan in `M13_PLAN.md` | §2.4 |
 
 A good 41-edge graph would have been an output of the pruned run, and there were none, so the
@@ -64,11 +65,16 @@ I did not reuse any first-run code. `prune810m.c`, `qcol.h`, `prune810b.c`, `fil
 
 At 41 edges SAT's open cubes are Δ = 7, 8, 9. The good 40-edge graphs found here:
 
-- **Run `-D9` (Δ ≤ 9, pruned checker A).** This is the exact Δ ≤ 9 census once all 512 shards
-  are done. The final numbers are in `shards_n12_e40-D9.tsv` and the summary in
-  `logs/degdist_n12_e40_D9.txt`.
-- **Full-range run.** 181 of 512 shards finished (`shards_n12_e40.tsv`; the run was stopped to
-  free cores). It found 1 126 good graphs: Δ = 7: 410, Δ = 8: 715, Δ = 9: 1, **Δ ≥ 10: 0**.
+- **Run `-D9` (Δ ≤ 9, pruned checker A), complete: 512/512 shards, 11 114 CPU-s.** It found
+  **3 330 good graphs: Δ = 7: 1 202, Δ = 8: 2 126, Δ = 9: 2.**
+  - Counts are in `shards_n12_e40-D9.tsv`, the graphs in `out/n12_e40-D9/`, and the degree
+    statistics in `logs/degdist_n12_e40_D9.txt`.
+  - The two Δ = 9 graphs are `KCRejpzvT{\|` (degrees 9 7⁶ 6⁴ 5) and `KCpbfTujm}Vn`
+    (degrees 9 8 7⁴ 6⁵ 5).
+  - Shards 317, 445 and 446 died silently on the first pass and were re-run.
+- **Full-range run.** 181 of 512 shards finished (`shards_n12_e40.tsv`,
+  `logs/degdist_n12_e40_full181.txt`). It was stopped to free cores. It found 1 126 good graphs:
+  Δ = 7: 410, Δ = 8: 715, Δ = 9: 1, **Δ ≥ 10: 0**.
 
 Note that res/mod shard numbers are not comparable between the `-D9` and full-range runs,
 because `-D` changes geng's tree. Only totals can be compared.
@@ -76,9 +82,9 @@ because `-D` changes geng's tree. Only totals can be compared.
 Takeaways for SAT:
 
 - Good 40-edge graphs are almost all Δ ∈ {7, 8}.
-- Δ = 9 is extremely rare (2 graphs in 438 `-D9` shards).
+- Δ = 9 is extremely rare: exactly 2 graphs up to isomorphism.
 - No Δ ≥ 10 graph appeared in 35 % of the full space.
-- The most common degree sequences are 8 7⁶ 6⁵ and 7⁸ 6⁴.
+- The most common degree sequences are 8 7⁶ 6⁵ (1 246) and 7⁸ 6⁴ (1 013).
 
 This fits SAT's findings: Δ = 7 and 8 are the dense, hard cubes, and Δ = 9 is nearly empty but
 hard to refute.
