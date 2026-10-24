@@ -2,11 +2,44 @@
 Symmetry breaking: every beta family here has an affine symmetry group acting
 transitively on colours (a -> r a; see symmetry.py), so we may assume colour 1
 has a largest support: |D_1| >= |D_a| for all a.
-usage: solve_cpsat.py beta p time_limit [workers] [hint.json]"""
+usage: solve_cpsat.py beta p time_limit [workers] [size|lex]"""
 import sys, json, time
 from ortools.sat.python import cp_model
 from model import build, var, unvar, edges_of
 from check_simple import check, affine_to_graph
+
+
+def closure(gens, limit):
+    nv = len(gens[0])
+    idt = tuple(range(nv))
+    seen = {idt}
+    frontier = [idt]
+    while frontier and len(seen) < limit:
+        nxt = []
+        for g in frontier:
+            for h in gens:
+                k = tuple(g[h[i]] for i in range(nv))
+                if k not in seen:
+                    seen.add(k)
+                    nxt.append(k)
+        frontier = nxt
+    seen.discard(idt)
+    return [list(g) for g in seen]
+
+
+def add_lex(M, X, perm):
+    """X >=lex (X_perm(0), X_perm(1), ...), variable order 0..nv-1."""
+    eq = M.new_constant(1)
+    for i in range(len(X)):
+        j = perm[i]
+        if j == i:
+            continue
+        a, b = X[i], X[j]
+        M.add_bool_or([eq.Not(), a, b.Not()])
+        e2 = M.new_bool_var('')
+        M.add_bool_or([eq.Not(), a.Not(), b.Not(), e2])
+        M.add_bool_or([eq.Not(), a, b, e2])
+        eq = e2
 
 
 def solve(beta, p, tl, workers=4, symbreak=True, hint=None, log=False):
@@ -20,7 +53,13 @@ def solve(beta, p, tl, workers=4, symbreak=True, hint=None, log=False):
     for c in cyc:
         M.add_bool_or([X[v].Not() for v in c])
     size = [None] + [sum(X[var(a, x, p)] for x in range(p)) for a in range(1, p)]
-    if symbreak:
+    if symbreak == 'lex':
+        # lex-leader constraints from the full hypergraph automorphism group
+        # (nauty generators, runs/aut_<beta>_<p>.json; closure up to 300 elements)
+        A = json.load(open('runs/aut_%s_%d.json' % (beta, p)))
+        for g in closure(A['gens'], 300):
+            add_lex(M, X, g)
+    elif symbreak:
         for a in range(2, p):
             M.add(size[1] >= size[a])
         if beta == 'zero':
@@ -57,9 +96,10 @@ def solve(beta, p, tl, workers=4, symbreak=True, hint=None, log=False):
 if __name__ == '__main__':
     beta, p, tl = sys.argv[1], int(sys.argv[2]), float(sys.argv[3])
     w = int(sys.argv[4]) if len(sys.argv) > 4 else 4
-    hint = json.load(open(sys.argv[5]))['sol'] if len(sys.argv) > 5 else None
-    r = solve(beta, p, tl, w, hint=hint)
+    sb = sys.argv[5] if len(sys.argv) > 5 else 'size'
+    r = solve(beta, p, tl, w, symbreak='lex' if sb == 'lex' else True)
+    r['symbreak'] = sb
     print(json.dumps({k: v for k, v in r.items() if k != 'sol'}), flush=True)
     import os
     os.makedirs('runs', exist_ok=True)
-    json.dump(r, open('runs/cpsat_%s_%d.json' % (beta, p), 'w'))
+    json.dump(r, open('runs/cpsat_%s_%d%s.json' % (beta, p, '_lex' if sb == 'lex' else ''), 'w'))
