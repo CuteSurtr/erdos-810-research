@@ -1,0 +1,4 @@
+vars 921 clauses 7795 x-orbits 7
+RESULT n=13 e=48 m=12 j=1 seed=0 UNSAT
+vars 1471 clauses 15717 x-orbits 13
+RESULT n=14 e=56 m=7 j=2 seed=0 UNSAT
