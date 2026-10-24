@@ -1,0 +1,4 @@
+RESULT n=26 e=170 m=12 j=2 seed=0 UNKNOWN
+RESULT n=28 e=197 m=7 j=4 seed=0 UNKNOWN
+RESULT n=30 e=226 m=10 j=3 seed=0 UNKNOWN
+RESULT n=20 e=104 m=10 j=2 seed=0 SAT check=True
