@@ -25,15 +25,15 @@
 },
 {
 "p": 11,
-"m": 60,
+"m": 61,
 "used": 10,
 "L": 4,
 "randL_median": 4,
 "deg": 9,
-"size_min": 4,
-"size_max": 7,
-"rowdeg_min": 4,
-"rowdeg_max": 6
+"size_min": 5,
+"size_max": 8,
+"rowdeg_min": 5,
+"rowdeg_max": 7
 },
 {
 "p": 13,

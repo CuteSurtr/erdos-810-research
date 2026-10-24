@@ -22,7 +22,7 @@ Maximum of m = Σ_a |D_a| over all β: F_p^× → F_p and all supports D_a ⊆ F
 | 3 | 4 | 4 | **proved** | 0.4444 | M(6) ≥ 4 | M(6) = 11 |
 | 5 | 12 | 12 | **proved** | 0.4800 | M(10) ≥ 12 | M(10) = 30* |
 | 7 | 25 | 25 | **proved** | 0.5102 | M(14) ≥ 25 | M(14) ≥ 53 (LB table) |
-| 11 | 60 | 81 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.4959 | M(22) ≥ 60 | M(22) ≥ 121 (LB table) |
+| 11 | 61 | 81 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.5041 | M(22) ≥ 61 | M(22) ≥ 121 (LB table) |
 | 13 | 82 | 113 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.4852 | M(26) ≥ 82 | — (no entry for n > 25) |
 | 17 | 132 | 194 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.4567 | M(34) ≥ 132 | — (no entry for n > 25) |
 | 19 | 161 | 242 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.4460 | M(38) ≥ 161 | — (no entry for n > 25) |
@@ -47,7 +47,7 @@ Status meanings:
 
 Bound on M(2p): each configuration is a 2p-vertex graph with p − 1 ≤ 2p colours, so
 M(2p) ≥ m. These bounds are **far below** the README values: M(14) ≥ 25 against 53, and
-M(22) ≥ 60 against 121. m/(2p)² falls from 0.128 (p = 7) to 0.085 (p = 61), while the README
+M(22) ≥ 61 against 121. m/(2p)² falls from 0.128 (p = 7) to 0.085 (p = 61), while the README
 LB/n² is about 0.24–0.27. Even with β optimised, the bipartite affine model is not
 competitive for lower bounds on M(n).
 
@@ -150,7 +150,7 @@ symmetry breaking):
 |---|---|---|---|---|---|
 | 5 | 11 | 12 | 12 | 12 | 12 |
 | 7 | 22 | 23 | 22 | 23 | 25 |
-| 11 | 59 ≤ · ≤ 101 | 55 ≤ · ≤ 65 | 59 ≤ · ≤ 75 | 55 ≤ · ≤ 65 | 60 ≤ · ≤ 81 |
+| 11 | 59 ≤ · ≤ 101 | 55 ≤ · ≤ 65 | 59 ≤ · ≤ 75 | 55 ≤ · ≤ 65 | 61 ≤ · ≤ 81 |
 
 The p = 11 bounds come from CP-SAT after 300 s on 1 worker (`logs/fixed_exact11.log`). The lower
 bounds are the best of CP-SAT and the fixed-β SA (β = 0: SA 59, CP-SAT 56).
@@ -193,8 +193,12 @@ them, and on p = 7 they slow the core-guided search (16 s → 75–174 s on one 
 - `lns.py` does alternating optimisation / LNS with CP-SAT: fix β on all but k = 3 random
   slopes, free those β values and all supports, and re-solve from the current configuration
   as a hint. k = 0 gives the pure fixed-β support optimisation. For p = 11, 13, 17, 19, 23,
-  240 s each, it never improved the SA values. Those values were also reached from several
-  seeds, so they look like stable local optima. That is not evidence of global optimality.
+  240 s each, it never improved the SA values.
+- **Single SA runs do not reliably reach the best value.** A final many-seed sweep
+  (`logs/many_seeds_11_13.log`, itf 15000) found m = 61 at p = 11. The outcomes over 150
+  seeds were 59: 83, 60: 65, 61: 2. At p = 13 the outcomes over 100 seeds were 79: 2, 80: 43,
+  81: 44, 82: 11. So the values for p ≥ 13, found with 3–6 runs each, may well be 1–2% below
+  what more search would give.
 - β seeds: random; β ≡ 0; a²; a³; 1/a; exponential g^a; discrete log log_g a (graph of a
   Sidon-type map); and an AP-free seed, β = 0 on g^A for a greedy 3AP-free A ⊆ Z_(p−1) and
   a² elsewhere (`gen_seeds.py`). The seeds do not matter: every seed lands within about 1–2%
@@ -232,7 +236,7 @@ the joint best. "seed" columns are free-β SA started from that β:
 
 | p | joint best | β=0 | β=a² | β=a³ | β=1/a | random β | exp seed | dlog seed | AP-free seed |
 |---|---|---|---|---|---|---|---|---|---|
-| 11 | 60 | 59 | 55 | 59 | 55 | 59 | – | – | – |
+| 11 | 61 | 59 | 55 | 59 | 55 | 59 | – | – | – |
 | 13 | 82 | 77 | 77 | 76 | 77 | 80 | 79 | 81 | 79 |
 | 17 | 132 | 129 | 126 | 132 | 126 | 129 | 128 | 131 | 131 |
 | 19 | 161 | 155 | 156 | 155 | 155 | 158 | 160 | 158 | 157 |
@@ -244,7 +248,7 @@ the joint best. "seed" columns are free-β SA started from that β:
 
 Observations (all *heuristic* for p ≥ 11):
 - **The intercept function barely matters once supports are arbitrary.** A uniformly random
-  fixed β gets within 0–2% of the joint best: 59/60, 225/226, 523/526 at p = 11, 23, 37.
+  fixed β gets within 0–3% of the joint best: 59/61, 225/226, 523/526 at p = 11, 23, 37.
   Optimising β gains about 1–3%. The exact values at p = 5, 7 show the same picture: joint
   25 against 22–23 for formulas at p = 7.
 - Among formulas, β = a³ is consistently best and close to random β. β = a² and β = 1/a
@@ -267,30 +271,32 @@ Observations (all *heuristic* for p ≥ 11):
   cosets, which would have much larger energy. Pairwise overlaps |D_a ∩ D_b| are slightly
   below the random expectation, by a factor of 0.94–0.97.
 - **Decay fit.** Fitting best m/p² for p ≥ 11 (`fit.py`, `fit.json`): the power law
-  m/p² ≈ 0.859·p^(−0.223), i.e. m ≈ 0.86·p^1.78, has rms 0.0024. a + b/√p gives a = 0.230,
-  rms 0.0055; a + b/log p gives a = 0.125, rms 0.0070; a + b/p gives rms 0.0110. The power
+  m/p² ≈ 0.872·p^(−0.228), i.e. m ≈ 0.87·p^1.77, has rms 0.0014. a + b/√p gives a = 0.226,
+  rms 0.0043; a + b/log p gives a = 0.118, rms 0.0058; a + b/p gives rms 0.0099. The power
   law fits best, which is consistent with m = o(p²) in this model. It is still a fit to
   heuristic lower bounds over p ≤ 61 and cannot separate p^(2−δ) from slowly decaying
   forms with a positive limit.
 
 ## 6. Unfinished: exact p = 11, 13 and a sharding plan
 
-The gap at p = 11 is 60 ≤ max ≤ 81. Measurements:
+The gap at p = 11 is 61 ≤ max ≤ 81. Measurements:
 - Joint CP-SAT (4 workers, canonical form): objective bound 112 after 70 s and 109 after
   10 min, stuck. Single-worker core-guided: 117 after 144 s, one core per ~60 s and slowing.
   Adding the pair or quadratic cuts did not lower the bound (110 after 25 s with gcut).
-- CaDiCaL on the CNF for m ≥ 61 (71 530 variables, 153 689 clauses): no answer after 75 min (still running at the time of this commit; see the final update below).
+- CaDiCaL on the CNF for m ≥ 61 (71 530 variables, 153 689 clauses, written before 61 was
+  found): no answer after 5170 s, then stopped. The instance is in fact satisfiable (SA later
+  found m = 61), so plain CDCL cannot even find a near-optimal configuration in that time.
 - Decision shards, fixing β(2), β(3) under the canonical form, `shard.py p target T W b2 b3 [b4]`.
   At p = 7 and target 26, single worker: shard (0,0) took 122 s and shard (1,3) took 5.6 s,
   against 3–10 s for the whole 4-worker optimisation. Sharding the joint CP-SAT therefore does
   not pay. At p = 11 the level-3 shard (β(2), β(3), β(4)) = (1, 0, 0) with target 61
-  was still UNKNOWN after 1200 s on one worker (`logs/shard11_100.log`; the 4 cores were shared with 4 other jobs).
+  (now known to be satisfiable overall) was still UNKNOWN after 1200 s on one worker (`logs/shard11_100.log`; the 4 cores were shared with 4 other jobs).
 - Fixed β at p = 11 (β = a²): bound 65 after 300 s. Fixed-β problems are much better
   conditioned, but there are about p^(p−1)/(2p²(p−1)²) ≈ 1.1·10⁶ β-orbits at p = 11.
 
 **Plan.** Level-2 shards are (β(2), β(3)) ∈ {(0,0), (0,1)} ∪ {(1,t) : t ∈ F_11}, 13 shards.
-Level 3 adds β(4) ∈ F_11, 143 shards. Run `python3 shard.py 11 61 <sec> <workers> b2 b3 b4`
-per shard; m ≥ 61 is ruled out when all shards report INFEASIBLE. At the measured rates this
+Level 3 adds β(4) ∈ F_11, 143 shards. Run `python3 shard.py 11 62 <sec> <workers> b2 b3 b4`
+per shard; m ≥ 62 is ruled out, proving max = 61, when all shards report INFEASIBLE. At the measured rates this
 is not feasible without a much stronger relaxation. I recommend first a stronger per-β upper
 bound, for example a Lovász-theta/SDP bound on the conflict structure, or the pair inequality
 refined with the arc-path structure (arcs of a colour pair form vertex-disjoint paths), and
@@ -323,7 +329,7 @@ outside the results folder. The 190 MB DRAT proof was not committed; its sha256 
 ## 8. Surprises and next steps
 
 - The biggest surprise: with arbitrary supports, **β is nearly irrelevant**. Random β is as
-  good as optimised β to within 1–2%, and all the difficulty sits in the supports. This
+  good as optimised β to within about 3%, and all the difficulty sits in the supports. This
   suggests the notes' remaining obstacle (arbitrary supports) is the whole problem, and that
   restricting β (polynomial, Sidon-type, …) buys little on the construction side.
 - The joint CP-SAT relaxation is extremely weak (bound ≈ 0.9p² at p = 11). The analytic
@@ -332,4 +338,4 @@ outside the results folder. The 190 MB DRAT proof was not committed; its sha256 
   viable at p = 11; (ii) longer or parallel-tempering SA at p ≥ 61 to firm up the decay
   exponent; (iii) the supports and β both look random-like, so a random-model heuristic (each
   incidence kept independently, then repaired) could predict the decay exponent and be
-  compared with the fit m ≈ 0.86·p^1.78.
+  compared with the fit m ≈ 0.87·p^1.77.
