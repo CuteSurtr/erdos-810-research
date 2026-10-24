@@ -8,7 +8,7 @@ rainbow condition is:  z[a][x1][t] + z[a][x2][t] + W[x2][a x1 + t] + W[x1][a x2 
 from ortools.sat.python import cp_model
 
 
-def build(p, sym=True, fixed_beta=None, fix=None, hint=None, cuts=True, symL=True):
+def build(p, sym=True, fixed_beta=None, fix=None, hint=None, cuts=True, symL=True, gcut=True, target=None):
     m = cp_model.CpModel()
     S = range(1, p)
     B = {(a, t): m.NewBoolVar(f"B{a}_{t}") for a in S for t in range(p)}
@@ -54,7 +54,12 @@ def build(p, sym=True, fixed_beta=None, fix=None, hint=None, cuts=True, symL=Tru
         for a, t in fix.items():
             m.Add(B[a, t] == 1)
     obj = sum(z.values())
-    m.Maximize(obj)
+    if gcut:
+        add_global_cut(m, p, z, W, obj)
+    if target is not None:
+        m.Add(obj >= target)
+    else:
+        m.Maximize(obj)
     if hint:
         beta, D = hint
         for a in S:
@@ -104,3 +109,21 @@ def add_pair_cuts(m, p, z, W):
                 d = (sum(W[i1, j] + W[i2, j] for j in range(p)) if side == 0
                      else sum(W[j, i1] + W[j, i2] for j in range(p)))
                 m.Add(sum(Ks) + 2 * sum(Cs) <= d)
+
+
+def add_global_cut(m, p, z, W, obj):
+    """Summed pair inequality: sum_a C(|D_a|,2) + 2 sum_y C(deg y,2) <= (p-1) m, and the
+    column version with row degrees."""
+    S = range(1, p)
+    tri = [n * (n - 1) // 2 for n in range(p + 1)]
+    def qv(expr, cap):
+        s_ = m.NewIntVar(0, cap, "")
+        m.Add(s_ == expr)
+        q = m.NewIntVar(0, tri[cap], "")
+        m.AddElement(s_, tri[:cap + 1], q)
+        return q
+    qa = [qv(sum(z[a, x, t] for x in range(p) for t in range(p)), p) for a in S]
+    qy = [qv(sum(W[x, y] for x in range(p)), p - 1) for y in range(p)]
+    qx = [qv(sum(W[x, y] for y in range(p)), p - 1) for x in range(p)]
+    m.Add(sum(qa) + 2 * sum(qy) <= (p - 1) * obj)
+    m.Add(sum(qa) + 2 * sum(qx) <= (p - 1) * obj)

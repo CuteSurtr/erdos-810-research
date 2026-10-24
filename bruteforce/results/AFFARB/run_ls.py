@@ -15,7 +15,7 @@ def parse(out):
 
 def job(args):
     p, seed, iters, init, fixb, lam = args
-    out = subprocess.run(["./ls", str(p), str(seed), str(iters), init, str(fixb), str(lam)], capture_output=True, text=True).stdout
+    out = subprocess.run(["./ls", str(p), str(seed), str(iters), init.format(p=p), str(fixb), str(lam)], capture_output=True, text=True).stdout
     return args, parse(out)
 
 def save(p, m, beta, D, src):
