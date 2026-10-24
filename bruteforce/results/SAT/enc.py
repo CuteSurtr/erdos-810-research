@@ -14,7 +14,7 @@ from pysat.card import CardEnc, EncType
 from pysat.formula import IDPool, CNF
 
 
-def build(n, e, sb='degcol', k=None, maxdeg=None, degseq=None, amo=False, kst=False):
+def build(n, e, sb='degcol', k=None, maxdeg=None, degseq=None, amo=False, kst=False, fix=None):
     k = n if k is None else k
     pool = IDPool()
     cnf = CNF()
@@ -79,7 +79,7 @@ def build(n, e, sb='degcol', k=None, maxdeg=None, degseq=None, amo=False, kst=Fa
     VDEG = sb in ('deg', 'degcol', 'degcollex')
     COL = sb in ('col', 'degcol', 'degcollex')
     LEX = sb == 'degcollex'
-    if VDEG or maxdeg is not None or degseq is not None:
+    if VDEG or maxdeg is not None or degseq is not None or fix:
         # exact unary degree counters via sequential counter: s[v][i][j] <-> (|N(v) cap first i| >= j)
         D = {}
         for v in V:
@@ -185,6 +185,11 @@ def build(n, e, sb='degcol', k=None, maxdeg=None, degseq=None, amo=False, kst=Fa
                 cnf.append([ge(v, dv)])
             if dv + 1 <= n - 1:
                 cnf.append([-ge(v, dv + 1)])
+    for v, dv in (fix or {}).items():
+        if dv >= 1:
+            cnf.append([ge(v, dv)])
+        if dv + 1 <= n - 1:
+            cnf.append([-ge(v, dv + 1)])
     return cnf, pool, x, y, edges
 
 
@@ -208,7 +213,9 @@ if __name__ == '__main__':
     ap.add_argument('--maxdeg', type=int)
     ap.add_argument('--amo', action='store_true')
     ap.add_argument('--kst', action='store_true')
+    ap.add_argument('--fix', default='', help='comma list v=d: deg(v) == d exactly')
     a = ap.parse_args()
-    cnf, pool, *_ = build(a.n, a.e, a.sb, a.k, a.maxdeg, amo=a.amo, kst=a.kst)
+    fix = dict(tuple(map(int, t.split('='))) for t in a.fix.split(',') if t)
+    cnf, pool, *_ = build(a.n, a.e, a.sb, a.k, a.maxdeg, amo=a.amo, kst=a.kst, fix=fix)
     cnf.to_file(a.out)
     print(a.out, 'vars', cnf.nv, 'clauses', len(cnf.clauses), file=sys.stderr)
