@@ -1,2 +1,9 @@
 {"beta": "a2", "p": 17, "target": 127, "shard": null, "status": "UNKNOWN", "time": 500.00399708747864}
 {"beta": "a3", "p": 17, "target": 134, "shard": null, "status": "UNKNOWN", "time": 500.00346660614014}
+{"beta": "zero", "p": 17, "target": 131, "shard": null, "status": "UNKNOWN", "time": 499.98020577430725}
+{"beta": "a2", "p": 19, "target": 157, "shard": null, "status": "UNKNOWN", "time": 500.0037486553192}
+{"beta": "a3", "p": 19, "target": 157, "shard": null, "status": "UNKNOWN", "time": 500.00267243385315}
+{"beta": "zero", "p": 19, "target": 157, "shard": null, "status": "UNKNOWN", "time": 500.0026276111603}
+{"beta": "a2", "p": 23, "target": 223, "shard": null, "status": "UNKNOWN", "time": 500.00303888320923}
+{"beta": "a3", "p": 23, "target": 225, "shard": null, "status": "UNKNOWN", "time": 500.00515151023865}
+{"beta": "zero", "p": 23, "target": 222, "shard": null, "status": "UNKNOWN", "time": 500.0033950805664}
