@@ -182,6 +182,36 @@
 "55": {
 "sat": 12,
 "unsat": null,
-"unknown": null
+"unknown": 13
+},
+"56": {
+"sat": 0,
+"unsat": null,
+"unknown": 13
+},
+"57": {
+"sat": 0,
+"unsat": null,
+"unknown": 13
+},
+"59": {
+"sat": 13,
+"unsat": null,
+"unknown": 14
+},
+"60": {
+"sat": 13,
+"unsat": null,
+"unknown": 14
+},
+"61": {
+"sat": 13,
+"unsat": null,
+"unknown": 14
+},
+"62": {
+"sat": 13,
+"unsat": null,
+"unknown": 14
 }
 }

@@ -55,6 +55,9 @@ for fn in glob.glob('runs/cyc/c*.txt'):
     Dg = [tuple(map(int, l.split())) for l in open(fn) if l.strip()]
     E = sorted([[min(i, (i + d) % n), max(i, (i + d) % n), (i + g) % n] for d, g in Dg for i in range(n)])
     add(n, 'cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)', 'D,g=%s' % Dg, E)
+for fn in glob.glob('runs/pad/p*.txt'):
+    m = re.match(r'p(\d+)_from(\d+)', os.path.basename(fn)); n = int(m.group(1))
+    add(n, 'best example for n=%s plus pendant edges (M(n+1) >= M(n)+1)' % m.group(2), os.path.basename(fn), load(fn))
 cycopt = {}
 for fn in glob.glob('runs/cycsat/n*.jsonl'):
     for l in open(fn):

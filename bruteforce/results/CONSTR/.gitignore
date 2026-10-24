@@ -1,3 +1,5 @@
 allowed/
 ls
 *.allowed
+__pycache__/
+cyc

@@ -1,0 +1,10 @@
+points: 69 (n=13..128)
+A: c n^2                         k=1 RSS=1.29078 AIC=-272.54 params=c=0.2248
+    extrapolated LB/n^2 -> n=100: 0.2248 n^2, n=1000: 0.2248 n^2, n=1000000: 0.2248 n^2
+B: c n^2/log n                   k=1 RSS=0.17276 AIC=-411.31 params=c=0.8457
+    extrapolated LB/n^2 -> n=100: 0.1836 n^2, n=1000: 0.1224 n^2, n=1000000: 0.06121 n^2
+C: c n^(2-delta)                 k=2 RSS=0.06861 AIC=-473.02 params=c=0.5312 delta=0.2258
+    extrapolated LB/n^2 -> n=100: 0.1878 n^2, n=1000: 0.1117 n^2, n=1000000: 0.02348 n^2
+D: c n^2 exp(-a sqrt(log n))     k=2 RSS=0.08821 AIC=-455.69 params=c=1.2039 a=0.8625
+    extrapolated LB/n^2 -> n=100: 0.1891 n^2, n=1000: 0.1248 n^2, n=1000000: 0.04879 n^2
+E: c n^2 + d n^1.5               (fit on LB/n^2) c=0.1311 d=0.6160 RSS(ratio)=0.006219

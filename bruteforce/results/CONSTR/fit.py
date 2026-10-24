@@ -10,15 +10,16 @@ usage: fit.py [nmin]   writes fits.txt"""
 import json, math, os, sys
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 nmin = int(sys.argv[1]) if len(sys.argv) > 1 else 13
+nmax = int(sys.argv[2]) if len(sys.argv) > 2 else 10**9
 data = {}
 old = json.load(open('../../data/results-2026-10-14.json'))['lower_bounds']
 for k, v in old.items():
     if int(k) >= 13: data[int(k)] = v['lower_bound']
-if os.path.exists('small_improvements.json'):
-    for k, v in json.load(open('small_improvements.json')).items(): data[int(k)] = max(data.get(int(k), 0), len(v))
+if os.path.exists('small_best_counts.json'):   # best verified of (this task, LB task @d6dc4e1), n=13..25
+    for k, v in json.load(open('small_best_counts.json')).items(): data[int(k)] = max(data.get(int(k), 0), v)
 for l in open('trend.tsv').readlines()[1:]:
     f = l.split('\t'); data[int(f[0])] = max(data.get(int(f[0]), 0), int(f[1]))
-pts = sorted((n, e) for n, e in data.items() if n >= nmin)
+pts = sorted((n, e) for n, e in data.items() if nmin <= n <= nmax)
 
 def linfit(xs, ys):
     """least squares y = a + b x (xs None -> constant)"""
@@ -50,4 +51,4 @@ xs = [n ** -0.5 for n, _ in pts]; ys = [e / n / n for n, e in pts]
 (a, b), r = linfit(xs, ys)
 out.append('%-32s (fit on LB/n^2) c=%.4f d=%.4f RSS(ratio)=%.6f' % ("E: c n^2 + d n^1.5", a, b, r))
 txt = 'points: %d (n=%d..%d)\n' % (m, pts[0][0], pts[-1][0]) + '\n'.join(out) + '\n'
-open('fits_nmin%d.txt' % nmin, 'w').write(txt); print(txt)
+open('fits_n%d-%d.txt' % (nmin, min(nmax, pts[-1][0])), 'w').write(txt); print(txt)
