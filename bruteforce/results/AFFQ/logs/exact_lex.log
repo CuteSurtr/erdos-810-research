@@ -1,0 +1,2 @@
+{"beta": "zero", "p": 11, "m": 59, "ub": 65, "status": "FEASIBLE", "time": 900.0807640552521, "nclauses": 470, "check": "ok, 156 four-cycles", "symbreak": "lex"}
+{"beta": "a3", "p": 13, "m": 76, "ub": 79, "status": "FEASIBLE", "time": 900.0161306858063, "nclauses": 810, "check": "ok, 178 four-cycles", "symbreak": "lex"}

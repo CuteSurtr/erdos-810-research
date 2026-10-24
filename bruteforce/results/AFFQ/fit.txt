@@ -1,0 +1,4 @@
+a2: m/p^2 ~ 0.778 p^-0.204 (max resid 0.0227);  ~ 0.651 - 0.0761 ln p (max resid 0.0139); p range 11..101
+a3: m/p^2 ~ 0.831 p^-0.218 (max resid 0.0200);  ~ 0.682 - 0.0830 ln p (max resid 0.0140); p range 11..101
+inv: m/p^2 ~ 0.772 p^-0.202 (max resid 0.0217);  ~ 0.650 - 0.0758 ln p (max resid 0.0136); p range 11..97
+zero: m/p^2 ~ 0.832 p^-0.218 (max resid 0.0163);  ~ 0.684 - 0.0835 ln p (max resid 0.0126); p range 11..97

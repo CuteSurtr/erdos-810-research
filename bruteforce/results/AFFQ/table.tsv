@@ -17,11 +17,16 @@ a2	59	1179	1769	heuristic LB (certificate-verified); UB from distinct points	0.3
 a2	61	1262	1890	heuristic LB (certificate-verified); UB from distinct points	0.3392
 a2	67	1475	2277	heuristic LB (certificate-verified); UB from distinct points	0.3286
 a2	71	1642	2555	heuristic LB (certificate-verified); UB from distinct points	0.3257
-a2	73	1720	2700	heuristic LB (certificate-verified); UB from distinct points	0.3228
+a2	73	1725	2700	heuristic LB (certificate-verified); UB from distinct points	0.3237
+a2	79	1976	3159	heuristic LB (certificate-verified); UB from distinct points	0.3166
+a2	83	2158	3485	heuristic LB (certificate-verified); UB from distinct points	0.3133
+a2	89	2459	4004	heuristic LB (certificate-verified); UB from distinct points	0.3104
+a2	97	2834	4752	heuristic LB (certificate-verified); UB from distinct points	0.3012
+a2	101	3028	5150	heuristic LB (certificate-verified); UB from distinct points	0.2968
 a3	5	12	12	proved (CP-SAT + RC2 + brute force)	0.48
 a3	7	22	22	proved (CP-SAT + RC2)	0.449
 a3	11	59	59	proved (CP-SAT + RC2)	0.4876
-a3	13	76	78	heuristic LB (certificate-verified); UB from CP-SAT FEASIBLE	0.4497
+a3	13	77	78	heuristic LB (certificate-verified); UB from CP-SAT FEASIBLE	0.4556
 a3	17	133	184	heuristic LB (certificate-verified); UB from distinct points	0.4602
 a3	19	156	231	heuristic LB (certificate-verified); UB from distinct points	0.4321
 a3	23	224	341	heuristic LB (certificate-verified); UB from distinct points	0.4234
@@ -37,6 +42,11 @@ a3	61	1278	2450	heuristic LB (certificate-verified); UB from distinct points	0.3
 a3	67	1484	2959	heuristic LB (certificate-verified); UB from distinct points	0.3306
 a3	71	1659	3325	heuristic LB (certificate-verified); UB from distinct points	0.3291
 a3	73	1731	3516	heuristic LB (certificate-verified); UB from distinct points	0.3248
+a3	79	1985	4121	heuristic LB (certificate-verified); UB from distinct points	0.3181
+a3	83	2185	4551	heuristic LB (certificate-verified); UB from distinct points	0.3172
+a3	89	2452	5236	heuristic LB (certificate-verified); UB from distinct points	0.3096
+a3	97	2851	6224	heuristic LB (certificate-verified); UB from distinct points	0.303
+a3	101	3058	6750	heuristic LB (certificate-verified); UB from distinct points	0.2998
 inv	5	12	12	proved (CP-SAT + RC2 + brute force)	0.48
 inv	7	23	23	proved (CP-SAT + RC2)	0.4694
 inv	11	55	55	proved (CP-SAT + RC2)	0.4545
@@ -55,9 +65,14 @@ inv	59	1179	1769	heuristic LB (certificate-verified); UB from distinct points	0.
 inv	61	1262	1890	heuristic LB (certificate-verified); UB from distinct points	0.3392
 inv	67	1475	2277	heuristic LB (certificate-verified); UB from distinct points	0.3286
 inv	71	1642	2555	heuristic LB (certificate-verified); UB from distinct points	0.3257
+inv	73	1725	2700	heuristic LB (certificate-verified); UB from distinct points	0.3237
+inv	79	1976	3159	heuristic LB (certificate-verified); UB from distinct points	0.3166
+inv	83	2158	3485	heuristic LB (certificate-verified); UB from distinct points	0.3133
+inv	89	2459	4004	heuristic LB (certificate-verified); UB from distinct points	0.3104
+inv	97	2834	4752	heuristic LB (certificate-verified); UB from distinct points	0.3012
 zero	5	11	11	proved (CP-SAT + RC2 + brute force)	0.44
 zero	7	22	22	proved (CP-SAT + RC2)	0.449
-zero	11	59	67	heuristic LB (certificate-verified); UB from CP-SAT FEASIBLE	0.4876
+zero	11	59	65	heuristic LB (certificate-verified); UB from CP-SAT FEASIBLE lex	0.4876
 zero	13	78	102	heuristic LB (certificate-verified); UB from CP-SAT FEASIBLE	0.4615
 zero	17	130	257	heuristic LB (certificate-verified); UB from distinct points	0.4498
 zero	19	156	325	heuristic LB (certificate-verified); UB from distinct points	0.4321
@@ -73,3 +88,8 @@ zero	59	1187	3365	heuristic LB (certificate-verified); UB from distinct points	0
 zero	61	1264	3601	heuristic LB (certificate-verified); UB from distinct points	0.3397
 zero	67	1483	4357	heuristic LB (certificate-verified); UB from distinct points	0.3304
 zero	71	1647	4901	heuristic LB (certificate-verified); UB from distinct points	0.3267
+zero	73	1732	5185	heuristic LB (certificate-verified); UB from distinct points	0.325
+zero	79	1976	6085	heuristic LB (certificate-verified); UB from distinct points	0.3166
+zero	83	2159	6725	heuristic LB (certificate-verified); UB from distinct points	0.3134
+zero	89	2440	7745	heuristic LB (certificate-verified); UB from distinct points	0.308
+zero	97	2833	9217	heuristic LB (certificate-verified); UB from distinct points	0.3011
