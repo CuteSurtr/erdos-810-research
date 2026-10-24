@@ -1,0 +1,5 @@
+p=3: per-beta CP-SAT optimum == brute force for 9/9 beta; global max 4
+p=5: per-beta CP-SAT optimum == brute force for 625/625 beta; global max 12
+p=3: random (beta,D): model feasibility == direct 4-cycle check in 300/300 cases (248 valid)
+p=5: random (beta,D): model feasibility == direct 4-cycle check in 300/300 cases (137 valid)
+p=7: random (beta,D): model feasibility == direct 4-cycle check in 150/150 cases (37 valid)
