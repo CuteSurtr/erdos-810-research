@@ -12,7 +12,7 @@ p	best m	upper bound	status	m/p^2
 37	523	916	certificate-verified LB; UB proved, not tight	0.3820
 41	631	1124	certificate-verified LB; UB proved, not tight	0.3754
 43	682	1236	certificate-verified LB; UB proved, not tight	0.3688
-47	797	1477	certificate-verified LB; UB proved, not tight	0.3608
+47	800	1477	certificate-verified LB; UB proved, not tight	0.3622
 53	986	1878	certificate-verified LB; UB proved, not tight	0.3510
 59	1185	2326	certificate-verified LB; UB proved, not tight	0.3404
-61	1260	2486	certificate-verified LB; UB proved, not tight	0.3386
+61	1267	2486	certificate-verified LB; UB proved, not tight	0.3405

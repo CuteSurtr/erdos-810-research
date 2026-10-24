@@ -32,10 +32,10 @@ Maximum of m = Σ_a |D_a| over all β: F_p^× → F_p and all supports D_a ⊆ F
 | 37 | 523 | 916 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3820 | M(74) ≥ 523 | — (no entry for n > 25) |
 | 41 | 631 | 1124 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3754 | M(82) ≥ 631 | — (no entry for n > 25) |
 | 43 | 682 | 1236 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3688 | M(86) ≥ 682 | — (no entry for n > 25) |
-| 47 | 797 | 1477 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3608 | M(94) ≥ 797 | — (no entry for n > 25) |
+| 47 | 800 | 1477 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3622 | M(94) ≥ 800 | — (no entry for n > 25) |
 | 53 | 986 | 1878 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3510 | M(106) ≥ 986 | — (no entry for n > 25) |
 | 59 | 1185 | 2326 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3404 | M(118) ≥ 1185 | — (no entry for n > 25) |
-| 61 | 1260 | 2486 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3386 | M(122) ≥ 1260 | — (no entry for n > 25) |
+| 61 | 1267 | 2486 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3405 | M(122) ≥ 1267 | — (no entry for n > 25) |
 
 Status meanings:
 - *proved* (p = 3, 5, 7): two or more independent exhaustive methods agree, see §4.3. For
@@ -249,6 +249,11 @@ Observations (all *heuristic* for p ≥ 11):
   (p = 37, 41, 47, 53, 61, with L = 11–48). They keep a large pencil on the line β = 0, which
   by Solymosi's theorem gives o(p²) asymptotically, but they reach the same m. Support sizes
   are fairly balanced, with |D_a| from 16 to 25 and row degrees from 12 to 24 at p = 61.
+- **Supports look random as well** (`supports.py`, `supports.json`). For the best
+  configurations, the additive and multiplicative energies of the D_a (|D_a| > 2) are
+  0.99–1.04 times those of random sets of the same size. That rules out intervals, APs and
+  cosets, which would have much larger energy. Pairwise overlaps |D_a ∩ D_b| are slightly
+  below the random expectation, by a factor of 0.94–0.98.
 - **Decay fit.** Fitting best m/p² for p ≥ 11 (`fit.py`, `fit.json`): the power law
   m/p² ≈ 0.870·p^(−0.228), i.e. m ≈ 0.87·p^1.77, has rms 0.0029. a + b/√p gives a = 0.226,
   rms 0.0059; a + b/log p gives a = 0.119, rms 0.0075; a + b/p gives rms 0.0115. The power
@@ -312,5 +317,6 @@ outside the results folder. The 190 MB DRAT proof was not committed; its sha256 
   counting bound (≈ 0.669p²) beats it, but it is still far from the truth (≈ 0.5p² at p = 11).
 - Next steps: (i) a stronger certified upper bound for fixed β (SDP), to make β-branching
   viable at p = 11; (ii) longer or parallel-tempering SA at p ≥ 61 to firm up the decay
-  exponent; (iii) test whether optimal supports have additive structure, for example by
-  comparing D_a with cosets or intervals in log coordinates. I did not do this.
+  exponent; (iii) the supports and β both look random-like, so a random-model heuristic (each
+  incidence kept independently, then repaired) could predict the decay exponent and be
+  compared with the fit m ≈ 0.87·p^1.77.
