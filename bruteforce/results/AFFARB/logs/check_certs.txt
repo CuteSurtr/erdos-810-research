@@ -8,10 +8,10 @@ n=38: 161 edges, 874 4-cycles, all rainbow, colours used 18 <= n
 n=46: 226 edges, 1674 4-cycles, all rainbow, colours used 22 <= n
 n=58: 343 edges, 3741 4-cycles, all rainbow, colours used 28 <= n
 n=62: 386 edges, 4630 4-cycles, all rainbow, colours used 30 <= n
-n=74: 523 edges, 7991 4-cycles, all rainbow, colours used 36 <= n
-n=82: 631 edges, 11400 4-cycles, all rainbow, colours used 40 <= n
-n=86: 682 edges, 12896 4-cycles, all rainbow, colours used 42 <= n
+n=74: 526 edges, 8082 4-cycles, all rainbow, colours used 36 <= n
+n=82: 633 edges, 11433 4-cycles, all rainbow, colours used 40 <= n
+n=86: 685 edges, 13138 4-cycles, all rainbow, colours used 42 <= n
 n=94: 800 edges, 17268 4-cycles, all rainbow, colours used 46 <= n
-n=106: 986 edges, 25331 4-cycles, all rainbow, colours used 52 <= n
-n=118: 1185 edges, 34625 4-cycles, all rainbow, colours used 58 <= n
+n=106: 992 edges, 25873 4-cycles, all rainbow, colours used 52 <= n
+n=118: 1195 edges, 35967 4-cycles, all rainbow, colours used 58 <= n
 n=122: 1267 edges, 39634 4-cycles, all rainbow, colours used 60 <= n

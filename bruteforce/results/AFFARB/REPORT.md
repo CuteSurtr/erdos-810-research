@@ -29,12 +29,12 @@ Maximum of m = Σ_a |D_a| over all β: F_p^× → F_p and all supports D_a ⊆ F
 | 23 | 226 | 354 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.4272 | M(46) ≥ 226 | — (no entry for n > 25) |
 | 29 | 343 | 563 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.4078 | M(58) ≥ 343 | — (no entry for n > 25) |
 | 31 | 386 | 643 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.4017 | M(62) ≥ 386 | — (no entry for n > 25) |
-| 37 | 523 | 916 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3820 | M(74) ≥ 523 | — (no entry for n > 25) |
-| 41 | 631 | 1124 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3754 | M(82) ≥ 631 | — (no entry for n > 25) |
-| 43 | 682 | 1236 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3688 | M(86) ≥ 682 | — (no entry for n > 25) |
+| 37 | 526 | 916 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3842 | M(74) ≥ 526 | — (no entry for n > 25) |
+| 41 | 633 | 1124 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3766 | M(82) ≥ 633 | — (no entry for n > 25) |
+| 43 | 685 | 1236 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3705 | M(86) ≥ 685 | — (no entry for n > 25) |
 | 47 | 800 | 1477 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3622 | M(94) ≥ 800 | — (no entry for n > 25) |
-| 53 | 986 | 1878 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3510 | M(106) ≥ 986 | — (no entry for n > 25) |
-| 59 | 1185 | 2326 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3404 | M(118) ≥ 1185 | — (no entry for n > 25) |
+| 53 | 992 | 1878 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3532 | M(106) ≥ 992 | — (no entry for n > 25) |
+| 59 | 1195 | 2326 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3433 | M(118) ≥ 1195 | — (no entry for n > 25) |
 | 61 | 1267 | 2486 | LB *certificate-verified* (heuristic search); UB *proved* (counting bound), gap open | 0.3405 | M(122) ≥ 1267 | — (no entry for n > 25) |
 
 Status meanings:
@@ -91,7 +91,7 @@ turns it into a weighted partial MaxSAT instance with soft units e[a,x] ↔ ∨_
   4-cycle checker `check.py` in 300/300 (p = 3), 300/300 (p = 5) and 150/150 (p = 7) cases,
   with both valid and invalid instances present.
 
-## Symmetry (step 2)
+### 4.2 Symmetry (step 2)
 
 Take row map x ↦ x' = ux + v and column map y ↦ y' = sy + t with u, s ∈ F_p^×, v, t ∈ F_p.
 An edge (x, ax + β(a)) of colour a goes to
@@ -116,15 +116,15 @@ number of points (a, β(a)) on each line. (Transposing rows and columns gives a'
 2. β(1) = 0;
 3. the first slope a ∈ {2, 3, …} with β(a) ≠ 0 (if any) has β(a) = 1.
 
-*Soundness.* Start from any valid configuration and let β = ua + v be a line with the maximum
+*Soundness.* Start from any valid configuration and let β = μa + ν be a line with the maximum
 number L ≥ 1 of points (vertical lines carry at most one point, and a non-vertical line through
-any point exists). Apply λ = 1, s = 1 (so u = 1, i.e. the row map is x ↦ x + v₀), with
-v₀ = u, t = −v: then β'(a) = β(a) − ua − v, which vanishes exactly on that line; occupancies
-are preserved, so (1) holds. Pick a₀ with β'(a₀) = 0 and apply λ = 1/a₀ with s = 1, t = v = 0:
-β''(a/a₀) = β'(a), so β''(1) = 0 and the zero line keeps L points, giving (1)–(2). Finally,
-the scaling u = s, λ = 1, t = v = 0 multiplies β by s and keeps every zero; choose s to make
-the first non-zero value equal to 1, giving (3). m is unchanged throughout, so the maximum
-over canonical configurations equals the unrestricted maximum. Empty D_a are allowed, and β
+any point exists). Apply the map with u = s = 1 (so λ = 1), row shift v = μ and column shift
+t = −ν. Then β'(a) = β(a) − μa − ν, which vanishes exactly on that line. Occupancies are
+preserved, so (1) holds. Pick a₀ with β'(a₀) = 0 and apply s = 1, u = a₀ (so λ = 1/a₀),
+t = v = 0. Then β''(a/a₀) = β'(a), so β''(1) = 0 and the zero line keeps L points, giving
+(1)–(2). Finally, the map u = s, t = v = 0 (so λ = 1) multiplies β by s and keeps every zero.
+Choosing s makes the first non-zero value equal to 1, giving (3). m is unchanged throughout,
+so the maximum over canonical configurations equals the unrestricted maximum. Empty D_a are allowed, and β
 on an unused slope is arbitrary, so the normalisation never constrains the supports.
 
 The model with only β(1) = β(2) = 0, β(3) ∈ {0, 1} (an earlier, weaker canonical form; sound by
@@ -155,7 +155,7 @@ symmetry breaking):
 The p = 11 bounds come from CP-SAT after 300 s on 1 worker (`logs/fixed_exact11.log`). The lower
 bounds are the best of CP-SAT and the fixed-β SA (β = 0: SA 59, CP-SAT 56).
 
-## Proved upper bound used in the table (counting bound)
+### 4.4 Proved upper bound used in the table (counting bound)
 
 **Lemma.** Let G be a bipartite graph with sides X, Y (|X| = |Y| = p), properly edge-coloured
 with at most p − 1 colours so that every 4-cycle is rainbow. For rows x₁ ≠ x₂ let d_i = deg x_i,
@@ -202,7 +202,16 @@ them, and on p = 7 they slow the core-guided search (16 s → 75–174 s on one 
 - Iteration budget: itf·p³ iterations, with itf = 15000 (p ≤ 13), 6000 (17–31) and
   1200 (37–61). Calibration at p = 31: itf 1200 gives 383 and 384 (43 s each), itf 6000
   gives 386, and itf 30000 gives 386 (1093 s). So the large-p values are not limited by run
-  length at this scale. LONGRUNS
+  length at this scale. At larger p a second round with itf 4500 (one run per p, random
+  seed) gave small gains: 37: 523 → 526, 41: 631 → 633, 43: 682 → 685, 47: 797 → 800,
+  53: 986 → 992, 59: 1185 → 1195, 61: 1260 → 1267. These are +0.3–0.8%, so the large-p values
+  are probably still slightly below the true maxima, by at most about 1% judging from this
+  trend. The table uses the best value found.
+- Lost logs: some run logs (first-round p = 59 and 61 lines of `logs/ls_big.log`, the
+  second-round p = 47 and 61 runs, and the first attempt at the p = 11 shard) were lost. A
+  `git pull --rebase` replaced tracked log files while the jobs were still writing to them. The
+  configurations themselves were saved by the driver to `best/*.json` and re-verified;
+  `logs/ls_long_round2.log` reconstructs the missing lines. The shard was re-run.
 
 ### 4.6 Verification (step 6)
 
@@ -213,7 +222,7 @@ them, and on p = 7 they slow the core-guided search (16 s → 75–174 s on one 
   saved configuration and again in `finalize.py`.
 - `check_certs.py` reads only `certs.json` (format level, no affine structure). It checks no
   loops or repeated edges, colours in 0..n−1, properness and all 4-cycles rainbow. All 17
-  certificates pass. The counts of 4-cycles, all rainbow, run from 0 (p = 3) to 39603
+  certificates pass. The counts of 4-cycles, all rainbow, run from 0 (p = 3) to 39634
   (p = 61), see `logs/check_certs.txt`.
 
 ## 5. Comparison and structure (step 5)
@@ -230,12 +239,12 @@ the joint best. "seed" columns are free-β SA started from that β:
 | 23 | 226 | 219 | 222 | 223 | 222 | 225 | 225 | 224 | 223 |
 | 29 | 343 | 333 | 331 | 340 | 328 | 338 | 336 | 339 | 341 |
 | 31 | 386 | 372 | 370 | 381 | 371 | 379 | 380 | 381 | 385 |
-| 37 | 523 | 515 | 513 | 519 | 513 | 523 | – | – | – |
-| 41 | 631 | 623 | 612 | 627 | 611 | 626 | – | – | – |
+| 37 | 526 | 515 | 513 | 519 | 513 | 523 | – | – | – |
+| 41 | 633 | 623 | 612 | 627 | 611 | 626 | – | – | – |
 
 Observations (all *heuristic* for p ≥ 11):
 - **The intercept function barely matters once supports are arbitrary.** A uniformly random
-  fixed β gets within 0–2% of the joint best: 59/60, 225/226, 523/523 at p = 11, 23, 37.
+  fixed β gets within 0–2% of the joint best: 59/60, 225/226, 523/526 at p = 11, 23, 37.
   Optimising β gains about 1–3%. The exact values at p = 5, 7 show the same picture: joint
   25 against 22–23 for formulas at p = 7.
 - Among formulas, β = a³ is consistently best and close to random β. β = a² and β = 1/a
@@ -243,20 +252,23 @@ Observations (all *heuristic* for p ≥ 11):
   because transposition sends β = a² to β′(a′) = −1/a′, which the scaling s = −1 turns into
   1/a′.
 - **Optimal β look unstructured** (`structure.json`). The interpolation degree of β on the
-  used slopes is maximal or nearly so, at least (number of used slopes) − 2, for every p ≥ 5. All p − 1 slopes
-  are used for every p ≥ 5. The maximum line occupancy L of {(a, β(a))} matches random
-  functions (L = 4–6, random median 4–7). The exceptions are runs seeded with β ≡ 0
-  (p = 37, 41, 47, 53, 61, with L = 11–48). They keep a large pencil on the line β = 0, which
-  by Solymosi's theorem gives o(p²) asymptotically, but they reach the same m. Support sizes
-  are fairly balanced, with |D_a| from 16 to 25 and row degrees from 12 to 24 at p = 61.
+  used slopes is maximal or nearly so, at least (number of used slopes) − 2, for every
+  p ≥ 5. All p − 1 slopes are used for every p ≥ 5. The maximum line occupancy L of {(a, β(a))} for the
+  best configurations is 4–7, the same as for random functions (median 3–7). Earlier runs
+  seeded with β ≡ 0 kept a huge pencil on the line β = 0 and still came within 1% of the
+  best: p = 47, 797 with L = 31; p = 53, 986 with L = 34; p = 61, 1260 with L = 48 of 60
+  slopes (these configurations are `best/{47,53,61}.json` at commit 89ddedf). Asymptotically
+  such a pencil is a group-table configuration and gives density o(p²) by Solymosi's theorem, but at
+  p ≤ 61 it costs nothing visible. Support sizes are fairly balanced: |D_a| from 17 to 26 and
+  row degrees from 18 to 23 at p = 61.
 - **Supports look random as well** (`supports.py`, `supports.json`). For the best
   configurations, the additive and multiplicative energies of the D_a (|D_a| > 2) are
   0.99–1.04 times those of random sets of the same size. That rules out intervals, APs and
   cosets, which would have much larger energy. Pairwise overlaps |D_a ∩ D_b| are slightly
-  below the random expectation, by a factor of 0.94–0.98.
+  below the random expectation, by a factor of 0.94–0.97.
 - **Decay fit.** Fitting best m/p² for p ≥ 11 (`fit.py`, `fit.json`): the power law
-  m/p² ≈ 0.870·p^(−0.228), i.e. m ≈ 0.87·p^1.77, has rms 0.0029. a + b/√p gives a = 0.226,
-  rms 0.0059; a + b/log p gives a = 0.119, rms 0.0075; a + b/p gives rms 0.0115. The power
+  m/p² ≈ 0.859·p^(−0.223), i.e. m ≈ 0.86·p^1.78, has rms 0.0024. a + b/√p gives a = 0.230,
+  rms 0.0055; a + b/log p gives a = 0.125, rms 0.0070; a + b/p gives rms 0.0110. The power
   law fits best, which is consistent with m = o(p²) in this model. It is still a fit to
   heuristic lower bounds over p ≤ 61 and cannot separate p^(2−δ) from slowly decaying
   forms with a positive limit.
@@ -267,11 +279,12 @@ The gap at p = 11 is 60 ≤ max ≤ 81. Measurements:
 - Joint CP-SAT (4 workers, canonical form): objective bound 112 after 70 s and 109 after
   10 min, stuck. Single-worker core-guided: 117 after 144 s, one core per ~60 s and slowing.
   Adding the pair or quadratic cuts did not lower the bound (110 after 25 s with gcut).
-- CaDiCaL on the CNF for m ≥ 61 (71 530 variables, 153 689 clauses): CADICAL11.
+- CaDiCaL on the CNF for m ≥ 61 (71 530 variables, 153 689 clauses): no answer after 75 min (still running at the time of this commit; see the final update below).
 - Decision shards, fixing β(2), β(3) under the canonical form, `shard.py p target T W b2 b3 [b4]`.
   At p = 7 and target 26, single worker: shard (0,0) took 122 s and shard (1,3) took 5.6 s,
   against 3–10 s for the whole 4-worker optimisation. Sharding the joint CP-SAT therefore does
-  not pay. SHARD11
+  not pay. At p = 11 the level-3 shard (β(2), β(3), β(4)) = (1, 0, 0) with target 61
+  was still UNKNOWN after 1200 s on one worker (`logs/shard11_100.log`; the 4 cores were shared with 4 other jobs).
 - Fixed β at p = 11 (β = a²): bound 65 after 300 s. Fixed-β problems are much better
   conditioned, but there are about p^(p−1)/(2p²(p−1)²) ≈ 1.1·10⁶ β-orbits at p = 11.
 
@@ -319,4 +332,4 @@ outside the results folder. The 190 MB DRAT proof was not committed; its sha256 
   viable at p = 11; (ii) longer or parallel-tempering SA at p ≥ 61 to firm up the decay
   exponent; (iii) the supports and β both look random-like, so a random-model heuristic (each
   incidence kept independently, then repaired) could predict the decay exponent and be
-  compared with the fit m ≈ 0.87·p^1.77.
+  compared with the fit m ≈ 0.86·p^1.78.
