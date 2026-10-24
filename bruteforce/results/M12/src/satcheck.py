@@ -4,7 +4,7 @@
 Reads graph6 lines from stdin; for each graph decides whether its edges can be
 coloured with K colours (default K = n) so that every 4-cycle gets 4 distinct
 colours.  4-cycles are enumerated directly as vertex 4-tuples (a,b,c,d) with
-ab, bc, cd, da edges; the SAT instance is: one colour per edge, and for every
+ab, bc, cd, da edges; the SAT instance is: at least one colour per edge (edge i restricted to colours <= i), and for every
 4-cycle and colour c at most one of its four edges has colour c.  Solved by
 CaDiCaL 1.9.5 through python-sat.  Prints "<g6> GOOD|BAD" per graph and a
 summary; with --cert also prints the colouring of good graphs."""
@@ -38,7 +38,9 @@ def good(n, E, K):
         if adj[a][b] and adj[b][c] and adj[c][d] and adj[d][a]:
             cycles.add(frozenset((key(a, b), key(b, c), key(c, d), key(d, a))))
     var = lambda e, c: e * K + c + 1
-    cls = [[var(e, c) for c in range(K)] for e in range(len(E))]
+    # colour symmetry breaking: edge number i (0-based) uses a colour <= i.
+    # Sound: renumber colours by first occurrence along the edge order.
+    cls = [[var(e, c) for c in range(min(K, e + 1))] for e in range(len(E))]
     for cyc in cycles:
         cyc = sorted(cyc)
         for e, f in itertools.combinations(cyc, 2):
