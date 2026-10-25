@@ -1,0 +1,2 @@
+{"42": "first-pass driver (k=11,12, 25 min) exited without logging; k_lo is CONSTR's model, re-verified",
+ "63": "first pass: k=14,15 ran 25 min; the driver exited at its deadline without logging the timeouts"}

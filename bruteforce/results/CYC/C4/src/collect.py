@@ -22,11 +22,13 @@ sols, certs, rows = {}, {}, []
 for n in NS:
     best, bestDg, unsat, unk, secs = 0, None, None, set(), 0.0
     if n in seed and check(n, seed[n])[0]: best, bestDg = len(seed[n]), seed[n]
-    f = f"{R}/runs/n{n}.jsonl"
-    if os.path.exists(f):
+    for f in [f"{R}/runs/n{n}.jsonl", f"{R}/runs/n{n}_side.jsonl", f"{R}/runs/n{n}_pass2.jsonl"]:
+        if not os.path.exists(f): continue
         for l in open(f):
             r = json.loads(l)
             if "summary" in r: secs += r["summary"]["secs"]; continue
+            if "res" not in r: continue
+            if "secs" in r and "wall" not in r: secs += r["secs"]
             if r["res"] == "SAT" and r.get("check") == "VALID" and r["size"] > best and check(n, r["Dg"])[0]:
                 best, bestDg = r["size"], r["Dg"]
             elif r["res"] == "UNSAT": unsat = r["k"] if unsat is None else min(unsat, r["k"])
@@ -38,6 +40,8 @@ for n in NS:
         d = drat.get((n, unsat))
         if d and d["drat_trim"] == "s VERIFIED": status = "proved (k_max; UNSAT DRAT-verified)"
         else: status = "proved by solver (k_max; UNSAT proof unchecked)"
+    elif best == 0:
+        status = "unfinished"
     else:
         status = "certificate-verified lower bound" + (f"; k={min(unk)} unknown (timeout)" if unk else "")
     if n % 4 == 0:
