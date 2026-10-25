@@ -1,0 +1,25 @@
+12 3 complete forms 24 cyccheck_ok 24 explicit_ok 24 distinct 24
+13 3 complete forms 31 cyccheck_ok 31 explicit_ok 31 distinct 31
+14 3 complete forms 103 cyccheck_ok 103 explicit_ok 103 distinct 103
+15 4 complete forms 12 cyccheck_ok 12 explicit_ok 12 distinct 12
+16 4 complete forms 58 cyccheck_ok 58 explicit_ok 58 distinct 58
+17 4 complete forms 191 cyccheck_ok 191 explicit_ok 191 distinct 191
+18 5 complete forms 1 cyccheck_ok 1 explicit_ok 1 distinct 1
+19 5 complete forms 14 cyccheck_ok 14 explicit_ok 14 distinct 14
+20 5 complete forms 165 cyccheck_ok 165 explicit_ok 165 distinct 165
+21 6 complete forms 1 cyccheck_ok 1 explicit_ok 1 distinct 1
+22 5 complete forms 4333 cyccheck_ok 4333 explicit_ok 4333 distinct 4333
+23 6 complete forms 28 cyccheck_ok 28 explicit_ok 28 distinct 28
+24 6 complete forms 362 cyccheck_ok 362 explicit_ok 362 distinct 362
+25 6 complete forms 2265 cyccheck_ok 2265 explicit_ok 2265 distinct 2265
+26 6 complete forms 15791 cyccheck_ok 15791 explicit_ok 15791 distinct 15791
+27 7 complete forms 10 cyccheck_ok 10 explicit_ok 10 distinct 10
+28 7 complete forms 285 cyccheck_ok 285 explicit_ok 285 distinct 285
+29 7 complete forms 2288 cyccheck_ok 2288 explicit_ok 2288 distinct 2288
+30 7 complete forms 49909 cyccheck_ok 49909 explicit_ok 49909 distinct 49909
+31 8 complete forms 1 cyccheck_ok 1 explicit_ok 1 distinct 1
+32 8 complete forms 128 cyccheck_ok 128 explicit_ok 128 distinct 128
+33 8 complete (case split unit/nounit) forms 1756 cyccheck_ok 1756 explicit_ok 1756 distinct 1756
+36 9 complete (case split unit/nounit) forms 59 cyccheck_ok 59 explicit_ok 59 distinct 59
+34 8 complete (case split unit/nounit) forms 25663 cyccheck_ok 25663 explicit_ok 25663 distinct 25663
+40 10 incomplete (lower bound on orbit count) forms 3 cyccheck_ok 3 explicit_ok 3 distinct 3
