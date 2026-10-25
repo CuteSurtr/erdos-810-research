@@ -1,0 +1,1 @@
+{"tag":"n38k10_C1s3","cnf_sha256":"dc4b226fd61f0580fa06517eab8ee8d03731be9ef191fc0d97123d36557ab9b9","header":"p cnf 7462 234670","solver":"cadical 1.7.3","result":"UNSATISFIABLE","solve_s":150.1,"proof_bytes":198779411,"checker":"drat-trim 2e3b2dc","check_s":550.9,"verdict":"s VERIFIED","utc":"2026-10-25T10:49:40Z"}
