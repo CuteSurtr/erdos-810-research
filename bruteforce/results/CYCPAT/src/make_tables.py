@@ -213,6 +213,19 @@ for line in out:
     if line.startswith('@@'): cur = line[2:]; sec[cur] = []
     elif cur: sec[cur].append(line)
 rep = open('src/REPORT.in.md').read()
+# n = 44 status line
+done44, pend44, sol44 = [], [], 0
+for c in ['nounit'] + [f'unit2_{e}' for e in range(2, 22)]:
+    try:
+        d = json.load(open(f'runs/split_n44_{c}.json'))
+        if d['status'] == 'complete': done44.append(c); sol44 += d['n_orbits']
+        else: pend44.append(c)
+    except Exception:
+        pend44.append(c); sol44 += len(partial_from_log(f'runs/split_n44_{c}.log'))
+fmt = lambda L: ', '.join(x.replace('unit2_', 'e=') for x in L) or 'none'
+n44 = (f"finished with **no solution**: {fmt(done44)}; unfinished: {fmt(pend44)}; solutions found so far: {sol44}"
+       if sol44 == 0 else f"finished: {fmt(done44)}; unfinished: {fmt(pend44)}; **solutions found: {sol44} orbit(s), so k = 11 = n/4 is achievable at n = 44**")
+rep = rep.replace('N44_STATUS', n44)
 for k, v in sec.items():
     rep = rep.replace('\n' + k + '\n', '\n' + '\n'.join(v).strip() + '\n')
 open('REPORT.md', 'w').write(rep)

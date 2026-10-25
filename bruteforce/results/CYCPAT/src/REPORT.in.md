@@ -77,6 +77,8 @@ Other solution files:
 - Validated at n = 28: 285 + 0 = 285 orbits, matching the unsplit run.
 - For n = 33, 34 and 36, `nounit` returned UNSAT in < 1 s, and `unit` finished in 580 s, 819 s and 927 s. A further split by the second-smallest orbit (`unit2:e`) is also implemented and was validated at n = 28 (the union over e gives the same 285 normal forms).
 
+- **n = 44, k = 11 = n/4** (split enumeration, unfinished): N44_STATUS.
+
 **Validation.** k_max agrees with CONSTR (`cyclic_family_status.json`) for every n = 13–34 and 36 in that file: SAT at k_max here. UNSAT at k_max+1 was re-proved here for n = 12, 16, 20, 24, 28, 32, 36; for the other n the CONSTR UNSAT result is used. k_max(12) = 3 (new here).
 
 - *Discrepancy in the task table:* `tasks/CYC.md` lists k_max = 4 for n = 14. CONSTR's own JSON (first UNSAT k = 4) and my enumeration both give **k_max(14) = 3**.
@@ -245,7 +247,12 @@ Binaries are built with `gcc -O2 -o src/X src/X.c` and are git-ignored. Raw logs
 - **Surprise:** k_max(n)/n > 1/4 happens exactly where the optimum is unique (18, 21, 31). This is consistent with a "random CSP near threshold" picture rather than an algebraic one.
 - **Discrepancy:** `tasks/CYC.md` has k_max(14) = 4, but CONSTR's JSON and this enumeration give 3.
 - Next steps:
-  1. Finish the n = 44, k = 11 split enumeration (`src/runsplit.sh 44 11`, run several workers in parallel; the e = 2 sub-case dominates, about 50 min at n = 40). If it is empty, k = n/4 fails at n = 44.
+  1. **Finish n = 44, k = 11 (sharding plan).** The split is exhaustive: "nounit" plus "unit2:e" for e = 2..21, where unit2:e means 1 ∈ D, g(1) = 0, e = min(D∖{1}).
+     - Status at wrap-up: N44_STATUS
+     - If every sub-case is UNSAT, k_max(44) ≤ 10 < n/4 (solver result; a DRAT check is advisable). This would be the first multiple of 4 where n/4 fails.
+     - Command for each remaining sub-case: `python3 src/cycenum.py 44 11 100000 99999 unit2:<e> > runs/split_n44_unit2_<e>.json 2> runs/split_n44_unit2_<e>.log`, or start several `src/runsplit.sh 44 11` / `src/runsplit_desc.sh 44 11` workers (mkdir locks under `runs/lock_n44_*`; delete the locks of unfinished cases first).
+     - Measured times at n = 40: e = 2: 3046 s, e = 3: 1012 s, e = 4: 540 s, e = 5/6: about 130/620 s, e ≥ 7: < 20 s. At n = 44: e ≥ 8: < 90 s, e = 7: 258 s, and e = 2..4 ran > 80 min without finishing.
+     - A faster solver (kissat), or a further split of e = 2 by the third orbit, is the obvious next step.
   2. Check whether the orbit counts at k = n/4 keep falling at n = 40, 44 (CYC agents).
   3. Try to prove the coset-rule death rate (character sums for the pattern count).
   4. Extend the Szemerédi obstruction from linear g to "piecewise linear" or Bohr-set-structured rules. Every rule tried so far fails in a way that could be explained by such a density argument.
