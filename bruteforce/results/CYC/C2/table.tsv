@@ -1,9 +1,9 @@
 n	k_lo	k_unsat	status	k_lo/n	seconds	notes
-39	9	10	exact (UNSAT DRAT-verified)	0.2308	517.8	
-48	11		lower bound (certificate-verified); k=[12] UNKNOWN (timeout)	0.2292	1499.0	
-50	11		lower bound (certificate-verified); k=[12] UNKNOWN (timeout)	0.2200	1499.0	
-61	15		lower bound (certificate-verified)	0.2459	1495.8	
-71	15		lower bound (certificate-verified); k=[16] UNKNOWN (timeout)	0.2113	1496.9	
-80	16		lower bound (certificate-verified); k=[17, 18, 20] UNKNOWN (timeout)	0.2000	1556.6	
-82	16		lower bound (certificate-verified); k=[17] UNKNOWN (timeout)	0.1951	1495.7	
-93	18		lower bound (certificate-verified); k=[19] UNKNOWN (timeout)	0.1935	1495.3	
+39	9	10	proved: k_max=9 (UNSAT DRAT-verified)	0.2308	517.8	k=10 UNSAT: kissat 518 s; CaDiCaL 465 s, DRAT 1.52 GB verified by drat-trim in 1987 s
+48	11		lower bound (certificate-verified); k=[12] UNKNOWN (timeout)	0.2292	1499.0	n=4*12; k=12=n/4 UNKNOWN: portfolio 1500 s + kissat --sat 4671 s
+50	11		lower bound (certificate-verified); k=[12] UNKNOWN (timeout)	0.2200	1499.0	k=12 UNKNOWN: portfolio 1500 s + kissat --sat 2142 s
+61	15		lower bound (certificate-verified); k=[16] UNKNOWN (timeout)	0.2459	1495.8	k=15 found by CaDiCaL at k>=14 (1381 s); k=16 UNKNOWN: kissat --sat 4671 s; CONSTR had 13
+71	15		lower bound (certificate-verified); k=[16] UNKNOWN (timeout)	0.2113	1496.9	k=15 (CONSTR 14); k=16 UNKNOWN after 1460 s portfolio
+80	16		lower bound (certificate-verified); k=[17, 18, 20] UNKNOWN (timeout)	0.2000	1556.6	n=4*20; k=16 in 16 s; k=17 UNKNOWN: portfolio 1480 s + kissat --sat 4671 s; k=18 UNKNOWN 900 s; k=20=n/4 UNKNOWN (60 s only)
+82	16		lower bound (certificate-verified); k=[17] UNKNOWN (timeout)	0.1951	1495.7	k=16 in 3 s; k=17 UNKNOWN after 1493 s portfolio
+93	18		lower bound (certificate-verified); k=[19] UNKNOWN (timeout)	0.1935	1495.3	k=18 in 44 s; k=19 UNKNOWN after 1451 s portfolio

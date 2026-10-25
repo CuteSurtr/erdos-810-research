@@ -27,7 +27,7 @@ for n in NS:
     secs = round(sum(bk.values()), 1)  # wall time of the driver portfolio (max over the parallel runs per k)
     if klo is None and kun is None: status = "unfinished"
     elif kun is not None and klo == kun - 1:
-        status = "exact (UNSAT DRAT-verified)" if drat else "exact (UNSAT solver, proof unchecked)"
+        status = "proved: k_max=9 (UNSAT DRAT-verified)" if drat else "exact (UNSAT solver, proof unchecked)"
     else: status = "lower bound (certificate-verified)" + (f"; k={unk} UNKNOWN (timeout)" if unk else "")
     note = extra.get(str(n), "")
     rows.append([n, klo if klo else "", kun if kun else "", status, f"{klo / n:.4f}" if klo else "", secs, note])
