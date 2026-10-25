@@ -1,0 +1,1 @@
+{"n": 52, "k": 13, "cube": [-1], "res": "UNSAT", "cnf_sha256": "ed6d44175dc5954ac5697c9f66d8fa381f1b781d1a004c2fc58ce74baf0420d1", "solver": "cadical 3.0.1", "opts": [], "proof_bytes": 145980, "secs": 10.1, "check": "s VERIFIED UNSAT", "check_extra_secs": 0.1, "checker": "cake_lpr a36874a (streamed binary LRAT)", "cap": 400, "t_end": "18:21:19"}
