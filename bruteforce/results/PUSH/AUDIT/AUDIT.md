@@ -329,15 +329,18 @@ Issues in this section:
 colours. It uses no SAT, shares no code with CYCPAT, and is not told the collision criterion of
 Lemma 2. Orbits are computed by my `src/cycgroup.py`.
 
-| n | k = k_max: solutions with g(min D)=0 | orbits under G (own code) | k_max+1: solutions | wall s (k_max / k_max+1) |
+| n | k_max: solutions with g(min D)=0 | orbits under G (own code) | k_max+1: solutions | wall s (k_max / k_max+1) |
 |---|---|---|---|---|
-| 13 | (not run; certificate at k_max exists) | 31 | k=4: 0 | — / 0 |
-| 15 | (not run; certificate at k_max exists) | 12 | k=5: 0 | — / 0 |
+| 12 | k=3: 96 | 24 | k=4: 0 | 0 / 0 |
+| 13 | k=3: 340 | 31 | k=4: 0 | 0 / 0 |
+| 14 | k=3: 614 | 103 | k=4: 0 | 0 / 0 |
+| 15 | k=4: 92 | 12 | k=5: 0 | 0 / 0 |
+| 16 | k=4: 464 | 58 | k=5: 0 | 0 / 0 |
 | 17 | k=4: 3056 | 191 | k=5: 0 | 0 / 0 |
-| 18 | (not run; certificate at k_max exists) | 1 | k=6: 0 | — / 0 |
+| 18 | k=5: 6 | 1 | k=6: 0 | 0 / 0 |
 | 19 | k=5: 252 | 14 | k=6: 0 | 1 / 0 |
 | 20 | k=5: 1320 | 165 | k=6: 0 | 2 / 1 |
-| 21 | (not run; certificate at k_max exists) | 1 | k=7: 0 | — / 2 |
+| 21 | k=6: 4 | 1 | k=7: 0 | 3 / 2 |
 | 22 | k=5: 43330 | 4333 | k=6: 0 | 9 / 5 |
 | 23 | k=6: 616 | 28 | k=7: 0 | 23 / 11 |
 | 24 | k=6: 2884 | 362 | k=7: 0 | 38 / 20 |
@@ -346,7 +349,7 @@ Lemma 2. Orbits are computed by my `src/cycgroup.py`.
 | 27 | k=7: 180 | 10 | k=8: 0 | 623 / 283 |
 | 28 | k=7: 3420 | 285 | k=8: 0 | 1218 / 611 |
 | 29 | k=7: 63968 | 2288 | k=8: 0 | 3818 / 2244 |
-| 30 | (not run; certificate at k_max exists) | — | k=8: 0 | — / 3974 |
+| 30 | not run (certificate at k_max exists) | — | k=8: 0 | — / 3974 |
 
 The k_max+1 column is an **independent, SAT-free confirmation of the upper bound k_max(n) for every 12 ≤ n ≤ 30** (n = 31 and 32 were still running at wrap-up; see REPORT.md). Times are wall-clock under 3–5 concurrent jobs on 4 cores.
 
