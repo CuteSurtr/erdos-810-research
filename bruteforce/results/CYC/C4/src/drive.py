@@ -14,6 +14,15 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 n, best, cap = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3])
 os.makedirs(f"{HERE}/../runs", exist_ok=True)
 log = open(f"{HERE}/../runs/n{n}.jsonl", "a")
+import faulthandler, atexit
+faulthandler.enable(file=open(f"{HERE}/../runs/n{n}.fault", "a"), all_threads=True)
+def _onsig(sig, frame):
+    log.write(json.dumps({"driver_signal": sig, "t": time.time()}) + "\n"); log.flush()
+    for p, k in list(jobs.values()): killjob(p)
+    os._exit(128 + sig)
+for _s in (signal.SIGTERM, signal.SIGHUP, signal.SIGINT, signal.SIGUSR1):
+    signal.signal(_s, _onsig)
+atexit.register(lambda: (log.write(json.dumps({"driver_exit": time.time()}) + "\n"), log.flush()))
 t0 = time.time(); deadline = t0 + cap
 jobs = {}   # key -> (Popen, k)
 unsat = None; unknown = set()
