@@ -1,0 +1,2 @@
+{"n": 32, "k": 8, "depth": 4, "orbits": 128, "nounit_orbits": 0, "unit_normalised_images": 1050, "surviving_sb": 138, "orbits_lost": 0}
+{"n": 36, "k": 9, "depth": 4, "orbits": 59, "nounit_orbits": 0, "unit_normalised_images": 346, "surviving_sb": 67, "orbits_lost": 0}

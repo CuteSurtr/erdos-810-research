@@ -1,0 +1,1 @@
+{"n":40,"k":10,"case":"unit2:4","cnf_sha256":"cdedd1d5861bb9bfa809051302a31c3bb6b48a9edc9df7bde7df2669ebe26ddd","solver":"cadical 3.0.1 --lrat","result":"UNSATISFIABLE","solve_s":474.8,"proof_bytes":2062939083,"check":"s VERIFIED UNSAT","checker":"cake_lpr a36874a","check_s":173.3,"note":"pipeline validation run, done by hand in test/"}
