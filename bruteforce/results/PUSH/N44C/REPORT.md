@@ -103,7 +103,19 @@ Plain leaves (`unit2:e`, `pre:P`, `nounit`) carry no extra clauses.
 
 ### 4.5 Totals for the closing tree (`leaves.tsv`, R1)
 
-FILL_TOTALS
+The symmetry-broken tree, as closed at 12:09 UTC, was 452 CaDiCaL runs on n = 44 (sb leaves, plus nounit
+and unit2:8..21):
+- 448 verified UNSAT;
+- 3 runs without a verdict, all superseded:
+  - `sb:1.2.3.4`: hit the cap, then split;
+  - `sb:1.2.3.4.5`: cake_lpr was OOM-killed twice, then split;
+  - one stale kissat run of `sb:1.2.3.5` from the drat-trim trial (the CaDiCaL run of that leaf is verified).
+- Totals: solving 8423 s, checking 4514 s, wall time about 50 min on 4 cores. The largest verified LRAT was 1.89 GB, and 24.9 GB of LRAT was written in all (each proof deleted after checking).
+
+`tree.json` uses the smallest closing set of cases. `src/summarize.py` reports it as follows.
+- Closing leaves: plain leaves where they are now verified (§6), sb leaves elsewhere.
+- Vacuous nodes: 215.
+- Every closing leaf is `s VERIFIED UNSAT`.
 
 ## 5. Validation
 
