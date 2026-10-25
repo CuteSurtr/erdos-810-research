@@ -27,6 +27,7 @@ Swap:              0           0           0
 | R8 | Exact optimum of the linear rule g = 2d for n = 43–99 (SAT): k/n falls from 0.209 to 0.172. Over all slopes b (n = 61–89) the best k is at most 1 above b = 2. Over all quadratics g = ad² + bd (n = 13–43) the best rule is linear (a = 0) in 29 of 31 cases, and it reaches k_max only at n = 13–17, 20, 22, 25, 26, 29, 30. | *proved* per n (exact SAT within the rule) |
 | R9 | ⟨u⟩-invariant optima (SAT, n = 13–53 so far): they reach k_max at n = 13–15, 21, 24, 26, 29, 30 and 38 (k_max(38) = 9 per CYC/C1). They match the CONSTR LB at 37, 41, 48, beat it at 53 (13 vs 12), and give k = 11 at n = 51 (no previous cyclic LB). They fall short elsewhere, e.g. n = 28, 32, 36: no invariant solution with k ≥ 6, 7, 8 for any subgroup (UNSAT). | *proved* per subgroup where the next k returned UNSAT; otherwise lower bound |
 | R10 | Literature: no prior cyclic or Cayley construction found for "every C4 rainbow with n colours" (§8). | quick search only |
+| R12 | **Doubling lift fails.** For every optimal D at m = 12, 16, 20, the set D′ = D ∪ (m − D) of Z_{2m}-orbits over ±D (size 2k = n′/4) admits no valid g′ (SAT). Results: m = 12: 5 of 5 distinct D′ UNSAT; m = 16: 9 of 9 UNSAT; m = 20: 14 of 14 UNSAT (each < 60 s). So the n/4 solutions at 24, 32, 40 are not lifts of the ones at 12, 16, 20. | *proved* per D (solver UNSAT, unchecked) |
 | R11 | Observation: for n ≡ 0 (mod 4) the number of solution orbits at k = n/4 is 58, 165, 362, 285, 128, 59 for n = 16, …, 36. It peaks at 24 and is falling by n = 32–36. Odd n with k_max/n > 1/4 (18, 21, 31) have a **unique** optimal orbit. | counts *proved* (solver); the trend is *heuristic* |
 
 **Bottom line.** No explicit rule found here gives |D| ≥ εn on an infinite family. Every structured rule I could formulate dies, and for linear rules this is provable through Szemerédi's theorem. The optimal solutions for n ≤ 36 look unstructured. Their number at k = n/4 shrinks after n = 24–28. The evidence therefore leans toward k_max(n) = o(n) for this family, which agrees with BEGS's belief. This is *evidence, not a theorem*.
@@ -107,9 +108,8 @@ Other solution files:
 | 31 | 8 | complete | 1 | 30 | — (CONSTR) | 98.6 |
 | 32 | 8 | complete | 128 | 2048 | yes (49 s) | 146.7 |
 | 33 | 8 | complete (case split unit/nounit) | 1756 | 35120 | — (CONSTR) | 579.7 |
-| 34 | 8 | incomplete (lower bound on orbit count) | 25663 | 410608 | — (CONSTR) |  |
+| 34 | 8 | incomplete (lower bound on orbit count) | 25653 | 410448 | — (CONSTR) |  |
 | 36 | 9 | complete (case split unit/nounit) | 59 | 708 | yes (1040 s) | 927.7 |
-| 40 | 10 | incomplete (lower bound on orbit count) | 4 | 64 | — (CONSTR) |  |
 
 Observations:
 
@@ -287,6 +287,10 @@ Best quadratic rule g(d) = a d^2 + b d over all (a, b), exact max |D| (n = 13..4
 | k | 3 | 3 | 4 | 4 | 4 | 4 | 4 | 5 | 5 | 5 | 5 | 5 | 6 | 6 | 6 | 6 | 7 | 7 | 7 | 7 | 7 | 7 | 8 | 7 | 8 | 8 | 8 | 8 | 9 | 9 | 9 |
 | (a,b) | 0,2 | 0,2 | 4,0 | 0,2 | 0,2 | 0,2 | 0,2 | 5,4 | 0,2 | 0,2 | 0,2 | 0,2 | 0,2 | 0,2 | 0,2 | 0,2 | 0,9 | 0,14 | 0,2 | 0,2 | 0,2 | 0,2 | 0,17 | 0,2 | 0,2 | 0,2 | 0,2 | 0,2 | 0,5 | 0,2 | 0,2 |
 | k_max | 3 | 3 | 4 | 4 | 4 | 5 | 5 | 5 | 6 | 5 | 6 | 6 | 6 | 6 | 7 | 7 | 7 | 7 | 8 | 8 | 8 | 8 |  | 9 |  |  |  | 10 |  |  |  |
+
+### 6.3b Doubling lift (`src/lift.py`)
+
+CRT-style constructions would build a solution at 2m from one at m. The orbits of Z_{2m} over ±d ∈ Z_m are d and m − d. So the natural lift of D is D′ = D ∪ (m − D), with |D′| = 2|D| = n′/4 when |D| = m/4. For every optimal normal form at m = 12, 16, 20, SAT decides whether some g′ makes D′ valid, with no constraint linking g′ to g. Result: m = 12: 5 of 5 distinct D′ UNSAT; m = 16: 9 of 9 UNSAT; m = 20: 14 of 14 UNSAT (each < 60 s). Every lifted D′ is UNSAT, so no doubling construction exists along this route, even with g′ free.
 
 ### 6.4 Prescribed-automorphism SAT (`src/cycsym.py`, `src/symscan.py`)
 

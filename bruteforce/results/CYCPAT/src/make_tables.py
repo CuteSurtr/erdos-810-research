@@ -27,6 +27,21 @@ def partial_from_log(path):
     return orbs
 for n, k in [(33, 8), (34, 8), (36, 9), (40, 10)]:
     best = None
+    if n == 40:
+        # union of the unit2:e split runs (e = 2..19) and the nounit case; complete only if all finished
+        H40 = 19; seen = {}; allc = True; secs = 0
+        for e in range(2, H40 + 1):
+            try:
+                d = json.load(open(f'runs/enumsplit_n40_e{e}.json')); secs += d['secs']
+                allc &= d['status'] == 'complete'; L = d['orbits']
+            except Exception:
+                allc = False; L = partial_from_log(f'runs/enumsplit_n40_e{e}.log')
+            for o in L: seen[tuple(map(tuple, o['canon']))] = o
+        try: allc &= json.load(open('runs/enumcase_n40_nounit.json'))['status'] == 'complete'
+        except Exception: allc = False
+        if not seen: continue
+        best = {'n': 40, 'k': 10, 'status': 'complete (split unit2:e + nounit)' if allc else 'incomplete (lower bound on orbit count)',
+                'n_orbits': len(seen), 'orbits': list(seen.values()), 'secs': round(secs, 1) if allc else ''}
     for src in [f'runs/enumcase_n{n}_unit.json']:
         try:
             d = json.load(open(src)); dn = json.load(open(f'runs/enumcase_n{n}_nounit.json'))
