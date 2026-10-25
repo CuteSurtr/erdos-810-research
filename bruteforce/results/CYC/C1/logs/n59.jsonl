@@ -1,2 +1,4 @@
 {"n": 59, "k": 13, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 16.2, "Dg": [[1, 0], [2, 20], [3, 41], [4, 33], [5, 16], [6, 27], [11, 9], [14, 4], [15, 51], [21, 1], [23, 12], [25, 53], [26, 40]], "size": 13, "check": "OK", "t": "06:23:21"}
 {"n": 59, "summary": "SAT", "k": 13, "Dg": [[1, 0], [2, 20], [3, 41], [4, 33], [5, 16], [6, 27], [11, 9], [14, 4], [15, 51], [21, 1], [23, 12], [25, 53], [26, 40]], "t": "06:23:21"}
+{"n": 59, "k": 14, "summary": "UNDETERMINED", "note": "portfolio ran 06:23-06:48 (25 min cap); log lines lost (git rebase replaced the open log file). No c_59_15 CNF was ever generated, so k=14 was not found SAT; whether a solver proved UNSAT is unknown. Treat as unfinished.", "t": "06:52:00"}
+{"n": 59, "summary": "done", "k_best": 13, "secs": 1500, "t": "06:52:00"}

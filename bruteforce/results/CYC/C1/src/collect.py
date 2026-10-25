@@ -18,7 +18,7 @@ for n in sorted(KLO):
     for r in recs:
         if r.get("res") == "SAT" and r.get("check") == "OK" and (best is None or r["size"] > len(best)): best = r["Dg"]
         if r.get("res") == "UNSAT": unsat = r["k"] if unsat is None else min(unsat, r["k"])
-        if r.get("summary") == "UNKNOWN": unknown = r["k"]
+        if r.get("summary") in ("UNKNOWN", "UNDETERMINED"): unknown = r["k"]
         if r.get("summary") == "done": secs += r["secs"]
     if best is None: continue
     ok, E, _ = check(n, best); assert ok and E == n * len(best)

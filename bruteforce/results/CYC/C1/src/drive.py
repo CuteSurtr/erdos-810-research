@@ -7,8 +7,10 @@ SRC = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(SRC)
 WORK = os.environ.get("CYCWORK", "/tmp/claude-0/w")
 PY = "/usr/bin/python3"
 n, k_lo, cap = int(sys.argv[1]), int(sys.argv[2]), float(sys.argv[3])
-log = open(f"{ROOT}/logs/n{n}.jsonl", "a")
-def L(d): d["t"] = time.strftime("%H:%M:%S"); log.write(json.dumps(d) + "\n"); log.flush()
+LOG = f"{ROOT}/logs/n{n}.jsonl"
+def L(d):   # reopen per write: a git rebase replaces the file's inode under a long-lived handle
+    d["t"] = time.strftime("%H:%M:%S")
+    with open(LOG, "a") as f: f.write(json.dumps(d) + "\n")
 T0 = time.time()
 def left(): return cap - (time.time() - T0)
 PROOF_MAX = 8 << 30

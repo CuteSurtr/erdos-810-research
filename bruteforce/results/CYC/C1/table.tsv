@@ -1,5 +1,6 @@
 n	k_lo	k_unsat	status	k_lo/n	seconds	notes
 38	9	10	proved k_max=9	0.2368	171	LRAT VERIFIED (2199574 added clauses) (11s, proof 1.19 GB)
 44	10		lower bound 10 certificate-verified; k=11 unfinished	0.2273	1868	n/4=11: undecided
-49	11		lower bound 11	0.2245	0	
-59	13		lower bound 13	0.2203	0	
+49	11		lower bound 11 certificate-verified; k=12 unfinished	0.2245	1500	
+59	13		lower bound 13 certificate-verified; k=14 unfinished	0.2203	1500	
+70	15		lower bound 15 certificate-verified; k=16 unfinished	0.2143	1522	
