@@ -1,2 +1,17 @@
 {"n": 39, "k": 10, "sym": 2, "solver": "kissat", "seed": 0, "secs": 517.8, "res": "UNSAT", "tag": "drive"}
 {"n": 39, "k": 9, "sym": 2, "solver": "kissat", "seed": 0, "secs": 1.2, "res": "SAT", "Dg": [[1, 0], [2, 12], [3, 19], [6, 17], [9, 4], [13, 33], [14, 2], [15, 37], [19, 6]], "verified": true, "edges": 351}
+{"n": 48, "k": 12, "sym": 2, "solver": "kissat", "seed": 0, "secs": 1499.0, "res": "UNKNOWN", "tag": "drive"}
+{"n": 48, "k": 12, "sym": 1, "solver": "kissat", "seed": 1, "secs": 1499.0, "res": "UNKNOWN", "tag": "drive"}
+{"n": 48, "k": 12, "sym": 2, "solver": "cadical-drat", "seed": 0, "secs": 1499.0, "res": "UNKNOWN", "tag": "drive"}
+{"n": 48, "k": 11, "sym": 2, "solver": "kissat", "seed": 0, "secs": 18.2, "res": "SAT", "Dg": [[1, 0], [2, 27], [3, 9], [4, 39], [5, 24], [9, 21], [10, 2], [13, 31], [14, 8], [20, 43], [22, 10]], "verified": true, "edges": 528}
+{"n": 50, "k": 11, "sym": 2, "solver": "kissat", "seed": 0, "secs": 4.9, "res": "SAT", "Dg": [[1, 0], [2, 36], [3, 24], [10, 19], [11, 4], [12, 38], [14, 44], [16, 33], [18, 13], [20, 11], [21, 28]], "verified": true, "edges": 550}
+{"n": 61, "k": 13, "sym": 2, "solver": "kissat", "seed": 0, "secs": 17.6, "res": "SAT", "Dg": [[1, 0], [2, 9], [3, 27], [4, 47], [5, 56], [14, 33], [15, 4], [16, 46], [19, 31], [21, 44], [25, 1], [28, 41], [29, 21]], "verified": true, "edges": 793}
+{"n": 71, "k": 14, "sym": 2, "solver": "kissat", "seed": 0, "secs": 7.4, "res": "SAT", "Dg": [[1, 0], [2, 56], [3, 27], [4, 66], [5, 48], [7, 37], [16, 68], [20, 42], [22, 35], [23, 51], [30, 63], [32, 10], [34, 16], [35, 5]], "verified": true, "edges": 994}
+{"n": 50, "k": 12, "sym": 2, "solver": "kissat", "seed": 0, "secs": 1499.0, "res": "UNKNOWN", "tag": "drive"}
+{"n": 50, "k": 12, "sym": 1, "solver": "kissat", "seed": 1, "secs": 1499.0, "res": "UNKNOWN", "tag": "drive"}
+{"n": 50, "k": 12, "sym": 2, "solver": "cadical-drat", "seed": 0, "secs": 1499.0, "res": "UNKNOWN", "tag": "drive"}
+{"n": 80, "k": 18, "sym": 2, "solver": "kissat", "seed": 0, "secs": 900.0, "res": "UNKNOWN"}
+{"n": 61, "k": 14, "sym": 2, "solver": "cadical-drat", "seed": 0, "secs": 1380.6, "res": "SAT", "Dg": [[1, 0], [3, 38], [4, 2], [5, 27], [9, 52], [12, 41], [13, 17], [14, 8], [15, 30], [16, 6], [19, 11], [20, 32], [22, 45], [25, 34], [27, 28]], "verified": true, "edges": 915, "tag": "drive"}
+{"n": 61, "k": 15, "sym": 2, "solver": "kissat", "seed": 0, "secs": 115.1, "res": "UNKNOWN", "tag": "drive"}
+{"n": 61, "k": 15, "sym": 1, "solver": "kissat", "seed": 1, "secs": 115.0, "res": "UNKNOWN", "tag": "drive"}
+{"n": 61, "k": 15, "sym": 2, "solver": "cadical-drat", "seed": 0, "secs": 115.2, "res": "UNKNOWN", "tag": "drive"}
