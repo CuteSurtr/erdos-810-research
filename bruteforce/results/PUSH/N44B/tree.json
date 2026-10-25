@@ -262,5 +262,138 @@
   ],
   "owner": "PUSH/N44A",
   "status": "see results/PUSH/N44A"
+ },
+ "cross_check_of_sibling": {
+  "file": "logs/cross_p5_1.jsonl",
+  "leaves": [
+   {
+    "assumptions": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "result": "UNSAT",
+    "cnf_sha256": "7d092b9e2329cc35473413b55ce6480dc0adffeefd591c758f296df6280965dc",
+    "checker_verdict": "s VERIFIED UNSAT",
+    "proof_bytes": 11850062
+   },
+   {
+    "assumptions": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     -8
+    ],
+    "result": "UNSAT",
+    "cnf_sha256": "fbcdc895cb1c945c031d8e21d74390bf75dfb808ca46400735af5822df505c2b",
+    "checker_verdict": "s VERIFIED UNSAT",
+    "proof_bytes": 25737889
+   },
+   {
+    "assumptions": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     -7,
+     8
+    ],
+    "result": "UNSAT",
+    "cnf_sha256": "75e56a158f2dcc77b54242b0006beaead69a4379fefe0a5ea996538b7f3290cb",
+    "checker_verdict": "s VERIFIED UNSAT",
+    "proof_bytes": 68148649
+   },
+   {
+    "assumptions": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     -6,
+     7,
+     8
+    ],
+    "result": "UNSAT",
+    "cnf_sha256": "565d42c25d53c75eb76f11dfd08749bdb2d75d14187fe42ef8003322d572696b",
+    "checker_verdict": "s VERIFIED UNSAT",
+    "proof_bytes": 112268406
+   },
+   {
+    "assumptions": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     -6,
+     7,
+     -8
+    ],
+    "result": "UNSAT",
+    "cnf_sha256": "4a5e11f17a2fb0a2e9358408c354712ae38cf9cca804e3a5ae7e68aed02aaf1b",
+    "checker_verdict": "s VERIFIED UNSAT",
+    "proof_bytes": 1367988848
+   },
+   {
+    "assumptions": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     -6,
+     -7,
+     8
+    ],
+    "result": "UNSAT",
+    "cnf_sha256": "47fd3727f919852562226bed63f7638a8eacaa009469e576a9ba570c08e8a5bb",
+    "checker_verdict": "s VERIFIED UNSAT",
+    "proof_bytes": 1681872163
+   },
+   {
+    "assumptions": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     -7,
+     -8
+    ],
+    "result": "UNSAT",
+    "cnf_sha256": "66378eeffbcf2bb87bd360901f727e5bdf0cfe21ef2ffa40b58f2f823aa24aff",
+    "checker_verdict": "s VERIFIED UNSAT",
+    "proof_bytes": 1909847737
+   },
+   {
+    "assumptions": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     -6,
+     -7,
+     -8
+    ],
+    "result": "UNSAT",
+    "cnf_sha256": "c9941c9d08dab019c256290d77976abbb5ae06af768be171460f148292e298ef",
+    "checker_verdict": "s VERIFIED UNSAT",
+    "proof_bytes": 2749436648
+   }
+  ]
  }
 }

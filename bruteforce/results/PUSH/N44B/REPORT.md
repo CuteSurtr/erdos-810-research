@@ -10,7 +10,7 @@ Mem:              15           0          15           0           0          15
 Swap:              0           0           0
 ```
 
-All computation ran in this cloud container, 2026-10-25, 10:35 to about 12:15 UTC.
+All computation ran in this cloud container, 2026-10-25, 10:35 to about 11:40 UTC.
 
 ## 2. Results
 
@@ -20,7 +20,7 @@ All computation ran in this cloud container, 2026-10-25, 10:35 to about 12:15 UT
 | Cover of the p5 = 0 half | trivial presence-bit split, checked by `src/mktree.py` |
 | No deeper split needed | the slowest leaf took 394 s |
 | k = 10 sanity: the cube {1, 2, 3, 4, ¬5, ¬6, ¬7, 8} is SAT at k = 10 | *certificate-verified* (440 edges, 17644 rainbow 4-cycles) |
-| Cross-check of N44A's 8 p5 = 1 leaves with this pipeline | see §6 |
+| Cross-check of N44A's 8 p5 = 1 leaves with this pipeline | all 8 UNSAT, cake_lpr `s VERIFIED UNSAT` (§6) |
 
 **Outcome.** Together with PUSH/N44A (p5 = 1 half all UNSAT, plus cake_lpr re-proofs of C1's 8 other cubes,
 including the two that C1 had as solver only), every leaf of the n = 44, k = 11 tree is UNSAT with a checked proof. So
@@ -100,7 +100,21 @@ Paths assume `/tmp/w/{cycenc,cnt,c_44_11_3.cnf}` and `/tmp/w/tools/{cadical,drat
 
 ## 6. Cross-check of N44A's p5 = 1 leaves, and notes
 
-CROSSCHECK_PLACEHOLDER
+I re-solved N44A's 8 leaves {1, 2, 3, 4, 5, ±6, ±7, ±8} with my own pipeline (`LOG=cross_p5_1.jsonl src/leaf.py`).
+This is an independent run, on another container, of the same encoding. Every leaf is UNSAT, and each one's streamed
+LRAT proof was checked by cake_lpr (`logs/cross_p5_1.jsonl`). My leaf CNFs carry an extra `c cube` comment line, so
+their sha256 differ from N44A's. The clause sets are the same: base CNF + units.
+
+| p6, p7, p8 (p5 = 1) | result | solve s | LRAT bytes | cake_lpr |
+|---|---|---|---|---|
+| +6, +7, +8 | UNSAT | 5.7 | 12 MB | s VERIFIED UNSAT |
+| +6, +7, ¬8 | UNSAT | 7.1 | 26 MB | s VERIFIED UNSAT |
+| +6, ¬7, +8 | UNSAT | 13.1 | 68 MB | s VERIFIED UNSAT |
+| +6, ¬7, ¬8 | UNSAT | 274.1 | 1910 MB | s VERIFIED UNSAT |
+| ¬6, +7, +8 | UNSAT | 18.8 | 112 MB | s VERIFIED UNSAT |
+| ¬6, +7, ¬8 | UNSAT | 186.4 | 1368 MB | s VERIFIED UNSAT |
+| ¬6, ¬7, +8 | UNSAT | 228.5 | 1682 MB | s VERIFIED UNSAT |
+| ¬6, ¬7, ¬8 | UNSAT | 334.6 | 2749 MB | s VERIFIED UNSAT |
 
 **Surprises.**
 1. The open cube was much easier than C1's numbers suggested. C1 had (1, 2, 3, 4, ¬5) UNKNOWN after 840 s. Fixing
