@@ -7,6 +7,7 @@ R = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 C = f"{R}/../../CONSTR/runs/"
 NS = [42, 53, 56, 63, 74, 85, 88, 95]
 KLO = {42: 10, 53: 12, 56: 12, 63: 12, 74: 16, 85: 19, 88: 20, 95: 21}
+LOST = {42: {11, 12}, 63: {14, 15}}
 seed = {}
 for n in (42, 53):
     for l in open(f"{C}cycsat/n{n}.jsonl"):
@@ -33,6 +34,19 @@ for n in NS:
                 best, bestDg = r["size"], r["Dg"]
             elif r["res"] == "UNSAT": unsat = r["k"] if unsat is None else min(unsat, r["k"])
             elif r["res"] == "UNKNOWN": unk.add(r["k"])
+    # driver stdout logs survive where the jsonl record was lost (see REPORT section 6)
+    lg = f"{R}/runs_drive{n}.log"
+    if os.path.exists(lg):
+        lsecs = 0
+        for l in open(lg):
+            if l.startswith("SUMMARY"): lsecs = json.loads(l[8:])["secs"]
+            elif l.startswith("{"):
+                r = json.loads(l[:l.rindex("}") + 1])
+                if r["res"] == "UNKNOWN": unk.add(r["k"])
+                elif r["res"] == "UNSAT": unsat = r["k"] if unsat is None else min(unsat, r["k"])
+        if lsecs and secs < lsecs: secs = lsecs + (secs if n in (74, 85, 88, 95) else 0)
+    if n in LOST: secs += 1500; unk |= LOST[n]   # first-pass timeouts whose records were lost
+    unk = {k for k in unk if k > best}
     if bestDg:
         sols[str(n)] = sorted(bestDg)
         certs[str(n)] = [[i, (i + d) % n, (i + g) % n] for d, g in sorted(bestDg) for i in range(n)]
@@ -44,6 +58,7 @@ for n in NS:
         status = "unfinished"
     else:
         status = "certificate-verified lower bound" + (f"; k={min(unk)} unknown (timeout)" if unk else "")
+        if unsat is not None: status += f"; k={unsat} UNSAT"
     if n % 4 == 0:
         q = n // 4
         if best >= q: tag = f"k=n/4={q} SAT"
