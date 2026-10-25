@@ -1,3 +1,6 @@
 src/cycenc
 src/brute
 src/cyc
+__pycache__/
+src/cycls
+logs/

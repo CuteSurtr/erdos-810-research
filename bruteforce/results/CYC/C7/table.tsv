@@ -1,0 +1,9 @@
+n	k_lo	k_unsat	status	k_lo/n	seconds	notes
+46	11		lower bound k>=11 certificate-verified; k=? unfinished	0.2391	141	k=12: kissat+cadical 1500 s each, no answer (log line lost, see REPORT)
+57	13		lower bound k>=13 certificate-verified; k=14 unfinished	0.2281	2445	
+67	14		lower bound k>=14 certificate-verified; k=15 unfinished	0.2090	2984	
+68			unfinished	0.0000	2996	
+78			unfinished	0.0000	0	
+89			unfinished	0.0000	0	
+99			unfinished	0.0000	0	
+100			unfinished	0.0000	0	

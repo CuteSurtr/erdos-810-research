@@ -1,0 +1,11 @@
+{"n": 57, "k": 13, "sym": 2, "solver": "cadical", "seed": 2, "res": "SAT", "secs": 551.3, "Dg": [[1, 0], [2, 21], [3, 28], [4, 8], [5, 17], [6, 39], [10, 54], [15, 29], [16, 53], [18, 42], [22, 27], [24, 16], [26, 36]], "check": "OK", "size": 13}
+{"n": 46, "k": 11, "sym": 2, "solver": "kissat", "seed": 1, "res": "SAT", "secs": 140.9, "Dg": [[1, 0], [2, 19], [3, 26], [5, 40], [7, 15], [9, 36], [10, 3], [12, 30], [16, 13], [20, 24], [21, 7]], "check": "OK", "size": 11}
+{"n": 67, "k": 14, "sym": 2, "solver": "kissat", "seed": 1, "res": "SAT", "secs": 9.9, "Dg": [[1, 0], [2, 22], [3, 12], [4, 41], [7, 28], [9, 40], [14, 60], [16, 5], [17, 43], [18, 51], [21, 48], [24, 25], [30, 45], [32, 18]], "check": "OK", "size": 14}
+{"n": 57, "k": 14, "sym": 2, "solver": "kissat", "seed": 1, "res": "UNKNOWN", "secs": 947.1}
+{"n": 57, "k": 14, "sym": 2, "solver": "cadical", "seed": 2, "res": "UNKNOWN", "secs": 947.0}
+{"n": 67, "k": 15, "sym": 2, "solver": "kissat", "seed": 1, "res": "UNKNOWN", "secs": 1487.3}
+{"n": 67, "k": 15, "sym": 2, "solver": "cadical", "seed": 2, "res": "UNKNOWN", "secs": 1487.1}
+{"n": 68, "k": 15, "sym": 2, "solver": "kissat", "seed": 1, "res": "UNKNOWN", "secs": 999.0}
+{"n": 68, "k": 15, "sym": 2, "solver": "cadical", "seed": 2, "res": "UNKNOWN", "secs": 999.1}
+{"n": 68, "k": 17, "sym": 2, "solver": "kissat", "seed": 1, "res": "UNKNOWN", "secs": 499.0}
+{"n": 68, "k": 17, "sym": 2, "solver": "cadical", "seed": 2, "res": "UNKNOWN", "secs": 499.1}

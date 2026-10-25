@@ -1,6 +1,8 @@
 /* DIMACS encoder for the cyclic orbit family (task CYC).
    Vertices Z_n, orbits d in 1..H (H = ceil(n/2)-1); orbit d present => edges {i,i+d}, colour i+g(d).
-   usage: cycenc n k sym amo out.cnf
+   usage: cycenc n k sym amo out.cnf [U [T]]
+     U: optional multiplier; restricts to solutions with U.(D,g) = (D, g+T) (heuristic, lower bounds
+        only); T = -1 restricts only D to be U-invariant.
      sym: 0 none, 1 colour-translation fix only, 2 translation + lex-leader over all units (mod +-1)
      amo: 1 adds pairwise at-most-one on x[d][*] (not needed for soundness)
    Variables: x[d][g] = 1 + (d-1)*n + g; p[d] = H*n + d; then aux.
@@ -11,7 +13,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-static int n, H, nv;
+static int n, H, nv, U, T;
 static int *yid;            /* yid[(da*(H+1)+db)*n+delta] */
 static unsigned char *keyseen; /* per y: bitmask not used; keys stored in a set below */
 static FILE *out; static long ncl;
@@ -35,6 +37,7 @@ static int md(long a){ a%=n; return a<0?a+n:a; }
 int main(int argc,char**argv){
   if(argc<6){ fprintf(stderr,"usage: cycenc n k sym amo out.cnf\n"); return 1; }
   n=atoi(argv[1]); int k=atoi(argv[2]), sym=atoi(argv[3]), amo=atoi(argv[4]);
+  U=argc>6?atoi(argv[6]):0; T=argc>7?atoi(argv[7]):0; if(U) amo=1;
   H=(n+1)/2-1; nv=H*n+H;
   yid=calloc((size_t)(H+1)*(H+1)*n,sizeof(int));
   /* p[d] -> OR_g x[d][g];  x[d][g] -> p[d] */
@@ -76,7 +79,14 @@ int main(int argc,char**argv){
   for(long i=0;i<kcap;i++) if(ks[i].y){ if(yempty[ks[i].y]&&(ks[i].o1||ks[i].o2)) continue;
     lit(-ks[i].y); if(ks[i].o1) lit(-P(ks[i].o1)); if(ks[i].o2) lit(-P(ks[i].o2)); endcl(); nk++; }
   /* symmetry */
-  if(sym>=1) for(int d=1;d<=H;d++){ lit(-P(d)); for(int e=1;e<d;e++) lit(P(e)); lit(X(d,0)); endcl(); }
+  /* optional heuristic restriction (lower bounds only): solution invariant under multiplier U, i.e.
+     x[d][g] -> x[e][g'+T] with e = rep(U d), g' = U g (+ e if U d = -e); p[d] -> p[e].  Forces AMO.
+     The colour-translation fix is not compatible with this, so it is skipped when U is set. */
+  if(U){
+    for(int d=1;d<=H;d++){ long ud=md((long)U*d); int e=ud<=H?ud:n-ud, sg=ud<=H?1:-1;
+      lit(-P(d)); lit(P(e)); endcl();
+      if(T>=0) for(int g=0;g<n;g++){ int g2=md((long)U*g+(sg<0?e:0)+T); lit(-X(d,g)); lit(X(e,g2)); endcl(); } } }
+  if(sym>=1&&!U) for(int d=1;d<=H;d++){ lit(-P(d)); for(int e=1;e<d;e++) lit(P(e)); lit(X(d,0)); endcl(); }
   int nlex=0;
   if(sym>=2){
     for(int u=2;u<n;u++){ int a=u,b=n,g0; while(b){int t=a%b;a=b;b=t;} g0=a; if(g0!=1) continue;
