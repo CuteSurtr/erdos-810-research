@@ -1,0 +1,6 @@
+{"n": 56, "k": 13, "sym": 1, "solver": "kissat-sat", "seed": 1, "res": "SAT", "secs": 1092.3, "Dg": [[1, 0], [2, 48], [3, 40], [5, 33], [6, 20], [7, 16], [8, 29], [13, 10], [16, 4], [17, 43], [21, 39], [23, 25], [24, 30]], "size": 13, "check": "VALID", "edges": 728, "wall": 1093.3}
+{"n": 56, "k": 14, "sym": 2, "solver": "kissat", "seed": 0, "res": "UNKNOWN", "secs": 406.0, "wall": 1499.4}
+{"n": 56, "k": 14, "sym": 1, "solver": "kissat-sat", "seed": 1, "res": "UNKNOWN", "secs": 406.0, "wall": 1499.4}
+{"n": 56, "k": 14, "sym": 2, "solver": "kissat-unsat", "seed": 0, "res": "UNKNOWN", "secs": 406.0, "wall": 1499.4}
+{"n": 56, "k": 15, "sym": 1, "solver": "kissat-sat", "seed": 2, "res": "UNKNOWN", "secs": 406.0, "wall": 1500.4}
+{"summary": {"n": 56, "best": 13, "unsat": null, "unknown": [14, 15], "secs": 1500.4}}

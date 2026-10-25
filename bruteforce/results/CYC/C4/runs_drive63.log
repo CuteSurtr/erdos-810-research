@@ -1,0 +1,2 @@
+{"n": 63, "k": 13, "sym": 2, "solver": "kissat", "res": "SAT", "secs": 7.5} VALID
+{"n": 63, "k": 13, "sym": 2, "solver": "kissat-unsat", "res": "SAT", "secs": 7.5} VALID
