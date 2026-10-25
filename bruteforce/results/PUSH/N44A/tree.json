@@ -1,0 +1,301 @@
+{
+ "instance": "n=44 k=11 cyclic family, C1 cycenc sym=3 (translation fix + lex-leader over units)",
+ "base_cnf_sha256": "7895911c5d80939f6480db2480634797f636607fd9624954213a90a46bb8324e",
+ "presence_var": "p(d) = 21*44 + d; a cube literal +d / -d is the unit clause p(d) / \u00acp(d) appended to the base CNF",
+ "cover": "each internal node splits on one presence bit p_j into {p_j} and {\u00acp_j}; the root split is {\u00acp1} \u222a {p1}\u00d7{\u00b1p2}\u00d7{\u00b1p3}\u00d7{\u00b1p4}",
+ "leaf_summary": {
+  "UNSAT / LRAT checked by cake_lpr": 13,
+  "NOT RUN / -": 3,
+  "DELEGATED to PUSH/N44B / -": 1
+ },
+ "tree": {
+  "assumptions": [],
+  "split_on": "p1",
+  "children": [
+   {
+    "assumptions": [
+     -1
+    ],
+    "result": "UNSAT",
+    "proof": "LRAT checked by cake_lpr",
+    "solver": "cadical 3.0.1 --lrat --binary",
+    "solve_s": 0.2,
+    "cnf_sha256": "3229568ddf65c5b1c30f7859b88844cd6a48a241e47dfc57f10b844fb50be0b0",
+    "proof_bytes": 89440,
+    "checker_verdict": "s VERIFIED UNSAT"
+   },
+   {
+    "assumptions": [
+     1,
+     2,
+     3,
+     -4
+    ],
+    "result": "NOT RUN"
+   },
+   {
+    "assumptions": [
+     1,
+     2,
+     -3,
+     4
+    ],
+    "result": "NOT RUN"
+   },
+   {
+    "assumptions": [
+     1,
+     2,
+     -3,
+     -4
+    ],
+    "result": "UNSAT",
+    "proof": "LRAT checked by cake_lpr",
+    "solver": "cadical 3.0.1 --lrat --binary",
+    "solve_s": 259.1,
+    "cnf_sha256": "4786e7b8b06a028b02c4e4c584590aa0990a75a622ea97b708ce4aa66418eb66",
+    "proof_bytes": 645166190,
+    "checker_verdict": "s VERIFIED UNSAT"
+   },
+   {
+    "assumptions": [
+     1,
+     -2,
+     3,
+     4
+    ],
+    "result": "UNSAT",
+    "proof": "LRAT checked by cake_lpr",
+    "solver": "cadical 3.0.1 --lrat --binary",
+    "solve_s": 195.5,
+    "cnf_sha256": "af8ecbb01bcce00105255803412e4d2f1c90800674dd837f67b9c335bdb6ba2d",
+    "proof_bytes": 501725941,
+    "checker_verdict": "s VERIFIED UNSAT"
+   },
+   {
+    "assumptions": [
+     1,
+     -2,
+     3,
+     -4
+    ],
+    "result": "UNSAT",
+    "proof": "LRAT checked by cake_lpr",
+    "solver": "cadical 3.0.1 --lrat --binary",
+    "solve_s": 18.2,
+    "cnf_sha256": "a97d28a85600eb63df10690eb47e259225d049ee1f8b8062f95cd30c032b3804",
+    "proof_bytes": 20940261,
+    "checker_verdict": "s VERIFIED UNSAT"
+   },
+   {
+    "assumptions": [
+     1,
+     -2,
+     -3,
+     4
+    ],
+    "result": "UNSAT",
+    "proof": "LRAT checked by cake_lpr",
+    "solver": "cadical 3.0.1 --lrat --binary",
+    "solve_s": 18.4,
+    "cnf_sha256": "1628c9749fccd643eac819bd5f208f6d00755230a1ec12e31c02bf0f2746dcef",
+    "proof_bytes": 20974240,
+    "checker_verdict": "s VERIFIED UNSAT"
+   },
+   {
+    "assumptions": [
+     1,
+     -2,
+     -3,
+     -4
+    ],
+    "result": "UNSAT",
+    "proof": "LRAT checked by cake_lpr",
+    "solver": "cadical 3.0.1 --lrat --binary",
+    "solve_s": 7.7,
+    "cnf_sha256": "c8caf307095668f05b5a23c5e2b8cfe738314637f38f1b3a7f55934dfe2c3dcb",
+    "proof_bytes": 1988547,
+    "checker_verdict": "s VERIFIED UNSAT"
+   },
+   {
+    "assumptions": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "split_on": "p5",
+    "children": [
+     {
+      "assumptions": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "split_on": "p8",
+      "children": [
+       {
+        "assumptions": [
+         1,
+         2,
+         3,
+         4,
+         5,
+         6,
+         7,
+         8
+        ],
+        "result": "UNSAT",
+        "proof": "LRAT checked by cake_lpr",
+        "solver": "cadical 3.0.1 --lrat --binary",
+        "solve_s": 2.4,
+        "cnf_sha256": "747080fd87bbc3198aa8a87d5a8d078d0218d95bd893d6341c4064314f9892ce",
+        "proof_bytes": 5009877,
+        "checker_verdict": "s VERIFIED UNSAT"
+       },
+       {
+        "assumptions": [
+         1,
+         2,
+         3,
+         4,
+         5,
+         6,
+         7,
+         -8
+        ],
+        "result": "UNSAT",
+        "proof": "LRAT checked by cake_lpr",
+        "solver": "cadical 3.0.1 --lrat --binary",
+        "solve_s": 4.9,
+        "cnf_sha256": "d5636a6501679c6aeeca82399d321c30ea426f453554eb2fffd577e07c523b9d",
+        "proof_bytes": 11214548,
+        "checker_verdict": "s VERIFIED UNSAT"
+       },
+       {
+        "assumptions": [
+         1,
+         2,
+         3,
+         4,
+         5,
+         6,
+         -7,
+         8
+        ],
+        "result": "UNSAT",
+        "proof": "LRAT checked by cake_lpr",
+        "solver": "cadical 3.0.1 --lrat --binary",
+        "solve_s": 15.9,
+        "cnf_sha256": "3560333a8c405cd0e8b6f9d378de1fe387777a30056c0093b51ae3c9373713ee",
+        "proof_bytes": 29997310,
+        "checker_verdict": "s VERIFIED UNSAT"
+       },
+       {
+        "assumptions": [
+         1,
+         2,
+         3,
+         4,
+         5,
+         6,
+         -7,
+         -8
+        ],
+        "result": "UNSAT",
+        "proof": "LRAT checked by cake_lpr",
+        "solver": "cadical 3.0.1 --lrat --binary",
+        "solve_s": 319.9,
+        "cnf_sha256": "a94a24a1a64aa8e409130594644026c867a3783752ad966bfcdf1d8b1993b047",
+        "proof_bytes": 858665330,
+        "checker_verdict": "s VERIFIED UNSAT"
+       },
+       {
+        "assumptions": [
+         1,
+         2,
+         3,
+         4,
+         5,
+         -6,
+         7,
+         8
+        ],
+        "result": "UNSAT",
+        "proof": "LRAT checked by cake_lpr",
+        "solver": "cadical 3.0.1 --lrat --binary",
+        "solve_s": 22.6,
+        "cnf_sha256": "3eedcc6c535fcee3b7e6e302a600b9ebcb3224a845fbf53cef3f530a4ba2f8fe",
+        "proof_bytes": 49254043,
+        "checker_verdict": "s VERIFIED UNSAT"
+       },
+       {
+        "assumptions": [
+         1,
+         2,
+         3,
+         4,
+         5,
+         -6,
+         7,
+         -8
+        ],
+        "result": "UNSAT",
+        "proof": "LRAT checked by cake_lpr",
+        "solver": "cadical 3.0.1 --lrat --binary",
+        "solve_s": 219.8,
+        "cnf_sha256": "30347955f554999072a5b98691ddaa97ee52b3aebd9d999a7d08cacfc41f818f",
+        "proof_bytes": 613077949,
+        "checker_verdict": "s VERIFIED UNSAT"
+       },
+       {
+        "assumptions": [
+         1,
+         2,
+         3,
+         4,
+         5,
+         -6,
+         -7,
+         8
+        ],
+        "result": "UNSAT",
+        "proof": "LRAT checked by cake_lpr",
+        "solver": "cadical 3.0.1 --lrat --binary",
+        "solve_s": 258.0,
+        "cnf_sha256": "3edade126f75b9eda3e4080abf65d0e34ebc9033e9d01807edb7a329fc5177e3",
+        "proof_bytes": 753914086,
+        "checker_verdict": "s VERIFIED UNSAT"
+       },
+       {
+        "assumptions": [
+         1,
+         2,
+         3,
+         4,
+         5,
+         -6,
+         -7,
+         -8
+        ],
+        "result": "NOT RUN"
+       }
+      ]
+     },
+     {
+      "assumptions": [
+       1,
+       2,
+       3,
+       4,
+       -5
+      ],
+      "result": "DELEGATED to PUSH/N44B"
+     }
+    ]
+   }
+  ]
+ }
+}

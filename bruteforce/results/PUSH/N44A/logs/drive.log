@@ -8,3 +8,20 @@
 10:38:23 start [1, 2, 3, -4] t=7200
 10:38:23 done [1, -2, -3, 4] UNSATISFIABLE 18.4s s VERIFIED UNSAT
 10:38:23 start [1, 2, -3, 4] t=7200
+10:41:20 done [1, -2, 3, 4] UNSATISFIABLE 195.5s s VERIFIED UNSAT
+10:41:20 start [1, 2, 3, 4, 5, 6, 7, 8] t=2400
+10:41:22 done [1, 2, 3, 4, 5, 6, 7, 8] UNSATISFIABLE 2.4s s VERIFIED UNSAT
+10:41:22 start [1, 2, 3, 4, 5, 6, 7, -8] t=2400
+10:41:28 done [1, 2, 3, 4, 5, 6, 7, -8] UNSATISFIABLE 4.9s s VERIFIED UNSAT
+10:41:28 start [1, 2, 3, 4, 5, 6, -7, 8] t=2400
+10:41:44 done [1, 2, 3, 4, 5, 6, -7, 8] UNSATISFIABLE 15.9s s VERIFIED UNSAT
+10:41:44 start [1, 2, 3, 4, 5, 6, -7, -8] t=2400
+10:42:31 done [1, 2, -3, -4] UNSATISFIABLE 259.1s s VERIFIED UNSAT
+10:42:31 start [1, 2, 3, 4, 5, -6, 7, 8] t=2400
+10:42:54 done [1, 2, 3, 4, 5, -6, 7, 8] UNSATISFIABLE 22.6s s VERIFIED UNSAT
+10:42:54 start [1, 2, 3, 4, 5, -6, 7, -8] t=2400
+10:46:34 done [1, 2, 3, 4, 5, -6, 7, -8] UNSATISFIABLE 219.8s s VERIFIED UNSAT
+10:46:34 start [1, 2, 3, 4, 5, -6, -7, 8] t=2400
+10:47:04 done [1, 2, 3, 4, 5, 6, -7, -8] UNSATISFIABLE 319.9s s VERIFIED UNSAT
+10:47:04 start [1, 2, 3, 4, 5, -6, -7, -8] t=2400
+10:50:53 done [1, 2, 3, 4, 5, -6, -7, 8] UNSATISFIABLE 258.0s s VERIFIED UNSAT
