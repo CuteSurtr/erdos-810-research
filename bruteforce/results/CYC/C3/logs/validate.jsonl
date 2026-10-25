@@ -112,3 +112,4 @@
 {"n": 30, "k": 7, "sym": "none", "res": "SAT", "by": "kissat-s1", "secs": 0.6, "enc": "n=30 k=7 vars=3661 clauses=92859 keys=9133 units=0", "Dg": [[1, 0], [2, 3], [5, 7], [7, 4], [12, 5], [13, 24], [14, 22]], "check": "VALID ok n=30 |D|=7 edges=210 four-cycles=3720"}
 {"n": 30, "k": 8, "sym": "none", "res": "UNKNOWN", "by": null, "secs": 600.4, "enc": "n=30 k=8 vars=3648 clauses=92834 keys=9133 units=0"}
 DONE
+{"n": 14, "k": 4, "sym": "full", "res": "UNSAT", "by": "kissat-unsat-drat", "secs": 0.5, "enc": "n=14 k=4 vars=398 clauses=3847 keys=528 units=2", "proof_bytes": 27980, "drat": "pending: logs/drat_n14_k4_full_13811.txt"}

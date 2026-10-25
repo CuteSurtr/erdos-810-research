@@ -6,4 +6,4 @@ n	k_lo	k_unsat	status	k_lo/n	seconds	notes
 73	15		unfinished (k=15 certificate-verified; k+1 undecided)	0.2055	1499	UNKNOWN at k=16
 83	17		unfinished (k=17 certificate-verified; k+1 undecided)	0.2048	1497	UNKNOWN at k=18
 84	17		unfinished (k=17 certificate-verified; k+1 undecided)	0.2024	1498	UNKNOWN at k=18,21
-94	0		unfinished (k=0 certificate-verified; k+1 undecided)	0.0000	0	
+94	18		unfinished (k=18 certificate-verified; k+1 undecided)	0.1915	1526	UNKNOWN at k=19
