@@ -1,0 +1,6161 @@
+{
+ "n": 44,
+ "k": 11,
+ "cover": "nounit + unit; unit = union of unit2:e (e=2..H); prefix P = union of P+[x] (x>max P)",
+ "nounit": {
+  "closed": true,
+  "by": {
+   "case": "nounit",
+   "result": "UNSATISFIABLE",
+   "proof": "s VERIFIED UNSAT",
+   "cnf_sha256": "f279043e57ca8b14ad8d761721005ed58ce46346ddf63db5324a391e2facdbaa",
+   "solver": "cadical 3.0.1 --lrat",
+   "solve_s": 0.2,
+   "proof_bytes": 934202,
+   "check_s": 1.2
+  }
+ },
+ "unit": {
+  "closed": true,
+  "children": [
+   {
+    "prefix": [
+     1,
+     2
+    ],
+    "closed": true,
+    "attempts": [],
+    "children": [
+     {
+      "prefix": [
+       1,
+       2,
+       3
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         2,
+         3,
+         4
+        ],
+        "closed": true,
+        "attempts": [
+         {
+          "case": "sb:1.2.3.4",
+          "result": "UNKNOWN",
+          "proof": "",
+          "cnf_sha256": "962dfcafad7a8912f3c73de630496cc59ae68c7f87d50afcfc87f6055bcbf671",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 2400.0,
+          "proof_bytes": 6149780250,
+          "check_s": 0.0
+         }
+        ],
+        "children": [
+         {
+          "prefix": [
+           1,
+           2,
+           3,
+           4,
+           5
+          ],
+          "closed": true,
+          "attempts": [
+           {
+            "case": "pre:1.2.3.4.5",
+            "result": "UNKNOWN",
+            "proof": "",
+            "cnf_sha256": "43facce05d928e567627f16275e147507f7add250750164d6905aae3b9e89983",
+            "solver": "cadical 3.0.1 --lrat",
+            "solve_s": 900.0,
+            "proof_bytes": 3002279408,
+            "check_s": 0.0
+           },
+           {
+            "case": "sb:1.2.3.4.5",
+            "result": "UNSATISFIABLE",
+            "proof": "",
+            "cnf_sha256": "361b0698a85d69149e365f181c257a3bfdd790aeeeb701d36d6a142a0f494d65",
+            "solver": "cadical 3.0.1 --lrat",
+            "solve_s": 873.3,
+            "proof_bytes": 2527969234,
+            "check_s": 35.6
+           }
+          ],
+          "children": [
+           {
+            "prefix": [
+             1,
+             2,
+             3,
+             4,
+             5,
+             6
+            ],
+            "closed": true,
+            "by": {
+             "case": "sb:1.2.3.4.5.6",
+             "result": "UNSATISFIABLE",
+             "proof": "s VERIFIED UNSAT",
+             "cnf_sha256": "b8876e32126988bfcf239720782750c41f382f2d6f91dee5d715ec29bd9b4bcf",
+             "solver": "cadical 3.0.1 --lrat",
+             "solve_s": 125.4,
+             "proof_bytes": 427585507,
+             "check_s": 34.3
+            }
+           },
+           {
+            "prefix": [
+             1,
+             2,
+             3,
+             4,
+             5,
+             7
+            ],
+            "closed": true,
+            "by": {
+             "case": "sb:1.2.3.4.5.7",
+             "result": "UNSATISFIABLE",
+             "proof": "s VERIFIED UNSAT",
+             "cnf_sha256": "dd82965c6b449353fb37d1698da4005fda1e56a6b3e4c43a83a7ef102dcfb79d",
+             "solver": "cadical 3.0.1 --lrat",
+             "solve_s": 113.2,
+             "proof_bytes": 433192336,
+             "check_s": 41.6
+            }
+           },
+           {
+            "prefix": [
+             1,
+             2,
+             3,
+             4,
+             5,
+             8
+            ],
+            "closed": true,
+            "by": {
+             "case": "sb:1.2.3.4.5.8",
+             "result": "UNSATISFIABLE",
+             "proof": "s VERIFIED UNSAT",
+             "cnf_sha256": "5a0ee509761083e486c5535ba6c2aa559776aaa6ee680bf42e3e49b89942df01",
+             "solver": "cadical 3.0.1 --lrat",
+             "solve_s": 82.8,
+             "proof_bytes": 341929542,
+             "check_s": 28.8
+            }
+           },
+           {
+            "prefix": [
+             1,
+             2,
+             3,
+             4,
+             5,
+             9
+            ],
+            "closed": true,
+            "by": {
+             "case": "sb:1.2.3.4.5.9",
+             "result": "UNSATISFIABLE",
+             "proof": "s VERIFIED UNSAT",
+             "cnf_sha256": "947d180518cdcae2161f20efbb78d7982c7c5532d6690345d790a65d8e4671c8",
+             "solver": "cadical 3.0.1 --lrat",
+             "solve_s": 63.9,
+             "proof_bytes": 295938328,
+             "check_s": 22.6
+            }
+           },
+           {
+            "prefix": [
+             1,
+             2,
+             3,
+             4,
+             5,
+             10
+            ],
+            "closed": true,
+            "by": {
+             "case": "sb:1.2.3.4.5.10",
+             "result": "UNSATISFIABLE",
+             "proof": "s VERIFIED UNSAT",
+             "cnf_sha256": "dc59bda8056a6faa27fbee25f9b13fb2fb280b09375c7ec9e4868a3ab872ba45",
+             "solver": "cadical 3.0.1 --lrat",
+             "solve_s": 38.9,
+             "proof_bytes": 190130830,
+             "check_s": 14.9
+            }
+           },
+           {
+            "prefix": [
+             1,
+             2,
+             3,
+             4,
+             5,
+             11
+            ],
+            "closed": true,
+            "by": {
+             "case": "sb:1.2.3.4.5.11",
+             "result": "UNSATISFIABLE",
+             "proof": "s VERIFIED UNSAT",
+             "cnf_sha256": "58a679d8a2b8f2c48e70a527fa019ebeed69f4c4d6608845d68d96aac3dacfb4",
+             "solver": "cadical 3.0.1 --lrat",
+             "solve_s": 15.5,
+             "proof_bytes": 80247843,
+             "check_s": 7.7
+            }
+           },
+           {
+            "prefix": [
+             1,
+             2,
+             3,
+             4,
+             5,
+             12
+            ],
+            "closed": true,
+            "by": {
+             "case": "sb:1.2.3.4.5.12",
+             "result": "UNSATISFIABLE",
+             "proof": "s VERIFIED UNSAT",
+             "cnf_sha256": "1ddb69f37be90bdbaebb41c699a3927e0fe7525a012053c1b58d4bce38f40429",
+             "solver": "cadical 3.0.1 --lrat",
+             "solve_s": 4.6,
+             "proof_bytes": 29529963,
+             "check_s": 3.6
+            }
+           },
+           {
+            "prefix": [
+             1,
+             2,
+             3,
+             4,
+             5,
+             13
+            ],
+            "closed": true,
+            "by": {
+             "case": "sb:1.2.3.4.5.13",
+             "result": "UNSATISFIABLE",
+             "proof": "s VERIFIED UNSAT",
+             "cnf_sha256": "6e9a05353e88f187a16412bb67f35c7e35faac2356d26dacb60af2d2fc594e2e",
+             "solver": "cadical 3.0.1 --lrat",
+             "solve_s": 1.7,
+             "proof_bytes": 10452588,
+             "check_s": 2.3
+            }
+           },
+           {
+            "prefix": [
+             1,
+             2,
+             3,
+             4,
+             5,
+             14
+            ],
+            "closed": true,
+            "by": {
+             "case": "sb:1.2.3.4.5.14",
+             "result": "UNSATISFIABLE",
+             "proof": "s VERIFIED UNSAT",
+             "cnf_sha256": "273f35e058a84a258fbbcd98f3044f0dfb9302fa6163ac2db4e93f3b95909e10",
+             "solver": "cadical 3.0.1 --lrat",
+             "solve_s": 1.1,
+             "proof_bytes": 6361830,
+             "check_s": 1.4
+            }
+           },
+           {
+            "prefix": [
+             1,
+             2,
+             3,
+             4,
+             5,
+             15
+            ],
+            "closed": true,
+            "by": {
+             "case": "sb:1.2.3.4.5.15",
+             "result": "UNSATISFIABLE",
+             "proof": "s VERIFIED UNSAT",
+             "cnf_sha256": "de3bac94a401cd729c9e9b11b382cef9d527c30fbfa11a7ff8bee5643d17c0ac",
+             "solver": "cadical 3.0.1 --lrat",
+             "solve_s": 0.2,
+             "proof_bytes": 2805692,
+             "check_s": 1.3
+            }
+           },
+           {
+            "prefix": [
+             1,
+             2,
+             3,
+             4,
+             5,
+             16
+            ],
+            "closed": true,
+            "by": {
+             "case": "sb:1.2.3.4.5.16",
+             "result": "UNSATISFIABLE",
+             "proof": "s VERIFIED UNSAT",
+             "cnf_sha256": "28ff4eed1a4bde8323d6e27c8d4534f28caeab7db5d650dfd2601557ffeba440",
+             "solver": "cadical 3.0.1 --lrat",
+             "solve_s": 0.1,
+             "proof_bytes": 963082,
+             "check_s": 1.2
+            }
+           },
+           {
+            "prefix": [
+             1,
+             2,
+             3,
+             4,
+             5,
+             17
+            ],
+            "closed": true,
+            "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+           },
+           {
+            "prefix": [
+             1,
+             2,
+             3,
+             4,
+             5,
+             18
+            ],
+            "closed": true,
+            "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+           },
+           {
+            "prefix": [
+             1,
+             2,
+             3,
+             4,
+             5,
+             19
+            ],
+            "closed": true,
+            "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+           },
+           {
+            "prefix": [
+             1,
+             2,
+             3,
+             4,
+             5,
+             20
+            ],
+            "closed": true,
+            "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+           },
+           {
+            "prefix": [
+             1,
+             2,
+             3,
+             4,
+             5,
+             21
+            ],
+            "closed": true,
+            "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+           }
+          ]
+         },
+         {
+          "prefix": [
+           1,
+           2,
+           3,
+           4,
+           6
+          ],
+          "closed": true,
+          "by": {
+           "case": "sb:1.2.3.4.6",
+           "result": "UNSATISFIABLE",
+           "proof": "s VERIFIED UNSAT",
+           "cnf_sha256": "f75223fab547d91c06cbff4450db2019bd102a5b6a01dc9f41a92c6116d01aa9",
+           "solver": "cadical 3.0.1 --lrat",
+           "solve_s": 497.2,
+           "proof_bytes": 1363608744,
+           "check_s": 120.2
+          }
+         },
+         {
+          "prefix": [
+           1,
+           2,
+           3,
+           4,
+           7
+          ],
+          "closed": true,
+          "by": {
+           "case": "sb:1.2.3.4.7",
+           "result": "UNSATISFIABLE",
+           "proof": "s VERIFIED UNSAT",
+           "cnf_sha256": "16bfdf436ab9f38251bf8076853db4ee81e636de40ce6e3898027d9241c294fb",
+           "solver": "cadical 3.0.1 --lrat",
+           "solve_s": 253.9,
+           "proof_bytes": 751221189,
+           "check_s": 79.0
+          }
+         },
+         {
+          "prefix": [
+           1,
+           2,
+           3,
+           4,
+           8
+          ],
+          "closed": true,
+          "by": {
+           "case": "sb:1.2.3.4.8",
+           "result": "UNSATISFIABLE",
+           "proof": "s VERIFIED UNSAT",
+           "cnf_sha256": "8e646f87035acc90df6aa36422a614f3b4796d787dd47e31b8cc4f2084f8d1f6",
+           "solver": "cadical 3.0.1 --lrat",
+           "solve_s": 135.5,
+           "proof_bytes": 466804081,
+           "check_s": 54.1
+          }
+         },
+         {
+          "prefix": [
+           1,
+           2,
+           3,
+           4,
+           9
+          ],
+          "closed": true,
+          "by": {
+           "case": "sb:1.2.3.4.9",
+           "result": "UNSATISFIABLE",
+           "proof": "s VERIFIED UNSAT",
+           "cnf_sha256": "a10d29e5c0835e599dd6a28b3d570f777a8d7db4b63934476c6f1421108d8e72",
+           "solver": "cadical 3.0.1 --lrat",
+           "solve_s": 47.3,
+           "proof_bytes": 245991294,
+           "check_s": 18.7
+          }
+         },
+         {
+          "prefix": [
+           1,
+           2,
+           3,
+           4,
+           10
+          ],
+          "closed": true,
+          "by": {
+           "case": "sb:1.2.3.4.10",
+           "result": "UNSATISFIABLE",
+           "proof": "s VERIFIED UNSAT",
+           "cnf_sha256": "72e343c5b5c27180cbe5cd1e8b8d1a79163148c3fde49da23e7f21dbfe5a7425",
+           "solver": "cadical 3.0.1 --lrat",
+           "solve_s": 13.0,
+           "proof_bytes": 74786541,
+           "check_s": 7.7
+          }
+         },
+         {
+          "prefix": [
+           1,
+           2,
+           3,
+           4,
+           11
+          ],
+          "closed": true,
+          "by": {
+           "case": "sb:1.2.3.4.11",
+           "result": "UNSATISFIABLE",
+           "proof": "s VERIFIED UNSAT",
+           "cnf_sha256": "6dbf4b45b8c5648d37cf1f9ac8072927aa008ac2efff0ceb1a1ae4629a2eed8b",
+           "solver": "cadical 3.0.1 --lrat",
+           "solve_s": 4.3,
+           "proof_bytes": 25326743,
+           "check_s": 3.1
+          }
+         },
+         {
+          "prefix": [
+           1,
+           2,
+           3,
+           4,
+           12
+          ],
+          "closed": true,
+          "by": {
+           "case": "sb:1.2.3.4.12",
+           "result": "UNSATISFIABLE",
+           "proof": "s VERIFIED UNSAT",
+           "cnf_sha256": "6057914c5abeda0a1d0dca3a2610261fc3c3c66ea7379a417fb58cef18fc7cfc",
+           "solver": "cadical 3.0.1 --lrat",
+           "solve_s": 1.2,
+           "proof_bytes": 7496388,
+           "check_s": 1.7
+          }
+         },
+         {
+          "prefix": [
+           1,
+           2,
+           3,
+           4,
+           13
+          ],
+          "closed": true,
+          "by": {
+           "case": "sb:1.2.3.4.13",
+           "result": "UNSATISFIABLE",
+           "proof": "s VERIFIED UNSAT",
+           "cnf_sha256": "558ae04a11da56a8f646b33eff47627b6b003ee1729cfe9c7cdf821427c48ce4",
+           "solver": "cadical 3.0.1 --lrat",
+           "solve_s": 0.3,
+           "proof_bytes": 3174217,
+           "check_s": 1.3
+          }
+         },
+         {
+          "prefix": [
+           1,
+           2,
+           3,
+           4,
+           14
+          ],
+          "closed": true,
+          "by": {
+           "case": "sb:1.2.3.4.14",
+           "result": "UNSATISFIABLE",
+           "proof": "s VERIFIED UNSAT",
+           "cnf_sha256": "b0767e538250b59b8b48b212fd88de5ea64f5284a547780f65f093cbb11c04de",
+           "solver": "cadical 3.0.1 --lrat",
+           "solve_s": 0.1,
+           "proof_bytes": 884282,
+           "check_s": 1.1
+          }
+         },
+         {
+          "prefix": [
+           1,
+           2,
+           3,
+           4,
+           15
+          ],
+          "closed": true,
+          "by": {
+           "case": "sb:1.2.3.4.15",
+           "result": "UNSATISFIABLE",
+           "proof": "s VERIFIED UNSAT",
+           "cnf_sha256": "ace5a46e1f31876da04d63cc051d0d8487b47d8e7700052e5e27e2e7322fbde8",
+           "solver": "cadical 3.0.1 --lrat",
+           "solve_s": 0.1,
+           "proof_bytes": 930412,
+           "check_s": 1.1
+          }
+         },
+         {
+          "prefix": [
+           1,
+           2,
+           3,
+           4,
+           16
+          ],
+          "closed": true,
+          "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+         },
+         {
+          "prefix": [
+           1,
+           2,
+           3,
+           4,
+           17
+          ],
+          "closed": true,
+          "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+         },
+         {
+          "prefix": [
+           1,
+           2,
+           3,
+           4,
+           18
+          ],
+          "closed": true,
+          "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+         },
+         {
+          "prefix": [
+           1,
+           2,
+           3,
+           4,
+           19
+          ],
+          "closed": true,
+          "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+         },
+         {
+          "prefix": [
+           1,
+           2,
+           3,
+           4,
+           20
+          ],
+          "closed": true,
+          "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+         },
+         {
+          "prefix": [
+           1,
+           2,
+           3,
+           4,
+           21
+          ],
+          "closed": true,
+          "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+         }
+        ]
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         3,
+         5
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.3.5",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "12bc21aad4f97509c591d8e823ba0f7adb0fa510faa35bc0372c030b67b7af21",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 688.3,
+         "proof_bytes": 1886286044,
+         "check_s": 223.9
+        },
+        "extra_children_runs": [
+         {
+          "case": "pre:1.2.3.5.10",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "52ebad977e4257a1678556d5189d609d22ee781980f3d485d7a2f8f334cd04b9",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 40.3,
+          "proof_bytes": 212712754,
+          "check_s": 16.2
+         },
+         {
+          "case": "pre:1.2.3.5.11",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "0b137aa9c1e52b6aa8da508a1aed24ec26ed198b993692e8c21845fb24f2169b",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 10.4,
+          "proof_bytes": 60061086,
+          "check_s": 5.2
+         },
+         {
+          "case": "pre:1.2.3.5.12",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "c7e5e19a03da157a56565ddf018e379dccfc4c39b8288ca904e6e191ea766a53",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 4.2,
+          "proof_bytes": 24526071,
+          "check_s": 2.9
+         },
+         {
+          "case": "pre:1.2.3.5.13",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "473e59e78b75c0ee9a7417860ad966c844f931afe33efad9f977b0b47b0a3e20",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 1.9,
+          "proof_bytes": 10580137,
+          "check_s": 82.7
+         },
+         {
+          "case": "pre:1.2.3.5.14",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "aeae9d69d2e1563962725a4cc2ca0d47511981941b1932b905cc9b4884d83c0c",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.6,
+          "proof_bytes": 3805220,
+          "check_s": 1.4
+         },
+         {
+          "case": "pre:1.2.3.5.15",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "6295c5f4822548352f896c63d05431f454211596474664d680b9995ede78cb75",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.2,
+          "proof_bytes": 963128,
+          "check_s": 1.4
+         },
+         {
+          "case": "pre:1.2.3.5.6",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "04bfe8716dbeb36d9658d114658341a3b81f52f52ae507e996e23d754823392a",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 697.0,
+          "proof_bytes": 2653890693,
+          "check_s": 226.0
+         },
+         {
+          "case": "pre:1.2.3.5.6.10",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "98e58795f440779b43fddd1f2c852b893fcbe0908a8486dbef8368ea18519015",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 54.8,
+          "proof_bytes": 228825147,
+          "check_s": 17.0
+         },
+         {
+          "case": "pre:1.2.3.5.6.11",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "ceea82f4cf147bc628eb28dffc3e7342ed4cb2110910637a6f3824465e275698",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 28.7,
+          "proof_bytes": 131185377,
+          "check_s": 12.9
+         },
+         {
+          "case": "pre:1.2.3.5.6.12",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "ff1236d6770546979d28afff604898f1932e96f6176de85b352529cd4133df02",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 9.6,
+          "proof_bytes": 56495468,
+          "check_s": 5.5
+         },
+         {
+          "case": "pre:1.2.3.5.6.13",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "85c137a2310a6d902312d20b0c7fda9ef52387f593917449e56b543c9956d785",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 3.7,
+          "proof_bytes": 25464817,
+          "check_s": 2.8
+         },
+         {
+          "case": "pre:1.2.3.5.6.14",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "05157439c7f76f18882a3508cd69b1e6e8d39124781568ebc8e754859b1a7119",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 1.4,
+          "proof_bytes": 10837825,
+          "check_s": 2.5
+         },
+         {
+          "case": "pre:1.2.3.5.6.15",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "faa7870b5169e13718c60784f689fda831b77335f67b17c8f1cc74f34ade71ee",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.3,
+          "proof_bytes": 2994145,
+          "check_s": 1.3
+         },
+         {
+          "case": "pre:1.2.3.5.6.16",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "7e316990142543e1a58a3c40842a52e9a8f4afeea77cbe616ac4dc00f8ac6ef2",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.1,
+          "proof_bytes": 952635,
+          "check_s": 2.5
+         },
+         {
+          "case": "pre:1.2.3.5.6.8",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "5eb9985f3726a4a95d8d4848eb9fdb4153fe524c3e5135a60ea7fc34f38ba274",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 165.9,
+          "proof_bytes": 717207142,
+          "check_s": 57.3
+         },
+         {
+          "case": "pre:1.2.3.5.6.9",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "c204c3fd1e2cf33001b1fdf3311159b61833f428bafe73b79d4a8ede7056b70e",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 53.3,
+          "proof_bytes": 225005217,
+          "check_s": 24.3
+         },
+         {
+          "case": "pre:1.2.3.5.7",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "db3a4c371222a3f749c9258b2c8c4a3e6af87aa7f71198ea133c2274a77d8aa1",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 280.1,
+          "proof_bytes": 1142568165,
+          "check_s": 93.2
+         },
+         {
+          "case": "pre:1.2.3.5.8",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "1f05985c4010dfc2acf32710eb6d234a0208287e101d8c172f2ad912c295e48b",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 233.2,
+          "proof_bytes": 1021863547,
+          "check_s": 88.7
+         },
+         {
+          "case": "pre:1.2.3.5.9",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "92d570770c00276ad089f43ecd9ae7c24ad27c70b767247ec0d418411c1141e9",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 73.4,
+          "proof_bytes": 351279958,
+          "check_s": 30.0
+         },
+         {
+          "case": "sb:1.2.3.5.10",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "c6796a776279e4ac3dcecf57629157c4c91d82709b1473c95c9d2f8e32660c42",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 8.2,
+          "proof_bytes": 46168373,
+          "check_s": 4.6
+         },
+         {
+          "case": "sb:1.2.3.5.11",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "63eafbb3367173e29052e6877b7cc5e96645d3afe7fa3304453cc4f182a5f38a",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 3.9,
+          "proof_bytes": 24918452,
+          "check_s": 3.3
+         },
+         {
+          "case": "sb:1.2.3.5.12",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "5dfea1dbe154eee655591c6064c1761eb455f933a8e3cb02435079299df92d3a",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 1.1,
+          "proof_bytes": 7961250,
+          "check_s": 1.8
+         },
+         {
+          "case": "sb:1.2.3.5.13",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "96919bf11021b3df137f3d3dd45db5a2d2bfd5ce95411f8a35a6d1556e973a7c",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.2,
+          "proof_bytes": 2690149,
+          "check_s": 1.2
+         },
+         {
+          "case": "sb:1.2.3.5.14",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "055065e4fe8e1f002bf6d8ac4c22466f7f08096e59b8c519bf560b6cc12b232d",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.1,
+          "proof_bytes": 965111,
+          "check_s": 1.1
+         },
+         {
+          "case": "sb:1.2.3.5.15",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "c2969df2c4db6251fd28f61c8e8987ab1b64cccefefb457f28e0f7b8b10e3dfe",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.1,
+          "proof_bytes": 930694,
+          "check_s": 1.2
+         },
+         {
+          "case": "sb:1.2.3.5.16",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "90e63bc97193225a4fca97ffa93e461e5800a87c8501d474d3f190fd1c4a6ee8",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.1,
+          "proof_bytes": 930388,
+          "check_s": 1.2
+         },
+         {
+          "case": "sb:1.2.3.5.17",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "2e7f73d26739041e93b4fe1e70b91bc082045fca3d8a08bc886084c0fa166ea2",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.1,
+          "proof_bytes": 930392,
+          "check_s": 1.3
+         },
+         {
+          "case": "sb:1.2.3.5.18",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "346445abd5bc61773197b142f686d4175a410e8c74bfca6fa95cefaa02e1ac87",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.2,
+          "proof_bytes": 930394,
+          "check_s": 1.3
+         },
+         {
+          "case": "sb:1.2.3.5.19",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "138b2c322d9300a9c82b0a287f05b53fe844e0f81f12d438b50c8aebe25c600e",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.1,
+          "proof_bytes": 930370,
+          "check_s": 1.1
+         },
+         {
+          "case": "sb:1.2.3.5.20",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "4bfe39a8585a6c598a2e392620dbac623f3895c741ea3a99166fa98849131cfd",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.1,
+          "proof_bytes": 930355,
+          "check_s": 1.1
+         },
+         {
+          "case": "sb:1.2.3.5.21",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "73834ec5b2ac12433bbca84ea7e24dae0ec3fd9c9416eda0163a318c84f49591",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.2,
+          "proof_bytes": 930367,
+          "check_s": 1.8
+         },
+         {
+          "case": "sb:1.2.3.5.6",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "ac2f74a50753b585b968a76ccb0116dc2f1337464b4b18db52fcad4ab31fc8ad",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 220.3,
+          "proof_bytes": 864641360,
+          "check_s": 71.0
+         },
+         {
+          "case": "sb:1.2.3.5.7",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "fdf81d6c1c8aa7832bf2fe18faa267d48bebf1494b4bca659d8d7477dd9dc5fd",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 81.0,
+          "proof_bytes": 349774729,
+          "check_s": 26.9
+         },
+         {
+          "case": "sb:1.2.3.5.8",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "54006a78e8692f98771295ca514eddd717a1bce5182deaac76d613171d2c094d",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 51.7,
+          "proof_bytes": 253142262,
+          "check_s": 20.3
+         },
+         {
+          "case": "sb:1.2.3.5.9",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "389e2602de22d476fab9223fc77457a623a7e11c52de221bcdcf4e8397275d98",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 20.0,
+          "proof_bytes": 108480291,
+          "check_s": 9.6
+         }
+        ]
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         3,
+         6
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.3.6",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "af53808b663a925c790bdbd7ddea246c0d096b32e375e66c85925f5ba00c2a37",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 170.0,
+         "proof_bytes": 558611675,
+         "check_s": 75.1
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         3,
+         7
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.3.7",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "74893eac23a57821d400eb1c5f0bbc677f2ba35410bdd8b60ad9e58ef12f1223",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 111.0,
+         "proof_bytes": 381747787,
+         "check_s": 47.3
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         3,
+         8
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.3.8",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "7010650eec06d659c9711ecfb73e8780384b6f095808fffdae1fb125d6146e64",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 64.8,
+         "proof_bytes": 252146573,
+         "check_s": 32.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         3,
+         9
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.3.9",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "02e62d7ed417a5c66c58ea85f8383a4ee1400ccd20cc98ad826396c141485c14",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 13.3,
+         "proof_bytes": 54393920,
+         "check_s": 13.3
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         3,
+         10
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.3.10",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "4b7262644d1ea88e7c19d405fa73442acd771bd43722de72e8a3608f19230eb9",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 5.5,
+         "proof_bytes": 25082995,
+         "check_s": 4.0
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         3,
+         11
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.3.11",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "5ab299395df5bf86f03c4ea8829e1b6b1d5c4fd3a2ae469a6b0c459ba34ef322",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 1.4,
+         "proof_bytes": 8650637,
+         "check_s": 2.0
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         3,
+         12
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.3.12",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "5ab6d7c27d448b70971cfcf9bce36a44cb707a2ff26e735828c7d6288116c07c",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 2484745,
+         "check_s": 1.4
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         3,
+         13
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.3.13",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "da75ee6500e5f4c86ee999933ae4b2acd1a5f3b105d7cc706100afb8fd6b2e62",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 877489,
+         "check_s": 1.6
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         3,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.3.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "01fbde91db781bd179e0aea8ec4057a581fefe1646417dab1588893d8218a7e3",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.1,
+         "proof_bytes": 929906,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         3,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         3,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         3,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         3,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         3,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         3,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         3,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       2,
+       4
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         2,
+         4,
+         5
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.4.5",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "ed0bb7bdd51131d9d9f2f5c4f6068eee81d07b5ee4e598f8ca7b3d64b177a7bd",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 271.3,
+         "proof_bytes": 815744668,
+         "check_s": 93.2
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         4,
+         6
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.4.6",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "7c05b753312f0ef4b39a41afa31210ce8858cee255139846e1806e6b134459de",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 131.0,
+         "proof_bytes": 419895381,
+         "check_s": 56.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         4,
+         7
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.4.7",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "922ebdd9c6934c8f090b13d8e285b67cc6ecde8e44fe671df23ef0061c9e1b26",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 37.5,
+         "proof_bytes": 133346490,
+         "check_s": 34.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         4,
+         8
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.4.8",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "600cc96edb24e89f5c19c8839656aeecb365429cb66a86e3a8e4f4c5adba8926",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 18.5,
+         "proof_bytes": 76245969,
+         "check_s": 14.8
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         4,
+         9
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.4.9",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "33c75bfb5b06a05875936feb988f6119a3200c56abc21e65f8ea1c944175fcbe",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 6.8,
+         "proof_bytes": 30235619,
+         "check_s": 5.2
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         4,
+         10
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.4.10",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "c46d38b77ffab5c5db1c8270ad3322baed2ebfae6666b633ac80fef7d75c1091",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 1.9,
+         "proof_bytes": 9000924,
+         "check_s": 2.2
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         4,
+         11
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.4.11",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "c98f102e8f1c5c113bc23fb1da08b034029cc91815cd0f596b8b6100e7344685",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 1.7,
+         "proof_bytes": 5459148,
+         "check_s": 2.1
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         4,
+         12
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.4.12",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "4d46fe53f0455ced451cd9a367cbc3f788cd8ae7f6ad945e53fd71a18457258f",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 2339287,
+         "check_s": 1.6
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         4,
+         13
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.4.13",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "02a7477c6426f9a5077240a3749f6423f1d6b26176168ca3d5f353fb87bdf618",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 877385,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         4,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.4.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "a98038b07575dbd5e1276257fc96d800cbc22e3deb878b6938eb275dc7c57b56",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 930247,
+         "check_s": 1.2
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         4,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         4,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         4,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         4,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         4,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         4,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         4,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       2,
+       5
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         2,
+         5,
+         6
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.5.6",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "e20f604e1e8bfc5c88755e51548bc370a57522c8ce424843e980113b838ca48b",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 47.6,
+         "proof_bytes": 171087443,
+         "check_s": 27.9
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         5,
+         7
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.5.7",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "4bda49f086ff68c349ae1501aff5661c03e347c2a7b990d3148b4a8831d3550f",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 14.4,
+         "proof_bytes": 55657440,
+         "check_s": 13.9
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         5,
+         8
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.5.8",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "47e1be36910c69143923eb6f0bc20ea9b0319a26e331ebbbeb96a8f35796214b",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 5.9,
+         "proof_bytes": 24099986,
+         "check_s": 4.3
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         5,
+         9
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.5.9",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "a1bb9ef5acdd4c9a10e21de2e80797b0eb5b2c4bca4428e03c8a6f3fd6f74a61",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 1.6,
+         "proof_bytes": 7496794,
+         "check_s": 1.9
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         5,
+         10
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.5.10",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "e061d49db2c08d43bffdba7ba2c0c0775ed34e6775da82bdc77515fc5162bf96",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 1020096,
+         "check_s": 1.8
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         5,
+         11
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.5.11",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "05e802c1b8e43523667b429bb5236cb07dd02872582960e75c5c160fde41667e",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.5,
+         "proof_bytes": 3330031,
+         "check_s": 1.3
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         5,
+         12
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.5.12",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "2c2dd64143b214d7b6b465d3f5a2b660a83d88b17b13aa14419decc67695c58f",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 910024,
+         "check_s": 1.6
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         5,
+         13
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.5.13",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "a3c88a45f456fbb46b6e58e30d0cb4c236a0f336f249336e6aac139ad101b4fe",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 930814,
+         "check_s": 2.0
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         5,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.5.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "643954b3c5f1899d9fff0e62e794f01067cf685f51403a1db3c538c8c36cfd5d",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 930119,
+         "check_s": 1.4
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         5,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         5,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         5,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         5,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         5,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         5,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         5,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       2,
+       6
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         2,
+         6,
+         7
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.6.7",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "64a7e6db6abddca1043bb8612126678b2d5ec9d273d01d01b1b01b3481536a67",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 13.7,
+         "proof_bytes": 52806300,
+         "check_s": 6.4
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         6,
+         8
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.6.8",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "11405cc22f7a16c764c59b5fd72f4a3e88bd7c7f72e2bc3eb94a79f3abdd9b00",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 4.5,
+         "proof_bytes": 20724939,
+         "check_s": 3.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         6,
+         9
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.6.9",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "a4cd779dc4535d6a74beba7ff2f2bd6346fd1f76cc8f7cc07d414087cdfd7051",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 1.0,
+         "proof_bytes": 4361657,
+         "check_s": 1.6
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         6,
+         10
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.6.10",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "870913fdb2f3a982e8e409db038fea1a325e2711efbad807a0337c6cf9b978ff",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 2183650,
+         "check_s": 1.8
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         6,
+         11
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.6.11",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "a3fa1eaa0beceaf03bd01c5b26b7589227ad7554c13858d5248cf793d620fc70",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 2505304,
+         "check_s": 1.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         6,
+         12
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.6.12",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "85c850735961a33e7986fd952819b035aabcb9ebf1ed86f30033cffff1396dbf",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 891267,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         6,
+         13
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.6.13",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "7a320b90db6669874db2b11e6ce8bd4f6cc3d9883939a0360370bf33662bc225",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 879450,
+         "check_s": 1.6
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         6,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.6.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "1f15411b3f6c8070fdffb28a1fed1a375cdee54285337decb490292c33c020df",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 929592,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         6,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         6,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         6,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         6,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         6,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         6,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         6,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       2,
+       7
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         2,
+         7,
+         8
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.7.8",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "e4d06d4c31cc94b0ca7e5db7ceef7a2d210bcd96954b6446b1798f47ef7c5f04",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 6.7,
+         "proof_bytes": 29197378,
+         "check_s": 4.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         7,
+         9
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.7.9",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "4382996c9b10c0003ed7bebd145ad0c5c8bf4b1f8df414f5e60e6f7ed23ee7d4",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 1.3,
+         "proof_bytes": 7722204,
+         "check_s": 1.8
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         7,
+         10
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.7.10",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "35a4ca5f29fd2d923479d61fc3501a8089ff3cbb44dbc20be5cc7df79b85901a",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.4,
+         "proof_bytes": 2341921,
+         "check_s": 1.4
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         7,
+         11
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.7.11",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "a71012fb0501793b0f56e758afe40a81d02ef7e9e5043535dd8772909272f352",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 1.0,
+         "proof_bytes": 5681600,
+         "check_s": 2.6
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         7,
+         12
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.7.12",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "2e0d417fff2a7b1819d324f6fc5e28277e986db48ee45d730928d30428da4478",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 2330739,
+         "check_s": 1.4
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         7,
+         13
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.7.13",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "5dd87ce932ee4e2d2b161831fa6a6bdee04ecadc9a7f932ee1ad9364ccbdaacc",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.5,
+         "proof_bytes": 930374,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         7,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.7.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "ac7defbfe43bf24d13100ab675363a6f4ac1d43671933cd2b5e7a292ce843851",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 930209,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         7,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         7,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         7,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         7,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         7,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         7,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         7,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       2,
+       8
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         2,
+         8,
+         9
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.8.9",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "9f59a39c169743f96c5f5d6acb5f70fb3e1322d3347d2bc009efe47d98b22d76",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 2.7,
+         "proof_bytes": 11941505,
+         "check_s": 2.2
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         8,
+         10
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.8.10",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "393a63370529e09f22799757d9b4600cd52facd378cd4bafb65362fa05dcd855",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.5,
+         "proof_bytes": 3913766,
+         "check_s": 1.6
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         8,
+         11
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.8.11",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "48e3d222fafa205ee2252db43493e01c7f6c35d3b568c7da0ff9c01d4e3a8a66",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.5,
+         "proof_bytes": 3607826,
+         "check_s": 1.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         8,
+         12
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.8.12",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "0635adc744a52091a3dcad7cd03bae2c57d7a49c1155e045b00ff744350a3728",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 909410,
+         "check_s": 1.4
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         8,
+         13
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.8.13",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "44580bac58f4bf541d4684d7d38ee47653749aeb364f5d73979a68e0772cac75",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 930347,
+         "check_s": 1.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         8,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.8.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "564da125a4a91ee54490f9a6a5a16ce28709dd9a8dce5a3dff9291fb11479418",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.1,
+         "proof_bytes": 929804,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         8,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         8,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         8,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         8,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         8,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         8,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         8,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       2,
+       9
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         2,
+         9,
+         10
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.9.10",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "9ecb1da49676e82680a5093a463c208a14077c3ec5bc3ed1f30b2fafc461ebc2",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 3261509,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         9,
+         11
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.9.11",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "b05fa19691c4ad18cda691c07313d0924d977834f9b5ce83034572acecc2022f",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 2681762,
+         "check_s": 2.0
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         9,
+         12
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.9.12",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "0b083f1ea096cd74aade1cd08a7f82779bf26b8a80bd748826c40df6f32714d7",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 891450,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         9,
+         13
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.9.13",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "588e4133aa0b2548281c29e451fa78ee3ea09147d24fcc37b1b600b22b03ae6f",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 930386,
+         "check_s": 1.9
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         9,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.9.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "14101a9dd61ed62fa0a4fa4b374388eae0e27cfab3a718a15c029781c7c629fd",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 929754,
+         "check_s": 1.6
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         9,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         9,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         9,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         9,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         9,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         9,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         9,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       2,
+       10
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         2,
+         10,
+         11
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.10.11",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "41abce6d488f15a641c8b8a51df6bc56bbdf613b67a555c04d456fff40060bd9",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 901642,
+         "check_s": 1.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         10,
+         12
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.10.12",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "f9ff49a93bc052e1e71de2f13278411fbf97587f25efb5062a3227af1c29534a",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 900317,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         10,
+         13
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.10.13",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "97e65c72e02327b58ae5e40dea2ac8b9bb8e426fde3c136c71bb55250c476f0a",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 930335,
+         "check_s": 1.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         10,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.10.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "a37ca55df4b739a07decceee124591663f9ad6dcce69eaeba1ae4c9a7e21d15d",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 929427,
+         "check_s": 1.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         10,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         10,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         10,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         10,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         10,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         10,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         10,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       2,
+       11
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         2,
+         11,
+         12
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.11.12",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "2a01e9900b9d9eaf377aeb2fd0b58614276a6fc2faf12a0ed2c40755bfb742a0",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 893013,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         11,
+         13
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.11.13",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "763bea0b719d0dcbd89edf02e158838a84ba0c6a93891bb368d8215015014976",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 930306,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         11,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.11.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "eaba1f0c82c9adbbe37a8250be41c79ae1e4dea9ea0449e79623599d6ea32d38",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 929198,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         11,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         11,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         11,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         11,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         11,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         11,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         11,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       2,
+       12
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         2,
+         12,
+         13
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.12.13",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "4eecfd82fbb5720c66bba11f8d303483aa9aa463989b26cc8a1f7071f0499a23",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 929939,
+         "check_s": 1.4
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         12,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.12.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "0b12d7bcefbf55e1c0e2022b3ee243aa0ac93af9839ecba17782ec3b01bed572",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.1,
+         "proof_bytes": 929218,
+         "check_s": 1.9
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         12,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         12,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         12,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         12,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         12,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         12,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         12,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       2,
+       13
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         2,
+         13,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.2.13.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "eec5ad1071736305b7c83bcf6f3032670b00b121c2510d0f5f9c470261dd5ea3",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 929264,
+         "check_s": 2.1
+        }
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         13,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         13,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         13,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         13,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         13,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         13,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         2,
+         13,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       2,
+       14
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       2,
+       15
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       2,
+       16
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       2,
+       17
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       2,
+       18
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       2,
+       19
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       2,
+       20
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       2,
+       21
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     }
+    ]
+   },
+   {
+    "prefix": [
+     1,
+     3
+    ],
+    "closed": true,
+    "attempts": [],
+    "children": [
+     {
+      "prefix": [
+       1,
+       3,
+       4
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         3,
+         4,
+         5
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.4.5",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "21fe6c106262f62a866bd33b4fe1c82d3723beff25a4483b4cd007b01c553abd",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 71.7,
+         "proof_bytes": 258145031,
+         "check_s": 54.0
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         4,
+         6
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.4.6",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "2cb110e1200419ed952024a2bdb37e2bc3723a268e200391632955100153d65e",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 866296,
+         "check_s": 1.6
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         4,
+         7
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.4.7",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "c7f8f6bf15527b9d1c9fdbe492c2ad7a0015defd90c6087a5789135e811acb5c",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 13.8,
+         "proof_bytes": 49559192,
+         "check_s": 7.2
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         4,
+         8
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.4.8",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "ecfb43cb1e03d2019f184f4e2aaca4ccbef807ce24179231288f881d1eccd6cd",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 6.7,
+         "proof_bytes": 30512380,
+         "check_s": 5.2
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         4,
+         9
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.4.9",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "d21b0df7f4bc22564463a1e508a9a214760a5c15c0fc69002d55cd84759312e1",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 1.0,
+         "proof_bytes": 5377375,
+         "check_s": 1.6
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         4,
+         10
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.4.10",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "a4897f15befdf2c098876232b2be1b507528bf98a00c294d460959868a8f6dc1",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.8,
+         "proof_bytes": 4031788,
+         "check_s": 2.0
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         4,
+         11
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.4.11",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "ac02e4636096763ab388f5e57593f6940d8fc684d470f8cfb5d4da5b47a6509b",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.7,
+         "proof_bytes": 3743575,
+         "check_s": 1.4
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         4,
+         12
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.4.12",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "2360066c5c1220986be1c0e8a8b87c8f24e5848bf91a26d2328004f5962b0e8f",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 918992,
+         "check_s": 1.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         4,
+         13
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.4.13",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "c5cafbf7e4cd6b77f4a3e5cf13cbb962fab6d9fa3c6b5dfef91d36275509399c",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 929932,
+         "check_s": 1.8
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         4,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.4.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "99d41a99b1d2ddec7e8419658ea2a95d4079fbdbcd0702a3ffb25ecabc25f4b4",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 929633,
+         "check_s": 1.6
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         4,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         4,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         4,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         4,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         4,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         4,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         4,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       3,
+       5
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         3,
+         5,
+         6
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.5.6",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "28b2162a0f0e800ad9a003999884a5d12df13635f0f25b5041d0c6ce62032ac1",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 866639,
+         "check_s": 1.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         5,
+         7
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.5.7",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "49a57bff3d7688064600894b5c33dbc8e316cc5427b0193b811f8ba6c714d375",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.6,
+         "proof_bytes": 3538524,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         5,
+         8
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.5.8",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "9f8c002332e5054c221fdb5df9c6056884eb5d567da5da9496cbe5e2183a72f7",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 1.4,
+         "proof_bytes": 8930557,
+         "check_s": 2.3
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         5,
+         9
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.5.9",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "41758b24c15fac983d4b30d7fc7d2e6cbb4d2057fc16e9d5fc20206501db2f43",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 883841,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         5,
+         10
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.5.10",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "a3ce914b4631289a957ccfce672f490749ac26a2785c0d1e19a75213f0f06105",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 869004,
+         "check_s": 1.3
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         5,
+         11
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.5.11",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "f36b6cd1a9c322d30305f221283a041d29b5f0121cc68ac5650bc379d1b8752e",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 3148227,
+         "check_s": 1.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         5,
+         12
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.5.12",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "9101dc8def30ab5d89bed4045ba6c431f9b1909aac5fd13309e8e9a4578a04a7",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.1,
+         "proof_bytes": 964325,
+         "check_s": 1.6
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         5,
+         13
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.5.13",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "67e0c7805cf2bb3483220d10a0a15e25729f2701eab65e4c920deddb5fd894f2",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.1,
+         "proof_bytes": 900580,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         5,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.5.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "8b30e20418e9234b5cf333f2aabb492824314dece4d5bde26592765d143b3014",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 930291,
+         "check_s": 1.3
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         5,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         5,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         5,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         5,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         5,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         5,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         5,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       3,
+       6
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         3,
+         6,
+         7
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.6.7",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "013679fae29b2fa2aa840d91a4a9432c7808fbbcb4c6e3451e533a526b6ea7e9",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.1,
+         "proof_bytes": 867215,
+         "check_s": 1.3
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         6,
+         8
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.6.8",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "763f3701a7eaab0c6049267422a6ef4dae03c499eeffafabdafcad9ab5ff2ceb",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.1,
+         "proof_bytes": 867583,
+         "check_s": 1.8
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         6,
+         9
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.6.9",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "59b093077c097278ef1f84cbf1e84b11cb0e3232d9b868824ce4ce27b33477a3",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 868399,
+         "check_s": 1.9
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         6,
+         10
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.6.10",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "c0997f0ce7ee3601673aae8481407723cb59aeca5022a97067ec3e0facf6df14",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.1,
+         "proof_bytes": 868773,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         6,
+         11
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.6.11",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "9143ff39b9ca81b67c421a9bc70ec59af8d1fbb75aba9346cc2457a78ac21427",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 869681,
+         "check_s": 1.3
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         6,
+         12
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.6.12",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "c6876073ee2091fa92f275614f7299f980c27c4429922c1b63a8ce49b911c92c",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 870158,
+         "check_s": 1.2
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         6,
+         13
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.6.13",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "0dc9ecbfb38add7f0fdad0e531e7bb8994a2a3eb984f7cfc244f29837df8ddf6",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 870973,
+         "check_s": 1.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         6,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.6.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "4ee5f19d0911e174a3451a8797b168b6bf2b53ae81bb2b3a633afd2c0f1438da",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.1,
+         "proof_bytes": 930112,
+         "check_s": 1.6
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         6,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         6,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         6,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         6,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         6,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         6,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         6,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       3,
+       7
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         3,
+         7,
+         8
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.7.8",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "1f4651df87729373229215fe5ed58dc439147b591a7024cd4ba4d05e3f18af6c",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.7,
+         "proof_bytes": 4406998,
+         "check_s": 1.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         7,
+         9
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.7.9",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "3a95e542e813e300374911bd4913550f43fc9f043391c957b5508e7df3c065c0",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 930743,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         7,
+         10
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.7.10",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "c79983cf647da3429a368b8282fd50edca2fe2b0f8a0894ba5538d09130bca9f",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 979574,
+         "check_s": 1.2
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         7,
+         11
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.7.11",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "7595aac6b4b435f8cacd755edb5200a03485ff579710cbb20fe6461971340c84",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 893358,
+         "check_s": 2.0
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         7,
+         12
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.7.12",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "fca80884410d1e523735690e98fe26a35a169874218dc37ae402b7c9baeef5ef",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.1,
+         "proof_bytes": 885011,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         7,
+         13
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.7.13",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "ee9f1d12b22d95282d7de5b0e1c64b6803fbd46e17455ddcfa53ba12a849da18",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 930124,
+         "check_s": 1.4
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         7,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.7.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "be9d3a214c6cd6b9c8ae12ee5080df7e7ec09b6dcd09c23a14fbfe6ea43d4d98",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 930456,
+         "check_s": 2.0
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         7,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         7,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         7,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         7,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         7,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         7,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         7,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       3,
+       8
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         3,
+         8,
+         9
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.8.9",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "e2a2ba8b7e66b0e3fc0ff26f2c08e48d4e3820c498bc510d8e1e254fdf2eeb88",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 930162,
+         "check_s": 1.3
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         8,
+         10
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.8.10",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "5f376850995a010da8edf970730f73e431318180cd6eb295ba19044939d20af6",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 2735110,
+         "check_s": 1.8
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         8,
+         11
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.8.11",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "db433b13bd1f7675865d70495d94969e0737a083cfde25c3e663e1680abd7589",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 3319562,
+         "check_s": 1.6
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         8,
+         12
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.8.12",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "b985cbbcb52604fe948af1e81d3054bfd666eb7a529f615aa38b6a26ab004578",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.1,
+         "proof_bytes": 883774,
+         "check_s": 1.6
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         8,
+         13
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.8.13",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "968917f49787475c3190080c87193cd87e069fc67614a639ebce762bb3f0addb",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.1,
+         "proof_bytes": 930510,
+         "check_s": 1.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         8,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.8.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "9a2f5ecc76752e397a5c835caae168614ea3812540ce5cc24461cf1066bbfe7a",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 930184,
+         "check_s": 1.8
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         8,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         8,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         8,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         8,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         8,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         8,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         8,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       3,
+       9
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         3,
+         9,
+         10
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.9.10",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "4c19614c5d79fdea40f1b68f896d92433f9b9f8f0b5389361c8acd3d83a1f52a",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 931378,
+         "check_s": 2.0
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         9,
+         11
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.9.11",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "d60cebd6d32933901f412041d6fe0dc39994b5f8dc848081c875e1a5fe238130",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 930358,
+         "check_s": 1.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         9,
+         12
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.9.12",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "431efa4a74f4c4183852229d886b39a62e971c5729911e37a72cc4b5dc197d8c",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 870175,
+         "check_s": 1.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         9,
+         13
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.9.13",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "7e4f6295917505959926ddc63a48b2b26e9fa27a718014774424a722b8a1fdb8",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 930332,
+         "check_s": 1.6
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         9,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.9.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "ec0cba6533b9e02e8a061c7734309f240a160d6305123c16cc107981c11ec764",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.4,
+         "proof_bytes": 929944,
+         "check_s": 1.9
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         9,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         9,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         9,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         9,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         9,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         9,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         9,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       3,
+       10
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         3,
+         10,
+         11
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.10.11",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "a667da83ca3fc4f38749be3a4b86c12e5644ecf866e3e59a7cc4847172531146",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 993750,
+         "check_s": 1.3
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         10,
+         12
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.10.12",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "c9f1041354945d9f20a69f4c9036a69928ed395af5e3840140ad65483d3efb6e",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 878706,
+         "check_s": 1.4
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         10,
+         13
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.10.13",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "ac1dd608c6eab7c477a72381cd5c859ba4fa783918e1cd7e64975e4050df8ea9",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 930518,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         10,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.10.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "de7cffe021833e9e756174e72fe1e746918cfff618ff1205d80a7d8e9091611d",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.1,
+         "proof_bytes": 929641,
+         "check_s": 1.6
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         10,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         10,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         10,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         10,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         10,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         10,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         10,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       3,
+       11
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         3,
+         11,
+         12
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.11.12",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "45c6473ae2168cd02b3f96b609f6e3de96eaae2784e167efc572c718a825c641",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 892589,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         11,
+         13
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.11.13",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "3b556e3c54e387a8aef5b0997cf0730f57823b85b03df83b518937785a302c50",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.1,
+         "proof_bytes": 930071,
+         "check_s": 1.5
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         11,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.11.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "54d26dc00864031864316ba2fc0fd42f91c5d183dd79eb3493f518fdfee50c2a",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 929670,
+         "check_s": 1.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         11,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         11,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         11,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         11,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         11,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         11,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         11,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       3,
+       12
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         3,
+         12,
+         13
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.12.13",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "036a64e37f643b08c45df7788982e592f3a61764c19086bc33cf0736690f448e",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 930171,
+         "check_s": 1.9
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         12,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.12.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "1ba63692a3872830f2ed0fde475c660c5fb745747fe9df5b0d5fbb10e3ab5422",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.3,
+         "proof_bytes": 929405,
+         "check_s": 1.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         12,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         12,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         12,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         12,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         12,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         12,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         12,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       3,
+       13
+      ],
+      "closed": true,
+      "attempts": [],
+      "children": [
+       {
+        "prefix": [
+         1,
+         3,
+         13,
+         14
+        ],
+        "closed": true,
+        "by": {
+         "case": "sb:1.3.13.14",
+         "result": "UNSATISFIABLE",
+         "proof": "s VERIFIED UNSAT",
+         "cnf_sha256": "f7887f3b96eb34d0a39cd5c37f4dc2bd4c902b556c5994dfde2acf27ed3c20cb",
+         "solver": "cadical 3.0.1 --lrat",
+         "solve_s": 0.2,
+         "proof_bytes": 929556,
+         "check_s": 1.7
+        }
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         13,
+         15
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         13,
+         16
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         13,
+         17
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         13,
+         18
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         13,
+         19
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         13,
+         20
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       },
+       {
+        "prefix": [
+         1,
+         3,
+         13,
+         21
+        ],
+        "closed": true,
+        "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+       }
+      ]
+     },
+     {
+      "prefix": [
+       1,
+       3,
+       14
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       3,
+       15
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       3,
+       16
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       3,
+       17
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       3,
+       18
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       3,
+       19
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       3,
+       20
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       3,
+       21
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     }
+    ]
+   },
+   {
+    "prefix": [
+     1,
+     4
+    ],
+    "closed": true,
+    "attempts": [],
+    "children": [
+     {
+      "prefix": [
+       1,
+       4,
+       5
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.4.5",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "f9e6a95c96eddc6ff882db3448433c8831fd6972bac5e22f5834c3fea2f84aef",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 2.8,
+       "proof_bytes": 16194577,
+       "check_s": 6.8
+      }
+     },
+     {
+      "prefix": [
+       1,
+       4,
+       6
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.4.6",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "185aad43410a857acdbab937d06000e32ee57ad6fac86719f8b6094b403f0c62",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 1.2,
+       "proof_bytes": 8022165,
+       "check_s": 3.6
+      }
+     },
+     {
+      "prefix": [
+       1,
+       4,
+       7
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.4.7",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "d0e3b024c3a8835e92f56f06f12c2f87124021b24b05d8dee68a524358d2282c",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.2,
+       "proof_bytes": 871764,
+       "check_s": 1.8
+      }
+     },
+     {
+      "prefix": [
+       1,
+       4,
+       8
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.4.8",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "ab14ce68b1716585bb4b90244ffe5ec86dce229d77a8422e436e8073c122481d",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.2,
+       "proof_bytes": 2434001,
+       "check_s": 1.9
+      }
+     },
+     {
+      "prefix": [
+       1,
+       4,
+       9
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.4.9",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "e7ab8c482ca8f60064cfbc473d2db023191b557feeb3cd036768b0b651d2b0c3",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.2,
+       "proof_bytes": 2468610,
+       "check_s": 1.4
+      }
+     },
+     {
+      "prefix": [
+       1,
+       4,
+       10
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.4.10",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "2ae394aeb696ae9e7259a32336a8c76015b7e40053d4f38aaac1dcb7e93ce2fc",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.1,
+       "proof_bytes": 899894,
+       "check_s": 1.3
+      }
+     },
+     {
+      "prefix": [
+       1,
+       4,
+       11
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.4.11",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "68a549205a3d47f7b40171de6900bfd0abed534f22c1db560fe1c924f008e8db",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.1,
+       "proof_bytes": 877971,
+       "check_s": 1.3
+      }
+     },
+     {
+      "prefix": [
+       1,
+       4,
+       12
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.4.12",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "876bb11bdaa8a251304668c493fe99a2af302982efa101a00342743ba2a4c0fd",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.2,
+       "proof_bytes": 908203,
+       "check_s": 1.4
+      }
+     },
+     {
+      "prefix": [
+       1,
+       4,
+       13
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.4.13",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "4def15d0f0c143eb3e70d996c08c278a55a4e88d270a44cbfbee98d955b48f60",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.2,
+       "proof_bytes": 929026,
+       "check_s": 1.1
+      }
+     },
+     {
+      "prefix": [
+       1,
+       4,
+       14
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       4,
+       15
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       4,
+       16
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       4,
+       17
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       4,
+       18
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       4,
+       19
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       4,
+       20
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       4,
+       21
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     }
+    ]
+   },
+   {
+    "prefix": [
+     1,
+     5
+    ],
+    "closed": true,
+    "attempts": [],
+    "children": [
+     {
+      "prefix": [
+       1,
+       5,
+       6
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.5.6",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "7816ed146c88864dd69fa7d016c1410a06991ba0c22bd507595efe7b0a0fa38f",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.3,
+       "proof_bytes": 2387320,
+       "check_s": 1.4
+      }
+     },
+     {
+      "prefix": [
+       1,
+       5,
+       7
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.5.7",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "eb29da05307410a8991fa57728ee927d2e7a7d7d7d72e4e54fa9bde9dbeac70b",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.2,
+       "proof_bytes": 930670,
+       "check_s": 1.1
+      }
+     },
+     {
+      "prefix": [
+       1,
+       5,
+       8
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.5.8",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "f33ac785012bb08301467e297692badcbfa4fdde732e5551dc99877d6f8c881c",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.1,
+       "proof_bytes": 877531,
+       "check_s": 1.1
+      }
+     },
+     {
+      "prefix": [
+       1,
+       5,
+       9
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.5.9",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "16d259b62930c2296fb275eb79935e7207f97ff5bc0ac9a2d264682c9bd1da97",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.2,
+       "proof_bytes": 931251,
+       "check_s": 1.2
+      }
+     },
+     {
+      "prefix": [
+       1,
+       5,
+       10
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.5.10",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "9ef1f197b06c7a52174a84d33e225f22f84655cd4475ef65f7d0005b7f5eb666",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.2,
+       "proof_bytes": 864591,
+       "check_s": 1.3
+      }
+     },
+     {
+      "prefix": [
+       1,
+       5,
+       11
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.5.11",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "0ef407fdb752e858564e88ec5d4364607520138fab55935c4eb727a41a95241c",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.1,
+       "proof_bytes": 930023,
+       "check_s": 1.1
+      }
+     },
+     {
+      "prefix": [
+       1,
+       5,
+       12
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.5.12",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "00a318b8bdbf962b7bf2a7d83cc1d02e58888e7c71082b4fbf864e4d47805457",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.2,
+       "proof_bytes": 929184,
+       "check_s": 1.1
+      }
+     },
+     {
+      "prefix": [
+       1,
+       5,
+       13
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.5.13",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "be1dbd01838ddf393bc985318999279ad78afb09977b2b80e2444a06ba871866",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.1,
+       "proof_bytes": 929233,
+       "check_s": 1.2
+      }
+     },
+     {
+      "prefix": [
+       1,
+       5,
+       14
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       5,
+       15
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       5,
+       16
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       5,
+       17
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       5,
+       18
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       5,
+       19
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       5,
+       20
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       5,
+       21
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     }
+    ]
+   },
+   {
+    "prefix": [
+     1,
+     6
+    ],
+    "closed": true,
+    "attempts": [],
+    "children": [
+     {
+      "prefix": [
+       1,
+       6,
+       7
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.6.7",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "d110a53626676ba57035bb2345a35915872075db6afe06765f288adad75d7d75",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.1,
+       "proof_bytes": 885035,
+       "check_s": 1.2
+      }
+     },
+     {
+      "prefix": [
+       1,
+       6,
+       8
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.6.8",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "18059630044ecfa9139c57ecbb6fb2e1b37faec33b990ae69b40c2c2b1f49b47",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.2,
+       "proof_bytes": 2382293,
+       "check_s": 1.3
+      }
+     },
+     {
+      "prefix": [
+       1,
+       6,
+       9
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.6.9",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "6f51fe73835dc2cf1ceda642e94fdd22beb17a561b0d90b8e529f15871a16c07",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.1,
+       "proof_bytes": 863945,
+       "check_s": 1.3
+      }
+     },
+     {
+      "prefix": [
+       1,
+       6,
+       10
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.6.10",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "b713a5d8ab1c8c7b365febf15961cd0841dcd0b372ee79f6209e4ce837ddca71",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.2,
+       "proof_bytes": 883926,
+       "check_s": 1.1
+      }
+     },
+     {
+      "prefix": [
+       1,
+       6,
+       11
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.6.11",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "68c92954b2dfeca78f111eadc86787826262ffa7be0fbd55bb418845ed59f5f8",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.2,
+       "proof_bytes": 881295,
+       "check_s": 1.3
+      }
+     },
+     {
+      "prefix": [
+       1,
+       6,
+       12
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.6.12",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "4d155651449e0a55f50ab6604c45ca43bf21399a5bcc2557a517ed2b3bdaf8ca",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.2,
+       "proof_bytes": 886910,
+       "check_s": 1.2
+      }
+     },
+     {
+      "prefix": [
+       1,
+       6,
+       13
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.6.13",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "7afb45cf8a4ffcb2c155fe494f270b6db0f03e935360b19eb1bf5cf58fd77e5f",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.2,
+       "proof_bytes": 928727,
+       "check_s": 1.4
+      }
+     },
+     {
+      "prefix": [
+       1,
+       6,
+       14
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       6,
+       15
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       6,
+       16
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       6,
+       17
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       6,
+       18
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       6,
+       19
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       6,
+       20
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       6,
+       21
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     }
+    ]
+   },
+   {
+    "prefix": [
+     1,
+     7
+    ],
+    "closed": true,
+    "attempts": [],
+    "children": [
+     {
+      "prefix": [
+       1,
+       7,
+       8
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.7.8",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "ebf15cf08bb68755625935301a1ded94e29a5c80a36c37f99c95e6fecce42ca2",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.1,
+       "proof_bytes": 930063,
+       "check_s": 1.1
+      }
+     },
+     {
+      "prefix": [
+       1,
+       7,
+       9
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.7.9",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "2acc032ffd01bd7d6c2231d05773fc354c48045e7f7ac09afd67785fcb54af12",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.1,
+       "proof_bytes": 864055,
+       "check_s": 1.1
+      }
+     },
+     {
+      "prefix": [
+       1,
+       7,
+       10
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.7.10",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "55499322f289981ca553e6dcbd10b8e8fc52ef0cc4838b513d2fe73d9542e40d",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.2,
+       "proof_bytes": 930641,
+       "check_s": 1.3
+      }
+     },
+     {
+      "prefix": [
+       1,
+       7,
+       11
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.7.11",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "2a6c124e6f18c51f1117af5b31f43c3a4af4d0d77337d0eb722e266bfb1d2e70",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.1,
+       "proof_bytes": 929820,
+       "check_s": 1.1
+      }
+     },
+     {
+      "prefix": [
+       1,
+       7,
+       12
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.7.12",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "23cf393ac2d3c912655046d4378e64d1b4012f687440830638938a2ddaff948f",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.1,
+       "proof_bytes": 929068,
+       "check_s": 1.1
+      }
+     },
+     {
+      "prefix": [
+       1,
+       7,
+       13
+      ],
+      "closed": true,
+      "by": {
+       "case": "sb:1.7.13",
+       "result": "UNSATISFIABLE",
+       "proof": "s VERIFIED UNSAT",
+       "cnf_sha256": "d1635e6fd0576fba92184f57bcf09bc73d9bb9908a2b09b873dec0bd05eddf5f",
+       "solver": "cadical 3.0.1 --lrat",
+       "solve_s": 0.1,
+       "proof_bytes": 929414,
+       "check_s": 1.1
+      }
+     },
+     {
+      "prefix": [
+       1,
+       7,
+       14
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       7,
+       15
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       7,
+       16
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       7,
+       17
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       7,
+       18
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       7,
+       19
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       7,
+       20
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     },
+     {
+      "prefix": [
+       1,
+       7,
+       21
+      ],
+      "closed": true,
+      "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+     }
+    ]
+   },
+   {
+    "prefix": [
+     1,
+     8
+    ],
+    "closed": true,
+    "by": {
+     "case": "unit2:8",
+     "result": "UNSATISFIABLE",
+     "proof": "s VERIFIED UNSAT",
+     "cnf_sha256": "e51c1a974a5d3d56fb2de3b7fe2f0d14599d5b0eadec586200ad7d7bff45ae08",
+     "solver": "cadical 3.0.1 --lrat",
+     "solve_s": 98.8,
+     "proof_bytes": 417030101,
+     "check_s": 36.2
+    }
+   },
+   {
+    "prefix": [
+     1,
+     9
+    ],
+    "closed": true,
+    "by": {
+     "case": "unit2:9",
+     "result": "UNSATISFIABLE",
+     "proof": "s VERIFIED UNSAT",
+     "cnf_sha256": "939708465df5bab6b46eac1babd37849709f28e245840138fad8591b8ef3d4b9",
+     "solver": "cadical 3.0.1 --lrat",
+     "solve_s": 27.7,
+     "proof_bytes": 118662086,
+     "check_s": 26.4
+    }
+   },
+   {
+    "prefix": [
+     1,
+     10
+    ],
+    "closed": true,
+    "by": {
+     "case": "unit2:10",
+     "result": "UNSATISFIABLE",
+     "proof": "s VERIFIED UNSAT",
+     "cnf_sha256": "1014115031b147bf5c837bc08a9436f4234495b3a152dee9df20dea76c3a7583",
+     "solver": "cadical 3.0.1 --lrat",
+     "solve_s": 6.8,
+     "proof_bytes": 39247678,
+     "check_s": 6.4
+    }
+   },
+   {
+    "prefix": [
+     1,
+     11
+    ],
+    "closed": true,
+    "by": {
+     "case": "unit2:11",
+     "result": "UNSATISFIABLE",
+     "proof": "s VERIFIED UNSAT",
+     "cnf_sha256": "4128d6daac7678826ca183c4a6e8c678a612d5d42699ee7f4e7c9236ef6d015f",
+     "solver": "cadical 3.0.1 --lrat",
+     "solve_s": 1.3,
+     "proof_bytes": 9581833,
+     "check_s": 1.8
+    }
+   },
+   {
+    "prefix": [
+     1,
+     12
+    ],
+    "closed": true,
+    "by": {
+     "case": "unit2:12",
+     "result": "UNSATISFIABLE",
+     "proof": "s VERIFIED UNSAT",
+     "cnf_sha256": "c007d8b8310142a2db90ea77dfdd7a080eead1f5f2ed480952faa550a2439b68",
+     "solver": "cadical 3.0.1 --lrat",
+     "solve_s": 0.2,
+     "proof_bytes": 2782326,
+     "check_s": 1.2
+    }
+   },
+   {
+    "prefix": [
+     1,
+     13
+    ],
+    "closed": true,
+    "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+   },
+   {
+    "prefix": [
+     1,
+     14
+    ],
+    "closed": true,
+    "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+   },
+   {
+    "prefix": [
+     1,
+     15
+    ],
+    "closed": true,
+    "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+   },
+   {
+    "prefix": [
+     1,
+     16
+    ],
+    "closed": true,
+    "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+   },
+   {
+    "prefix": [
+     1,
+     17
+    ],
+    "closed": true,
+    "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+   },
+   {
+    "prefix": [
+     1,
+     18
+    ],
+    "closed": true,
+    "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+   },
+   {
+    "prefix": [
+     1,
+     19
+    ],
+    "closed": true,
+    "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+   },
+   {
+    "prefix": [
+     1,
+     20
+    ],
+    "closed": true,
+    "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+   },
+   {
+    "prefix": [
+     1,
+     21
+    ],
+    "closed": true,
+    "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"
+   }
+  ]
+ },
+ "closed": true,
+ "mode": "sb"
+}

@@ -9,7 +9,7 @@ def key(l):
     c = l.split()[2]
     if not c.startswith('pre:'): return (0, [])
     P = [int(t) for t in c[4:].split('.')]
-    return (-P[1], -P[2] if len(P) > 2 else 0, P)
+    return (-P[1], [-x for x in P[2:]])
 seen = set(); bb = []
 for l in sorted(b, key=key):
     if l not in seen: seen.add(l); bb.append(l)
