@@ -31,3 +31,6 @@
 {"n": 79, "k": 17, "cfg": "lex=0,trans=1,kissat,seed=8,opt=--sat", "res": "UNKNOWN", "secs": 1500.0}
 {"n": 69, "k": 15, "cfg": "lex=0,trans=1,cadical,seed=9,opt=--sat", "res": "UNKNOWN", "secs": 1500.1}
 {"n": 72, "k": 16, "cfg": "lex=0,trans=1,kissat,seed=10", "res": "UNKNOWN", "secs": 1800.0}
+{"n": 72, "k": 16, "cfg": "lex=0,trans=1,cadical,seed=8,opt=--sat", "res": "UNKNOWN", "secs": 1500.1}
+{"n": 58, "k": 14, "cfg": "lex=0,trans=1,cadical,seed=9,opt=--sat", "res": "UNKNOWN", "secs": 1500.1}
+{"n": 90, "k": 18, "cfg": "lex=0,trans=1,cadical,seed=8,opt=--sat", "res": "UNKNOWN", "secs": 1500.1}
