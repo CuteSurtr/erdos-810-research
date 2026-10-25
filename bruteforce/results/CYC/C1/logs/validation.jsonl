@@ -72,3 +72,5 @@
 {"n": 14, "k": 4, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
 {"n": 13, "k": 4, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
 {"n": 13, "k": 3, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 5], [3, 11]], "size": 3, "check": "OK"}
+{"n": 14, "k": 3, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [5, 7]], "size": 3, "check": "OK"}
+{"n": 14, "k": 3, "sym": 0, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [5, 7]], "size": 3, "check": "OK"}

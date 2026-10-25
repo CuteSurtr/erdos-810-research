@@ -21,9 +21,13 @@ def portfolio(k, tl, proof=True):
         cmd = [PY, f"{SRC}/run.py", str(n), str(k), "3", str(int(tl)), s, str(seed)] + ([p] if p else [])
         procs.append((s, seed, p, subprocess.Popen(cmd, stdout=subprocess.PIPE, text=True, start_new_session=True)))
     results = []; got = None
-    alive = list(procs)
+    alive = list(procs); tend = time.time() + tl + 20
     while alive:
         time.sleep(1)
+        if time.time() > tend:   # pysat's kissat ignores interrupt(): hard kill at the deadline
+            for it in alive:
+                os.killpg(it[3].pid, signal.SIGKILL); L({"n": n, "k": k, "solver": it[0], "seed": it[1], "res": "UNKNOWN", "note": "killed at deadline"})
+            break
         for it in list(alive):
             s, seed, p, pr = it
             if p and os.path.exists(p) and os.path.getsize(p) > PROOF_MAX:
