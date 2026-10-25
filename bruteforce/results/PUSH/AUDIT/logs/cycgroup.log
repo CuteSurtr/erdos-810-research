@@ -1,0 +1,17 @@
+n=12: 96 solutions (g(minD)=0), 24 orbits under G, 96 images checked, 0 failures, all-solutions-covered=True
+n=13: 340 solutions (g(minD)=0), 31 orbits under G, 340 images checked, 0 failures, all-solutions-covered=True
+n=14: 614 solutions (g(minD)=0), 103 orbits under G, 614 images checked, 0 failures, all-solutions-covered=True
+n=15: 92 solutions (g(minD)=0), 12 orbits under G, 92 images checked, 0 failures, all-solutions-covered=True
+n=16: 464 solutions (g(minD)=0), 58 orbits under G, 464 images checked, 0 failures, all-solutions-covered=True
+n=17: 3056 solutions (g(minD)=0), 191 orbits under G, 3056 images checked, 0 failures, all-solutions-covered=True
+n=18: 6 solutions (g(minD)=0), 1 orbits under G, 6 images checked, 0 failures, all-solutions-covered=True
+n=19: 252 solutions (g(minD)=0), 14 orbits under G, 252 images checked, 0 failures, all-solutions-covered=True
+n=20: 1320 solutions (g(minD)=0), 165 orbits under G, 1320 images checked, 0 failures, all-solutions-covered=True
+n=21: 4 solutions (g(minD)=0), 1 orbits under G, 4 images checked, 0 failures, all-solutions-covered=True
+n=22: 43330 solutions (g(minD)=0), 4333 orbits under G, 43330 images checked, 0 failures, all-solutions-covered=True
+n=23: 616 solutions (g(minD)=0), 28 orbits under G, 616 images checked, 0 failures, all-solutions-covered=True
+n=24: 2884 solutions (g(minD)=0), 362 orbits under G, 2884 images checked, 0 failures, all-solutions-covered=True
+n=25: 45300 solutions (g(minD)=0), 2265 orbits under G, 45300 images checked, 0 failures, all-solutions-covered=True
+n=26: 189444 solutions (g(minD)=0), 15791 orbits under G, 189444 images checked, 0 failures, all-solutions-covered=True
+n=27: 180 solutions (g(minD)=0), 10 orbits under G, 180 images checked, 0 failures, all-solutions-covered=True
+n=28: 3420 solutions (g(minD)=0), 285 orbits under G, 3420 images checked, 0 failures, all-solutions-covered=True
