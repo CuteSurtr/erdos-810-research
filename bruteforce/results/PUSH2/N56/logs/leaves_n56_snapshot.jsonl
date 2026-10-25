@@ -1,0 +1,2 @@
+{"n": 56, "k": 14, "cube": [-1], "res": "UNSAT", "cnf_sha256": "72df075b059e80cc758f05b2536b5b91deadbec5604d0442fa796a2713f7bb67", "solver": "cadical 3.0.1", "opts": [], "proof_bytes": 3922320, "secs": 3.1, "check": "s VERIFIED UNSAT", "check_extra_secs": 0.1, "checker": "cake_lpr a36874a (streamed binary LRAT)"}
+{"n": 56, "k": 14, "cube": [1, 2, 3, 4], "res": "UNKNOWN", "cnf_sha256": "e7828427262e74f4b8c081f0e7cc3d597ac329df461aa6577bcb000075e1c9b4", "solver": "cadical 3.0.1", "opts": [], "proof_bytes": 1546735965, "secs": 600.8}
