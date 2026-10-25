@@ -1,1 +1,10 @@
 {"n": 37, "k": 10, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 38.0}
+{"n": 37, "k": 9, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 1.8, "Dg": [[1, 0], [3, 19], [4, 24], [7, 13], [9, 5], [10, 1], [11, 22], [12, 30], [16, 14]], "check": "ok, 10656 4-cycles checked"}
+{"n": 40, "k": 10, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 51.1, "Dg": [[1, 0], [2, 15], [3, 32], [5, 28], [6, 11], [7, 24], [8, 4], [13, 8], [14, 33], [17, 20]], "check": "ok, 17260 4-cycles checked"}
+{"n": 47, "k": 11, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 11.7, "Dg": [[1, 0], [2, 36], [3, 8], [4, 18], [5, 32], [6, 44], [12, 10], [14, 33], [16, 41], [18, 6], [23, 40]], "check": "ok, 25850 4-cycles checked"}
+{"n": 58, "k": 12, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 4.3, "Dg": [[1, 0], [2, 21], [3, 6], [5, 44], [6, 49], [11, 1], [15, 9], [17, 40], [19, 35], [20, 50], [27, 7], [28, 17]], "check": "ok, 36308 4-cycles checked"}
+{"n": 40, "k": 11, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 187.6}
+{"n": 69, "k": 15, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNKNOWN", "secs": 600.3}
+{"n": 72, "k": 16, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNKNOWN", "secs": 600.0}
+{"n": 79, "k": 15, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 7.7, "Dg": [[1, 0], [2, 51], [5, 1], [6, 35], [8, 10], [10, 31], [21, 12], [22, 36], [24, 11], [25, 9], [26, 43], [28, 47], [33, 4], [36, 18], [38, 54]], "check": "ok, 92509 4-cycles checked"}
+{"n": 90, "k": 20, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNKNOWN", "secs": 11.3}

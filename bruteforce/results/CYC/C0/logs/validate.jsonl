@@ -111,3 +111,6 @@
 {"n": 32, "k": 9, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 21.8}
 {"n": 36, "k": 9, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 1.1, "Dg": [[1, 0], [4, 1], [8, 10], [10, 13], [11, 17], [12, 8], [14, 4], [16, 31], [17, 5]], "check": "ok, 11178 4-cycles checked"}
 {"n": 36, "k": 10, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 33.3}
+{"n": 29, "k": 8, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "UNKNOWN", "secs": 235.7}
+{"n": 30, "k": 8, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "UNKNOWN", "secs": 224.1}
+{"n": 36, "k": 10, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 218.9}
