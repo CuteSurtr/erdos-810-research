@@ -11,9 +11,9 @@ if os.path.exists(f"{ROOT}/logs/proofs.txt"):
         p = l.split(); proofs[(int(p[0]), int(p[1]))] = " ".join(p[2:])
 sols, rows = {}, []
 for n in sorted(KLO):
-    f = f"{ROOT}/logs/n{n}.jsonl"
-    if not os.path.exists(f): continue
-    recs = [json.loads(l) for l in open(f)]
+    fs = sorted(glob.glob(f"{ROOT}/logs/n{n}.jsonl") + glob.glob(f"{ROOT}/logs/n{n}_*.jsonl"))
+    if not fs: continue
+    recs = [json.loads(l) for f in fs for l in open(f) if l.strip()]
     best, unsat, secs, unknown = None, None, 0, None
     for r in recs:
         if r.get("res") == "SAT" and r.get("check") == "OK" and (best is None or r["size"] > len(best)): best = r["Dg"]
