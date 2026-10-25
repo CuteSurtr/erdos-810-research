@@ -4,7 +4,9 @@ checker src/explicit_check.py; also check |D| = k and g(min D) = 0.  Prints a li
 import json, glob, subprocess, sys
 sys.path.insert(0, 'src')
 from explicit_check import check as explicit
-for f in sorted(glob.glob('runs/enum_*.json')):
+for f in sorted(glob.glob("runs/enum_*.json")) + sorted(glob.glob("runs/enumcase_*.json")):
+    nn = int(f.split("_n")[1].split("_")[0])
+    if len(sys.argv) > 1 and nn < int(sys.argv[1]): continue
     try: d = json.load(open(f))
     except Exception: print(f, 'unreadable/running'); continue
     n, k, orbs = d['n'], d['k'], d['orbits']
