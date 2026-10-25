@@ -1,1 +1,0 @@
-src/run_case.sh: line 27: 31740 Killed                  $CK --CML_HEAP_SIZE=6000 --CML_STACK_SIZE=3000 cnf/$tag.cnf proofs/$tag.lrat > logs/$tag.cakelpr 2>&1

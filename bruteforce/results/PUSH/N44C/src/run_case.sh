@@ -17,7 +17,8 @@ psize=$(stat -c %s proofs/$tag.lrat 2>/dev/null || echo 0)
 verdict=""; ct=""
 if [ "$res" = "UNSATISFIABLE" ]; then
   t2=$(date +%s.%N)
-  $CK --CML_HEAP_SIZE=6000 --CML_STACK_SIZE=3000 cnf/$tag.cnf proofs/$tag.lrat > logs/$tag.cakelpr 2>&1
+  # one checker at a time (memory cgroup is 15 GB; cake_lpr may use several GB on a 2 GB proof)
+  flock locks/.checker $CK --CML_HEAP_SIZE=7000 --CML_STACK_SIZE=3000 cnf/$tag.cnf proofs/$tag.lrat > logs/$tag.cakelpr 2>&1
   t3=$(date +%s.%N); ct=$(echo "$t3 - $t2" | bc | sed "s|^\.|0.|")
   verdict=$(grep -m1 '^s ' logs/$tag.cakelpr)
   [ "$verdict" = "s VERIFIED UNSAT" ] && rm -f proofs/$tag.lrat
