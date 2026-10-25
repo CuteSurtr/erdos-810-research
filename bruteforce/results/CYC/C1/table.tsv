@@ -5,4 +5,4 @@ n	k_lo	k_unsat	status	k_lo/n	seconds	notes
 59	13		lower bound 13 certificate-verified; k=14 unfinished	0.2203	1500	
 70	15		lower bound 15 certificate-verified; k=16 unfinished	0.2143	1522	
 76	16		lower bound 16 certificate-verified; k=17 unfinished	0.2105	1522	n/4=19: undecided
-81	16		lower bound 16	0.1975	0	
+81	16		lower bound 16 certificate-verified; k=17 unfinished	0.1975	1522	
