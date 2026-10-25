@@ -243,3 +243,4 @@
 {"n": 51, "u": 7, "order": 16, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 10, "next_secs": 12.5}
 {"n": 53, "u": 52, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 10, "next_secs": 7.6}
 {"n": 53, "u": 23, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 10, "next_secs": 5.2}
+{"n": 53, "u": 10, "order": 13, "best_k": 13, "Dg": [[2, 29], [3, 17], [5, 12], [8, 51], [12, 50], [14, 23], [18, 22], [19, 37], [20, 25], [21, 8], [22, 21], [23, 34], [26, 6]], "t": 0, "next": "UNSAT", "next_k": 14, "next_secs": 5.0}

@@ -70,3 +70,7 @@
 # p=4217 r=8 m=527 total_good=0
 # p=4297 r=8 m=537 total_good=0
 # p=4409 r=8 m=551 total_good=0
+# p=4441 r=8 m=555 total_good=0
+# p=4457 r=8 m=557 total_good=0
+# p=4649 r=8 m=581 total_good=0
+# p=4729 r=8 m=591 total_good=0

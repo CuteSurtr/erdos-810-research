@@ -64,6 +64,9 @@ def main():
     n, k = int(sys.argv[1]), int(sys.argv[2])
     maxorb = int(sys.argv[3]) if len(sys.argv) > 3 else 10 ** 9
     tlim = float(sys.argv[4]) if len(sys.argv) > 4 else 1e9
+    # optional case split (sound): 'unit' = D contains a unit; by a multiplier we may take 1 in D and,
+    # by colour translation, g(1) = 0.  'nounit' = D contains no unit.  Together they cover all solutions.
+    case = sys.argv[5] if len(sys.argv) > 5 else None
     H = (n + 1) // 2 - 1
     pool = IDPool()
     X = lambda d, g: pool.id(('x', d, g)); P = lambda d: pool.id(('p', d))
@@ -84,6 +87,11 @@ def main():
     cl += CardEnc.equals([P(d) for d in range(1, H + 1)], k, vpool=pool, encoding=EncType.totalizer).clauses
     for d in range(1, H + 1):
         cl.append([-P(d)] + [P(e) for e in range(1, d)] + [X(d, 0)])
+    from math import gcd as _g
+    if case == 'unit':
+        cl.append([P(1)]); cl.append([X(1, 0)])
+    elif case == 'nounit':
+        cl += [[-P(d)] for d in range(1, H + 1) if _g(d, n) == 1]
     t0 = time.time()
     orbits = []
     nraw = 0
@@ -105,7 +113,7 @@ def main():
                               "secs": round(time.time() - t0, 1)}), file=sys.stderr, flush=True)
         else:
             status = "stopped_at_max"
-    print(json.dumps({"n": n, "k": k, "status": status, "n_orbits": len(orbits), "n_solutions_gmin0": nraw,
+    print(json.dumps({"n": n, "k": k, "case": case, "status": status, "n_orbits": len(orbits), "n_solutions_gmin0": nraw,
                       "secs": round(time.time() - t0, 1), "orbits": orbits}))
 
 if __name__ == "__main__":
