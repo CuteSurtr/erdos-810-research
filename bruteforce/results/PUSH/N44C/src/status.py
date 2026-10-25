@@ -3,7 +3,9 @@
 import json
 res = {}
 for l in open('results.jsonl'):
-    import re; r = json.loads(re.sub(r":\.", ":0.", l)); res[r['case']] = r
+    import re; r = json.loads(re.sub(r":\.", ":0.", l))
+    if r['case'] in res and res[r['case']]['check'] == 's VERIFIED UNSAT': continue   # a verified entry wins
+    res[r['case']] = r
 q = [l.split()[2] for l in open('queue.txt') if l.strip()]
 from collections import Counter
 c = Counter((res[x]['result'], res[x]['check']) if x in res else ('pending', '') for x in q)

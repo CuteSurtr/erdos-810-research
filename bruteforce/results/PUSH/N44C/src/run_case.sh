@@ -17,7 +17,7 @@ psize=$(stat -c %s proofs/$tag.lrat 2>/dev/null || echo 0)
 verdict=""; ct=""
 if [ "$res" = "UNSATISFIABLE" ]; then
   t2=$(date +%s.%N)
-  $CK cnf/$tag.cnf proofs/$tag.lrat > logs/$tag.cakelpr 2>&1
+  $CK --CML_HEAP_SIZE=6000 --CML_STACK_SIZE=3000 cnf/$tag.cnf proofs/$tag.lrat > logs/$tag.cakelpr 2>&1
   t3=$(date +%s.%N); ct=$(echo "$t3 - $t2" | bc | sed "s|^\.|0.|")
   verdict=$(grep -m1 '^s ' logs/$tag.cakelpr)
   [ "$verdict" = "s VERIFIED UNSAT" ] && rm -f proofs/$tag.lrat
@@ -26,5 +26,6 @@ elif [ "$res" = "SATISFIABLE" ]; then
   rm -f proofs/$tag.lrat
 fi
 [ "$res" = "UNKNOWN" ] && rm -f proofs/$tag.lrat
-rm -f cnf/$tag.cnf
 echo "{\"n\":$n,\"k\":$k,\"case\":\"$c\",\"cnf_sha256\":\"$sha\",\"solver\":\"cadical $($K --version) --lrat\",\"checker\":\"cake_lpr a36874a\",\"result\":\"$res\",\"solve_s\":$st,\"proof_bytes\":$psize,\"check\":\"$verdict\",\"check_s\":\"$ct\"}" >> results.jsonl
+# keep CNF + proof of an UNSAT case whose check failed, for a re-check
+[ "$res" = "UNSATISFIABLE" ] && [ "$verdict" != "s VERIFIED UNSAT" ] || rm -f cnf/$tag.cnf
