@@ -5,7 +5,7 @@
    Variables:  x(d,g) = 1 + (d-1)*n + g      (orbit d present with offset g)
                p(d)   = H*n + d               (orbit d present)
                then auxiliaries y(a,b,delta) <= "g(a)-g(b) == delta", lex and counter aux.
-   usage: cycenc n k sym [extra-unit-file]   (sym: 0 none, 1 colour-translation, 2 translation + lex-leader)
+   usage: cycenc n k sym [extra-clause-file]   (extra clauses in DIMACS body form, each ended by 0)   (sym: 0 none, 1 colour-translation, 2 translation + lex-leader)
    Writes CNF to stdout. */
 #include <stdio.h>
 #include <stdlib.h>
@@ -124,7 +124,7 @@ int main(int argc, char **argv) {
       }
     }
   }
-  if (argc > 4) { FILE *f = fopen(argv[4], "r"); int l; while (fscanf(f, "%d", &l) == 1) { lit(l); end(); } fclose(f); }
+  if (argc > 4) { FILE *f = fopen(argv[4], "r"); int l; while (fscanf(f, "%d", &l) == 1) { if (l) lit(l); else end(); } fclose(f); }
   fprintf(stderr, "n=%d H=%d k=%d sym=%d keys=%ld uniq=%ld y=%ld vars=%d clauses=%ld\n", n, H, k, sym, nkeys, nuniq, ny, nv, ncl);
   printf("p cnf %d %ld\n", nv, ncl);
   rewind(tmp); char buf[1 << 16]; size_t r;

@@ -1,0 +1,2 @@
+{"n": 39, "k": 10, "sym": 2, "solver": "kissat", "seed": 0, "secs": 517.8, "res": "UNSAT", "tag": "drive"}
+{"n": 39, "k": 9, "sym": 2, "solver": "kissat", "seed": 0, "secs": 1.2, "res": "SAT", "Dg": [[1, 0], [2, 12], [3, 19], [6, 17], [9, 4], [13, 33], [14, 2], [15, 37], [19, 6]], "verified": true, "edges": 351}
