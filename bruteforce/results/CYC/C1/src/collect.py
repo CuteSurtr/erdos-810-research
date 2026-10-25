@@ -20,7 +20,8 @@ for n in sorted(KLO):
         if r.get("res") == "UNSAT": unsat = r["k"] if unsat is None else min(unsat, r["k"])
         if r.get("summary") in ("UNKNOWN", "UNDETERMINED"): unknown = r["k"]
         if r.get("summary") == "done": secs += r["secs"]
-    if best is None: continue
+    if best is None:
+        rows.append([n, "", unsat or "", f"no SAT found (k={unknown} unknown)", "", round(secs), "first pass found no solution at the tried k"]); continue
     ok, E, _ = check(n, best); assert ok and E == n * len(best)
     sols[str(n)] = best
     k = len(best)
@@ -29,7 +30,7 @@ for n in sorted(KLO):
         status = f"proved k_max={k}" if pr.startswith("LRAT VERIFIED") else f"k_max={k}: SAT certificate-verified; UNSAT (solver, {pr})"
         notes = pr
     else:
-        status = f"lower bound {k} certificate-verified; k={unknown} unfinished" if unknown else f"lower bound {k}"
+        status = (f"lower bound {k} certificate-verified; k={k+1} unfinished" if k + 1 == unknown else f"lower bound {k} certificate-verified; k={k+1}..{unknown} undecided") if unknown else f"lower bound {k}"
         notes = ""
     if n % 4 == 0: notes += f"; n/4={n//4}: " + ("SAT" if k >= n // 4 else (f"UNSAT (implied by UNSAT at k={unsat})" if unsat and unsat <= n // 4 else "undecided"))
     rows.append([n, k, unsat or "", status, f"{k/n:.4f}", round(secs), notes.strip("; ")])

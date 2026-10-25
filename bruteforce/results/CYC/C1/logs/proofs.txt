@@ -1,1 +1,2 @@
 38 10 LRAT VERIFIED (2199574 added clauses) (11s, proof 1.19 GB)
+44 11 cube[p1=0] LRAT VERIFIED (5193 added clauses) - branch only, not the full instance
