@@ -258,9 +258,9 @@
   "type": "cyclic"
  },
  "51": {
-  "edges": 561,
-  "task": "CONSTR",
-  "file": "CONSTR/certs.json",
+  "edges": 612,
+  "task": "CYC",
+  "file": "CYC/C3/certs.json",
   "type": "cyclic"
  },
  "52": {
@@ -384,10 +384,10 @@
   "type": "cyclic"
  },
  "73": {
-  "edges": 1057,
-  "task": "CONSTR",
-  "file": "CONSTR/certs_large.json",
-  "type": "search"
+  "edges": 1095,
+  "task": "CYC",
+  "file": "CYC/C3/certs.json",
+  "type": "cyclic"
  },
  "74": {
   "edges": 1110,
@@ -438,15 +438,33 @@
   "type": "cyclic"
  },
  "83": {
-  "edges": 1325,
-  "task": "CONSTR",
-  "file": "CONSTR/certs_large.json",
-  "type": "search"
+  "edges": 1411,
+  "task": "CYC",
+  "file": "CYC/C3/certs.json",
+  "type": "cyclic"
+ },
+ "84": {
+  "edges": 1428,
+  "task": "CYC",
+  "file": "CYC/C3/certs.json",
+  "type": "cyclic"
+ },
+ "85": {
+  "edges": 1445,
+  "task": "CYC",
+  "file": "CYC/C4/certs.json",
+  "type": "cyclic"
  },
  "86": {
-  "edges": 1376,
+  "edges": 1462,
   "task": "CYC",
   "file": "CYC/C5/certs.json",
+  "type": "cyclic"
+ },
+ "88": {
+  "edges": 1496,
+  "task": "CYC",
+  "file": "CYC/C4/certs.json",
   "type": "cyclic"
  },
  "89": {
@@ -461,6 +479,18 @@
   "file": "CYC/C0/certs.json",
   "type": "cyclic"
  },
+ "91": {
+  "edges": 1638,
+  "task": "CYC",
+  "file": "CYC/C1/certs.json",
+  "type": "cyclic"
+ },
+ "92": {
+  "edges": 1656,
+  "task": "CYC",
+  "file": "CYC/C5/certs.json",
+  "type": "cyclic"
+ },
  "93": {
   "edges": 1674,
   "task": "CYC",
@@ -468,16 +498,22 @@
   "type": "cyclic"
  },
  "94": {
-  "edges": 800,
-  "task": "AFFARB",
-  "file": "AFFARB/certs.json",
-  "type": "search"
+  "edges": 1692,
+  "task": "CYC",
+  "file": "CYC/C3/certs.json",
+  "type": "cyclic"
+ },
+ "95": {
+  "edges": 1710,
+  "task": "CYC",
+  "file": "CYC/C4/certs.json",
+  "type": "cyclic"
  },
  "97": {
-  "edges": 1740,
-  "task": "CONSTR",
-  "file": "CONSTR/certs_large.json",
-  "type": "search"
+  "edges": 1843,
+  "task": "CYC",
+  "file": "CYC/C5/certs.json",
+  "type": "cyclic"
  },
  "99": {
   "edges": 1881,

@@ -138,6 +138,43 @@ was assembled. "previous" is the 2026-10-14 table (`data/results-2026-10-14.json
   value, and optimal β and supports look random. The difficulty is entirely in the supports.
   This matches the notes' remaining obstacle.
 
+## Cyclic orbit family: CYC wave, 2026-10-25
+
+Tasks `results/CYC/C0..C7` and `results/CYCPAT`.
+
+**Exact k_max(n).** At n = 12..42 (n ≠ 35) and n = 47 the values are 3, 3, 3, 4, 4, 4, 5,
+5, 5, 6, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, (35 not computed), 9, 9, 9, 9, 10, 10, 10,
+and k_max(47) = 11.
+- **Proof checks:**
+  - n = 13..41, except 35 and 38: the UNSAT at k_max + 1 is checked by drat-trim.
+  - n = 38: LRAT, checked by a checker the task wrote.
+  - n = 42: both CaDiCaL and Kissat report UNSAT; the proof is unchecked.
+  - n = 47: cube-and-conquer, proofs unchecked.
+- **Pattern:** k_max(4m) = m for m = 3..10.
+
+**n/4 solutions.**
+- Up to symmetry, the number of solutions at k = n/4 is 24, 58, 165, 362, 285, 128, 59, 4
+  for n = 12, 16, …, 40.
+- At n = 44, k = 11 is undecided. Two exhaustive splits leave 1 of 9 and 2 of 21 cases
+  open, and no solution was found.
+- No n/4 solution was found for 44 ≤ n ≤ 100.
+- Best k/n is about 0.19 at n = 100.
+
+**Theory, paper proofs:**
+- Linear and boundedly piecewise-affine rules give |D| = o(n), via Szemerédi.
+- A multiplier-symmetry lemma.
+- Coset rules die out, with best k ≈ p^{3/4} (experimental).
+
+**Lower bounds.** The table is regenerated in `paper/` from all certificates (220, all
+re-verified).
+
+## Paper draft
+
+`paper/` contains `main.tex`, `OUTLINE.md` (with the claim ledger and TODOs),
+`LITERATURE.md`, and `make_tables.py`. The note answers T. Tao's request on the #810 forum
+(11 Dec 2025) for exact values: AlphaEvolve's lower bounds are optimal for n ≤ 12, and our
+certificates beat them for 14 ≤ n ≤ 25.
+
 ## Open
 
 - **M(13).** We know M(13) ≥ 47; deciding it means ruling out 48 edges.

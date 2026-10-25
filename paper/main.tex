@@ -37,8 +37,8 @@ AlphaEvolve for $n\le 12$ are optimal.
 We give explicit certificates improving the known lower bounds for $14\le n\le 25$ and
 extending them to $n\le 128$. Many of the best constructions for $26\le n\le 64$ are
 \emph{cyclic orbit colourings}: Cayley graphs on $\Z_n$ whose colouring is equivariant under
-rotation. For this family we compute the exact optimum for $12\le n\le 41$, $n\ne35$; it
-equals exactly $n/4$ orbits, that is $n^2/4$ edges, for $n=12,16,\dots,40$. We also prove
+rotation. For this family we compute the exact optimum for $12\le n\le 42$ ($n\ne35$) and
+$n=47$; it equals exactly $n/4$ orbits, that is $n^2/4$ edges, for $n=12,16,\dots,40$. We also prove
 that offset rules that are linear, or piecewise affine with a bounded number of pieces, give
 only $o(n)$ orbits. The data are consistent with the expected negative answer.
 \end{abstract}
@@ -90,11 +90,13 @@ constructions further.
   $13\le n\le 64$ and many $n\le128$. They improve the AlphaEvolve values for all
   $14\le n\le 25$; for example $\M(21)\ge126=0.286\,n^2$.
 \item \textbf{Cyclic orbit colourings} (Section~\ref{sec:cyclic}): we compute the exact
-  optimum $\kmax(n)$ of this family for $12\le n\le 41$, $n\ne 35$.
+  optimum $\kmax(n)$ of this family for $12\le n\le 42$ ($n\ne 35$) and $n=47$.
   \begin{itemize}
   \item $\kmax(4m)=m$ for $3\le m\le 10$, so $\M(n)\ge n^2/4$ at $n=12,16,\dots,40$.
   \item The number of optimal solutions at $k=n/4$ collapses as $n$ grows, to $4$
-    (up to symmetry) at $n=40$, and no $n/4$ solution has been found for $44\le n\le100$.
+    (up to symmetry) at $n=40$. At $n=44$ two independent exhaustive case splits leave only
+    a few sub-cases open, with no solution found, and no $n/4$ solution has been found
+    for any $44\le n\le100$.
   \item Proposition~\ref{prop:linear}: rules with linear or boundedly piecewise-affine
     offsets give only $o(n)$ orbits.
   \end{itemize}
@@ -351,11 +353,16 @@ Dropping the term $e$ in the case $\sigma=-1$ fails for every $u\ne1$ at $n=28$ 
 Table~\ref{tab:cyc} gives $\kmax(n)$. Each exact value combines a solution at $\kmax(n)$
 with an UNSAT result at $\kmax(n)+1$.
 \begin{itemize}
-\item For $n\le 36$ the UNSAT results are solver results, not DRAT-checked. For $n\le 28$ an
-  independent backtracking counter (no SAT, no symmetry reduction) agrees with every count.
-\item For $n=37,40,41$ the UNSAT proofs were checked by \texttt{drat-trim}.
-\item For $n=38$ the LRAT proof was checked by a small checker written for the task. For
-  $n=39$ the UNSAT result is unchecked.
+\item For $13\le n\le 41$, $n\notin\{35,38\}$, the UNSAT proofs at $\kmax(n)+1$ were
+  checked by \texttt{drat-trim}. For $n=12$ the UNSAT result is a solver result, confirmed by
+  an independent backtracking counter (no SAT, no symmetry reduction). That counter also
+  agrees with every solution count for $n\le 28$.
+\item For $n=38$ the LRAT proof was checked by a small checker written for the task.
+\item For $n=42$ the instance at $k=11$ was refuted independently by CaDiCaL and by Kissat.
+  The $2.4$\,GB DRAT proof was not checked within our time limit.
+\item For $n=47$ the instance at $k=12$ was refuted by cube-and-conquer over $29$ cubes. Their
+  coverage was checked, but the per-cube proofs were not.
+\item The value $n=35$ was not computed.
 \end{itemize}
 
 {\small
@@ -383,9 +390,16 @@ multipliers and colour translations, is
   24,\ 58,\ 165,\ 362,\ 285,\ 128,\ 59,\ 4 \qquad (n=12,16,\dots,40).
 \]
 These counts come from complete SAT enumeration with blocking clauses. They peak at $n=24$
-and fall sharply after that. No solution with $k=n/4$ has been found for any multiple of $4$
-in $[44,100]$.
-% TODO(final CYC wave, 2026-10-25 10:15Z): update with k_max(44) if decided.
+and fall sharply after that. At $n=44$, $k=11$ is undecided. Two independent exhaustive case
+splits were attempted.
+\begin{itemize}
+\item One split, on the presence of the orbits $1,\dots,4$, refuted $8$ of $9$ cases, $6$ of
+  them with checked LRAT proofs.
+\item The other, on whether $D$ contains a unit and on the second-smallest orbit, refuted
+  $19$ of $21$ cases.
+\end{itemize}
+Neither found a solution. No solution with $k=n/4$ has been found for any multiple of $4$ in
+$[44,100]$.
 For several odd $n$, $\kmax(n)/n$ exceeds $1/4$ (for example $\kmax(21)=6$ and $\kmax(31)=8$).
 For $n=18,21,31$ the optimal solution is unique up to symmetry.
 \end{remark}
@@ -473,7 +487,8 @@ range.
   \end{itemize}
 \item Give a fully certified proof of $\M(12)=40$, by checking the cubes $\Delta=7,8,9$.
 \item Is $\kmax(n)=o(n)$? A construction with $\kmax(n)\ge\varepsilon n$ would answer
-  Erd\H{o}s \#810 positively. Is $\kmax(4m)<m$ for some $m$? The first open case is $n=44$.
+  Erd\H{o}s \#810 positively. Is $\kmax(4m)<m$ for some $m$? The first open case is $n=44$,
+  where only the cases listed above remain.
 \end{enumerate}
 
 % =====================================================================

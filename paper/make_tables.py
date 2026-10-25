@@ -27,20 +27,16 @@ ALPHAEVOLVE = {4: 5, 5: 7, 6: 11, 7: 14, 8: 17, 9: 23, 10: 30, 11: 34, 12: 40,
 # Exact optima of the cyclic orbit family (number of orbits k_max(n)), with how the
 # upper bound k_max(n) + 1 was excluded.  Sources: results/CONSTR (cyclic_family_status.json,
 # first UNSAT k), results/CYCPAT (enumeration, brute force), results/CYC.
-SOLVER = "solver UNSAT"
+DRAT = "DRAT, drat-trim"
 CYCLIC_EXACT = {
     12: (3, "solver UNSAT; brute force"),
-    13: (3, SOLVER), 14: (3, SOLVER), 15: (4, SOLVER),
-    16: (4, "solver UNSAT; brute force"), 17: (4, SOLVER), 18: (5, SOLVER),
-    19: (5, SOLVER), 20: (5, "solver UNSAT; brute force"), 21: (6, SOLVER),
-    22: (5, SOLVER), 23: (6, SOLVER), 24: (6, "solver UNSAT; brute force"),
-    25: (6, SOLVER), 26: (6, SOLVER), 27: (7, SOLVER),
-    28: (7, "solver UNSAT; brute force"), 29: (7, SOLVER), 30: (7, SOLVER),
-    31: (8, SOLVER), 32: (8, SOLVER), 33: (8, SOLVER), 34: (8, SOLVER),
-    36: (9, SOLVER),
-    37: (9, "DRAT, drat-trim"), 38: (9, "LRAT, task-written checker"),
-    39: (9, "solver UNSAT, unchecked"), 40: (10, "DRAT, drat-trim"),
-    41: (10, "DRAT, drat-trim"),
+    **{n: (k, DRAT) for n, k in {
+        13: 3, 14: 3, 15: 4, 16: 4, 17: 4, 18: 5, 19: 5, 20: 5, 21: 6, 22: 5,
+        23: 6, 24: 6, 25: 6, 26: 6, 27: 7, 28: 7, 29: 7, 30: 7, 31: 8, 32: 8,
+        33: 8, 34: 8, 36: 9, 37: 9, 39: 9, 40: 10, 41: 10}.items()},
+    38: (9, "LRAT, task-written checker"),
+    42: (10, "two solvers, proof unchecked"),
+    47: (11, "cube-and-conquer, proofs unchecked"),
 }
 
 

@@ -116,10 +116,13 @@ Literature notes are in `LITERATURE.md`.
 | M(12) = 40 | exhaustive enumeration, pruned (2 checkers) and unpruned (4 checkers); partial DRAT | `results/M12`, `results/V12/V0..V3`, `results/SAT` |
 | Extremal counts 5, 45, 3, 2, 131 (n = 7..11) | agree across 4 independent checkers | V12 validation tables |
 | Lower bounds, n = 13..128 | certificate-verified (re-checked by `make_tables.py`) | `results/{SAT,LB,CONSTR,CYC,CYCPAT}` |
-| Cyclic k_max, n = 12..36 | solver UNSAT; brute force agrees for n ≤ 28 | `results/CONSTR`, `results/CYCPAT` |
-| Cyclic k_max, n = 37, 40, 41 | DRAT (drat-trim) | `results/CYC/C0`, `C3` |
+| Cyclic k_max(12) | solver UNSAT; brute force | `results/CYCPAT` |
+| Cyclic k_max, n = 13..34 and 36 | DRAT (drat-trim) at k_max + 1 | `results/CYC/C4` (validation table) |
+| Cyclic k_max, n = 37, 39, 40, 41 | DRAT (drat-trim) | `results/CYC/C0`, `C2`, `C3` |
 | Cyclic k_max(38) | LRAT, checked by a checker the task wrote | `results/CYC/C1` |
-| Cyclic k_max(39) | solver UNSAT, proof unchecked | `results/CYC/C2` |
+| Cyclic k_max(42) = 10 | CaDiCaL and Kissat both UNSAT; the 2.4 GB DRAT was not checked | `results/CYC/C4` |
+| Cyclic k_max(47) = 11 | cube-and-conquer over 29 cubes, coverage checked, proofs unchecked | `results/CYC/C0` |
+| n = 44, k = 11 | undecided: 8 of 9 cubes UNSAT (C1); 19 of 21 cases UNSAT (CYCPAT); no solution | `results/CYC/C1`, `results/CYCPAT` |
 | n/4 solution-orbit counts | complete SAT enumeration with blocking (solver) | `results/CYCPAT` |
 | Proposition 4 (linear rules) | paper proof, checked line by line; still needs an independent audit | `results/CYCPAT/REPORT.md` §6.3 |
 | Lemma 3 (multiplier action) | paper proof plus numerical check (all units, n = 28, 40, and 9886 images) | CYCPAT §4 |
@@ -127,8 +130,10 @@ Literature notes are in `LITERATURE.md`.
 ## TODO before submission
 - [ ] Read Sárközy–Selkow (2006) and BEGS (1991, *Further results…*) in full; look up Li–Ning–Xie.
 - [ ] Independent audit of Proposition 4 and Lemma 3, as the repo's practice requires.
-- [ ] Settle k_max(44), or say plainly that it is open. Finish the CYC wave (due 2026-10-25 10:15Z).
-- [ ] Re-check the n = 39 cyclic UNSAT with drat-trim, and the n = 38 LRAT with a standard checker (cake_lpr).
+- [x] The CYC wave finished on 2026-10-25. k_max(44) is still open; the text says so.
+- [x] n = 39 cyclic UNSAT re-checked with drat-trim (CYC/C2).
+- [ ] Re-check the n = 38 LRAT with a standard checker (cake_lpr), and the n = 42 DRAT with more time.
+- [ ] Finish n = 44, k = 11: the open cubes and sub-cases (`results/CYCPAT/REPORT.md` §10, `results/CYC/C1`).
 - [ ] Optional: DRAT for the (12, 41) cubes Δ = 7, 8, 9, which would give a fully certified M(12).
 - [ ] Optional: Lean `decide` certificates for the lower bounds n ≤ 30.
 - [ ] Authorship, acknowledgements and the AI-assistance disclosure are the author's decision;
