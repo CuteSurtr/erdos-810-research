@@ -1,0 +1,9 @@
+n	k_lo	k_unsat	status	k_lo/n	seconds	notes
+42	10		certificate-verified lower bound	0.2381	0	
+53	13		certificate-verified lower bound; k=14 unknown (timeout)	0.2453	1500	
+56	12		certificate-verified lower bound	0.2143	0	k=n/4=14 undecided
+63	12		certificate-verified lower bound	0.1905	0	
+74	0		certificate-verified lower bound	0.0000	0	
+85	0		certificate-verified lower bound	0.0000	0	
+88	0		certificate-verified lower bound	0.0000	0	k=n/4=22 undecided
+95	0		certificate-verified lower bound	0.0000	0	

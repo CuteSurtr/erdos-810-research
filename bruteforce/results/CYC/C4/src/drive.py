@@ -5,7 +5,11 @@ the fourth job runs k = n/4 when n = 0 mod 4 and n/4 > best+1, else best+2 (kiss
 A SAT answer at k raises best to k (models re-verified by check.py inside run.py) and restarts the
 jobs at or below k; an UNSAT answer at k ends the search (sum p >= k is monotone).
 All results are appended to ../runs/n<n>.jsonl."""
-import sys, os, subprocess, json, time
+import sys, os, subprocess, json, time, signal
+def killjob(p):
+    try: os.killpg(p.pid, signal.SIGKILL)
+    except ProcessLookupError: pass
+    p.wait()
 HERE = os.path.dirname(os.path.abspath(__file__))
 n, best, cap = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3])
 os.makedirs(f"{HERE}/../runs", exist_ok=True)
@@ -16,7 +20,7 @@ unsat = None; unknown = set()
 def start(key, k, solver, seed):
     left = int(deadline - time.time())
     if left < 5: return
-    p = subprocess.Popen(["python3", f"{HERE}/run.py", str(n), str(k), "2", str(left), solver, str(seed)], stdout=subprocess.PIPE, text=True)
+    p = subprocess.Popen(["python3", f"{HERE}/run.py", str(n), str(k), "2", str(left), solver, str(seed)], stdout=subprocess.PIPE, text=True, start_new_session=True)
     jobs[key] = (p, k)
 def plan():
     want = {"A": (best + 1, "kissat", 0), "B": (best + 1, "kissat-sat", 1), "C": (best + 1, "kissat-unsat", 0)}
@@ -26,7 +30,7 @@ def plan():
         want = {kk: v for kk, v in want.items() if v[0] < unsat}
     for key, (k, solver, seed) in want.items():
         if key in jobs and jobs[key][1] == k: continue
-        if key in jobs: jobs[key][0].kill(); jobs[key][0].wait(); del jobs[key]
+        if key in jobs: killjob(jobs[key][0]); del jobs[key]
         start(key, k, solver, seed)
 plan()
 while jobs and time.time() < deadline + 30:
@@ -46,9 +50,9 @@ while jobs and time.time() < deadline + 30:
         else:
             unknown.add(k)
     if unsat is not None and best + 1 >= unsat:
-        for p, k in jobs.values(): p.kill()
+        for p, k in jobs.values(): killjob(p)
         break
     plan()
-for p, k in jobs.values(): p.kill()
+for p, k in jobs.values(): killjob(p)
 summary = {"n": n, "best": best, "unsat": unsat, "unknown": sorted(unknown), "secs": round(time.time() - t0, 1)}
 log.write(json.dumps({"summary": summary}) + "\n"); print("SUMMARY", json.dumps(summary), flush=True)
