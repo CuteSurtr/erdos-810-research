@@ -11,12 +11,19 @@ ap = argparse.ArgumentParser()
 ap.add_argument("n", type=int); ap.add_argument("k", type=int); ap.add_argument("cap", type=int)
 ap.add_argument("--jobs", type=int, default=4); ap.add_argument("--also", type=int, nargs="*", default=[])
 ap.add_argument("--sym", type=int, default=3)
+ap.add_argument("--racers", default="")
 a = ap.parse_args()
 T0 = time.time()
 
 def race(k, budget):
     procs = []
-    for j in range(a.jobs):
+    if a.racers:   # explicit list solver:config:sym:seed (UNSAT proofs only from the default set)
+        for spec in a.racers.split(","):
+            sv, cf, sy, sd = spec.split(":")
+            cmd = [sys.executable, os.path.join(HERE, "cycrun.py"), str(a.n), str(k), "--sym", sy, "--seed", sd,
+                   "--solver", sv, "--timeout", str(max(1, int(budget)))] + (["--config", cf] if cf else [])
+            procs.append(subprocess.Popen(cmd, stdout=subprocess.PIPE, text=True, start_new_session=True))
+    for j in range(0 if a.racers else a.jobs):
         if j == a.jobs - 1 and a.jobs > 1: args = ["--solver", "cadical", "--seed", "0", "--drat", "--keepproof"]
         else: args = ["--solver", "kissat", "--seed", str(j), "--config", ["sat", "sat", "unsat"][j % 3]]
         sym = 1 if j == 1 else a.sym   # racer 1: translation fix only (lex-leader can slow SAT finding)
