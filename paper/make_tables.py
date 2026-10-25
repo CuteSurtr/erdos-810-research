@@ -33,9 +33,9 @@ CYCLIC_EXACT = {
     **{n: (k, DRAT) for n, k in {
         13: 3, 14: 3, 15: 4, 16: 4, 17: 4, 18: 5, 19: 5, 20: 5, 21: 6, 22: 5,
         23: 6, 24: 6, 25: 6, 26: 6, 27: 7, 28: 7, 29: 7, 30: 7, 31: 8, 32: 8,
-        33: 8, 34: 8, 36: 9, 37: 9, 39: 9, 40: 10, 41: 10}.items()},
-    38: (9, "LRAT, task-written checker"),
+        33: 8, 34: 8, 35: 8, 36: 9, 37: 9, 38: 9, 39: 9, 40: 10, 41: 10}.items()},
     42: (10, "two solvers, proof unchecked"),
+    44: (10, r"LRAT, \texttt{cake\_lpr}, all leaves"),
     47: (11, "cube-and-conquer, proofs unchecked"),
 }
 
@@ -98,8 +98,27 @@ def load_all():
     files = sorted(glob.glob(os.path.join(RES, "*", "certs*.json"))
                    + glob.glob(os.path.join(RES, "CYC", "*", "certs.json"))
                    + glob.glob(os.path.join(RES, "CYC", "*", "solutions.json"))
-                   + glob.glob(os.path.join(RES, "CYCPAT", "certs.json")))
+                   + glob.glob(os.path.join(RES, "CYCPAT", "certs.json"))
+                   + glob.glob(os.path.join(RES, "PUSH", "*", "certs.json")))
     out = []
+    for path in sorted(glob.glob(os.path.join(RES, "CYCPAT", "solutions", "enum_n*_k*.json"))):
+        try:
+            data = json.load(open(path))
+        except (OSError, ValueError):
+            continue
+        if data.get("normal_forms"):
+            n = int(data["n"])
+            out.append((n, to_edges(n, data["normal_forms"][0]), "CYCPAT",
+                        os.path.relpath(path, RES)))
+    for path in sorted(glob.glob(os.path.join(RES, "PUSH", "*", "logs", "*.jsonl"))):
+        for line in open(path):
+            try:
+                rec = json.loads(line)
+            except ValueError:
+                continue
+            if rec.get("res") == "SATISFIABLE" and rec.get("Dg") and "n" in rec:
+                n = int(rec["n"])
+                out.append((n, to_edges(n, rec["Dg"]), "PUSH", os.path.relpath(path, RES)))
     for path in files:
         try:
             data = json.load(open(path))
@@ -118,13 +137,15 @@ def load_all():
 
 
 def main():
+    os.makedirs(os.path.join(HERE, "data"), exist_ok=True)
+    os.makedirs(os.path.join(HERE, "tables"), exist_ok=True)
     certs = load_all()
     lb_sources = {}
     try:
         lb_sources = json.load(open(os.path.join(RES, "LB", "sources.json")))
     except (OSError, ValueError):
         pass
-    rank = {"cyclic": 2, "symmetric": 1, "search": 0}
+    rank = {"cyclic": 2, "symmetric": 1, "search": 0, "padded": -1}
     best = {}
     best_cyc = {}
     rejected = []
@@ -147,8 +168,31 @@ def main():
     if rejected:
         raise SystemExit(f"certificate check failed: {rejected}")
 
-    os.makedirs(os.path.join(HERE, "data"), exist_ok=True)
-    os.makedirs(os.path.join(HERE, "tables"), exist_ok=True)
+    # Padding: M(n) >= M(m) + (n - m) for m < n (add pendant vertices joined to vertex 0
+    # with colour 0; a pendant edge lies on no 4-cycle).  Build and re-check the padded
+    # certificate whenever it beats the direct one.
+    cert_of = {}
+    for n, edges, task, path in certs:
+        if best.get(n) and best[n][2] == path and len(edges) == best[n][0]:
+            cert_of.setdefault(n, edges)
+    padded = {}
+    for n in sorted(best):
+        cands = [(best[m][0] + (n - m), m) for m in best if m < n and m >= 2]
+        if not cands:
+            continue
+        val, m = max(cands)
+        if val > best[n][0]:
+            base = cert_of[m] if m not in padded else padded[m]
+            edges = list(base) + [(0, v, 0) for v in range(m, n)]
+            if not check(n, edges) or len(edges) != val:
+                raise SystemExit(f"padding failed at n={n} from m={m}")
+            padded[n] = edges
+            best[n] = (val, "padded", f"padded from n={m}", "padded")
+            cert_of[n] = edges
+    if padded:
+        json.dump({str(n): e for n, e in sorted(padded.items())},
+                  open(os.path.join(HERE, "data", "padded_certs.json"), "w"))
+
     json.dump({str(n): {"edges": b[0], "task": b[1], "file": b[2], "type": b[3]}
                for n, b in sorted(best.items())},
               open(os.path.join(HERE, "data", "best_lower_bounds.json"), "w"), indent=1)

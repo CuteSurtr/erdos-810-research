@@ -105,6 +105,23 @@ Literature notes are in `LITERATURE.md`.
 
 ---
 
+## Revision of 2026-10-25, afternoon
+
+Applied the PUSH/AUDIT report (`results/PUSH/AUDIT/AUDIT.md`) and the new PUSH results:
+- **Theorem 44 added:** k_max(44) = 10. All 24 leaves have LRAT checked by cake_lpr; the 16
+  sub-cube leaves also have DRAT checked by drat-trim (PUSH/N44A, N44B).
+- **CERT results:** k_max(35) = 8 (DRAT); the n = 38 proof is now checked by drat-trim.
+- **Padding:** ten Table 2 rows were below the padding bound and are now padded, with explicit
+  certificates that are re-checked.
+- **Type labels:** n = 18 and 21 are now cyclic (CYCPAT enumerations loaded).
+- **Abstract and results:** overclaims fixed (slope hypothesis; DRAT only for 9 ≤ n ≤ 11; "values
+  for 7 ≤ n ≤ 12 appear to be new"; precise statement of the n/4 search coverage).
+- **Proofs:** Lemma 3 injectivity, Proposition 4 quantifiers, the Szemerédi pattern step,
+  the Varnavides attribution, the b ∈ {0,1} proof, and the scope caveat.
+- **Other families:** ranges corrected; Roth cited.
+- **References:** added Kissat, cube-and-conquer, PySAT, cake_lpr, Roth, Ajtai–Szemerédi, #1178,
+  Bucić–Chen–Ma and Yang; CaDiCaL now cites CAV 2024; DOIs added.
+
 ## Claim ledger (status and source)
 
 | Claim | Status | Source |
@@ -119,17 +136,22 @@ Literature notes are in `LITERATURE.md`.
 | Cyclic k_max(12) | solver UNSAT; brute force | `results/CYCPAT` |
 | Cyclic k_max, n = 13..34 and 36 | DRAT (drat-trim) at k_max + 1 | `results/CYC/C4` (validation table) |
 | Cyclic k_max, n = 37, 39, 40, 41 | DRAT (drat-trim) | `results/CYC/C0`, `C2`, `C3` |
+| Cyclic k_max(35) = 8, k_max(38) = 9 | DRAT (drat-trim) | `results/PUSH/CERT` |
+| **k_max(44) = 10 (Theorem 44)** | all 24 leaves LRAT, checked by cake_lpr; the 16 sub-cube leaves also DRAT, checked by drat-trim; relies on C1's encoder and lex-leader | `results/PUSH/N44A`, `N44B`, `results/CYC/C1` |
 | Cyclic k_max(38) | LRAT, checked by a checker the task wrote | `results/CYC/C1` |
 | Cyclic k_max(42) = 10 | CaDiCaL and Kissat both UNSAT; the 2.4 GB DRAT was not checked | `results/CYC/C4` |
 | Cyclic k_max(47) = 11 | cube-and-conquer over 29 cubes, coverage checked, proofs unchecked | `results/CYC/C0` |
-| n = 44, k = 11 | undecided: 8 of 9 cubes UNSAT (C1); 19 of 21 cases UNSAT (CYCPAT); no solution | `results/CYC/C1`, `results/CYCPAT` |
+| n = 44, independent second split | CYCPAT split (19 of 21 cases) plus PUSH/N44C in progress | `results/CYCPAT`, `results/PUSH/N44C` |
 | n/4 solution-orbit counts | complete SAT enumeration with blocking (solver) | `results/CYCPAT` |
-| Proposition 4 (linear rules) | paper proof, checked line by line; still needs an independent audit | `results/CYCPAT/REPORT.md` §6.3 |
-| Lemma 3 (multiplier action) | paper proof plus numerical check (all units, n = 28, 40, and 9886 images) | CYCPAT §4 |
+| Proposition 4 (linear rules) | paper proof; audited (PUSH/AUDIT §1.6), numerically tested (3286 instances) | `results/CYCPAT/REPORT.md` §6.3, `results/PUSH/AUDIT` |
+| Lemma 3 (multiplier action) | paper proof (injectivity added); audited; 9886 images checked independently | CYCPAT §4, PUSH/AUDIT §1.5 |
+| Padded lower bounds (10 rows) | explicit certificates built and checked by `make_tables.py` | `data/padded_certs.json` |
 
 ## TODO before submission
 - [ ] Read Sárközy–Selkow (2006) and BEGS (1991, *Further results…*) in full; look up Li–Ning–Xie.
-- [ ] Independent audit of Proposition 4 and Lemma 3, as the repo's practice requires.
+- [x] Independent audit (PUSH/AUDIT): applied. Remaining [B]/[C] notes are in AUDIT.md.
+- [ ] When PUSH/CERT, N44C and N48 finish (2026-10-25 16:00Z), update n = 42, 47 and 48 and the n = 44 cross-check (TODO markers in main.tex).
+- [ ] Verify the pages of the Kissat and cake_lpr bib entries (marked TODO).
 - [x] The CYC wave finished on 2026-10-25. k_max(44) is still open; the text says so.
 - [x] n = 39 cyclic UNSAT re-checked with drat-trim (CYC/C2).
 - [ ] Re-check the n = 38 LRAT with a standard checker (cake_lpr), and the n = 42 DRAT with more time.

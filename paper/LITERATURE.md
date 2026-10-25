@@ -18,7 +18,7 @@ I also checked whether small values or the cyclic constructions have appeared be
 - In §8 (open questions) they call C4 "one of the most vexing questions". In the two densest
   ranges of their Table 1, χ_S(n, e, C4) is known only to within a factor of about n.
 - For P4, Theorem 6.3 shows χ_S(n, c·n·r3(n), P4) ≤ n via Ruzsa–Szemerédi, and
-  χ_S(n, εn², P4) > cn for large n.
+  χ_S(n, εn², P4) > cn for every c once n is large (that is, /n → ∞; checked against the text of (6.4)).
 - The closing note links the topic to Berkowitz's question about S ⊂ GF(2)^{3n} with
   x + y + z = 0. That is the sum-colouring idea Tao revisits on the forum.
 - **No exact small values, tables of small n, computer searches or cyclic constructions for
