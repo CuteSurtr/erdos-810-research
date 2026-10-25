@@ -1,0 +1,10 @@
+10:38:04 start [1, -2, 3, 4] t=3600
+10:38:04 start [1, -2, 3, -4] t=3600
+10:38:04 start [1, -2, -3, 4] t=3600
+10:38:04 start [1, -2, -3, -4] t=3600
+10:38:12 done [1, -2, -3, -4] UNSATISFIABLE 7.7s s VERIFIED UNSAT
+10:38:12 start [1, 2, -3, -4] t=3600
+10:38:23 done [1, -2, 3, -4] UNSATISFIABLE 18.2s s VERIFIED UNSAT
+10:38:23 start [1, 2, 3, -4] t=7200
+10:38:23 done [1, -2, -3, 4] UNSATISFIABLE 18.4s s VERIFIED UNSAT
+10:38:23 start [1, 2, -3, 4] t=7200
