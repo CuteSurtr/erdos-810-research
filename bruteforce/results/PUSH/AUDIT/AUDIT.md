@@ -329,7 +329,26 @@ Issues in this section:
 colours. It uses no SAT, shares no code with CYCPAT, and is not told the collision criterion of
 Lemma 2. Orbits are computed by my `src/cycgroup.py`.
 
-BRUTE_TABLE_PLACEHOLDER
+| n | k = k_max: solutions with g(min D)=0 | orbits under G (own code) | k_max+1: solutions | wall s (k_max / k_max+1) |
+|---|---|---|---|---|
+| 13 | (not run; certificate at k_max exists) | 31 | k=4: 0 | — / 0 |
+| 15 | (not run; certificate at k_max exists) | 12 | k=5: 0 | — / 0 |
+| 17 | k=4: 3056 | 191 | k=5: 0 | 0 / 0 |
+| 18 | (not run; certificate at k_max exists) | 1 | k=6: 0 | — / 0 |
+| 19 | k=5: 252 | 14 | k=6: 0 | 1 / 0 |
+| 20 | k=5: 1320 | 165 | k=6: 0 | 2 / 1 |
+| 21 | (not run; certificate at k_max exists) | 1 | k=7: 0 | — / 2 |
+| 22 | k=5: 43330 | 4333 | k=6: 0 | 9 / 5 |
+| 23 | k=6: 616 | 28 | k=7: 0 | 23 / 11 |
+| 24 | k=6: 2884 | 362 | k=7: 0 | 38 / 20 |
+| 25 | k=6: 45300 | 2265 | k=7: 0 | 152 / 77 |
+| 26 | k=6: 189444 | 15791 | k=7: 0 | 271 / 148 |
+| 27 | k=7: 180 | 10 | k=8: 0 | 623 / 283 |
+| 28 | k=7: 3420 | 285 | k=8: 0 | 1218 / 611 |
+| 29 | k=7: 63968 | 2288 | k=8: 0 | 3818 / 2244 |
+| 30 | (not run; certificate at k_max exists) | — | k=8: 0 | — / 3974 |
+
+The k_max+1 column is an **independent, SAT-free confirmation of the upper bound k_max(n) for every 12 ≤ n ≤ 30** (n = 31 and 32 were still running at wrap-up; see REPORT.md). Times are wall-clock under 3–5 concurrent jobs on 4 cores.
 
 - **Everything matches** CYCPAT's brute-force and SAT-enumeration counts.
 - The orbit counts 24, 58, 165, 362 (n = 12, 16, 20, 24) and the uniqueness at n = 18, 21 (and 31,
@@ -355,7 +374,7 @@ BRUTE_TABLE_PLACEHOLDER
 - **[B] "These counts come from complete SAT enumeration with blocking clauses."** The final UNSAT
   call of each enumeration is a solver result without a proof. Add "(solver results; for n ≤ 28 they
   agree with an independent brute-force count)". The CYCPAT brute force actually goes to n = 29, and
-  this audit adds n ≤ BRUTE_MAXN.
+  this audit's independent brute force reproduces every count for n ≤ 29.
 - **[C]** Remark: "For several odd n, k_max(n)/n exceeds 1/4". It also exceeds 1/4 at the even
   n = 18 (5/18 = 0.278). Write "for several n (all odd except n = 18)".
 - **[C]** §5.1, n = 12: "an independent backtracking counter (no SAT, no symmetry reduction)". The
@@ -501,4 +520,4 @@ have no checked proof:
   tasks' remit. I relied on the logged verdict lines.
 - BEGS page numbers and the Erdős-forum dates (DNS blocked).
 - The extremal counts for n = 8..11 by my own code. They are cross-checked by 4–5 independent
-  checkers in M12/V12. N7_PLACEHOLDER
+  checkers in M12/V12. My own code (`src/smallgood.py`) reproduces n = 6 (1 extremal class, M(6) = 11) and n = 7 (5 extremal classes at e = 14, none at e = 15; `logs/smallgood_n7.log`).

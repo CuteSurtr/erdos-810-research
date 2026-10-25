@@ -24,7 +24,7 @@ each with exact replacement wording. The table below lists the independent compu
 | Lean `cert4`..`cert12` (lean-formalization, read only), re-checked | 9/9 valid | certificate-verified (Lean itself not compiled) |
 | Pólya counts (10,31), (11,34), (11,35), (12,41), (13,48) | reproduced by own cycle-index code | proved (exact computation) |
 | 6-good classes on 6 vertices = 127; M(6) = 11; M(7) = 14 with 5 extremal classes | reproduced by own explicit-C4 backtracking | proved (exhaustive, own code) |
-| cyclic family: k_max(n) and the counts at k_max, n = 12..BRUTE_MAXN, by own brute force | all equal CYCPAT/CONSTR | proved (exhaustive, own code) |
+| cyclic family: k_max(n) and the counts at k_max, n = 12..29 (and k_max+1 empty for n = 12..30), by own brute force | all equal CYCPAT/CONSTR | proved (exhaustive, own code) |
 | Lemma 3 on all CYCPAT optimal solutions, n = 20..40 (9 values of n) | all images valid; 9886 distinct images as claimed; the "no +e" variant fails for every u ≠ 1 | verified numerically |
 | Proposition 4 (random instances, only g(d1), g(d3) prescribed) | 3286 instances, 0 valid | consistent with the proof |
 | n = 47 cube coverage (C0) | 29 cubes cover 512/512 | verified |

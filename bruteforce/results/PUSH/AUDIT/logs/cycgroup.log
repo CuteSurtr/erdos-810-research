@@ -15,3 +15,4 @@ n=25: 45300 solutions (g(minD)=0), 2265 orbits under G, 45300 images checked, 0 
 n=26: 189444 solutions (g(minD)=0), 15791 orbits under G, 189444 images checked, 0 failures, all-solutions-covered=True
 n=27: 180 solutions (g(minD)=0), 10 orbits under G, 180 images checked, 0 failures, all-solutions-covered=True
 n=28: 3420 solutions (g(minD)=0), 285 orbits under G, 3420 images checked, 0 failures, all-solutions-covered=True
+n=29: 63968 solutions (g(minD)=0), 2288 orbits under G, 63968 images checked, 0 failures, all-solutions-covered=True
