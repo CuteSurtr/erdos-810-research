@@ -28,9 +28,9 @@ Swap:              0           0           0
 | R9 | ⟨u⟩-invariant optima (SAT, n = 13–53 so far): they reach k_max at n = 13–15, 21, 24, 26, 29, 30 and 38 (k_max(38) = 9 per CYC/C1). They match the CONSTR LB at 37, 41, 48, beat it at 53 (13 vs 12), and give k = 11 at n = 51 (no previous cyclic LB). They fall short elsewhere, e.g. n = 28, 32, 36: no invariant solution with k ≥ 6, 7, 8 for any subgroup (UNSAT). | *proved* per subgroup where the next k returned UNSAT; otherwise lower bound |
 | R10 | Literature: no prior cyclic or Cayley construction found for "every C4 rainbow with n colours" (§8). | quick search only |
 | R12 | **Doubling lift fails.** For every optimal D at m = 12, 16, 20, the set D′ = D ∪ (m − D) of Z_{2m}-orbits over ±D (size 2k = n′/4) admits no valid g′ (SAT). Results: m = 12: 5 of 5 distinct D′ UNSAT; m = 16: 9 of 9 UNSAT; m = 20: 14 of 14 UNSAT (each < 60 s). So the n/4 solutions at 24, 32, 40 are not lifts of the ones at 12, 16, 20. | *proved* per D (solver UNSAT, unchecked) |
-| R11 | **Observation: the n/4 solutions are thinning out fast.** For n ≡ 0 (mod 4), the number of solution orbits at k = n/4 is 58, 165, 362, 285, 128, 59, **4** for n = 16, 20, …, 40. It peaks at 24 and falls about 15-fold from 36 to 40. For n ≡ 2 (mod 4), with k_max = (n−2)/4: 4333, 15791, 49909, 25663 at n = 22, 26, 30, 34, also past a peak. Odd n with k_max/n > 1/4 (18, 21, 31) have a **unique** optimal orbit. | counts *proved* (solver); the extrapolation (k = n/4 fails soon, likely by n = 44–48) is *heuristic* |
+| R11 | **Observation: the n/4 solutions are thinning out fast.** For n ≡ 0 (mod 4), the number of solution orbits at k = n/4 is 58, 165, 362, 285, 128, 59, **4** for n = 16, 20, …, 40. It peaks at 24 and falls about 15-fold from 36 to 40. At **n = 44, k = 11**, 19 of the 21 exhaustive sub-cases are UNSAT and no solution was found; the two hardest (1 ∈ D and min(D∖{1}) ∈ {2, 3}) are unfinished (§10). For n ≡ 2 (mod 4), with k_max = (n−2)/4: 4333, 15791, 49909, 25663 at n = 22, 26, 30, 34, also past a peak. Odd n with k_max/n > 1/4 (18, 21, 31) have a **unique** optimal orbit. | counts *proved* (solver); the extrapolation (k = n/4 fails soon, likely by n = 44–48) is *heuristic* |
 
-**Bottom line.** No explicit rule found here gives |D| ≥ εn on an infinite family. Every structured rule I could formulate dies, and for linear rules this is provable through Szemerédi's theorem. The optimal solutions for n ≤ 36 look unstructured. Their number at k = n/4 peaks at n = 24 (362 orbits) and drops to 128, 59 and then just 4 orbits at n = 32, 36, 40. The evidence therefore leans toward k_max(n) = o(n) for this family, which agrees with BEGS's belief. This is *evidence, not a theorem*.
+**Bottom line.** No explicit rule found here gives |D| ≥ εn on an infinite family. Every structured rule I could formulate dies, and for linear rules this is provable through Szemerédi's theorem. The optimal solutions for n ≤ 36 look unstructured. Their number at k = n/4 peaks at n = 24 (362 orbits) and drops to 128, 59 and then just 4 orbits at n = 32, 36, 40. At n = 44, no k = 11 solution exists outside two unfinished sub-cases. The evidence therefore leans toward k_max(n) = o(n) for this family, which agrees with BEGS's belief. This is *evidence, not a theorem*.
 
 ## 3. Certificates
 
@@ -77,7 +77,7 @@ Other solution files:
 - Validated at n = 28: 285 + 0 = 285 orbits, matching the unsplit run.
 - For n = 33, 34 and 36, `nounit` returned UNSAT in < 1 s, and `unit` finished in 580 s, 819 s and 927 s. A further split by the second-smallest orbit (`unit2:e`) is also implemented and was validated at n = 28 (the union over e gives the same 285 normal forms).
 
-- **n = 44, k = 11 = n/4** (split enumeration, unfinished): finished with **no solution**: nounit, e=7, e=8, e=9, e=10, e=11, e=12, e=13, e=14, e=15, e=16, e=17, e=18, e=19, e=20, e=21; unfinished: e=2, e=3, e=4, e=5, e=6; solutions found so far: 0.
+- **n = 44, k = 11 = n/4** (split enumeration, unfinished): finished with **no solution**: nounit, e=4, e=5, e=6, e=7, e=8, e=9, e=10, e=11, e=12, e=13, e=14, e=15, e=16, e=17, e=18, e=19, e=20, e=21; unfinished: e=2, e=3; solutions found so far: 0.
 
 **Validation.** k_max agrees with CONSTR (`cyclic_family_status.json`) for every n = 13–34 and 36 in that file: SAT at k_max here. UNSAT at k_max+1 was re-proved here for n = 12, 16, 20, 24, 28, 32, 36; for the other n the CONSTR UNSAT result is used. k_max(12) = 3 (new here).
 
@@ -141,7 +141,7 @@ Other solution files:
 | 34 | 8 | complete (case split unit/nounit) | 25663 | 410608 | — (CONSTR) | 819.4 |
 | 36 | 9 | complete (case split unit/nounit) | 59 | 708 | yes (1040 s) | 927.7 |
 | 40 | 10 | complete (split unit2:e + nounit) | 4 | 64 | CYC/C0 (DRAT verified) | 4827.5 |
-| 44 | 11 | incomplete: 16 of 21 sub-cases finished | 0 | 0 | n/a: k = n/4, k_max unknown |  |
+| 44 | 11 | incomplete: 19 of 21 sub-cases finished | 0 | 0 | n/a: k = n/4, k_max unknown |  |
 
 Observations:
 
@@ -426,7 +426,7 @@ Binaries are built with `gcc -O2 -o src/X src/X.c` and are git-ignored. Raw logs
 - **Discrepancy:** `tasks/CYC.md` has k_max(14) = 4, but CONSTR's JSON and this enumeration give 3.
 - Next steps:
   1. **Finish n = 44, k = 11 (sharding plan).** The split is exhaustive: "nounit" plus "unit2:e" for e = 2..21, where unit2:e means 1 ∈ D, g(1) = 0, e = min(D∖{1}).
-     - Status at wrap-up: finished with **no solution**: nounit, e=7, e=8, e=9, e=10, e=11, e=12, e=13, e=14, e=15, e=16, e=17, e=18, e=19, e=20, e=21; unfinished: e=2, e=3, e=4, e=5, e=6; solutions found so far: 0
+     - Status at wrap-up: finished with **no solution**: nounit, e=4, e=5, e=6, e=7, e=8, e=9, e=10, e=11, e=12, e=13, e=14, e=15, e=16, e=17, e=18, e=19, e=20, e=21; unfinished: e=2, e=3; solutions found so far: 0
      - If every sub-case is UNSAT, k_max(44) ≤ 10 < n/4 (solver result; a DRAT check is advisable). This would be the first multiple of 4 where n/4 fails.
      - Command for each remaining sub-case: `python3 src/cycenum.py 44 11 100000 99999 unit2:<e> > runs/split_n44_unit2_<e>.json 2> runs/split_n44_unit2_<e>.log`, or start several `src/runsplit.sh 44 11` / `src/runsplit_desc.sh 44 11` workers (mkdir locks under `runs/lock_n44_*`; delete the locks of unfinished cases first).
      - Measured times at n = 40: e = 2: 3046 s, e = 3: 1012 s, e = 4: 540 s, e = 5/6: about 130/620 s, e ≥ 7: < 20 s. At n = 44: e ≥ 8: < 90 s, e = 7: 258 s, and e = 2..4 ran > 80 min without finishing.
