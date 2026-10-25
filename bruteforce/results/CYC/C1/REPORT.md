@@ -25,7 +25,7 @@ These are optima of the cyclic family only, not values of M(n). Each lower bound
 **Headline.**
 
 - **k_max(38) = 9 is proved.** k = 10 is UNSAT, with a 1.19 GB LRAT proof checked by my checker. So CONSTR's 342-edge cyclic example is optimal within the family.
-- **n = 44: k = n/4 = 11 is still undecided.** It is the first multiple of 4 above 36 where k = n/4 is in doubt. 25 min of portfolio solving left it open. A cube split then closed 6 of the 9 cubes as UNSAT (see below). The 3 remaining cubes all have orbits 1 and 2 present.
+- **n = 44: k = n/4 = 11 is still undecided.** It is the first multiple of 4 above 36 where k = n/4 is in doubt. 25 min of portfolio solving left it open. A cube split then closed 8 of the 9 cubes as UNSAT, 6 of them with checked LRAT (see below). The one open cube has orbits 1, 2, 3 and 4 all present.
 - **Observed k/n:** 0.237 (38), 0.227 (44), 0.224 (49), 0.220 (59), 0.214 (70), 0.211 (76), 0.198 (81), 0.198 (91). These are lower bounds, and the decline beyond n = 44 partly reflects the 25-min cap.
 - **Multiples of 4:** k = n/4 is SAT at n = 28, 32, 36 (validation) and at n = 40 (CONSTR). It is undecided at n = 44 (11) and n = 76 (19). At n = 76 even k = 17 was unresolved after 25 min.
 - **Task-file table:** k_max(14) = 3, not the 4 printed in `tasks/CYC.md`. See the validation section.
