@@ -25,7 +25,8 @@
 | 33 | 8 | complete (case split unit/nounit) | 1756 | 35120 | — (CONSTR) | 579.7 |
 | 34 | 8 | complete (case split unit/nounit) | 25663 | 410608 | — (CONSTR) | 819.4 |
 | 36 | 9 | complete (case split unit/nounit) | 59 | 708 | yes (1040 s) | 927.7 |
-| 40 | 10 | incomplete (lower bound on orbit count) | 4 | 64 | — (CONSTR) |  |
+| 40 | 10 | complete (split unit2:e + nounit) | 4 | 64 | n/a: k = n/4, k_max unknown | 4827.5 |
+| 44 | 11 | incomplete: 1 of 21 sub-cases finished | 0 | 0 | n/a: k = n/4, k_max unknown |  |
 
 @@BRUTE_TABLE
 | n | k | brute-force count (g(min D)=0) | SAT enumeration count | agree | brute secs |
@@ -178,7 +179,7 @@ Best <u>-invariant solution per n (SAT over all nontrivial cyclic subgroups, sea
 | 41 | 10 | 10 | 5 | ≥10 | 7 |
 | 42 | 9 | 13 | 2 | ≥10 | 7 |
 | 43 | 9 | 6 | 3 |  | 7 |
-| 44 | 8 | 21 | 2 |  | 7 |
+| 44 | 8 | 21 | 2 | 11 | 7 |
 | 45 | 10 | 19 | 2 |  | 11 |
 | 46 | <9 |  |  | ≥11 | 3 |
 | 47 | <9 |  |  | ≥11 | 3 |

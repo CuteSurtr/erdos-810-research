@@ -14,3 +14,5 @@ runs/verify_*
 runs/*.out
 src/brute
 runs/lock40_*
+runs/split_*
+runs/lock_*

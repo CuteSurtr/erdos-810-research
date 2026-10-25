@@ -6,7 +6,7 @@ import json, glob, collections, os
 out = []
 P = out.append
 KMAX = {12: 3, 13: 3, 14: 3, 15: 4, 16: 4, 17: 4, 18: 5, 19: 5, 20: 5, 21: 6, 22: 5, 23: 6, 24: 6, 25: 6, 26: 6,
-        27: 7, 28: 7, 29: 7, 30: 7, 31: 8, 32: 8, 33: 8, 34: 8, 36: 9, 40: 10}  # 40: k = n/4, k_max(40) not known
+        27: 7, 28: 7, 29: 7, 30: 7, 31: 8, 32: 8, 33: 8, 34: 8, 36: 9, 40: 10, 44: 11}  # 40, 44: k = n/4, k_max not known
 CONSTR_LB = {37: 9, 40: 10, 41: 10, 42: 10, 46: 11, 47: 11, 48: 11, 49: 11, 50: 11, 52: 12, 53: 12, 54: 12, 55: 12,
              59: 13, 60: 13, 61: 13, 62: 13}
 
@@ -25,6 +25,19 @@ def partial_from_log(path):
             except Exception: continue
             orbs.append({'canon': x['canon'], 'orbit_size': x['orbit_size']})
     return orbs
+for n, k in [(44, 11)]:
+    H44 = (n + 1) // 2 - 1; seen = {}; allc = True; secs = 0; ndone = 0
+    for c in ['nounit'] + [f'unit2_{e}' for e in range(2, H44 + 1)]:
+        try:
+            d = json.load(open(f'runs/split_n{n}_{c}.json')); secs += d['secs']; ndone += 1
+            allc &= d['status'] == 'complete'; L = d['orbits']
+        except Exception:
+            allc = False; L = partial_from_log(f'runs/split_n{n}_{c}.log')
+        for o in L: seen[tuple(map(tuple, o['canon']))] = o
+    if ndone == 0 and not seen: continue
+    st = 'complete (split unit2:e + nounit)' if allc else f'incomplete: {ndone} of {H44} sub-cases finished'
+    enum[(n, k)] = {'n': n, 'k': k, 'status': st, 'n_orbits': len(seen), 'orbits': list(seen.values()),
+                    'secs': round(secs, 1) if allc else '', 'n_solutions_gmin0': sum(o['orbit_size'] for o in seen.values())}
 for n, k in [(33, 8), (34, 8), (36, 9), (40, 10)]:
     best = None
     if n == 40:
@@ -65,7 +78,7 @@ for n in sorted({n for n, _ in enum}):
     k = KMAX[n]; d = enum.get((n, k))
     if not d: continue
     up = enum.get((n, k + 1))
-    upst = ('yes (%.0f s)' % up['secs']) if up and up['n_orbits'] == 0 and up['status'] == 'complete' else '— (CONSTR)'
+    upst = ('yes (%.0f s)' % up['secs']) if up and up['n_orbits'] == 0 and up['status'] == 'complete' else ('n/a: k = n/4, k_max unknown' if n >= 40 else '— (CONSTR)')
     P(f"| {n} | {k} | {d['status']} | {d['n_orbits']} | {d['n_solutions_gmin0']} | {upst} | {d.get('secs', '')} |")
     json.dump({'n': n, 'k': k, 'status': d['status'], 'n_orbits': d['n_orbits'],
                'normal_forms': [o['canon'] for o in d['orbits']], 'orbit_sizes': [o['orbit_size'] for o in d['orbits']]},

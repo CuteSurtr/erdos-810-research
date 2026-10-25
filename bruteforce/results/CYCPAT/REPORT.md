@@ -17,7 +17,7 @@ Swap:              0           0           0
 
 | # | Result | Status |
 |---|--------|--------|
-| R1 | Full enumeration of optimal (D, g) up to symmetry for n = 12–34 and n = 36, with orbit counts (§4). n = 40 at k = 10 is partial. | *proved* (exhaustive SAT with blocking; solver results, no DRAT; k_max re-derived; every listed solution re-checked by two checkers). n = 40 is *unfinished* (lower bound). |
+| R1 | Full enumeration of optimal (D, g) up to symmetry for n = 12–34 and n = 36, and of all (D, g) with k = n/4 at n = 40 (**exactly 4 orbits**), with orbit counts (§4). n = 44 at k = 11: see §4. | *proved* (exhaustive SAT with blocking; solver results, no DRAT). Counts for n ≤ 28 are confirmed by an independent brute-force counter. Every listed solution is re-checked by two checkers. |
 | R2 | Optimal solutions have **no visible algebraic structure**: no solution has g polynomial of degree ≤ 2 on D (all orbits tested for n = 20, 21, 24, 27, 28, 36); φ = 2g − d is never c0 + c2·d² for odd n ≥ 15; a nontrivial multiplier stabiliser occurs only at n = 13, 14, 15, 21, 24, 26, 29, 30 (≤ 6 orbits each); no residue pattern mod 4; less Sidon-like than random (§5). | *proved* for the enumerated n (exhaustive tests on the complete lists) |
 | R3 | **Closed form of multiplier-invariant colourings.** If (D, g) is invariant under a subgroup K ∌ −1 of Z_p^× and D = ±cK, then after scaling, colour(a→b) = (1−λ)a + (1+λ)b, where each edge is oriented so that b − a ∈ cK. | *proved* (§6.1, paper proof) and numerically confirmed |
 | R4 | **Single-coset rule** (D = ±cK, K = the odd-order subgroup of index r in Z_p^×, one free parameter t). It gives k = (p−1)/4 for p = 13, 29, 37, 53, 61 and k = (p−1)/6 for every p ≡ 7 (mod 12) with 19 ≤ p ≤ 643 except p = 439, 523, 571, 607, 619. Each fixed index dies: the last working p is 61 (r=4), 643 (r=6), 1993 (r=8), 4271 (r=10), ≥ 9013 (r=12). Empirically p_last ≈ 0.45·r⁴, so the best k ≈ 0.8·p^{3/4}. **Not εn.** | instances *certificate-verified*; the asymptotic trend is *heuristic* |
@@ -28,7 +28,7 @@ Swap:              0           0           0
 | R9 | ⟨u⟩-invariant optima (SAT, n = 13–53 so far): they reach k_max at n = 13–15, 21, 24, 26, 29, 30 and 38 (k_max(38) = 9 per CYC/C1). They match the CONSTR LB at 37, 41, 48, beat it at 53 (13 vs 12), and give k = 11 at n = 51 (no previous cyclic LB). They fall short elsewhere, e.g. n = 28, 32, 36: no invariant solution with k ≥ 6, 7, 8 for any subgroup (UNSAT). | *proved* per subgroup where the next k returned UNSAT; otherwise lower bound |
 | R10 | Literature: no prior cyclic or Cayley construction found for "every C4 rainbow with n colours" (§8). | quick search only |
 | R12 | **Doubling lift fails.** For every optimal D at m = 12, 16, 20, the set D′ = D ∪ (m − D) of Z_{2m}-orbits over ±D (size 2k = n′/4) admits no valid g′ (SAT). Results: m = 12: 5 of 5 distinct D′ UNSAT; m = 16: 9 of 9 UNSAT; m = 20: 14 of 14 UNSAT (each < 60 s). So the n/4 solutions at 24, 32, 40 are not lifts of the ones at 12, 16, 20. | *proved* per D (solver UNSAT, unchecked) |
-| R11 | Observation: for n ≡ 0 (mod 4) the number of solution orbits at k = n/4 is 58, 165, 362, 285, 128, 59 for n = 16, …, 36. It peaks at 24 and is falling by n = 32–36. For n ≡ 2 (mod 4), with k_max = (n−2)/4: 4333, 15791, 49909, 25663 at n = 22, 26, 30, 34, also past a peak. Odd n with k_max/n > 1/4 (18, 21, 31) have a **unique** optimal orbit. | counts *proved* (solver); the trend is *heuristic* |
+| R11 | **Observation: the n/4 solutions are thinning out fast.** For n ≡ 0 (mod 4), the number of solution orbits at k = n/4 is 58, 165, 362, 285, 128, 59, **4** for n = 16, 20, …, 40. It peaks at 24 and falls about 15-fold from 36 to 40. For n ≡ 2 (mod 4), with k_max = (n−2)/4: 4333, 15791, 49909, 25663 at n = 22, 26, 30, 34, also past a peak. Odd n with k_max/n > 1/4 (18, 21, 31) have a **unique** optimal orbit. | counts *proved* (solver); the extrapolation (k = n/4 fails soon, likely by n = 44–48) is *heuristic* |
 
 **Bottom line.** No explicit rule found here gives |D| ≥ εn on an infinite family. Every structured rule I could formulate dies, and for linear rules this is provable through Szemerédi's theorem. The optimal solutions for n ≤ 36 look unstructured. Their number at k = n/4 shrinks after n = 24–28. The evidence therefore leans toward k_max(n) = o(n) for this family, which agrees with BEGS's belief. This is *evidence, not a theorem*.
 
@@ -137,7 +137,8 @@ Other solution files:
 | 33 | 8 | complete (case split unit/nounit) | 1756 | 35120 | — (CONSTR) | 579.7 |
 | 34 | 8 | complete (case split unit/nounit) | 25663 | 410608 | — (CONSTR) | 819.4 |
 | 36 | 9 | complete (case split unit/nounit) | 59 | 708 | yes (1040 s) | 927.7 |
-| 40 | 10 | incomplete (lower bound on orbit count) | 4 | 64 | — (CONSTR) |  |
+| 40 | 10 | complete (split unit2:e + nounit) | 4 | 64 | n/a: k = n/4, k_max unknown | 4827.5 |
+| 44 | 11 | incomplete: 1 of 21 sub-cases finished | 0 | 0 | n/a: k = n/4, k_max unknown |  |
 
 Observations:
 
@@ -365,7 +366,7 @@ Best <u>-invariant solution per n (SAT over all nontrivial cyclic subgroups, sea
 | 41 | 10 | 10 | 5 | ≥10 | 7 |
 | 42 | 9 | 13 | 2 | ≥10 | 7 |
 | 43 | 9 | 6 | 3 |  | 7 |
-| 44 | 8 | 21 | 2 |  | 7 |
+| 44 | 8 | 21 | 2 | 11 | 7 |
 | 45 | 10 | 19 | 2 |  | 11 |
 | 46 | <9 |  |  | ≥11 | 3 |
 | 47 | <9 |  |  | ≥11 | 3 |
@@ -421,7 +422,7 @@ Binaries are built with `gcc -O2 -o src/X src/X.c` and are git-ignored. Raw logs
 - **Surprise:** k_max(n)/n > 1/4 happens exactly where the optimum is unique (18, 21, 31). This is consistent with a "random CSP near threshold" picture rather than an algebraic one.
 - **Discrepancy:** `tasks/CYC.md` has k_max(14) = 4, but CONSTR's JSON and this enumeration give 3.
 - Next steps:
-  1. Finish the n = 40, k = 10 enumeration (18 `unit2:e` sub-cases; partial logs in `runs/enumsplit_n40_e*.log`, and finding even one solution takes minutes). Then do n = 44 at k = 11, to test whether the orbit count at k = n/4 keeps falling.
+  1. Finish the n = 44, k = 11 split enumeration (`src/runsplit.sh 44 11`, run several workers in parallel; the e = 2 sub-case dominates, about 50 min at n = 40). If it is empty, k = n/4 fails at n = 44.
   2. Check whether the orbit counts at k = n/4 keep falling at n = 40, 44 (CYC agents).
   3. Try to prove the coset-rule death rate (character sums for the pattern count).
   4. Extend the Szemerédi obstruction from linear g to "piecewise linear" or Bohr-set-structured rules. Every rule tried so far fails in a way that could be explained by such a density argument.
