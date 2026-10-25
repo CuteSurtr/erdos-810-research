@@ -1,6 +1,9 @@
-{"42": "first pass (k=11,12; 25 min, 4 jobs) gave no answer; its records were lost (git rebase replaced the open log files); k_lo is CONSTR's model, re-verified",
- "63": "first pass: k=14,15 ran 25 min with no answer; timeout records lost (git rebase), SAT records kept",
- "74": "k=15 from a side run (47 s); first pass k=16,17 no answer in 25 min",
- "85": "first pass: k=16,17 SAT, k=18,19 no answer; model regenerated with the same solver/seed",
- "88": "first pass: k=17 SAT, k=18 and k=n/4=22 no answer; model regenerated",
- "95": "first pass: k=17,18 SAT in 8 s, k=19,20 no answer; model regenerated"}
+{
+"42": "k=11 UNSAT: CaDiCaL 1918 s (2.4 GB DRAT, drat-trim timed out at 3001 s) and independently kissat --unsat 3924 s, same sym-2 CNF; first-pass records lost (git rebase); model is CONSTR's, re-verified",
+"63": "first pass: k=14,15 ran 25 min with no answer; timeout records lost (git rebase), SAT records kept",
+"74": "k=15 from a side run (47 s); first pass k=16,17 no answer in 25 min",
+"85": "first pass: k=16,17 SAT, k=18,19 no answer; model regenerated with the same solver/seed",
+"88": "first pass: k=17 SAT, k=18 and k=n/4=22 no answer; model regenerated",
+"95": "first pass: k=17,18 SAT in 8 s, k=19,20 no answer; model regenerated",
+"56": "pass 2: k=14 (n/4) two more kissat sym-1 runs of 4677 s each, no answer"
+}

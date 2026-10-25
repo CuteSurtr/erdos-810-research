@@ -1,0 +1,2 @@
+{"n": 56, "k": 14, "sym": 1, "solver": "kissat", "seed": 4, "res": "UNKNOWN", "secs": 4677.0}
+{"n": 56, "k": 14, "sym": 1, "solver": "kissat-sat", "seed": 3, "res": "UNKNOWN", "secs": 4677.0}

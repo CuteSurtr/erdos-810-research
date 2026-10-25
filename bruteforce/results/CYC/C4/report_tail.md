@@ -8,7 +8,7 @@
   came either in seconds to about a minute (53: k = 13 in 36 s; 63: k = 13 in 8 s; 85: k = 17 in
   61 s; 95: k = 18 in 8 s) or late (56: k = 13 after 1092 s). No k above the table's k_lo was
   decided either way within the cap at any n.
-- **Second pass.** 08:40–09:58 UTC: PASS2_SUMMARY
+- **Second pass.** 08:40–09:58 UTC: n = 42, k = 11: CaDiCaL proved it UNSAT in 1918 s with a 2.4 GB binary DRAT proof, and drat-trim timed out after 3001 s. kissat `--unsat` (seed 1) independently returned UNSAT after 3924 s on the same CNF. n = 56, k = 14: two kissat sym-1 runs (default with seed 4, `--sat` with seed 3) ran 4677 s each with no answer. The "solver seconds" column of the results table sums wall time over all jobs for that n.
 
 ## 5. Where the code lives (`bruteforce/results/CYC/C4/`)
 
@@ -54,9 +54,10 @@ contains them.
    than it helps (as other agents also found). Use sym 1 for SAT jobs and sym 2 for UNSAT jobs.
 
 **Next steps (sharding plan).**
+- **Check the n = 42 proof.** Re-run `src/prove.sh 42 11 3600 20000` (about 32 min to solve, then drat-trim with no 50-min cap), or use CaDiCaL `--lrat` with `lrat-check`, which is usually much faster to check. That would turn k_max(42) = 10 into a DRAT-verified result.
 - **UNSAT at n ≥ 42.** This is out of reach for plain CDCL in 25 min: the sym-2 UNSAT time roughly
   doubles every 1–2 steps of n (2.4 s at n = 32, 31.5 s at 36, about 444 s at 40 per CYC/C0, and
-  more than 75 min at 42). A cube-and-conquer split on the presence vector (p_1, …, p_m) with
+  1918 s at 42 with CaDiCaL). A cube-and-conquer split on the presence vector (p_1, …, p_m) with
   m ≈ 6–8 would parallelise it, and the lex-leader already kills most cubes with p_1 = 0. Command
   per cube: `cycenc 42 11 2 > base.cnf`, append the cube's unit clauses, then
   `cadical --binary=true -t T cube.cnf cube.drat && drat-trim cube.cnf cube.drat`. The 2^m sign

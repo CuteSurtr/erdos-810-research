@@ -53,7 +53,7 @@ for n in NS:
     if unsat is not None and unsat == best + 1:
         d = drat.get((n, unsat))
         if d and d["drat_trim"] == "s VERIFIED": status = "proved (k_max; UNSAT DRAT-verified)"
-        else: status = "proved by solver (k_max; UNSAT proof unchecked)"
+        else: status = "k_max by solver: UNSAT (solver, proof unchecked)" + ("; DRAT check timed out" if d else "")
     elif best == 0:
         status = "unfinished"
     else:

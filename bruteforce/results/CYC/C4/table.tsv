@@ -1,7 +1,7 @@
 n	k_lo	k_unsat	status	k_lo/n	seconds	notes
-42	10		certificate-verified lower bound; k=11 unknown (timeout)	0.2381	1500	first pass (k=11,12; 25 min, 4 jobs) gave no answer; its records were lost (git rebase replaced the open log files); k_lo is CONSTR's model, re-verified
+42	10	11	k_max by solver: UNSAT (solver, proof unchecked); DRAT check timed out	0.2381	7342	k=11 UNSAT: CaDiCaL 1918 s (2.4 GB DRAT, drat-trim timed out at 3001 s) and independently kissat --unsat 3924 s, same sym-2 CNF; first-pass records lost (git rebase); model is CONSTR's, re-verified
 53	13		certificate-verified lower bound; k=14 unknown (timeout)	0.2453	1500	
-56	13		certificate-verified lower bound; k=14 unknown (timeout)	0.2321	1500	k=n/4=14 undecided
+56	13		certificate-verified lower bound; k=14 unknown (timeout)	0.2321	10854	k=n/4=14 undecided; pass 2: k=14 (n/4) two more kissat sym-1 runs of 4677 s each, no answer
 63	13		certificate-verified lower bound; k=14 unknown (timeout)	0.2063	1500	first pass: k=14,15 ran 25 min with no answer; timeout records lost (git rebase), SAT records kept
 74	15		certificate-verified lower bound; k=16 unknown (timeout)	0.2027	1548	k=15 from a side run (47 s); first pass k=16,17 no answer in 25 min
 85	17		certificate-verified lower bound; k=18 unknown (timeout)	0.2000	1564	first pass: k=16,17 SAT, k=18,19 no answer; model regenerated with the same solver/seed

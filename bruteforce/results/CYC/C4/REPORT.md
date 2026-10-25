@@ -19,14 +19,25 @@ k = |D|, the number of orbits, so |E| = n·k. k_unsat is the first k proved UNSA
 
 | n | k_lo (best found) | |E| = n·k_lo | k_unsat | status | k_lo/n | solver seconds | notes |
 |---|---|---|---|---|---|---|---|
-| 42 | 10 | 420 | – | certificate-verified lower bound; k=11 unknown (timeout) | 0.2381 | 1500 | first pass (k=11,12; 25 min, 4 jobs) gave no answer; its records were lost (git rebase replaced the open log files); k_lo is CONSTR's model, re-verified |
+| 42 | 10 | 420 | 11 | k_max by solver: UNSAT (solver, proof unchecked); DRAT check timed out | 0.2381 | 7342 | k=11 UNSAT: CaDiCaL 1918 s (2.4 GB DRAT, drat-trim timed out at 3001 s) and independently kissat --unsat 3924 s, same sym-2 CNF; first-pass records lost (git rebase); model is CONSTR's, re-verified |
 | 53 | 13 | 689 | – | certificate-verified lower bound; k=14 unknown (timeout) | 0.2453 | 1500 |  |
-| 56 | 13 | 728 | – | certificate-verified lower bound; k=14 unknown (timeout) | 0.2321 | 1500 | k=n/4=14 undecided |
+| 56 | 13 | 728 | – | certificate-verified lower bound; k=14 unknown (timeout) | 0.2321 | 10854 | k=n/4=14 undecided; pass 2: k=14 (n/4) two more kissat sym-1 runs of 4677 s each, no answer |
 | 63 | 13 | 819 | – | certificate-verified lower bound; k=14 unknown (timeout) | 0.2063 | 1500 | first pass: k=14,15 ran 25 min with no answer; timeout records lost (git rebase), SAT records kept |
 | 74 | 15 | 1110 | – | certificate-verified lower bound; k=16 unknown (timeout) | 0.2027 | 1548 | k=15 from a side run (47 s); first pass k=16,17 no answer in 25 min |
 | 85 | 17 | 1445 | – | certificate-verified lower bound; k=18 unknown (timeout) | 0.2000 | 1564 | first pass: k=16,17 SAT, k=18,19 no answer; model regenerated with the same solver/seed |
 | 88 | 17 | 1496 | – | certificate-verified lower bound; k=18 unknown (timeout) | 0.1932 | 1516 | k=n/4=22 undecided; first pass: k=17 SAT, k=18 and k=n/4=22 no answer; model regenerated |
 | 95 | 18 | 1710 | – | certificate-verified lower bound; k=19 unknown (timeout) | 0.1895 | 1511 | first pass: k=17,18 SAT in 8 s, k=19,20 no answer; model regenerated |
+
+**Summary.**
+- **n = 42.** k_max(42) = 10: SAT at 10 (CONSTR's model, re-verified), and k = 11 UNSAT by two
+  solvers, CaDiCaL and kissat, on the same symmetry-broken CNF. The DRAT proof check timed out,
+  so the label is *UNSAT (solver, proof unchecked)*.
+- **The other n.** Certificate-verified lower bounds. k_lo improved over CONSTR at 53, 56 and 63
+  (12 → 13 each), and 74, 85, 88 and 95 are new. No k above k_lo was decided at these n.
+- **k = n/4.** Undecided at both multiples of 4: n = 56 (best 13, k = 14 got 25 min + 2 × 78 min
+  with no answer) and n = 88 (best 17, k = 22 got 25 min of `--sat`).
+- **k/n.** Observed k/n: 0.238 (42, exact), 0.245, 0.232, 0.206, 0.203, 0.200, 0.193 and 0.189
+  (lower bounds).
 
 ### Validation (before my own n)
 
@@ -187,7 +198,7 @@ and github.com/marijnheule). pysat was used only for model counting (`src/count.
   came either in seconds to about a minute (53: k = 13 in 36 s; 63: k = 13 in 8 s; 85: k = 17 in
   61 s; 95: k = 18 in 8 s) or late (56: k = 13 after 1092 s). No k above the table's k_lo was
   decided either way within the cap at any n.
-- **Second pass.** 08:40–09:58 UTC: PASS2_SUMMARY
+- **Second pass.** 08:40–09:58 UTC: n = 42, k = 11: CaDiCaL proved it UNSAT in 1918 s with a 2.4 GB binary DRAT proof, and drat-trim timed out after 3001 s. kissat `--unsat` (seed 1) independently returned UNSAT after 3924 s on the same CNF. n = 56, k = 14: two kissat sym-1 runs (default with seed 4, `--sat` with seed 3) ran 4677 s each with no answer. The "solver seconds" column of the results table sums wall time over all jobs for that n.
 
 ## 5. Where the code lives (`bruteforce/results/CYC/C4/`)
 
@@ -233,9 +244,10 @@ contains them.
    than it helps (as other agents also found). Use sym 1 for SAT jobs and sym 2 for UNSAT jobs.
 
 **Next steps (sharding plan).**
+- **Check the n = 42 proof.** Re-run `src/prove.sh 42 11 3600 20000` (about 32 min to solve, then drat-trim with no 50-min cap), or use CaDiCaL `--lrat` with `lrat-check`, which is usually much faster to check. That would turn k_max(42) = 10 into a DRAT-verified result.
 - **UNSAT at n ≥ 42.** This is out of reach for plain CDCL in 25 min: the sym-2 UNSAT time roughly
   doubles every 1–2 steps of n (2.4 s at n = 32, 31.5 s at 36, about 444 s at 40 per CYC/C0, and
-  more than 75 min at 42). A cube-and-conquer split on the presence vector (p_1, …, p_m) with
+  1918 s at 42 with CaDiCaL). A cube-and-conquer split on the presence vector (p_1, …, p_m) with
   m ≈ 6–8 would parallelise it, and the lex-leader already kills most cubes with p_1 = 0. Command
   per cube: `cycenc 42 11 2 > base.cnf`, append the cube's unit clauses, then
   `cadical --binary=true -t T cube.cnf cube.drat && drat-trim cube.cnf cube.drat`. The 2^m sign
