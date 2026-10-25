@@ -27,8 +27,8 @@ So this is a transcription slip in the task file, not a disagreement with CONSTR
 | 26 | 6 | ✓ | ✓ 0.4 s | ✓ (54.5 s) |
 | 27 | 7 | ✓ | ✓ 0.2 s | ✓ (67.8 s) |
 | 28 | 7 | ✓ | ✓ 0.4 s | ✓ (53.2 s) |
-| 29 | 7 | ✓ | ✓ 0.7 s | SAT ✓; UNSAT side SEE_29 |
-| 30 | 7 | ✓ | ✓ 3.1 s | SAT ✓; UNSAT side SEE_30 |
+| 29 | 7 | ✓ | ✓ 0.7 s | SAT ✓; sym-0 UNSAT run (900 s cap) left no result line in the log (cause unclear; probably killed with a shell I terminated); not re-run for lack of cores |
+| 30 | 7 | ✓ | ✓ 3.1 s | SAT ✓; same as n = 29 |
 | 32 | 8 | ✓ 0.1 s | ✓ 1.9 s | – |
 | 36 | 9 | ✓ 3.1 s | ✓ 24.9 s | – |
 
