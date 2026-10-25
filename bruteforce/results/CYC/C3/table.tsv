@@ -1,9 +1,9 @@
 n	k_lo	k_unsat	status	k_lo/n	seconds	notes
 41	10	11	proved (DRAT verified)	0.2439	3634	
 51	12		unfinished (k=12 certificate-verified; k+1 undecided)	0.2353	1500	UNKNOWN at k=13
-52	12		unfinished (k=12 certificate-verified; k+1 undecided)	0.2308	1549	UNKNOWN at k=13
+52	12		unfinished (k=12 certificate-verified; k+1 undecided)	0.2308	10274	UNKNOWN at k=13; k=n/4=13 undecided: 25 min first pass + 73 min wall second pass (4 solvers; seconds column sums two concurrent runs)
 62	13		unfinished (k=13 certificate-verified; k+1 undecided)	0.2097	1510	UNKNOWN at k=14
 73	15		unfinished (k=15 certificate-verified; k+1 undecided)	0.2055	1499	UNKNOWN at k=16
 83	17		unfinished (k=17 certificate-verified; k+1 undecided)	0.2048	1497	UNKNOWN at k=18
-84	17		unfinished (k=17 certificate-verified; k+1 undecided)	0.2024	1498	UNKNOWN at k=18,21
-94	18		unfinished (k=18 certificate-verified; k+1 undecided)	0.1915	1526	UNKNOWN at k=19
+84	17		unfinished (k=17 certificate-verified; k+1 undecided)	0.2024	1498	UNKNOWN at k=18,21; k=n/4=21 undecided (10 min)
+94	18		unfinished (k=18 certificate-verified; k+1 undecided)	0.1915	1526	UNKNOWN at k=19; first pass tried k=19 directly (UNKNOWN 25 min); k=18 SAT in 25 s in pass 2

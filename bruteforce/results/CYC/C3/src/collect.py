@@ -5,7 +5,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE); from check4 import check
 NS = [41, 51, 52, 62, 73, 83, 84, 94]
 KNOWN = {41: 10, 51: 11, 52: 12, 62: 13}
-notes = json.load(open(os.path.join(ROOT, "notes.json"))) if os.path.exists(os.path.join(ROOT, "notes.json")) else {}
+notes = {"52": "k=n/4=13 undecided: 25 min first pass + 73 min wall second pass (4 solvers; seconds column sums two concurrent runs)", "84": "k=n/4=21 undecided (10 min)", "94": "first pass tried k=19 directly (UNKNOWN 25 min); k=18 SAT in 25 s in pass 2"}
 rows, sols, certs = [], {}, {}
 for n in NS:
     f = os.path.join(ROOT, "logs", "n%d.jsonl" % n)
