@@ -25,6 +25,7 @@
 | 33 | 8 | complete (case split unit/nounit) | 1756 | 35120 | — (CONSTR) | 579.7 |
 | 34 | 8 | incomplete (lower bound on orbit count) | 25653 | 410448 | — (CONSTR) |  |
 | 36 | 9 | complete (case split unit/nounit) | 59 | 708 | yes (1040 s) | 927.7 |
+| 40 | 10 | incomplete (lower bound on orbit count) | 1 | 16 | — (CONSTR) |  |
 
 @@COSET_TABLES
 Single-coset rule, smallest working index r per prime (k = (p-1)/r):

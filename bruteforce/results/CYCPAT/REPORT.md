@@ -23,7 +23,7 @@ Swap:              0           0           0
 | R4 | **Single-coset rule** (D = ±cK, K = the odd-order subgroup of index r in Z_p^×, one free parameter t). It gives k = (p−1)/4 for p = 13, 29, 37, 53, 61 and k = (p−1)/6 for every p ≡ 7 (mod 12) with 19 ≤ p ≤ 643 except p = 439, 523, 571, 607, 619. Each fixed index dies: the last working p is 61 (r=4), 643 (r=6), 1993 (r=8), 4271 (r=10), ≥ 9013 (r=12). Empirically p_last ≈ 0.45·r⁴, so the best k ≈ 0.8·p^{3/4}. **Not εn.** | instances *certificate-verified*; the asymptotic trend is *heuristic* |
 | R5 | **New lower bounds**: M(53) ≥ 689 (k=13) and M(61) ≥ 915 (k=15). The README/CONSTR tables have 636 and 793; for the cyclic family CONSTR had k=12 and k=13. | *certificate-verified* (`certs.json`, simple checker) |
 | R6 | **Two-class rule** (two ±-cosets, one extra offset γ): k = (p−1)/6 for every p ≡ 13 (mod 24) with 37 ≤ p ≤ 373 except p = 349, and k = (p−1)/5 at p = 31, 71, 151. It also decays. | instances *certificate-verified* (C reduced check + full check; explicit graph for p ≤ 200); trend *heuristic* |
-| R7 | **Linear rules are o(n).** If g(d) ≡ b·d on D with b ≡ u/v for fixed integers (v ≥ 1, gcd(v, n) = 1, b ∉ {0, 1}), then D contains no non-degenerate homothetic copy of {0, v, v−u, u}. By Szemerédi's theorem, \|D\| = o(n). For b = 2 the forbidden pattern is a 4-term AP. | *proved* (§6.3, paper proof, uses Szemerédi's theorem as a black box); checked numerically |
+| R7 | **Linear rules are o(n).** If g(d) ≡ b·d on D with b ≡ u/v for fixed integers (v ≥ 1, gcd(v, n) = 1, b ∉ {0, 1}), then D contains no non-degenerate homothetic copy of {0, v, v−u, u}. By Szemerédi's theorem, \|D\| = o(n). For b = 2 the forbidden pattern is a 4-term AP. The same holds for piecewise-affine g with O(1) pieces of bounded-height slope. | *proved* (§6.3, paper proof, uses Szemerédi's theorem as a black box); checked numerically |
 | R8 | Exact optimum of the linear rule g = 2d for n = 43–99 (SAT): k/n falls from 0.209 to 0.172. Over all slopes b (n = 61–89) the best k is at most 1 above b = 2. Over all quadratics g = ad² + bd (n = 13–43) the best rule is linear (a = 0) in 29 of 31 cases, and it reaches k_max only at n = 13–17, 20, 22, 25, 26, 29, 30. | *proved* per n (exact SAT within the rule) |
 | R9 | ⟨u⟩-invariant optima (SAT, n = 13–53 so far): they reach k_max at n = 13–15, 21, 24, 26, 29, 30 and 38 (k_max(38) = 9 per CYC/C1). They match the CONSTR LB at 37, 41, 48, beat it at 53 (13 vs 12), and give k = 11 at n = 51 (no previous cyclic LB). They fall short elsewhere, e.g. n = 28, 32, 36: no invariant solution with k ≥ 6, 7, 8 for any subgroup (UNSAT). | *proved* per subgroup where the next k returned UNSAT; otherwise lower bound |
 | R10 | Literature: no prior cyclic or Cayley construction found for "every C4 rainbow with n colours" (§8). | quick search only |
@@ -107,6 +107,7 @@ Other solution files:
 | 33 | 8 | complete (case split unit/nounit) | 1756 | 35120 | — (CONSTR) | 579.7 |
 | 34 | 8 | incomplete (lower bound on orbit count) | 25653 | 410448 | — (CONSTR) |  |
 | 36 | 9 | complete (case split unit/nounit) | 59 | 708 | yes (1040 s) | 927.7 |
+| 40 | 10 | incomplete (lower bound on orbit count) | 1 | 16 | — (CONSTR) |  |
 
 Observations:
 
@@ -246,6 +247,12 @@ Interpretation:
 - Colours: edge 1 (step +d1 from 0) has colour h(d1) = b·d1 = bm + ur. Edge 3 (step +d3 from ur) has colour ur + h(d3) = ur + bm. They are equal, so this 4-cycle is not rainbow. ∎
 
 **Corollary.** By Szemerédi's theorem applied to the 4-point pattern {0, v, v−u, u} (contained in an AP of bounded length), for every δ > 0 and large n, a valid D has fewer than δn elements. Non-degeneracy follows from Varnavides: there are ≫ n² configurations and only O(n) are degenerate. So linear rules give at most o(n²) edges. For b = 2 the pattern is a 4-AP, so |D| ≤ r₄(n/2) = n·exp(−c(log log n)^{c′}) by Green–Tao.
+
+**Strengthening (piecewise-affine rules).** The proof only uses g(d1) and g(d3); d2 and d4 just have to lie in D.
+
+- So the same holds for any A ⊆ D on which g(d) ≡ b·d + c, for one fixed c and b = u/v as above: A contains no non-degenerate copy of {m, m+vr} with m+(v−u)r, m+ur ∈ D. Applying Szemerédi to A alone gives |A| = o(n), uniformly in c.
+- Slopes 0 and 1 are worse. With b = 0 the colour is the tail vertex (edge 0→d gets colour c), so a rectangle 0, d, d+d′, d′ with d, d′ ∈ A has two equal colours at vertex 0, and |A| ≤ 1. With b = 1 the colour is the head vertex, and |A| ≤ 1 for the same reason.
+- **Corollary.** Any rule where g is piecewise affine on D, with a bounded number of pieces and slopes of bounded height, gives |D| = o(n). This covers "unions of intervals with g linear on each piece", the natural continuum-limit constructions. It does *not* cover slopes depending on n, such as the coset rules, whose slope (1 ± λ)/2 is an arbitrary residue.
 
 - Numerical check: all 4-APs tested (57–301 per n, n ∈ {41, 64, 101, 160, 257}) give BAD with g = 2d.
 - The proof needs a *fixed* rational b. A slope b depending on n in an "irrational" way escapes it. But the all-b scan at n = 61–89 finds best k only 0–1 above b = 2, with k/n ≈ 0.19 and falling.
