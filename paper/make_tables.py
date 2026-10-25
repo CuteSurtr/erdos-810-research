@@ -41,7 +41,7 @@ CYCLIC_EXACT = {
     42: (10, CAKE + ", 2 encoders"),
     44: (10, CAKE + ", 2 independent splits"),
     47: (11, CAKE + ", 29 cubes, 2 encoders"),
-    48: (11, CAKE + r", 5075 leaves; mirror lemma"),
+    48: (11, CAKE + ", 7811 leaves"),
 }
 
 

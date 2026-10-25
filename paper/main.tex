@@ -42,7 +42,7 @@ extending them to $n\le 128$. Many of the best constructions for $26\le n\le 64$
 \emph{cyclic orbit colourings}: Cayley graphs on $\Z_n$ whose colouring is equivariant under
 rotation. For this family we determine the optimum $\kmax(n)$ for $12\le n\le 42$ and
 $n\in\{44,47,48\}$. Every upper bound is certified by a DRAT or LRAT proof checked by a
-standard checker ($13\le n\le48$; at $n=48$ together with a short symmetry lemma), or by an independent SAT-free exhaustive search
+standard checker ($13\le n\le48$), or by an independent SAT-free exhaustive search
 ($12\le n\le31$). The optimum is exactly $n/4$ orbits (that is, $n^2/4$ edges) for
 $n=12,16,\dots,40$, but $\kmax(44)=10$ and $\kmax(48)=11$, one less than $n/4$.
 
@@ -479,13 +479,13 @@ proof checked by \texttt{cake\_lpr}.
 by splitting on the offset $g(d)$ of the smallest present orbit $d>1$ and, where needed, on
 the offset of the next present orbit. The base formula contains the clause
 $\neg p_d\vee x_{d,0}\vee\dots\vee x_{d,47}$, so the offset split covers every case.
-\begin{itemize}
-\item $5{,}075$ leaves were solved, each with an LRAT proof checked by \texttt{cake\_lpr}.
-\item The remaining $57$ branches are images of closed branches under the map
-  $g(e)\mapsto e-1-g(e)$. This is Lemma~\ref{lem:mult} with $u=-1$, followed by the colour
-  translation that restores $g(1)=0$. The map fixes $D$, so it preserves the presence vector,
-  and with it the cardinality and lexicographic-leader constraints.
-\end{itemize}
+All $7{,}811$ leaves are UNSAT, each with an LRAT proof checked by \texttt{cake\_lpr}.
+
+The map $g(e)\mapsto e-1-g(e)$ (Lemma~\ref{lem:mult} with $u=-1$, followed by the colour
+translation that restores $g(1)=0$) fixes $D$, so it preserves the cardinality and
+lexicographic-leader constraints and pairs up the children of each offset split. It was used
+only to schedule the work: $57$ branches were first left as images of closed branches and
+then solved directly, and each agreed with its image. The proof does not use the map.
 
 As in \S3, the proofs rely on the correctness of the encoders and of the symmetry breaking.
 The first encoder reproduces the values of $\kmax(n)$ found by the other computations for

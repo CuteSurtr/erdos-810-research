@@ -180,6 +180,8 @@ All UNSAT claims below come with proofs checked by a standard checker (cake_lpr 
   LRAT checked by cake_lpr, plus 57 branches covered by the u = −1 mirror lemma
   (g(e) ↦ e − 1 − g(e)). `covercheck.py`: `COVER OK {'unsat': 5075, 'covered': 57, 'internal': 109}`.
   The k = 11 certificate has 528 edges.
+  PUSH2/N48M then ran the 57 mirror branches directly: `COVER OK {'unsat': 7811, 'covered': 0, 'internal': 166}`,
+  so the n = 48 result no longer needs the lemma.
 - So k_max(4m) = m holds for m = 3..10 and fails for m = 11, 12.
 - **CERT.** k_max(35) = 8 (DRAT, plus two more encodings with LRAT); n = 38 now has drat-trim and
   cake_lpr proofs; n = 42 has cake_lpr proofs from two encoders; n = 47 has cake_lpr proofs for all
