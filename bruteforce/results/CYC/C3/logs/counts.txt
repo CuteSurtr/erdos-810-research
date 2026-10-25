@@ -1,0 +1,10 @@
+13 3 none=4420 trans=340 full=82
+14 3 none=8596 trans=614 full=206
+15 4 none=1380 trans=92 full=30
+16 4 none=7424 trans=464 full=116
+17 4 none=51952 trans=3056 full=526
+18 5 none=108 trans=6 full=2
+19 5 none=4788 trans=252 full=28
+20 5 none=26400 trans=1320 full=410
+21 6 none=84 trans=4 full=2
+22 5 none=200000 trans=43330 full=8666

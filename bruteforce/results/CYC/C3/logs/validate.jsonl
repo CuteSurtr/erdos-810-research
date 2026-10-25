@@ -98,3 +98,17 @@
 {"n": 23, "k": 6, "sym": "none", "res": "SAT", "by": "kissat-s1", "secs": 0.5, "enc": "n=23 k=6 vars=1821 clauses=34645 keys=4466 units=0", "Dg": [[1, 17], [4, 9], [5, 11], [7, 3], [8, 0], [9, 22]], "check": "VALID ok n=23 |D|=6 edges=138 four-cycles=1932"}
 {"n": 23, "k": 7, "sym": "none", "res": "UNSAT", "by": "cadical-s4", "secs": 6.6, "enc": "n=23 k=7 vars=1811 clauses=34626 keys=4466 units=0"}
 {"n": 24, "k": 6, "sym": "none", "res": "SAT", "by": "kissat-s1", "secs": 0.5, "enc": "n=24 k=6 vars=1898 clauses=37002 keys=4194 units=0", "Dg": [[1, 17], [3, 21], [4, 10], [8, 9], [10, 14], [11, 2]], "check": "VALID ok n=24 |D|=6 edges=144 four-cycles=1968"}
+{"n": 24, "k": 7, "sym": "none", "res": "UNSAT", "by": "cadical-s4", "secs": 8.0, "enc": "n=24 k=7 vars=1888 clauses=36983 keys=4194 units=0"}
+{"n": 25, "k": 6, "sym": "none", "res": "SAT", "by": "kissat-s1", "secs": 0.5, "enc": "n=25 k=6 vars=2316 clauses=48446 keys=5895 units=0", "Dg": [[1, 0], [2, 3], [5, 7], [7, 17], [11, 9], [12, 6]], "check": "VALID ok n=25 |D|=6 edges=150 four-cycles=1975"}
+{"n": 25, "k": 7, "sym": "none", "res": "UNSAT", "by": "cadical-s4", "secs": 70.6, "enc": "n=25 k=7 vars=2305 clauses=48425 keys=5895 units=0"}
+{"n": 26, "k": 6, "sym": "none", "res": "SAT", "by": "kissat-s1", "secs": 0.6, "enc": "n=26 k=6 vars=2406 clauses=51533 keys=5568 units=0", "Dg": [[1, 0], [2, 3], [5, 7], [7, 4], [9, 20], [12, 17]], "check": "VALID ok n=26 |D|=6 edges=156 four-cycles=2041"}
+{"n": 26, "k": 7, "sym": "none", "res": "UNSAT", "by": "kissat-sat-s3", "secs": 152.2, "enc": "n=26 k=7 vars=2395 clauses=51512 keys=5568 units=0"}
+{"n": 27, "k": 7, "sym": "none", "res": "SAT", "by": "cadical-s7", "secs": 0.6, "enc": "n=27 k=7 vars=2880 clauses=65949 keys=7572 units=0", "Dg": [[1, 0], [2, 3], [8, 24], [9, 19], [10, 22], [12, 6], [13, 17]], "check": "VALID ok n=27 |D|=7 edges=189 four-cycles=3780"}
+{"n": 27, "k": 8, "sym": "none", "res": "UNSAT", "by": "cadical-s7", "secs": 158.2, "enc": "n=27 k=8 vars=2868 clauses=65926 keys=7572 units=0"}
+{"n": 28, "k": 7, "sym": "none", "res": "SAT", "by": "kissat-s1", "secs": 0.7, "enc": "n=28 k=7 vars=2984 clauses=69925 keys=7206 units=0", "Dg": [[4, 16], [5, 0], [6, 25], [8, 22], [10, 17], [11, 21], [13, 11]], "check": "VALID ok n=28 |D|=7 edges=196 four-cycles=3836"}
+{"n": 28, "k": 8, "sym": "none", "res": "UNSAT", "by": "cadical-s7", "secs": 172.7, "enc": "n=28 k=8 vars=2972 clauses=69902 keys=7206 units=0"}
+{"n": 29, "k": 7, "sym": "none", "res": "SAT", "by": "kissat-s1", "secs": 0.6, "enc": "n=29 k=7 vars=3542 clauses=87891 keys=9590 units=0", "Dg": [[1, 0], [2, 3], [5, 7], [7, 4], [9, 24], [12, 23], [14, 5]], "check": "VALID ok n=29 |D|=7 edges=203 four-cycles=3915"}
+{"n": 29, "k": 8, "sym": "none", "res": "UNKNOWN", "by": null, "secs": 600.5, "enc": "n=29 k=8 vars=3529 clauses=87866 keys=9590 units=0"}
+{"n": 30, "k": 7, "sym": "none", "res": "SAT", "by": "kissat-s1", "secs": 0.6, "enc": "n=30 k=7 vars=3661 clauses=92859 keys=9133 units=0", "Dg": [[1, 0], [2, 3], [5, 7], [7, 4], [12, 5], [13, 24], [14, 22]], "check": "VALID ok n=30 |D|=7 edges=210 four-cycles=3720"}
+{"n": 30, "k": 8, "sym": "none", "res": "UNKNOWN", "by": null, "secs": 600.4, "enc": "n=30 k=8 vars=3648 clauses=92834 keys=9133 units=0"}
+DONE
