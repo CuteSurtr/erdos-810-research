@@ -24,9 +24,9 @@ n·|D| edges and uses n colours.
 | 37 | 1 | 9 | 10 | **k_max = 9, proved** (UNSAT at 10, DRAT verified) | 0.2432 | 333 |
 | 40 | 0 | 10 | 11 | **k_max = 10 = n/4, proved** (UNSAT at 11, DRAT verified) | 0.2500 | 400 |
 | 47 | 3 | 11 | 12 | **k_max = 11**, UNSAT at 12 (solver, cube-and-conquer over 29 cubes, coverage checked; proofs unchecked) | 0.2340 | 517 |
-| 58 | 2 | 13 | – | k_max ≥ 13 certificate-verified; 14 open (3 runs × 21–25 min) | 0.2241 | 754 |
-| 69 | 1 | 14 | – | k_max ≥ 14 certificate-verified; 15 open (6 runs, up to 25 min) | 0.2029 | 966 |
-| 72 | 0 | 15 | – | k_max ≥ 15 certificate-verified; 16 open (5 runs, up to 30 min); **k = n/4 = 18 not found** (25 min, unfinished) | 0.2083 | 1080 |
+| 58 | 2 | 13 | – | k_max ≥ 13 certificate-verified; 14 open (4 runs, 21–33 min each) | 0.2241 | 754 |
+| 69 | 1 | 14 | – | k_max ≥ 14 certificate-verified; 15 open (7 runs, up to 33 min) | 0.2029 | 966 |
+| 72 | 0 | 15 | – | k_max ≥ 15 certificate-verified; 16 open (7 runs, up to 33 min); **k = n/4 = 18 not found** (25 min, unfinished) | 0.2083 | 1080 |
 | 79 | 3 | 16 | – | k_max ≥ 16 certificate-verified; 17 open (25 min) | 0.2025 | 1264 |
 | 90 | 2 | 17 | – | k_max ≥ 17 certificate-verified; 18 open (2 runs × 20–25 min); 20 far off (annealer stuck at 12 violations) | 0.1889 | 1530 |
 
@@ -40,7 +40,7 @@ n·|D| edges and uses n colours.
 - k = n/4 holds at n = 40 and is optimal there (proved). This extends the CONSTR pattern
   k_max(28, 32, 36) = 7, 8, 9.
 - At n = 72 the best found is 15 = n/4 − 3. k = 16, 17 and 18 were not found. SAT attempts
-  at 16 (5 runs, up to 30 min, kissat/CaDiCaL/annealer) and at 18 (25 min) all timed out.
+  at 16 (7 runs, up to 33 min, kissat/CaDiCaL/annealer) and at 18 (25 min) all timed out.
   This is heuristic evidence that n/4 breaks down by n = 72. It is *not* a proof: no UNSAT is
   known for n = 72 at any k ≤ 18.
 - k_lo/n falls from 0.243–0.250 at n = 37–40 to 0.189 at n = 90:
