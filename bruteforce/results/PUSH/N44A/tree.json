@@ -21,7 +21,14 @@
     "solve_s": 0.2,
     "cnf_sha256": "3229568ddf65c5b1c30f7859b88844cd6a48a241e47dfc57f10b844fb50be0b0",
     "proof_bytes": 89440,
-    "checker_verdict": "s VERIFIED UNSAT"
+    "checker_verdict": "s VERIFIED UNSAT",
+    "cross_check": {
+     "solver": "kissat 4.0.4 (binary DRAT)",
+     "checker": "drat-trim",
+     "verdict": "s VERIFIED",
+     "proof_bytes": 22162,
+     "cnf_sha256": "3229568ddf65c5b1c30f7859b88844cd6a48a241e47dfc57f10b844fb50be0b0"
+    }
    },
    {
     "assumptions": [
@@ -36,7 +43,14 @@
     "solve_s": 2184.5,
     "cnf_sha256": "2e79dbc57dba02ab1448260a896ebcd24df9fd5721853f2403576e294eb8de85",
     "proof_bytes": 6123929951,
-    "checker_verdict": "s VERIFIED UNSAT"
+    "checker_verdict": "s VERIFIED UNSAT",
+    "cross_check": {
+     "solver": "kissat 4.0.4 (binary DRAT)",
+     "checker": "drat-trim",
+     "verdict": "s VERIFIED",
+     "proof_bytes": 2383746861,
+     "cnf_sha256": "2e79dbc57dba02ab1448260a896ebcd24df9fd5721853f2403576e294eb8de85"
+    }
    },
    {
     "assumptions": [
@@ -51,7 +65,14 @@
     "solve_s": 1113.1,
     "cnf_sha256": "e5394f07aaa706f5d05127730055d5e0eeab83aaffca1b597eb2c9a97f08b5e6",
     "proof_bytes": 2717362807,
-    "checker_verdict": "s VERIFIED UNSAT"
+    "checker_verdict": "s VERIFIED UNSAT",
+    "cross_check": {
+     "solver": "kissat 4.0.4 (binary DRAT)",
+     "checker": "drat-trim",
+     "verdict": "s VERIFIED",
+     "proof_bytes": 1023487886,
+     "cnf_sha256": "e5394f07aaa706f5d05127730055d5e0eeab83aaffca1b597eb2c9a97f08b5e6"
+    }
    },
    {
     "assumptions": [
@@ -66,7 +87,14 @@
     "solve_s": 259.1,
     "cnf_sha256": "4786e7b8b06a028b02c4e4c584590aa0990a75a622ea97b708ce4aa66418eb66",
     "proof_bytes": 645166190,
-    "checker_verdict": "s VERIFIED UNSAT"
+    "checker_verdict": "s VERIFIED UNSAT",
+    "cross_check": {
+     "solver": "kissat 4.0.4 (binary DRAT)",
+     "checker": "drat-trim",
+     "verdict": "s VERIFIED",
+     "proof_bytes": 315711044,
+     "cnf_sha256": "4786e7b8b06a028b02c4e4c584590aa0990a75a622ea97b708ce4aa66418eb66"
+    }
    },
    {
     "assumptions": [
@@ -81,7 +109,14 @@
     "solve_s": 195.5,
     "cnf_sha256": "af8ecbb01bcce00105255803412e4d2f1c90800674dd837f67b9c335bdb6ba2d",
     "proof_bytes": 501725941,
-    "checker_verdict": "s VERIFIED UNSAT"
+    "checker_verdict": "s VERIFIED UNSAT",
+    "cross_check": {
+     "solver": "kissat 4.0.4 (binary DRAT)",
+     "checker": "drat-trim",
+     "verdict": "s VERIFIED",
+     "proof_bytes": 222624495,
+     "cnf_sha256": "af8ecbb01bcce00105255803412e4d2f1c90800674dd837f67b9c335bdb6ba2d"
+    }
    },
    {
     "assumptions": [
@@ -96,7 +131,14 @@
     "solve_s": 18.2,
     "cnf_sha256": "a97d28a85600eb63df10690eb47e259225d049ee1f8b8062f95cd30c032b3804",
     "proof_bytes": 20940261,
-    "checker_verdict": "s VERIFIED UNSAT"
+    "checker_verdict": "s VERIFIED UNSAT",
+    "cross_check": {
+     "solver": "kissat 4.0.4 (binary DRAT)",
+     "checker": "drat-trim",
+     "verdict": "s VERIFIED",
+     "proof_bytes": 18002736,
+     "cnf_sha256": "a97d28a85600eb63df10690eb47e259225d049ee1f8b8062f95cd30c032b3804"
+    }
    },
    {
     "assumptions": [
@@ -111,7 +153,14 @@
     "solve_s": 18.4,
     "cnf_sha256": "1628c9749fccd643eac819bd5f208f6d00755230a1ec12e31c02bf0f2746dcef",
     "proof_bytes": 20974240,
-    "checker_verdict": "s VERIFIED UNSAT"
+    "checker_verdict": "s VERIFIED UNSAT",
+    "cross_check": {
+     "solver": "kissat 4.0.4 (binary DRAT)",
+     "checker": "drat-trim",
+     "verdict": "s VERIFIED",
+     "proof_bytes": 17275881,
+     "cnf_sha256": "1628c9749fccd643eac819bd5f208f6d00755230a1ec12e31c02bf0f2746dcef"
+    }
    },
    {
     "assumptions": [
@@ -126,7 +175,14 @@
     "solve_s": 7.7,
     "cnf_sha256": "c8caf307095668f05b5a23c5e2b8cfe738314637f38f1b3a7f55934dfe2c3dcb",
     "proof_bytes": 1988547,
-    "checker_verdict": "s VERIFIED UNSAT"
+    "checker_verdict": "s VERIFIED UNSAT",
+    "cross_check": {
+     "solver": "kissat 4.0.4 (binary DRAT)",
+     "checker": "drat-trim",
+     "verdict": "s VERIFIED",
+     "proof_bytes": 4774707,
+     "cnf_sha256": "c8caf307095668f05b5a23c5e2b8cfe738314637f38f1b3a7f55934dfe2c3dcb"
+    }
    },
    {
     "assumptions": [
@@ -164,7 +220,14 @@
         "solve_s": 2.4,
         "cnf_sha256": "747080fd87bbc3198aa8a87d5a8d078d0218d95bd893d6341c4064314f9892ce",
         "proof_bytes": 5009877,
-        "checker_verdict": "s VERIFIED UNSAT"
+        "checker_verdict": "s VERIFIED UNSAT",
+        "cross_check": {
+         "solver": "kissat 4.0.4 (binary DRAT)",
+         "checker": "drat-trim",
+         "verdict": "s VERIFIED",
+         "proof_bytes": 8189730,
+         "cnf_sha256": "747080fd87bbc3198aa8a87d5a8d078d0218d95bd893d6341c4064314f9892ce"
+        }
        },
        {
         "assumptions": [
@@ -183,7 +246,14 @@
         "solve_s": 4.9,
         "cnf_sha256": "d5636a6501679c6aeeca82399d321c30ea426f453554eb2fffd577e07c523b9d",
         "proof_bytes": 11214548,
-        "checker_verdict": "s VERIFIED UNSAT"
+        "checker_verdict": "s VERIFIED UNSAT",
+        "cross_check": {
+         "solver": "kissat 4.0.4 (binary DRAT)",
+         "checker": "drat-trim",
+         "verdict": "s VERIFIED",
+         "proof_bytes": 15611928,
+         "cnf_sha256": "d5636a6501679c6aeeca82399d321c30ea426f453554eb2fffd577e07c523b9d"
+        }
        },
        {
         "assumptions": [
@@ -202,7 +272,14 @@
         "solve_s": 15.9,
         "cnf_sha256": "3560333a8c405cd0e8b6f9d378de1fe387777a30056c0093b51ae3c9373713ee",
         "proof_bytes": 29997310,
-        "checker_verdict": "s VERIFIED UNSAT"
+        "checker_verdict": "s VERIFIED UNSAT",
+        "cross_check": {
+         "solver": "kissat 4.0.4 (binary DRAT)",
+         "checker": "drat-trim",
+         "verdict": "s VERIFIED",
+         "proof_bytes": 21077086,
+         "cnf_sha256": "3560333a8c405cd0e8b6f9d378de1fe387777a30056c0093b51ae3c9373713ee"
+        }
        },
        {
         "assumptions": [
@@ -221,7 +298,14 @@
         "solve_s": 319.9,
         "cnf_sha256": "a94a24a1a64aa8e409130594644026c867a3783752ad966bfcdf1d8b1993b047",
         "proof_bytes": 858665330,
-        "checker_verdict": "s VERIFIED UNSAT"
+        "checker_verdict": "s VERIFIED UNSAT",
+        "cross_check": {
+         "solver": "kissat 4.0.4 (binary DRAT)",
+         "checker": "drat-trim",
+         "verdict": "s VERIFIED",
+         "proof_bytes": 361679932,
+         "cnf_sha256": "a94a24a1a64aa8e409130594644026c867a3783752ad966bfcdf1d8b1993b047"
+        }
        },
        {
         "assumptions": [
@@ -240,7 +324,14 @@
         "solve_s": 22.6,
         "cnf_sha256": "3eedcc6c535fcee3b7e6e302a600b9ebcb3224a845fbf53cef3f530a4ba2f8fe",
         "proof_bytes": 49254043,
-        "checker_verdict": "s VERIFIED UNSAT"
+        "checker_verdict": "s VERIFIED UNSAT",
+        "cross_check": {
+         "solver": "kissat 4.0.4 (binary DRAT)",
+         "checker": "drat-trim",
+         "verdict": "s VERIFIED",
+         "proof_bytes": 36063701,
+         "cnf_sha256": "3eedcc6c535fcee3b7e6e302a600b9ebcb3224a845fbf53cef3f530a4ba2f8fe"
+        }
        },
        {
         "assumptions": [
@@ -259,7 +350,14 @@
         "solve_s": 219.8,
         "cnf_sha256": "30347955f554999072a5b98691ddaa97ee52b3aebd9d999a7d08cacfc41f818f",
         "proof_bytes": 613077949,
-        "checker_verdict": "s VERIFIED UNSAT"
+        "checker_verdict": "s VERIFIED UNSAT",
+        "cross_check": {
+         "solver": "kissat 4.0.4 (binary DRAT)",
+         "checker": "drat-trim",
+         "verdict": "s VERIFIED",
+         "proof_bytes": 265651438,
+         "cnf_sha256": "30347955f554999072a5b98691ddaa97ee52b3aebd9d999a7d08cacfc41f818f"
+        }
        },
        {
         "assumptions": [
@@ -278,7 +376,14 @@
         "solve_s": 258.0,
         "cnf_sha256": "3edade126f75b9eda3e4080abf65d0e34ebc9033e9d01807edb7a329fc5177e3",
         "proof_bytes": 753914086,
-        "checker_verdict": "s VERIFIED UNSAT"
+        "checker_verdict": "s VERIFIED UNSAT",
+        "cross_check": {
+         "solver": "kissat 4.0.4 (binary DRAT)",
+         "checker": "drat-trim",
+         "verdict": "s VERIFIED",
+         "proof_bytes": 297362396,
+         "cnf_sha256": "3edade126f75b9eda3e4080abf65d0e34ebc9033e9d01807edb7a329fc5177e3"
+        }
        },
        {
         "assumptions": [
@@ -297,7 +402,14 @@
         "solve_s": 393.4,
         "cnf_sha256": "c096cf561d87ed97fc62c7be2567e59259484fef7718fa722f645c148e6c71bc",
         "proof_bytes": 1231630727,
-        "checker_verdict": "s VERIFIED UNSAT"
+        "checker_verdict": "s VERIFIED UNSAT",
+        "cross_check": {
+         "solver": "kissat 4.0.4 (binary DRAT)",
+         "checker": "drat-trim",
+         "verdict": "s VERIFIED",
+         "proof_bytes": 469275361,
+         "cnf_sha256": "c096cf561d87ed97fc62c7be2567e59259484fef7718fa722f645c148e6c71bc"
+        }
        }
       ]
      },
@@ -309,7 +421,170 @@
        4,
        -5
       ],
-      "result": "DELEGATED to PUSH/N44B"
+      "result": "DELEGATED to PUSH/N44B",
+      "note": "N44B logs all 8 sub-cubes \u00b16\u00b17\u00b18 UNSAT with cake_lpr; independently re-solved here (kissat + drat-trim)",
+      "cross_checked_children": [
+       {
+        "assumptions": [
+         1,
+         2,
+         3,
+         4,
+         -5,
+         6,
+         7,
+         8
+        ],
+        "result": "UNSAT (N44B; cross-check here)",
+        "cross_check": {
+         "solver": "kissat 4.0.4 (binary DRAT)",
+         "checker": "drat-trim",
+         "verdict": "s VERIFIED",
+         "proof_bytes": 20064848,
+         "cnf_sha256": "67c6c92e9e2297756128690f7fa6b0876b6c156cc2da00f4cb5d1883261ca5da"
+        }
+       },
+       {
+        "assumptions": [
+         1,
+         2,
+         3,
+         4,
+         -5,
+         6,
+         7,
+         -8
+        ],
+        "result": "UNSAT (N44B; cross-check here)",
+        "cross_check": {
+         "solver": "kissat 4.0.4 (binary DRAT)",
+         "checker": "drat-trim",
+         "verdict": "s VERIFIED",
+         "proof_bytes": 233988155,
+         "cnf_sha256": "b2acc219d7ba492d5525e0001506408867b603bc24bb3d2af4c3088de5c15d71"
+        }
+       },
+       {
+        "assumptions": [
+         1,
+         2,
+         3,
+         4,
+         -5,
+         6,
+         -7,
+         8
+        ],
+        "result": "UNSAT (N44B; cross-check here)",
+        "cross_check": {
+         "solver": "kissat 4.0.4 (binary DRAT)",
+         "checker": "drat-trim",
+         "verdict": "s VERIFIED",
+         "proof_bytes": 174641678,
+         "cnf_sha256": "7747dcdef575c0760f666ccb4367d4d374970b611abcae192c03a504fc7f9591"
+        }
+       },
+       {
+        "assumptions": [
+         1,
+         2,
+         3,
+         4,
+         -5,
+         6,
+         -7,
+         -8
+        ],
+        "result": "UNSAT (N44B; cross-check here)",
+        "cross_check": {
+         "solver": "kissat 4.0.4 (binary DRAT)",
+         "checker": "drat-trim",
+         "verdict": "s VERIFIED",
+         "proof_bytes": 279115925,
+         "cnf_sha256": "9bbf56b63115a0a3e6f5cb3c1221bed2ce76d1ff6a69e82bd78409054b048631"
+        }
+       },
+       {
+        "assumptions": [
+         1,
+         2,
+         3,
+         4,
+         -5,
+         -6,
+         7,
+         8
+        ],
+        "result": "UNSAT (N44B; cross-check here)",
+        "cross_check": {
+         "solver": "kissat 4.0.4 (binary DRAT)",
+         "checker": "drat-trim",
+         "verdict": "s VERIFIED",
+         "proof_bytes": 221291523,
+         "cnf_sha256": "6bcb21f577814c40d5e9477ba493f8cbace72e186023239f41deaa60896dacba"
+        }
+       },
+       {
+        "assumptions": [
+         1,
+         2,
+         3,
+         4,
+         -5,
+         -6,
+         7,
+         -8
+        ],
+        "result": "UNSAT (N44B; cross-check here)",
+        "cross_check": {
+         "solver": "kissat 4.0.4 (binary DRAT)",
+         "checker": "drat-trim",
+         "verdict": "s VERIFIED",
+         "proof_bytes": 265781405,
+         "cnf_sha256": "61cdb7fca244c7668235534ac68be28fe55a158a16a8cd7550b4f1a6583452b3"
+        }
+       },
+       {
+        "assumptions": [
+         1,
+         2,
+         3,
+         4,
+         -5,
+         -6,
+         -7,
+         8
+        ],
+        "result": "UNSAT (N44B; cross-check here)",
+        "cross_check": {
+         "solver": "kissat 4.0.4 (binary DRAT)",
+         "checker": "drat-trim",
+         "verdict": "s VERIFIED",
+         "proof_bytes": 317189933,
+         "cnf_sha256": "aab25f70e5f16a687e9c3813451d7d29f31c369ad1924cdf0d859af8168589ee"
+        }
+       },
+       {
+        "assumptions": [
+         1,
+         2,
+         3,
+         4,
+         -5,
+         -6,
+         -7,
+         -8
+        ],
+        "result": "UNSAT (N44B; cross-check here)",
+        "cross_check": {
+         "solver": "kissat 4.0.4 (binary DRAT)",
+         "checker": "drat-trim",
+         "verdict": "s VERIFIED",
+         "proof_bytes": 274283983,
+         "cnf_sha256": "af3afc674e4b46a353ecb33594ca0b16cc1911c28bdc492a148628ebe9a08e4c"
+        }
+       }
+      ]
      }
     ]
    }

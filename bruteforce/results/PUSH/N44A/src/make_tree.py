@@ -8,6 +8,14 @@ res = {}
 for l in open(f"{R}/logs/leaves.jsonl"):
     d = json.loads(l); key = tuple(d["cube"])
     if key not in res or res[key]["res"] == "UNKNOWN": res[key] = d
+drat = {}
+for l in open(f"{R}/logs/drat.jsonl"):
+    d = json.loads(l)
+    if d["verdict"] == "s VERIFIED": drat[tuple(d["cube"])] = d
+def xc(n):
+    d = drat.get(tuple(n["assumptions"]))
+    if d: n["cross_check"] = {"solver": d["solver"], "checker": "drat-trim", "verdict": d["verdict"], "proof_bytes": d["proof_bytes"], "cnf_sha256": d["cnf_sha256"]}
+    return n
 def node(cube, children=None, note=None):
     n = {"assumptions": list(cube)}
     if note: n["note"] = note
@@ -17,7 +25,7 @@ def node(cube, children=None, note=None):
                   "proof": "LRAT checked by cake_lpr" if r["verdict"] == "s VERIFIED UNSAT" else f"UNCHECKED ({r['verdict']})",
                   "solver": r["solver"], "solve_s": r["solve_s"], "cnf_sha256": r["cnf_sha256"],
                   "proof_bytes": r["proof_bytes"], "checker_verdict": r["verdict"]})
-        return n
+        return xc(n)
     if children is None and r:   # timed out: look for split children
         nxt = max(abs(x) for x in cube) + 1
         if tuple(cube + [nxt]) in res or tuple(cube + [-nxt]) in res:
@@ -33,7 +41,7 @@ def node(cube, children=None, note=None):
     return n
 def subtree5():
     return node([1, 2, 3, 4, 5], [node([1, 2, 3, 4, 5, a, b, c]) for a in (6, -6) for b in (7, -7) for c in (8, -8)])
-c1234 = node([1, 2, 3, 4], [subtree5(), {"assumptions": [1, 2, 3, 4, -5], "result": "DELEGATED to PUSH/N44B"}])
+c1234 = node([1, 2, 3, 4], [subtree5(), {"assumptions": [1, 2, 3, 4, -5], "result": "DELEGATED to PUSH/N44B", "note": "N44B logs all 8 sub-cubes ±6±7±8 UNSAT with cake_lpr; independently re-solved here (kissat + drat-trim)", "cross_checked_children": [xc({"assumptions": [1, 2, 3, 4, -5, a, b, c], "result": "UNSAT (N44B; cross-check here)"}) for a in (6, -6) for b in (7, -7) for c in (8, -8)]}])
 root = node([], [node([-1])] + [node([1, a, b, c]) for a in (2, -2) for b in (3, -3) for c in (4, -4) if (a, b, c) != (2, 3, 4)] + [c1234])
 def leaves(n):
     if "children" in n:
