@@ -11,6 +11,8 @@ the multiplier u = -1 combined with translation by -1 maps g(e) -> e - 1 - g(e) 
 and keeps the translation fix, so child d:a is SAT iff child d:(d-1-a) is.  The representatives
 (a <= d-1-a mod n) are queued first; the mirror children go to a low-priority queue that runs
 only when nothing else is pending (they are covered by the symmetry if they never run).
+Pre-split: a cube with exactly one fixed offset and another present orbit d > 1 with unfixed offset
+is not run; it is split by rule (a) straight away (logged as res PRESPLIT).
 Orbit 1 is never value-split: it is the smallest present orbit, so the CNF forces x(1,0).  Every result is
 appended to logs/leaves.jsonl; on restart, cubes already resolved there are not re-run.
 A SAT result stops nothing automatically but is logged and checked with check.py by leaf.py.
@@ -28,6 +30,10 @@ if os.path.exists(LOG):
         if o["res"] != "UNKNOWN": done[key] = o
         else: done.setdefault(key, o)
 lock = threading.Lock(); queue = list(roots); lowq = []; active = [0]
+def presplit(c):
+    vf = [t for t in c if ":" in t and not t.startswith("-")]
+    pres = [int(t) for t in c if ":" not in t and int(t) > 1]
+    return len(vf) == 1 and any(d not in {int(t.split(":")[0]) for t in vf} for d in pres)
 def split(c):
     a, b = children(c); queue.extend(a); lowq.extend(b)
 def children(c):
@@ -50,7 +56,7 @@ def worker():
             while True:
                 while queue and tuple(queue[0]) in done:
                     c = queue.pop(0); o = done[tuple(c)]
-                    if o["res"] == "UNKNOWN": split(c)
+                    if o["res"] in ("UNKNOWN", "PRESPLIT"): split(c)
                 if queue or not lowq: break
                 queue.append(lowq.pop(0))
             if not queue:
@@ -59,6 +65,12 @@ def worker():
             else:
                 c = queue.pop(0); active[0] += 1
         if c is None: time.sleep(5); continue
+        if presplit(c):
+            o = {"cube": c, "res": "PRESPLIT", "t_end": time.strftime("%H:%M:%S", time.gmtime())}
+            with lock:
+                with open(LOG, "a") as f: f.write(json.dumps(o) + "\n")
+                done[tuple(c)] = o; active[0] -= 1; split(c)
+            continue
         r = subprocess.run([sys.executable, f"{SRC}/leaf.py", str(n), str(k), str(cap), ",".join(c), "lrat"],
                            capture_output=True, text=True)
         try: o = json.loads(r.stdout.strip().splitlines()[-1])

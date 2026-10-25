@@ -13,6 +13,7 @@ for path in (w1, w2):
     for l in open(path):
         o = json.loads(l)
         if "note" in o: continue
+        if o["res"] == "PRESPLIT": o["res"] = "UNKNOWN"; o["presplit"] = True
         c = tuple(str(t) for t in o["cube"])
         if c not in res or res[c]["res"] == "UNKNOWN": res[c] = o
 open_w1 = {("1","2","-3","-4"), ("1","2","-3","4"), ("1","2","3","-4"), ("1","2","3","4"), ("1","-2","3","4")}
@@ -26,6 +27,9 @@ def children(c):
     e = next(e for e in range(1, H + 1) if e not in fixed)
     return "p(%d)" % e, [list(c) + [str(e)], list(c) + [str(-e)]], None
 leaves = []
+def closed(nd):
+    if "children" in nd: return all(closed(x) for x in nd["children"])
+    return nd["result"] == "UNSAT" and nd.get("checker_verdict") == "s VERIFIED UNSAT"
 def node(c, depth=0):
     c = list(c); t = tuple(c); o = res.get(t)
     nd = {"cube": c}
@@ -33,6 +37,7 @@ def node(c, depth=0):
     if o is None:
         nd["result"] = "PENDING"; leaves.append(nd); return nd
     nd["result"] = o["res"]; nd["secs"] = o.get("secs")
+    if o.get("presplit"): nd["result"] = "PRESPLIT (not run)"
     if o["res"] == "UNSAT":
         nd.update({"cnf_sha256": o["cnf_sha256"], "solver": o["solver"], "proof": "binary LRAT streamed to cake_lpr",
                    "proof_bytes": o.get("proof_bytes"), "checker_verdict": o.get("check")})
@@ -43,14 +48,13 @@ def node(c, depth=0):
         if t == ("1","2","3","4") and ("1","2","3","4","5") in res:
             nd["note"] = "an earlier p(5) split attempt: child (1,2,3,4,5) UNKNOWN at 600 s; superseded by the g(2) split"
         nd["split_on"] = how; kids = []
-        for x in ch:
-            k_ = node(x)
-            if md is not None and k_["result"] == "PENDING":
-                a = int(x[-1].split(":")[1]); m = (md - 1 - a) % n
-                rep = tuple(list(t) + [f"{md}:{m}"])
-                if rep in res and res[rep]["res"] == "UNSAT":
-                    k_["result"] = "COVERED"; k_["covered_by"] = "u=-1 mirror of " + ",".join(rep)
-            kids.append(k_)
+        nl0 = len(leaves)
+        kids = [node(x) for x in ch]
+        if md is not None:
+            for g, k_ in enumerate(kids):
+                m = (md - 1 - g) % n
+                if k_["result"] == "PENDING" and closed(kids[m]):
+                    k_["result"] = "COVERED"; k_["covered_by"] = "u=-1 mirror of " + ",".join(kids[m]["cube"])
         nd["children"] = kids
     return nd
 roots = [["-1"]] + [["1", a, b, c] for a in ("2", "-2") for b in ("3", "-3") for c in ("4", "-4")]
