@@ -1,0 +1,9 @@
+cake_lpr negative tests (10:38-10:40 UTC), on the cube (¬1) CNF with a CaDiCaL 3.0.1 binary LRAT proof:
+- correct proof, correct CNF: s VERIFIED UNSAT
+- correct proof, base CNF without the cube unit: "c Checking failed at line: 0. Reason: clause index unavailable: 427848"
+- proof truncated to 50000 bytes: "c Checking failed at line: 3131. Reason: failed to parse line (compressed format)"
+- 20 random single-bit flips (python random.seed(1..20)): 17 rejected, 3 accepted
+  (also one manual flip at the midpoint accepted); accepted flips are consistent with hitting deletion
+  steps, which do not affect soundness.
+drat-trim sanity: kissat 4.0.4 DRAT for cube (¬1): "s VERIFIED" (note: drat-trim prefixes its result lines with '\r';
+the first dratleaf.sh version missed this and logged an empty verdict, those leaves were re-run).
