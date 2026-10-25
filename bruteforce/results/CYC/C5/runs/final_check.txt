@@ -1,0 +1,8 @@
+43 VALID ok, 430 edges, 16813 four-cycles
+54 VALID ok, 648 edges, 36369 four-cycles
+60 VALID ok, 780 edges, 50265 four-cycles
+65 VALID ok, 910 edges, 68575 four-cycles
+75 VALID ok, 1125 edges, 92025 four-cycles
+86 VALID ok, 1462 edges, 152134 four-cycles
+92 VALID ok, 1656 edges, 194488 four-cycles
+97 VALID ok, 1843 edges, 249775 four-cycles

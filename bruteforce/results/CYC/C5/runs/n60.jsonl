@@ -6,3 +6,5 @@
 {"n": 60, "k": 14, "solver": "kissat:unsat", "seed": 2, "sym": 3, "amo": 1, "secs": 749.0, "enc": "cycenc n=60 k=14 H=29 cycles=181946 keys=89589 keyclauses=45379 y=22683 lex=7 vars=26721 clauses=1513353", "res": "UNKNOWN", "rc": 0}
 {"n": 60, "k": 14, "solver": "kissat:sat", "seed": 1, "sym": 3, "amo": 1, "secs": 749.0, "enc": "cycenc n=60 k=14 H=29 cycles=181946 keys=89589 keyclauses=45379 y=22683 lex=7 vars=26721 clauses=1513353", "res": "UNKNOWN", "rc": 0}
 {"n": 60, "k": 14, "solver": "cadical", "seed": 0, "sym": 3, "amo": 1, "secs": 749.0, "enc": "cycenc n=60 k=14 H=29 cycles=181946 keys=89589 keyclauses=45379 y=22683 lex=7 vars=26721 clauses=1513353", "res": "UNKNOWN", "rc": 0}
+{"n": 60, "k": 14, "solver": "kissat:sat", "seed": 7, "sym": 1, "amo": 1, "secs": 4457.0, "enc": "cycenc n=60 k=14 H=29 cycles=181946 keys=89589 keyclauses=45379 y=22683 lex=0 vars=26569 clauses=1512897", "res": "UNKNOWN", "rc": 0}
+{"n": 60, "k": 14, "solver": "cadical", "seed": 1, "sym": 1, "amo": 1, "secs": 4457.1, "enc": "cycenc n=60 k=14 H=29 cycles=181946 keys=89589 keyclauses=45379 y=22683 lex=0 vars=26569 clauses=1512897", "res": "UNKNOWN", "rc": 0}

@@ -1,9 +1,9 @@
 n	k_lo	k_unsat	status	k_lo/n	seconds	notes
-43	10		k_max>=10 certificate-verified; upper bound unfinished	0.2326	1500	best: CONSTR certificate; open k (UNKNOWN at cap): 11
+43	10		k_max>=10 certificate-verified; upper bound unfinished	0.2326	1500	best: CONSTR certificate; open k (UNKNOWN at cap): 11; first pass with 3 default kissat seeds + CaDiCaL (all with lex breaking)
 54	12		k_max>=12 certificate-verified; upper bound unfinished	0.2222	1501	best: CONSTR certificate; open k (UNKNOWN at cap): 13
-60	13		k_max>=13 certificate-verified; upper bound unfinished	0.2167	1500	best: CONSTR certificate; open k (UNKNOWN at cap): 14,15; k=n/4=15: undecided
+60	13		k_max>=13 certificate-verified; upper bound unfinished	0.2167	5958	best: CONSTR certificate; open k (UNKNOWN at cap): 14,15; k=n/4=15: undecided; first pass 1500 s (k=15 for 750 s, then k=14) + phase 2 4458 s at k=14 (CaDiCaL + kissat --sat, translation fix only); seconds column = 1500 + 4458
 65	14		k_max>=14 certificate-verified; upper bound unfinished	0.2154	1501	best: cadical seed 0, 56.1s; open k (UNKNOWN at cap): 15
 75	15		k_max>=15 certificate-verified; upper bound unfinished	0.2000	1502	best: cadical seed 0, 2.4s; open k (UNKNOWN at cap): 16
 86	17		k_max>=17 certificate-verified; upper bound unfinished	0.1977	1502	best: cadical seed 0, 13.9s; open k (UNKNOWN at cap): 18
-92	18		k_max>=18 certificate-verified; upper bound unfinished	0.1957	1502	best: kissat:sat seed 1, 60.2s; open k (UNKNOWN at cap): 19,23; k=n/4=23: undecided
+92	18		k_max>=18 certificate-verified; upper bound unfinished	0.1957	5963	best: kissat:sat seed 1, 60.2s; open k (UNKNOWN at cap): 19,23; k=n/4=23: undecided; first pass 1502 s (k=23 for 752 s, then climb 17->19) + phase 2 4461 s at k=19 (CaDiCaL + kissat --sat, translation fix only); seconds column = 1502 + 4461
 97	19		k_max>=19 certificate-verified; upper bound unfinished	0.1959	1505	best: kissat:sat seed 0, 1418.1s; open k (UNKNOWN at cap): 20

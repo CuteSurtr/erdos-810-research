@@ -8,3 +8,5 @@
 {"n": 92, "k": 19, "solver": "kissat:sat", "seed": 1, "sym": 1, "amo": 1, "secs": 675.0, "enc": "cycenc n=92 k=19 H=45 cycles=697050 keys=345356 keyclauses=174064 y=87032 lex=0 vars=96167 clauses=8567341", "res": "UNKNOWN", "rc": 0}
 {"n": 92, "k": 19, "solver": "kissat:sat", "seed": 0, "sym": 3, "amo": 1, "secs": 675.0, "enc": "cycenc n=92 k=19 H=45 cycles=697050 keys=345356 keyclauses=174064 y=87032 lex=21 vars=97069 clauses=8570047", "res": "UNKNOWN", "rc": 0}
 {"n": 92, "k": 19, "solver": "cadical", "seed": 0, "sym": 3, "amo": 1, "secs": 675.1, "enc": "cycenc n=92 k=19 H=45 cycles=697050 keys=345356 keyclauses=174064 y=87032 lex=21 vars=97069 clauses=8570047", "res": "UNKNOWN", "rc": 0}
+{"n": 92, "k": 19, "solver": "cadical", "seed": 1, "sym": 1, "amo": 1, "secs": 4457.2, "enc": "cycenc n=92 k=19 H=45 cycles=697050 keys=345356 keyclauses=174064 y=87032 lex=0 vars=96167 clauses=8567341", "res": "UNKNOWN", "rc": 0}
+{"n": 92, "k": 19, "solver": "kissat:sat", "seed": 7, "sym": 1, "amo": 1, "secs": 4457.7, "enc": "cycenc n=92 k=19 H=45 cycles=697050 keys=345356 keyclauses=174064 y=87032 lex=0 vars=96167 clauses=8567341", "res": "UNKNOWN", "rc": 0}
