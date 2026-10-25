@@ -1,0 +1,2 @@
+python3 src/run.py 69 15 --lex 0 --seed 9 --solver cadical --opt=--sat --timeout 1500 --log logs/prod.jsonl
+python3 src/run.py 58 14 --lex 0 --seed 9 --solver cadical --opt=--sat --timeout 1500 --log logs/prod.jsonl

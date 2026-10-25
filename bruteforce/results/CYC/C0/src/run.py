@@ -17,6 +17,7 @@ ap.add_argument("--lex", type=int, default=1); ap.add_argument("--trans", type=i
 ap.add_argument("--solver", default="kissat"); ap.add_argument("--seed", type=int, default=0)
 ap.add_argument("--timeout", type=int, default=1500); ap.add_argument("--proof", default=None)
 ap.add_argument("--log", default=None); ap.add_argument("--opt", default=""); ap.add_argument("--keep", action="store_true")
+ap.add_argument("--cube", default="", help="comma-separated orbits d (present) or -d (absent), added as unit clauses on p_d")
 a = ap.parse_args()
 n, k = a.n, a.k; H = (n + 1) // 2 - 1
 tag = f"n{n}_k{k}_l{a.lex}t{a.trans}_{a.solver}_s{a.seed}_{os.getpid()}"
@@ -24,6 +25,12 @@ cnf = os.path.join(SCR, tag + ".cnf")
 with open(cnf, "w") as f:
     subprocess.run([os.path.join(HERE, "cycenc"), str(n), str(k), str(a.lex), str(a.trans)],
                    stdout=f, stderr=subprocess.DEVNULL, check=True)
+if a.cube:   # append unit clauses on presence variables p_d = H*n + d and fix the header count
+    units = [(1 if int(t) > 0 else -1) * (H * n + abs(int(t))) for t in a.cube.split(",")]
+    body = open(cnf).read().split("\n", 2)
+    nv, nc = map(int, body[1].split()[2:4])
+    with open(cnf, "w") as f:
+        f.write(body[0] + "\n" + f"p cnf {nv} {nc + len(units)}\n" + body[2] + "".join(f"{u} 0\n" for u in units))
 t0 = time.time()
 if a.solver == "kissat":
     cmd = [KISSAT, f"--seed={a.seed}", f"--time={a.timeout}", "-q"] + a.opt.split() + [cnf]
@@ -39,7 +46,7 @@ for line in out.splitlines():
     elif line.startswith("s UNSATISFIABLE"): res = "UNSAT"
     elif line.startswith("v "):
         model.update(int(t) for t in line[2:].split() if int(t) > 0)
-rec = {"n": n, "k": k, "cfg": f"lex={a.lex},trans={a.trans},{a.solver},seed={a.seed}" + (f",opt={a.opt}" if a.opt else ""), "res": res, "secs": secs}
+rec = {"n": n, "k": k, "cfg": f"lex={a.lex},trans={a.trans},{a.solver},seed={a.seed}" + (f",opt={a.opt}" if a.opt else "") + (f",cube={a.cube}" if a.cube else ""), "res": res, "secs": secs}
 if res == "SAT":
     Dg = [[d, g] for d in range(1, H + 1) for g in range(n) if (d - 1) * n + g + 1 in model]
     ok, ne, msg = check(n, Dg)
