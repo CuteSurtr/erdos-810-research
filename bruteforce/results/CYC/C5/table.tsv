@@ -6,4 +6,4 @@ n	k_lo	k_unsat	status	k_lo/n	seconds	notes
 75	15		k_max>=15 certificate-verified; upper bound unfinished	0.2000	1502	best: cadical seed 0, 2.4s; open k (UNKNOWN at cap): 16
 86	17		k_max>=17 certificate-verified; upper bound unfinished	0.1977	1502	best: cadical seed 0, 13.9s; open k (UNKNOWN at cap): 18
 92	18		k_max>=18 certificate-verified; upper bound unfinished	0.1957	1502	best: kissat:sat seed 1, 60.2s; open k (UNKNOWN at cap): 19,23; k=n/4=23: undecided
-97	18		k_max>=18 certificate-verified; upper bound unfinished	0.1856	19	best: kissat:unsat seed 2, 6.3s
+97	19		k_max>=19 certificate-verified; upper bound unfinished	0.1959	1505	best: kissat:sat seed 0, 1418.1s; open k (UNKNOWN at cap): 20
