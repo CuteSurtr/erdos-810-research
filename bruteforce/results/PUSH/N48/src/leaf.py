@@ -11,14 +11,19 @@ from check import check
 WORK = os.environ.get("CYCWORK", "/tmp/claude-0/w"); B = "/tmp/claude-0/b"
 CAD, DT = f"{B}/cadical/build/cadical", f"{B}/drat-trim/drat-trim"
 n, k, tl = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3])
-cube = [int(t) for t in sys.argv[4].split(",") if t]; pm = sys.argv[5] if len(sys.argv) > 5 else "0"
+# cube tokens: +d / -d (orbit d present / absent), d:g (x(d,g): orbit d present with offset g), -d:g (not x(d,g))
+def tok(t):
+    if ":" in t:
+        d, g = t.split(":"); s = -1 if d.startswith("-") else 1; return s * (1 + (abs(int(d)) - 1) * n + int(g))
+    return P(int(t)) if int(t) > 0 else -P(-int(t))
+cube = [t for t in sys.argv[4].split(",") if t]; pm = sys.argv[5] if len(sys.argv) > 5 else "0"
 pm = "lrat" if pm == "1" else pm; proof = pm in ("drat", "lrat")
 CAKE = f"{B}/cake_lpr/cake_lpr"
 extra = sys.argv[6].split() if len(sys.argv) > 6 else []
 H = (n + 1) // 2 - 1; P = lambda d: H * n + d
 base = f"{WORK}/c_{n}_{k}_3.cnf"
 if not os.path.exists(base): subprocess.run([f"{SRC}/cycenc", str(n), str(k), "3", base], check=True, stderr=subprocess.DEVNULL)
-tag = ("_".join(str(c) for c in cube).replace("-", "m") or "root") + f"_{os.getpid()}"
+tag = ("_".join(c.replace(":", "x") for c in cube).replace("-", "m") or "root") + f"_{os.getpid()}"
 cnf, prf = f"{WORK}/cube_{n}_{k}_{tag}.cnf", f"{WORK}/cube_{n}_{k}_{tag}.drat"
 h = hashlib.sha256()
 with open(base) as f, open(cnf, "w") as g:
@@ -27,8 +32,8 @@ with open(base) as f, open(cnf, "w") as g:
             _, _, v, c = line.split(); line = f"p cnf {v} {int(c) + len(cube)}\n"
         g.write(line); h.update(line.encode())
     for c in cube:
-        line = f"{P(c) if c > 0 else -P(-c)} 0\n"; g.write(line); h.update(line.encode())
-out = {"n": n, "k": k, "cube": cube, "res": "UNKNOWN", "cnf_sha256": h.hexdigest(), "solver": "cadical " +
+        line = f"{tok(c)} 0\n"; g.write(line); h.update(line.encode())
+out = {"n": n, "k": k, "cube": [t if ":" in t else int(t) for t in cube], "res": "UNKNOWN", "cnf_sha256": h.hexdigest(), "solver": "cadical " +
        subprocess.run([CAD, "--version"], capture_output=True, text=True).stdout.strip(), "opts": extra}
 t0 = time.time()
 if pm == "lrat":

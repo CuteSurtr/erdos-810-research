@@ -1,0 +1,8 @@
+{"cube": ["1", "2", "-3", "-4"], "res": "UNKNOWN", "note": "seed: UNKNOWN at 600 s in first wave (leaves.jsonl)"}
+{"cube": ["1", "2", "-3", "4"], "res": "UNKNOWN", "note": "seed: UNKNOWN at 600 s in first wave (leaves.jsonl)"}
+{"cube": ["1", "2", "3", "-4"], "res": "UNKNOWN", "note": "seed: UNKNOWN at 600 s in first wave (leaves.jsonl)"}
+{"cube": ["1", "2", "3", "4"], "res": "UNKNOWN", "note": "seed: UNKNOWN at 600 s in first wave (leaves.jsonl)"}
+{"cube": ["1", "-2", "3", "4"], "res": "UNKNOWN", "note": "seed: UNKNOWN at 600 s in first wave (leaves.jsonl)"}
+{"n": 48, "k": 12, "cube": [1, 2, -3, -4, "2:2"], "res": "UNSAT", "cnf_sha256": "b28926a4e0b760107c83e907823e901261263f98bbd878be5e19872706bf9d37", "solver": "cadical 3.0.1", "opts": [], "proof_bytes": 8889, "secs": 1.6, "check": "s VERIFIED UNSAT", "check_extra_secs": 0.1, "checker": "cake_lpr a36874a (streamed binary LRAT)", "cap": 400, "t_end": "11:39:33"}
+{"n": 48, "k": 12, "cube": [1, 2, -3, -4, "2:1"], "res": "UNSAT", "cnf_sha256": "bc8f25255b989e1a771c40fd1ec0da2a19261dc87339264d25454822057f34cc", "solver": "cadical 3.0.1", "opts": [], "proof_bytes": 8889, "secs": 1.6, "check": "s VERIFIED UNSAT", "check_extra_secs": 0.1, "checker": "cake_lpr a36874a (streamed binary LRAT)", "cap": 400, "t_end": "11:39:33"}
+{"n": 48, "k": 12, "cube": [1, 2, -3, -4, "2:0"], "res": "UNSAT", "cnf_sha256": "7ea2311932bb3bd57f63c9e582e0d79f4501790b7a18a64393d3c225efdb65ad", "solver": "cadical 3.0.1", "opts": [], "proof_bytes": 8889, "secs": 1.8, "check": "s VERIFIED UNSAT", "check_extra_secs": 0.1, "checker": "cake_lpr a36874a (streamed binary LRAT)", "cap": 400, "t_end": "11:39:34"}
