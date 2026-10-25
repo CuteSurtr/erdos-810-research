@@ -10,13 +10,13 @@ os.makedirs(WORK, exist_ok=True)
 n, k, sym, solver, tl = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), sys.argv[4], int(sys.argv[5])
 seed = int(sys.argv[6]) if len(sys.argv) > 6 else 0
 H = (n + 1) // 2 - 1
-tag = f"n{n}_k{k}_s{sym}_{solver}_{seed}"
+tag = f"n{n}_k{k}_s{sym}_{solver}_{seed}_{os.getpid()}"
 cnf = f"{WORK}/{tag}.cnf"
 subprocess.run(f"{HERE}/cycenc {n} {k} {sym} > {cnf}", shell=True, check=True, stderr=subprocess.DEVNULL)
 t0 = time.time()
 proof = f"{WORK}/{tag}.drat"
 if solver == "kissat":
-    cmd = [f"{DL}/kissat/build/kissat", f"--time={tl}", f"--seed={seed}", "-q", cnf]
+    cmd = [f"{DL}/kissat/build/kissat", f"--time={tl}", f"--seed={seed}", "-q"] + os.environ.get("KOPTS", "").split() + [cnf]
 elif solver == "cadical":
     cmd = [f"{DL}/cadical/build/cadical", "-t", str(tl), f"--seed={seed}", "-q", cnf]
 else:
@@ -24,6 +24,7 @@ else:
 out = subprocess.run(cmd, capture_output=True, text=True).stdout
 secs = time.time() - t0
 res = {"n": n, "k": k, "sym": sym, "solver": solver, "seed": seed, "secs": round(secs, 1)}
+if solver == "kissat" and os.environ.get("KOPTS"): res["kopts"] = os.environ["KOPTS"]
 if "s SATISFIABLE" in out:
     m = set()
     for line in out.splitlines():

@@ -4,6 +4,6 @@ n	k_lo	k_unsat	status	k_lo/n	seconds	notes
 50	11		lower bound (certificate-verified); k=[12] UNKNOWN (timeout)	0.2200	1499.0	
 61	15		lower bound (certificate-verified)	0.2459	1495.8	
 71	15		lower bound (certificate-verified); k=[16] UNKNOWN (timeout)	0.2113	1496.9	
-80	16		lower bound (certificate-verified); k=[18] UNKNOWN (timeout)	0.2000	16.0	
-82			unfinished		0	
-93			unfinished		0	
+80	16		lower bound (certificate-verified); k=[17, 18, 20] UNKNOWN (timeout)	0.2000	1556.6	
+82	16		lower bound (certificate-verified); k=[17] UNKNOWN (timeout)	0.1951	1495.7	
+93	18		lower bound (certificate-verified)	0.1935	44.2	
