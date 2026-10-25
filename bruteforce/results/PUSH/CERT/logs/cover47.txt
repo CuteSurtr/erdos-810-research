@@ -1,0 +1,1 @@
+split variables [2, 3, 4, 5, 6, 7, 8, 9, 10]; cubes 29 (29 with verified proof); assignments not covered: by any cube 0, by verified cubes 0 (of 512)

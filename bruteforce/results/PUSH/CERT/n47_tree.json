@@ -6,6 +6,40 @@
    4,
    5,
    6,
+   7,
+   8
+  ],
+  "result": "UNSATISFIABLE",
+  "solver": "cadical 3.0.1 lrat",
+  "proof_bytes": 6991192,
+  "checker": "cake_lpr a36874a",
+  "verdict": "s VERIFIED UNSAT",
+  "cnf_sha256": "083e7d8c7c7880a72239e1d07cfafcd01dcbad1301e37b406849314169616971"
+ },
+ {
+  "cube": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   -8
+  ],
+  "result": "UNSATISFIABLE",
+  "solver": "cadical 3.0.1 lrat",
+  "proof_bytes": 63871039,
+  "checker": "cake_lpr a36874a",
+  "verdict": "s VERIFIED UNSAT",
+  "cnf_sha256": "d14c1b43725a3c164f64bfeb819d374e54107b29d57c3d2b17ec93fc05571dc3"
+ },
+ {
+  "cube": [
+   2,
+   3,
+   4,
+   5,
+   6,
    -7,
    8
   ],
@@ -31,6 +65,23 @@
   "proof_bytes": 3848354889,
   "checker": "cake_lpr a36874a",
   "verdict": "NO VERDICT: ",
+  "cnf_sha256": "ec0dc210c71d3c3481ea767bd311d23b49406481cef72e31ffb853d854f20403"
+ },
+ {
+  "cube": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   -7,
+   -8
+  ],
+  "result": "UNSATISFIABLE",
+  "solver": "cadical 3.0.1 lrat",
+  "proof_bytes": 3848354889,
+  "checker": "cake_lpr a36874a",
+  "verdict": "s VERIFIED UNSAT",
   "cnf_sha256": "ec0dc210c71d3c3481ea767bd311d23b49406481cef72e31ffb853d854f20403"
  },
  {
@@ -159,6 +210,23 @@
   "checker": "cake_lpr a36874a",
   "verdict": "s VERIFIED UNSAT",
   "cnf_sha256": "ffa35cf3b47d836bc06d46ee76a30f06c06c7effdb2fe6cef2a457a61369c18a"
+ },
+ {
+  "cube": [
+   2,
+   3,
+   4,
+   -5,
+   6,
+   7,
+   8
+  ],
+  "result": "UNSATISFIABLE",
+  "solver": "cadical 3.0.1 lrat",
+  "proof_bytes": 244548174,
+  "checker": "cake_lpr a36874a",
+  "verdict": "s VERIFIED UNSAT",
+  "cnf_sha256": "adf7b254ebd8550f7cff0ec15df2cab41820ab9b75f41fa60cf632683f4466d8"
  },
  {
   "cube": [
@@ -330,6 +398,21 @@
    3,
    -4,
    -5,
+   6
+  ],
+  "result": "UNSATISFIABLE",
+  "solver": "cadical 3.0.1 lrat",
+  "proof_bytes": 839994583,
+  "checker": "cake_lpr a36874a",
+  "verdict": "s VERIFIED UNSAT",
+  "cnf_sha256": "a44a87e142a067e4b8eed35b3e36c066647ac3349f724adcfc598e802dbed347"
+ },
+ {
+  "cube": [
+   2,
+   3,
+   -4,
+   -5,
    -6
   ],
   "result": "UNSATISFIABLE",
@@ -338,5 +421,83 @@
   "checker": "cake_lpr a36874a",
   "verdict": "s VERIFIED UNSAT",
   "cnf_sha256": "79745bc81d336941abc617c5b1124f8fab993b5b63ad66daf0bb6e2c40357a72"
+ },
+ {
+  "cube": [
+   2,
+   -3,
+   4
+  ],
+  "result": "UNSATISFIABLE",
+  "solver": "cadical 3.0.1 lrat",
+  "proof_bytes": 105128305,
+  "checker": "cake_lpr a36874a",
+  "verdict": "s VERIFIED UNSAT",
+  "cnf_sha256": "5aef8c79e3269be958e554d7691e1d4a771e97b74e8dc5bf047db2336c52e1dc"
+ },
+ {
+  "cube": [
+   2,
+   -3,
+   -4
+  ],
+  "result": "UNSATISFIABLE",
+  "solver": "cadical 3.0.1 lrat",
+  "proof_bytes": 84569753,
+  "checker": "cake_lpr a36874a",
+  "verdict": "s VERIFIED UNSAT",
+  "cnf_sha256": "ccaa93aeec5f966778c75629c9375308e00e8b7653bb64f7e412ef6f4cc7330e"
+ },
+ {
+  "cube": [
+   -2,
+   3,
+   4
+  ],
+  "result": "UNSATISFIABLE",
+  "solver": "cadical 3.0.1 lrat",
+  "proof_bytes": 132747,
+  "checker": "cake_lpr a36874a",
+  "verdict": "s VERIFIED UNSAT",
+  "cnf_sha256": "1a5dc658a164dc2ceefdce3377c15769c6d9355dc975a058baa81728d2310fbc"
+ },
+ {
+  "cube": [
+   -2,
+   3,
+   -4
+  ],
+  "result": "UNSATISFIABLE",
+  "solver": "cadical 3.0.1 lrat",
+  "proof_bytes": 113689,
+  "checker": "cake_lpr a36874a",
+  "verdict": "s VERIFIED UNSAT",
+  "cnf_sha256": "8e2e02b3df0be3e3069c40037d8abf05ad5cfda96b0a4ca5dbee6c2753193188"
+ },
+ {
+  "cube": [
+   -2,
+   -3,
+   4
+  ],
+  "result": "UNSATISFIABLE",
+  "solver": "cadical 3.0.1 lrat",
+  "proof_bytes": 91021,
+  "checker": "cake_lpr a36874a",
+  "verdict": "s VERIFIED UNSAT",
+  "cnf_sha256": "bccd07f168316fe298fbb91e0cf9b199ffa7bbb8d376cc7a4dca2d74087df85a"
+ },
+ {
+  "cube": [
+   -2,
+   -3,
+   -4
+  ],
+  "result": "UNSATISFIABLE",
+  "solver": "cadical 3.0.1 lrat",
+  "proof_bytes": 78717,
+  "checker": "cake_lpr a36874a",
+  "verdict": "s VERIFIED UNSAT",
+  "cnf_sha256": "370f4d0601133d1319415c04673d4ee7a53a50f3caa08dcc4d61c69b57cb8166"
  }
 ]
