@@ -1,9 +1,9 @@
 n	k_lo	k_unsat	status	k_lo/n	seconds	notes
 37	9	10	k_max=9: proved (DRAT verified)	0.2432	79	best found by lex=1,trans=1,kissat,seed=0 in 1.8s
 40	10	11	k_max=10: proved (DRAT verified)	0.2500	444	best found by lex=1,trans=1,kissat,seed=0 in 51.1s; k=n/4=10: SAT
-47	11		k_max>=11 certificate-verified; upper bound unfinished	0.2340	6912	best found by lex=1,trans=1,kissat,seed=0 in 11.7s; open k (timeouts): 12 (max wall 6000s)
-58	13		k_max>=13 certificate-verified; upper bound unfinished	0.2241	2883	best found by lex=0,trans=1,kissat,seed=2 in 93.9s; open k (timeouts): 14 (max wall 1500s)
+47	11		k_max>=11 certificate-verified; upper bound unfinished	0.2340	25988	best found by lex=1,trans=1,kissat,seed=0 in 11.7s; open k (timeouts): 12 (max wall 6000s)
+58	13		k_max>=13 certificate-verified; upper bound unfinished	0.2241	4383	best found by lex=0,trans=1,kissat,seed=2 in 93.9s; open k (timeouts): 14 (max wall 1500s)
 69	14		k_max>=14 certificate-verified; upper bound unfinished	0.2029	6328	best found by lex=0,trans=1,kissat,seed=4,opt=--sat in 5.5s; open k (timeouts): 15 (max wall 1500s)
-72	15		k_max>=15 certificate-verified; upper bound unfinished	0.2083	5428	best found by lex=0,trans=1,kissat,seed=4,opt=--sat in 24.9s; open k (timeouts): 16,18 (max wall 1800s); k=n/4=18: open
+72	15		k_max>=15 certificate-verified; upper bound unfinished	0.2083	6928	best found by lex=0,trans=1,kissat,seed=4,opt=--sat in 24.9s; open k (timeouts): 16,18 (max wall 1800s); k=n/4=18: open
 79	16		k_max>=16 certificate-verified; upper bound unfinished	0.2025	1640	best found by lex=0,trans=1,kissat,seed=5,opt=--sat in 130.2s; open k (timeouts): 17 (max wall 1500s)
-90	17		k_max>=17 certificate-verified; upper bound unfinished	0.1889	1546	best found by lex=0,trans=1,kissat,seed=4,opt=--sat in 31.0s; open k (timeouts): 18,20 (max wall 1200s)
+90	17		k_max>=17 certificate-verified; upper bound unfinished	0.1889	3046	best found by lex=0,trans=1,kissat,seed=4,opt=--sat in 31.0s; open k (timeouts): 18,20 (max wall 1500s)

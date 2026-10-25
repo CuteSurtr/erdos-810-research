@@ -22,3 +22,11 @@
 {"n": 47, "k": 12, "cfg": "lex=1,trans=1,kissat,seed=0,opt=--unsat,cube=2,3,4,5,6,-7,-8", "res": "UNSAT", "secs": 1203.8}
 {"n": 47, "k": 12, "cfg": "lex=1,trans=1,kissat,seed=0,opt=--unsat,cube=2,3,4,-5,6,7,8", "res": "UNSAT", "secs": 71.9}
 {"n": 47, "k": 12, "cfg": "lex=1,trans=1,kissat,seed=0,opt=--unsat,cube=2,3,4,-5,6,-7,8", "res": "UNSAT", "secs": 141.4}
+{"n": 47, "k": 12, "cfg": "lex=1,trans=1,kissat,seed=0,opt=--unsat,cube=2,3,4,-5,6,7,-8", "res": "UNSAT", "secs": 496.0}
+{"n": 47, "k": 12, "cfg": "lex=1,trans=1,kissat,seed=0,opt=--unsat,cube=2,3,4,-5,6,-7,-8", "res": "UNSAT", "secs": 547.3}
+{"n": 47, "k": 12, "cfg": "lex=1,trans=1,kissat,seed=0,opt=--unsat,cube=2,3,4,5,-6,-7,8", "res": "UNSAT", "secs": 936.7}
+{"n": 47, "k": 12, "cfg": "lex=1,trans=1,kissat,seed=0,opt=--unsat,cube=2,3,4,-5,-6,7,8", "res": "UNSAT", "secs": 405.2}
+{"n": 47, "k": 12, "cfg": "lex=1,trans=1,kissat,seed=0,opt=--unsat,cube=2,3,4,-5,-6,7,-8", "res": "UNSAT", "secs": 497.2}
+{"n": 47, "k": 12, "cfg": "lex=1,trans=1,kissat,seed=0,opt=--unsat,cube=2,3,4,-5,-6,-7,8", "res": "UNSAT", "secs": 576.5}
+{"n": 47, "k": 12, "cfg": "lex=1,trans=1,kissat,seed=0,opt=--unsat,cube=2,3,4,-5,-6,-7,-8", "res": "UNSAT", "secs": 499.1}
+{"n": 47, "k": 12, "cfg": "lex=1,trans=1,kissat,seed=0,opt=--unsat,cube=2,3,4,5,-6,-7,-8", "res": "UNKNOWN", "secs": 1500.0}

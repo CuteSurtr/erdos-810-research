@@ -7,6 +7,20 @@ from check import check
 MY = [37, 40, 47, 58, 69, 72, 79, 90]
 INIT = {37: 9, 40: 10, 47: 11, 58: 12, 69: 15, 72: 16, 79: 15, 90: 20}   # starting k_lo (see REPORT)
 recs = [json.loads(l) for f in ["logs/prod.jsonl", "logs/proof.jsonl"] if os.path.exists(f) for l in open(f)]
+import itertools
+def cube_result(n):
+    """UNSAT record for k if the UNSAT cubes in logs/cube<n>.jsonl cover all assignments."""
+    fn = f"logs/cube{n}.jsonl"
+    if not os.path.exists(fn): return []
+    C = [json.loads(l) for l in open(fn)]; out = []
+    for k in sorted({r["k"] for r in C}):
+        uns = [set(map(int, r["cfg"].split("cube=")[1].split(","))) for r in C if r["k"] == k and r["res"] == "UNSAT"]
+        V = sorted({abs(t) for c in uns for t in c})
+        if uns and all(any(c <= {s * v for s, v in zip(b, V)} for c in uns) for b in itertools.product([1, -1], repeat=len(V))):
+            out.append({"n": n, "k": k, "res": "UNSAT", "cfg": f"cube-and-conquer ({len(uns)} UNSAT cubes)",
+                        "secs": round(sum(r["secs"] for r in C if r["k"] == k)), "cubes": True})
+    return out
+for n in [37, 40, 47, 58, 69, 72, 79, 90]: recs += cube_result(n)
 rows, sols, certs = [], {}, {}
 for n in MY:
     R = [r for r in recs if r["n"] == n]
@@ -15,7 +29,7 @@ for n in MY:
     best = max(sat, key=lambda r: len(r["Dg"])) if sat else None
     klo = len(best["Dg"]) if best else None
     kun = min(r["k"] for r in uns) if uns else None
-    secs = round(sum(r["secs"] for r in R))
+    secs = round(sum(r["secs"] for r in R if not r.get("cubes")) + sum(json.loads(l)["secs"] for l in open(f"logs/cube{n}.jsonl")) if os.path.exists(f"logs/cube{n}.jsonl") else sum(r["secs"] for r in R))
     notes = []
     if best:
         ok, ne, msg = check(n, best["Dg"]); assert ok and ne == n * klo, (n, msg)
@@ -23,7 +37,7 @@ for n in MY:
         certs[str(n)] = [[i, (i + d) % n, (i + g) % n] for d, g in best["Dg"] for i in range(n)]
         notes.append(f"best found by {best['cfg']} in {best['secs']}s")
     tried = sorted({r["k"] for r in R if r["res"] == "UNKNOWN" and r["secs"] > 60})
-    tried = [k for k in tried if klo is None or k > klo]
+    tried = [k for k in tried if (klo is None or k > klo) and (kun is None or k < kun)]
     if tried: notes.append("open k (timeouts): " + ",".join(map(str, tried)) + " (max wall %ds)" % max(r["secs"] for r in R if r["res"] == "UNKNOWN" and r["k"] in tried))
     if n % 4 == 0:
         q = n // 4
@@ -31,6 +45,7 @@ for n in MY:
     if kun is not None and klo is not None and kun == klo + 1:
         dr = f"logs/drat_n{n}k{kun}.txt"
         if os.path.exists(dr) and "s VERIFIED" in open(dr).read(): st = "proved (DRAT verified)"
+        elif any(r.get("cubes") and r["k"] == kun for r in uns): st = "UNSAT (solver, cube-and-conquer, proofs unchecked)"
         else: st = "UNSAT (solver, proof unchecked)"
         st = f"k_max={klo}: " + st
     elif klo is not None: st = f"k_max>={klo} certificate-verified; upper bound unfinished"
