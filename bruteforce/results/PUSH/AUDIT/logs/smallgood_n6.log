@@ -1,0 +1,17 @@
+n=6 e=0 k=6: good labelled 1, good classes 1
+n=6 e=1 k=6: good labelled 15, good classes 1
+n=6 e=2 k=6: good labelled 105, good classes 2
+n=6 e=3 k=6: good labelled 455, good classes 5
+n=6 e=4 k=6: good labelled 1365, good classes 9
+n=6 e=5 k=6: good labelled 3003, good classes 15
+n=6 e=6 k=6: good labelled 5005, good classes 21
+n=6 e=7 k=6: good labelled 6435, good classes 24
+n=6 e=8 k=6: good labelled 6420, good classes 23
+n=6 e=9 k=6: good labelled 4830, good classes 17
+n=6 e=10 k=6: good labelled 2322, good classes 8
+n=6 e=11 k=6: good labelled 360, good classes 1
+n=6 e=12 k=6: good labelled 0, good classes 0
+n=6 e=13 k=6: good labelled 0, good classes 0
+n=6 e=14 k=6: good labelled 0, good classes 0
+n=6 e=15 k=6: good labelled 0, good classes 0
+total good classes over e in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] = 127
