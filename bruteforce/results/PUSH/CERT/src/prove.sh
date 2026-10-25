@@ -34,12 +34,14 @@ ST=$(echo "$t1 - $t0" | bc)
 VERD=""; CT=0
 if [ "$RES" = UNSATISFIABLE ]; then
   c0=$(date +%s.%N)
-  if [ $SOLVER = cadical3 ]; then timeout $TC $CAKE $CNF $P > $W/$TAG.dt.out 2>&1
+  # at most two cake_lpr checks at a time (each can take > 4 GB; four at once hit the memory limit)
+  if [ $SOLVER = cadical3 ]; then
+    flock -n -E 75 $W/cakeA.lock timeout $TC $CAKE $CNF $P > $W/$TAG.dt.out 2>&1
+    [ $? = 75 ] && flock $W/cakeB.lock timeout $TC $CAKE $CNF $P > $W/$TAG.dt.out 2>&1
   else $DRAT $CNF $P -t $TC > $W/$TAG.dt.out 2>&1; fi
   c1=$(date +%s.%N); CT=$(echo "$c1 - $c0" | bc)
   VERD=$(tr '\r' '\n' < $W/$TAG.dt.out | grep -aE '^s ' | tail -1)
   [ -z "$VERD" ] && VERD="NO VERDICT: $(tail -c 200 $W/$TAG.dt.out | tr '\n"' ' _')"
-  cp $W/$TAG.dt.out $(dirname $LOG)/dt_$TAG.txt 2>/dev/null
   # keep only the tail of the drat-trim output in the repo
   tail -20 $W/$TAG.dt.out > $(dirname $LOG)/dt_$TAG.txt
 fi

@@ -1,0 +1,4 @@
+n=35: 280 edges, 6825 4-cycles, 0 not rainbow -> VALID
+n=38: 342 edges, 11020 4-cycles, 0 not rainbow -> VALID
+n=42: 420 edges, 16947 4-cycles, 0 not rainbow -> VALID
+n=47: 517 edges, 25850 4-cycles, 0 not rainbow -> VALID

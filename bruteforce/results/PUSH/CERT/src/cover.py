@@ -10,7 +10,7 @@ for l in open(fn):
     r = json.loads(l)
     if not r["tag"].startswith(pre): continue
     c = frozenset(-int(t[1:]) if t[0] == "m" else int(t) for t in r["tag"][len(pre):].split("_"))
-    ok = r["result"] == "UNSATISFIABLE" and r["verdict"].strip() == "s VERIFIED"
+    ok = r["result"] == "UNSATISFIABLE" and r["verdict"].strip() in ("s VERIFIED", "s VERIFIED UNSAT")
     cubes[c] = cubes.get(c, False) or ok
 V = sorted({abs(t) for c in cubes for t in c})
 unc_ver = unc_any = 0
