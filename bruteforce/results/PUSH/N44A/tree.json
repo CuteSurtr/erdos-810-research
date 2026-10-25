@@ -4,8 +4,7 @@
  "presence_var": "p(d) = 21*44 + d; a cube literal +d / -d is the unit clause p(d) / \u00acp(d) appended to the base CNF",
  "cover": "each internal node splits on one presence bit p_j into {p_j} and {\u00acp_j}; the root split is {\u00acp1} \u222a {p1}\u00d7{\u00b1p2}\u00d7{\u00b1p3}\u00d7{\u00b1p4}",
  "leaf_summary": {
-  "UNSAT / LRAT checked by cake_lpr": 13,
-  "NOT RUN / -": 3,
+  "UNSAT / LRAT checked by cake_lpr": 16,
   "DELEGATED to PUSH/N44B / -": 1
  },
  "tree": {
@@ -31,7 +30,13 @@
      3,
      -4
     ],
-    "result": "NOT RUN"
+    "result": "UNSAT",
+    "proof": "LRAT checked by cake_lpr",
+    "solver": "cadical 3.0.1 --lrat --binary",
+    "solve_s": 2184.5,
+    "cnf_sha256": "2e79dbc57dba02ab1448260a896ebcd24df9fd5721853f2403576e294eb8de85",
+    "proof_bytes": 6123929951,
+    "checker_verdict": "s VERIFIED UNSAT"
    },
    {
     "assumptions": [
@@ -40,7 +45,13 @@
      -3,
      4
     ],
-    "result": "NOT RUN"
+    "result": "UNSAT",
+    "proof": "LRAT checked by cake_lpr",
+    "solver": "cadical 3.0.1 --lrat --binary",
+    "solve_s": 1113.1,
+    "cnf_sha256": "e5394f07aaa706f5d05127730055d5e0eeab83aaffca1b597eb2c9a97f08b5e6",
+    "proof_bytes": 2717362807,
+    "checker_verdict": "s VERIFIED UNSAT"
    },
    {
     "assumptions": [
@@ -280,7 +291,13 @@
          -7,
          -8
         ],
-        "result": "NOT RUN"
+        "result": "UNSAT",
+        "proof": "LRAT checked by cake_lpr",
+        "solver": "cadical 3.0.1 --lrat --binary",
+        "solve_s": 393.4,
+        "cnf_sha256": "c096cf561d87ed97fc62c7be2567e59259484fef7718fa722f645c148e6c71bc",
+        "proof_bytes": 1231630727,
+        "checker_verdict": "s VERIFIED UNSAT"
        }
       ]
      },
