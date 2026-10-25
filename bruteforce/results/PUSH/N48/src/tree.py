@@ -6,6 +6,11 @@ A cube that ends UNKNOWN is split by this rule:
       such d and split into the n children cube + [d:g], g = 0..n-1.  Cover: the CNF contains the
       clause -p(d) | x(d,0) | ... | x(d,n-1), so every model of the cube satisfies some child;
   (b) otherwise split on the presence of the smallest orbit e not mentioned: cube + [e], cube + [-e].
+Mirror priority: at the first value split of a cube containing orbit 1 (so g(1) = 0 is forced),
+the multiplier u = -1 combined with translation by -1 maps g(e) -> e - 1 - g(e) for every e; it fixes p
+and keeps the translation fix, so child d:a is SAT iff child d:(d-1-a) is.  The representatives
+(a <= d-1-a mod n) are queued first; the mirror children go to a low-priority queue that runs
+only when nothing else is pending (they are covered by the symmetry if they never run).
 Orbit 1 is never value-split: it is the smallest present orbit, so the CNF forces x(1,0).  Every result is
 appended to logs/leaves.jsonl; on restart, cubes already resolved there are not re-run.
 A SAT result stops nothing automatically but is logged and checked with check.py by leaf.py.
@@ -22,22 +27,32 @@ if os.path.exists(LOG):
         o = json.loads(l); key = tuple(str(t) for t in o["cube"])
         if o["res"] != "UNKNOWN": done[key] = o
         else: done.setdefault(key, o)
-lock = threading.Lock(); queue = list(roots); active = [0]
+lock = threading.Lock(); queue = list(roots); lowq = []; active = [0]
+def split(c):
+    a, b = children(c); queue.extend(a); lowq.extend(b)
 def children(c):
     pres = [int(t) for t in c if ":" not in t and int(t) > 1]
     valfixed = {int(t.split(":")[0]) for t in c if ":" in t and not t.startswith("-")}
     free = [d for d in sorted(pres) if d not in valfixed]
-    if free: return [c + [f"{free[0]}:{g}"] for g in range(n)]
+    if free:
+        d = free[0]; ch = [c + [f"{d}:{g}"] for g in range(n)]
+        if "1" in c and not valfixed:
+            rep = [x for g, x in enumerate(ch) if g <= (d - 1 - g) % n]
+            return rep, [x for x in ch if x not in rep]
+        return ch, []
     fixed = {abs(int(t)) for t in c if ":" not in t}
     e = next(e for e in range(1, H + 1) if e not in fixed)
-    return [c + [str(e)], c + [str(-e)]]
+    return [c + [str(e)], c + [str(-e)]], []
 def worker():
     while True:
         with lock:
             if os.path.exists(f"{R}/STOP"): return
-            while queue and tuple(queue[0]) in done:
-                c = queue.pop(0); o = done[tuple(c)]
-                if o["res"] == "UNKNOWN": queue.extend(children(c))
+            while True:
+                while queue and tuple(queue[0]) in done:
+                    c = queue.pop(0); o = done[tuple(c)]
+                    if o["res"] == "UNKNOWN": split(c)
+                if queue or not lowq: break
+                queue.append(lowq.pop(0))
             if not queue:
                 if active[0] == 0: return
                 c = None
@@ -52,7 +67,7 @@ def worker():
         with lock:
             with open(LOG, "a") as f: f.write(json.dumps(o) + "\n")
             done[tuple(c)] = o; active[0] -= 1
-            if o["res"] == "UNKNOWN": queue.extend(children(c))
+            if o["res"] == "UNKNOWN": split(c)
             elif o["res"] == "UNSAT" and o.get("check") != "s VERIFIED UNSAT":
                 print("PROOF NOT VERIFIED", c, flush=True)
 ts = [threading.Thread(target=worker) for _ in range(W)]

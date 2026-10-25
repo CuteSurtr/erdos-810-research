@@ -1,0 +1,3035 @@
+{
+ "summary": {
+  "n": 48,
+  "k": 12,
+  "encoding": "CYC/C1 cycenc sym=3 (translation fix + lex-leader over Z_48^x/\u00b11)",
+  "base_cnf_sha256": "8b9bc39b6244b093ed6850b45ccca8ea809ff015eb61141b14e583960fff6cbf",
+  "leaf_counts": {
+   "UNSAT checked": 82,
+   "PENDING": 134,
+   "COVERED": 28
+  },
+  "n_leaves": 244
+ },
+ "tree": [
+  {
+   "cube": [
+    "-1"
+   ],
+   "result": "UNSAT",
+   "secs": 15.6,
+   "cnf_sha256": "800fb342d012cc1c39288957897db3ea106dbb32a36068d3c9397eedc3bbab93",
+   "solver": "cadical 3.0.1",
+   "proof": "binary LRAT streamed to cake_lpr",
+   "proof_bytes": 14750587,
+   "checker_verdict": "s VERIFIED UNSAT"
+  },
+  {
+   "cube": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "result": "UNKNOWN",
+   "secs": 600.4,
+   "note": "an earlier p(5) split attempt: child (1,2,3,4,5) UNKNOWN at 600 s; superseded by the g(2) split",
+   "split_on": "g(2)",
+   "children": [
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:0"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:1"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:2"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:3"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:4"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:5"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:6"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:7"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:8"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:9"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:10"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:11"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:12"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:13"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:14"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:15"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:16"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:17"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:18"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:19"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:20"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:21"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:22"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:23"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:24"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:25"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:26"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:27"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:28"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:29"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:30"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:31"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:32"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:33"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:34"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:35"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:36"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:37"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:38"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:39"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:40"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:41"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:42"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:43"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:44"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:45"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:46"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "2:47"
+     ],
+     "result": "PENDING"
+    }
+   ]
+  },
+  {
+   "cube": [
+    "1",
+    "2",
+    "3",
+    "-4"
+   ],
+   "result": "UNKNOWN",
+   "secs": 600.8,
+   "split_on": "g(2)",
+   "children": [
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:0"
+     ],
+     "result": "UNSAT",
+     "secs": 2.3,
+     "cnf_sha256": "5ace7cc6014522b2faba1c1fb25c25b4598b401ced4d6145a1ef699bd8df225e",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 12175,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:1"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,3,-4,2:0"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:2"
+     ],
+     "result": "UNSAT",
+     "secs": 2.0,
+     "cnf_sha256": "3d8a695e9cdb70452479789b2f099c00a8ba944dffce866b6422d8b1308e2872",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 12175,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:3"
+     ],
+     "result": "UNSAT",
+     "secs": 2.3,
+     "cnf_sha256": "c6321d1ba21b89b401ec4d9e0c895101a0b5d80931bdd631fa553b6ba9272728",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 12175,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:4"
+     ],
+     "result": "UNSAT",
+     "secs": 295.8,
+     "cnf_sha256": "3c95c58923b5b7df0337e93b5c4417bef33072ef813fe16bbb77e1139503af48",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 660033628,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:5"
+     ],
+     "result": "UNSAT",
+     "secs": 336.5,
+     "cnf_sha256": "4a2118205419277e8736501c507d11e1d337e4c447dac6c9d727ea8df20aa08f",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 728128724,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:6"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:7"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:8"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:9"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:10"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:11"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:12"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:13"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:14"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:15"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:16"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:17"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:18"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:19"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:20"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:21"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:22"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:23"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:24"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:25"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:26"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:27"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:28"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:29"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:30"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:31"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:32"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:33"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:34"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:35"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:36"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:37"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:38"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:39"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:40"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:41"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:42"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:43"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:44"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,3,-4,2:5"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:45"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,3,-4,2:4"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:46"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,3,-4,2:3"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "3",
+      "-4",
+      "2:47"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,3,-4,2:2"
+    }
+   ]
+  },
+  {
+   "cube": [
+    "1",
+    "2",
+    "-3",
+    "4"
+   ],
+   "result": "UNKNOWN",
+   "secs": 600.9,
+   "split_on": "g(2)",
+   "children": [
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:0"
+     ],
+     "result": "UNSAT",
+     "secs": 2.0,
+     "cnf_sha256": "a0b658c0ac2e40ee5dc96321cc2fa369440c2b66b866aa9aa676fde33dc9b0f3",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 12128,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:1"
+     ],
+     "result": "UNSAT",
+     "secs": 1.7,
+     "cnf_sha256": "e2021d8c38296a18d7323a646a20605dcda25090d7c2f3550d2b61a321a90706",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 12128,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:2"
+     ],
+     "result": "UNSAT",
+     "secs": 1.9,
+     "cnf_sha256": "505b4357337ab2ab126cf82295b296c53e5dff34d81cdd65fb31636342c4c43e",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 12128,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:3"
+     ],
+     "result": "UNSAT",
+     "secs": 1.7,
+     "cnf_sha256": "94b08ece53dfdeae245abd475ca974d74a7a1fa74521e02674346e5893ad8822",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 12128,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:4"
+     ],
+     "result": "UNSAT",
+     "secs": 162.9,
+     "cnf_sha256": "9f9abee0823adea766c8425de1beb81938a04ab3a13716c4120933de4a968f1f",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 385335079,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:5"
+     ],
+     "result": "UNSAT",
+     "secs": 133.4,
+     "cnf_sha256": "818d9287865b719aaee3778e9784bd9cdf486adb200d898a51ece3d2746c7b75",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 309464566,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:6"
+     ],
+     "result": "UNSAT",
+     "secs": 99.4,
+     "cnf_sha256": "0e2e655c0d8e9a1e1cf2cb3deb15976f72b01426a995afd53850178ab38cd124",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 244438409,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:7"
+     ],
+     "result": "UNSAT",
+     "secs": 188.3,
+     "cnf_sha256": "03cad7828a12584a5a6fb637c512d024b4866a65c9e6769d311c66039dcfef1c",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 413545917,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:8"
+     ],
+     "result": "UNSAT",
+     "secs": 196.8,
+     "cnf_sha256": "d87a1ba159d38665888623b683ce88b500e454004dd852eca3cfcb54a80c8159",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 437061567,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:9"
+     ],
+     "result": "UNSAT",
+     "secs": 247.3,
+     "cnf_sha256": "28e1a6e4e0dbb81ede25c79b7e11eea5dc5253a07017634283ba23ce14450714",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 541145230,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:10"
+     ],
+     "result": "UNSAT",
+     "secs": 261.3,
+     "cnf_sha256": "c0df0754c56084841e161ee4c8c43b951a4c1e0387ed72ef10fe6771f6058276",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 570399837,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:11"
+     ],
+     "result": "UNSAT",
+     "secs": 235.5,
+     "cnf_sha256": "f6fcfa648de28357993f187f5aa23b1ebde440466832b0afe3f1d8ec2329d077",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 508731324,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:12"
+     ],
+     "result": "UNSAT",
+     "secs": 253.6,
+     "cnf_sha256": "ed3ab583ac686ca69c841bdc8d94c58a54418dcbce819dfd5daf28b2081a1bc0",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 539926291,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:13"
+     ],
+     "result": "UNSAT",
+     "secs": 232.3,
+     "cnf_sha256": "bd2a10bcefc3dbe4a29a95985f5cd1b1cbdaf406e54dfb42632e93a13917a714",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 503014249,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:14"
+     ],
+     "result": "UNSAT",
+     "secs": 244.9,
+     "cnf_sha256": "0cc44659d6797c5ac97eef21fad6d592c0a3184006b7b0bca2429549dc076519",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 538595656,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:15"
+     ],
+     "result": "UNSAT",
+     "secs": 224.1,
+     "cnf_sha256": "f79ab5509b01742d62d65b3c0a8c39333b27dcb82515b5400fc0c717255216e7",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 472153870,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:16"
+     ],
+     "result": "UNSAT",
+     "secs": 216.8,
+     "cnf_sha256": "5fb3d4b765727a16dff3051c0941de0620f3174c66864a2ba424cf322601c178",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 473466597,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:17"
+     ],
+     "result": "UNSAT",
+     "secs": 179.1,
+     "cnf_sha256": "56db2a5adffd944ea11a55a7f771bc93e1646a7e884e08cf2fd041f995bf2e36",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 397591004,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:18"
+     ],
+     "result": "UNSAT",
+     "secs": 198.3,
+     "cnf_sha256": "cd393f050ad3b3138c0e95486e391bb13d88d3461b33a4107ffc96ba1e722c48",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 431234688,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:19"
+     ],
+     "result": "UNSAT",
+     "secs": 203.6,
+     "cnf_sha256": "16261c18699a5f97427b4fb23804176faf02857121c2419a8d516b6dc89605b2",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 422383389,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:20"
+     ],
+     "result": "UNSAT",
+     "secs": 204.9,
+     "cnf_sha256": "ea47accebf8843f977a2ee5a69f1bea2a9287d24df6573b0df2f8bfcb0ebd298",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 425270930,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:21"
+     ],
+     "result": "UNSAT",
+     "secs": 229.6,
+     "cnf_sha256": "72d7d97364e1ae5d27731168749ac4c951a11abfc6c2abb04bb512ffb4417117",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 462680954,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:22"
+     ],
+     "result": "UNSAT",
+     "secs": 241.0,
+     "cnf_sha256": "5e61bb432c1fc8db9ace3d7d4c3c68cc9513dd9abdca9889c53f499f2ad80446",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 494206132,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:23"
+     ],
+     "result": "UNSAT",
+     "secs": 289.3,
+     "cnf_sha256": "502f842f7abe824ace6c4cec64f7946605fe317ac8277c11404b2ebca715de7d",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 611726935,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:24"
+     ],
+     "result": "UNSAT",
+     "secs": 280.8,
+     "cnf_sha256": "43aaef0cbf9d629bc8e7548a1a5a065e1234c34c57f8a1752891a82bd05800b3",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 574310597,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:25"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:24"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:26"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:23"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:27"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:22"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:28"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:21"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:29"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:20"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:30"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:19"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:31"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:18"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:32"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:17"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:33"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:16"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:34"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:15"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:35"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:14"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:36"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:13"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:37"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:12"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:38"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:11"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:39"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:10"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:40"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:9"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:41"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:8"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:42"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:7"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:43"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:6"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:44"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:5"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:45"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:4"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:46"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:3"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "4",
+      "2:47"
+     ],
+     "result": "COVERED",
+     "covered_by": "u=-1 mirror of 1,2,-3,4,2:2"
+    }
+   ]
+  },
+  {
+   "cube": [
+    "1",
+    "2",
+    "-3",
+    "-4"
+   ],
+   "result": "UNKNOWN",
+   "secs": 600.9,
+   "split_on": "g(2)",
+   "children": [
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:0"
+     ],
+     "result": "UNSAT",
+     "secs": 1.8,
+     "cnf_sha256": "7ea2311932bb3bd57f63c9e582e0d79f4501790b7a18a64393d3c225efdb65ad",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 8889,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:1"
+     ],
+     "result": "UNSAT",
+     "secs": 1.6,
+     "cnf_sha256": "bc8f25255b989e1a771c40fd1ec0da2a19261dc87339264d25454822057f34cc",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 8889,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:2"
+     ],
+     "result": "UNSAT",
+     "secs": 1.6,
+     "cnf_sha256": "b28926a4e0b760107c83e907823e901261263f98bbd878be5e19872706bf9d37",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 8889,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:3"
+     ],
+     "result": "UNSAT",
+     "secs": 190.1,
+     "cnf_sha256": "7b625ee039241f9ca2a97a250c90fd6ee9ebb12ff3e272b481afb743ed182886",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 439966471,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:4"
+     ],
+     "result": "UNSAT",
+     "secs": 43.1,
+     "cnf_sha256": "aa1578c7e41291f9e6c57b9d05a090ede754ecb8a9fe319c8bbb601d6272b3d9",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 97537724,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:5"
+     ],
+     "result": "UNSAT",
+     "secs": 138.2,
+     "cnf_sha256": "0bb4646e344b517ae91f68312462138bb6b6db7dd0d9e66e61eb16e943456d35",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 326112309,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:6"
+     ],
+     "result": "UNSAT",
+     "secs": 71.2,
+     "cnf_sha256": "ce1ffb51affb5b12b91a07c0ab3f8156a145ade784c3fe5c93e09c172e46addc",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 160941261,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:7"
+     ],
+     "result": "UNSAT",
+     "secs": 43.1,
+     "cnf_sha256": "c4094d3ce8c2a219b4c9870a03520a124ad4ba4e763ceaa212508756b0d670f9",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 104451181,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:8"
+     ],
+     "result": "UNSAT",
+     "secs": 43.6,
+     "cnf_sha256": "2017e93cf2fedc3678b9c0f75606fb437a255959140c655e3071076d060c925a",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 112443356,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:9"
+     ],
+     "result": "UNSAT",
+     "secs": 64.7,
+     "cnf_sha256": "dc3cabe77567d70e54a0c4c5c9ff60f2f690e08df7e7bf416fb8e41343a634f2",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 162986519,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:10"
+     ],
+     "result": "UNSAT",
+     "secs": 68.0,
+     "cnf_sha256": "279a0310ae11fcad0b9e1a1455cfdbb4501f46b9ff8710053dfecda5b4cb3799",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 174933436,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:11"
+     ],
+     "result": "UNSAT",
+     "secs": 76.0,
+     "cnf_sha256": "e3ac441d37615739aa59905ea66bbd5749d81bf1fa136b5d1e65d5b6972928fe",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 190084541,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:12"
+     ],
+     "result": "UNSAT",
+     "secs": 81.4,
+     "cnf_sha256": "c58dec7b8cdc576c8e4ec7afad2e0b0a5b779ea6bb97abdc88c95afcea073881",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 203779374,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:13"
+     ],
+     "result": "UNSAT",
+     "secs": 79.0,
+     "cnf_sha256": "91a995172d876549ba35b708b4f03c4ab5014abf7711c6cab74d9263e238cd17",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 186671289,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:14"
+     ],
+     "result": "UNSAT",
+     "secs": 81.3,
+     "cnf_sha256": "71b8ec33d2d686c89e122f7534fe0aba21182a64d2446d5b3cd88dd66dd907cc",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 206892901,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:15"
+     ],
+     "result": "UNSAT",
+     "secs": 73.0,
+     "cnf_sha256": "9f80d6ad889840feafdafda72b3c81c5fef884c65162edfb2d530e9421c45b47",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 186006116,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:16"
+     ],
+     "result": "UNSAT",
+     "secs": 72.7,
+     "cnf_sha256": "524edfb66929033574d08ce1feba6adfa3e16ad93a743c93f783d57e31e9510e",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 175404608,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:17"
+     ],
+     "result": "UNSAT",
+     "secs": 54.4,
+     "cnf_sha256": "a1db73404cd0ccf8083f979d62203273582c605f5f3f28542274deb909dc9955",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 133470924,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:18"
+     ],
+     "result": "UNSAT",
+     "secs": 69.9,
+     "cnf_sha256": "22febbd0fb270ee37bfbebe4a42b0a7ebbac253b2e0c910a0986ea4d188bc67e",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 174829634,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:19"
+     ],
+     "result": "UNSAT",
+     "secs": 83.6,
+     "cnf_sha256": "adcac3935d010287fc2de7078921aac818c099514b5c82d6eb8f7cddde24cf46",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 209187244,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:20"
+     ],
+     "result": "UNSAT",
+     "secs": 80.8,
+     "cnf_sha256": "e87a530da9599911d2b44b2614b2086d000fdb940689a0c2bc680c4458b39905",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 200552506,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:21"
+     ],
+     "result": "UNSAT",
+     "secs": 86.6,
+     "cnf_sha256": "4f8b5ec29eb5e32e6aab1feb95b4b03a8f4e27ab5925d6c76b2cb54cfb2d9378",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 209860839,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:22"
+     ],
+     "result": "UNSAT",
+     "secs": 97.7,
+     "cnf_sha256": "07e2438d9564d524d906d5dd42a4b343832f11dcb4fb9c0a95a60cda79e5a51a",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 246103124,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:23"
+     ],
+     "result": "UNSAT",
+     "secs": 125.9,
+     "cnf_sha256": "ddfb77966cb784c9fa0dfa10226e78acd95d2045f0fd551f1ee60e9d9c85496a",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 293001630,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:24"
+     ],
+     "result": "UNSAT",
+     "secs": 113.7,
+     "cnf_sha256": "b3c3cf5f55bc52108cec7947e847409d6c078fe75ec8c755f74aa97e838cd9ec",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 268802647,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:25"
+     ],
+     "result": "UNSAT",
+     "secs": 102.3,
+     "cnf_sha256": "ead6b5c3553fccc09d2da30c908631a78e44c580a4441493b49b4ce401c1f41c",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 250875998,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:26"
+     ],
+     "result": "UNSAT",
+     "secs": 115.0,
+     "cnf_sha256": "212d0e5183b8f6eb01e3c05641e1ec0e4acf07e1b2623377a26ef807e6a4f1c8",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 275119793,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:27"
+     ],
+     "result": "UNSAT",
+     "secs": 100.6,
+     "cnf_sha256": "ea8df921f27ba2b59d531107fbe980ba8aa2ba9ec57bc71742f1e296be5475d6",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 238016920,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:28"
+     ],
+     "result": "UNSAT",
+     "secs": 85.4,
+     "cnf_sha256": "926d8beb4ae05b4718035d51e10480331504e834115c922246564470b44ba802",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 206800325,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:29"
+     ],
+     "result": "UNSAT",
+     "secs": 80.3,
+     "cnf_sha256": "01c3a61b1651900e0e7c249b2b86f98daa14019fc2e1076f37658ada1b780d8e",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 196151267,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:30"
+     ],
+     "result": "UNSAT",
+     "secs": 84.3,
+     "cnf_sha256": "09ca37a47f5589247221ff6851ce27baabe7d4bb54ebf0a09801bc7b63d74da2",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 206310899,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:31"
+     ],
+     "result": "UNSAT",
+     "secs": 68.8,
+     "cnf_sha256": "3f8530acf14290d07582cdea8db92a220e083df26270351072d14bd2e067c110",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 173283656,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:32"
+     ],
+     "result": "UNSAT",
+     "secs": 52.5,
+     "cnf_sha256": "fdc0bdd4668c377a0826887c2abfd88f67a8a0e3ffa24ba3b1016f3ab752f38c",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 133055369,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:33"
+     ],
+     "result": "UNSAT",
+     "secs": 73.5,
+     "cnf_sha256": "099fda6e144aaa534dd51507705e773b673107d3a177da4fb0cb5f6b175cf1b8",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 183386697,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:34"
+     ],
+     "result": "UNSAT",
+     "secs": 70.7,
+     "cnf_sha256": "6872de2c062ca3b1e59dd763640c950d61cee8133407fb446de3b0e652f0d216",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 178673117,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:35"
+     ],
+     "result": "UNSAT",
+     "secs": 83.8,
+     "cnf_sha256": "cec08f6a46ba1cfa65f222eab7395d82931ea1a447839b69cafdeb51019ad06d",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 208957186,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:36"
+     ],
+     "result": "UNSAT",
+     "secs": 77.9,
+     "cnf_sha256": "0335e779b049f2f08155425e2b875a5c67d6467d48a119adf760cf6974247d82",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 190658102,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:37"
+     ],
+     "result": "UNSAT",
+     "secs": 77.9,
+     "cnf_sha256": "e484d783f2ab0758ec4234e925b1d7474b9c726f7ae021467da6c7b316f53851",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 190501693,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:38"
+     ],
+     "result": "UNSAT",
+     "secs": 67.4,
+     "cnf_sha256": "6bb087e8c9d46927df94c20fddc50a3818ee7d080131cbfcdc690bf0fe26743b",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 184917899,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:39"
+     ],
+     "result": "UNSAT",
+     "secs": 66.3,
+     "cnf_sha256": "7fceedb0e3d51bc9c9671efbef6509083613b72639c6df4be0b2d1d81859ead9",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 169123874,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:40"
+     ],
+     "result": "UNSAT",
+     "secs": 69.4,
+     "cnf_sha256": "245b74572c3c407b2e28c051906f3af137de91641d65434a3984caeba2513890",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 172769681,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:41"
+     ],
+     "result": "UNSAT",
+     "secs": 41.7,
+     "cnf_sha256": "c33c251eb885a7a075d4b31d9a94e819fea3856af2aa38a668d0e1ed7147f6cd",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 104513582,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:42"
+     ],
+     "result": "UNSAT",
+     "secs": 40.8,
+     "cnf_sha256": "51b948c1e0b857570bed1f8ab420a17ca2cbf76b254014ae2af42c13405eb0ac",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 103134238,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:43"
+     ],
+     "result": "UNSAT",
+     "secs": 71.2,
+     "cnf_sha256": "80c6a525dd452e6a7e9bd8f450f721814bd0fc1b788fa35b3c64f6b5e31efaba",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 173800204,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:44"
+     ],
+     "result": "UNSAT",
+     "secs": 144.8,
+     "cnf_sha256": "aec8ad3b6b50f55b99f59ba376af8ff1a40d1cf653f5a97002ac65e1b5864ad3",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 330684939,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:45"
+     ],
+     "result": "UNSAT",
+     "secs": 39.1,
+     "cnf_sha256": "c70132d2f710cf5e241e8c05200fec78543622a771a019cc3a62ee4741f5d532",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 100923118,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:46"
+     ],
+     "result": "UNSAT",
+     "secs": 192.8,
+     "cnf_sha256": "01862bb844bbe0407e28fc692b7d6d08167552b11a2a55510b1192443c1c899b",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 432022862,
+     "checker_verdict": "s VERIFIED UNSAT"
+    },
+    {
+     "cube": [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:47"
+     ],
+     "result": "UNSAT",
+     "secs": 1.9,
+     "cnf_sha256": "b2f49d37d3de07c8fdbea9a61ba34cc5d8161be4ec77fca41d0422a2e12faa38",
+     "solver": "cadical 3.0.1",
+     "proof": "binary LRAT streamed to cake_lpr",
+     "proof_bytes": 8889,
+     "checker_verdict": "s VERIFIED UNSAT"
+    }
+   ]
+  },
+  {
+   "cube": [
+    "1",
+    "-2",
+    "3",
+    "4"
+   ],
+   "result": "UNKNOWN",
+   "secs": 600.9,
+   "split_on": "g(3)",
+   "children": [
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:0"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:1"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:2"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:3"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:4"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:5"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:6"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:7"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:8"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:9"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:10"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:11"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:12"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:13"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:14"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:15"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:16"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:17"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:18"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:19"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:20"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:21"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:22"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:23"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:24"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:25"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:26"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:27"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:28"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:29"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:30"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:31"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:32"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:33"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:34"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:35"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:36"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:37"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:38"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:39"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:40"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:41"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:42"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:43"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:44"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:45"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:46"
+     ],
+     "result": "PENDING"
+    },
+    {
+     "cube": [
+      "1",
+      "-2",
+      "3",
+      "4",
+      "3:47"
+     ],
+     "result": "PENDING"
+    }
+   ]
+  },
+  {
+   "cube": [
+    "1",
+    "-2",
+    "3",
+    "-4"
+   ],
+   "result": "UNSAT",
+   "secs": 358.0,
+   "cnf_sha256": "bc2edc1cb18af3e30c5a80446b7f90a14abd68cf6a56a780406bdcf09855d765",
+   "solver": "cadical 3.0.1",
+   "proof": "binary LRAT streamed to cake_lpr",
+   "proof_bytes": 1012498135,
+   "checker_verdict": "s VERIFIED UNSAT"
+  },
+  {
+   "cube": [
+    "1",
+    "-2",
+    "-3",
+    "4"
+   ],
+   "result": "UNSAT",
+   "secs": 135.5,
+   "cnf_sha256": "c8c893fd8b89d282f268a201e18f04b881d7242e5e9b71e1a9e62e45968f5b1d",
+   "solver": "cadical 3.0.1",
+   "proof": "binary LRAT streamed to cake_lpr",
+   "proof_bytes": 357142633,
+   "checker_verdict": "s VERIFIED UNSAT"
+  },
+  {
+   "cube": [
+    "1",
+    "-2",
+    "-3",
+    "-4"
+   ],
+   "result": "UNSAT",
+   "secs": 13.8,
+   "cnf_sha256": "e82c6c8a5bd71824d4be432d611f16ad397a4d84c6f47960c59cab5152a7575f",
+   "solver": "cadical 3.0.1",
+   "proof": "binary LRAT streamed to cake_lpr",
+   "proof_bytes": 24713123,
+   "checker_verdict": "s VERIFIED UNSAT"
+  }
+ ]
+}
