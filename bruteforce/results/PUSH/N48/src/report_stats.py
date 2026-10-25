@@ -4,6 +4,7 @@ import json, os
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 t = json.load(open(f"{R}/tree.json"))
 def walk(nd, acc):
+    if "covered_by" in nd: acc["COVERED"] = acc.get("COVERED", 0) + 1; return
     if "children" in nd:
         acc["internal"] += 1
         for x in nd["children"]: walk(x, acc)

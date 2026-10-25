@@ -1,9 +1,23 @@
+# PUSH/N48: n = 48, k = 12 (= n/4) in the cyclic orbit family
+
+## 1. Placement
+
+```
+Linux vm 6.18.44-fc-v153 #1 SMP PREEMPT_DYNAMIC @0 x86_64 x86_64 x86_64 GNU/Linux
+4
+               total        used        free      shared  buff/cache   available
+Mem:              15           0          15           0           0          15
+Swap:              0           0           0
+```
+
+All computation ran in this cloud container, 2026-10-25, 10:35 to about 16:00 UTC.
+
 ## 2. Results
 
 | claim | status |
 |---|---|
 | k = 11 is achievable at n = 48 (528 edges, 48 colours) | **certificate-verified** (§3; known from CYC/C2, re-found and re-checked here) |
-| k = 12 = n/4 is UNSAT at n = 48 in C1's sym = 3 encoding | **proved**, modulo one stated symmetry lemma (§4.3): every leaf of the cube tree that was run is UNSAT with a cake_lpr-checked LRAT proof; the remaining branches are mirror images, under the u = −1 symmetry, of closed branches |
+| k = 12 = n/4 is UNSAT at n = 48 in C1's sym = 3 encoding | **proved**, modulo one short symmetry lemma (§4.3). All 5075 run leaves are UNSAT with cake_lpr-checked LRAT proofs. The other 57 branches are u = −1 mirror images of closed branches. Six of the nine level-1 cubes, including (1,2,¬3,±4), have a fully trivial cover with no symmetry used |
 | hence **k_max(48) = 11 < n/4 = 12** | proved, as above |
 
 So n = 48 is the first multiple of 4 at which k = n/4 is shown impossible in the cyclic family:
@@ -13,7 +27,7 @@ k_max(28, 32, 36, 40) = n/4, and k_max(48) = n/4 − 1. M(48) ≥ 48·11 = 528 f
 1. Correctness of C1's encoder `cycenc.c` with sym = 3 (re-derivation, soundness and symmetry-breaking
    argument in `results/CYC/C1/REPORT.md` §4; validated there on n = 13..36 and here on n = 36 and 48, §4.5).
 2. The cover: presence-bit splits plus offset splits, checked by `src/covercheck.py` (§4.2).
-3. 3347+ leaf proofs (see the table in §4.4 for the final count), each checked by cake_lpr.
+3. 5075 leaf proofs, each checked by cake_lpr (`s VERIFIED UNSAT`), about 94 GB of binary LRAT in total.
 4. For the branches marked COVERED: the u = −1 symmetry lemma (§4.3). This is a two-line argument,
    numerically confirmed, and for the branches that were also run directly the mirrors came out
    UNSAT as predicted. A run of the remaining mirror sub-cubes (§6) would make the cover purely
@@ -80,7 +94,7 @@ was split by the same rule. The final shape:
 | level-1 cube | split |
 |---|---|
 | (1,2,¬3,¬4) | g(2) |
-| (1,2,¬3,4) | g(2) (one mirror branch run directly, then g(4)) |
+| (1,2,¬3,4) | g(2): the 24 representatives run as single leaves, and the 23 mirror children run directly, pre-split on g(4) |
 | (1,2,3,¬4) | g(2) then g(3) |
 | (1,2,3,4) | g(2) then g(3) |
 | (1,¬2,3,4) | g(3) then g(4) |
@@ -90,7 +104,7 @@ The rule and the bookkeeping live in `src/tree.py`. `src/mktree.py` turns the lo
 CNF:
 
 ```
-COVER_LINE
+COVER OK {'unsat': 5075, 'covered': 57, 'internal': 109}
 ```
 
 ### 4.3 The u = −1 symmetry (mirror branches)
@@ -120,13 +134,24 @@ This needs the encoder to be correct in both directions, as C1 argued: a CNF mod
 
 ### 4.4 Counts and timings
 
-STATS_TABLE
+| root cube | split | checked UNSAT leaves | covered by u=-1 mirror | pending | solver time (s) | max leaf (s) | LRAT streamed (GB) |
+|---|---|---|---|---|---|---|---|
+| (-1) | - | 1 | 0 | 0 | 16 | 16 | 0.01 |
+| (1, 2, 3, 4) | g(2) then g(3) | 1152 | 24 | 0 | 13070 | 31 | 22.48 |
+| (1, 2, 3, -4) | g(2) then g(3) | 1542 | 10 | 0 | 17028 | 374 | 31.46 |
+| (1, 2, -3, 4) | g(2) then g(4) | 1129 | 0 | 0 | 11407 | 289 | 21.35 |
+| (1, 2, -3, -4) | g(2) | 48 | 0 | 0 | 3651 | 193 | 8.87 |
+| (1, -2, 3, 4) | g(3) then g(4) | 1200 | 23 | 0 | 5443 | 15 | 8.15 |
+| (1, -2, 3, -4) | - | 1 | 0 | 0 | 358 | 358 | 1.01 |
+| (1, -2, -3, 4) | - | 1 | 0 | 0 | 136 | 136 | 0.36 |
+| (1, -2, -3, -4) | - | 1 | 0 | 0 | 14 | 14 | 0.02 |
+| **total** | | 5075 | 57 | 0 | 51122 | | 93.72 |
 
 Times are CaDiCaL wall times with LRAT streaming on 4 parallel jobs. "LRAT streamed" is the total size of the
 binary LRAT checked by cake_lpr. The cake_lpr check finished within 0.1 s of the solver in every leaf.
 
 Timeline (UTC): portfolio 10:39 to 11:09; level-1 cubes 11:16 to 11:37; g(2) tests 11:37; offset tree
-11:39 to 14:30 (all representatives closed at about 14:30); mirror sub-cubes from 14:30 until wrap-up.
+11:39 to 14:30 (all representatives closed at about 14:30); mirror sub-cubes 14:30 to 15:30 (36 of the 93 mirror branches closed directly, all UNSAT as predicted).
 
 **Portfolio (rule 1, 30 min).** CaDiCaL + DRAT, CaDiCaL `--unsat`, kissat and kissat `--sat` ran on the full
 CNF for 1800 s. **Their outcome lines were lost** (`logs/portfolio_NOTE.md`): I committed the empty log
@@ -167,13 +192,13 @@ This is about 2.5 h on 4 cores, since the five hard level-1 cubes need about 10 
 
 1. **Offset splits beat presence splits by a wide margin.** The level-1 cubes did not finish in 600 s, but
    their g(2)-children took seconds to minutes and their (g(2), g(3)) grandchildren 2 to 31 s. The whole
-   n = 48, k = 12 refutation took about 10.5 core-hours of CaDiCaL. The same split should settle
+   n = 48, k = 12 refutation took about 14.2 core-hours of CaDiCaL (51122 s), mirrors included. The same split should settle
    **N44** (the {1,2,3,4} cube of C1) quickly, and likely n = 52, 56 at k = n/4 too.
 2. **Streaming LRAT into cake_lpr through a fifo** makes proof checking essentially free: there is no disk
-   use and no extra wall time. That allowed 3000+ separately checked leaves with about 70 GB of proof in total.
+   use and no extra wall time. That allowed 5075 separately checked leaves with about 94 GB of proof in total.
 3. **To remove the symmetry lemma from the trust base,** run the remaining COVERED mirror branches. They
    are the low-priority queue of `tree.py`: re-run the reproduce command with the same `LEAFLOG`, and it
-   continues from where this run stopped. Estimate: 93 branches × about 48 leaves × about 10 s / 4 cores ≈ 3 h.
+   continues from where this run stopped. 57 branches remain: 24 in (1,2,3,4), 10 in (1,2,3,¬4) and 23 in (1,¬2,3,4). Estimate: 57 × 48 leaves × about 10 s / 4 cores ≈ 2 h.
 4. **k_max(48) = 11 = n/4 − 1.** This is the first multiple of 4 where k = n/4 is *proved* impossible. n = 44
    (k = 11) is the one still open below it, and is being worked on by PUSH/N44A–C. With this result, the
    observation "k_max = n/4 for n ≡ 0 mod 4" (28, 32, 36, 40) stops at 48 at the latest.
