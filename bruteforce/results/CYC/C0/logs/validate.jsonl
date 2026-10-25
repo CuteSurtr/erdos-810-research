@@ -1,0 +1,113 @@
+{"n": 13, "k": 3, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [3, 11], [4, 10]], "check": "ok, 78 4-cycles checked"}
+{"n": 13, "k": 3, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[4, 0], [5, 12], [6, 10]], "check": "ok, 130 4-cycles checked"}
+{"n": 13, "k": 4, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.0}
+{"n": 13, "k": 3, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[4, 12], [5, 11], [6, 9]], "check": "ok, 130 4-cycles checked"}
+{"n": 13, "k": 4, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.1}
+{"n": 14, "k": 5, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.0}
+{"n": 13, "k": 4, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "UNSAT", "secs": 0.0}
+{"n": 14, "k": 4, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.0}
+{"n": 14, "k": 4, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.0}
+{"n": 14, "k": 5, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.0}
+{"n": 14, "k": 4, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "UNSAT", "secs": 0.1}
+{"n": 14, "k": 5, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "UNSAT", "secs": 0.1}
+{"n": 15, "k": 4, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 12], [3, 4], [6, 11]], "check": "ok, 330 4-cycles checked"}
+{"n": 15, "k": 5, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.0}
+{"n": 15, "k": 4, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [5, 12], [6, 11], [7, 9]], "check": "ok, 330 4-cycles checked"}
+{"n": 15, "k": 5, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.0}
+{"n": 15, "k": 4, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "SAT", "secs": 0.1, "Dg": [[3, 2], [4, 5], [6, 12], [7, 7]], "check": "ok, 330 4-cycles checked"}
+{"n": 16, "k": 4, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 11], [3, 4], [7, 12]], "check": "ok, 344 4-cycles checked"}
+{"n": 15, "k": 5, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "UNSAT", "secs": 0.1}
+{"n": 16, "k": 5, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.0}
+{"n": 16, "k": 4, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [5, 7], [7, 4]], "check": "ok, 344 4-cycles checked"}
+{"n": 16, "k": 4, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [5, 7], [7, 4]], "check": "ok, 344 4-cycles checked"}
+{"n": 17, "k": 4, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [6, 10], [7, 13]], "check": "ok, 391 4-cycles checked"}
+{"n": 16, "k": 5, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.0}
+{"n": 17, "k": 4, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [5, 9], [6, 12]], "check": "ok, 357 4-cycles checked"}
+{"n": 16, "k": 5, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "UNSAT", "secs": 0.1}
+{"n": 17, "k": 5, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.0}
+{"n": 17, "k": 5, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.0}
+{"n": 17, "k": 4, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [5, 9], [6, 12]], "check": "ok, 357 4-cycles checked"}
+{"n": 18, "k": 5, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.1, "Dg": [[1, 0], [2, 12], [4, 6], [5, 9], [6, 13]], "check": "ok, 891 4-cycles checked"}
+{"n": 18, "k": 6, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.0}
+{"n": 18, "k": 5, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [4, 6], [6, 9], [7, 8], [8, 4]], "check": "ok, 891 4-cycles checked"}
+{"n": 18, "k": 5, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[2, 0], [5, 15], [6, 17], [7, 8], [8, 4]], "check": "ok, 891 4-cycles checked"}
+{"n": 18, "k": 6, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.1}
+{"n": 18, "k": 6, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "UNSAT", "secs": 0.1}
+{"n": 19, "k": 5, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 15], [3, 12], [5, 6], [9, 16]], "check": "ok, 912 4-cycles checked"}
+{"n": 19, "k": 6, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.0}
+{"n": 19, "k": 5, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[3, 0], [5, 18], [6, 15], [7, 5], [8, 14]], "check": "ok, 893 4-cycles checked"}
+{"n": 19, "k": 6, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.1}
+{"n": 19, "k": 5, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 15], [3, 10], [6, 17], [7, 16], [8, 13]], "check": "ok, 912 4-cycles checked"}
+{"n": 17, "k": 5, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "UNSAT", "secs": 0.4}
+{"n": 20, "k": 6, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.0}
+{"n": 20, "k": 5, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 13], [3, 4], [6, 12], [8, 17]], "check": "ok, 890 4-cycles checked"}
+{"n": 20, "k": 5, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [6, 17], [7, 16], [8, 2], [9, 13]], "check": "ok, 930 4-cycles checked"}
+{"n": 20, "k": 5, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "SAT", "secs": 0.1, "Dg": [[2, 1], [4, 10], [5, 12], [7, 9], [8, 16]], "check": "ok, 875 4-cycles checked"}
+{"n": 20, "k": 6, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.1}
+{"n": 21, "k": 6, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.1, "Dg": [[1, 0], [3, 11], [4, 2], [5, 15], [6, 18], [9, 13]], "check": "ok, 1953 4-cycles checked"}
+{"n": 21, "k": 7, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.1}
+{"n": 21, "k": 7, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.1}
+{"n": 21, "k": 6, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.1, "Dg": [[2, 0], [3, 14], [6, 3], [8, 2], [9, 4], [10, 20]], "check": "ok, 1953 4-cycles checked"}
+{"n": 19, "k": 6, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "UNSAT", "secs": 0.6}
+{"n": 21, "k": 6, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "SAT", "secs": 0.1, "Dg": [[2, 14], [3, 7], [6, 17], [8, 16], [9, 18], [10, 13]], "check": "ok, 1953 4-cycles checked"}
+{"n": 22, "k": 5, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.1, "Dg": [[1, 0], [2, 3], [5, 14], [6, 17], [7, 13]], "check": "ok, 847 4-cycles checked"}
+{"n": 22, "k": 6, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.1}
+{"n": 22, "k": 5, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [5, 7], [7, 16], [10, 15]], "check": "ok, 891 4-cycles checked"}
+{"n": 22, "k": 5, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [5, 7], [7, 16], [10, 15]], "check": "ok, 891 4-cycles checked"}
+{"n": 22, "k": 6, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.3}
+{"n": 23, "k": 6, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.1, "Dg": [[1, 0], [2, 13], [3, 5], [4, 18], [8, 12], [11, 20]], "check": "ok, 1932 4-cycles checked"}
+{"n": 23, "k": 7, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.1}
+{"n": 20, "k": 6, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "UNSAT", "secs": 1.2}
+{"n": 23, "k": 6, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.1, "Dg": [[3, 0], [5, 22], [6, 4], [7, 9], [10, 5], [11, 1]], "check": "ok, 1932 4-cycles checked"}
+{"n": 21, "k": 7, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "UNSAT", "secs": 1.0}
+{"n": 23, "k": 6, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "SAT", "secs": 0.1, "Dg": [[4, 13], [5, 6], [6, 3], [8, 12], [9, 0], [11, 16]], "check": "ok, 1955 4-cycles checked"}
+{"n": 23, "k": 7, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.3}
+{"n": 24, "k": 6, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.1, "Dg": [[1, 0], [2, 17], [3, 4], [7, 13], [9, 18], [10, 22]], "check": "ok, 1968 4-cycles checked"}
+{"n": 24, "k": 7, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.1}
+{"n": 24, "k": 6, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.1, "Dg": [[2, 0], [3, 2], [4, 7], [6, 15], [7, 17], [11, 12]], "check": "ok, 1998 4-cycles checked"}
+{"n": 24, "k": 6, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "SAT", "secs": 0.1, "Dg": [[2, 5], [4, 16], [5, 20], [7, 6], [8, 10], [9, 9]], "check": "ok, 1968 4-cycles checked"}
+{"n": 24, "k": 7, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.3}
+{"n": 25, "k": 6, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.1, "Dg": [[1, 0], [2, 6], [4, 13], [5, 21], [9, 19], [12, 14]], "check": "ok, 2075 4-cycles checked"}
+{"n": 25, "k": 7, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.2}
+{"n": 25, "k": 6, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [5, 7], [7, 17], [11, 9], [12, 6]], "check": "ok, 1975 4-cycles checked"}
+{"n": 25, "k": 7, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 1.5}
+{"n": 25, "k": 6, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [5, 7], [7, 17], [11, 9], [12, 6]], "check": "ok, 1975 4-cycles checked"}
+{"n": 22, "k": 6, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "UNSAT", "secs": 4.5}
+{"n": 26, "k": 6, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [5, 7], [7, 15], [9, 14], [10, 21]], "check": "ok, 2002 4-cycles checked"}
+{"n": 26, "k": 7, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.4}
+{"n": 26, "k": 6, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [5, 7], [7, 4], [9, 20], [12, 17]], "check": "ok, 2041 4-cycles checked"}
+{"n": 23, "k": 7, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "UNSAT", "secs": 6.3}
+{"n": 26, "k": 6, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [5, 7], [7, 4], [9, 20], [12, 17]], "check": "ok, 2041 4-cycles checked"}
+{"n": 26, "k": 7, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 2.3}
+{"n": 27, "k": 7, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.1, "Dg": [[1, 0], [2, 18], [3, 12], [5, 10], [8, 3], [10, 25], [13, 7]], "check": "ok, 3807 4-cycles checked"}
+{"n": 27, "k": 8, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.3}
+{"n": 24, "k": 7, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "UNSAT", "secs": 6.8}
+{"n": 27, "k": 7, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.4, "Dg": [[2, 0], [3, 9], [6, 1], [7, 12], [8, 24], [10, 20], [13, 7]], "check": "ok, 3834 4-cycles checked"}
+{"n": 27, "k": 7, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "SAT", "secs": 0.4, "Dg": [[1, 25], [2, 8], [5, 26], [6, 22], [11, 12], [12, 15], [13, 18]], "check": "ok, 3834 4-cycles checked"}
+{"n": 27, "k": 8, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 1.9}
+{"n": 28, "k": 7, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.2, "Dg": [[1, 0], [3, 22], [4, 5], [5, 11], [7, 15], [8, 24], [13, 2]], "check": "ok, 3829 4-cycles checked"}
+{"n": 28, "k": 8, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 0.5}
+{"n": 28, "k": 7, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.2, "Dg": [[1, 0], [5, 14], [6, 10], [8, 15], [9, 25], [11, 2], [12, 1]], "check": "ok, 3864 4-cycles checked"}
+{"n": 28, "k": 8, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 2.3}
+{"n": 28, "k": 7, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "SAT", "secs": 0.3, "Dg": [[1, 4], [4, 6], [5, 18], [6, 20], [9, 26], [10, 5], [12, 0]], "check": "ok, 3780 4-cycles checked"}
+{"n": 25, "k": 7, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "UNSAT", "secs": 48.1}
+{"n": 29, "k": 7, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.2, "Dg": [[1, 0], [4, 19], [5, 1], [6, 23], [7, 4], [9, 2], [13, 27]], "check": "ok, 3654 4-cycles checked"}
+{"n": 29, "k": 8, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 1.2}
+{"n": 29, "k": 7, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [5, 7], [7, 4], [9, 24], [12, 23], [14, 5]], "check": "ok, 3915 4-cycles checked"}
+{"n": 29, "k": 8, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 12.0}
+{"n": 29, "k": 7, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [5, 7], [7, 4], [9, 24], [12, 23], [14, 5]], "check": "ok, 3915 4-cycles checked"}
+{"n": 28, "k": 8, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "UNSAT", "secs": 58.5}
+{"n": 30, "k": 7, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.2, "Dg": [[1, 0], [3, 25], [4, 23], [9, 17], [10, 4], [11, 13], [14, 20]], "check": "ok, 3900 4-cycles checked"}
+{"n": 26, "k": 7, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "UNSAT", "secs": 66.5}
+{"n": 30, "k": 7, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [5, 7], [7, 4], [12, 5], [13, 24], [14, 22]], "check": "ok, 3720 4-cycles checked"}
+{"n": 30, "k": 8, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 4.2}
+{"n": 30, "k": 7, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [5, 7], [7, 4], [12, 5], [13, 24], [14, 22]], "check": "ok, 3720 4-cycles checked"}
+{"n": 27, "k": 8, "cfg": "lex=0,trans=0,kissat,seed=0", "res": "UNSAT", "secs": 71.0}
+{"n": 32, "k": 8, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.3, "Dg": [[1, 0], [2, 17], [3, 27], [5, 11], [9, 2], [11, 18], [12, 8], [14, 3]], "check": "ok, 6688 4-cycles checked"}
+{"n": 32, "k": 9, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 3.2}
+{"n": 32, "k": 8, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 0.6, "Dg": [[2, 0], [3, 21], [7, 17], [8, 16], [9, 5], [10, 24], [11, 23], [15, 19]], "check": "ok, 6808 4-cycles checked"}
+{"n": 30, "k": 8, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 19.9}
+{"n": 36, "k": 9, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 3.5, "Dg": [[1, 0], [2, 9], [4, 31], [5, 18], [6, 26], [10, 12], [12, 4], [14, 25], [17, 15]], "check": "ok, 10998 4-cycles checked"}
+{"n": 32, "k": 9, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 21.8}
+{"n": 36, "k": 9, "cfg": "lex=0,trans=1,kissat,seed=0", "res": "SAT", "secs": 1.1, "Dg": [[1, 0], [4, 1], [8, 10], [10, 13], [11, 17], [12, 8], [14, 4], [16, 31], [17, 5]], "check": "ok, 11178 4-cycles checked"}
+{"n": 36, "k": 10, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 33.3}

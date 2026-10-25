@@ -1,0 +1,1 @@
+{"n": 37, "k": 10, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNSAT", "secs": 38.0}
