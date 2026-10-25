@@ -6,7 +6,7 @@ import json, glob, collections, os
 out = []
 P = out.append
 KMAX = {12: 3, 13: 3, 14: 3, 15: 4, 16: 4, 17: 4, 18: 5, 19: 5, 20: 5, 21: 6, 22: 5, 23: 6, 24: 6, 25: 6, 26: 6,
-        27: 7, 28: 7, 29: 7, 30: 7, 31: 8, 32: 8, 33: 8, 34: 8, 36: 9}
+        27: 7, 28: 7, 29: 7, 30: 7, 31: 8, 32: 8, 33: 8, 34: 8, 36: 9, 40: 10}  # 40: k = n/4, k_max(40) not known
 CONSTR_LB = {37: 9, 40: 10, 41: 10, 42: 10, 46: 11, 47: 11, 48: 11, 49: 11, 50: 11, 52: 12, 53: 12, 54: 12, 55: 12,
              59: 13, 60: 13, 61: 13, 62: 13}
 
@@ -25,7 +25,7 @@ def partial_from_log(path):
             except Exception: continue
             orbs.append({'canon': x['canon'], 'orbit_size': x['orbit_size']})
     return orbs
-for n, k in [(33, 8), (34, 8), (36, 9)]:
+for n, k in [(33, 8), (34, 8), (36, 9), (40, 10)]:
     best = None
     for src in [f'runs/enumcase_n{n}_unit.json']:
         try:
@@ -37,7 +37,9 @@ for n, k in [(33, 8), (34, 8), (36, 9)]:
         except Exception: pass
     if best is None:
         cands = [partial_from_log(f'runs/enum_n{n}_k{k}.log'), partial_from_log(f'runs/enumcase_n{n}_unit.log')]
+        if os.path.exists(f'runs/enumcase_n{n}_nounit.log'): cands[1] = cands[1] + partial_from_log(f'runs/enumcase_n{n}_nounit.log')
         orbs = max(cands, key=len)
+        if not orbs: continue
         best = {'n': n, 'k': k, 'status': 'incomplete (lower bound on orbit count)', 'n_orbits': len(orbs), 'orbits': orbs}
     best['n_solutions_gmin0'] = sum(o['orbit_size'] for o in best['orbits'])
     enum[(n, k)] = best

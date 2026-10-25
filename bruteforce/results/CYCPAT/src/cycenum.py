@@ -90,6 +90,11 @@ def main():
     from math import gcd as _g
     if case == 'unit':
         cl.append([P(1)]); cl.append([X(1, 0)])
+    elif case and case.startswith('unit2:'):
+        # sub-case of 'unit': e = min(D minus {1}); cases e = 2..H cover 'unit' completely
+        e = int(case.split(':')[1])
+        cl.append([P(1)]); cl.append([X(1, 0)]); cl.append([P(e)])
+        cl += [[-P(d)] for d in range(2, e)]
     elif case == 'nounit':
         cl += [[-P(d)] for d in range(1, H + 1) if _g(d, n) == 1]
     t0 = time.time()

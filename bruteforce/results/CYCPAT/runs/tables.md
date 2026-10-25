@@ -22,9 +22,9 @@
 | 30 | 7 | complete | 49909 | 399264 | — (CONSTR) | 284.8 |
 | 31 | 8 | complete | 1 | 30 | — (CONSTR) | 98.6 |
 | 32 | 8 | complete | 128 | 2048 | yes (49 s) | 146.7 |
-| 33 | 8 | incomplete (lower bound on orbit count) | 1756 | 35120 | — (CONSTR) |  |
+| 33 | 8 | complete (case split unit/nounit) | 1756 | 35120 | — (CONSTR) | 579.7 |
 | 34 | 8 | incomplete (lower bound on orbit count) | 25653 | 410448 | — (CONSTR) |  |
-| 36 | 9 | incomplete (lower bound on orbit count) | 59 | 708 | yes (1040 s) |  |
+| 36 | 9 | complete (case split unit/nounit) | 59 | 708 | yes (1040 s) | 927.7 |
 
 @@COSET_TABLES
 Single-coset rule, smallest working index r per prime (k = (p-1)/r):
@@ -113,7 +113,7 @@ Best quadratic rule g(d) = a d^2 + b d over all (a, b), exact max |D| (n = 13..4
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | k | 3 | 3 | 4 | 4 | 4 | 4 | 4 | 5 | 5 | 5 | 5 | 5 | 6 | 6 | 6 | 6 | 7 | 7 | 7 | 7 | 7 | 7 | 8 | 7 | 8 | 8 | 8 | 8 | 9 | 9 | 9 |
 | (a,b) | 0,2 | 0,2 | 4,0 | 0,2 | 0,2 | 0,2 | 0,2 | 5,4 | 0,2 | 0,2 | 0,2 | 0,2 | 0,2 | 0,2 | 0,2 | 0,2 | 0,9 | 0,14 | 0,2 | 0,2 | 0,2 | 0,2 | 0,17 | 0,2 | 0,2 | 0,2 | 0,2 | 0,2 | 0,5 | 0,2 | 0,2 |
-| k_max | 3 | 3 | 4 | 4 | 4 | 5 | 5 | 5 | 6 | 5 | 6 | 6 | 6 | 6 | 7 | 7 | 7 | 7 | 8 | 8 | 8 | 8 |  | 9 |  |  |  |  |  |  |  |
+| k_max | 3 | 3 | 4 | 4 | 4 | 5 | 5 | 5 | 6 | 5 | 6 | 6 | 6 | 6 | 7 | 7 | 7 | 7 | 8 | 8 | 8 | 8 |  | 9 |  |  |  | 10 |  |  |  |
 
 @@SYM_TABLE
 Best <u>-invariant solution per n (SAT over all nontrivial cyclic subgroups, search started at k = n/5):
@@ -147,7 +147,7 @@ Best <u>-invariant solution per n (SAT over all nontrivial cyclic subgroups, sea
 | 37 | 9 | 10 | 3 | ≥9 | 8 |
 | 38 | 9 | 7 | 3 |  | 5 |
 | 39 | 9 | 14 | 2 |  | 11 |
-| 40 | 9 | 9 | 2 | ≥10 | 11 |
+| 40 | 9 | 9 | 2 | 10 | 11 |
 | 41 | 10 | 10 | 5 | ≥10 | 7 |
 | 42 | 9 | 13 | 2 | ≥10 | 7 |
 | 43 | 9 | 6 | 3 |  | 7 |
