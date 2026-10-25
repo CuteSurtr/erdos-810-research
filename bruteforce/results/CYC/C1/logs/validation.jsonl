@@ -1,0 +1,74 @@
+{"n": 29, "k": 7, "sym": 0, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[2, 25], [4, 19], [5, 17], [11, 27], [12, 7], [13, 10], [14, 18]], "size": 7, "check": "OK"}
+{"n": 30, "k": 7, "sym": 0, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[2, 22], [5, 5], [8, 23], [9, 18], [10, 26], [11, 2], [12, 1]], "size": 7, "check": "OK"}
+{"n": 28, "k": 7, "sym": 0, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[3, 27], [5, 8], [6, 0], [7, 26], [8, 18], [12, 1], [13, 5]], "size": 7, "check": "OK"}
+{"n": 28, "k": 8, "sym": 0, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 53.2}
+{"n": 27, "k": 7, "sym": 0, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 11], [4, 1], [8, 23], [9, 22], [10, 26], [11, 4], [12, 2]], "size": 7, "check": "OK"}
+{"n": 27, "k": 8, "sym": 0, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 67.8}
+{"n": 26, "k": 6, "sym": 0, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[3, 3], [5, 9], [6, 16], [8, 2], [10, 11], [11, 18]], "size": 6, "check": "OK"}
+{"n": 36, "k": 10, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 24.9}
+{"n": 36, "k": 9, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 3.1, "Dg": [[1, 0], [2, 18], [3, 26], [4, 13], [5, 33], [11, 19], [12, 3], [14, 34], [17, 10]], "size": 9, "check": "OK"}
+{"n": 26, "k": 7, "sym": 0, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 54.5}
+{"n": 25, "k": 6, "sym": 0, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[3, 18], [4, 23], [8, 22], [10, 20], [11, 16], [12, 0]], "size": 6, "check": "OK"}
+{"n": 24, "k": 7, "sym": 0, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 5.2}
+{"n": 24, "k": 6, "sym": 0, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[2, 9], [3, 8], [4, 2], [5, 19], [6, 21], [8, 20]], "size": 6, "check": "OK"}
+{"n": 23, "k": 7, "sym": 0, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 4.7}
+{"n": 23, "k": 6, "sym": 0, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[3, 1], [5, 20], [8, 3], [9, 5], [10, 9], [11, 13]], "size": 6, "check": "OK"}
+{"n": 32, "k": 9, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 1.9}
+{"n": 32, "k": 8, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.1, "Dg": [[1, 0], [2, 11], [3, 6], [4, 22], [5, 17], [11, 2], [13, 29], [14, 8]], "size": 8, "check": "OK"}
+{"n": 22, "k": 6, "sym": 0, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 3.4}
+{"n": 22, "k": 5, "sym": 0, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 17], [5, 20], [6, 2], [7, 12], [9, 1]], "size": 5, "check": "OK"}
+{"n": 30, "k": 8, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 3.1}
+{"n": 30, "k": 7, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[2, 0], [3, 11], [4, 26], [5, 7], [10, 1], [12, 27], [14, 23]], "size": 7, "check": "OK"}
+{"n": 21, "k": 7, "sym": 0, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.4}
+{"n": 21, "k": 6, "sym": 0, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[2, 17], [3, 4], [6, 18], [8, 0], [9, 20], [10, 5]], "size": 6, "check": "OK"}
+{"n": 29, "k": 8, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.7}
+{"n": 29, "k": 7, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [4, 10], [5, 18], [6, 26], [7, 16], [9, 21], [13, 24]], "size": 7, "check": "OK"}
+{"n": 20, "k": 6, "sym": 0, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.5}
+{"n": 20, "k": 5, "sym": 0, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[4, 16], [5, 4], [6, 1], [7, 14], [9, 2]], "size": 5, "check": "OK"}
+{"n": 28, "k": 8, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.4}
+{"n": 28, "k": 7, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 19], [3, 8], [7, 2], [8, 12], [9, 22], [12, 18]], "size": 7, "check": "OK"}
+{"n": 27, "k": 8, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.2}
+{"n": 27, "k": 7, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 13], [3, 23], [4, 6], [5, 19], [10, 15], [12, 7]], "size": 7, "check": "OK"}
+{"n": 19, "k": 6, "sym": 0, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.3}
+{"n": 19, "k": 5, "sym": 0, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 4], [3, 16], [6, 5], [7, 2], [8, 1]], "size": 5, "check": "OK"}
+{"n": 26, "k": 7, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.4}
+{"n": 26, "k": 6, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 24], [6, 10], [7, 13], [9, 20], [11, 14]], "size": 6, "check": "OK"}
+{"n": 18, "k": 6, "sym": 0, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
+{"n": 18, "k": 5, "sym": 0, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[2, 15], [5, 3], [6, 2], [7, 12], [8, 17]], "size": 5, "check": "OK"}
+{"n": 25, "k": 7, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.1}
+{"n": 25, "k": 6, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 18], [4, 11], [5, 8], [9, 6], [12, 1]], "size": 6, "check": "OK"}
+{"n": 17, "k": 5, "sym": 0, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.2}
+{"n": 17, "k": 4, "sym": 0, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[2, 10], [6, 0], [7, 16], [8, 3]], "size": 4, "check": "OK"}
+{"n": 24, "k": 7, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.1}
+{"n": 24, "k": 6, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [3, 10], [4, 2], [9, 5], [10, 3], [11, 15]], "size": 6, "check": "OK"}
+{"n": 23, "k": 7, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
+{"n": 23, "k": 6, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 10], [3, 16], [4, 7], [6, 21], [11, 17]], "size": 6, "check": "OK"}
+{"n": 16, "k": 5, "sym": 0, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
+{"n": 16, "k": 4, "sym": 0, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [5, 7], [7, 4]], "size": 4, "check": "OK"}
+{"n": 22, "k": 6, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
+{"n": 22, "k": 5, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 9], [3, 15], [4, 20], [9, 14]], "size": 5, "check": "OK"}
+{"n": 15, "k": 5, "sym": 0, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
+{"n": 15, "k": 4, "sym": 0, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[2, 11], [4, 3], [5, 6], [6, 8]], "size": 4, "check": "OK"}
+{"n": 21, "k": 7, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
+{"n": 21, "k": 6, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [3, 12], [4, 1], [5, 10], [6, 8], [9, 16]], "size": 6, "check": "OK"}
+{"n": 20, "k": 6, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
+{"n": 20, "k": 5, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 8], [4, 17], [5, 14], [6, 11]], "size": 5, "check": "OK"}
+{"n": 14, "k": 5, "sym": 0, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
+{"n": 14, "k": 4, "sym": 0, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
+{"n": 19, "k": 6, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
+{"n": 19, "k": 5, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 5], [3, 9], [5, 17], [9, 11]], "size": 5, "check": "OK"}
+{"n": 13, "k": 4, "sym": 0, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
+{"n": 13, "k": 3, "sym": 0, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 3], [6, 4]], "size": 3, "check": "OK"}
+{"n": 18, "k": 6, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
+{"n": 18, "k": 5, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 12], [4, 6], [5, 9], [6, 13]], "size": 5, "check": "OK"}
+{"n": 17, "k": 5, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
+{"n": 17, "k": 4, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 11], [4, 6], [8, 4]], "size": 4, "check": "OK"}
+{"n": 16, "k": 5, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
+{"n": 16, "k": 4, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 11], [3, 4], [7, 12]], "size": 4, "check": "OK"}
+{"n": 15, "k": 5, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
+{"n": 15, "k": 4, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [3, 6], [4, 5], [5, 12]], "size": 4, "check": "OK"}
+{"n": 25, "k": 7, "sym": 0, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 39.4}
+{"n": 14, "k": 5, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
+{"n": 14, "k": 4, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
+{"n": 13, "k": 4, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNSAT", "secs": 0.0}
+{"n": 13, "k": 3, "sym": 3, "solver": "cadical", "seed": 0, "res": "SAT", "secs": 0.0, "Dg": [[1, 0], [2, 5], [3, 11]], "size": 3, "check": "OK"}

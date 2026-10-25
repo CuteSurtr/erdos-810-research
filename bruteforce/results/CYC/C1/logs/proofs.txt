@@ -1,0 +1,1 @@
+38 10 LRAT VERIFIED (2199574 added clauses) (11s, proof 1.19 GB)
