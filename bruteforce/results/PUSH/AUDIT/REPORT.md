@@ -53,3 +53,14 @@ one exception is `lemma3_check.py`, which reads CYCPAT's solution lists as input
 - Table 2 rows at n = 106, 118 and 122 hold about 0.086 n², below half of what the pendant-edge
   padding gives.
 - The status column of Table 3 is hard-coded in `make_tables.py`.
+
+## 7. Unfinished runs (stopped at the 15:15 UTC wrap-up)
+
+- `cycbrute 31 8` stopped after about 185 CPU-min. It would count the 30 solutions with g(min D) = 0
+  at k_max(31) = 8. Not needed for any claim: CYCPAT's list plus the Lemma 3 check covers n = 31.
+- `cycbrute 32 9` stopped after about 175 CPU-min. It would independently confirm k_max(32) ≤ 8. Its
+  estimated full time is 4–6 h on one core (cost roughly doubles per n).
+- To finish: `cd src && gcc -O2 -o cycbrute cycbrute.c && ./cycbrute 32 9 x` (and similarly for
+  `33 9`, `34 9`, `36 10`). Run each as a separate process. Write the logs outside a git-tracked path
+  until they finish, because a `git pull --rebase` can truncate an open, tracked log, as happened to
+  two of my runs.
