@@ -20,8 +20,11 @@ for n in NS:
     uns = [r for r in rs if r["res"] == "UNSAT"]
     kun = min((r["k"] for r in uns), default=None)
     drat = any(r.get("drat") == "VERIFIED" for r in uns if r["k"] == kun)
-    unk = sorted({r["k"] for r in rs if r["res"] == "UNKNOWN"} - {r["k"] for r in rs if r["res"] != "UNKNOWN"})
-    secs = round(sum(r["secs"] for r in rs if r.get("tag") == "drive" and r["res"] != "UNKNOWN") or 0, 1)
+    unk = sorted(k for k in {r["k"] for r in rs if r["res"] == "UNKNOWN"} - {r["k"] for r in rs if r["res"] != "UNKNOWN"} if klo is None or k > klo)
+    bk = {}
+    for r in rs:
+        if r.get("tag") == "drive": bk[r["k"]] = max(bk.get(r["k"], 0), r["secs"])
+    secs = round(sum(bk.values()), 1)  # wall time of the driver portfolio (max over the parallel runs per k)
     if klo is None and kun is None: status = "unfinished"
     elif kun is not None and klo == kun - 1:
         status = "exact (UNSAT DRAT-verified)" if drat else "exact (UNSAT solver, proof unchecked)"

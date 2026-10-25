@@ -1,9 +1,9 @@
 n	k_lo	k_unsat	status	k_lo/n	seconds	notes
 39	9	10	exact (UNSAT solver, proof unchecked)	0.2308	517.8	
-48	11		lower bound (certificate-verified); k=[12] UNKNOWN (timeout)	0.2292	0	
-50	11		lower bound (certificate-verified); k=[12] UNKNOWN (timeout)	0.2200	0	
-61	15		lower bound (certificate-verified); k=[15] UNKNOWN (timeout)	0.2459	1380.6	
-71	14		lower bound (certificate-verified)	0.1972	0	
-80			unfinished		0	
+48	11		lower bound (certificate-verified); k=[12] UNKNOWN (timeout)	0.2292	1499.0	
+50	11		lower bound (certificate-verified); k=[12] UNKNOWN (timeout)	0.2200	1499.0	
+61	15		lower bound (certificate-verified)	0.2459	1495.8	
+71	15		lower bound (certificate-verified); k=[16] UNKNOWN (timeout)	0.2113	1496.9	
+80	16		lower bound (certificate-verified); k=[18] UNKNOWN (timeout)	0.2000	16.0	
 82			unfinished		0	
 93			unfinished		0	

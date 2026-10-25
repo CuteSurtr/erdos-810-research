@@ -35,7 +35,7 @@ while True:
     r = portfolio(k, left); done.add(k)
     print(n, k, r and r["res"], round(time.time() - t0), flush=True)
     if r is None or r["res"] != "SAT": break
-    k += 1
+    k = max(k, len(r["Dg"])) + 1  # the cardinality constraint is >= k, so a model may exceed k
 for k2 in extra:
     if k2 in done: continue
     left = cap - (time.time() - t0)
