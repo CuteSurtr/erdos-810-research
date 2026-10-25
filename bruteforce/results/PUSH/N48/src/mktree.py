@@ -53,12 +53,19 @@ def node(c, depth=0):
         if md is not None:
             for g, k_ in enumerate(kids):
                 m = (md - 1 - g) % n
-                if k_["result"] == "PENDING" and closed(kids[m]):
-                    k_["result"] = "COVERED"; k_["covered_by"] = "u=-1 mirror of " + ",".join(kids[m]["cube"])
+                if not closed(k_) and closed(kids[m]):
+                    k_["covered_by"] = "u=-1 mirror of " + ",".join(kids[m]["cube"])
+                    if k_["result"] == "PENDING": k_["result"] = "COVERED"
+                    else: k_["result"] = "COVERED (direct run in progress)"
         nd["children"] = kids
     return nd
 roots = [["-1"]] + [["1", a, b, c] for a in ("2", "-2") for b in ("3", "-3") for c in ("4", "-4")]
 tree = [node(r) for r in roots]
+def collect(nd, out):
+    if "covered_by" in nd: out.append({"result": "COVERED"}); return
+    if "children" in nd: [collect(x, out) for x in nd["children"]]
+    else: out.append(nd)
+leaves = []; [collect(r, leaves) for r in tree]
 cnt = collections.Counter(x["result"] + ("" if x["result"] != "UNSAT" else (" checked" if x.get("checker_verdict") == "s VERIFIED UNSAT" else " UNCHECKED")) for x in leaves)
 summary = {"n": 48, "k": 12, "encoding": "CYC/C1 cycenc sym=3 (translation fix + lex-leader over Z_48^x/±1)",
            "base_cnf_sha256": "8b9bc39b6244b093ed6850b45ccca8ea809ff015eb61141b14e583960fff6cbf",
