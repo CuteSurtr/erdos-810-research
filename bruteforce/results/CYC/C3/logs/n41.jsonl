@@ -1,1 +1,2 @@
 {"n": 41, "k": 11, "sym": "full", "res": "UNSAT", "by": "kissat-s1", "secs": 986.6, "enc": "n=41 k=11 vars=9962 clauses=353264 keys=29180 units=19", "proof_bytes": 474502074, "drat": "s VERIFIED", "drat_secs": 2631.9}
+{"n": 41, "k": 10, "sym": "full", "res": "SAT", "by": "kissat-s1", "secs": 15.1, "enc": "n=41 k=10 vars=9981 clauses=353301 keys=29180 units=19", "Dg": [[1, 0], [2, 32], [3, 11], [4, 23], [5, 29], [9, 10], [12, 7], [14, 18], [17, 34], [20, 26]], "check": "VALID ok n=41 |D|=10 edges=410 four-cycles=16974"}

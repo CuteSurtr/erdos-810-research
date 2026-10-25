@@ -1,1 +1,2 @@
 {"n": 62, "k": 14, "sym": "full", "res": "UNKNOWN", "by": null, "secs": 1500.5, "enc": "n=62 k=14 vars=31560 clauses=1781203 keys=99510 units=14"}
+{"n": 62, "k": 13, "sym": "full", "res": "SAT", "by": "kissat-s1", "secs": 9.1, "enc": "n=62 k=13 vars=31589 clauses=1781260 keys=99510 units=14", "Dg": [[1, 0], [2, 43], [3, 24], [5, 14], [9, 26], [11, 7], [12, 3], [16, 44], [20, 51], [21, 39], [23, 6], [24, 16], [29, 13]], "check": "VALID ok n=62 |D|=13 edges=806 four-cycles=50716"}
