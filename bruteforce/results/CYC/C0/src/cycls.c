@@ -16,7 +16,7 @@ static int n, H, k;
 typedef struct { unsigned char da, db, delta, o1, o2; } Key;
 static Key *K; static size_t nk;
 static int **inc, ninc[256];      /* keys incident to orbit d (any role) */
-static int inD[256], g[256];
+static int inD[256], g[256], bestD[256], bestg[256];
 static uint64_t rs;
 static inline uint64_t rnd(void) { rs ^= rs << 13; rs ^= rs >> 7; rs ^= rs << 17; return rs; }
 static int cmpu64(const void *a, const void *b) {
@@ -104,7 +104,7 @@ int main(int argc, char **argv) {
     for (int i = H - 1; i > 0; i--) { int j = rnd() % (i + 1); int t = perm[i]; perm[i] = perm[j]; perm[j] = t; }
     for (int i = 0; i < k; i++) { inD[perm[i]] = 1; g[perm[i]] = rnd() % n; }
     int cost = 0; for (size_t i = 0; i < nk; i++) cost += keyviol(&K[i]);
-    int best = cost; double T0 = 2.0, T = T0; long it = 0;
+    int best = cost; memcpy(bestD, inD, sizeof inD); memcpy(bestg, g, sizeof g); double T0 = 2.0, T = T0; long it = 0;
     clock_t start = clock(); double el = 0;
     while (cost > 0) {
         if ((++it & 255) == 0) {
@@ -127,13 +127,17 @@ int main(int argc, char **argv) {
             if (delta <= 0 || exp(-delta / T) * 4294967296.0 > (double)(rnd() & 0xffffffffULL)) { inD[e] = 1; g[e] = x; cost += delta; }
             else inD[d] = 1;
         }
-        if (cost < best) best = cost;
+        if (cost < best) { best = cost; memcpy(bestD, inD, sizeof inD); memcpy(bestg, g, sizeof g); }
     }
     if (cost == 0) {
         int c = 0; for (size_t i = 0; i < nk; i++) c += keyviol(&K[i]);
         if (c) { printf("INTERNAL cost mismatch %d\n", c); return 2; }
         printf("SAT"); for (int d = 1; d <= H; d++) if (inD[d]) printf(" %d:%d", d, g[d]);
         printf("\n");
-    } else printf("FAIL best=%d it=%ld\n", best, it);
+    } else {
+        printf("FAIL best=%d it=%ld", best, it);
+        for (int d = 1; d <= H; d++) if (bestD[d]) printf(" %d:%d", d, bestg[d]);
+        printf("\n");
+    }
     return 0;
 }

@@ -18,3 +18,10 @@
 {"n": 72, "k": 15, "cfg": "lex=0,trans=1,kissat,seed=4,opt=--sat", "res": "SAT", "secs": 24.9, "Dg": [[5, 0], [7, 34], [8, 33], [9, 57], [10, 4], [11, 10], [12, 53], [13, 30], [17, 15], [19, 58], [21, 22], [22, 43], [25, 63], [27, 69], [32, 56]], "check": "ok, 91620 4-cycles checked"}
 {"n": 69, "k": 14, "cfg": "lex=0,trans=1,kissat,seed=4,opt=--sat", "res": "SAT", "secs": 5.5, "Dg": [[1, 0], [3, 53], [13, 65], [18, 66], [22, 12], [24, 9], [25, 2], [27, 62], [29, 15], [30, 63], [31, 20], [32, 43], [33, 25], [34, 39]], "check": "ok, 71484 4-cycles checked"}
 {"n": 69, "k": 15, "cfg": "lex=0,trans=1,kissat,seed=1", "res": "UNKNOWN", "secs": 1500.0}
+{"n": 58, "k": 14, "cfg": "lex=0,trans=1,kissat,seed=3,opt=--sat", "res": "UNKNOWN", "secs": 1500.0}
+{"n": 72, "k": 16, "cfg": "lex=0,trans=1,kissat,seed=5,opt=--sat", "res": "UNKNOWN", "secs": 1200.0}
+{"n": 69, "k": 15, "cfg": "lex=0,trans=1,kissat,seed=6,opt=--sat", "res": "UNKNOWN", "secs": 1200.0}
+{"n": 47, "k": 12, "cfg": "lex=0,trans=1,kissat,seed=6,opt=--sat", "res": "UNKNOWN", "secs": 900.0}
+{"n": 58, "k": 14, "cfg": "anneal,seed=2", "res": "UNKNOWN", "secs": 1267.5, "note": "FAIL best=5 it=19532544"}
+{"n": 90, "k": 18, "cfg": "lex=0,trans=1,kissat,seed=5,opt=--sat", "res": "UNKNOWN", "secs": 1200.0}
+{"n": 79, "k": 16, "cfg": "lex=0,trans=1,kissat,seed=5,opt=--sat", "res": "SAT", "secs": 130.2, "Dg": [[3, 0], [5, 69], [9, 26], [11, 36], [12, 46], [14, 20], [15, 27], [16, 23], [18, 4], [21, 54], [22, 10], [25, 19], [26, 66], [32, 16], [34, 11], [38, 30]], "check": "ok, 121265 4-cycles checked"}
