@@ -18,7 +18,7 @@ Swap:              0           0           0
 | # | Result | Status |
 |---|--------|--------|
 | R1 | Full enumeration of optimal (D, g) up to symmetry for n = 12–34 and n = 36, with orbit counts (§4). n = 40 at k = 10 is partial. | *proved* (exhaustive SAT with blocking; solver results, no DRAT; k_max re-derived; every listed solution re-checked by two checkers). n = 40 is *unfinished* (lower bound). |
-| R2 | Optimal solutions have **no visible algebraic structure**: no polynomial g (deg ≤ 2) for n ≥ 20; φ = 2g − d is never c0 + c2·d² for odd n ≥ 15; a nontrivial multiplier stabiliser occurs only at n = 13, 14, 15, 21, 24, 26, 29, 30 (≤ 6 orbits each); no residue pattern mod 4; less Sidon-like than random (§5). | *proved* for the enumerated n (exhaustive tests on the complete lists) |
+| R2 | Optimal solutions have **no visible algebraic structure**: no solution has g polynomial of degree ≤ 2 on D (all orbits tested for n = 20, 21, 24, 27, 28, 36); φ = 2g − d is never c0 + c2·d² for odd n ≥ 15; a nontrivial multiplier stabiliser occurs only at n = 13, 14, 15, 21, 24, 26, 29, 30 (≤ 6 orbits each); no residue pattern mod 4; less Sidon-like than random (§5). | *proved* for the enumerated n (exhaustive tests on the complete lists) |
 | R3 | **Closed form of multiplier-invariant colourings.** If (D, g) is invariant under a subgroup K ∌ −1 of Z_p^× and D = ±cK, then after scaling, colour(a→b) = (1−λ)a + (1+λ)b, where each edge is oriented so that b − a ∈ cK. | *proved* (§6.1, paper proof) and numerically confirmed |
 | R4 | **Single-coset rule** (D = ±cK, K = the odd-order subgroup of index r in Z_p^×, one free parameter t). It gives k = (p−1)/4 for p = 13, 29, 37, 53, 61 and k = (p−1)/6 for every p ≡ 7 (mod 12) with 19 ≤ p ≤ 643 except p = 439, 523, 571, 607, 619. Each fixed index dies: the last working p is 61 (r=4), 643 (r=6), 1993 (r=8), 4271 (r=10), ≥ 9013 (r=12). Empirically p_last ≈ 0.45·r⁴, so the best k ≈ 0.8·p^{3/4}. **Not εn.** | instances *certificate-verified*; the asymptotic trend is *heuristic* |
 | R5 | **New lower bounds**: M(53) ≥ 689 (k=13) and M(61) ≥ 915 (k=15). The README/CONSTR tables have 636 and 793; for the cyclic family CONSTR had k=12 and k=13. | *certificate-verified* (`certs.json`, simple checker) |
@@ -104,6 +104,10 @@ Other solution files:
 | 24 | 6 | 2884 | 2884 | yes | 14s |
 | 24 | 7 | 0 | 0 | yes | 10s |
 | 25 | 6 | 45300 | 45300 | yes | 51s |
+| 26 | 6 | 189444 | 189444 | yes | 95s |
+| 27 | 7 | 180 | 180 | yes | 235s |
+| 28 | 7 | 3420 | 3420 | yes | 434s |
+| 28 | 8 | 0 | 0 | yes | 312s |
 
 (gen) Counts. Solutions with g(min D) = 0, times n, gives all solutions.
 
@@ -133,7 +137,7 @@ Other solution files:
 | 33 | 8 | complete (case split unit/nounit) | 1756 | 35120 | — (CONSTR) | 579.7 |
 | 34 | 8 | complete (case split unit/nounit) | 25663 | 410608 | — (CONSTR) | 819.4 |
 | 36 | 9 | complete (case split unit/nounit) | 59 | 708 | yes (1040 s) | 927.7 |
-| 40 | 10 | incomplete (lower bound on orbit count) | 3 | 48 | — (CONSTR) |  |
+| 40 | 10 | incomplete (lower bound on orbit count) | 4 | 64 | — (CONSTR) |  |
 
 Observations:
 
@@ -145,7 +149,7 @@ Observations:
 
 All tests run on the complete lists (n ≤ 32), after normalising by G (`src/stats.py`, `src/dclasses.py`, `src/polyfit.py`, `src/gfit.py`, `src/sidon.py`).
 
-- **D up to multipliers.** There are many distinct D-classes: n = 24: 43, n = 28: 62, n = 32: 60 classes. For n ≥ 24 the most frequent class covers ≤ 12%. Intervals and APs: over all classes, the best multiplier image of D overlaps an initial interval [1, k] in at most k−1 points for 20 ≤ n ≤ 32.
+- **D up to multipliers.** There are many distinct D-classes: n = 24: 43, n = 28: 62, n = 32: 60, n = 33: 356, n = 34: 824, n = 36: 47 (for 59 orbits; largest class 5%). For n ≥ 24 the most frequent class covers ≤ 12%. Intervals and APs: over all classes, the best multiplier image of D overlaps an initial interval [1, k] in at most k−1 points for 20 ≤ n ≤ 32.
 - **Cosets / stabilisers** (exact, from the orbit sizes). The stabiliser in G of an optimal solution is nontrivial only at:
   - n = 13: 4 orbits, order 3
   - n = 14: 1 orbit, order 3
@@ -156,9 +160,9 @@ All tests run on the complete lists (n ≤ 32), after normalising by G (`src/sta
   - n = 29: 4 orbits, order 7 (D = one coset class of the order-7 subgroup)
   - n = 30: 2 orbits, order 2
 
-  At n = 28 and 32 every optimal solution has trivial stabiliser (complete lists). At n = 36 none is invariant under any nontrivial subgroup: `symscan` proves UNSAT already at k = 8 for each of the 7 subgroups (solver result).
+  At n = 28, 32, 33, 34 and 36 every optimal solution has trivial stabiliser (complete lists). Independently, `symscan` proves for n = 36 that no subgroup-invariant solution has k ≥ 8.
 - **Residues.** D mod 4, gcd(d, n), and parities of (d, g) are all mixed. No residue class pattern holds for more than 26% of solutions (n = 28).
-- **Polynomial g.** For n ≥ 20 no optimal solution is a polynomial of degree ≤ 2 in d on D, under any G-image. For n = 12 and 16 a few are, but k ≤ 4 there.
+- **Polynomial g.** For n = 20, 21, 24, 27, 28, 36 (all orbits) no optimal solution is a polynomial of degree ≤ 2 in d on D, under any G-image. For n = 12 and 16 a few are, but k ≤ 4 there.
 - **Polynomial φ.** For odd n, φ(d) = 2g(d) − d is the natural even function (colour ×2 = a + b + φ(|b−a|)).
   - φ is never of the form c0 + c2 d² on D for odd n = 15–27.
   - φ is never c0 + c2 d² + c4 d⁴ for n = 15, 19, 21, 23, 25. At n = 17 it is, for 9 of 191 orbits, but there k = 4 is barely above the 3 parameters.
