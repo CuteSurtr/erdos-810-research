@@ -75,3 +75,7 @@
 {"n": 36, "k": 9, "sym": 2, "solver": "kissat", "seed": 0, "secs": 2.5, "res": "SAT", "Dg": [[1, 0], [2, 22], [4, 13], [7, 24], [10, 4], [11, 18], [12, 3], [14, 26], [16, 21]], "verified": true, "edges": 324}
 {"n": 36, "k": 10, "sym": 2, "solver": "cadical-drat", "seed": 0, "secs": 36.2, "res": "UNSAT", "proof_bytes": 122000332, "drat": "VERIFIED", "drat_secs": 95.8}
 {"n": 29, "k": 8, "sym": 0, "solver": "kissat", "seed": 0, "secs": 691.4, "res": "UNSAT"}
+{"n": 30, "k": 8, "sym": 0, "solver": "kissat", "seed": 0, "secs": 799.0, "res": "UNSAT"}
+{"n": 14, "k": 3, "sym": 0, "solver": "kissat", "seed": 0, "secs": 0.0, "res": "SAT", "Dg": [[4, 13], [5, 12], [6, 11]], "verified": true, "edges": 42}
+{"n": 14, "k": 3, "sym": 2, "solver": "kissat", "seed": 0, "secs": 0.0, "res": "SAT", "Dg": [[1, 0], [2, 3], [5, 7]], "verified": true, "edges": 42}
+{"n": 14, "k": 4, "sym": 2, "solver": "cadical-drat", "seed": 0, "secs": 0.0, "res": "UNSAT", "proof_bytes": 6393, "drat": "VERIFIED", "drat_secs": 0.1}

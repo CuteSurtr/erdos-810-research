@@ -34,3 +34,4 @@
 {"n": 93, "k": 19, "sym": 1, "solver": "kissat", "seed": 1, "secs": 1450.3, "res": "UNKNOWN", "tag": "drive"}
 {"n": 93, "k": 19, "sym": 2, "solver": "kissat", "seed": 0, "secs": 1451.1, "res": "UNKNOWN", "tag": "drive"}
 {"n": 93, "k": 19, "sym": 2, "solver": "cadical-drat", "seed": 0, "secs": 1450.1, "res": "UNKNOWN", "tag": "drive"}
+{"n": 39, "k": 10, "sym": 2, "solver": "cadical-drat", "seed": 0, "secs": 464.8, "res": "UNSAT", "proof_bytes": 1523838031, "drat": "VERIFIED", "drat_secs": 1987.4}
