@@ -1,7 +1,7 @@
 | n | CONSTR k_max | sym0 SAT@k / UNSAT@k+1 (s) | sym1 | sym2 | brute force #(D,g) at k: all / g(min)=0 / +lex-leader ; at k+1 |
 |---|---|---|---|---|---|
 | 13 | 3 | SAT/UNSAT (0.0/0.0) | SAT/UNSAT (0.0/0.0) | SAT/UNSAT (0.0/0.0) | 4420 / 340 / 82 ; 0 |
-| 14 | 3 | SAT/UNSAT (0.0/0.0) | SAT/UNSAT (0.0/0.0) | SAT/UNSAT (0.1/0.0) | 0 / 0 / 0 ; 0 |
+| 14 | 3 | SAT/UNSAT (0.0/0.0) | SAT/UNSAT (0.0/0.0) | SAT/UNSAT (0.1/0.0) | 8596 / 614 / 206 ; 0 |
 | 15 | 4 | SAT/UNSAT (0.0/0.1) | SAT/UNSAT (0.0/0.0) | SAT/UNSAT (0.0/0.0) | 1380 / 92 / 30 ; 0 |
 | 16 | 4 | SAT/UNSAT (0.0/0.1) | SAT/UNSAT (0.0/0.0) | SAT/UNSAT (0.0/0.0) | 7424 / 464 / 116 ; 0 |
 | 17 | 4 | SAT/UNSAT (0.0/0.4) | SAT/UNSAT (0.0/0.1) | SAT/UNSAT (0.0/0.0) | 51952 / 3056 / 526 ; 0 |
@@ -21,4 +21,5 @@
 | 32 | 8 | – | – | SAT/UNSAT (0.4/2.4) | – |
 | 36 | 9 | – | – | SAT/UNSAT (2.4/30.6) | – |
 
-Mismatches: 1
+Mismatches with CONSTR: 0
+

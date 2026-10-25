@@ -56,7 +56,7 @@ which does not change p. The resulting solution satisfies p ≥_lex p∘u for al
 maximum of its orbit and p∘u lies in the same orbit) and the translation fix. So the constraints
 remove no satisfiable k.
 
-*Empirical check* (section 3): with sym = 0 (none), 1 (translation only), 2 (translation +
+*Empirical check* (§4.5): with sym = 0 (none), 1 (translation only), 2 (translation +
 lex-leader), SAT/UNSAT answers agree for every n = 13..30. An independent brute force
 (`src/brute.c`, builds the explicit graph orbit by orbit and checks every 4-cycle through each new
 edge directly, no walk encoding) counts the solutions: e.g. n = 26, k = 6: 4,925,544 (D, g) in
@@ -70,3 +70,27 @@ checker: build the explicit coloured edge set, then for every vertex pair a < c 
 common neighbours b < d, check that the 4 colours of a–b–c–d–a are distinct; colours are in
 0..n−1 and edges are distinct by construction (asserted). The checker was tested to reject an
 invalid colouring.
+
+### 4.4 Runs (per n) and timings
+
+- **First pass** (`src/pern.py`, about 25 min wall per n, two n at a time). Kissat (default, seed 1)
+  and CaDiCaL (default, seed 2) race at k = k_lo, k_lo + 1, …; the first definite answer wins. For
+  n ≡ 0 (mod 4), k = n/4 also got a third of the cap. Starting k: 46 → 12; 57 → 13 (CONSTR had 12);
+  ⌊n/4⌋ − 2 otherwise (67 → 14, 68 → 15 + 17, 78 → 17, 89 → 20, 99 → 22, 100 → 23 + 25).
+- **Certificate fallback** (`src/down.py`): for n with no SAT, race again at decreasing k with
+  400 s per k. Seeds from CONSTR's annealer (`src/cyc_constr.c`, 120 s, `anneal/`) were also
+  verified and logged as certificates of last resort.
+- **Second pass** (`src/second.py`, until 09:55 UTC): one solver per core.
+  46/k = 12 with kissat `--unsat`; 68 climbing from k = 15 with kissat `--sat`; 100 climbing from
+  best + 1 with kissat `--sat`; quick `--sat` probes climbing on 89, 99, 78, 67, 57
+  (`src/probe.sh`, 300 s then 1200 s per n).
+- Every solver run is one JSON line in `data/main.jsonl` (n, k, solver, config, seed, result,
+  seconds, and (D, g) when SAT).
+
+**Lost log lines (disclosed).** The first n = 46, k = 12 race (kissat and CaDiCaL default, from
+05:27 UTC) ran to its 1500 s cap; the k = 11 run chained after it finished at 05:54, 141 s later.
+Its UNKNOWN lines went to an unlinked file because a `git pull --rebase` replaced
+`logs/main.jsonl` while the processes had it open. A second rebase, replaying a commit that untracked
+`logs/`, deleted the live files. All other lines were restored from the snapshot committed at
+06:33 (`git show 7a8c19b:…/data/main.jsonl`). The 46/k = 12 result is recorded in `notes.json` and
+counted in the table as "no answer in 1500 s".

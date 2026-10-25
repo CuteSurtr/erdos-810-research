@@ -48,3 +48,6 @@
 {"n": 78, "k": 17, "sym": 2, "solver": "kissat", "seed": 23, "res": "UNKNOWN", "secs": 299.0, "conf": "--sat"}
 {"n": 67, "k": 15, "sym": 2, "solver": "kissat", "seed": 23, "res": "UNKNOWN", "secs": 299.2, "conf": "--sat"}
 {"n": 57, "k": 14, "sym": 2, "solver": "kissat", "seed": 23, "res": "UNKNOWN", "secs": 299.1, "conf": "--sat"}
+{"n": 89, "k": 18, "sym": 2, "solver": "kissat", "seed": 23, "res": "UNKNOWN", "secs": 1199.0, "conf": "--sat"}
+{"n": 99, "k": 20, "sym": 2, "solver": "kissat", "seed": 23, "res": "UNKNOWN", "secs": 1199.1, "conf": "--sat"}
+{"n": 78, "k": 17, "sym": 2, "solver": "kissat", "seed": 23, "res": "UNKNOWN", "secs": 1199.4, "conf": "--sat"}
