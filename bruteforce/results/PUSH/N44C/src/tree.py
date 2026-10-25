@@ -8,6 +8,9 @@ A node is closed if its own case is verified UNSAT (cake_lpr), either as plain '
 symmetry breaking 'sb:P', or if all of its children are closed.  usage: tree.py [n k]"""
 import json, re, sys
 n, k = (int(sys.argv[1]), int(sys.argv[2])) if len(sys.argv) > 2 else (44, 11)
+# mode 'any': leaves may be plain (unit2:e, pre:P) or symmetry-broken (sb:P); 'plain': plain leaves only
+mode = sys.argv[3] if len(sys.argv) > 3 else 'any'
+outfile = sys.argv[4] if len(sys.argv) > 4 else 'tree.json'
 H = (n + 1) // 2 - 1
 res = {}
 for l in open('results.jsonl'):
@@ -15,7 +18,7 @@ for l in open('results.jsonl'):
     if r['n'] != n or r['k'] != k: continue
     if r['case'] in res and res[r['case']]['check'] == 's VERIFIED UNSAT': continue
     res[r['case']] = r
-def ok(c): return c in res and res[c]['result'] == 'UNSATISFIABLE' and res[c]['check'] == 's VERIFIED UNSAT'
+def ok(c): return (mode == 'any' or not c.startswith('sb:')) and c in res and res[c]['result'] == 'UNSATISFIABLE' and res[c]['check'] == 's VERIFIED UNSAT'
 def leafinfo(c):
     r = res[c]; return {"case": c, "result": r['result'], "proof": r['check'], "cnf_sha256": r['cnf_sha256'],
                         "solver": r['solver'], "solve_s": round(r['solve_s'], 1), "proof_bytes": r['proof_bytes'],
@@ -35,7 +38,8 @@ def node(P):
 def shallow(P):
     """expand only nodes that were actually split (some descendant case exists), else mark open"""
     pref = '.'.join(map(str, P))
-    split = any(c.split(':', 1)[1].startswith(pref + '.') for c in res if c.startswith(('pre:', 'sb:')))
+    split = any(c.split(':', 1)[1].startswith(pref + '.') for c in res
+                if c.startswith(('pre:', 'sb:') if mode == 'any' else ('pre:',)))
     name = pref
     if len(P) + (H - P[-1]) < k:
         return {"prefix": P, "closed": True, "by": "vacuous: fewer than k orbits available (|P| + H - max P < k)"}
@@ -57,7 +61,8 @@ root = {"n": n, "k": k, "cover": "nounit + unit; unit = union of unit2:e (e=2..H
         "unit": {"closed": all(u['closed'] for u in unit), "children": unit}}
 root["closed"] = root["nounit"]["closed"] and root["unit"]["closed"]
 if not root["nounit"]["closed"]: open_leaves.append('nounit')
-json.dump(root, open('tree.json', 'w'), indent=1)
+root["mode"] = mode
+json.dump(root, open(outfile, 'w'), indent=1)
 def leaves(t):
     if 'children' in t and not ('by' in t and not any('children' in c for c in t['children'])):
         for c in t['children']: yield from leaves(c)
