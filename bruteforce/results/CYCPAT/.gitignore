@@ -1,0 +1,4 @@
+bin/
+src/cyccheck
+*.o
+*.cnf
