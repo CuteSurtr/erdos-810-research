@@ -1,0 +1,9 @@
+n	k_lo	k_unsat	status	k_lo/n	seconds	notes
+43	10		k_max>=10 certificate-verified; upper bound unfinished	0.2326	1500	best: CONSTR certificate; open k (UNKNOWN at cap): 11
+54	12		k_max>=12 certificate-verified; upper bound unfinished	0.2222	1501	best: CONSTR certificate; open k (UNKNOWN at cap): 13
+60	13		k_max>=13 certificate-verified; upper bound unfinished	0.2167	1500	best: CONSTR certificate; open k (UNKNOWN at cap): 14,15; k=n/4=15: undecided
+65	14		k_max>=14 certificate-verified; upper bound unfinished	0.2154	59	best: cadical seed 0, 56.1s
+75			unfinished		0	
+86			unfinished		0	
+92			unfinished		0	
+97	16		k_max>=16 certificate-verified; upper bound unfinished	0.1649	0	best: CONSTR certificate

@@ -1,0 +1,4 @@
+{"n": 43, "k": 11, "solver": "kissat", "seed": 2, "sym": 3, "amo": 1, "secs": 1499.0, "enc": "cycenc n=43 k=11 H=21 cycles=68880 keys=33936 keyclauses=17115 y=8169 lex=20 vars=10626 clauses=409761", "res": "UNKNOWN", "rc": 0}
+{"n": 43, "k": 11, "solver": "kissat", "seed": 1, "sym": 3, "amo": 1, "secs": 1499.0, "enc": "cycenc n=43 k=11 H=21 cycles=68880 keys=33936 keyclauses=17115 y=8169 lex=20 vars=10626 clauses=409761", "res": "UNKNOWN", "rc": 0}
+{"n": 43, "k": 11, "solver": "kissat", "seed": 0, "sym": 3, "amo": 1, "secs": 1499.0, "enc": "cycenc n=43 k=11 H=21 cycles=68880 keys=33936 keyclauses=17115 y=8169 lex=20 vars=10626 clauses=409761", "res": "UNKNOWN", "rc": 0}
+{"n": 43, "k": 11, "solver": "cadical", "seed": 0, "sym": 3, "amo": 1, "secs": 1499.0, "enc": "cycenc n=43 k=11 H=21 cycles=68880 keys=33936 keyclauses=17115 y=8169 lex=20 vars=10626 clauses=409761", "res": "UNKNOWN", "rc": 0}

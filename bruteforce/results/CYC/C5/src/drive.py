@@ -19,7 +19,8 @@ def race(k, budget):
     for j in range(a.jobs):
         if j == a.jobs - 1 and a.jobs > 1: args = ["--solver", "cadical", "--seed", "0", "--drat", "--keepproof"]
         else: args = ["--solver", "kissat", "--seed", str(j), "--config", ["sat", "sat", "unsat"][j % 3]]
-        cmd = [sys.executable, os.path.join(HERE, "cycrun.py"), str(a.n), str(k), "--sym", str(a.sym),
+        sym = 1 if j == 1 else a.sym   # racer 1: translation fix only (lex-leader can slow SAT finding)
+        cmd = [sys.executable, os.path.join(HERE, "cycrun.py"), str(a.n), str(k), "--sym", str(sym),
                "--timeout", str(max(1, int(budget)))] + args
         procs.append(subprocess.Popen(cmd, stdout=subprocess.PIPE, text=True, start_new_session=True))
     res = None
