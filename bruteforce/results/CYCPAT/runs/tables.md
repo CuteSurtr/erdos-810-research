@@ -53,6 +53,7 @@
 | 27 | 7 | 180 | 180 | yes | 235s |
 | 28 | 7 | 3420 | 3420 | yes | 434s |
 | 28 | 8 | 0 | 0 | yes | 312s |
+| 29 | 7 | 63968 | 63968 | yes | 1462s |
 
 @@COSET_TABLES
 Single-coset rule, smallest working index r per prime (k = (p-1)/r):
@@ -71,7 +72,7 @@ Single-coset rule, smallest working index r per prime (k = (p-1)/r):
 | 2000–2499 | 64 | 0.1000 | 0.0455 |
 | 2500–2999 | 32 | 0.1000 | 0.0499 |
 
-Last prime with a valid single coset of index r (scanned up to): r=8: 1993 (to 4729), r=10: 4271 (to 11971), r=12: 9013 (to 9277)
+Last prime with a valid single coset of index r (scanned up to): r=4: 61 (to 2957), r=6: 643 (to 2971), r=8: 1993 (to 4729), r=10: 4271 (to 11971), r=12: 9013 (to 9277)
 
 Two-class rule (two +-cosets of an odd-order subgroup of index r, k = 2(p-1)/r); "to" = undecided larger k:
 

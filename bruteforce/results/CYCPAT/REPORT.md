@@ -30,7 +30,7 @@ Swap:              0           0           0
 | R12 | **Doubling lift fails.** For every optimal D at m = 12, 16, 20, the set D′ = D ∪ (m − D) of Z_{2m}-orbits over ±D (size 2k = n′/4) admits no valid g′ (SAT). Results: m = 12: 5 of 5 distinct D′ UNSAT; m = 16: 9 of 9 UNSAT; m = 20: 14 of 14 UNSAT (each < 60 s). So the n/4 solutions at 24, 32, 40 are not lifts of the ones at 12, 16, 20. | *proved* per D (solver UNSAT, unchecked) |
 | R11 | **Observation: the n/4 solutions are thinning out fast.** For n ≡ 0 (mod 4), the number of solution orbits at k = n/4 is 58, 165, 362, 285, 128, 59, **4** for n = 16, 20, …, 40. It peaks at 24 and falls about 15-fold from 36 to 40. For n ≡ 2 (mod 4), with k_max = (n−2)/4: 4333, 15791, 49909, 25663 at n = 22, 26, 30, 34, also past a peak. Odd n with k_max/n > 1/4 (18, 21, 31) have a **unique** optimal orbit. | counts *proved* (solver); the extrapolation (k = n/4 fails soon, likely by n = 44–48) is *heuristic* |
 
-**Bottom line.** No explicit rule found here gives |D| ≥ εn on an infinite family. Every structured rule I could formulate dies, and for linear rules this is provable through Szemerédi's theorem. The optimal solutions for n ≤ 36 look unstructured. Their number at k = n/4 shrinks after n = 24–28. The evidence therefore leans toward k_max(n) = o(n) for this family, which agrees with BEGS's belief. This is *evidence, not a theorem*.
+**Bottom line.** No explicit rule found here gives |D| ≥ εn on an infinite family. Every structured rule I could formulate dies, and for linear rules this is provable through Szemerédi's theorem. The optimal solutions for n ≤ 36 look unstructured. Their number at k = n/4 peaks at n = 24 (362 orbits) and drops to 128, 59 and then just 4 orbits at n = 32, 36, 40. The evidence therefore leans toward k_max(n) = o(n) for this family, which agrees with BEGS's belief. This is *evidence, not a theorem*.
 
 ## 3. Certificates
 
@@ -108,6 +108,7 @@ Other solution files:
 | 27 | 7 | 180 | 180 | yes | 235s |
 | 28 | 7 | 3420 | 3420 | yes | 434s |
 | 28 | 8 | 0 | 0 | yes | 312s |
+| 29 | 7 | 63968 | 63968 | yes | 1462s |
 
 (gen) Counts. Solutions with g(min D) = 0, times n, gives all solutions.
 
@@ -214,7 +215,7 @@ Single-coset rule, smallest working index r per prime (k = (p-1)/r):
 | 2000–2499 | 64 | 0.1000 | 0.0455 |
 | 2500–2999 | 32 | 0.1000 | 0.0499 |
 
-Last prime with a valid single coset of index r (scanned up to): r=8: 1993 (to 4729), r=10: 4271 (to 11971), r=12: 9013 (to 9277)
+Last prime with a valid single coset of index r (scanned up to): r=4: 61 (to 2957), r=6: 643 (to 2971), r=8: 1993 (to 4729), r=10: 4271 (to 11971), r=12: 9013 (to 9277)
 
 Two-class rule (two +-cosets of an odd-order subgroup of index r, k = 2(p-1)/r); "to" = undecided larger k:
 

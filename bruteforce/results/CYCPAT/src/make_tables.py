@@ -127,7 +127,7 @@ for a in sorted(dec):
 P('')
 last = {}
 for r in (4, 6, 8, 10, 12):
-    fn = {4: None, 6: None}.get(r, f'runs/r{r}.txt')
+    fn = f'runs/r{r}.txt'
     if fn and os.path.exists(fn):
         L = [l.split() for l in open(fn) if l.startswith('#')]
         ok = [int(x[1].split('=')[1]) for x in L if int(x[-1].split('=')[1]) > 0]
