@@ -350,8 +350,9 @@ Lemma 2. Orbits are computed by my `src/cycgroup.py`.
 | 28 | k=7: 3420 | 285 | k=8: 0 | 1218 / 611 |
 | 29 | k=7: 63968 | 2288 | k=8: 0 | 3818 / 2244 |
 | 30 | not run (certificate at k_max exists) | — | k=8: 0 | — / 3974 |
+| 31 | not run (certificate at k_max exists) | — | k=9: 0 | — / 7588 |
 
-The k_max+1 column is an **independent, SAT-free confirmation of the upper bound k_max(n) for every 12 ≤ n ≤ 30** (n = 31 and 32 were still running at wrap-up; see REPORT.md). Times are wall-clock under 3–5 concurrent jobs on 4 cores.
+The k_max+1 column is an **independent, SAT-free confirmation of the upper bound k_max(n) for every 12 ≤ n ≤ 31** (n = 32 was still running at wrap-up; see REPORT.md). Times are wall-clock under 3–5 concurrent jobs on 4 cores.
 
 - **Everything matches** CYCPAT's brute-force and SAT-enumeration counts.
 - The orbit counts 24, 58, 165, 362 (n = 12, 16, 20, 24) and the uniqueness at n = 18, 21 (and 31,
