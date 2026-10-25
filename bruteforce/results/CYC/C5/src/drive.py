@@ -18,7 +18,7 @@ def race(k, budget):
     procs = []
     for j in range(a.jobs):
         if j == a.jobs - 1 and a.jobs > 1: args = ["--solver", "cadical", "--seed", "0", "--drat", "--keepproof"]
-        else: args = ["--solver", "kissat", "--seed", str(j)]
+        else: args = ["--solver", "kissat", "--seed", str(j), "--config", ["sat", "sat", "unsat"][j % 3]]
         cmd = [sys.executable, os.path.join(HERE, "cycrun.py"), str(a.n), str(k), "--sym", str(a.sym),
                "--timeout", str(max(1, int(budget)))] + args
         procs.append(subprocess.Popen(cmd, stdout=subprocess.PIPE, text=True, start_new_session=True))
@@ -46,8 +46,8 @@ def log(r, k):
     print(json.dumps(s), flush=True)
     with open(os.path.join(ROOT, "runs", "drive_n%d.jsonl" % a.n), "a") as f: f.write(json.dumps(s) + "\n")
 
-for k in a.also:
-    left = a.cap - (time.time() - T0)
+for k in a.also:   # the explicit tries get at most half of the per-n cap
+    left = a.cap / 2 - (time.time() - T0)
     if left < 5: break
     log(race(k, left), k)
 k = a.k

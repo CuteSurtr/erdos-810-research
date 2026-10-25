@@ -17,6 +17,7 @@ ap.add_argument("--sym", type=int, default=3); ap.add_argument("--amo", type=int
 ap.add_argument("--timeout", type=int, default=1500); ap.add_argument("--drat", action="store_true")
 ap.add_argument("--checkdrat", type=int, default=0, help="drat-trim timeout (0 = skip)")
 ap.add_argument("--nolog", action="store_true")
+ap.add_argument("--config", default="", help="kissat preset: sat | unsat | (default)")
 ap.add_argument("--keepproof", action="store_true", help="keep DRAT proof + CNF in TMP/proofs on UNSAT")
 a = ap.parse_args()
 n, k = a.n, a.k; H = (n + 1) // 2 - 1
@@ -28,13 +29,13 @@ with open(cnf, "w") as f:
                          stdout=f, stderr=subprocess.PIPE, text=True, check=True)
 t0 = time.time()
 if a.solver == "kissat":
-    cmd = [KISSAT, "--seed=%d" % a.seed, "--time=%d" % a.timeout, cnf]
+    cmd = [KISSAT, "--seed=%d" % a.seed, "--time=%d" % a.timeout] + (["--" + a.config] if a.config else []) + [cnf]
 else:
     cmd = [CADICAL, "--seed=%d" % a.seed, "-t", str(a.timeout), cnf]
     if a.drat: cmd.append(proof)
 p = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
 secs = round(time.time() - t0, 1)
-rec = {"n": n, "k": k, "solver": a.solver, "seed": a.seed, "sym": a.sym, "amo": a.amo, "secs": secs,
+rec = {"n": n, "k": k, "solver": a.solver + (":" + a.config if a.config else ""), "seed": a.seed, "sym": a.sym, "amo": a.amo, "secs": secs,
        "enc": enc.stderr.strip()}
 if p.returncode == 10:
     lits = set()
