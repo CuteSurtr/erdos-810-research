@@ -41,10 +41,10 @@ We give explicit certificates improving the known lower bounds for $14\le n\le 2
 extending them to $n\le 128$. Many of the best constructions for $26\le n\le 64$ are
 \emph{cyclic orbit colourings}: Cayley graphs on $\Z_n$ whose colouring is equivariant under
 rotation. For this family we determine the optimum $\kmax(n)$ for $12\le n\le 42$ and
-$n\in\{44,47\}$. Every upper bound is certified by a DRAT or LRAT proof checked by a
-standard checker ($13\le n\le47$), or by an independent SAT-free exhaustive search
+$n\in\{44,47,48\}$. Every upper bound is certified by a DRAT or LRAT proof checked by a
+standard checker ($13\le n\le48$; at $n=48$ together with a short symmetry lemma), or by an independent SAT-free exhaustive search
 ($12\le n\le31$). The optimum is exactly $n/4$ orbits (that is, $n^2/4$ edges) for
-$n=12,16,\dots,40$, but $\kmax(44)=10<44/4$.
+$n=12,16,\dots,40$, but $\kmax(44)=10$ and $\kmax(48)=11$, one less than $n/4$.
 
 We also prove that offset rules $g(d)\equiv bd+c$ with a fixed rational slope
 $b\notin\{0,1\}$, and piecewise-affine rules with boundedly many such pieces, give only $o(n)$
@@ -109,12 +109,12 @@ constructions further.
   $13\le n\le 64$ and many $n\le128$. They improve the AlphaEvolve values for all
   $14\le n\le 25$; for example $\M(21)\ge126=0.286\,n^2$.
 \item \textbf{Cyclic orbit colourings} (Section~\ref{sec:cyclic}). We determine the
-  optimum $\kmax(n)$ of this family for $12\le n\le 42$ and $n\in\{44,47\}$
+  optimum $\kmax(n)$ of this family for $12\le n\le 42$ and $n\in\{44,47,48\}$
   (Table~\ref{tab:cyc}, with proof status per value).
   \begin{itemize}
   \item $\kmax(4m)=m$ for $3\le m\le 10$, so $\M(n)\ge n^2/4$ at $n=12,16,\dots,40$.
   \item The number of optimal solutions at $k=n/4$ falls to $4$ (up to symmetry) at $n=40$.
-  \item Theorem~\ref{thm:44}: $\kmax(44)=10<44/4$. The pattern breaks there.
+  \item Theorem~\ref{thm:44}: $\kmax(44)=10$ and $\kmax(48)=11$. The pattern breaks there.
   \item Proposition~\ref{prop:linear}: offset rules that are linear, or piecewise affine
     with boundedly many pieces, give only $o(n)$ orbits when the slopes are fixed rationals
     independent of $n$.
@@ -413,14 +413,16 @@ with an UNSAT result at $\kmax(n)+1$.
   criterion of Lemma~\ref{lem:walk}. It finds no solution at $k=\kmax(n)+1$, and its counts
   at $k=\kmax(n)$ agree with the SAT enumerations.
 \item \emph{Checked proofs, $13\le n\le 41$.} The UNSAT proofs at $\kmax(n)+1$ were checked
-  by \texttt{drat-trim}. For $n=35$ and $38$ a second, independently written encoder also
-  gives LRAT proofs checked by \texttt{cake\_lpr}~\cite{cakelpr}.
+  by \texttt{drat-trim}. For $n=35$ and $38$ two further encodings, one of them a second
+  independently written encoder and the other with no lexicographic symmetry breaking at
+  all, also give LRAT proofs checked by \texttt{cake\_lpr}~\cite{cakelpr}.
 \item \emph{$n=42$:} the instance at $k=11$ was refuted by CaDiCaL and by
-  Kissat~\cite{Kissat}. The LRAT proof is checked by \texttt{cake\_lpr}.
-\item \emph{$n=44$:} see Theorem~\ref{thm:44}.
+  Kissat~\cite{Kissat}. LRAT proofs from two different encoders are checked by
+  \texttt{cake\_lpr}.
+\item \emph{$n=44,48$:} see Theorem~\ref{thm:44}.
 \item \emph{$n=47$:} the instance at $k=12$ was split into $29$ cubes~\cite{HKWB11}. Every cube
-  has an LRAT proof checked by \texttt{cake\_lpr}, and the coverage of the cubes was checked
-  independently.
+  has an LRAT proof checked by \texttt{cake\_lpr}, for two different encoders, and the
+  coverage of the cubes was checked independently.
 \end{itemize}
 
 {\small
@@ -441,14 +443,14 @@ $n$ & $\kmax(n)$ & $k/n$ & status\\
 }
 
 \begin{theorem}\label{thm:44}
-$\kmax(44)=10$. In particular, $\kmax(4m)=m$ fails for $m=11$.
+$\kmax(44)=10$ and $\kmax(48)=11$. In particular, $\kmax(4m)=m$ fails for $m=11$ and $m=12$.
 \end{theorem}
 
 \begin{proof}[Proof (computer-assisted)]
-\emph{Lower bound.} A solution with $|D|=10$ is given in~\cite{Repo} and re-verified as an
-explicit $440$-edge graph.
+\emph{Lower bounds.} Solutions with $|D|=10$ at $n=44$ and $|D|=11$ at $n=48$ are given
+in~\cite{Repo}, and re-verified as explicit graphs with $440$ and $528$ edges.
 
-\emph{Encoding.} We consider $k=11$ with symmetry broken by $g(\min D)=0$ and by requiring the
+\emph{Upper bound at $n=44$, first proof.} We consider $k=11$ with symmetry broken by $g(\min D)=0$ and by requiring the
 orbit-presence vector to be a lexicographic leader under the multipliers of
 Lemma~\ref{lem:mult}.
 
@@ -467,9 +469,28 @@ assignments.
 checker \texttt{cake\_lpr}~\cite{cakelpr}. The $16$ leaves of the last split were additionally
 re-solved, with DRAT proofs checked by \texttt{drat-trim}.
 
-As in \S3, the proof relies on the correctness of the encoder and of the symmetry breaking.
-This encoder reproduces the values of $\kmax(n)$ found by the other computations for
-$13\le n\le30$ and $n=32,36$.
+\emph{Upper bound at $n=44$, second proof.} An independently written encoder uses only the
+normalisations $1\in D$ (when $D$ contains a unit) and $g(\min D)=0$. With it, the case
+split by whether $D$ contains a unit and by the second-smallest element of $D$, refined by
+the presence of the next-smallest orbits, closes with $476$ leaves. Every leaf has an LRAT
+proof checked by \texttt{cake\_lpr}.
+
+\emph{Upper bound at $n=48$.} With the first encoder, the level-$1$ presence split is refined
+by splitting on the offset $g(d)$ of the smallest present orbit $d>1$ and, where needed, on
+the offset of the next present orbit. The base formula contains the clause
+$\neg p_d\vee x_{d,0}\vee\dots\vee x_{d,47}$, so the offset split covers every case.
+\begin{itemize}
+\item $5{,}075$ leaves were solved, each with an LRAT proof checked by \texttt{cake\_lpr}.
+\item The remaining $57$ branches are images of closed branches under the map
+  $g(e)\mapsto e-1-g(e)$. This is Lemma~\ref{lem:mult} with $u=-1$, followed by the colour
+  translation that restores $g(1)=0$. The map fixes $D$, so it preserves the presence vector,
+  and with it the cardinality and lexicographic-leader constraints.
+\end{itemize}
+
+As in \S3, the proofs rely on the correctness of the encoders and of the symmetry breaking.
+The first encoder reproduces the values of $\kmax(n)$ found by the other computations for
+$13\le n\le30$ and $n=32,36$. The second is the encoder behind the solution counts in the
+remark below, which the brute-force search reproduces for $n\le28$.
 \end{proof}
 
 \begin{remark}[$n\equiv0\pmod 4$]
@@ -480,13 +501,10 @@ $\M(n)\ge n^2/4$. The number of solutions at $k=n/4$, up to the action above, is
 \]
 These counts come from complete SAT enumeration with blocking clauses. For $n\le 28$ the
 independent brute-force search reproduces them, both as raw counts and up to symmetry. They peak at $n=24$
-and fall sharply after that, and Theorem~\ref{thm:44} shows that the pattern stops at
-$n=44$.
-% TODO(PUSH/N44C, due 16:00Z): add the independent second split if it completes.
-For the other multiples of $4$ in $[48,100]$ we ran only time-limited SAT searches, from a
-minute to a few hours, and none found a solution with $k=n/4$. The values $n=64$ and $n=96$
-received no general search.
-% TODO(PUSH/N48, due 16:00Z): add the n=48 result.
+and fall sharply after that. Theorem~\ref{thm:44} shows that the pattern stops: $\kmax(n)=n/4-1$
+at $n=44$ and $n=48$. For the other multiples of $4$ in $[52,100]$ we ran only
+time-limited SAT searches, from a minute to a few hours, and none found a solution with
+$k=n/4$. The values $n=64$ and $n=96$ received no general search.
 For several $n$, all odd except $n=18$, $\kmax(n)/n$ exceeds $1/4$; for example
 $\kmax(21)=6$ and $\kmax(31)=8$. For $n=18,21,31$ the optimal solution is unique up to
 symmetry.
@@ -598,8 +616,8 @@ Two further experiments point the same way. Both are evidence, not theorems.
   \end{itemize}
 \item Give a fully certified proof of $\M(12)=40$, by checking the cubes $\Delta=7,8,9$.
 \item Is $\kmax(n)=o(n)$? A construction with $\kmax(n)\ge\varepsilon n$ would answer
-  Erd\H{o}s \#810 positively. By Theorem~\ref{thm:44}, $\kmax(4m)<m$ at $m=11$. Is
-  $\kmax(n)<n/4$ for all large $n$?
+  Erd\H{o}s \#810 positively. By Theorem~\ref{thm:44}, $\kmax(4m)<m$ at $m=11,12$. Is
+  $\kmax(n)<n/4$ for all $n\ge44$?
 \end{enumerate}
 
 % =====================================================================

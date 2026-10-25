@@ -155,8 +155,7 @@ and k_max(47) = 11.
 **n/4 solutions.**
 - Up to symmetry, the number of solutions at k = n/4 is 24, 58, 165, 362, 285, 128, 59, 4
   for n = 12, 16, …, 40.
-- At n = 44, k = 11 is undecided. Two exhaustive splits leave 1 of 9 and 2 of 21 cases
-  open, and no solution was found.
+- At n = 44, k = 11 was undecided at the end of this wave; PUSH (below) settled it.
 - No n/4 solution was found for 44 ≤ n ≤ 100.
 - Best k/n is about 0.19 at n = 100.
 
@@ -167,6 +166,25 @@ and k_max(47) = 11.
 
 **Lower bounds.** The table is regenerated in `paper/` from all certificates (220, all
 re-verified).
+
+## PUSH wave, 2026-10-25 (`results/PUSH/*`, task `tasks/PUSH.md`)
+
+All UNSAT claims below come with proofs checked by a standard checker (cake_lpr or drat-trim).
+- **k_max(44) = 10** (N44A, N44B, N44C). Two independent proofs:
+  - C1's encoder with lex-leader breaking, a presence-bit split with 24 leaves, all LRAT checked by
+    cake_lpr; the 16 deepest leaves also have DRAT checked by drat-trim.
+  - CYCPAT's plain encoding (only 1 ∈ D and g(min D) = 0), split nounit + unit2:e and refined by the
+    next-smallest orbits: 476 leaves, all LRAT checked by cake_lpr. A second tree with extra
+    symmetry breaking closed with 177 leaves.
+- **k_max(48) = 11** (N48). C1's encoder, presence split refined by offset splits: 5075 leaves with
+  LRAT checked by cake_lpr, plus 57 branches covered by the u = −1 mirror lemma
+  (g(e) ↦ e − 1 − g(e)). `covercheck.py`: `COVER OK {'unsat': 5075, 'covered': 57, 'internal': 109}`.
+  The k = 11 certificate has 528 edges.
+- So k_max(4m) = m holds for m = 3..10 and fails for m = 11, 12.
+- **CERT.** k_max(35) = 8 (DRAT, plus two more encodings with LRAT); n = 38 now has drat-trim and
+  cake_lpr proofs; n = 42 has cake_lpr proofs from two encoders; n = 47 has cake_lpr proofs for all
+  29 cubes, on two encoders, with coverage re-checked.
+- **AUDIT.** Referee audit of the draft, applied to `paper/` (see `paper/OUTLINE.md`).
 
 ## Paper draft
 

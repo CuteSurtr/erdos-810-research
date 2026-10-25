@@ -122,6 +122,14 @@ Applied the PUSH/AUDIT report (`results/PUSH/AUDIT/AUDIT.md`) and the new PUSH r
 - **References:** added Kissat, cube-and-conquer, PySAT, cake_lpr, Roth, Ajtai–Szemerédi, #1178,
   Bucić–Chen–Ma and Yang; CaDiCaL now cites CAV 2024; DOIs added.
 
+## Revision of 2026-10-26
+
+- **Theorem 44 extended:** k_max(44) = 10 and k_max(48) = 11 (PUSH/N48: 5075 cake_lpr leaves plus
+  57 mirror branches by Lemma 3 with u = −1).
+- **n = 44 second proof** (PUSH/N44C): CYCPAT's plain encoding, 476 cake_lpr leaves.
+- **CERT cross-checks** in Table 3 labels and §5.1: n = 35, 38 (two more encodings), 42 and 47 (two encoders).
+- Abstract, results list, remark (n ≡ 0 mod 4) and open problems updated; TODO markers removed.
+
 ## Claim ledger (status and source)
 
 | Claim | Status | Source |
@@ -138,10 +146,11 @@ Applied the PUSH/AUDIT report (`results/PUSH/AUDIT/AUDIT.md`) and the new PUSH r
 | Cyclic k_max, n = 37, 39, 40, 41 | DRAT (drat-trim) | `results/CYC/C0`, `C2`, `C3` |
 | Cyclic k_max(35) = 8, k_max(38) = 9 | DRAT (drat-trim) | `results/PUSH/CERT` |
 | **k_max(44) = 10 (Theorem 44)** | all 24 leaves LRAT, checked by cake_lpr; the 16 sub-cube leaves also DRAT, checked by drat-trim; relies on C1's encoder and lex-leader | `results/PUSH/N44A`, `N44B`, `results/CYC/C1` |
-| Cyclic k_max(38) | LRAT, checked by a checker the task wrote | `results/CYC/C1` |
-| Cyclic k_max(42) = 10 | CaDiCaL and Kissat both UNSAT; the 2.4 GB DRAT was not checked | `results/CYC/C4` |
-| Cyclic k_max(47) = 11 | cube-and-conquer over 29 cubes, coverage checked, proofs unchecked | `results/CYC/C0` |
-| n = 44, independent second split | CYCPAT split (19 of 21 cases) plus PUSH/N44C in progress | `results/CYCPAT`, `results/PUSH/N44C` |
+| Cyclic k_max(35), k_max(38) | also LRAT checked by cake_lpr, for a second encoder and for C1 without lex-leader | `results/PUSH/CERT` |
+| Cyclic k_max(42) = 10 | LRAT checked by cake_lpr, two encoders | `results/PUSH/CERT` |
+| Cyclic k_max(47) = 11 | 29 cubes, each LRAT checked by cake_lpr, two encoders; coverage re-checked | `results/PUSH/CERT` |
+| k_max(44) = 10, independent second proof | CYCPAT's plain encoding, 476 leaves, all LRAT checked by cake_lpr (plus a 177-leaf tree with extra symmetry breaking) | `results/PUSH/N44C` |
+| **k_max(48) = 11 (Theorem 44)** | 5075 leaves LRAT checked by cake_lpr; 57 branches covered by the u = −1 mirror lemma; cover checked by `covercheck.py`; relies on C1's encoder and lex-leader | `results/PUSH/N48` |
 | n/4 solution-orbit counts | complete SAT enumeration with blocking (solver) | `results/CYCPAT` |
 | Proposition 4 (linear rules) | paper proof; audited (PUSH/AUDIT §1.6), numerically tested (3286 instances) | `results/CYCPAT/REPORT.md` §6.3, `results/PUSH/AUDIT` |
 | Lemma 3 (multiplier action) | paper proof (injectivity added); audited; 9886 images checked independently | CYCPAT §4, PUSH/AUDIT §1.5 |
@@ -150,12 +159,14 @@ Applied the PUSH/AUDIT report (`results/PUSH/AUDIT/AUDIT.md`) and the new PUSH r
 ## TODO before submission
 - [ ] Read Sárközy–Selkow (2006) and BEGS (1991, *Further results…*) in full; look up Li–Ning–Xie.
 - [x] Independent audit (PUSH/AUDIT): applied. Remaining [B]/[C] notes are in AUDIT.md.
-- [ ] When PUSH/CERT, N44C and N48 finish (2026-10-25 16:00Z), update n = 42, 47 and 48 and the n = 44 cross-check (TODO markers in main.tex).
+- [x] PUSH/CERT, N44C and N48 folded in (2026-10-26): k_max(48) = 11, second n = 44 proof, n = 42 and 47 checked.
 - [ ] Verify the pages of the Kissat and cake_lpr bib entries (marked TODO).
 - [x] The CYC wave finished on 2026-10-25. k_max(44) is still open; the text says so.
 - [x] n = 39 cyclic UNSAT re-checked with drat-trim (CYC/C2).
-- [ ] Re-check the n = 38 LRAT with a standard checker (cake_lpr), and the n = 42 DRAT with more time.
-- [ ] Finish n = 44, k = 11: the open cubes and sub-cases (`results/CYCPAT/REPORT.md` §10, `results/CYC/C1`).
+- [x] n = 38 and n = 42 re-checked with standard checkers (PUSH/CERT).
+- [x] n = 44, k = 11 finished, twice (PUSH/N44A–C).
+- [ ] Optional: run N48's 57 mirror branches directly, so that k_max(48) no longer needs the u = −1 lemma (about 2 h on 4 cores).
+- [ ] Optional: n = 52, 56 at k = n/4 with N48's offset split.
 - [ ] Optional: DRAT for the (12, 41) cubes Δ = 7, 8, 9, which would give a fully certified M(12).
 - [ ] Optional: Lean `decide` certificates for the lower bounds n ≤ 30.
 - [ ] Authorship, acknowledgements and the AI-assistance disclosure are the author's decision;

@@ -36,11 +36,12 @@ CYCLIC_EXACT = {
         13: 3, 14: 3, 15: 4, 16: 4, 17: 4, 18: 5, 19: 5, 20: 5, 21: 6, 22: 5,
         23: 6, 24: 6, 25: 6, 26: 6, 27: 7, 28: 7, 29: 7, 30: 7, 31: 8}.items()},
     **{n: (k, DRAT) for n, k in {32: 8, 33: 8, 34: 8, 36: 9, 37: 9, 39: 9, 40: 10, 41: 10}.items()},
-    35: (8, "DRAT; LRAT, 2nd encoder"),
-    38: (9, "DRAT; LRAT, 2nd encoder"),
-    42: (10, CAKE),
-    44: (10, CAKE + ", 24 leaves"),
-    47: (11, CAKE + ", 29 cubes"),
+    35: (8, "DRAT; LRAT, 2 more encodings"),
+    38: (9, "DRAT; LRAT, 2 more encodings"),
+    42: (10, CAKE + ", 2 encoders"),
+    44: (10, CAKE + ", 2 independent splits"),
+    47: (11, CAKE + ", 29 cubes, 2 encoders"),
+    48: (11, CAKE + r", 5075 leaves; mirror lemma"),
 }
 
 
