@@ -30,3 +30,7 @@
 {"n": 47, "k": 12, "cfg": "lex=1,trans=1,kissat,seed=0,opt=--unsat,cube=2,3,4,-5,-6,-7,8", "res": "UNSAT", "secs": 576.5}
 {"n": 47, "k": 12, "cfg": "lex=1,trans=1,kissat,seed=0,opt=--unsat,cube=2,3,4,-5,-6,-7,-8", "res": "UNSAT", "secs": 499.1}
 {"n": 47, "k": 12, "cfg": "lex=1,trans=1,kissat,seed=0,opt=--unsat,cube=2,3,4,5,-6,-7,-8", "res": "UNKNOWN", "secs": 1500.0}
+{"n": 47, "k": 12, "cfg": "lex=1,trans=1,kissat,seed=0,opt=--unsat,cube=2,3,4,5,-6,-7,-8,9,10", "res": "UNSAT", "secs": 180.5}
+{"n": 47, "k": 12, "cfg": "lex=1,trans=1,kissat,seed=0,opt=--unsat,cube=2,3,4,5,-6,-7,-8,9,-10", "res": "UNSAT", "secs": 309.7}
+{"n": 47, "k": 12, "cfg": "lex=1,trans=1,kissat,seed=0,opt=--unsat,cube=2,3,4,5,-6,-7,-8,-9,-10", "res": "UNSAT", "secs": 262.1}
+{"n": 47, "k": 12, "cfg": "lex=1,trans=1,kissat,seed=0,opt=--unsat,cube=2,3,4,5,-6,-7,-8,-9,10", "res": "UNSAT", "secs": 342.3}
