@@ -1,0 +1,6 @@
+n=13 k=3  sym=0 count=4420  sym=1 count=340  sym=3 count=82
+n=14 k=3  sym=0 count=8596  sym=1 count=614  sym=3 count=206
+n=15 k=4  sym=0 count=1380  sym=1 count=92  sym=3 count=30
+n=16 k=4  sym=0 count=7424  sym=1 count=464  sym=3 count=116
+n=17 k=4  sym=0 count=51952  sym=1 count=3056  sym=3 count=526
+n=18 k=5  sym=0 count=108  sym=1 count=6  sym=3 count=2
