@@ -1,0 +1,566 @@
+{
+ "6": {
+  "edges": 4,
+  "task": "AFFARB",
+  "file": "AFFARB/certs.json",
+  "type": "search"
+ },
+ "9": {
+  "edges": 23,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "search"
+ },
+ "10": {
+  "edges": 30,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "symmetric"
+ },
+ "11": {
+  "edges": 34,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "search"
+ },
+ "12": {
+  "edges": 40,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "search"
+ },
+ "13": {
+  "edges": 47,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "search"
+ },
+ "14": {
+  "edges": 55,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "search"
+ },
+ "15": {
+  "edges": 63,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "symmetric"
+ },
+ "16": {
+  "edges": 70,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "symmetric"
+ },
+ "17": {
+  "edges": 78,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "symmetric"
+ },
+ "18": {
+  "edges": 90,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "symmetric"
+ },
+ "19": {
+  "edges": 96,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "symmetric"
+ },
+ "20": {
+  "edges": 109,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "search"
+ },
+ "21": {
+  "edges": 126,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "symmetric"
+ },
+ "22": {
+  "edges": 133,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "search"
+ },
+ "23": {
+  "edges": 141,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "search"
+ },
+ "24": {
+  "edges": 150,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "symmetric"
+ },
+ "25": {
+  "edges": 160,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "symmetric"
+ },
+ "26": {
+  "edges": 169,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "symmetric"
+ },
+ "27": {
+  "edges": 189,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "28": {
+  "edges": 196,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "29": {
+  "edges": 210,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "symmetric"
+ },
+ "30": {
+  "edges": 225,
+  "task": "LB",
+  "file": "LB/certs.json",
+  "type": "symmetric"
+ },
+ "31": {
+  "edges": 248,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "32": {
+  "edges": 256,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "33": {
+  "edges": 264,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "34": {
+  "edges": 274,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "search"
+ },
+ "35": {
+  "edges": 288,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "search"
+ },
+ "36": {
+  "edges": 324,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "37": {
+  "edges": 333,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "38": {
+  "edges": 342,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "39": {
+  "edges": 351,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "40": {
+  "edges": 400,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "41": {
+  "edges": 410,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "42": {
+  "edges": 420,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "43": {
+  "edges": 430,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "44": {
+  "edges": 440,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "45": {
+  "edges": 495,
+  "task": "CYC",
+  "file": "CYC/C6/solutions.json",
+  "type": "cyclic"
+ },
+ "46": {
+  "edges": 506,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "47": {
+  "edges": 518,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "search"
+ },
+ "48": {
+  "edges": 528,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "49": {
+  "edges": 539,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "50": {
+  "edges": 550,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "51": {
+  "edges": 561,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "52": {
+  "edges": 624,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "53": {
+  "edges": 689,
+  "task": "CYC",
+  "file": "CYC/C4/certs.json",
+  "type": "cyclic"
+ },
+ "54": {
+  "edges": 648,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "55": {
+  "edges": 660,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "56": {
+  "edges": 728,
+  "task": "CYC",
+  "file": "CYC/C4/certs.json",
+  "type": "cyclic"
+ },
+ "57": {
+  "edges": 741,
+  "task": "CYC",
+  "file": "CYC/C7/certs.json",
+  "type": "cyclic"
+ },
+ "58": {
+  "edges": 754,
+  "task": "CYC",
+  "file": "CYC/C0/certs.json",
+  "type": "cyclic"
+ },
+ "59": {
+  "edges": 767,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "60": {
+  "edges": 780,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "61": {
+  "edges": 915,
+  "task": "CYC",
+  "file": "CYC/C2/certs.json",
+  "type": "cyclic"
+ },
+ "62": {
+  "edges": 806,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "cyclic"
+ },
+ "63": {
+  "edges": 819,
+  "task": "CYC",
+  "file": "CYC/C4/certs.json",
+  "type": "cyclic"
+ },
+ "64": {
+  "edges": 835,
+  "task": "CONSTR",
+  "file": "CONSTR/certs.json",
+  "type": "search"
+ },
+ "65": {
+  "edges": 910,
+  "task": "CYC",
+  "file": "CYC/C5/certs.json",
+  "type": "cyclic"
+ },
+ "67": {
+  "edges": 938,
+  "task": "CYC",
+  "file": "CYC/C7/certs.json",
+  "type": "cyclic"
+ },
+ "68": {
+  "edges": 952,
+  "task": "CYC",
+  "file": "CYC/C7/certs.json",
+  "type": "cyclic"
+ },
+ "69": {
+  "edges": 966,
+  "task": "CYC",
+  "file": "CYC/C0/certs.json",
+  "type": "cyclic"
+ },
+ "70": {
+  "edges": 1050,
+  "task": "CYC",
+  "file": "CYC/C1/certs.json",
+  "type": "cyclic"
+ },
+ "71": {
+  "edges": 1065,
+  "task": "CYC",
+  "file": "CYC/C2/certs.json",
+  "type": "cyclic"
+ },
+ "72": {
+  "edges": 1080,
+  "task": "CYC",
+  "file": "CYC/C0/certs.json",
+  "type": "cyclic"
+ },
+ "73": {
+  "edges": 1057,
+  "task": "CONSTR",
+  "file": "CONSTR/certs_large.json",
+  "type": "search"
+ },
+ "74": {
+  "edges": 1110,
+  "task": "CYC",
+  "file": "CYC/C4/certs.json",
+  "type": "cyclic"
+ },
+ "75": {
+  "edges": 1125,
+  "task": "CYC",
+  "file": "CYC/C5/certs.json",
+  "type": "cyclic"
+ },
+ "76": {
+  "edges": 1216,
+  "task": "CYC",
+  "file": "CYC/C1/certs.json",
+  "type": "cyclic"
+ },
+ "78": {
+  "edges": 1248,
+  "task": "CYC",
+  "file": "CYC/C7/certs.json",
+  "type": "cyclic"
+ },
+ "79": {
+  "edges": 1264,
+  "task": "CYC",
+  "file": "CYC/C0/certs.json",
+  "type": "cyclic"
+ },
+ "80": {
+  "edges": 1280,
+  "task": "CYC",
+  "file": "CYC/C2/certs.json",
+  "type": "cyclic"
+ },
+ "81": {
+  "edges": 1296,
+  "task": "CYC",
+  "file": "CYC/C1/certs.json",
+  "type": "cyclic"
+ },
+ "82": {
+  "edges": 1312,
+  "task": "CYC",
+  "file": "CYC/C2/certs.json",
+  "type": "cyclic"
+ },
+ "83": {
+  "edges": 1325,
+  "task": "CONSTR",
+  "file": "CONSTR/certs_large.json",
+  "type": "search"
+ },
+ "86": {
+  "edges": 1376,
+  "task": "CYC",
+  "file": "CYC/C5/certs.json",
+  "type": "cyclic"
+ },
+ "89": {
+  "edges": 1519,
+  "task": "CONSTR",
+  "file": "CONSTR/certs_large.json",
+  "type": "search"
+ },
+ "90": {
+  "edges": 1530,
+  "task": "CYC",
+  "file": "CYC/C0/certs.json",
+  "type": "cyclic"
+ },
+ "93": {
+  "edges": 1674,
+  "task": "CYC",
+  "file": "CYC/C2/certs.json",
+  "type": "cyclic"
+ },
+ "94": {
+  "edges": 800,
+  "task": "AFFARB",
+  "file": "AFFARB/certs.json",
+  "type": "search"
+ },
+ "97": {
+  "edges": 1740,
+  "task": "CONSTR",
+  "file": "CONSTR/certs_large.json",
+  "type": "search"
+ },
+ "99": {
+  "edges": 1881,
+  "task": "CYC",
+  "file": "CYC/C7/certs.json",
+  "type": "cyclic"
+ },
+ "100": {
+  "edges": 1900,
+  "task": "CYC",
+  "file": "CYC/C7/certs.json",
+  "type": "cyclic"
+ },
+ "101": {
+  "edges": 1867,
+  "task": "CONSTR",
+  "file": "CONSTR/certs_large.json",
+  "type": "search"
+ },
+ "103": {
+  "edges": 1938,
+  "task": "CONSTR",
+  "file": "CONSTR/certs_large.json",
+  "type": "search"
+ },
+ "106": {
+  "edges": 992,
+  "task": "AFFARB",
+  "file": "AFFARB/certs.json",
+  "type": "search"
+ },
+ "107": {
+  "edges": 2065,
+  "task": "CONSTR",
+  "file": "CONSTR/certs_large.json",
+  "type": "search"
+ },
+ "109": {
+  "edges": 2136,
+  "task": "CONSTR",
+  "file": "CONSTR/certs_large.json",
+  "type": "search"
+ },
+ "113": {
+  "edges": 2277,
+  "task": "CONSTR",
+  "file": "CONSTR/certs_large.json",
+  "type": "search"
+ },
+ "118": {
+  "edges": 1195,
+  "task": "AFFARB",
+  "file": "AFFARB/certs.json",
+  "type": "search"
+ },
+ "121": {
+  "edges": 2568,
+  "task": "CONSTR",
+  "file": "CONSTR/certs_large.json",
+  "type": "search"
+ },
+ "122": {
+  "edges": 1267,
+  "task": "AFFARB",
+  "file": "AFFARB/certs.json",
+  "type": "search"
+ },
+ "125": {
+  "edges": 2716,
+  "task": "CONSTR",
+  "file": "CONSTR/certs_large.json",
+  "type": "search"
+ },
+ "127": {
+  "edges": 2798,
+  "task": "CONSTR",
+  "file": "CONSTR/certs_large.json",
+  "type": "search"
+ },
+ "128": {
+  "edges": 2831,
+  "task": "CONSTR",
+  "file": "CONSTR/certs_large.json",
+  "type": "search"
+ }
+}

@@ -1,0 +1,501 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amssymb,amsmath,mathtools}
+\usepackage{longtable,booktabs}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{question}[theorem]{Question}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\M}{M}
+\newcommand{\kmax}{k_{\max}}
+
+\title[Rainbow 4-cycles with $n$ colours]{Exact small values and cyclic constructions\\
+for a rainbow 4-cycle problem of Burr, Erd\H{o}s, Graham and S\'os}
+% TODO(author): author list, affiliations, and whether/how to disclose AI assistance.
+\author{[Author]}
+\date{Draft, \today}
+
+\begin{document}
+
+\begin{abstract}
+Let $\M(n)$ be the largest number of edges of an $n$-vertex graph whose edges can be
+coloured with $n$ colours so that every $4$-cycle receives four distinct colours.
+Burr, Erd\H{o}s, Graham and S\'os asked whether $\M(n)\ge\varepsilon n^2$ for some
+$\varepsilon>0$ (Erd\H{o}s problem \#810), and believed not. We determine $\M(n)$ for all
+$n\le 12$, the new values being $\M(10)=30$, $\M(11)=34$ and $\M(12)=40$, by exhaustive
+enumeration, independently implemented several times, together with SAT proofs that are
+checked by a DRAT proof checker for $n\le 11$. This confirms that the lower bounds found by
+AlphaEvolve for $n\le 12$ are optimal.
+We give explicit certificates improving the known lower bounds for $14\le n\le 25$ and
+extending them to $n\le 128$. Many of the best constructions for $26\le n\le 64$ are
+\emph{cyclic orbit colourings}: Cayley graphs on $\Z_n$ whose colouring is equivariant under
+rotation. For this family we compute the exact optimum for $12\le n\le 41$, $n\ne35$; it
+equals exactly $n/4$ orbits, that is $n^2/4$ edges, for $n=12,16,\dots,40$. We also prove
+that offset rules that are linear, or piecewise affine with a bounded number of pieces, give
+only $o(n)$ orbits. The data are consistent with the expected negative answer.
+\end{abstract}
+
+\maketitle
+
+% =====================================================================
+\section{Introduction}
+
+For graphs $G$ and $L$, an edge colouring of $G$ is \emph{$L$-rainbow} if every copy of
+$L$ in $G$ (not necessarily induced) has all its edges coloured differently. Burr,
+Erd\H{o}s, Graham and S\'os~\cite{BEGS89} introduced
+\[
+  \chi_S(n,e,L)=\min\{r:\ \text{some $n$-vertex graph with $e$ edges has an $L$-rainbow $r$-colouring}\}
+\]
+and studied it for complete graphs, paths, cycles and other small graphs. For $L=C_4$ the natural
+threshold question is how many edges an $n$-vertex graph can have if $n$ colours suffice:
+\[
+  \M(n)=\max\{e:\ \chi_S(n,e,C_4)\le n\}.
+\]
+
+\begin{question}[{\cite[p.~273]{BEGS89}; Erd\H{o}s problem \#810~\cite{EP810}}]
+Is there $\varepsilon>0$ such that $\M(n)\ge\varepsilon n^2$ for all large $n$?
+\end{question}
+
+Burr, Erd\H{o}s, Graham and S\'os believed that the answer is negative.
+They noted that $\M(n)\ge c\,g(n;7,4)$, where $g(n;7,4)$ is the largest number of triples
+on $n$ points with no $7$ points spanning $4$ triples. Whether $g(n;7,4)=o(n^2)$ is itself
+open (Erd\H{o}s problem \#1178). For $P_4$ in place of $C_4$ they showed that the answer is
+negative, via the Ruzsa--Szemer\'edi theorem~\cite{RS78}.
+Sárközy and Selkow~\cite{SS06} proved that $\chi_S(n,\varepsilon n^2,L)/n\to\infty$ for every
+connected bipartite $L$ that is neither a star nor complete bipartite. This excludes
+$C_4=K_{2,2}$, and in~\cite{BEGS89} the case $C_4$ is called ``one of the most vexing questions''.
+Tao~\cite{TaoForum} observed that a negative answer would imply a finite-field
+Ajtai--Szemer\'edi theorem, via the colouring $(a,b)\mapsto a+b$ of a bipartite graph on
+$\mathbb F_2^d\times\mathbb F_2^d$.
+
+On the problem's discussion forum, Tao~\cite{TaoAE} reported dense constructions for
+$4\le n\le 25$ found with AlphaEvolve~\cite{AE25}, with no guarantee of optimality. He
+suggested computing exact values with SAT solvers. This note does that, and also pushes the
+constructions further.
+
+\subsection*{Results}
+\begin{enumerate}
+\item \textbf{Exact values} (Theorem~\ref{thm:exact}): $\M(n)$ for every $n\le12$
+  (Table~\ref{tab:exact}), including $\M(10)=30$, $\M(11)=34$, $\M(12)=40$.
+  We also give the number of extremal graphs for $7\le n\le 11$.
+\item \textbf{Lower bounds} (Table~\ref{tab:lb}): explicit certificates for every
+  $13\le n\le 64$ and many $n\le128$. They improve the AlphaEvolve values for all
+  $14\le n\le 25$; for example $\M(21)\ge126=0.286\,n^2$.
+\item \textbf{Cyclic orbit colourings} (Section~\ref{sec:cyclic}): we compute the exact
+  optimum $\kmax(n)$ of this family for $12\le n\le 41$, $n\ne 35$.
+  \begin{itemize}
+  \item $\kmax(4m)=m$ for $3\le m\le 10$, so $\M(n)\ge n^2/4$ at $n=12,16,\dots,40$.
+  \item The number of optimal solutions at $k=n/4$ collapses as $n$ grows, to $4$
+    (up to symmetry) at $n=40$, and no $n/4$ solution has been found for $44\le n\le100$.
+  \item Proposition~\ref{prop:linear}: rules with linear or boundedly piecewise-affine
+    offsets give only $o(n)$ orbits.
+  \end{itemize}
+\end{enumerate}
+
+All certificates, programs, solver logs and proof-checker outputs are in a public
+repository~\cite{Repo} (see Appendix~\ref{app:repro}). Every certificate quoted here is
+re-verified by an independent, deliberately simple checker when the tables are built.
+
+% =====================================================================
+\section{Preliminaries}
+
+All graphs are simple. A colouring \emph{uses $k$ colours} if it takes values in
+$\{0,\dots,k-1\}$. Call $G$ \emph{$k$-good} if it has a $C_4$-rainbow colouring with $k$
+colours; thus $\M(n)$ is the largest number of edges of an $n$-good graph on $n$ vertices.
+
+\begin{definition}
+The \emph{conflict graph} $Q(G)$ has vertex set $E(G)$. Two distinct edges are adjacent in
+$Q(G)$ if they lie on a common $4$-cycle of $G$. Concretely:
+\begin{itemize}
+\item adjacent edges $uv,vw$ conflict iff $u$ and $w$ have a common neighbour other than $v$;
+\item disjoint edges $uv,xy$ conflict iff $ux,vy\in E(G)$ or $uy,vx\in E(G)$.
+\end{itemize}
+\end{definition}
+
+A colouring is $C_4$-rainbow exactly when it is a proper colouring of $Q(G)$. Hence $G$ is
+$k$-good iff $\chi(Q(G))\le k$.
+
+\begin{lemma}\label{lem:hered}
+If $G$ is $k$-good then so is every subgraph of $G$.
+In particular, $\M(n)=e$ iff some $e$-edge $n$-vertex graph is $n$-good and no
+$(e+1)$-edge $n$-vertex graph is $n$-good.
+\end{lemma}
+
+\begin{proof}
+Every $4$-cycle of a subgraph is a $4$-cycle of $G$. The second statement follows because
+deleting edges preserves goodness.
+\end{proof}
+
+Trivially $\M(n+1)\ge \M(n)+1$: add a pendant edge, which lies on no $4$-cycle.
+Also $\M(n)\ge \mathrm{ex}(n,C_4)$, since a $C_4$-free graph can use a single colour.
+
+% =====================================================================
+\section{Exact values for $n\le12$}
+
+\begin{theorem}\label{thm:exact}
+The values of $\M(n)$ for $n\le 12$ are as in Table~\ref{tab:exact}.
+\end{theorem}
+
+\begin{table}[ht]
+\centering
+\caption{Exact values. ``Extremal'' is the number of $n$-good graphs with $\M(n)$ edges up
+to isomorphism. E = exhaustive enumeration (\S\ref{sec:enum}), S = SAT
+(\S\ref{sec:sat}), L = Lean kernel check~\cite{Repo}.}
+\label{tab:exact}
+\begin{tabular}{rrrp{0.55\textwidth}}
+\toprule
+$n$ & $\M(n)$ & extremal & upper bound $\M(n)+1$ excluded by\\
+\midrule
+0--1 & 0 & -- & trivial\\
+2 & 1 & -- & trivial\\
+3 & 3 & -- & trivial\\
+4 & 5 & -- & L, S\\
+5 & 7 & -- & L, S\\
+6 & 11 & -- & L, E, S\\
+7 & 14 & 5 & E, S\\
+8 & 17 & 45 & E, S\\
+9 & 23 & 3 & E, S (DRAT)\\
+10 & 30 & 2 & E, S (DRAT, all cubes)\\
+11 & 34 & 131 & E, S (DRAT, all cubes)\\
+12 & 40 & -- & E (pruned, 2 checkers; unpruned, 4 checkers); S (DRAT, 9 of 12 cubes)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The lower bounds are explicit certificates. For $n\le 12$ they were kernel-checked in Lean
+with \texttt{decide}~\cite{Repo}, and the AlphaEvolve constructions~\cite{TaoAE} reach the
+same values. The work is in the upper bounds, which we establish by three independent routes.
+
+\subsection{Pruned orderly generation}\label{sec:enum}
+We enumerate graphs up to isomorphism with \texttt{geng}~\cite{nauty}.
+\begin{itemize}
+\item \textbf{Pruning.} We use its \texttt{PRUNE} hook to reject every intermediate graph
+  that is not $n$-good, where $n$ is the final number of vertices. \texttt{geng} adds vertices
+  one at a time, so each intermediate graph is an induced subgraph of all its descendants. By
+  Lemma~\ref{lem:hered} the pruning is therefore sound: no $n$-good output graph is lost.
+\item \textbf{Checkers.} Goodness is decided by two independently written programs.
+  Checker~A builds $Q(G)$ as bit masks, strips its $n$-core, and runs a clique bound followed
+  by exact DSATUR. Checker~B enumerates the $4$-cycles explicitly and backtracks on the
+  most-constrained edge.
+\item \textbf{Validation.} Pruned and unpruned runs give identical sets of good graphs for
+  $6\le n\le 11$, at $e=\M(n)$ and $e=\M(n)+1$. Total class counts produced by \texttt{geng} agree with a
+  P\'olya count, for example $71{,}318$, $24{,}630{,}887$, $15{,}108{,}047$ and
+  $2{,}411{,}961{,}516$ isomorphism classes for $(n,e)=(10,31),(11,34),(11,35),(12,41)$.
+\item \textbf{Main run.} The run for $(12,41)$ used $512$ shards and $9{,}165$ CPU-seconds,
+  and output no graph. Checker~B was run separately on the graphs of maximum degree at most
+  $9$ (also all $512$ shards, no output). The cases $\Delta\in\{10,11\}$ are covered by the
+  SAT certificates of \S\ref{sec:sat}.
+\end{itemize}
+
+\subsection{Unpruned enumeration with four independent checkers}
+To remove any dependence on the pruning, the space of $(12,41)$ graphs was split by
+\texttt{geng}'s residue classes into four parts.
+\begin{itemize}
+\item \textbf{Checkers.} Each part was processed by a separately written checker, with no
+  shared code.
+\item \textbf{Validation.} Each checker first reproduced the number of good graphs at
+  $e=\M(n)$ and $e=\M(n)+1$ for $7\le n\le 11$: namely $5,45,3,2,131$ good graphs at
+  $e=\M(n)$ and none at $e=\M(n)+1$.
+\item \textbf{Totals.} The four parts contained $605{,}033{,}974$, $603{,}779{,}517$,
+  $601{,}165{,}216$ and $601{,}982{,}809$ graphs. These sum to exactly the P\'olya count
+  $2{,}411{,}961{,}516$.
+\item \textbf{Outcome.} None of the graphs is $12$-good. All but $753$ of them contain a
+  $13$-clique in $Q(G)$, found by exact branch and bound; the remaining $753$ were refuted by
+  exhaustive colouring search.
+\end{itemize}
+
+\subsection{SAT with checked proofs}\label{sec:sat}
+For given $n$ and $e$, the encoding uses three groups of variables.
+\begin{itemize}
+\item Edge variables $x_{uv}$ and colour variables $y_{uv,c}$, with at least one colour per
+  present edge.
+\item For each $4$-cycle $C$ and each pair $\{f,f'\}$ of its edges, a variable $z_{f,f'}$
+  forced true when the other two edges of $C$ are present. Then
+  $\neg z_{f,f'}\vee\neg y_{f,c}\vee\neg y_{f',c}$ for every colour $c$.
+\item A totalizer for $\sum x_{uv}\ge e$.
+\end{itemize}
+
+Symmetry is broken by four constraints.
+\begin{enumerate}
+\item Vertex $0$ has maximum degree, and its neighbours come first.
+\item Degrees are non-increasing within the neighbourhood of $0$ and within its complement.
+\item A lexicographic row comparison for transpositions of equal-degree vertices in the same
+  block~\cite{CMPS19}.
+\item First-occurrence ordering of colours.
+\end{enumerate}
+Vertex relabelling is chosen from $G$ alone and colour relabelling afterwards, which makes
+the combination sound. We also tested soundness exhaustively: every one of the $127$ classes
+of $6$-good graphs on $6$ vertices has an accepted labelling, and no non-good graph is
+accepted.
+
+The search is split into \emph{cubes} by the maximum degree $\Delta$, from $0$ to $n-1$.
+Each cube was solved by CaDiCaL~\cite{CaDiCaL}, and its DRAT proof was checked by
+\texttt{drat-trim}~\cite{dratTrim}.
+\begin{itemize}
+\item For $(10,31)$ and $(11,35)$ all cubes are refuted with checked proofs. The hardest is
+  $(11,35)$, $\Delta=7$, with $926$\,s to solve and $1645$\,s to check.
+\item For $(12,41)$ the cubes $\Delta\in\{0,\dots,6,10,11\}$ are refuted with checked proofs.
+  The cubes $\Delta=7,8,9$ remain, and we estimate them at a few hundred core-hours.
+\end{itemize}
+
+\begin{remark}
+Two facts show how tight these thresholds are.
+\begin{itemize}
+\item At $(11,35)$ only $2$ of the $15{,}108{,}047$ graphs avoid a $12$-clique in $Q(G)$.
+\item One of the $131$ extremal $11$-vertex graphs is already $10$-good.
+\end{itemize}
+Among the good $(12,40)$ graphs found, all have maximum degree $7$, $8$ or $9$. We found
+$3{,}330$ with $\Delta\le9$, a count made by one method only.
+\end{remark}
+
+% =====================================================================
+\section{Lower bounds for $13\le n\le128$}
+
+Table~\ref{tab:lb} lists the best certificates found. The methods were tabu search on
+(edge set, colouring) pairs; SAT with a prescribed semiregular automorphism acting on
+vertices and colours; and the cyclic family of Section~\ref{sec:cyclic}. ``Type'' records
+whether the certificate is rotation-equivariant on $\Z_n$ (cyclic), was found with an
+imposed automorphism (symmetric), or neither (search). All entries are lower bounds only.
+
+{\small
+\begin{longtable}{rrrrl}
+\caption{Lower bounds for $\M(n)$, with AlphaEvolve values from~\cite{TaoAE} for
+  comparison.}\label{tab:lb}\\
+\toprule
+$n$ & AlphaEvolve & this note & $e/n^2$ & type\\
+\midrule
+\endfirsthead
+\toprule
+$n$ & AlphaEvolve & this note & $e/n^2$ & type\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\input{tables/lower_bounds.tex}
+\end{longtable}
+}
+
+The ratio $e/n^2$ stays near $1/4$ up to $n\approx 40$ and then drifts down to about $0.17$
+at $n=128$. Search effort per $n$ was much smaller at large $n$. Fitting decaying models
+($cn^{2-\delta}$, $cn^2/\log n$, $cn^2e^{-a\sqrt{\log n}}$) to this data gives
+extrapolations that disagree widely, so we draw no asymptotic conclusion from them.
+
+% =====================================================================
+\section{Cyclic orbit colourings}\label{sec:cyclic}
+
+Let $H=\lceil n/2\rceil-1$. For $D\subseteq\{1,\dots,H\}$ and $g:D\to\Z_n$, define the
+graph $\Gamma(n,D,g)$ on $\Z_n$:
+\begin{itemize}
+\item its edges are $\{i,i+d\}$ for $i\in\Z_n$ and $d\in D$;
+\item the edge $\{i,i+d\}$ has colour $i+g(d)$.
+\end{itemize}
+It has $n|D|$ edges and uses $n$ colours, and rotation $i\mapsto i+1$ is an automorphism
+that shifts every colour by $1$. Let $\kmax(n)$ be the largest $|D|$ for which some $g$
+makes $\Gamma(n,D,g)$ $C_4$-rainbow. Then $\M(n)\ge n\,\kmax(n)$.
+
+\begin{lemma}\label{lem:walk}
+Write each $4$-cycle through $0$ as a closed walk $0\to v_1\to v_2\to v_3\to0$ on
+distinct vertices, with signed steps $\pm d$, $d\in D$.
+\begin{itemize}
+\item A step $v\to v+d$ uses the edge $\{v,v+d\}$, of colour $v+g(d)$.
+\item A step $v\to v-d$ uses $\{v-d,v\}$, of colour $(v-d)+g(d)$.
+\end{itemize}
+Thus each edge on the walk has colour $o+g(d)$ for an offset $o$ determined by the walk.
+Two of its edges, with orbits $d_a\ne d_b$ and offsets $o_a,o_b$, have equal colours iff
+$g(d_a)-g(d_b)\equiv o_b-o_a$. Edges in the same orbit never collide. Finally,
+$\Gamma(n,D,g)$ is $C_4$-rainbow iff no such collision occurs on any $4$-cycle through $0$.
+\end{lemma}
+
+\begin{proof}
+The colour formulas are the definition. Rotation by $t$ maps a $4$-cycle to a $4$-cycle and
+adds $t$ to every colour, which preserves equal colours; this gives the reduction to cycles
+through $0$. Two distinct edges in the same orbit have distinct offsets, so their colours
+differ.
+\end{proof}
+
+\begin{lemma}\label{lem:mult}
+Let $u\in\Z_n^\times$. For $d\in D$ write $ud\equiv\sigma e$ with $e\in\{1,\dots,H\}$ and
+$\sigma=\pm1$. Define
+\[
+  g'(e)=\begin{cases} u\,g(d) & \text{if } \sigma=+1,\\ e+u\,g(d) & \text{if } \sigma=-1.\end{cases}
+\]
+If $\Gamma(n,D,g)$ is $C_4$-rainbow, then so is $\Gamma(n,D',g')$, where
+$D'=\{e: d\in D\}$.
+\end{lemma}
+
+\begin{proof}
+Apply the vertex map $i\mapsto ui$ and the colour map $c\mapsto uc$. Both are bijections, so
+rainbow $4$-cycles go to rainbow $4$-cycles. The edge $\{i,i+d\}$ of colour $i+g(d)$ goes to
+$\{ui,ui+ud\}$, of colour $ui+u\,g(d)$.
+\begin{itemize}
+\item If $ud\equiv e$, this is the edge $\{j,j+e\}$ with $j=ui$, of colour $j+u\,g(d)$.
+\item If $ud\equiv -e$, it is $\{j,j+e\}$ with $j=ui-e$, of colour $j+e+u\,g(d)$.
+\end{itemize}
+\end{proof}
+
+Together with the colour translations $g\mapsto g+t$, Lemma~\ref{lem:mult} gives the
+symmetry group we use for symmetry breaking (lexicographic leaders of the orbit-presence
+vector) and for listing solutions up to symmetry. We also checked the lemma numerically: all
+$9{,}886$ images of the optimal solutions for $n\in\{20,21,24,27,28,31,32\}$ are valid.
+Dropping the term $e$ in the case $\sigma=-1$ fails for every $u\ne1$ at $n=28$ and $40$.
+
+\subsection{Exact optima}
+Table~\ref{tab:cyc} gives $\kmax(n)$. Each exact value combines a solution at $\kmax(n)$
+with an UNSAT result at $\kmax(n)+1$.
+\begin{itemize}
+\item For $n\le 36$ the UNSAT results are solver results, not DRAT-checked. For $n\le 28$ an
+  independent backtracking counter (no SAT, no symmetry reduction) agrees with every count.
+\item For $n=37,40,41$ the UNSAT proofs were checked by \texttt{drat-trim}.
+\item For $n=38$ the LRAT proof was checked by a small checker written for the task. For
+  $n=39$ the UNSAT result is unchecked.
+\end{itemize}
+
+{\small
+\begin{longtable}{rrrl}
+\caption{Cyclic orbit colourings: $\kmax(n)$ (exact) or the best $k$ found.}\label{tab:cyc}\\
+\toprule
+$n$ & $\kmax(n)$ & $k/n$ & status\\
+\midrule
+\endfirsthead
+\toprule
+$n$ & $\kmax(n)$ & $k/n$ & status\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\input{tables/cyclic.tex}
+\end{longtable}
+}
+
+\begin{remark}[$n\equiv0\pmod 4$]
+For $n=12,16,20,24,28,32,36,40$ we have exactly $\kmax(n)=n/4$, and hence
+$\M(n)\ge n^2/4$. The number of solutions at $k=n/4$, up to the group generated by
+multipliers and colour translations, is
+\[
+  24,\ 58,\ 165,\ 362,\ 285,\ 128,\ 59,\ 4 \qquad (n=12,16,\dots,40).
+\]
+These counts come from complete SAT enumeration with blocking clauses. They peak at $n=24$
+and fall sharply after that. No solution with $k=n/4$ has been found for any multiple of $4$
+in $[44,100]$.
+% TODO(final CYC wave, 2026-10-25 10:15Z): update with k_max(44) if decided.
+For several odd $n$, $\kmax(n)/n$ exceeds $1/4$ (for example $\kmax(21)=6$ and $\kmax(31)=8$).
+For $n=18,21,31$ the optimal solution is unique up to symmetry.
+\end{remark}
+
+\subsection{Structured rules give $o(n)$ orbits}
+
+The optimal solutions found show no low-degree polynomial structure. Natural rules for $g$
+also fail. The following proposition explains why for linear rules.
+
+\begin{proposition}\label{prop:linear}
+Fix integers $u,v$ with $v\ge1$ and $b=u/v\notin\{0,1\}$. Let $n$ be coprime to $v$.
+Suppose $\Gamma(n,D,g)$ is $C_4$-rainbow and $g(d)\equiv bd\pmod n$ for all $d\in D$.
+Then $D$ contains no set $\{m,\ m+vr,\ m+(v-u)r,\ m+ur\}$ with $r\ge1$,
+$ur\not\equiv0$ and $(v-u)r\not\equiv0\pmod n$.
+Consequently $|D|=o(n)$.
+\end{proposition}
+
+\begin{proof}
+Let $d_1=m+vr$, $d_2=m+(v-u)r$, $d_3=m$ and $d_4=m+ur$, all in $D$. Then
+$d_1-d_2+d_3-d_4=0$.
+\begin{itemize}
+\item The walk with steps $+d_1,-d_2,+d_3,-d_4$ visits $0$, $d_1$, $d_1-d_2=ur$ and
+  $ur+m=d_4$.
+\item These four vertices are distinct. First, $d_1,d_4\not\equiv0$, and $ur\not\equiv0$.
+  Next, $d_1-d_4=(v-u)r\not\equiv0$ and $d_1-ur=d_2\not\equiv0$. Finally,
+  $d_4-ur=m\not\equiv0$.
+\item The first edge has colour $g(d_1)=b(m+vr)=bm+ur$, using $bv\equiv u$. The third edge
+  leaves $ur$ with step $+d_3$, so its colour is $ur+g(d_3)=ur+bm$.
+\end{itemize}
+The two colours are equal, which contradicts rainbowness.
+
+For the consequence, note that $\{0,v,v-u,u\}$ is a fixed finite pattern. By Szemer\'edi's
+theorem~\cite{Sz75}, every subset of $\{1,\dots,H\}$ of density $\delta>0$ contains a copy
+$m+r\cdot\{0,v,v-u,u\}$ with $r\ge1$. By Varnavides' averaging~\cite{Var59} it contains
+$\gg_\delta n^2$ such copies. Only $O(n)$ of them violate the non-degeneracy conditions:
+at most $|u|+|u-v|$ residues $r$ are excluded, each with at most $n$ choices of $m$.
+\end{proof}
+
+\begin{remark}
+For $b=2$ the forbidden pattern is a $4$-term arithmetic progression, so
+$|D|\le r_4(H)$; by the bound of Green and Tao~\cite{GT17} this is
+$O(n(\log n)^{-c})$.
+The proof uses only $g(d_1)$ and $g(d_3)$. Hence the same conclusion holds for any
+$A\subseteq D$ on which $g(d)\equiv bd+c$ for a fixed $c$. So rules in which $g$ is piecewise
+affine on $D$, with boundedly many pieces and slopes of bounded height, give $|D|=o(n)$.
+For slope $b\in\{0,1\}$ such a piece has at most one element.
+\end{remark}
+
+\begin{remark}[Experiments]
+Two further experiments point the same way. Both are evidence, not theorems.
+\begin{itemize}
+\item \emph{Coset rules.} Take $D=\pm cK$ for an odd-order subgroup $K\le\Z_p^\times$; then for
+  colourings invariant under $K$ the colour of an edge is an affine function of its endpoints
+  (for a suitable orientation). These rules achieve
+  $k=(p-1)/4$ at $p=13,29,37,53,61$ and give the new bounds $\M(53)\ge689$ and
+  $\M(61)\ge915$. Every fixed index eventually fails, and the best such $k$ grows roughly
+  like $p^{3/4}$.
+\item \emph{Doubling.} Lifting an optimal $D$ at $m=12,16,20$ to
+  $D\cup(m-D)\subseteq\Z_{2m}$ never admits a valid $g$.
+\end{itemize}
+\end{remark}
+
+% =====================================================================
+\section{Other families}
+
+Sum colourings on $\Z_n$ give at most $|E|\approx r_3(n)\,n/2=o(n^2)$ edges, by Roth's theorem:
+$\{i,j\}$ is an edge iff $i+j\in S$, with colour $i+j$. In our range they achieve only
+$0.10$--$0.13\,n^2$. Allowing an arbitrary edge set with colour $i+j$ gives about
+$0.17$--$0.21\,n^2$. Bipartite affine colourings over $\mathbb F_p$ use $p-1$ colours on
+$2p$ vertices, the colour class of slope $a$ being a partial map $x\mapsto ax+\beta(a)$. The
+best we found have $m/p^2$ falling from about $0.48$ at $p=5$ to about $0.30$ at $p=101$,
+that is about $0.075\,n^2$. These relate to the restricted results in~\cite{Repo}.
+The construction of~\cite{BEGS89} from $(7,4)$-free triple systems was also weaker in our
+range.
+
+% =====================================================================
+\section{Open problems}
+
+\begin{enumerate}
+\item Determine $\M(13)$; we know $\M(13)\ge 47$.
+  \begin{itemize}
+  \item Pruned enumeration of the $584{,}089{,}835{,}857$ classes of $(13,48)$ graphs is
+    estimated at $10^4$ CPU-hours.
+  \item Splitting by maximum degree and using SAT cubes for large $\Delta$ may be cheaper.
+  \end{itemize}
+\item Give a fully certified proof of $\M(12)=40$, by checking the cubes $\Delta=7,8,9$.
+\item Is $\kmax(n)=o(n)$? A construction with $\kmax(n)\ge\varepsilon n$ would answer
+  Erd\H{o}s \#810 positively. Is $\kmax(4m)<m$ for some $m$? The first open case is $n=44$.
+\end{enumerate}
+
+% =====================================================================
+\appendix
+\section{Reproducibility}\label{app:repro}
+
+The repository~\cite{Repo}, branch \texttt{bruteforce-2026-10}, contains:
+\begin{itemize}
+\item every certificate, as JSON lists of $(u,v,\text{colour})$ or, for cyclic colourings,
+  of $(d,g(d))$ pairs;
+\item the enumeration and SAT programs;
+\item solver logs and the hashes of the CNF files;
+\item proof-checker outputs.
+\end{itemize}
+The script \texttt{paper/make\_tables.py} re-checks every certificate with a short checker
+that enumerates all $4$-cycles, and regenerates Tables~\ref{tab:lb} and~\ref{tab:cyc}.
+% TODO(author): pin final commit hashes here.
+
+% TODO(author): acknowledgements; disclosure of AI assistance in the computations and in
+% drafting, following the venue's policy.
+
+\bibliographystyle{amsplain}
+\bibliography{refs}
+
+\end{document}
