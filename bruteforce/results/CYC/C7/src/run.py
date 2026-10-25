@@ -15,12 +15,14 @@ T = int(os.environ.get("CYCT", "0"))
 cnf = f"{tmp}/n{n}_k{k}_s{sym}_{solver}_{seed}" + (f"_u{U}_t{T}" if U else "") + ".cnf"
 subprocess.run([f"{here}/cycenc", str(n), str(k), str(sym), "0", cnf] + ([str(U), str(T)] if U else []), check=True, stderr=subprocess.DEVNULL)
 t0 = time.time()
+conf = os.environ.get("CYCCONF", "")    # e.g. --sat / --unsat (both solvers accept these)
 if solver == "kissat":
     cmd = ["/tmp/kissat/build/kissat", "-q", f"--seed={seed}", f"--time={tl}", cnf]
     if proof: cmd += [proof, "--no-binary"]
 else:
     cmd = ["/tmp/cadical/build/cadical", "-q", f"--seed={seed}", "-t", str(tl), cnf]
     if proof: cmd += [proof, "--no-binary"]
+if conf: cmd.insert(1, conf)
 r = subprocess.run(cmd, capture_output=True, text=True)
 secs = round(time.time() - t0, 1)
 os.remove(cnf)
@@ -31,6 +33,7 @@ for line in r.stdout.splitlines():
     elif line.startswith("v "): model.update(int(t) for t in line[2:].split() if int(t) > 0)
 out = {"n": n, "k": k, "sym": sym, "solver": solver, "seed": seed, "res": res, "secs": secs}
 if U: out["U"] = U; out["T"] = T
+if conf: out["conf"] = conf
 if res == "SAT":
     Dg = []
     for d in range(1, H + 1):
