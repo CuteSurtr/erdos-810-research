@@ -1,9 +1,9 @@
 n	k_lo	k_unsat	status	k_lo/n	seconds	notes
 38	9	10	proved k_max=9	0.2368	171	LRAT VERIFIED (2199574 added clauses) (11s, proof 1.19 GB)
-44	10	11	k_max=10: SAT certificate-verified; UNSAT (solver, cube[p1=0] LRAT VERIFIED (5193 added clauses) - branch only, not the full instance)	0.2273	1868	cube[p1=0] LRAT VERIFIED (5193 added clauses) - branch only, not the full instance; n/4=11: UNSAT (implied by UNSAT at k=11)
-49	11		lower bound 11 certificate-verified; k=12 unfinished	0.2245	1500	
-59	13		lower bound 13 certificate-verified; k=14 unfinished	0.2203	1500	
+44	10		lower bound 10 certificate-verified; k=11 unfinished (8 of 9 cubes UNSAT)	0.2273	1868	n/4=11: undecided; cube split on p1..p4: 8 of 9 cubes UNSAT (6 with checked LRAT, 2 solver-only); cube {1,2,3,4 present} UNKNOWN after 33 min (+ 14 min on its two p5 sub-cubes)
+49	11		lower bound 11 certificate-verified; k=12 unfinished	0.2245	1500	outcome log of the k+1 portfolio lost (see REPORT); k+1 was not found SAT
+59	13		lower bound 13 certificate-verified; k=14 unfinished	0.2203	1500	outcome log of the k+1 portfolio lost (see REPORT); k+1 was not found SAT
 70	15		lower bound 15 certificate-verified; k=16 unfinished	0.2143	1522	
-76	16		lower bound 16 certificate-verified; k=17 unfinished	0.2105	1522	n/4=19: undecided
+76	16		lower bound 16 certificate-verified; k=17 unfinished	0.2105	1522	k=16 SAT from a separate run; n/4=19: undecided
 81	16		lower bound 16 certificate-verified; k=17 unfinished	0.1975	1522	
-91	17		lower bound 17 certificate-verified; k=18..20 undecided	0.1868	1523	
+91	18		lower bound 18 certificate-verified; k=19..20 undecided	0.1978	1523	k=18 SAT from a separate run; k=19 not tried; k=20 unknown after 25 min portfolio

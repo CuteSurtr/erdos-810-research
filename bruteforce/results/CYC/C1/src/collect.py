@@ -8,7 +8,8 @@ KLO = {38: 9, 44: 10, 49: 11, 59: 13, 70: 15, 76: 17, 81: 15, 91: 20}
 proofs = {}
 if os.path.exists(f"{ROOT}/logs/proofs.txt"):
     for l in open(f"{ROOT}/logs/proofs.txt"):
-        p = l.split(); proofs[(int(p[0]), int(p[1]))] = " ".join(p[2:])
+        p = l.split()
+        if p[0].isdigit(): proofs[(int(p[0]), int(p[1]))] = " ".join(p[2:])
 sols, rows = {}, []
 for n in sorted(KLO):
     fs = sorted(glob.glob(f"{ROOT}/logs/n{n}.jsonl") + glob.glob(f"{ROOT}/logs/n{n}_*.jsonl"))
@@ -17,7 +18,7 @@ for n in sorted(KLO):
     best, unsat, secs, unknown = None, None, 0, None
     for r in recs:
         if r.get("res") == "SAT" and r.get("check") == "OK" and (best is None or r["size"] > len(best)): best = r["Dg"]
-        if r.get("res") == "UNSAT": unsat = r["k"] if unsat is None else min(unsat, r["k"])
+        if r.get("res") == "UNSAT" and "cube" not in r: unsat = r["k"] if unsat is None else min(unsat, r["k"])
         if r.get("summary") in ("UNKNOWN", "UNDETERMINED"): unknown = r["k"]
         if r.get("summary") == "done": secs += r["secs"]
     if best is None:
