@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from check import check
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 NS = [46, 57, 67, 68, 78, 89, 99, 100]
-rows = [json.loads(l) for l in open(f"{root}/logs/main.jsonl")]
+rows = [json.loads(l) for l in open(f"{root}/data/main.jsonl")]
 notes = json.load(open(f"{root}/notes.json")) if os.path.exists(f"{root}/notes.json") else {}
 sol, certs, lines = {}, {}, ["n\tk_lo\tk_unsat\tstatus\tk_lo/n\tseconds\tnotes"]
 for n in NS:

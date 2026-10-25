@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Assemble REPORT.md from REPORT_*.md parts and logs/main.jsonl."""
+"""Assemble REPORT.md from report_parts/REPORT_*.md and logs/main.jsonl."""
 import json, os
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-rows = [json.loads(l) for l in open(f"{root}/logs/main.jsonl")]
+rows = [json.loads(l) for l in open(f"{root}/data/main.jsonl")]
 NS = [46, 57, 67, 68, 78, 89, 99, 100]
-out = [open(f"{root}/REPORT_head.md").read()]
+out = [open(f"{root}/report_parts/REPORT_head.md").read()]
 t = ["## 2. Results\n",
      "| n | best k (certificate-verified) | k/n | |E| = nk | how found | larger k tried (no answer within cap) | k = n/4 | status |",
      "|---|---|---|---|---|---|---|---|"]
@@ -26,7 +26,7 @@ for n in NS:
     t.append(f"| {n} | {k} | {k/n:.4f} | {n*k} | {how} | {tr} | {q} | {st} |")
 out.append("\n".join(t) + "\n")
 for part in ["REPORT_results_text.md", "REPORT_method.md", "REPORT_validation.md", "REPORT_code.md", "REPORT_surprises.md"]:
-    p = f"{root}/{part}"
+    p = f"{root}/report_parts/{part}"
     if os.path.exists(p): out.append(open(p).read())
 open(f"{root}/REPORT.md", "w").write("\n".join(out))
 print("\n".join(t))

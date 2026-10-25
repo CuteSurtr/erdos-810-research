@@ -19,14 +19,14 @@ All computation ran in this cloud container. Solvers: kissat and CaDiCaL built f
 
 | n | best k (certificate-verified) | k/n | |E| = nk | how found | larger k tried (no answer within cap) | k = n/4 | status |
 |---|---|---|---|---|---|---|---|
-| 46 | 11 | 0.2391 | 506 | kissat, 140.9 s | k=12: longest 1500 s | – | lower bound k ≥ 11; k_max unfinished |
-| 57 | 13 | 0.2281 | 741 | cadical, 551.3 s | k=14: longest 947 s | – | lower bound k ≥ 13; k_max unfinished |
+| 46 | 11 | 0.2391 | 506 | kissat, 140.9 s | k=12: longest 8577 s | – | lower bound k ≥ 11; k_max unfinished |
+| 57 | 13 | 0.2281 | 741 | cadical, 551.3 s | k=14: longest 1199 s | – | lower bound k ≥ 13; k_max unfinished |
 | 67 | 14 | 0.2090 | 938 | kissat, 9.9 s | k=15: longest 1487 s | – | lower bound k ≥ 14; k_max unfinished |
-| 68 | 14 | 0.2059 | 952 | cadical --sat, 3.6 s | k=15: longest 999 s, k=17: longest 499 s | k=17: not found (499 s) | lower bound k ≥ 14; k_max unfinished |
+| 68 | 14 | 0.2059 | 952 | cadical --sat, 3.6 s | k=15: longest 8577 s, k=17: longest 499 s | k=17: not found (499 s) | lower bound k ≥ 14; k_max unfinished |
 | 78 | 16 | 0.2051 | 1248 | cadical, 150.0 s | k=17: longest 1499 s | – | lower bound k ≥ 16; k_max unfinished |
 | 89 | 17 | 0.1910 | 1513 | kissat --sat, 21.8 s | k=18: longest 1199 s, k=19: longest 400 s, k=20: longest 1499 s | – | lower bound k ≥ 17; k_max unfinished |
 | 99 | 19 | 0.1919 | 1881 | kissat --sat, 249.8 s | k=20: longest 1199 s, k=21: longest 400 s, k=22: longest 1499 s | – | lower bound k ≥ 19; k_max unfinished |
-| 100 | 19 | 0.1900 | 1900 | kissat --sat, 44.4 s | k=23: longest 999 s, k=25: longest 497 s | k=25: not found (497 s) | lower bound k ≥ 19; k_max unfinished |
+| 100 | 19 | 0.1900 | 1900 | kissat --sat, 44.4 s | k=20: longest 8351 s, k=23: longest 999 s, k=25: longest 497 s | k=25: not found (497 s) | lower bound k ≥ 19; k_max unfinished |
 
 Status labels: every k above is *certificate-verified*: (D, g) is in `solutions.json`, and the
 explicit edge list `[u, v, colour]` is in `certs.json`. Each was re-checked by `src/check.py`
@@ -199,6 +199,11 @@ Mismatches with CONSTR: 0
 | `brute_all.sh`, `validate.sh` | validation drivers (n = 13..36) |
 | `pern.py` | per-n driver: races kissat (seed 1) and CaDiCaL (seed 2) at k, k+1, ... under a wall cap |
 | `streamA.sh`, `streamB.sh` | the first-pass queues (two 2-core streams) |
+| `race.py`, `down.py`, `streamC.sh`, `streamD.sh` | certificate fallback (race at decreasing k) |
+| `second.py`, `second.sh`, `probe.sh`, `probe2.sh` | second pass (one solver per core, `$CYCCONF` = `--sat`/`--unsat`) |
+| `cycls.c` | constraint-level local search (experimental, not used for any result) |
+| `units.py` | units of Z_n and their order modulo ±1 (for the invariance experiments) |
+| `valtable.py`, `report.py` | build `validation.md` and `REPORT.md` |
 | `make_tables.py` | builds `table.tsv`, `solutions.json`, `certs.json` from `logs/main.jsonl`, re-verifying |
 | `cyc_constr.c` | CONSTR's annealer, copied unchanged, used only for seeding (`anneal/`) |
 
@@ -210,6 +215,9 @@ Logs: `logs/validate.jsonl` (validation SAT runs), `logs/brute.txt` (brute-force
 `logs/main.jsonl` (every solver run on my 8 values of n, one JSON line each; the losing solver of a
 race is killed and not logged).
 
+`REPORT.md` is assembled by `src/report.py` from `report_parts/` and `data/main.jsonl`
+(copied from the live `logs/`). `validation.md` comes from `src/valtable.py`.
+
 ## 6. Surprises and next steps
 
 1. **The solver configuration matters more than the cap.** With default settings, kissat and
@@ -219,7 +227,7 @@ race is killed and not logged).
    found 68 at k = 14 in 3.6 s. Any further SAT-side search on this family should use `--sat`
    and several seeds.
 2. **No n/4 at 68 or 100.** k = 17 at n = 68 and k = 25 at n = 100 were not found, and neither were
-   k = 15 at 68 or k = 20+ at 100. The best found k/n drops from 0.239 (n = 46) to about 0.19
+   k = 15 at 68 (kissat `--sat`, 8577 s) or k = 20 at 100 (kissat `--sat`, 8351 s). The best found k/n drops from 0.239 (n = 46) to about 0.19
    (n = 89..100). This is only a search failure, not an UNSAT result: the hard instances near k/n
    ≈ 0.2 are beyond a 25-minute single-core SAT run at these sizes. The data is consistent with
    k_max(n)/n decreasing, but it proves nothing about it.
@@ -237,6 +245,9 @@ race is killed and not logged).
 **Next steps (exact sharding plan for the open cases).** For each open (n, k), run
 `CYCCONF=--sat python3 src/run.py n k 2 kissat <seed> <seconds>` with seeds 1..8 in parallel
 (one core each). Encoding takes ≤ 3 s and ≤ 240 MB of DIMACS at n = 100, and kissat uses about
-0.8 GB of RAM (CaDiCaL about 1.7 GB). The most informative targets are 46/k = 12 and 57/k = 14
-(near the n/4 line, where an UNSAT proof could plausibly finish with `--unsat` given a few CPU-hours,
-so add `/tmp/proof.drat` as 7th argument for a DRAT file), then 68/k = 15 and 100/k = 20.
+0.8 GB of RAM (CaDiCaL about 1.7 GB). The most informative targets are 46/k = 12 and 57/k = 14,
+near the n/4 line. Kissat `--unsat` ran 8577 s on 46/k = 12 without an answer, so an UNSAT proof
+needs more than 2.4 CPU-hours there. Cube-and-conquer is the natural sharding: split on the
+presence bits p_1..p_6 (64 cubes, add them as unit clauses), and run one cube per core with
+`--unsat`, adding `/tmp/proof.drat` as the 7th argument of `run.py` for a DRAT file. Then try
+68/k = 15 and 100/k = 20.

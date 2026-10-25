@@ -1,1 +1,1 @@
-{"46": "k=12: kissat+cadical 1500 s each, no answer (log line lost, see REPORT)"}
+{"46": "k=12: default kissat+cadical 1500 s each (log line lost, see REPORT), then kissat --unsat 8577 s: no answer"}

@@ -9,6 +9,11 @@
 | `brute_all.sh`, `validate.sh` | validation drivers (n = 13..36) |
 | `pern.py` | per-n driver: races kissat (seed 1) and CaDiCaL (seed 2) at k, k+1, ... under a wall cap |
 | `streamA.sh`, `streamB.sh` | the first-pass queues (two 2-core streams) |
+| `race.py`, `down.py`, `streamC.sh`, `streamD.sh` | certificate fallback (race at decreasing k) |
+| `second.py`, `second.sh`, `probe.sh`, `probe2.sh` | second pass (one solver per core, `$CYCCONF` = `--sat`/`--unsat`) |
+| `cycls.c` | constraint-level local search (experimental, not used for any result) |
+| `units.py` | units of Z_n and their order modulo ±1 (for the invariance experiments) |
+| `valtable.py`, `report.py` | build `validation.md` and `REPORT.md` |
 | `make_tables.py` | builds `table.tsv`, `solutions.json`, `certs.json` from `logs/main.jsonl`, re-verifying |
 | `cyc_constr.c` | CONSTR's annealer, copied unchanged, used only for seeding (`anneal/`) |
 
@@ -19,3 +24,6 @@ Solvers are expected at `/tmp/kissat/build/kissat` and `/tmp/cadical/build/cadic
 Logs: `logs/validate.jsonl` (validation SAT runs), `logs/brute.txt` (brute-force counts),
 `logs/main.jsonl` (every solver run on my 8 values of n, one JSON line each; the losing solver of a
 race is killed and not logged).
+
+`REPORT.md` is assembled by `src/report.py` from `report_parts/` and `data/main.jsonl`
+(copied from the live `logs/`). `validation.md` comes from `src/valtable.py`.
