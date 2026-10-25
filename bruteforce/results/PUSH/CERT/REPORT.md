@@ -25,8 +25,8 @@ C4 (summarised in §4.2). Every UNSAT proof below was checked by a **standard ch
 | item | result | status |
 |---|---|---|
 | n = 38, k = 10 | UNSAT. DRAT 0.20 GB, drat-trim `s VERIFIED` (C1 encoder, sym 3). Cross-checks, all cake_lpr `s VERIFIED UNSAT`: C4 encoder sym 2 (LRAT 0.52 GB); C1 encoder **without lex-leader** (translation only, LRAT 6.4 GB) | **proved**: k_max(38) = 9 (SAT certificate at 9 re-verified) |
-| n = 42, k = 11 | UNSAT. LRAT 6.40 GB from CaDiCaL 3.0.1 (2392 s), cake_lpr `s VERIFIED UNSAT` in 678 s (C4 encoder, sym 2: the CNF C4 used). Cross-check: C1 encoder sym 3, LRAT 7.2 GB, cake_lpr `s VERIFIED UNSAT` | **proved**: k_max(42) = 10 (SAT certificate at 10 re-verified) |
-| n = 47, k = 12 | all 29 cubes of C0's split are UNSAT, each with its own LRAT proof checked by cake_lpr (C0 encoder, lex + trans). Coverage re-checked by `src/cover.py`: 0 of 512 assignments of p2..p10 uncovered | **proved**: k_max(47) = 11 (SAT certificate at 11 re-verified) |
+| n = 42, k = 11 | UNSAT. LRAT 6.40 GB from CaDiCaL 3.0.1 (2392 s), cake_lpr `s VERIFIED UNSAT` in 678 s (C4 encoder, sym 2: same encoder and options as C4's solver runs; C4 recorded no CNF hash). Cross-check: C1 encoder sym 3, LRAT 7.2 GB, cake_lpr `s VERIFIED UNSAT` | **proved**: k_max(42) = 10 (SAT certificate at 10 re-verified) |
+| n = 47, k = 12 | all 29 cubes of C0's split are UNSAT, each with its own LRAT proof checked by cake_lpr (C0 encoder, lex + trans). Coverage re-checked by `src/cover.py`: 0 of 512 assignments of p2..p10 uncovered. Cross-check: the same 29 cubes on C1's encoder (sym 3), all cake_lpr `s VERIFIED UNSAT`, coverage again 0 of 512 uncovered | **proved**: k_max(47) = 11 (SAT certificate at 11 re-verified) |
 | n = 35, k = 8 | SAT, (D, g) below, re-verified by two simple checkers | certificate-verified |
 | n = 35, k = 9 | UNSAT. kissat DRAT 0.09 GB, drat-trim `s VERIFIED` (C1 encoder, sym 3). Cross-checks, all cake_lpr `s VERIFIED UNSAT`: C4 encoder sym 2; C1 encoder **without lex-leader** (translation only) | **proved**: **k_max(35) = 8** |
 
@@ -36,7 +36,7 @@ cube-and-conquer solver results respectively, to standard-checker proofs.
 
 Note that k_max(35) = 8 < k_max(36) = 9 = 36/4 and k_max(34) = 8, so k_max(n)/n at n = 35 is 0.229.
 
-The cross-checks still running at the deadline are listed in §6.
+All planned cross-checks finished before the deadline (§6).
 
 ## 3. Certificates
 
@@ -148,11 +148,8 @@ Totals over the 29 verified cubes: 8806 s of CaDiCaL 3.0.1 solving and 2857 s of
 | n35k9_C4s2 | `4fd4c852011832a4…` | 5657 195675 | cadical 3.0.1 lrat | UNSATISFIABLE | 54 | 0.23 GB | cake_lpr a36874a | 20 | s VERIFIED UNSAT |
 | n38k10_C4s2 | `03ee1d4e2c6309ab…` | 6795 255277 | cadical 3.0.1 lrat | UNSATISFIABLE | 139 | 0.52 GB | cake_lpr a36874a | 41 | s VERIFIED UNSAT |
 | n35k9_C1s1 | `9cae6d2968cdae01…` | 6086 178125 | cadical 3.0.1 lrat | UNSATISFIABLE | 1002 | 3.72 GB | cake_lpr a36874a | 348 | s VERIFIED UNSAT |
-| n47C1_cube_2_3_4_5_m6_7_m8 | `e0c32321b068c948…` | 14790 587798 | cadical 3.0.1 lrat | UNSATISFIABLE | 784 | 2.71 GB | cake_lpr a36874a | 254 | s VERIFIED UNSAT |
-| n47C1_cube_2_3_4_5_6_m7_m8 | `026fb85b3afe3fe4…` | 14790 587798 | cadical 3.0.1 lrat | UNSATISFIABLE | 1154 | 3.65 GB | cake_lpr a36874a | 346 | s VERIFIED UNSAT |
 | n38k10_C1s1 | `9db49ee91ebe29f2…` | 7326 234254 | cadical 3.0.1 lrat | UNSATISFIABLE | 2065 | 6.42 GB | cake_lpr a36874a | 813 | s VERIFIED UNSAT |
 | n42k11_C1s3 | `f8a748528b6af86a…` | 9919 353460 | cadical 3.0.1 lrat | UNSATISFIABLE | 2537 | 7.16 GB | cake_lpr a36874a | 756 | s VERIFIED UNSAT |
-| n47C1_cube_2_3_m4_5_6 | `0265657eceada211…` | 14790 587796 | cadical 3.0.1 lrat | UNSATISFIABLE | 708 | 2.32 GB | cake_lpr a36874a | 228 | s VERIFIED UNSAT |
 
 ### n = 47, k = 12 cubes
 
@@ -190,10 +187,44 @@ Totals over the 29 verified cubes: 8806 s of CaDiCaL 3.0.1 solving and 2857 s of
 | n47k12_cube_m2_m3_4 | `bccd07f168316fe2…` | 14812 610125 | cadical 3.0.1 lrat | UNSATISFIABLE | 0 | 0.00 GB | cake_lpr a36874a | 2 | s VERIFIED UNSAT |
 | n47k12_cube_m2_m3_m4 | `370f4d0601133d13…` | 14812 610125 | cadical 3.0.1 lrat | UNSATISFIABLE | 0 | 0.00 GB | cake_lpr a36874a | 2 | s VERIFIED UNSAT |
 
+### n = 47, k = 12 cubes, cross-check with C1's encoder
+
+| tag | CNF sha256 (prefix) | vars clauses | solver | result | solve s | proof | checker | check s | verdict |
+|---|---|---|---|---|---|---|---|---|---|
+| n47C1_cube_2_3_4_5_6_7_8 | `68ab369f473ad890…` | 14790 587798 | cadical 3.0.1 lrat | UNSATISFIABLE | 2 | 0.01 GB | cake_lpr a36874a | 2 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_4_5_6_7_m8 | `2b94c3f73792b48e…` | 14790 587798 | cadical 3.0.1 lrat | UNSATISFIABLE | 22 | 0.08 GB | cake_lpr a36874a | 39 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_4_5_6_m7_8 | `096209ff7e91636d…` | 14790 587798 | cadical 3.0.1 lrat | UNSATISFIABLE | 102 | 0.32 GB | cake_lpr a36874a | 25 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_4_5_6_m7_m8 | `026fb85b3afe3fe4…` | 14790 587798 | cadical 3.0.1 lrat | UNSATISFIABLE | 1154 | 3.65 GB | cake_lpr a36874a | 346 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_4_5_m6_7_8 | `5457208794a44a1e…` | 14790 587798 | cadical 3.0.1 lrat | UNSATISFIABLE | 152 | 0.48 GB | cake_lpr a36874a | 37 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_4_5_m6_7_m8 | `e0c32321b068c948…` | 14790 587798 | cadical 3.0.1 lrat | UNSATISFIABLE | 784 | 2.71 GB | cake_lpr a36874a | 254 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_4_5_m6_m7_8 | `3f2c808e1c7b8665…` | 14790 587798 | cadical 3.0.1 lrat | UNSATISFIABLE | 780 | 2.54 GB | cake_lpr a36874a | 476 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_4_5_m6_m7_m8_9_10 | `82ccd808341580db…` | 14790 587800 | cadical 3.0.1 lrat | UNSATISFIABLE | 165 | 0.67 GB | cake_lpr a36874a | 51 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_4_5_m6_m7_m8_9_m10 | `995f7bba1ace0a85…` | 14790 587800 | cadical 3.0.1 lrat | UNSATISFIABLE | 233 | 0.87 GB | cake_lpr a36874a | 78 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_4_5_m6_m7_m8_m9_10 | `5a186c8fd153e805…` | 14790 587800 | cadical 3.0.1 lrat | UNSATISFIABLE | 250 | 0.95 GB | cake_lpr a36874a | 92 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_4_5_m6_m7_m8_m9_m10 | `538fb6df9f27dcc3…` | 14790 587800 | cadical 3.0.1 lrat | UNSATISFIABLE | 185 | 0.74 GB | cake_lpr a36874a | 67 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_4_m5_6_7_8 | `322614070e656d08…` | 14790 587798 | cadical 3.0.1 lrat | UNSATISFIABLE | 65 | 0.25 GB | cake_lpr a36874a | 22 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_4_m5_6_7_m8 | `df49f27d1c9631f1…` | 14790 587798 | cadical 3.0.1 lrat | UNSATISFIABLE | 403 | 1.39 GB | cake_lpr a36874a | 121 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_4_m5_6_m7_8 | `82df7f448264a566…` | 14790 587798 | cadical 3.0.1 lrat | UNSATISFIABLE | 102 | 0.41 GB | cake_lpr a36874a | 35 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_4_m5_6_m7_m8 | `0c8a1fbfcf8465bb…` | 14790 587798 | cadical 3.0.1 lrat | UNSATISFIABLE | 479 | 1.66 GB | cake_lpr a36874a | 163 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_4_m5_m6_7_8 | `4dcc2b67da1cfa95…` | 14790 587798 | cadical 3.0.1 lrat | UNSATISFIABLE | 337 | 1.18 GB | cake_lpr a36874a | 166 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_4_m5_m6_7_m8 | `be03a5ced2bd8a03…` | 14790 587798 | cadical 3.0.1 lrat | UNSATISFIABLE | 358 | 1.30 GB | cake_lpr a36874a | 131 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_4_m5_m6_m7_8 | `852bc7706d1a450b…` | 14790 587798 | cadical 3.0.1 lrat | UNSATISFIABLE | 424 | 1.44 GB | cake_lpr a36874a | 145 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_4_m5_m6_m7_m8 | `061128e668876a57…` | 14790 587798 | cadical 3.0.1 lrat | UNSATISFIABLE | 339 | 1.23 GB | cake_lpr a36874a | 129 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_m4_5_6 | `0265657eceada211…` | 14790 587796 | cadical 3.0.1 lrat | UNSATISFIABLE | 708 | 2.32 GB | cake_lpr a36874a | 228 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_m4_5_m6 | `5179e29896e3fd4f…` | 14790 587796 | cadical 3.0.1 lrat | UNSATISFIABLE | 484 | 1.69 GB | cake_lpr a36874a | 186 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_m4_m5_6 | `9c33a8ad9259c16e…` | 14790 587796 | cadical 3.0.1 lrat | UNSATISFIABLE | 232 | 0.82 GB | cake_lpr a36874a | 88 | s VERIFIED UNSAT |
+| n47C1_cube_2_3_m4_m5_m6 | `585015c7ab43cd38…` | 14790 587796 | cadical 3.0.1 lrat | UNSATISFIABLE | 130 | 0.51 GB | cake_lpr a36874a | 94 | s VERIFIED UNSAT |
+| n47C1_cube_2_m3_4 | `d980dd59ff5a531f…` | 14790 587794 | cadical 3.0.1 lrat | UNSATISFIABLE | 27 | 0.11 GB | cake_lpr a36874a | 12 | s VERIFIED UNSAT |
+| n47C1_cube_2_m3_m4 | `5aa8b9fc26d8d301…` | 14790 587794 | cadical 3.0.1 lrat | UNSATISFIABLE | 20 | 0.09 GB | cake_lpr a36874a | 38 | s VERIFIED UNSAT |
+| n47C1_cube_m2_3_4 | `c6a2b11a95835e71…` | 14790 587794 | cadical 3.0.1 lrat | UNSATISFIABLE | 0 | 0.00 GB | cake_lpr a36874a | 2 | s VERIFIED UNSAT |
+| n47C1_cube_m2_3_m4 | `56f0d98005fe77b5…` | 14790 587794 | cadical 3.0.1 lrat | UNSATISFIABLE | 0 | 0.00 GB | cake_lpr a36874a | 2 | s VERIFIED UNSAT |
+| n47C1_cube_m2_m3_4 | `289e86b8ad700cf0…` | 14790 587794 | cadical 3.0.1 lrat | UNSATISFIABLE | 0 | 0.00 GB | cake_lpr a36874a | 2 | s VERIFIED UNSAT |
+| n47C1_cube_m2_m3_m4 | `2cf61902eff37853…` | 14790 587794 | cadical 3.0.1 lrat | UNSATISFIABLE | 0 | 0.00 GB | cake_lpr a36874a | 2 | s VERIFIED UNSAT |
+
 "NO VERDICT" rows are two cake_lpr runs killed by the memory cgroup (OOM). Four checks of about 4.2 GB
 each ran at once. Both cubes were re-solved and re-checked (the `s VERIFIED UNSAT` row under each).
 After that, `prove.sh` allows at most two cake_lpr runs at a time. Tags `n47C1_cube_*` are the
-optional second sweep with C1's encoder (§6).
+second sweep with C1's encoder (§6).
 
 ### 4.6 Timeline and abandoned attempts
 
@@ -224,11 +255,11 @@ optional second sweep with C1's encoder (§6).
 | `src/cover.py` | coverage check of a presence-bit cube split against verified proofs |
 | `src/satrun.py` | SAT search with decoding and re-check (used for n = 35, k = 8, 9) |
 | `src/check4.py`, `src/check_certs.py` | simple 4-cycle checkers, from (D, g) and from the explicit edge list |
-| `src/tables.py` | tables of §4.5 and `n47_tree.json` |
+| `src/tables.py`, `src/sweep_status.py`, `src/make_report.sh` | tables of §4.5, `n47_tree.json`, and the assembly of this REPORT from `report_head.md` and `report_tail.md` |
 | `logs/proofs.jsonl` | one line per proof run: CNF sha256, header, solver and version, result, times, proof bytes, checker, verdict line |
 | `logs/dt_<tag>.txt` | tail of each checker's output |
 | `logs/n35.jsonl` | n = 35 SAT runs (k = 8 SAT in 1 s; k = 9 `--sat` 600 s UNKNOWN) |
-| `logs/cover47.txt`, `logs/check_certs.txt`, `logs/cubes47_queue.txt` | coverage output, certificate checks, and the C0 cube list (with C0's kissat times) |
+| `logs/cover47.txt`, `logs/cover47_C1.txt`, `logs/check_certs.txt`, `logs/cubes47_queue.txt` | coverage output, certificate checks, and the C0 cube list (with C0's kissat times) |
 | `certs.json`, `solutions.json`, `n47_tree.json` | certificates and the n = 47 cube tree |
 
 Reproduce one result, for example n = 42:
@@ -250,8 +281,9 @@ n = 47: `./cycenc_C0 47 12 1 1 > base.cnf`. For each cube in `logs/cubes47_queue
   cake_lpr. Translation is a trivially sound symmetry. So these two results do not depend on the
   lex-leader soundness argument at all. For n = 42 and n = 47 the proofs use the lex-leader.
 - **Independence from one encoder.** n = 35 and n = 38 are UNSAT under both the C1 and C4 encoders.
-  n = 42 is UNSAT under both C4 (the main proof) and C1. Both runs used LRAT checked by cake_lpr.
-- **n = 47 under a second encoder (optional).** At the deadline, 3 of the 29 cubes had verified UNSAT proofs under the C1 encoder (sym 3, base sha256 9aca8a76…). Coverage check on those: `split variables [2, 3, 4, 5, 6, 7, 8]; cubes 3 (3 with verified proof); assignments not covered: by any cube 122, by verified cubes 122 (of 128)`. This sweep is an optional cross-check; the n = 47 result rests on the C0-encoder sweep.
+  n = 42 is UNSAT under both C4 (the main proof) and C1, and n = 47 under both C0 (main) and C1. All
+  these cross-check runs used LRAT checked by cake_lpr.
+- **n = 47 under a second encoder.** 29 of the 29 cubes of C0's split have verified UNSAT proofs under the C1 encoder (`cycenc 47 12 3`, base sha256 9aca8a76…); coverage: `split variables [2, 3, 4, 5, 6, 7, 8, 9, 10]; cubes 29 (29 with verified proof); assignments not covered: by any cube 0, by verified cubes 0 (of 512)`. Totals: 7937 s solving, 3031 s checking, 27.4 GB of LRAT. So n = 47 also holds under two encoders. Both use the lex-leader.
 - **Suggestion.** Future PUSH and CYC agents should use CaDiCaL ≥ 2 with binary LRAT and cake_lpr
   instead of DRAT and drat-trim. In this container, drat-trim did not finish 1 GB proofs in 100 min,
   while cake_lpr checked 6–7 GB in 11–13 min. Limit concurrent cake_lpr runs to (memory limit)/4.3 GB.

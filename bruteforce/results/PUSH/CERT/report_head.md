@@ -25,8 +25,8 @@ C4 (summarised in §4.2). Every UNSAT proof below was checked by a **standard ch
 | item | result | status |
 |---|---|---|
 | n = 38, k = 10 | UNSAT. DRAT 0.20 GB, drat-trim `s VERIFIED` (C1 encoder, sym 3). Cross-checks, all cake_lpr `s VERIFIED UNSAT`: C4 encoder sym 2 (LRAT 0.52 GB); C1 encoder **without lex-leader** (translation only, LRAT 6.4 GB) | **proved**: k_max(38) = 9 (SAT certificate at 9 re-verified) |
-| n = 42, k = 11 | UNSAT. LRAT 6.40 GB from CaDiCaL 3.0.1 (2392 s), cake_lpr `s VERIFIED UNSAT` in 678 s (C4 encoder, sym 2: the CNF C4 used). Cross-check: C1 encoder sym 3, LRAT 7.2 GB, cake_lpr `s VERIFIED UNSAT` | **proved**: k_max(42) = 10 (SAT certificate at 10 re-verified) |
-| n = 47, k = 12 | all 29 cubes of C0's split are UNSAT, each with its own LRAT proof checked by cake_lpr (C0 encoder, lex + trans). Coverage re-checked by `src/cover.py`: 0 of 512 assignments of p2..p10 uncovered | **proved**: k_max(47) = 11 (SAT certificate at 11 re-verified) |
+| n = 42, k = 11 | UNSAT. LRAT 6.40 GB from CaDiCaL 3.0.1 (2392 s), cake_lpr `s VERIFIED UNSAT` in 678 s (C4 encoder, sym 2: same encoder and options as C4's solver runs; C4 recorded no CNF hash). Cross-check: C1 encoder sym 3, LRAT 7.2 GB, cake_lpr `s VERIFIED UNSAT` | **proved**: k_max(42) = 10 (SAT certificate at 10 re-verified) |
+| n = 47, k = 12 | all 29 cubes of C0's split are UNSAT, each with its own LRAT proof checked by cake_lpr (C0 encoder, lex + trans). Coverage re-checked by `src/cover.py`: 0 of 512 assignments of p2..p10 uncovered. Cross-check: the same 29 cubes on C1's encoder (sym 3), all cake_lpr `s VERIFIED UNSAT`, coverage again 0 of 512 uncovered | **proved**: k_max(47) = 11 (SAT certificate at 11 re-verified) |
 | n = 35, k = 8 | SAT, (D, g) below, re-verified by two simple checkers | certificate-verified |
 | n = 35, k = 9 | UNSAT. kissat DRAT 0.09 GB, drat-trim `s VERIFIED` (C1 encoder, sym 3). Cross-checks, all cake_lpr `s VERIFIED UNSAT`: C4 encoder sym 2; C1 encoder **without lex-leader** (translation only) | **proved**: **k_max(35) = 8** |
 
@@ -36,7 +36,7 @@ cube-and-conquer solver results respectively, to standard-checker proofs.
 
 Note that k_max(35) = 8 < k_max(36) = 9 = 36/4 and k_max(34) = 8, so k_max(n)/n at n = 35 is 0.229.
 
-The cross-checks still running at the deadline are listed in §6.
+All planned cross-checks finished before the deadline (§6).
 
 ## 3. Certificates
 

@@ -2,7 +2,7 @@
 "NO VERDICT" rows are two cake_lpr runs killed by the memory cgroup (OOM). Four checks of about 4.2 GB
 each ran at once. Both cubes were re-solved and re-checked (the `s VERIFIED UNSAT` row under each).
 After that, `prove.sh` allows at most two cake_lpr runs at a time. Tags `n47C1_cube_*` are the
-optional second sweep with C1's encoder (§6).
+second sweep with C1's encoder (§6).
 
 ### 4.6 Timeline and abandoned attempts
 
@@ -33,11 +33,11 @@ optional second sweep with C1's encoder (§6).
 | `src/cover.py` | coverage check of a presence-bit cube split against verified proofs |
 | `src/satrun.py` | SAT search with decoding and re-check (used for n = 35, k = 8, 9) |
 | `src/check4.py`, `src/check_certs.py` | simple 4-cycle checkers, from (D, g) and from the explicit edge list |
-| `src/tables.py` | tables of §4.5 and `n47_tree.json` |
+| `src/tables.py`, `src/sweep_status.py`, `src/make_report.sh` | tables of §4.5, `n47_tree.json`, and the assembly of this REPORT from `report_head.md` and `report_tail.md` |
 | `logs/proofs.jsonl` | one line per proof run: CNF sha256, header, solver and version, result, times, proof bytes, checker, verdict line |
 | `logs/dt_<tag>.txt` | tail of each checker's output |
 | `logs/n35.jsonl` | n = 35 SAT runs (k = 8 SAT in 1 s; k = 9 `--sat` 600 s UNKNOWN) |
-| `logs/cover47.txt`, `logs/check_certs.txt`, `logs/cubes47_queue.txt` | coverage output, certificate checks, and the C0 cube list (with C0's kissat times) |
+| `logs/cover47.txt`, `logs/cover47_C1.txt`, `logs/check_certs.txt`, `logs/cubes47_queue.txt` | coverage output, certificate checks, and the C0 cube list (with C0's kissat times) |
 | `certs.json`, `solutions.json`, `n47_tree.json` | certificates and the n = 47 cube tree |
 
 Reproduce one result, for example n = 42:
@@ -59,8 +59,9 @@ n = 47: `./cycenc_C0 47 12 1 1 > base.cnf`. For each cube in `logs/cubes47_queue
   cake_lpr. Translation is a trivially sound symmetry. So these two results do not depend on the
   lex-leader soundness argument at all. For n = 42 and n = 47 the proofs use the lex-leader.
 - **Independence from one encoder.** n = 35 and n = 38 are UNSAT under both the C1 and C4 encoders.
-  n = 42 is UNSAT under both C4 (the main proof) and C1. Both runs used LRAT checked by cake_lpr.
-- **n = 47 under a second encoder (optional).** At the deadline, SWEEP_STATUS.
+  n = 42 is UNSAT under both C4 (the main proof) and C1, and n = 47 under both C0 (main) and C1. All
+  these cross-check runs used LRAT checked by cake_lpr.
+- **n = 47 under a second encoder.** SWEEP_STATUS. Totals: 7937 s solving, 3031 s checking, 27.4 GB of LRAT. So n = 47 also holds under two encoders. Both use the lex-leader.
 - **Suggestion.** Future PUSH and CYC agents should use CaDiCaL ≥ 2 with binary LRAT and cake_lpr
   instead of DRAT and drat-trim. In this container, drat-trim did not finish 1 GB proofs in 100 min,
   while cake_lpr checked 6–7 GB in 11–13 min. Limit concurrent cake_lpr runs to (memory limit)/4.3 GB.
