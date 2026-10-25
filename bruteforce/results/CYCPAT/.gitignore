@@ -8,3 +8,7 @@ src/coset
 __pycache__/
 runs/*.log
 runs/enum_*.json
+runs/enumcase_*
+runs/enumsplit_*
+runs/verify_*
+runs/*.out

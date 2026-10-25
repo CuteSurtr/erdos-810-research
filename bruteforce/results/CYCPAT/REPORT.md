@@ -35,8 +35,10 @@ Swap:              0           0           0
 
 `certs.json` uses the format `{"n": [[u, v, c], ...]}` and holds n = 53 (689 edges) and n = 61 (915 edges). Both are single-coset rules with r = 4, class c = 1:
 
-- n = 53, t = 32: (d, g) = see `solutions/new_lower_bounds.json`
-- n = 61, t = 6
+- n = 53, t = 32: (d, g) = (1,0) (4,11) (6,37) (7,50) (9,23) (10,51) (11,49) (13,15) (15,44) (16,32) (17,21) (24,42) (25,19)
+- n = 61, t = 6: (d, g) = (1,0) (3,38) (4,2) (5,27) (9,52) (12,41) (13,17) (14,8) (15,30) (16,6) (19,11) (20,32) (22,45) (25,34) (27,28)
+
+Edge {i, i+d} gets colour i + g(d) mod n. The pairs are also in `solutions/new_lower_bounds.json`.
 
 `src/cert_check.py` is deliberately simple. It reads only the edge list, checks the colours are in 0..n−1 and the graph is simple, and enumerates every 4-cycle through pairs of common neighbours. Output:
 ```
@@ -74,10 +76,10 @@ Other solution files:
 - Validated at n = 28: 285 + 0 = 285 orbits, matching the unsplit run.
 - For n = 33 and n = 36, `nounit` returned UNSAT in < 1 s, and `unit` finished in 580 s and 927 s. A further split by the second-smallest orbit (`unit2:e`) is also implemented and was validated at n = 28 (the union over e gives the same 285 normal forms).
 
-**Validation.** k_max agrees with CONSTR (`cyclic_family_status.json`) for every n = 12–36: SAT at k_max, and UNSAT at k_max+1 re-proved here for n = 12, 16, 20, 24, 28, 32, 36.
+**Validation.** k_max agrees with CONSTR (`cyclic_family_status.json`) for every n = 13–34 and 36 in that file: SAT at k_max here. UNSAT at k_max+1 was re-proved here for n = 12, 16, 20, 24, 28, 32, 36; for the other n the CONSTR UNSAT result is used. k_max(12) = 3 (new here).
 
 - *Discrepancy in the task table:* `tasks/CYC.md` lists k_max = 4 for n = 14. CONSTR's own JSON (first UNSAT k = 4) and my enumeration both give **k_max(14) = 3**.
-- Every listed normal form was re-checked by `src/cyccheck` (C, cycles through 0) and by `src/explicit_check.py` (explicit graph, all 4-cycles by common neighbours). See `runs/verify_enum*.txt`: 0 failures.
+- Every listed normal form was re-checked by `src/cyccheck` (C, cycles through 0) and by `src/explicit_check.py` (explicit graph, all 4-cycles by common neighbours). See `runs/verify_solutions.txt` (all files in `solutions/`) and `runs/verify_enum*.txt`: 0 failures.
 
 (gen) Counts. Solutions with g(min D) = 0, times n, gives all solutions.
 
@@ -105,9 +107,9 @@ Other solution files:
 | 31 | 8 | complete | 1 | 30 | — (CONSTR) | 98.6 |
 | 32 | 8 | complete | 128 | 2048 | yes (49 s) | 146.7 |
 | 33 | 8 | complete (case split unit/nounit) | 1756 | 35120 | — (CONSTR) | 579.7 |
-| 34 | 8 | incomplete (lower bound on orbit count) | 25653 | 410448 | — (CONSTR) |  |
+| 34 | 8 | incomplete (lower bound on orbit count) | 25663 | 410608 | — (CONSTR) |  |
 | 36 | 9 | complete (case split unit/nounit) | 59 | 708 | yes (1040 s) | 927.7 |
-| 40 | 10 | incomplete (lower bound on orbit count) | 1 | 16 | — (CONSTR) |  |
+| 40 | 10 | incomplete (lower bound on orbit count) | 4 | 64 | — (CONSTR) |  |
 
 Observations:
 
@@ -161,7 +163,7 @@ So the coset rule is an **affine colouring of an oriented Cayley graph**. Numeri
 **Single coset.** p prime, r even with m = (p−1)/r odd (so −1 ∉ K = ⟨w^r⟩). D = {rep(c·x) : x ∈ K} for one of the r/2 ±-classes c = w^j. Set g(rep c) = 0 and g(rep(ud)) = u·g(d) + [ud ≡ −rep]·rep(ud) + t, with all t ∈ Z_p tried.
 
 - The colouring is K-invariant, so checking cycles through 0 with first step ±c suffices ("reduced check"). Every passing candidate was re-checked with the full check (all first steps), and none failed.
-- `src/collect_rules.py` rebuilds every reported instance in Python (`src/rules.py`, independent code), checks it with `cyccheck`, and for p ≤ 200 with the explicit-graph checker. Log: `runs/collect_rules.txt`.
+- `src/collect_rules.py` rebuilds every reported instance in Python (`src/rules.py`, independent code), checks it with `cyccheck`, and for p ≤ 200 with the explicit-graph checker. Result (`solutions/coset_rules.json`): all 327 single-coset instances (p ≤ 2731) and all 76 two-class instances (p ≤ 397) pass `cyccheck`. The 31 + 41 instances with p ≤ 200 also pass the explicit-graph check. 0 failures.
 
 **Two classes.** D = rep(c1·K) ∪ rep(c2·K), with g(rep c1) = 0, g(rep c2) = γ and a common t (p² candidates per class pair).
 
