@@ -41,8 +41,9 @@ We give explicit certificates improving the known lower bounds for $14\le n\le 2
 extending them to $n\le 128$. Many of the best constructions for $26\le n\le 64$ are
 \emph{cyclic orbit colourings}: Cayley graphs on $\Z_n$ whose colouring is equivariant under
 rotation. For this family we determine the optimum $\kmax(n)$ for $12\le n\le 42$ and
-$n\in\{44,47\}$. For all but three of these values the upper bound is certified by a checked
-DRAT or LRAT proof. The optimum is exactly $n/4$ orbits (that is, $n^2/4$ edges) for
+$n\in\{44,47\}$. Every upper bound is certified by a DRAT or LRAT proof checked by a
+standard checker ($13\le n\le47$), or by an independent SAT-free exhaustive search
+($12\le n\le31$). The optimum is exactly $n/4$ orbits (that is, $n^2/4$ edges) for
 $n=12,16,\dots,40$, but $\kmax(44)=10<44/4$.
 
 We also prove that offset rules $g(d)\equiv bd+c$ with a fixed rational slope
@@ -406,18 +407,20 @@ case $\sigma=-1$ fails for every $u\ne1$ at every $n$ tested.
 Table~\ref{tab:cyc} gives $\kmax(n)$. Each exact value combines a solution at $\kmax(n)$
 with an UNSAT result at $\kmax(n)+1$.
 \begin{itemize}
-\item \emph{$13\le n\le 41$:} the UNSAT proofs at $\kmax(n)+1$ were checked by
-  \texttt{drat-trim}.
-\item \emph{$n=12$:} the UNSAT result is a solver result. It is confirmed by an independent
-  backtracking counter that uses no SAT and factors out only colour translations. That
-  counter also agrees with every solution count for $n\le 28$.
-\item \emph{$n=42$:} the instance at $k=11$ was refuted independently by CaDiCaL and by
-  Kissat~\cite{Kissat}. The proof is not checked.
-  % TODO(PUSH/CERT, due 16:00Z): update if the n=42 proof is checked.
+\item \emph{SAT-free confirmation, $12\le n\le 31$.} An independent backtracking search
+  enumerates all $(D,g)$ with $|D|=k$ and $g(\min D)=0$, and checks every closed $4$-walk
+  through $0$ directly. It uses no SAT, no other symmetry reduction, and not even the collision
+  criterion of Lemma~\ref{lem:walk}. It finds no solution at $k=\kmax(n)+1$, and its counts
+  at $k=\kmax(n)$ agree with the SAT enumerations.
+\item \emph{Checked proofs, $13\le n\le 41$.} The UNSAT proofs at $\kmax(n)+1$ were checked
+  by \texttt{drat-trim}. For $n=35$ and $38$ a second, independently written encoder also
+  gives LRAT proofs checked by \texttt{cake\_lpr}~\cite{cakelpr}.
+\item \emph{$n=42$:} the instance at $k=11$ was refuted by CaDiCaL and by
+  Kissat~\cite{Kissat}. The LRAT proof is checked by \texttt{cake\_lpr}.
 \item \emph{$n=44$:} see Theorem~\ref{thm:44}.
-\item \emph{$n=47$:} the instance at $k=12$ was refuted by cube-and-conquer~\cite{HKWB11} over
-  $29$ cubes. Their coverage was checked; the per-cube proofs are not.
-  % TODO(PUSH/CERT, due 16:00Z): update if the n=47 cube proofs are checked.
+\item \emph{$n=47$:} the instance at $k=12$ was split into $29$ cubes~\cite{HKWB11}. Every cube
+  has an LRAT proof checked by \texttt{cake\_lpr}, and the coverage of the cubes was checked
+  independently.
 \end{itemize}
 
 {\small
@@ -475,8 +478,8 @@ $\M(n)\ge n^2/4$. The number of solutions at $k=n/4$, up to the action above, is
 \[
   24,\ 58,\ 165,\ 362,\ 285,\ 128,\ 59,\ 4 \qquad (n=12,16,\dots,40).
 \]
-These counts come from complete SAT enumeration with blocking clauses. They are solver
-results; for $n\le 28$ they agree with an independent brute-force count. They peak at $n=24$
+These counts come from complete SAT enumeration with blocking clauses. For $n\le 28$ the
+independent brute-force search reproduces them, both as raw counts and up to symmetry. They peak at $n=24$
 and fall sharply after that, and Theorem~\ref{thm:44} shows that the pattern stops at
 $n=44$.
 % TODO(PUSH/N44C, due 16:00Z): add the independent second split if it completes.

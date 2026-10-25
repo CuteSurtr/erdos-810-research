@@ -27,16 +27,20 @@ ALPHAEVOLVE = {4: 5, 5: 7, 6: 11, 7: 14, 8: 17, 9: 23, 10: 30, 11: 34, 12: 40,
 # Exact optima of the cyclic orbit family (number of orbits k_max(n)), with how the
 # upper bound k_max(n) + 1 was excluded.  Sources: results/CONSTR (cyclic_family_status.json,
 # first UNSAT k), results/CYCPAT (enumeration, brute force), results/CYC.
-DRAT = "DRAT, drat-trim"
+DRAT = "DRAT"
+BF = "DRAT; brute force"
+CAKE = r"LRAT (\texttt{cake\_lpr})"
 CYCLIC_EXACT = {
-    12: (3, "solver UNSAT; brute force"),
-    **{n: (k, DRAT) for n, k in {
+    12: (3, "brute force"),
+    **{n: (k, BF) for n, k in {
         13: 3, 14: 3, 15: 4, 16: 4, 17: 4, 18: 5, 19: 5, 20: 5, 21: 6, 22: 5,
-        23: 6, 24: 6, 25: 6, 26: 6, 27: 7, 28: 7, 29: 7, 30: 7, 31: 8, 32: 8,
-        33: 8, 34: 8, 35: 8, 36: 9, 37: 9, 38: 9, 39: 9, 40: 10, 41: 10}.items()},
-    42: (10, "two solvers, proof unchecked"),
-    44: (10, r"LRAT, \texttt{cake\_lpr}, all leaves"),
-    47: (11, "cube-and-conquer, proofs unchecked"),
+        23: 6, 24: 6, 25: 6, 26: 6, 27: 7, 28: 7, 29: 7, 30: 7, 31: 8}.items()},
+    **{n: (k, DRAT) for n, k in {32: 8, 33: 8, 34: 8, 36: 9, 37: 9, 39: 9, 40: 10, 41: 10}.items()},
+    35: (8, "DRAT; LRAT, 2nd encoder"),
+    38: (9, "DRAT; LRAT, 2nd encoder"),
+    42: (10, CAKE),
+    44: (10, CAKE + ", 24 leaves"),
+    47: (11, CAKE + ", 29 cubes"),
 }
 
 
