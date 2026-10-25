@@ -1,7 +1,18 @@
 # Task CYC: exact optima of the cyclic orbit family for n = 37..100
 
 Results folder: `bruteforce/results/CYC/C<i>/`, with i ∈ {0..7} given in your prompt.
-Agent i takes **n ∈ {37+i, 45+i, 53+i, 61+i, 69+i, 77+i, 85+i, 93+i}** and works through them in increasing order.
+Agent i takes the 8 values of n in its row below, working through them in increasing order. Each row has two multiples of 4.
+
+| i | n |
+|---|---|
+| 0 | 37, 40, 47, 58, 69, 72, 79, 90 |
+| 1 | 38, 44, 49, 59, 70, 76, 81, 91 |
+| 2 | 39, 48, 50, 61, 71, 80, 82, 93 |
+| 3 | 41, 51, 52, 62, 73, 83, 84, 94 |
+| 4 | 42, 53, 56, 63, 74, 85, 88, 95 |
+| 5 | 43, 54, 60, 65, 75, 86, 92, 97 |
+| 6 | 45, 55, 64, 66, 77, 87, 96, 98 |
+| 7 | 46, 57, 67, 68, 78, 89, 99, 100 |
 Wrap up by the deadline in your prompt.
 
 ## The family (from `results/CONSTR/REPORT.md` F3, `cycsat.py`, `derivations.md`)
