@@ -67,6 +67,16 @@
           "closed": true,
           "attempts": [
            {
+            "case": "pre:1.2.3.4.5",
+            "result": "UNKNOWN",
+            "proof": "",
+            "cnf_sha256": "43facce05d928e567627f16275e147507f7add250750164d6905aae3b9e89983",
+            "solver": "cadical 3.0.1 --lrat",
+            "solve_s": 900.0,
+            "proof_bytes": 3002279408,
+            "check_s": 0.0
+           },
+           {
             "case": "sb:1.2.3.4.5",
             "result": "UNSATISFIABLE",
             "proof": "",
@@ -401,14 +411,14 @@
           ],
           "closed": true,
           "by": {
-           "case": "sb:1.2.3.4.7",
+           "case": "pre:1.2.3.4.7",
            "result": "UNSATISFIABLE",
            "proof": "s VERIFIED UNSAT",
-           "cnf_sha256": "16bfdf436ab9f38251bf8076853db4ee81e636de40ce6e3898027d9241c294fb",
+           "cnf_sha256": "02715201e604a48836e85368c65d02492c8eeffba05006cd646292d45111b0bf",
            "solver": "cadical 3.0.1 --lrat",
-           "solve_s": 253.9,
-           "proof_bytes": 751221189,
-           "check_s": 79.0
+           "solve_s": 548.2,
+           "proof_bytes": 2046971197,
+           "check_s": 224.7
           }
          },
          {
@@ -421,14 +431,14 @@
           ],
           "closed": true,
           "by": {
-           "case": "sb:1.2.3.4.8",
+           "case": "pre:1.2.3.4.8",
            "result": "UNSATISFIABLE",
            "proof": "s VERIFIED UNSAT",
-           "cnf_sha256": "8e646f87035acc90df6aa36422a614f3b4796d787dd47e31b8cc4f2084f8d1f6",
+           "cnf_sha256": "b43e52f41de242260c033aa8b350ae6731162c10a38efc45a4d92ee31ab4367e",
            "solver": "cadical 3.0.1 --lrat",
-           "solve_s": 135.5,
-           "proof_bytes": 466804081,
-           "check_s": 54.1
+           "solve_s": 289.1,
+           "proof_bytes": 1254426924,
+           "check_s": 107.2
           }
          },
          {
@@ -441,14 +451,14 @@
           ],
           "closed": true,
           "by": {
-           "case": "sb:1.2.3.4.9",
+           "case": "pre:1.2.3.4.9",
            "result": "UNSATISFIABLE",
            "proof": "s VERIFIED UNSAT",
-           "cnf_sha256": "a10d29e5c0835e599dd6a28b3d570f777a8d7db4b63934476c6f1421108d8e72",
+           "cnf_sha256": "9c0e13c9d50ddf98ffccf7a77dde9c5d3255f1ad5112e89b8cad4630c3e1732a",
            "solver": "cadical 3.0.1 --lrat",
-           "solve_s": 47.3,
-           "proof_bytes": 245991294,
-           "check_s": 18.7
+           "solve_s": 131.3,
+           "proof_bytes": 602377043,
+           "check_s": 51.3
           }
          },
          {
@@ -2051,14 +2061,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.2.8.9",
+         "case": "pre:1.2.8.9",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "9f59a39c169743f96c5f5d6acb5f70fb3e1322d3347d2bc009efe47d98b22d76",
+         "cnf_sha256": "94de3f13730e09c198900469f5147e1f191e8d4b4c1b6d765a383a21f978bc72",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 2.7,
-         "proof_bytes": 11941505,
-         "check_s": 2.2
+         "solve_s": 64.3,
+         "proof_bytes": 321353969,
+         "check_s": 28.9
         }
        },
        {
@@ -2070,14 +2080,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.2.8.10",
+         "case": "pre:1.2.8.10",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "393a63370529e09f22799757d9b4600cd52facd378cd4bafb65362fa05dcd855",
+         "cnf_sha256": "0cd4476a9a2d64e2a477f939171f12303ac589ec086d2b514c1ed029cf6b47dd",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.5,
-         "proof_bytes": 3913766,
-         "check_s": 1.6
+         "solve_s": 23.2,
+         "proof_bytes": 131817902,
+         "check_s": 11.3
         }
        },
        {
@@ -2089,14 +2099,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.2.8.11",
+         "case": "pre:1.2.8.11",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "48e3d222fafa205ee2252db43493e01c7f6c35d3b568c7da0ff9c01d4e3a8a66",
+         "cnf_sha256": "22a61309da81f0cb1fe27d8bdc5f64a8562aafc7d248f8d118e00b01d4115d4b",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.5,
-         "proof_bytes": 3607826,
-         "check_s": 1.7
+         "solve_s": 7.1,
+         "proof_bytes": 45253815,
+         "check_s": 11.4
         }
        },
        {
@@ -2146,14 +2156,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.2.8.14",
+         "case": "pre:1.2.8.14",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "564da125a4a91ee54490f9a6a5a16ce28709dd9a8dce5a3dff9291fb11479418",
+         "cnf_sha256": "51c3f987ea911332e8493903710c23d4f3afdb131fed37635abab9913d834b3a",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.1,
-         "proof_bytes": 929804,
-         "check_s": 1.5
+         "solve_s": 0.2,
+         "proof_bytes": 2683425,
+         "check_s": 3.0
         }
        },
        {
@@ -2246,14 +2256,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.2.9.10",
+         "case": "pre:1.2.9.10",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "9ecb1da49676e82680a5093a463c208a14077c3ec5bc3ed1f30b2fafc461ebc2",
+         "cnf_sha256": "1bcf4049333c59ea7142bfa0008b4aceee521bcdfee6bae9f8d692ba07ae6d6b",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.3,
-         "proof_bytes": 3261509,
-         "check_s": 1.5
+         "solve_s": 27.2,
+         "proof_bytes": 139364903,
+         "check_s": 12.4
         }
        },
        {
@@ -2265,14 +2275,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.2.9.11",
+         "case": "pre:1.2.9.11",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "b05fa19691c4ad18cda691c07313d0924d977834f9b5ce83034572acecc2022f",
+         "cnf_sha256": "dd2b428ab693834eeceebd48cb11dd52b3eceaa3ccdc535d171cde7599777b70",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.2,
-         "proof_bytes": 2681762,
-         "check_s": 2.0
+         "solve_s": 7.8,
+         "proof_bytes": 47204485,
+         "check_s": 4.5
         }
        },
        {
@@ -2284,14 +2294,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.2.9.12",
+         "case": "pre:1.2.9.12",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "0b083f1ea096cd74aade1cd08a7f82779bf26b8a80bd748826c40df6f32714d7",
+         "cnf_sha256": "64c70fe9b803905fd7cf17b3e905e3a8bb7e40ca806fb6a02a91e89c3bb74a0a",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.2,
-         "proof_bytes": 891450,
-         "check_s": 1.5
+         "solve_s": 2.7,
+         "proof_bytes": 19862920,
+         "check_s": 2.2
         }
        },
        {
@@ -2303,14 +2313,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.2.9.13",
+         "case": "pre:1.2.9.13",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "588e4133aa0b2548281c29e451fa78ee3ea09147d24fcc37b1b600b22b03ae6f",
+         "cnf_sha256": "84a46157a38efa6fa987a15ae309463bbbaa5c8620bc41587ac0801619a39600",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.3,
-         "proof_bytes": 930386,
-         "check_s": 1.9
+         "solve_s": 1.6,
+         "proof_bytes": 11443098,
+         "check_s": 2.3
         }
        },
        {
@@ -2322,14 +2332,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.2.9.14",
+         "case": "pre:1.2.9.14",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "14101a9dd61ed62fa0a4fa4b374388eae0e27cfab3a718a15c029781c7c629fd",
+         "cnf_sha256": "8181bb087c80edb8170561a5630037c8b85f06f4e9568a98ae70d0d101e43f3e",
          "solver": "cadical 3.0.1 --lrat",
          "solve_s": 0.2,
-         "proof_bytes": 929754,
-         "check_s": 1.6
+         "proof_bytes": 2781868,
+         "check_s": 1.2
         }
        },
        {
@@ -2422,14 +2432,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.2.10.11",
+         "case": "pre:1.2.10.11",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "41abce6d488f15a641c8b8a51df6bc56bbdf613b67a555c04d456fff40060bd9",
+         "cnf_sha256": "57167a19fb7484b7e7ca44b2c78205f45b95ccd3e6839d547c84f42d782f5e70",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.3,
-         "proof_bytes": 901642,
-         "check_s": 1.7
+         "solve_s": 10.2,
+         "proof_bytes": 59178155,
+         "check_s": 5.5
         }
        },
        {
@@ -2441,14 +2451,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.2.10.12",
+         "case": "pre:1.2.10.12",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "f9ff49a93bc052e1e71de2f13278411fbf97587f25efb5062a3227af1c29534a",
+         "cnf_sha256": "fba0334cad0227a8699359fcfe0cad57a5ade90d68e6a88bfdd4c62d891c270b",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.3,
-         "proof_bytes": 900317,
-         "check_s": 1.5
+         "solve_s": 2.5,
+         "proof_bytes": 15310935,
+         "check_s": 2.2
         }
        },
        {
@@ -2460,14 +2470,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.2.10.13",
+         "case": "pre:1.2.10.13",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "97e65c72e02327b58ae5e40dea2ac8b9bb8e426fde3c136c71bb55250c476f0a",
+         "cnf_sha256": "d9d37bf23860b294337248c84194a395485b32e33dd7518b17e789bf5d6f989d",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.2,
-         "proof_bytes": 930335,
-         "check_s": 1.7
+         "solve_s": 1.2,
+         "proof_bytes": 7857540,
+         "check_s": 4.3
         }
        },
        {
@@ -2479,14 +2489,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.2.10.14",
+         "case": "pre:1.2.10.14",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "a37ca55df4b739a07decceee124591663f9ad6dcce69eaeba1ae4c9a7e21d15d",
+         "cnf_sha256": "5b2d56f11e0a385e25b5cb987d21e86d8d29611288dec9da9eaf4583ea8ddff2",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.2,
-         "proof_bytes": 929427,
-         "check_s": 1.7
+         "solve_s": 0.4,
+         "proof_bytes": 2835269,
+         "check_s": 1.2
         }
        },
        {
@@ -2579,14 +2589,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.2.11.12",
+         "case": "pre:1.2.11.12",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "2a01e9900b9d9eaf377aeb2fd0b58614276a6fc2faf12a0ed2c40755bfb742a0",
+         "cnf_sha256": "59a70ff2e0c1f0ae720bea5c51e4dec416e24d3f40ed3ae0030a45590a704c29",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.2,
-         "proof_bytes": 893013,
-         "check_s": 1.5
+         "solve_s": 2.6,
+         "proof_bytes": 18449653,
+         "check_s": 2.8
         }
        },
        {
@@ -2598,14 +2608,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.2.11.13",
+         "case": "pre:1.2.11.13",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "763bea0b719d0dcbd89edf02e158838a84ba0c6a93891bb368d8215015014976",
+         "cnf_sha256": "ea51d6ae5e7cea2a4f6854ab850114bf1186360d22416b47faeeab773f00d9fd",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.2,
-         "proof_bytes": 930306,
-         "check_s": 1.5
+         "solve_s": 0.8,
+         "proof_bytes": 6408095,
+         "check_s": 1.4
         }
        },
        {
@@ -2617,14 +2627,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.2.11.14",
+         "case": "pre:1.2.11.14",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "eaba1f0c82c9adbbe37a8250be41c79ae1e4dea9ea0449e79623599d6ea32d38",
+         "cnf_sha256": "f453adfa84da5fb785bab299eb3c5d68fa0d698be892e4d2707b2b0e96c1c702",
          "solver": "cadical 3.0.1 --lrat",
          "solve_s": 0.3,
-         "proof_bytes": 929198,
-         "check_s": 1.5
+         "proof_bytes": 2712141,
+         "check_s": 1.2
         }
        },
        {
@@ -2717,14 +2727,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.2.12.13",
+         "case": "pre:1.2.12.13",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "4eecfd82fbb5720c66bba11f8d303483aa9aa463989b26cc8a1f7071f0499a23",
+         "cnf_sha256": "77076790e605f6376e2ac7e8a21f0ea2160253789d14e2befe5cbae1cb181fba",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.3,
-         "proof_bytes": 929939,
-         "check_s": 1.4
+         "solve_s": 0.7,
+         "proof_bytes": 4914978,
+         "check_s": 1.5
         }
        },
        {
@@ -2736,14 +2746,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.2.12.14",
+         "case": "pre:1.2.12.14",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "0b12d7bcefbf55e1c0e2022b3ee243aa0ac93af9839ecba17782ec3b01bed572",
+         "cnf_sha256": "c828035098209d0ea3b8aa65167bc7209f3f7e5af45a747a2d4f84078aaadd79",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.1,
-         "proof_bytes": 929218,
-         "check_s": 1.9
+         "solve_s": 0.2,
+         "proof_bytes": 2683324,
+         "check_s": 1.2
         }
        },
        {
@@ -2836,14 +2846,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.2.13.14",
+         "case": "pre:1.2.13.14",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "eec5ad1071736305b7c83bcf6f3032670b00b121c2510d0f5f9c470261dd5ea3",
+         "cnf_sha256": "b334d72e2a97a8828816f131afdb4f739d8ad9c94e8797a0635f849d88f396f2",
          "solver": "cadical 3.0.1 --lrat",
          "solve_s": 0.3,
-         "proof_bytes": 929264,
-         "check_s": 2.1
+         "proof_bytes": 2912569,
+         "check_s": 183.3
         }
        },
        {
@@ -4191,6 +4201,16 @@
           "check_s": 7.5
          },
          {
+          "case": "pre:1.3.5.7.8",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "395859afebd692805abf7ae01a3ff805a853315b3498ccf31881035b7b359851",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 68.8,
+          "proof_bytes": 319477703,
+          "check_s": 58.7
+         },
+         {
           "case": "pre:1.3.5.7.9",
           "result": "UNSATISFIABLE",
           "proof": "s VERIFIED UNSAT",
@@ -4280,6 +4300,86 @@
           "solve_s": 0.2,
           "proof_bytes": 958640,
           "check_s": 2.3
+         },
+         {
+          "case": "pre:1.3.5.8.9",
+          "result": "UNKNOWN",
+          "proof": "",
+          "cnf_sha256": "9ac0a6d764bb8291d6fcddb0ae0d56b718925e7d5630bc3d19e3ca2a73f6593c",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 56.4,
+          "proof_bytes": 286511291,
+          "check_s": 0.0
+         },
+         {
+          "case": "pre:1.3.5.8.9.10",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "9ee292afe1252a87a5a25577c85f3475aa7aaf231553e688d7e545025588d141",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 33.6,
+          "proof_bytes": 184676024,
+          "check_s": 14.9
+         },
+         {
+          "case": "pre:1.3.5.8.9.11",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "1f93eb585e744ef409bab13715c90cd84e012bae0e9fc6326eb31c4ebbe5f7bd",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 9.5,
+          "proof_bytes": 52107493,
+          "check_s": 4.6
+         },
+         {
+          "case": "pre:1.3.5.8.9.12",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "f89b272317580b24b6802d375760e70772f4e5e3a7d1c525c4b1072326cac940",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 5.2,
+          "proof_bytes": 32687834,
+          "check_s": 3.5
+         },
+         {
+          "case": "pre:1.3.5.8.9.13",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "fa388aaac4962c9e2cedbc620e23b5d6f5ec81a590b165ba85dd1dc639f2f62d",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 2.3,
+          "proof_bytes": 14361838,
+          "check_s": 2.1
+         },
+         {
+          "case": "pre:1.3.5.8.9.14",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "bd34591bc78d1af5d97cbe8e704e3322f2bf16b840c0ac6e03b6722422487e77",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 1.3,
+          "proof_bytes": 10034865,
+          "check_s": 1.8
+         },
+         {
+          "case": "pre:1.3.5.8.9.15",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "d1dfdac6fa8d18d7dda93eb86132c5d83983f81eeaa14c9ba83b93b771ea43dc",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.4,
+          "proof_bytes": 4201998,
+          "check_s": 1.3
+         },
+         {
+          "case": "pre:1.3.5.8.9.16",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "f91627587cb82a1178634d507ead7dabfde140f1bfe94056499db8bf2dd518bc",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.2,
+          "proof_bytes": 995744,
+          "check_s": 41.7
          }
         ]
        },
@@ -4300,7 +4400,69 @@
          "solve_s": 0.2,
          "proof_bytes": 883841,
          "check_s": 1.5
-        }
+        },
+        "extra_children_runs": [
+         {
+          "case": "pre:1.3.5.9.10",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "7de3d26bd31fe458f6ab64a4e45a046aaeae1714b65b192fa9f9e7a25f042101",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 18.3,
+          "proof_bytes": 93212725,
+          "check_s": 7.8
+         },
+         {
+          "case": "pre:1.3.5.9.11",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "0212a89608a6018bdfe381b7e4845dff619f70594e07d3640d1d3c42dc716c61",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 3.3,
+          "proof_bytes": 14996228,
+          "check_s": 2.4
+         },
+         {
+          "case": "pre:1.3.5.9.12",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "9b905ed649748cc12c49249315e82431e8b49cce6b8507f2833a9392b6afdb77",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 2.6,
+          "proof_bytes": 14215612,
+          "check_s": 5.3
+         },
+         {
+          "case": "pre:1.3.5.9.13",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "fccc85f031e4bf02eb4c9651d316dfd8e3908db99b6967baebae8466aacdf546",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 1.0,
+          "proof_bytes": 4862770,
+          "check_s": 3.8
+         },
+         {
+          "case": "pre:1.3.5.9.14",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "490e14333a400a20875359f568613c7e7343febd506e02ccbde867f6a2e5dd8c",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.6,
+          "proof_bytes": 3479396,
+          "check_s": 3.6
+         },
+         {
+          "case": "pre:1.3.5.9.15",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "733b5ff1fba4a6ead272ac1b0f2eb1ad45c6868dc0ac9fafbed3ca176fd4b28c",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.1,
+          "proof_bytes": 955867,
+          "check_s": 26.0
+         }
+        ]
        },
        {
         "prefix": [
@@ -4319,7 +4481,59 @@
          "solve_s": 0.2,
          "proof_bytes": 869004,
          "check_s": 1.3
-        }
+        },
+        "extra_children_runs": [
+         {
+          "case": "pre:1.3.5.10.11",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "fd3ee168b47c1391e033256181e2495f7e6ea91762d6343f7b9cf77c54aa93fe",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 9.0,
+          "proof_bytes": 54305137,
+          "check_s": 17.7
+         },
+         {
+          "case": "pre:1.3.5.10.12",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "39b6720cfcead2a3fbbec8eccfa46e1a87ae8f9fc2986e3d279c3418d5b35cfc",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 2.8,
+          "proof_bytes": 16842453,
+          "check_s": 17.1
+         },
+         {
+          "case": "pre:1.3.5.10.13",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "39746ea757630840b6c2e2288d89e911c5e5292d7b10b42cdd3a7129a612efe8",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 1.6,
+          "proof_bytes": 11202180,
+          "check_s": 3.8
+         },
+         {
+          "case": "pre:1.3.5.10.14",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "2a590f11d1de7054bfe34e3a2e4e526e43bb05f57a3f0d1fac3a6e2b9df18e94",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.5,
+          "proof_bytes": 3612706,
+          "check_s": 1.3
+         },
+         {
+          "case": "pre:1.3.5.10.15",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "6c12610da495a2caea9eaf313efa065c136b3e3ecd538d793547bc38f12b1539",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.1,
+          "proof_bytes": 968924,
+          "check_s": 1.2
+         }
+        ]
        },
        {
         "prefix": [
@@ -4338,7 +4552,49 @@
          "solve_s": 0.3,
          "proof_bytes": 3148227,
          "check_s": 1.7
-        }
+        },
+        "extra_children_runs": [
+         {
+          "case": "pre:1.3.5.11.12",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "b175df3c2d3ee2b4c84960ec165a87b357bf3d71f17e718e4acfdd6faf8fff63",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 3.1,
+          "proof_bytes": 20628526,
+          "check_s": 3.8
+         },
+         {
+          "case": "pre:1.3.5.11.13",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "59e79ce815d92bd53a2b3b79a5fdad768f66bfc234b6bd9409332b31c76766aa",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 1.2,
+          "proof_bytes": 6288022,
+          "check_s": 1.5
+         },
+         {
+          "case": "pre:1.3.5.11.14",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "2718357022746f34af81979831dc7e0ef13ab8b1805f56f98a1dc67a247fe2c1",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.6,
+          "proof_bytes": 4001407,
+          "check_s": 1.4
+         },
+         {
+          "case": "pre:1.3.5.11.15",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "be8e712028c86dee02a344422365f3d5a170aee3d37b2d36990758d3813e3bbd",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.2,
+          "proof_bytes": 964939,
+          "check_s": 1.8
+         }
+        ]
        },
        {
         "prefix": [
@@ -4357,7 +4613,39 @@
          "solve_s": 0.1,
          "proof_bytes": 964325,
          "check_s": 1.6
-        }
+        },
+        "extra_children_runs": [
+         {
+          "case": "pre:1.3.5.12.13",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "4b26e126b8da6d9fbc044215eb0a49d3ddef7ef7b2df7e8b25b9a3411bea3fde",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 1.5,
+          "proof_bytes": 10625987,
+          "check_s": 1.7
+         },
+         {
+          "case": "pre:1.3.5.12.14",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "04a549d2398dc4fa78fb28f2a7045dec4279b918114f662c332b78370b92a73e",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.4,
+          "proof_bytes": 2982574,
+          "check_s": 1.2
+         },
+         {
+          "case": "pre:1.3.5.12.15",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "6c2b8a5bd98be172edcf114b677897f4da8380a63c044e0dcd8b2e0053247199",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.1,
+          "proof_bytes": 967337,
+          "check_s": 1.8
+         }
+        ]
        },
        {
         "prefix": [
@@ -4376,7 +4664,29 @@
          "solve_s": 0.1,
          "proof_bytes": 900580,
          "check_s": 1.5
-        }
+        },
+        "extra_children_runs": [
+         {
+          "case": "pre:1.3.5.13.14",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "ace9f76c3f5727c44b8fadede305196399e032e7daef69efbc8142890bb20797",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.4,
+          "proof_bytes": 3837735,
+          "check_s": 1.3
+         },
+         {
+          "case": "pre:1.3.5.13.15",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "608cd167adaba3da4da31810754d40b846c21009bbfc1c4dab1a4a65b67abdb5",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.1,
+          "proof_bytes": 961294,
+          "check_s": 1.3
+         }
+        ]
        },
        {
         "prefix": [
@@ -4395,7 +4705,19 @@
          "solve_s": 0.2,
          "proof_bytes": 930291,
          "check_s": 1.3
-        }
+        },
+        "extra_children_runs": [
+         {
+          "case": "pre:1.3.5.14.15",
+          "result": "UNSATISFIABLE",
+          "proof": "s VERIFIED UNSAT",
+          "cnf_sha256": "ae73f12f8bfa9b91ae82fa959ffc9c388fec0985dc5febfae80b8e4db277790b",
+          "solver": "cadical 3.0.1 --lrat",
+          "solve_s": 0.1,
+          "proof_bytes": 956433,
+          "check_s": 1.2
+         }
+        ]
        },
        {
         "prefix": [
@@ -4487,14 +4809,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.6.7",
+         "case": "pre:1.3.6.7",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "013679fae29b2fa2aa840d91a4a9432c7808fbbcb4c6e3451e533a526b6ea7e9",
+         "cnf_sha256": "7c9fe40d4f1333f5e5de7f71a96189c817752e2fd16f95e4721fe026ce86e0f2",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.1,
-         "proof_bytes": 867215,
-         "check_s": 1.3
+         "solve_s": 372.1,
+         "proof_bytes": 1616656691,
+         "check_s": 131.6
         }
        },
        {
@@ -4506,14 +4828,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.6.8",
+         "case": "pre:1.3.6.8",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "763f3701a7eaab0c6049267422a6ef4dae03c499eeffafabdafcad9ab5ff2ceb",
+         "cnf_sha256": "cc8c1d2962ea14e99d142edc77ed0810d23085467e06af070aad724332795e9c",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.1,
-         "proof_bytes": 867583,
-         "check_s": 1.8
+         "solve_s": 117.0,
+         "proof_bytes": 550340696,
+         "check_s": 41.5
         }
        },
        {
@@ -4525,14 +4847,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.6.9",
+         "case": "pre:1.3.6.9",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "59b093077c097278ef1f84cbf1e84b11cb0e3232d9b868824ce4ce27b33477a3",
+         "cnf_sha256": "c3443798c77ae853ab2f44be22bf0ddd4a89b4f9cedd3721e9ede18508120192",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.3,
-         "proof_bytes": 868399,
-         "check_s": 1.9
+         "solve_s": 64.4,
+         "proof_bytes": 356818127,
+         "check_s": 29.1
         }
        },
        {
@@ -4544,14 +4866,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.6.10",
+         "case": "pre:1.3.6.10",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "c0997f0ce7ee3601673aae8481407723cb59aeca5022a97067ec3e0facf6df14",
+         "cnf_sha256": "ef9947944800c83a37847346a53152292ab21cc5c9397469a285fa577e633931",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.1,
-         "proof_bytes": 868773,
-         "check_s": 1.5
+         "solve_s": 17.2,
+         "proof_bytes": 103780755,
+         "check_s": 7.8
         }
        },
        {
@@ -4563,14 +4885,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.6.11",
+         "case": "pre:1.3.6.11",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "9143ff39b9ca81b67c421a9bc70ec59af8d1fbb75aba9346cc2457a78ac21427",
+         "cnf_sha256": "b247e1f64dc99fc160c43f0e4a67afd143f4389e1ce126549c24015ccb684ab5",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.2,
-         "proof_bytes": 869681,
-         "check_s": 1.3
+         "solve_s": 5.8,
+         "proof_bytes": 36933766,
+         "check_s": 3.6
         }
        },
        {
@@ -4582,14 +4904,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.6.12",
+         "case": "pre:1.3.6.12",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "c6876073ee2091fa92f275614f7299f980c27c4429922c1b63a8ce49b911c92c",
+         "cnf_sha256": "eb2851f8dc02efc61b1121983258486c21671eb07b97b9fccda84abe0c7ebf41",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.3,
-         "proof_bytes": 870158,
-         "check_s": 1.2
+         "solve_s": 2.6,
+         "proof_bytes": 20393761,
+         "check_s": 28.1
         }
        },
        {
@@ -4601,14 +4923,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.6.13",
+         "case": "pre:1.3.6.13",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "0dc9ecbfb38add7f0fdad0e531e7bb8994a2a3eb984f7cfc244f29837df8ddf6",
+         "cnf_sha256": "d81a06dd38b1ced5b3a32cf67a01ee8c30695e68bb9bce69646ecd99e1273a35",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.2,
-         "proof_bytes": 870973,
-         "check_s": 1.7
+         "solve_s": 0.8,
+         "proof_bytes": 6332051,
+         "check_s": 1.5
         }
        },
        {
@@ -4620,14 +4942,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.6.14",
+         "case": "pre:1.3.6.14",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "4ee5f19d0911e174a3451a8797b168b6bf2b53ae81bb2b3a633afd2c0f1438da",
+         "cnf_sha256": "bef1d874ce8827674a2686f5cac5ba5664937ed8d33f55fd1d6d54e9c5b8e82a",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.1,
-         "proof_bytes": 930112,
-         "check_s": 1.6
+         "solve_s": 0.2,
+         "proof_bytes": 1000057,
+         "check_s": 2.6
         }
        },
        {
@@ -4720,14 +5042,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.7.8",
+         "case": "pre:1.3.7.8",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "1f4651df87729373229215fe5ed58dc439147b591a7024cd4ba4d05e3f18af6c",
+         "cnf_sha256": "f1a2b40b48abc1e5674a1e3277ad540044782e45c71689b6386b5f2eb7326c0b",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.7,
-         "proof_bytes": 4406998,
-         "check_s": 1.7
+         "solve_s": 134.6,
+         "proof_bytes": 641878391,
+         "check_s": 49.4
         }
        },
        {
@@ -4739,14 +5061,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.7.9",
+         "case": "pre:1.3.7.9",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "3a95e542e813e300374911bd4913550f43fc9f043391c957b5508e7df3c065c0",
+         "cnf_sha256": "ad34f948dad11c2638c9143d726e201a65a5ea4ec90ccaa597a1592a1ec48049",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.2,
-         "proof_bytes": 930743,
-         "check_s": 1.5
+         "solve_s": 23.1,
+         "proof_bytes": 123285232,
+         "check_s": 9.0
         }
        },
        {
@@ -4758,14 +5080,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.7.10",
+         "case": "pre:1.3.7.10",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "c79983cf647da3429a368b8282fd50edca2fe2b0f8a0894ba5538d09130bca9f",
+         "cnf_sha256": "e8a37324066f89f8d9deaf2a7abea818fb4e9391e73b810389721f9c398000c4",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.2,
-         "proof_bytes": 979574,
-         "check_s": 1.2
+         "solve_s": 16.7,
+         "proof_bytes": 98365577,
+         "check_s": 7.6
         }
        },
        {
@@ -4777,14 +5099,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.7.11",
+         "case": "pre:1.3.7.11",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "7595aac6b4b435f8cacd755edb5200a03485ff579710cbb20fe6461971340c84",
+         "cnf_sha256": "44a8558b34b01c0013539de1231e943a72e36e9b18f9068221ef3b19b46d651b",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.2,
-         "proof_bytes": 893358,
-         "check_s": 2.0
+         "solve_s": 3.4,
+         "proof_bytes": 22195799,
+         "check_s": 2.3
         }
        },
        {
@@ -4796,14 +5118,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.7.12",
+         "case": "pre:1.3.7.12",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "fca80884410d1e523735690e98fe26a35a169874218dc37ae402b7c9baeef5ef",
+         "cnf_sha256": "21b693183595b70c4659ab8bc85918ffbc17e2c936ba59ae110ba7feca6f986f",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.1,
-         "proof_bytes": 885011,
-         "check_s": 1.5
+         "solve_s": 2.0,
+         "proof_bytes": 15926920,
+         "check_s": 2.0
         }
        },
        {
@@ -4815,14 +5137,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.7.13",
+         "case": "pre:1.3.7.13",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "ee9f1d12b22d95282d7de5b0e1c64b6803fbd46e17455ddcfa53ba12a849da18",
+         "cnf_sha256": "6be741df577ef5b74518add5f801910b2138fa69a572341f13fb45d60ef8b37d",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.3,
-         "proof_bytes": 930124,
-         "check_s": 1.4
+         "solve_s": 1.0,
+         "proof_bytes": 6027550,
+         "check_s": 1.5
         }
        },
        {
@@ -4834,14 +5156,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.7.14",
+         "case": "pre:1.3.7.14",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "be9d3a214c6cd6b9c8ae12ee5080df7e7ec09b6dcd09c23a14fbfe6ea43d4d98",
+         "cnf_sha256": "940ce5a9953505c7c848f9785b860a8c8113e8b3a58f30948d80d1ca808e1119",
          "solver": "cadical 3.0.1 --lrat",
          "solve_s": 0.2,
-         "proof_bytes": 930456,
-         "check_s": 2.0
+         "proof_bytes": 2475545,
+         "check_s": 1.2
         }
        },
        {
@@ -4934,14 +5256,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.8.9",
+         "case": "pre:1.3.8.9",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "e2a2ba8b7e66b0e3fc0ff26f2c08e48d4e3820c498bc510d8e1e254fdf2eeb88",
+         "cnf_sha256": "04af30ad59e772b1cab99933ec1d9931622aeed8a86402a9c5e4310e6fb22a00",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.3,
-         "proof_bytes": 930162,
-         "check_s": 1.3
+         "solve_s": 63.2,
+         "proof_bytes": 327261673,
+         "check_s": 24.8
         }
        },
        {
@@ -4953,14 +5275,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.8.10",
+         "case": "pre:1.3.8.10",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "5f376850995a010da8edf970730f73e431318180cd6eb295ba19044939d20af6",
+         "cnf_sha256": "98486fa355afaa3c3bb6c9c1ac555850a00ea852ec381dd50d31a15462b78b59",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.3,
-         "proof_bytes": 2735110,
-         "check_s": 1.8
+         "solve_s": 14.7,
+         "proof_bytes": 83379913,
+         "check_s": 7.1
         }
        },
        {
@@ -4972,14 +5294,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.8.11",
+         "case": "pre:1.3.8.11",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "db433b13bd1f7675865d70495d94969e0737a083cfde25c3e663e1680abd7589",
+         "cnf_sha256": "71a2e3a777e851cdff08a9cf853d7fcc8b0d6834c655dcdfdbc169e2825bc184",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.3,
-         "proof_bytes": 3319562,
-         "check_s": 1.6
+         "solve_s": 7.8,
+         "proof_bytes": 49821745,
+         "check_s": 4.4
         }
        },
        {
@@ -4991,14 +5313,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.8.12",
+         "case": "pre:1.3.8.12",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "b985cbbcb52604fe948af1e81d3054bfd666eb7a529f615aa38b6a26ab004578",
+         "cnf_sha256": "ecf1dbcf3fcd8248116f50c8ae1b1fe603712995d24b616038c0619c7b198e62",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.1,
-         "proof_bytes": 883774,
-         "check_s": 1.6
+         "solve_s": 2.4,
+         "proof_bytes": 17204694,
+         "check_s": 2.1
         }
        },
        {
@@ -5010,14 +5332,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.8.13",
+         "case": "pre:1.3.8.13",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "968917f49787475c3190080c87193cd87e069fc67614a639ebce762bb3f0addb",
+         "cnf_sha256": "80b1dc489b7d8a4f8ac1b06b35e8ea1d0fa9b5910c41593565db748764fb6d5e",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.1,
-         "proof_bytes": 930510,
-         "check_s": 1.7
+         "solve_s": 1.1,
+         "proof_bytes": 7963869,
+         "check_s": 1.6
         }
        },
        {
@@ -5029,14 +5351,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.8.14",
+         "case": "pre:1.3.8.14",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "9a2f5ecc76752e397a5c835caae168614ea3812540ce5cc24461cf1066bbfe7a",
+         "cnf_sha256": "aa5ac7182ef6920af1fd556eb1daa5fbf169916dff0041fcacf0cd4e539e5087",
          "solver": "cadical 3.0.1 --lrat",
          "solve_s": 0.2,
-         "proof_bytes": 930184,
-         "check_s": 1.8
+         "proof_bytes": 2572468,
+         "check_s": 1.2
         }
        },
        {
@@ -5129,14 +5451,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.9.10",
+         "case": "pre:1.3.9.10",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "4c19614c5d79fdea40f1b68f896d92433f9b9f8f0b5389361c8acd3d83a1f52a",
+         "cnf_sha256": "ba4b1f86353f1ae1fe6bca1656733df49a0a9eba58b57f2ddeca7757a26c526a",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.2,
-         "proof_bytes": 931378,
-         "check_s": 2.0
+         "solve_s": 20.3,
+         "proof_bytes": 113913599,
+         "check_s": 58.8
         }
        },
        {
@@ -5148,14 +5470,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.9.11",
+         "case": "pre:1.3.9.11",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "d60cebd6d32933901f412041d6fe0dc39994b5f8dc848081c875e1a5fe238130",
+         "cnf_sha256": "fb79a720c3a20ad77a352a6093828d32cb91b57f152c9d98ceb7ea6a2635c177",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.3,
-         "proof_bytes": 930358,
-         "check_s": 1.7
+         "solve_s": 4.2,
+         "proof_bytes": 24244482,
+         "check_s": 2.8
         }
        },
        {
@@ -5167,14 +5489,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.9.12",
+         "case": "pre:1.3.9.12",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "431efa4a74f4c4183852229d886b39a62e971c5729911e37a72cc4b5dc197d8c",
+         "cnf_sha256": "cf2a2b0d28166f1006beba84b9e29bbb0aba6cf48e94a8597488cb1434deb2ea",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.2,
-         "proof_bytes": 870175,
-         "check_s": 1.7
+         "solve_s": 2.7,
+         "proof_bytes": 18973566,
+         "check_s": 41.9
         }
        },
        {
@@ -5186,13 +5508,13 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.9.13",
+         "case": "pre:1.3.9.13",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "7e4f6295917505959926ddc63a48b2b26e9fa27a718014774424a722b8a1fdb8",
+         "cnf_sha256": "0c9f1d66351290edc4f038b1f7d7ea76387e24ac9cd6606a620055c3a2320f48",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.3,
-         "proof_bytes": 930332,
+         "solve_s": 0.9,
+         "proof_bytes": 5939107,
          "check_s": 1.6
         }
        },
@@ -5205,13 +5527,13 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.9.14",
+         "case": "pre:1.3.9.14",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "ec0cba6533b9e02e8a061c7734309f240a160d6305123c16cc107981c11ec764",
+         "cnf_sha256": "58271005c03144f37b400b52bb83eeace054192fc005f1b2cf31967bdffdbab2",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.4,
-         "proof_bytes": 929944,
+         "solve_s": 0.3,
+         "proof_bytes": 2661900,
          "check_s": 1.9
         }
        },
@@ -5305,14 +5627,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.10.11",
+         "case": "pre:1.3.10.11",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "a667da83ca3fc4f38749be3a4b86c12e5644ecf866e3e59a7cc4847172531146",
+         "cnf_sha256": "02a1913519afde0c69c713b4d6a8b3bc2ee90e0ad0f458116561e67434ce4a4a",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.3,
-         "proof_bytes": 993750,
-         "check_s": 1.3
+         "solve_s": 7.1,
+         "proof_bytes": 44193714,
+         "check_s": 4.0
         }
        },
        {
@@ -5324,14 +5646,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.10.12",
+         "case": "pre:1.3.10.12",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "c9f1041354945d9f20a69f4c9036a69928ed395af5e3840140ad65483d3efb6e",
+         "cnf_sha256": "2afa12173935de4210e63d018522bb9b74fdf1c4ab2d76973348bb551a76f355",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.3,
-         "proof_bytes": 878706,
-         "check_s": 1.4
+         "solve_s": 1.3,
+         "proof_bytes": 8939200,
+         "check_s": 1.7
         }
        },
        {
@@ -5343,14 +5665,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.10.13",
+         "case": "pre:1.3.10.13",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "ac1dd608c6eab7c477a72381cd5c859ba4fa783918e1cd7e64975e4050df8ea9",
+         "cnf_sha256": "08bcff10bd7ba880ba9007f3256079eed6e224692cb981f580ea94284e4a79c3",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.2,
-         "proof_bytes": 930518,
-         "check_s": 1.5
+         "solve_s": 1.0,
+         "proof_bytes": 7165532,
+         "check_s": 1.6
         }
        },
        {
@@ -5362,14 +5684,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.10.14",
+         "case": "pre:1.3.10.14",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "de7cffe021833e9e756174e72fe1e746918cfff618ff1205d80a7d8e9091611d",
+         "cnf_sha256": "fa50e866e0c2cfec171b13d44e6d7a28c6931443d6e96bcf917550c1a9651878",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.1,
-         "proof_bytes": 929641,
-         "check_s": 1.6
+         "solve_s": 0.2,
+         "proof_bytes": 2542979,
+         "check_s": 1.3
         }
        },
        {
@@ -5462,14 +5784,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.11.12",
+         "case": "pre:1.3.11.12",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "45c6473ae2168cd02b3f96b609f6e3de96eaae2784e167efc572c718a825c641",
+         "cnf_sha256": "ab1c363c7c1312322e5b82e93f62ecea39c229dbe639233a6237e130c0876073",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.3,
-         "proof_bytes": 892589,
-         "check_s": 1.5
+         "solve_s": 2.2,
+         "proof_bytes": 13939484,
+         "check_s": 128.6
         }
        },
        {
@@ -5481,14 +5803,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.11.13",
+         "case": "pre:1.3.11.13",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "3b556e3c54e387a8aef5b0997cf0730f57823b85b03df83b518937785a302c50",
+         "cnf_sha256": "f743efb23dc7a19a475cc15b6ded66ebf2b0e9e32e6ee206d17e43795b8d2284",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.1,
-         "proof_bytes": 930071,
-         "check_s": 1.5
+         "solve_s": 0.5,
+         "proof_bytes": 3591514,
+         "check_s": 128.4
         }
        },
        {
@@ -5500,14 +5822,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.11.14",
+         "case": "pre:1.3.11.14",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "54d26dc00864031864316ba2fc0fd42f91c5d183dd79eb3493f518fdfee50c2a",
+         "cnf_sha256": "bc43481df81a6f02752da251a65047c3ade3fd9b1fe85861bcd6e18725ac1728",
          "solver": "cadical 3.0.1 --lrat",
          "solve_s": 0.3,
-         "proof_bytes": 929670,
-         "check_s": 1.7
+         "proof_bytes": 2583237,
+         "check_s": 126.8
         }
        },
        {
@@ -5600,14 +5922,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.12.13",
+         "case": "pre:1.3.12.13",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "036a64e37f643b08c45df7788982e592f3a61764c19086bc33cf0736690f448e",
+         "cnf_sha256": "e79b598a0ced4be1206e70f02cba4cc7e3f0834598d8d68b2992dca1442e87dc",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.3,
-         "proof_bytes": 930171,
-         "check_s": 1.9
+         "solve_s": 0.8,
+         "proof_bytes": 5002310,
+         "check_s": 1.6
         }
        },
        {
@@ -5619,14 +5941,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.12.14",
+         "case": "pre:1.3.12.14",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "1ba63692a3872830f2ed0fde475c660c5fb745747fe9df5b0d5fbb10e3ab5422",
+         "cnf_sha256": "8ebe62224c61161f7c0fcff84e1a025da027b808d748a724d6baa9c68fd89ab4",
          "solver": "cadical 3.0.1 --lrat",
-         "solve_s": 0.3,
-         "proof_bytes": 929405,
-         "check_s": 1.7
+         "solve_s": 0.2,
+         "proof_bytes": 2483069,
+         "check_s": 1.5
         }
        },
        {
@@ -5719,14 +6041,14 @@
         ],
         "closed": true,
         "by": {
-         "case": "sb:1.3.13.14",
+         "case": "pre:1.3.13.14",
          "result": "UNSATISFIABLE",
          "proof": "s VERIFIED UNSAT",
-         "cnf_sha256": "f7887f3b96eb34d0a39cd5c37f4dc2bd4c902b556c5994dfde2acf27ed3c20cb",
+         "cnf_sha256": "36f5fd9fc8d175f7faa6000aa147e4ea46394704feea41d3bf4745800ce9f35f",
          "solver": "cadical 3.0.1 --lrat",
          "solve_s": 0.2,
-         "proof_bytes": 929556,
-         "check_s": 1.7
+         "proof_bytes": 2545138,
+         "check_s": 1.8
         }
        },
        {
