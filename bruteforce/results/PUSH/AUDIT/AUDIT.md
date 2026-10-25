@@ -460,7 +460,7 @@ resolve from this container (DNS), so forum dates, the BEGS page number (p. 273)
 - **Results, last bullet.** Replace with:
   > Proposition 4: rules whose offsets are linear, or piecewise affine with boundedly many pieces,
   > with slopes that are fixed rationals (independent of n), give only o(n) orbits.
-- **Why.** Every residue b mod n equals u/v with |u|, v ≤ √n. So "linear g(d) = bd" for an arbitrary
+- **Why.** By Thue's lemma, every residue b has bv ≡ u (mod n) with 1 ≤ v ≤ √n and |u| ≤ √n. So "linear g(d) = bd" for an arbitrary
   residue b is *not* covered; the Varnavides constant depends on the pattern. CYCPAT §6.3 says so
   explicitly ("does not cover slopes depending on n, such as the coset rules"). The paper should
   repeat this caveat once in the text after the Remark:
@@ -524,3 +524,46 @@ have no checked proof:
 - BEGS page numbers and the Erdős-forum dates (DNS blocked).
 - The extremal counts for n = 8..11 by my own code. They are cross-checked by 4–5 independent
   checkers in M12/V12. My own code (`src/smallgood.py`) reproduces n = 6 (1 extremal class, M(6) = 11) and n = 7 (5 extremal classes at e = 14, none at e = 15; `logs/smallgood_n7.log`).
+
+---
+
+## 6. Status changes from today's PUSH round (read at about 13:40 UTC; not audited by me)
+
+Commits on `bruteforce-2026-10` up to 7ecc878 report the following. I read the reports and commit
+messages only, and **did not re-check these proofs**. If they hold, several §4 items become wording
+updates rather than weakenings.
+
+- **n = 44, k = 11 is UNSAT, with checked proofs, by both splits.**
+  - Presence-bit split: PUSH/N44A covers p5 = 1, plus re-proofs of all 8 of C1's other cubes. PUSH/N44B
+    covers p5 = 0. Every leaf has CaDiCaL LRAT checked by cake_lpr, and N44B also cross-checks with
+    drat-trim.
+  - CYCPAT's split: PUSH/N44C (cake_lpr). It also has a positive control at n = 40.
+  - So **k_max(44) = 10 < n/4**. This is the first multiple of 4 where n/4 fails, given each encoder and
+    its symmetry-breaking argument.
+  - Affected text:
+    - abstract ("for n = 12, 16, …, 40": add "but not at n = 44");
+    - Results bullet 2;
+    - the Remark on n ≡ 0 (mod 4) (replace the "undecided" paragraph);
+    - open problem 3 ("the first open case is n = 44");
+    - Table 3, which gets a new exact row 44;
+    - OUTLINE ledger.
+- **PUSH/CERT reports:**
+  - n = 38, k = 10: DRAT verified by drat-trim.
+  - n = 42, k = 11: LRAT verified by cake_lpr.
+  - n = 47, k = 12: all 29 cubes with cake_lpr-verified LRAT; coverage re-checked.
+  - **n = 35: k = 8 SAT and k = 9 UNSAT (DRAT, drat-trim), so k_max(35) = 8.**
+- If all of the above stands:
+  - the abstract can read "for 12 ≤ n ≤ 42 and n = 44, 47, with every upper bound except n = 12 checked
+    by drat-trim or cake_lpr";
+  - the "(n ≠ 35)" exclusions disappear everywhere;
+  - `CYCLIC_EXACT` in `make_tables.py` needs the rows 35, 38, 42, 44 and 47 updated, and **cake_lpr must
+    be added to refs.bib**.
+- Even then, §4.1 (linear rules), §4.3 (DRAT for n ≤ 11), §4.4 (n/4 searches) and the Table 2 padding
+  issue (§2.4) are unaffected.
+- **Recommendation.** Since k_max(44) = 10 < 11 is now claimed, "No solution with k = n/4 … in
+  [44, 100]" should become: "k = n/4 is impossible at n = 44 (proved), and no solution was found in
+  time-limited searches at n = 48, …, 100".
+- **Caution.** A proof checker certifies the CNF only. For n = 44 the ¬p1 cube of C1's split depends on
+  the lex-leader argument (sound; §2.5). N44C's added symmetry breaking (its §4.3) has its own soundness
+  argument, which I have not audited. Its R4 plain-encoding re-proof of e = 2..7 was still in
+  progress. A referee should see both arguments written out in the paper.
