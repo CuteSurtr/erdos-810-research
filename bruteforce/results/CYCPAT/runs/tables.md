@@ -25,7 +25,7 @@
 | 33 | 8 | complete (case split unit/nounit) | 1756 | 35120 | — (CONSTR) | 579.7 |
 | 34 | 8 | complete (case split unit/nounit) | 25663 | 410608 | — (CONSTR) | 819.4 |
 | 36 | 9 | complete (case split unit/nounit) | 59 | 708 | yes (1040 s) | 927.7 |
-| 40 | 10 | complete (split unit2:e + nounit) | 4 | 64 | n/a: k = n/4, k_max unknown | 4827.5 |
+| 40 | 10 | complete (split unit2:e + nounit) | 4 | 64 | CYC/C0 (DRAT verified) | 4827.5 |
 | 44 | 11 | incomplete: 1 of 21 sub-cases finished | 0 | 0 | n/a: k = n/4, k_max unknown |  |
 
 @@BRUTE_TABLE

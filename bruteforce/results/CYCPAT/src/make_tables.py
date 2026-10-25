@@ -78,7 +78,7 @@ for n in sorted({n for n, _ in enum}):
     k = KMAX[n]; d = enum.get((n, k))
     if not d: continue
     up = enum.get((n, k + 1))
-    upst = ('yes (%.0f s)' % up['secs']) if up and up['n_orbits'] == 0 and up['status'] == 'complete' else ('n/a: k = n/4, k_max unknown' if n >= 40 else '— (CONSTR)')
+    upst = ('yes (%.0f s)' % up['secs']) if up and up['n_orbits'] == 0 and up['status'] == 'complete' else ({40: 'CYC/C0 (DRAT verified)'}.get(n, 'n/a: k = n/4, k_max unknown') if n >= 40 else '— (CONSTR)')
     P(f"| {n} | {k} | {d['status']} | {d['n_orbits']} | {d['n_solutions_gmin0']} | {upst} | {d.get('secs', '')} |")
     json.dump({'n': n, 'k': k, 'status': d['status'], 'n_orbits': d['n_orbits'],
                'normal_forms': [o['canon'] for o in d['orbits']], 'orbit_sizes': [o['orbit_size'] for o in d['orbits']]},

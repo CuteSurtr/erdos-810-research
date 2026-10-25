@@ -17,11 +17,11 @@ Swap:              0           0           0
 
 | # | Result | Status |
 |---|--------|--------|
-| R1 | Full enumeration of optimal (D, g) up to symmetry for n = 12–34 and n = 36, and of all (D, g) with k = n/4 at n = 40 (**exactly 4 orbits**), with orbit counts (§4). n = 44 at k = 11: see §4. | *proved* (exhaustive SAT with blocking; solver results, no DRAT). Counts for n ≤ 28 are confirmed by an independent brute-force counter. Every listed solution is re-checked by two checkers. |
+| R1 | Full enumeration of optimal (D, g) up to symmetry for n = 12–34 and n = 36, and n = 40 (k_max(40) = 10 by CYC/C0, DRAT verified: **exactly 4 optimal orbits**), with orbit counts (§4). n = 44 at k = 11: see §4. | *proved* (exhaustive SAT with blocking; solver results, no DRAT). Counts for n ≤ 28 are confirmed by an independent brute-force counter. Every listed solution is re-checked by two checkers. |
 | R2 | Optimal solutions have **no visible algebraic structure**: no solution has g polynomial of degree ≤ 2 on D (all orbits tested for n = 20, 21, 24, 27, 28, 36); φ = 2g − d is never c0 + c2·d² for odd n ≥ 15; a nontrivial multiplier stabiliser occurs only at n = 13, 14, 15, 21, 24, 26, 29, 30 (≤ 6 orbits each); no residue pattern mod 4; less Sidon-like than random (§5). | *proved* for the enumerated n (exhaustive tests on the complete lists) |
 | R3 | **Closed form of multiplier-invariant colourings.** If (D, g) is invariant under a subgroup K ∌ −1 of Z_p^× and D = ±cK, then after scaling, colour(a→b) = (1−λ)a + (1+λ)b, where each edge is oriented so that b − a ∈ cK. | *proved* (§6.1, paper proof) and numerically confirmed |
 | R4 | **Single-coset rule** (D = ±cK, K = the odd-order subgroup of index r in Z_p^×, one free parameter t). It gives k = (p−1)/4 for p = 13, 29, 37, 53, 61 and k = (p−1)/6 for every p ≡ 7 (mod 12) with 19 ≤ p ≤ 643 except p = 439, 523, 571, 607, 619. Each fixed index dies: the last working p is 61 (r=4), 643 (r=6), 1993 (r=8), 4271 (r=10), ≥ 9013 (r=12). Empirically p_last ≈ 0.45·r⁴, so the best k ≈ 0.8·p^{3/4}. **Not εn.** | instances *certificate-verified*; the asymptotic trend is *heuristic* |
-| R5 | **New lower bounds**: M(53) ≥ 689 (k=13) and M(61) ≥ 915 (k=15). The README/CONSTR tables have 636 and 793; for the cyclic family CONSTR had k=12 and k=13. | *certificate-verified* (`certs.json`, simple checker) |
+| R5 | **Improved lower bounds**: M(53) ≥ 689 (k=13) and M(61) ≥ 915 (k=15), from an explicit algebraic rule. The README/CONSTR tables have 636 and 793; CONSTR's cyclic k was 12 and 13. The CYC agents C4 (n = 53) and C2 (n = 61) independently reached the same k by SAT in this round. | *certificate-verified* (`certs.json`, simple checker) |
 | R6 | **Two-class rule** (two ±-cosets, one extra offset γ): k = (p−1)/6 for every p ≡ 13 (mod 24) with 37 ≤ p ≤ 373 except p = 349, and k = (p−1)/5 at p = 31, 71, 151. It also decays. | instances *certificate-verified* (C reduced check + full check; explicit graph for p ≤ 200); trend *heuristic* |
 | R7 | **Linear rules are o(n).** If g(d) ≡ b·d on D with b ≡ u/v for fixed integers (v ≥ 1, gcd(v, n) = 1, b ∉ {0, 1}), then D contains no non-degenerate homothetic copy of {0, v, v−u, u}. By Szemerédi's theorem, \|D\| = o(n). For b = 2 the forbidden pattern is a 4-term AP. The same holds for piecewise-affine g with O(1) pieces of bounded-height slope. | *proved* (§6.3, paper proof, uses Szemerédi's theorem as a black box); checked numerically |
 | R8 | Exact optimum of the linear rule g = 2d for n = 43–99 (SAT): k/n falls from 0.209 to 0.172. Over all slopes b (n = 61–89) the best k is at most 1 above b = 2. Over all quadratics g = ad² + bd (n = 13–43) the best rule is linear (a = 0) in 29 of 31 cases, and it reaches k_max only at n = 13–17, 20, 22, 25, 26, 29, 30. | *proved* per n (exact SAT within the rule) |
@@ -138,7 +138,7 @@ Other solution files:
 | 33 | 8 | complete (case split unit/nounit) | 1756 | 35120 | — (CONSTR) | 579.7 |
 | 34 | 8 | complete (case split unit/nounit) | 25663 | 410608 | — (CONSTR) | 819.4 |
 | 36 | 9 | complete (case split unit/nounit) | 59 | 708 | yes (1040 s) | 927.7 |
-| 40 | 10 | complete (split unit2:e + nounit) | 4 | 64 | n/a: k = n/4, k_max unknown | 4827.5 |
+| 40 | 10 | complete (split unit2:e + nounit) | 4 | 64 | CYC/C0 (DRAT verified) | 4827.5 |
 | 44 | 11 | incomplete: 1 of 21 sub-cases finished | 0 | 0 | n/a: k = n/4, k_max unknown |  |
 
 Observations:
