@@ -182,6 +182,9 @@ All UNSAT claims below come with proofs checked by a standard checker (cake_lpr 
   The k = 11 certificate has 528 edges.
   PUSH2/N48M then ran the 57 mirror branches directly: `COVER OK {'unsat': 7811, 'covered': 0, 'internal': 166}`,
   so the n = 48 result no longer needs the lemma.
+- **n = 52, 56 at k = n/4** (PUSH2, partial, open): n = 52 closed 5 of 9 level-1 cubes (941 verified leaves),
+  n = 56 closed 2 of 9; no solution. Positive controls: k = 12 at n = 52 and k = 13 at n = 56 are SAT in this
+  encoding. Remaining n = 52 cost ≈ 64 core-hours (`results/PUSH2/N52/REPORT.md` §5).
 - So k_max(4m) = m holds for m = 3..10 and fails for m = 11, 12.
 - **CERT.** k_max(35) = 8 (DRAT, plus two more encodings with LRAT); n = 38 now has drat-trim and
   cake_lpr proofs; n = 42 has cake_lpr proofs from two encoders; n = 47 has cake_lpr proofs for all

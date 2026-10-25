@@ -153,6 +153,7 @@ Applied the PUSH/AUDIT report (`results/PUSH/AUDIT/AUDIT.md`) and the new PUSH r
 | Cyclic k_max(42) = 10 | LRAT checked by cake_lpr, two encoders | `results/PUSH/CERT` |
 | Cyclic k_max(47) = 11 | 29 cubes, each LRAT checked by cake_lpr, two encoders; coverage re-checked | `results/PUSH/CERT` |
 | k_max(44) = 10, independent second proof | CYCPAT's plain encoding, 476 leaves, all LRAT checked by cake_lpr (plus a 177-leaf tree with extra symmetry breaking) | `results/PUSH/N44C` |
+| k = n/4 at n = 52, 56 | open; partial refutation (n = 52: 5/9 level-1 cubes closed, 941 cake_lpr leaves; n = 56: 2/9); no SAT; independent log audit | `results/PUSH2/N52`, `N56` |
 | **k_max(48) = 11 (Theorem 44)** | 7811 leaves, all LRAT checked by cake_lpr; trivial cover, `covercheck.py` 'covered': 0 (the 57 former mirror branches were run directly by PUSH2/N48M); independent tree/hash audit passed; relies on C1's encoder and lex-leader | `results/PUSH/N48`, `results/PUSH2/N48M` |
 | n/4 solution-orbit counts | complete SAT enumeration with blocking (solver) | `results/CYCPAT` |
 | Proposition 4 (linear rules) | paper proof; audited (PUSH/AUDIT §1.6), numerically tested (3286 instances) | `results/CYCPAT/REPORT.md` §6.3, `results/PUSH/AUDIT` |
@@ -169,7 +170,7 @@ Applied the PUSH/AUDIT report (`results/PUSH/AUDIT/AUDIT.md`) and the new PUSH r
 - [x] n = 38 and n = 42 re-checked with standard checkers (PUSH/CERT).
 - [x] n = 44, k = 11 finished, twice (PUSH/N44A–C).
 - [x] N48's 57 mirror branches run directly (PUSH2/N48M, 2026-10-25): k_max(48) no longer needs the u = −1 lemma.
-- [ ] Optional: n = 52, 56 at k = n/4 with N48's offset split.
+- [ ] n = 52, 56 at k = n/4 (PUSH2, partial): n = 52 has 5/9 level-1 cubes closed (941 verified leaves), n = 56 has 2/9; no SAT. Remaining n = 52 cost ≈ 64 core-hours, sharding plan in `results/PUSH2/N52/REPORT.md` §5.
 - [ ] Optional: DRAT for the (12, 41) cubes Δ = 7, 8, 9, which would give a fully certified M(12).
 - [ ] Optional: Lean `decide` certificates for the lower bounds n ≤ 30.
 - [ ] Authorship, acknowledgements and the AI-assistance disclosure are the author's decision;

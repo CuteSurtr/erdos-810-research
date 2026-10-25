@@ -502,7 +502,10 @@ $\M(n)\ge n^2/4$. The number of solutions at $k=n/4$, up to the action above, is
 These counts come from complete SAT enumeration with blocking clauses. For $n\le 28$ the
 independent brute-force search reproduces them, both as raw counts and up to symmetry. They peak at $n=24$
 and fall sharply after that. Theorem~\ref{thm:44} shows that the pattern stops: $\kmax(n)=n/4-1$
-at $n=44$ and $n=48$. For the other multiples of $4$ in $[52,100]$ we ran only
+at $n=44$ and $n=48$. At $n=52$ and $n=56$ we started the same refutation of $k=n/4$ as at
+$n=48$. It closed $5$ of the $9$ first-level cubes at $n=52$ (with $941$ leaves) and $2$ of the
+$9$ at $n=56$, every leaf with an LRAT proof checked by \texttt{cake\_lpr}, and found no
+solution, so both cases are open. For the multiples of $4$ in $[52,100]$ we also ran
 time-limited SAT searches, from a minute to a few hours, and none found a solution with
 $k=n/4$. The values $n=64$ and $n=96$ received no general search.
 For several $n$, all odd except $n=18$, $\kmax(n)/n$ exceeds $1/4$; for example
@@ -617,7 +620,8 @@ Two further experiments point the same way. Both are evidence, not theorems.
 \item Give a fully certified proof of $\M(12)=40$, by checking the cubes $\Delta=7,8,9$.
 \item Is $\kmax(n)=o(n)$? A construction with $\kmax(n)\ge\varepsilon n$ would answer
   Erd\H{o}s \#810 positively. By Theorem~\ref{thm:44}, $\kmax(4m)<m$ at $m=11,12$. Is
-  $\kmax(n)<n/4$ for all $n\ge44$?
+  $\kmax(n)<n/4$ for all $n\ge44$? The first open cases are $n=52$ and $n=56$. For $n=52$ the
+  rest of the refutation is estimated at about $64$ core-hours.
 \end{enumerate}
 
 % =====================================================================
