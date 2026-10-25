@@ -1,4 +1,10 @@
 bin/
 src/cyccheck
+src/forb
+src/forbcell
+src/coset
 *.o
 *.cnf
+__pycache__/
+runs/*.log
+runs/enum_*.json

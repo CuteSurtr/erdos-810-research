@@ -1,0 +1,245 @@
+{"n": 13, "u": 12, "order": 2, "best_k": 2, "Dg": [[3, 8], [6, 3]], "t": 0, "next": "UNSAT", "next_k": 3, "next_secs": 0.0}
+{"n": 13, "u": 3, "order": 3, "best_k": 3, "Dg": [[2, 4], [5, 10], [6, 12]], "t": 0, "next": "UNSAT", "next_k": 4, "next_secs": 0.0}
+{"n": 13, "u": 5, "order": 4, "best_k": 2, "Dg": [[4, 2], [6, 3]], "t": 0, "next": "UNSAT", "next_k": 3, "next_secs": 0.0}
+{"n": 13, "u": 4, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 2, "next_secs": 0.0}
+{"n": 13, "u": 2, "order": 12, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 2, "next_secs": 0.0}
+{"n": 14, "u": 13, "order": 2, "best_k": 2, "Dg": [[4, 9], [6, 10]], "t": 0, "next": "UNSAT", "next_k": 3, "next_secs": 0.0}
+{"n": 14, "u": 9, "order": 3, "best_k": 3, "Dg": [[1, 9], [3, 4], [5, 2]], "t": 0, "next": "UNSAT", "next_k": 4, "next_secs": 0.0}
+{"n": 14, "u": 3, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 2, "next_secs": 0.0}
+{"n": 15, "u": 4, "order": 2, "best_k": 4, "Dg": [[2, 14], [5, 0], [6, 13], [7, 3]], "t": 0, "next": "UNSAT", "next_k": 5, "next_secs": 0.0}
+{"n": 16, "u": 7, "order": 2, "best_k": 3, "Dg": [[3, 1], [5, 7], [6, 15]], "t": 0, "next": "UNSAT", "next_k": 4, "next_secs": 0.0}
+{"n": 15, "u": 11, "order": 2, "best_k": 3, "Dg": [[1, 8], [3, 6], [4, 2]], "t": 0, "next": "UNSAT", "next_k": 4, "next_secs": 0.1}
+{"n": 15, "u": 14, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 3, "next_secs": 0.0}
+{"n": 15, "u": 2, "order": 4, "best_k": 3, "Dg": [[3, 14], [5, 10], [6, 13]], "t": 0, "next": "UNSAT", "next_k": 4, "next_secs": 0.0}
+{"n": 16, "u": 9, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 3, "next_secs": 0.1}
+{"n": 15, "u": 7, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 3, "next_secs": 0.0}
+{"n": 16, "u": 15, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 3, "next_secs": 0.0}
+{"n": 16, "u": 3, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 3, "next_secs": 0.0}
+{"n": 16, "u": 5, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 3, "next_secs": 0.1}
+{"n": 17, "u": 16, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 3, "next_secs": 0.0}
+{"n": 17, "u": 4, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 3, "next_secs": 0.0}
+{"n": 17, "u": 2, "order": 8, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 3, "next_secs": 0.0}
+{"n": 17, "u": 3, "order": 16, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 3, "next_secs": 0.0}
+{"n": 18, "u": 17, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 3, "next_secs": 0.1}
+{"n": 18, "u": 7, "order": 3, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 3, "next_secs": 0.1}
+{"n": 19, "u": 18, "order": 2, "best_k": 3, "Dg": [[4, 2], [6, 3], [9, 14]], "t": 0, "next": "UNSAT", "next_k": 4, "next_secs": 0.0}
+{"n": 18, "u": 5, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 3, "next_secs": 0.0}
+{"n": 19, "u": 7, "order": 3, "best_k": 3, "Dg": [[4, 18], [6, 8], [9, 12]], "t": 0, "next": "UNSAT", "next_k": 4, "next_secs": 0.0}
+{"n": 19, "u": 8, "order": 6, "best_k": 3, "Dg": [[4, 2], [6, 3], [9, 14]], "t": 0, "next": "UNSAT", "next_k": 4, "next_secs": 0.0}
+{"n": 19, "u": 4, "order": 9, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 3, "next_secs": 0.0}
+{"n": 19, "u": 2, "order": 18, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 3, "next_secs": 0.0}
+{"n": 20, "u": 9, "order": 2, "best_k": 4, "Dg": [[1, 9], [5, 5], [8, 19], [9, 1]], "t": 0, "next": "UNSAT", "next_k": 5, "next_secs": 0.2}
+{"n": 20, "u": 11, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 4, "next_secs": 0.4}
+{"n": 21, "u": 8, "order": 2, "best_k": 5, "Dg": [[1, 17], [2, 1], [3, 6], [5, 13], [8, 10]], "t": 0, "next": "UNSAT", "next_k": 6, "next_secs": 0.4}
+{"n": 20, "u": 19, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 4, "next_secs": 0.1}
+{"n": 20, "u": 3, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 4, "next_secs": 0.1}
+{"n": 21, "u": 13, "order": 2, "best_k": 4, "Dg": [[3, 19], [6, 17], [7, 14], [9, 15]], "t": 0, "next": "UNSAT", "next_k": 5, "next_secs": 0.2}
+{"n": 21, "u": 20, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 4, "next_secs": 0.1}
+{"n": 20, "u": 13, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 4, "next_secs": 0.2}
+{"n": 21, "u": 4, "order": 3, "best_k": 6, "Dg": [[1, 0], [3, 12], [4, 1], [5, 10], [6, 8], [9, 16]], "t": 1, "next": "UNSAT", "next_k": 7, "next_secs": 0.2}
+{"n": 21, "u": 2, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 4, "next_secs": 0.1}
+{"n": 21, "u": 5, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 4, "next_secs": 0.1}
+{"n": 22, "u": 21, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 4, "next_secs": 0.2}
+{"n": 21, "u": 10, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 4, "next_secs": 0.1}
+{"n": 22, "u": 3, "order": 5, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 4, "next_secs": 0.1}
+{"n": 22, "u": 7, "order": 10, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 4, "next_secs": 0.1}
+{"n": 23, "u": 22, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 4, "next_secs": 0.1}
+{"n": 23, "u": 2, "order": 11, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 4, "next_secs": 0.1}
+{"n": 23, "u": 5, "order": 22, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 4, "next_secs": 0.1}
+{"n": 25, "u": 24, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.1}
+{"n": 25, "u": 7, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.1}
+{"n": 24, "u": 5, "order": 2, "best_k": 6, "Dg": [[3, 10], [6, 12], [7, 16], [8, 22], [9, 11], [11, 8]], "t": 0, "next": "UNSAT", "next_k": 7, "next_secs": 0.5}
+{"n": 25, "u": 6, "order": 5, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.6}
+{"n": 25, "u": 4, "order": 10, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.1}
+{"n": 25, "u": 2, "order": 20, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.1}
+{"n": 26, "u": 25, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.3}
+{"n": 24, "u": 7, "order": 2, "best_k": 5, "Dg": [[1, 0], [2, 4], [7, 3], [9, 6], [10, 17]], "t": 3, "next": "UNSAT", "next_k": 6, "next_secs": 0.6}
+{"n": 26, "u": 3, "order": 3, "best_k": 6, "Dg": [[4, 18], [5, 10], [7, 19], [10, 6], [11, 15], [12, 2]], "t": 0, "next": "UNSAT", "next_k": 7, "next_secs": 0.2}
+{"n": 24, "u": 11, "order": 2, "best_k": 4, "Dg": [[3, 22], [6, 9], [9, 2], [10, 11]], "t": 0, "next": "UNSAT", "next_k": 5, "next_secs": 0.2}
+{"n": 26, "u": 5, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.3}
+{"n": 26, "u": 17, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.2}
+{"n": 26, "u": 7, "order": 12, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.2}
+{"n": 27, "u": 26, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.2}
+{"n": 24, "u": 13, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 4, "next_secs": 1.3}
+{"n": 24, "u": 17, "order": 2, "best_k": 5, "Dg": [[2, 10], [5, 19], [9, 0], [10, 2], [11, 22]], "t": 0, "next": "UNSAT", "next_k": 6, "next_secs": 0.8}
+{"n": 24, "u": 19, "order": 2, "best_k": 5, "Dg": [[2, 21], [7, 5], [8, 8], [10, 1], [11, 10]], "t": 0, "next": "UNSAT", "next_k": 6, "next_secs": 0.5}
+{"n": 27, "u": 10, "order": 3, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 1.9}
+{"n": 24, "u": 23, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 4, "next_secs": 0.2}
+{"n": 27, "u": 8, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.3}
+{"n": 27, "u": 4, "order": 9, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.4}
+{"n": 27, "u": 2, "order": 18, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.1}
+{"n": 28, "u": 13, "order": 2, "best_k": 5, "Dg": [[1, 16], [7, 14], [8, 11], [12, 13], [13, 12]], "t": 0, "next": "UNSAT", "next_k": 6, "next_secs": 0.7}
+{"n": 29, "u": 28, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.3}
+{"n": 29, "u": 12, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.2}
+{"n": 29, "u": 7, "order": 7, "best_k": 7, "Dg": [[2, 23], [3, 20], [8, 3], [10, 11], [11, 25], [12, 19], [14, 16]], "t": 0, "next": "UNSAT", "next_k": 8, "next_secs": 0.2}
+{"n": 29, "u": 4, "order": 14, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.2}
+{"n": 29, "u": 2, "order": 28, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.2}
+{"n": 28, "u": 15, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 2.6}
+{"n": 28, "u": 27, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.4}
+{"n": 28, "u": 9, "order": 3, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.7}
+{"n": 28, "u": 3, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.4}
+{"n": 30, "u": 11, "order": 2, "best_k": 7, "Dg": [[1, 23], [2, 10], [6, 24], [7, 14], [8, 28], [11, 13], [13, 17]], "t": 0, "next": "UNSAT", "next_k": 8, "next_secs": 2.7}
+{"n": 28, "u": 5, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.7}
+{"n": 28, "u": 11, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 5, "next_secs": 0.3}
+{"n": 31, "u": 30, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 0.3}
+{"n": 31, "u": 5, "order": 3, "best_k": 6, "Dg": [[1, 11], [2, 30], [5, 24], [6, 2], [10, 26], [12, 18]], "t": 0, "next": "UNSAT", "next_k": 7, "next_secs": 0.3}
+{"n": 30, "u": 19, "order": 2, "best_k": 6, "Dg": [[2, 3], [5, 10], [6, 23], [7, 14], [8, 27], [13, 26]], "t": 0, "next": "UNSAT", "next_k": 7, "next_secs": 1.7}
+{"n": 31, "u": 2, "order": 5, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 0.3}
+{"n": 30, "u": 29, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 0.5}
+{"n": 31, "u": 6, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 0.3}
+{"n": 31, "u": 15, "order": 10, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 0.3}
+{"n": 31, "u": 7, "order": 15, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 0.3}
+{"n": 31, "u": 3, "order": 30, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 0.3}
+{"n": 30, "u": 7, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 1.6}
+{"n": 30, "u": 17, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 0.5}
+{"n": 32, "u": 15, "order": 2, "best_k": 6, "Dg": [[1, 5], [5, 7], [10, 13], [11, 9], [12, 22], [15, 11]], "t": 0, "next": "UNSAT", "next_k": 7, "next_secs": 0.7}
+{"n": 33, "u": 10, "order": 2, "best_k": 7, "Dg": [[2, 30], [4, 17], [7, 5], [9, 21], [11, 11], [12, 6], [13, 16]], "t": 0, "next": "UNSAT", "next_k": 8, "next_secs": 1.8}
+{"n": 32, "u": 17, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 5.9}
+{"n": 32, "u": 31, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 0.6}
+{"n": 32, "u": 7, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 0.6}
+{"n": 33, "u": 23, "order": 2, "best_k": 7, "Dg": [[1, 5], [2, 13], [8, 7], [10, 26], [13, 2], [14, 10], [15, 21]], "t": 0, "next": "UNSAT", "next_k": 8, "next_secs": 5.0}
+{"n": 33, "u": 32, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 0.6}
+{"n": 32, "u": 9, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 2.8}
+{"n": 32, "u": 3, "order": 8, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 0.6}
+{"n": 33, "u": 4, "order": 5, "best_k": 6, "Dg": [[5, 32], [7, 15], [10, 12], [11, 22], [13, 9], [14, 17]], "t": 0, "next": "UNSAT", "next_k": 7, "next_secs": 1.3}
+{"n": 33, "u": 2, "order": 10, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 0.3}
+{"n": 33, "u": 5, "order": 10, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 0.4}
+{"n": 32, "u": 5, "order": 8, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 1.2}
+{"n": 33, "u": 7, "order": 10, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 1.3}
+{"n": 34, "u": 33, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 1.0}
+{"n": 34, "u": 13, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 1.3}
+{"n": 34, "u": 9, "order": 8, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 1.0}
+{"n": 34, "u": 3, "order": 16, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 6, "next_secs": 0.8}
+{"n": 35, "u": 6, "order": 2, "best_k": 8, "Dg": [[2, 25], [3, 19], [4, 3], [11, 29], [12, 10], [14, 28], [15, 4], [17, 26]], "t": 0, "next": "UNSAT", "next_k": 9, "next_secs": 3.7}
+{"n": 36, "u": 17, "order": 2, "best_k": 7, "Dg": [[3, 5], [5, 12], [9, 9], [12, 6], [13, 24], [15, 13], [16, 8]], "t": 0, "next": "UNSAT", "next_k": 8, "next_secs": 2.5}
+{"n": 35, "u": 29, "order": 2, "best_k": 8, "Dg": [[2, 23], [3, 16], [8, 7], [10, 15], [12, 14], [13, 6], [14, 12], [17, 9]], "t": 0, "next": "UNSAT", "next_k": 9, "next_secs": 5.4}
+{"n": 35, "u": 34, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 0.5}
+{"n": 35, "u": 11, "order": 3, "best_k": 7, "Dg": [[4, 15], [6, 1], [7, 21], [8, 34], [9, 25], [12, 31], [17, 6]], "t": 0, "next": "UNSAT", "next_k": 8, "next_secs": 2.8}
+{"n": 36, "u": 19, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 11.0}
+{"n": 36, "u": 35, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 1.4}
+{"n": 35, "u": 8, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 3.9}
+{"n": 35, "u": 13, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 0.5}
+{"n": 35, "u": 4, "order": 6, "best_k": 7, "Dg": [[1, 27], [4, 3], [6, 19], [7, 21], [9, 33], [11, 17], [16, 12]], "t": 0, "next": "UNSAT", "next_k": 8, "next_secs": 0.4}
+{"n": 35, "u": 19, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 0.6}
+{"n": 35, "u": 26, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 2.6}
+{"n": 35, "u": 2, "order": 12, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 0.4}
+{"n": 35, "u": 3, "order": 12, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 0.5}
+{"n": 36, "u": 13, "order": 3, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 7.3}
+{"n": 37, "u": 36, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 0.7}
+{"n": 37, "u": 10, "order": 3, "best_k": 9, "Dg": [[2, 3], [6, 33], [8, 7], [9, 17], [12, 35], [14, 11], [15, 4], [16, 22], [17, 10]], "t": 0, "next": "UNSAT", "next_k": 10, "next_secs": 0.7}
+{"n": 37, "u": 6, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 0.6}
+{"n": 37, "u": 11, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 0.5}
+{"n": 36, "u": 5, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 2.9}
+{"n": 37, "u": 7, "order": 9, "best_k": 9, "Dg": [[2, 29], [5, 25], [6, 30], [8, 3], [13, 28], [14, 18], [15, 14], [17, 11], [18, 2]], "t": 0, "next": "UNSAT", "next_k": 10, "next_secs": 0.6}
+{"n": 37, "u": 8, "order": 12, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 0.7}
+{"n": 37, "u": 3, "order": 18, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 0.6}
+{"n": 37, "u": 2, "order": 36, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 0.5}
+{"n": 36, "u": 7, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 4.1}
+{"n": 36, "u": 11, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 1.0}
+{"n": 38, "u": 37, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 1.7}
+{"n": 38, "u": 7, "order": 3, "best_k": 9, "Dg": [[2, 36], [3, 4], [5, 11], [9, 17], [13, 18], [14, 24], [15, 12], [16, 32], [17, 7]], "t": 0, "next": "UNSAT", "next_k": 10, "next_secs": 1.4}
+{"n": 38, "u": 27, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 1.1}
+{"n": 38, "u": 5, "order": 9, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 1.4}
+{"n": 38, "u": 3, "order": 18, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 1.5}
+{"n": 39, "u": 14, "order": 2, "best_k": 9, "Dg": [[1, 14], [4, 23], [6, 21], [10, 17], [14, 1], [15, 27], [16, 20], [17, 10], [18, 24]], "t": 0, "next": "UNSAT", "next_k": 10, "next_secs": 12.8}
+{"n": 40, "u": 9, "order": 2, "best_k": 9, "Dg": [[1, 39], [2, 18], [3, 36], [8, 19], [9, 31], [10, 10], [13, 17], [15, 30], [18, 2]], "t": 0, "next": "UNSAT", "next_k": 10, "next_secs": 8.4}
+{"n": 39, "u": 25, "order": 2, "best_k": 9, "Dg": [[1, 2], [4, 16], [7, 24], [13, 26], [14, 25], [15, 14], [17, 27], [18, 22], [19, 15]], "t": 0, "next": "UNSAT", "next_k": 10, "next_secs": 3.5}
+{"n": 39, "u": 38, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 0.9}
+{"n": 39, "u": 16, "order": 3, "best_k": 9, "Dg": [[1, 2], [6, 12], [8, 27], [11, 3], [15, 30], [16, 32], [17, 22], [18, 36], [19, 28]], "t": 0, "next": "UNSAT", "next_k": 10, "next_secs": 3.4}
+{"n": 40, "u": 11, "order": 2, "best_k": 8, "Dg": [[6, 39], [8, 12], [9, 34], [12, 8], [13, 23], [14, 3], [17, 30], [19, 14]], "t": 0, "next": "UNSAT", "next_k": 9, "next_secs": 9.5}
+{"n": 39, "u": 5, "order": 4, "best_k": 7, "Dg": [[2, 25], [10, 8], [11, 1], [12, 6], [13, 26], [16, 5], [18, 9]], "t": 0, "next": "UNSAT", "next_k": 8, "next_secs": 0.9}
+{"n": 40, "u": 19, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 2.7}
+{"n": 39, "u": 31, "order": 4, "best_k": 7, "Dg": [[2, 18], [10, 37], [11, 21], [12, 19], [13, 13], [16, 28], [18, 22]], "t": 0, "next": "UNSAT", "next_k": 8, "next_secs": 3.4}
+{"n": 39, "u": 4, "order": 6, "best_k": 7, "Dg": [[1, 3], [4, 12], [10, 30], [13, 0], [14, 11], [16, 9], [17, 5]], "t": 0, "next": "UNSAT", "next_k": 8, "next_secs": 3.4}
+{"n": 39, "u": 17, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 1.0}
+{"n": 39, "u": 29, "order": 6, "best_k": 9, "Dg": [[1, 38], [4, 8], [6, 12], [10, 20], [14, 25], [15, 30], [16, 23], [17, 34], [18, 36]], "t": 0, "next": "UNSAT", "next_k": 10, "next_secs": 1.0}
+{"n": 39, "u": 2, "order": 12, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 1.0}
+{"n": 39, "u": 7, "order": 12, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 7, "next_secs": 3.2}
+{"n": 41, "u": 40, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 1.2}
+{"n": 41, "u": 9, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 1.3}
+{"n": 41, "u": 10, "order": 5, "best_k": 10, "Dg": [[3, 7], [6, 14], [7, 30], [11, 40], [12, 25], [13, 3], [14, 19], [15, 21], [17, 26], [19, 17]], "t": 0, "next": "UNSAT", "next_k": 11, "next_secs": 1.3}
+{"n": 41, "u": 3, "order": 8, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 1.4}
+{"n": 41, "u": 4, "order": 10, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 1.7}
+{"n": 40, "u": 21, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 25.9}
+{"n": 41, "u": 2, "order": 20, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 1.4}
+{"n": 41, "u": 6, "order": 40, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 1.2}
+{"n": 40, "u": 29, "order": 2, "best_k": 9, "Dg": [[3, 6], [6, 37], [7, 14], [8, 4], [9, 17], [13, 2], [14, 33], [17, 18], [19, 32]], "t": 0, "next": "UNSAT", "next_k": 10, "next_secs": 7.7}
+{"n": 42, "u": 13, "order": 2, "best_k": 9, "Dg": [[1, 4], [2, 17], [8, 16], [11, 24], [13, 10], [16, 27], [17, 18], [18, 30], [20, 40]], "t": 0, "next": "UNSAT", "next_k": 10, "next_secs": 12.4}
+{"n": 40, "u": 31, "order": 2, "best_k": 8, "Dg": [[2, 15], [3, 33], [4, 24], [11, 9], [13, 23], [16, 8], [18, 3], [19, 18]], "t": 0, "next": "UNSAT", "next_k": 9, "next_secs": 14.8}
+{"n": 40, "u": 39, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 2.4}
+{"n": 40, "u": 3, "order": 4, "best_k": 8, "Dg": [[2, 3], [6, 10], [7, 18], [11, 30], [14, 14], [17, 23], [18, 31], [19, 34]], "t": 1, "next": "UNSAT", "next_k": 9, "next_secs": 2.6}
+{"n": 40, "u": 7, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 2.5}
+{"n": 40, "u": 13, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 5.1}
+{"n": 42, "u": 29, "order": 2, "best_k": 9, "Dg": [[4, 23], [8, 34], [9, 27], [10, 5], [11, 10], [12, 12], [15, 36], [17, 13], [20, 40]], "t": 0, "next": "UNSAT", "next_k": 10, "next_secs": 24.3}
+{"n": 42, "u": 41, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 3.0}
+{"n": 40, "u": 17, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 11.1}
+{"n": 43, "u": 42, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 1.8}
+{"n": 43, "u": 6, "order": 3, "best_k": 9, "Dg": [[3, 17], [4, 9], [10, 28], [15, 23], [16, 19], [17, 39], [18, 16], [19, 30], [21, 31]], "t": 0, "next": "UNSAT", "next_k": 10, "next_secs": 1.6}
+{"n": 42, "u": 25, "order": 3, "best_k": 9, "Dg": [[1, 38], [2, 31], [3, 27], [5, 25], [8, 19], [9, 12], [10, 23], [15, 6], [17, 1]], "t": 0, "next": "UNSAT", "next_k": 10, "next_secs": 8.9}
+{"n": 43, "u": 7, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 1.4}
+{"n": 43, "u": 4, "order": 7, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 1.6}
+{"n": 42, "u": 5, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 3.1}
+{"n": 43, "u": 2, "order": 14, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 1.5}
+{"n": 43, "u": 9, "order": 21, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 1.7}
+{"n": 42, "u": 11, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 2.9}
+{"n": 43, "u": 3, "order": 42, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 1.9}
+{"n": 42, "u": 19, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 8.4}
+{"n": 44, "u": 21, "order": 2, "best_k": 8, "Dg": [[1, 42], [4, 35], [7, 8], [8, 15], [11, 33], [12, 17], [15, 36], [21, 2]], "t": 0, "next": "UNSAT", "next_k": 9, "next_secs": 9.0}
+{"n": 45, "u": 19, "order": 2, "best_k": 10, "Dg": [[1, 4], [2, 21], [6, 32], [7, 1], [9, 7], [13, 27], [15, 30], [19, 31], [21, 44], [22, 18]], "t": 0, "next": "UNSAT", "next_k": 11, "next_secs": 28.7}
+{"n": 44, "u": 23, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 43.8}
+{"n": 44, "u": 43, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 3.7}
+{"n": 45, "u": 26, "order": 2, "best_k": 10, "Dg": [[3, 4], [4, 17], [5, 7], [8, 39], [11, 33], [12, 26], [14, 37], [16, 3], [17, 41], [18, 9]], "t": 0, "next": "UNSAT", "next_k": 11, "next_secs": 16.2}
+{"n": 45, "u": 44, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 2.6}
+{"n": 44, "u": 5, "order": 5, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 7.0}
+{"n": 44, "u": 3, "order": 10, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 3.6}
+{"n": 44, "u": 7, "order": 10, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 3.5}
+{"n": 44, "u": 13, "order": 10, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 8, "next_secs": 7.5}
+{"n": 46, "u": 45, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 4.3}
+{"n": 46, "u": 3, "order": 11, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 4.0}
+{"n": 46, "u": 5, "order": 22, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 4.5}
+{"n": 45, "u": 16, "order": 3, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 33.5}
+{"n": 47, "u": 46, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 2.9}
+{"n": 45, "u": 8, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 2.3}
+{"n": 47, "u": 2, "order": 23, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 2.4}
+{"n": 47, "u": 5, "order": 46, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 2.1}
+{"n": 45, "u": 28, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 22.2}
+{"n": 45, "u": 4, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 9.6}
+{"n": 48, "u": 7, "order": 2, "best_k": 10, "Dg": [[3, 34], [4, 21], [5, 12], [12, 6], [13, 1], [17, 44], [18, 5], [20, 23], [21, 46], [23, 20]], "t": 0, "next": "UNSAT", "next_k": 11, "next_secs": 33.4}
+{"n": 45, "u": 11, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 14.3}
+{"n": 45, "u": 14, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 2.5}
+{"n": 45, "u": 2, "order": 12, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 2.4}
+{"n": 45, "u": 7, "order": 12, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 7.8}
+{"n": 49, "u": 48, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 5.0}
+{"n": 49, "u": 18, "order": 3, "best_k": 9, "Dg": [[4, 36], [7, 17], [12, 27], [14, 20], [17, 26], [20, 45], [21, 33], [22, 2], [23, 11]], "t": 0, "next": "UNSAT", "next_k": 10, "next_secs": 9.6}
+{"n": 49, "u": 19, "order": 6, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 3.1}
+{"n": 49, "u": 8, "order": 7, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 20.1}
+{"n": 48, "u": 17, "order": 2, "best_k": 11, "Dg": [[1, 47], [2, 40], [6, 24], [7, 20], [12, 0], [13, 41], [14, 22], [17, 31], [19, 44], [21, 30], [23, 4]], "t": 0, "next": "UNSAT", "next_k": 12, "next_secs": 51.5}
+{"n": 49, "u": 6, "order": 14, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 2.8}
+{"n": 49, "u": 2, "order": 21, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 2.9}
+{"n": 49, "u": 3, "order": 42, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 2.8}
+{"n": 48, "u": 23, "order": 2, "best_k": 9, "Dg": [[1, 11], [2, 37], [7, 1], [10, 17], [11, 27], [13, 45], [14, 43], [17, 23], [23, 13]], "t": 0, "next": "UNSAT", "next_k": 10, "next_secs": 6.9}
+{"n": 50, "u": 49, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 10, "next_secs": 6.6}
+{"n": 50, "u": 7, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 10, "next_secs": 6.9}
+{"n": 50, "u": 11, "order": 5, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 10, "next_secs": 35.1}
+{"n": 50, "u": 9, "order": 10, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 10, "next_secs": 7.7}
+{"n": 50, "u": 3, "order": 20, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 10, "next_secs": 8.1}
+{"n": 48, "u": 25, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 74.3}
+{"n": 51, "u": 16, "order": 2, "best_k": 11, "Dg": [[2, 14], [4, 10], [11, 26], [12, 23], [13, 7], [14, 30], [17, 17], [19, 39], [20, 21], [23, 8], [24, 29]], "t": 0, "next": "UNSAT", "next_k": 12, "next_secs": 25.4}
+{"n": 48, "u": 31, "order": 2, "best_k": 10, "Dg": [[1, 45], [2, 4], [4, 37], [5, 12], [6, 27], [11, 36], [12, 6], [14, 28], [17, 20], [20, 15]], "t": 0, "next": "UNSAT", "next_k": 11, "next_secs": 21.5}
+{"n": 48, "u": 41, "order": 2, "best_k": 11, "Dg": [[1, 2], [2, 23], [3, 20], [7, 41], [8, 7], [11, 3], [12, 36], [14, 45], [18, 30], [19, 27], [21, 25]], "t": 0, "next": "UNSAT", "next_k": 12, "next_secs": 24.1}
+{"n": 48, "u": 47, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 5.8}
+{"n": 48, "u": 5, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 10.9}
+{"n": 48, "u": 11, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 5.6}
+{"n": 51, "u": 35, "order": 2, "best_k": 11, "Dg": [[2, 28], [5, 22], [6, 21], [8, 46], [14, 16], [18, 12], [19, 11], [20, 19], [22, 5], [24, 0], [25, 29]], "t": 0, "next": "UNSAT", "next_k": 12, "next_secs": 67.8}
+{"n": 51, "u": 50, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 10, "next_secs": 4.1}
+{"n": 48, "u": 13, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 31.0}
+{"n": 51, "u": 4, "order": 4, "best_k": 11, "Dg": [[1, 32], [2, 23], [4, 26], [6, 3], [8, 41], [13, 8], [16, 2], [17, 0], [19, 30], [24, 12], [25, 18]], "t": 0, "next": "UNSAT", "next_k": 12, "next_secs": 11.3}
+{"n": 48, "u": 19, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 9, "next_secs": 15.9}
+{"n": 51, "u": 38, "order": 4, "best_k": 11, "Dg": [[5, 19], [6, 37], [7, 47], [10, 38], [11, 1], [14, 22], [17, 34], [20, 46], [22, 20], [23, 16], [24, 29]], "t": 0, "next": "UNSAT", "next_k": 12, "next_secs": 3.9}
+{"n": 51, "u": 2, "order": 8, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 10, "next_secs": 3.6}
+{"n": 51, "u": 19, "order": 8, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 10, "next_secs": 11.2}
+{"n": 51, "u": 5, "order": 16, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 10, "next_secs": 3.3}
+{"n": 52, "u": 25, "order": 2, "best_k": 10, "Dg": [[3, 33], [5, 15], [7, 25], [12, 32], [13, 26], [19, 1], [20, 36], [21, 11], [23, 45], [24, 38]], "t": 0, "next": "UNSAT", "next_k": 11, "next_secs": 19.2}
+{"n": 51, "u": 7, "order": 16, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 10, "next_secs": 12.5}
+{"n": 53, "u": 52, "order": 2, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 10, "next_secs": 7.6}
+{"n": 53, "u": 23, "order": 4, "best_k": null, "Dg": null, "t": null, "next": "UNSAT", "next_k": 10, "next_secs": 5.2}
