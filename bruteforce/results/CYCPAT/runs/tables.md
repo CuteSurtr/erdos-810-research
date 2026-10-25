@@ -27,6 +27,28 @@
 | 36 | 9 | complete (case split unit/nounit) | 59 | 708 | yes (1040 s) | 927.7 |
 | 40 | 10 | incomplete (lower bound on orbit count) | 3 | 48 | — (CONSTR) |  |
 
+@@BRUTE_TABLE
+| n | k | brute-force count (g(min D)=0) | SAT enumeration count | agree | brute secs |
+|---|---|---|---|---|---|
+| 12 | 3 | 96 | 96 | yes |  |
+| 12 | 4 | 0 | 0 | yes |  |
+| 13 | 3 | 340 | 340 | yes |  |
+| 14 | 3 | 614 | 614 | yes |  |
+| 15 | 4 | 92 | 92 | yes |  |
+| 16 | 4 | 464 | 464 | yes |  |
+| 16 | 5 | 0 | 0 | yes |  |
+| 17 | 4 | 3056 | 3056 | yes |  |
+| 18 | 5 | 6 | 6 | yes |  |
+| 19 | 5 | 252 | 252 | yes |  |
+| 20 | 5 | 1320 | 1320 | yes |  |
+| 20 | 6 | 0 | 0 | yes | 0s |
+| 21 | 6 | 4 | 4 | yes | 1s |
+| 22 | 5 | 43330 | 43330 | yes | 3s |
+| 23 | 6 | 616 | 616 | yes | 8s |
+| 24 | 6 | 2884 | 2884 | yes | 14s |
+| 24 | 7 | 0 | 0 | yes | 10s |
+| 25 | 6 | 45300 | 45300 | yes | 51s |
+
 @@COSET_TABLES
 Single-coset rule, smallest working index r per prime (k = (p-1)/r):
 

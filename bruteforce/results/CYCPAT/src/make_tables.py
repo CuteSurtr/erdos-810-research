@@ -72,6 +72,24 @@ for n in sorted({n for n, _ in enum}):
               open(f'solutions/enum_n{n}_k{k}.json', 'w'), separators=(',', ':'))
 P('')
 
+# ---- brute-force cross-check ------------------------------------------------------------------
+P('@@BRUTE_TABLE')
+P('| n | k | brute-force count (g(min D)=0) | SAT enumeration count | agree | brute secs |')
+P('|---|---|---|---|---|---|')
+bl = []
+for fn in ('runs/brute_small.out', 'runs/brute.out'):
+    if os.path.exists(fn):
+        for l in open(fn):
+            q = l.split()
+            if len(q) >= 3 and q[0].isdigit(): bl.append((int(q[0]), int(q[1]), int(q[2]), q[3] if len(q) > 3 else ''))
+bl.sort()
+for n, k, c, t in bl:
+    e = enum.get((n, k)); ec = e['n_solutions_gmin0'] if e and 'n_solutions_gmin0' in e else None
+    if e and e['n_orbits'] == 0: ec = 0
+    P(f"| {n} | {k} | {c} | {ec if ec is not None else '—'} | {'yes' if ec == c else ('—' if ec is None else 'NO')} | {t} |")
+open('brute_counts.txt', 'w').write(''.join(f'{n} {k} {c} {t}\n' for n, k, c, t in bl))
+P('')
+
 # ---- single-coset best index per prime ----------------------------------------------------------
 rows = []
 for f in sorted(glob.glob('runs/bestr_*.txt')):

@@ -82,6 +82,10 @@ Other solution files:
 - *Discrepancy in the task table:* `tasks/CYC.md` lists k_max = 4 for n = 14. CONSTR's own JSON (first UNSAT k = 4) and my enumeration both give **k_max(14) = 3**.
 - Every listed normal form was re-checked by `src/cyccheck` (C, cycles through 0) and by `src/explicit_check.py` (explicit graph, all 4-cycles by common neighbours). See `verification.txt` (every file in `solutions/`): 0 failures.
 
+**Second, independent method.** `src/brute.c` is a plain backtracking counter: orbits in increasing order, g(min D) = 0, every closed walk checked after each choice. It uses no SAT, no symmetry and no shared code. It counts all valid (D, g) with |D| = k and g(min D) = 0, which must equal Σ orbit sizes from the SAT enumeration. (gen):
+
+BRUTE_TABLE
+
 (gen) Counts. Solutions with g(min D) = 0, times n, gives all solutions.
 
 ENUM_TABLE

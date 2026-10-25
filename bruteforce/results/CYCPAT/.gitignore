@@ -12,3 +12,5 @@ runs/enumcase_*
 runs/enumsplit_*
 runs/verify_*
 runs/*.out
+src/brute
+runs/lock40_*
