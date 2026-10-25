@@ -33,11 +33,18 @@ with open(cnf, "w") as f:
     enc = subprocess.run([HERE + "/cycenc", str(n), str(k)] + flag, stdout=f, stderr=subprocess.PIPE, text=True)
 encinfo = enc.stderr.strip()
 proof = os.path.join(WORK, tag + ".drat")
+# second CNF with only the colour-translation fix (same x numbering): lex-leader constraints
+# can slow SAT finding at large n, so two --sat members use it.  Its UNSAT is equally sound.
+cnf2 = os.path.join(WORK, tag + ".trans.cnf")
+if a.sym == "full":
+    with open(cnf2, "w") as f:
+        subprocess.run([HERE + "/cycenc", str(n), str(k), "-trans"], stdout=f, stderr=subprocess.PIPE)
+else: cnf2 = cnf
 configs = []
 if a.proof: configs.append(("kissat-unsat-drat", [KISSAT, "-q", "--unsat", "--seed=2", cnf, proof]))
-pool = [("kissat-s1", [KISSAT, "-q", "--seed=1", cnf]), ("cadical-s7", [CADICAL, "-q", "--seed=7", cnf]),
-        ("kissat-sat-s3", [KISSAT, "-q", "--sat", "--seed=3", cnf]), ("cadical-s4", [CADICAL, "-q", "--seed=4", cnf]),
-        ("kissat-s5", [KISSAT, "-q", "--seed=5", cnf]), ("kissat-sat-s6", [KISSAT, "-q", "--sat", "--seed=6", cnf])]
+pool = [("kissat-s1", [KISSAT, "-q", "--seed=1", cnf]), ("kissat-sat-trans-s3", [KISSAT, "-q", "--sat", "--seed=3", cnf2]),
+        ("kissat-sat-trans-s6", [KISSAT, "-q", "--sat", "--seed=6", cnf2]), ("cadical-s7", [CADICAL, "-q", "--seed=7", cnf]), ("cadical-s4", [CADICAL, "-q", "--seed=4", cnf]),
+        ("kissat-s5", [KISSAT, "-q", "--seed=5", cnf])]
 for c in pool:
     if len(configs) >= a.jobs: break
     configs.append(c)
@@ -100,7 +107,7 @@ if res == "UNSAT" and a.proof:
     else: rec["drat"] = "proof member did not finish"
 for name, p, of in procs: of.close()
 for f in os.listdir(WORK):
-    if f.startswith(tag) and (f.endswith(".drat") or (f.endswith(".cnf") and not a.keepcnf) or f.endswith(".out")):
+    if f.startswith(tag) and (f.endswith(".drat") or (f.endswith(".cnf") and not a.keepcnf and os.path.exists(os.path.join(WORK, f))) or f.endswith(".out")):
         os.remove(os.path.join(WORK, f))
 line = json.dumps(rec)
 print(line, flush=True)
