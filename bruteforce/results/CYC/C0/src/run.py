@@ -16,7 +16,7 @@ ap.add_argument("n", type=int); ap.add_argument("k", type=int)
 ap.add_argument("--lex", type=int, default=1); ap.add_argument("--trans", type=int, default=1)
 ap.add_argument("--solver", default="kissat"); ap.add_argument("--seed", type=int, default=0)
 ap.add_argument("--timeout", type=int, default=1500); ap.add_argument("--proof", default=None)
-ap.add_argument("--log", default=None); ap.add_argument("--keep", action="store_true")
+ap.add_argument("--log", default=None); ap.add_argument("--opt", default=""); ap.add_argument("--keep", action="store_true")
 a = ap.parse_args()
 n, k = a.n, a.k; H = (n + 1) // 2 - 1
 tag = f"n{n}_k{k}_l{a.lex}t{a.trans}_{a.solver}_s{a.seed}_{os.getpid()}"
@@ -26,10 +26,10 @@ with open(cnf, "w") as f:
                    stdout=f, stderr=subprocess.DEVNULL, check=True)
 t0 = time.time()
 if a.solver == "kissat":
-    cmd = [KISSAT, f"--seed={a.seed}", f"--time={a.timeout}", "-q", cnf]
+    cmd = [KISSAT, f"--seed={a.seed}", f"--time={a.timeout}", "-q"] + a.opt.split() + [cnf]
     if a.proof: cmd += [a.proof, "--no-binary"]
 else:
-    cmd = [CADICAL, f"--seed={a.seed}", "-t", str(a.timeout), "-q", cnf]
+    cmd = [CADICAL, f"--seed={a.seed}", "-t", str(a.timeout), "-q"] + a.opt.split() + [cnf]
     if a.proof: cmd += [a.proof, "--no-binary"]
 out = subprocess.run(cmd, capture_output=True, text=True).stdout
 secs = round(time.time() - t0, 1)
@@ -39,7 +39,7 @@ for line in out.splitlines():
     elif line.startswith("s UNSATISFIABLE"): res = "UNSAT"
     elif line.startswith("v "):
         model.update(int(t) for t in line[2:].split() if int(t) > 0)
-rec = {"n": n, "k": k, "cfg": f"lex={a.lex},trans={a.trans},{a.solver},seed={a.seed}", "res": res, "secs": secs}
+rec = {"n": n, "k": k, "cfg": f"lex={a.lex},trans={a.trans},{a.solver},seed={a.seed}" + (f",opt={a.opt}" if a.opt else ""), "res": res, "secs": secs}
 if res == "SAT":
     Dg = [[d, g] for d in range(1, H + 1) for g in range(n) if (d - 1) * n + g + 1 in model]
     ok, ne, msg = check(n, Dg)

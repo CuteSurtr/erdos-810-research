@@ -3,7 +3,7 @@
  * Vertices Z_n, orbits d in 1..H (H = ceil(n/2)-1).  Orbit d present => edges {i,i+d},
  * colour i + g(d) mod n.  Question: is there (D, g) with |D| >= k and every 4-cycle rainbow?
  *
- * usage: cycenc n k [lex] [trans] [noaux] > out.cnf
+ * usage: cycenc n k [lex] [trans] [noaux] [dump] > out.cnf
  *   lex   = 1: lex-leader p >=lex p o u for every unit u (one per {u,-u}), 0: none
  *   trans = 1: g(smallest present orbit) = 0
  *   noaux = 1: emit forbidden pairs directly (n clauses per key, CONSTR style) instead of y aux
@@ -63,6 +63,7 @@ int main(int argc, char **argv) {
     int lex = argc > 3 ? atoi(argv[3]) : 1;
     int trans = argc > 4 ? atoi(argv[4]) : 1;
     int noaux = argc > 5 ? atoi(argv[5]) : 0;
+    int dump = argc > 6 ? atoi(argv[6]) : 0;   /* 1: print the conflict keys "da db delta o1 o2" and exit */
     H = (n + 1) / 2 - 1;
     nvars = (long)H * n + H;
     body = tmpfile();
@@ -123,6 +124,11 @@ int main(int argc, char **argv) {
     size_t m = 0;
     for (size_t i = 0; i < nk; i++) if (m == 0 || keys[i] != keys[m - 1]) keys[m++] = keys[i];
     nk = m;
+    if (dump) {
+        for (size_t i = 0; i < nk; i++) printf("%d %d %d %d %d\n", (int)(keys[i] >> 32), (int)((keys[i] >> 24) & 255),
+               (int)((keys[i] >> 16) & 255), (int)((keys[i] >> 8) & 255), (int)(keys[i] & 255));
+        return 0;
+    }
     long nkeys = 0, ny = 0;
     uint64_t lasttrip = ~0ULL; int ycur = 0;
     for (size_t i = 0; i < nk; i++) {

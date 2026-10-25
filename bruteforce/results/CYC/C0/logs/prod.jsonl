@@ -8,3 +8,13 @@
 {"n": 72, "k": 16, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNKNOWN", "secs": 600.0}
 {"n": 79, "k": 15, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "SAT", "secs": 7.7, "Dg": [[1, 0], [2, 51], [5, 1], [6, 35], [8, 10], [10, 31], [21, 12], [22, 36], [24, 11], [25, 9], [26, 43], [28, 47], [33, 4], [36, 18], [38, 54]], "check": "ok, 92509 4-cycles checked"}
 {"n": 90, "k": 20, "cfg": "lex=1,trans=1,kissat,seed=0", "res": "UNKNOWN", "secs": 11.3}
+{"n": 69, "k": 15, "cfg": "anneal,seed=1", "res": "UNKNOWN", "secs": 306.5, "note": "FAIL best=1 it=3601920"}
+{"n": 58, "k": 13, "cfg": "lex=0,trans=1,kissat,seed=2", "res": "SAT", "secs": 93.9, "Dg": [[1, 0], [2, 31], [4, 5], [9, 28], [10, 50], [16, 33], [17, 51], [19, 10], [20, 45], [22, 44], [25, 37], [26, 4], [27, 7]], "check": "ok, 50808 4-cycles checked"}
+{"n": 72, "k": 16, "cfg": "anneal,seed=1", "res": "UNKNOWN", "secs": 303.5, "note": "FAIL best=3 it=3321600"}
+{"n": 79, "k": 15, "cfg": "anneal,seed=1", "res": "SAT", "secs": 2.1, "Dg": [[1, 28], [7, 40], [8, 13], [12, 71], [15, 49], [18, 56], [23, 17], [24, 35], [28, 58], [29, 4], [30, 45], [32, 44], [34, 24], [35, 36], [37, 18]], "check": "ok, 92193 4-cycles checked"}
+{"n": 90, "k": 20, "cfg": "anneal,seed=1", "res": "UNKNOWN", "secs": 303.7, "note": "FAIL best=12 it=1950720"}
+{"n": 58, "k": 13, "cfg": "anneal,seed=1", "res": "UNKNOWN", "secs": 17.2, "note": ""}
+{"n": 90, "k": 17, "cfg": "lex=0,trans=1,kissat,seed=4,opt=--sat", "res": "SAT", "secs": 31.0, "Dg": [[2, 0], [3, 81], [6, 83], [9, 50], [11, 84], [14, 33], [19, 57], [20, 56], [21, 65], [22, 62], [23, 48], [25, 89], [26, 75], [27, 32], [28, 31], [30, 37], [36, 79]], "check": "ok, 154980 4-cycles checked"}
+{"n": 72, "k": 15, "cfg": "lex=0,trans=1,kissat,seed=4,opt=--sat", "res": "SAT", "secs": 24.9, "Dg": [[5, 0], [7, 34], [8, 33], [9, 57], [10, 4], [11, 10], [12, 53], [13, 30], [17, 15], [19, 58], [21, 22], [22, 43], [25, 63], [27, 69], [32, 56]], "check": "ok, 91620 4-cycles checked"}
+{"n": 69, "k": 14, "cfg": "lex=0,trans=1,kissat,seed=4,opt=--sat", "res": "SAT", "secs": 5.5, "Dg": [[1, 0], [3, 53], [13, 65], [18, 66], [22, 12], [24, 9], [25, 2], [27, 62], [29, 15], [30, 63], [31, 20], [32, 43], [33, 25], [34, 39]], "check": "ok, 71484 4-cycles checked"}
+{"n": 69, "k": 15, "cfg": "lex=0,trans=1,kissat,seed=1", "res": "UNKNOWN", "secs": 1500.0}

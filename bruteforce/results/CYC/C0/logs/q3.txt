@@ -1,0 +1,2 @@
+python3 src/run.py 69 15 --lex 0 --seed 6 --opt=--sat --timeout 1200 --log logs/prod.jsonl
+python3 src/run.py 47 12 --lex 0 --seed 6 --opt=--sat --timeout 900 --log logs/prod.jsonl
