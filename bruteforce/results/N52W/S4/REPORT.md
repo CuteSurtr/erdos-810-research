@@ -87,7 +87,7 @@ done, and helped the shards that were still open. All help lines are UNSAT with 
 - Help seeds are kept outside the repository. `logs/help_roots_S6.txt` and `logs/help_roots_S2.txt` list the roots.
   `logs/tree_stdout_help*.txt` are empty.
 
-**Whole-task check (17:4x UTC).** `logs/closecheck_all_N52W.txt` runs closecheck on all 192 N52W roots across the
+**Whole-task check (17:37 UTC).** `logs/closecheck_all_N52W.txt` runs closecheck on all 192 N52W roots across the
 eight shards: (1,2,3,4) 2:1 and 2:17..51, (1,2,3,¬4) 2:0..51, (1,2,¬3,4) 2:0..51 and (1,¬2,3,4) 3:0..51. Its logs are
 `PUSH2/N52/logs/leaves_n52*.jsonl` + every `S*/logs/leaves_new.jsonl` as committed at that time:
 
