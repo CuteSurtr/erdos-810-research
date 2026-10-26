@@ -1,0 +1,15 @@
+{"cube": ["1", "2", "3", "4", "2:1"], "res": "PRESPLIT", "t_end": "13:01:44"}
+{"cube": ["1", "2", "3", "4", "2:37"], "res": "PRESPLIT", "t_end": "13:01:44"}
+{"cube": ["1", "2", "3", "4", "2:38"], "res": "PRESPLIT", "t_end": "13:01:44"}
+{"cube": ["1", "2", "3", "4", "2:39"], "res": "PRESPLIT", "t_end": "13:01:44"}
+{"cube": ["1", "2", "3", "4", "2:42"], "res": "PRESPLIT", "t_end": "13:01:44"}
+{"cube": ["1", "2", "3", "4", "2:41"], "res": "PRESPLIT", "t_end": "13:01:44"}
+{"cube": ["1", "2", "3", "4", "2:40"], "res": "PRESPLIT", "t_end": "13:01:44"}
+{"cube": ["1", "2", "3", "4", "2:43"], "res": "PRESPLIT", "t_end": "13:01:44"}
+{"cube": ["1", "2", "3", "4", "2:44"], "res": "PRESPLIT", "t_end": "13:01:44"}
+{"n": 52, "k": 13, "cube": [1, 2, 3, 4, "2:1", "3:1"], "res": "UNSAT", "cnf_sha256": "b021c58ac4db7a12c84d3d73a91e0804fa267f4dbb78285772e0ad6e68b14478", "solver": "cadical 3.0.1", "opts": [], "proof_bytes": 18379, "secs": 13.5, "check": "s VERIFIED UNSAT", "check_extra_secs": 0.1, "checker": "cake_lpr a36874a (streamed binary LRAT)", "cap": 400, "t_end": "13:01:58"}
+{"n": 52, "k": 13, "cube": [1, 2, 3, 4, "2:1", "3:2"], "res": "UNSAT", "cnf_sha256": "3f68cbf619eba10a743e1e08e18ba4e9c8c5d2ec9e938ed1ef40f7aa1534f9d9", "solver": "cadical 3.0.1", "opts": [], "proof_bytes": 18379, "secs": 13.5, "check": "s VERIFIED UNSAT", "check_extra_secs": 0.1, "checker": "cake_lpr a36874a (streamed binary LRAT)", "cap": 400, "t_end": "13:01:58"}
+{"n": 52, "k": 13, "cube": [1, 2, 3, 4, "2:1", "3:0"], "res": "UNSAT", "cnf_sha256": "7b7e83d12f98d2795af7abaff8ce48dd429de2d85d246fe6e894d4e251e929c2", "solver": "cadical 3.0.1", "opts": [], "proof_bytes": 18379, "secs": 13.6, "check": "s VERIFIED UNSAT", "check_extra_secs": 0.1, "checker": "cake_lpr a36874a (streamed binary LRAT)", "cap": 400, "t_end": "13:01:58"}
+{"n": 52, "k": 13, "cube": [1, 2, 3, 4, "2:1", "3:3"], "res": "UNSAT", "cnf_sha256": "7af8ae798f75253e52259b08c627947e80146fc6f98328bdd5fa309e19e24d3c", "solver": "cadical 3.0.1", "opts": [], "proof_bytes": 18379, "secs": 13.6, "check": "s VERIFIED UNSAT", "check_extra_secs": 0.1, "checker": "cake_lpr a36874a (streamed binary LRAT)", "cap": 400, "t_end": "13:01:58"}
+{"n": 52, "k": 13, "cube": [1, 2, 3, 4, "2:1", "3:5"], "res": "UNSAT", "cnf_sha256": "d73994bd92bb07c6f4960e7d2d6100ec5462af933736c64528ed1cedd886404a", "solver": "cadical 3.0.1", "opts": [], "proof_bytes": 18379, "secs": 2.7, "check": "s VERIFIED UNSAT", "check_extra_secs": 0.1, "checker": "cake_lpr a36874a (streamed binary LRAT)", "cap": 400, "t_end": "13:02:01"}
+{"n": 52, "k": 13, "cube": [1, 2, 3, 4, "2:1", "3:4"], "res": "UNSAT", "cnf_sha256": "4668ee526401d6252c2bd3d869f2bbb9ea207ae8b2842477568d658b068c7dd2", "solver": "cadical 3.0.1", "opts": [], "proof_bytes": 18379, "secs": 2.8, "check": "s VERIFIED UNSAT", "check_extra_secs": 0.1, "checker": "cake_lpr a36874a (streamed binary LRAT)", "cap": 400, "t_end": "13:02:01"}
