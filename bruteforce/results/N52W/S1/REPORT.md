@@ -76,11 +76,53 @@ n=52 k=13: verified leaves used 520, internal 10, open branches 0, unverified UN
 S1 closed before 16:00, so per the task it helps S2. S2's three attempts were blocked at the tool build and its
 `leaves_new.jsonl` is empty. From 15:42 UTC S1 runs S2's roots in reverse order (`logs/help_S2_roots.txt`:
 `1,2,3,4,2:G` for G = 36 down to 27) on the same LEAFLOG; those leaves also go to `logs/leaves_new.jsonl`.
-Status of the help run: see §6 (updated at wrap-up).
+Status of the help run: see §6.
 
-## 6. Help run status
+## 6. Help run status (S2's roots)
 
-Running.
+Stopped at 17:31 UTC through `STOP` for wrap-up. 413 new leaves, all `UNSAT` with `s VERIFIED UNSAT`
+(plus 10 `PRESPLIT` bookkeeping lines from tree.py). No SAT, no UNKNOWN. Solver time 25 890 s, max leaf 156.9 s
+(`1,2,3,4,2:36,3:28`), LRAT 49.7 GB. tree.py did not take the roots strictly in the given order: after
+2:36..2:31 it ran 2:27 and then 2:28.
+
+| g(2) child | leaves | solver s | max leaf s | LRAT GB | closecheck |
+|---|---|---|---|---|---|
+| 2:36 | 52 | 3414 | 156.9 | 6.29 | CLOSED |
+| 2:35 | 52 | 3394 | 155.6 | 6.38 | CLOSED |
+| 2:34 | 52 | 3195 | 145.0 | 6.08 | CLOSED |
+| 2:33 | 52 | 3068 | 138.2 | 5.90 | CLOSED |
+| 2:32 | 52 | 3047 | 130.2 | 5.82 | CLOSED |
+| 2:31 | 52 | 3027 | 129.0 | 5.91 | CLOSED |
+| 2:30 | 0 | | | | OPEN |
+| 2:29 | 0 | | | | OPEN |
+| 2:28 | 49 | 3405 | 129.1 | 6.84 | OPEN (3:49, 3:50, 3:51 missing) |
+| 2:27 | 52 | 3339 | 121.9 | 6.50 | CLOSED |
+
+Closure check for S2's roots (`logs/closecheck_help_S2.txt`, exit code 1):
+
+```
+python3 ../common/closecheck.py 52 13 /tmp/claude-0/w/c_52_13_3.cnf --roots $(cat logs/help_S2_roots.txt) \
+  --logs ../../PUSH2/N52/logs/leaves_n52*.jsonl logs/leaves_new.jsonl
+CLOSED 1,2,3,4,2:36
+CLOSED 1,2,3,4,2:35
+CLOSED 1,2,3,4,2:34
+CLOSED 1,2,3,4,2:33
+CLOSED 1,2,3,4,2:32
+CLOSED 1,2,3,4,2:31
+OPEN   1,2,3,4,2:30
+OPEN   1,2,3,4,2:29
+OPEN   1,2,3,4,2:28
+CLOSED 1,2,3,4,2:27
+n=52 k=13: verified leaves used 413, internal 10, open branches 107, unverified UNSAT lines 0, SAT lines 0
+```
+
+Re-running the S1 closure check with the full `leaves_new.jsonl` gives the same output as §4.
+
+**Remaining for S2 (unfinished):** 107 leaves: `1,2,3,4,2:28,3:G` for G = 49, 50, 51, and all 52 g(3) leaves
+of each of `1,2,3,4,2:29` and `1,2,3,4,2:30`. At the measured ≈ 64 s per leaf this is about 6 900 core-s, roughly
+30 min on 4 cores. To finish, seed a LEAFLOG with `PUSH2/N52/logs/leaves_n52*.jsonl` and this folder's
+`logs/leaves_new.jsonl`, then run
+`LEAFLOG=... python3 src/tree.py 52 13 400 4 1,2,3,4,2:28 1,2,3,4,2:29 1,2,3,4,2:30`; done leaves are skipped.
 
 ## 7. Files
 
@@ -90,4 +132,5 @@ Running.
 | `logs/roots.txt`, `logs/help_S2_roots.txt` | roots run |
 | `logs/leaves_new.jsonl` | all new leaf lines (own shard, then S2 help) |
 | `logs/closecheck.txt` | closure check for S1's roots |
+| `logs/closecheck_help_S2.txt` | closure check for S2's roots (help run) |
 | `logs/tree_stdout.txt`, `logs/tree_help_stdout.txt` | tree.py output |
