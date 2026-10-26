@@ -30,7 +30,7 @@ All computation ran in this cloud container, 12:58 to 17:23 UTC on 2026-10-26.
 - `src/` is `PUSH2/N52/src/` copied unchanged. `cycenc` was compiled with `gcc -O2`; the binary is not committed.
 - Base CNF `cycenc 52 13 3`: sha256 `f0bba6f2545c2658065ae1a75bbcdd0bf8c0192d8532bb89a13c716a148620c6` (matches).
 - LEAFLOG `/tmp/claude-0/logs/s.jsonl`, seeded with the three `PUSH2/N52/logs/leaves_n52*.jsonl` files (2003 lines).
-  `logs/leaves_new.jsonl` holds lines 2004 onward (3622 lines: 69 PRESPLIT and 3579 verified UNSAT leaves, minus the 26 PRESPLIT lines for S8's 2:0..2:25, which were already in the seed).
+  `logs/leaves_new.jsonl` holds lines 2004 onward: 3622 lines, of which 3579 are verified UNSAT leaves and 43 are PRESPLIT lines (17 for S7, plus 26 for S8's 2:26..2:51; the PRESPLIT lines for 2:0..2:25 were already in the seed).
 - S7 run: `LEAFLOG=… python3 src/tree.py 52 13 400 4 1,2,3,-4,2:35 … 1,2,3,-4,2:51`, 13:00 to 14:47 UTC.
 - S8 help run: `LEAFLOG=… python3 src/tree.py 52 13 400 4 1,2,-3,4,2:51 … 1,2,-3,4,2:0` (same LEAFLOG), started
   automatically when the S7 run ended, 14:47 to 17:22 UTC.
