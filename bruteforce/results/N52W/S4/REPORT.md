@@ -72,11 +72,41 @@ The 3068 verified leaves are S4's own 3059 plus PUSH2's 9 sample leaves.
 
 ## 6. Helping
 
-HELP_SECTION
+S4 closed before 16:00 UTC. Its helping target S5 had already closed by then, so S4 followed the chain on, as S5 had
+done, and helped the shards that were still open. All help lines are UNSAT with `s VERIFIED UNSAT`. There were 0 UNKNOWN and 0 SAT lines.
+
+| helped | roots run (order) | verified leaves | solver s | max leaf s | LRAT |
+|---|---|---|---|---|---|
+| S6 (`1,2,3,-4,2:G`, G = 18..34; its own routine could not build tools) | forward from 2:18, while S5 ran in reverse from 2:34. Restarted at 16:27 with S5's lines merged into the seed. | 512 | 16 556 | 80.6 | 31.89 GB |
+| S2 (`1,2,3,4,2:G`, G = 27..36; its own routine could not build tools) | forward 2:27 → 2:31 (16:37–17:37), while S1 ran in reverse | 220 | 14 167 | 143.3 | 26.15 GB |
+
+- For S6, S4 completed 2:18..2:25 and 2:27, and part of 2:24, 2:26 and 2:29 (a 2:24 leaf was already in the seed). S5 did the rest.
+  `logs/closecheck_help_S6.txt` (PUSH2 logs + S4 + S5): all 17 roots CLOSED, open branches 0.
+- For S2, S4 completed 2:27..2:30, plus 12 leaves of 2:31 before stopping because S1 had closed it.
+  `logs/closecheck_help_S2.txt` (PUSH2 logs + S4 + S1 + S2): all 10 roots CLOSED, open branches 0.
+- Help seeds are kept outside the repository. `logs/help_roots_S6.txt` and `logs/help_roots_S2.txt` list the roots.
+  `logs/tree_stdout_help*.txt` are empty.
+
+**Whole-task check (17:4x UTC).** `logs/closecheck_all_N52W.txt` runs closecheck on all 192 N52W roots across the
+eight shards: (1,2,3,4) 2:1 and 2:17..51, (1,2,3,¬4) 2:0..51, (1,2,¬3,4) 2:0..51 and (1,¬2,3,4) 3:0..51. Its logs are
+`PUSH2/N52/logs/leaves_n52*.jsonl` + every `S*/logs/leaves_new.jsonl` as committed at that time:
+
+```
+192 CLOSED, 0 OPEN
+n=52 k=13: verified leaves used 9984, internal 192, open branches 0, unverified UNSAT lines 0, SAT lines 0
+```
+
+The task says the (1,2,3,4) values G = 0 and 2..16 and the other five first-level cubes are already closed in PUSH2.
+Combined with that, every first-level cube of `cycenc 52 13 3` is closed without the u = −1 mirror lemma, which gives
+k_max(52) = 12 < 52/4. Before this is labelled *proved*, someone should run one consolidated closecheck/covercheck
+over the whole tree, PUSH2 part included. closecheck accepts a leaf on its log line's cake_lpr verdict and the
+recomputed CNF hash, so it trusts the logged verdicts of the other shards.
 
 ## 7. Files
 
 - `logs/roots.txt`: the 59 roots in task order. `logs/placement.txt` and `logs/start.txt` record placement and start time.
-- `logs/leaves_new.jsonl`: every leaf line S4 produced (own shard first, then help lines).
-- `logs/closecheck.txt`: closure check for S4's roots. `logs/closecheck_help_S6.txt` is the check for the helped roots.
+- `logs/leaves_new.jsonl`: every leaf line S4 produced (3091 lines for the own shard, then 512 for the S6 help and 220 for the S2 help; 3823 lines in total).
+- `logs/closecheck.txt`: S4's own roots. `logs/closecheck_help_S6.txt` and `logs/closecheck_help_S2.txt`: the helped roots.
+  `logs/closecheck_all_N52W.txt`: all 192 task roots.
+- `logs/tree_stdout*.txt`: tree stdout for each run, all empty.
 - `src/`: an unchanged copy of `PUSH2/N52/src/`.
