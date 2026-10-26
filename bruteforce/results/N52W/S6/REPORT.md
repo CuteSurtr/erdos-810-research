@@ -6,12 +6,12 @@
 Linux vm 6.18.44-fc-v153 #1 SMP PREEMPT_DYNAMIC @0 x86_64 x86_64 x86_64 GNU/Linux
 4
                total        used        free      shared  buff/cache   available
-Mem:              15           0          15           0           0          15
+Mem:              15           0          14           0           0          15
 Swap:              0           0           0
-Mon Oct 26 13:16:43 UTC 2026
+Mon Oct 26 14:31:02 UTC 2026
 ```
 
-The run started 2026-10-26 13:16 UTC (scheduled for 12:55 UTC).
+First run: 2026-10-26 13:16 UTC. Second run (this update): 2026-10-26 14:30 UTC.
 
 ## 2. Results
 
@@ -29,13 +29,13 @@ No leaves ran, so there are no SAT leaves and no UNKNOWN re-splits. Leaf count 0
 - CaDiCaL (`c60730422e75`, VERSION 3.0.1) and cake_lpr (`a36874a8b750`) were cloned and checked out in `/tmp/claude-0/b/`.
 - **Blocker.** The session's auto-mode permission classifier denied the build command
   (`./configure && make -j4` for CaDiCaL, then `make cake_lpr`) with "Code from External". S2 and S8 report the same denial.
-  I did not retry it in another form. Without CaDiCaL and cake_lpr, `leaf.py` cannot produce cake_lpr-verified LRAT,
+  **Second run, 14:30 UTC:** the routine prompt explicitly authorized these builds. The tools were re-cloned at the pinned commits (`c6073042`, `a36874a`), but the auto-mode classifier denied `./configure && make -j4` / `make cake_lpr` again with "Code from External". I did not retry it in another form. `cycenc` was rebuilt and its base CNF hash re-confirmed. Without CaDiCaL and cake_lpr, `leaf.py` cannot produce cake_lpr-verified LRAT,
   so no leaf would count toward closure. No other solver or checker was used, because the routine forbids other external code.
 
 ## 4. Closure check (current state)
 
-Command:
-`python3 ../common/closecheck.py 52 13 c_52_13_3.cnf --roots $(cat logs/roots.txt) --logs ../../PUSH2/N52/logs/leaves_n52*.jsonl logs/leaves_new.jsonl`
+Command (14:3x UTC; it also counts every other shard's `leaves_new.jsonl` in case S5 or anyone else helped):
+`python3 ../common/closecheck.py 52 13 c_52_13_3.cnf --roots $(cat logs/roots.txt) --logs ../../PUSH2/N52/logs/leaves_n52*.jsonl ../S*/logs/leaves_new.jsonl`
 
 Output summary (full output in `logs/closecheck.txt`):
 
