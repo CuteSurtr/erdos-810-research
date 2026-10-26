@@ -1,4 +1,4 @@
-# N52W / S2: (1,2,3,4,2:G) for G = 27..36. **Not run (blocked)**
+# N52W / S2: (1,2,3,4,2:G) for G = 27..36. **Not run (blocked, 3 attempts)**
 
 ## 1. Placement
 
@@ -10,7 +10,7 @@ Mem:              15           0          15           0           0          15
 Swap:              0           0           0
 ```
 
-Run started 2026-10-26 13:00 UTC. Re-run (second attempt) started 13:09 UTC; same placement.
+Run started 2026-10-26 13:00 UTC. Re-run (second attempt) started 13:09 UTC. Third attempt started 14:30 UTC; same placement.
 
 ## 2. Results
 
@@ -31,7 +31,28 @@ No SAT leaf was found, because no leaf ran.
   cake_lpr-verified LRAT that the closure check requires. README rule 5's fallback is pip `python-sat`, but it
   provides neither CaDiCaL 3.0.1 nor cake_lpr, so its leaves would not count. I did not try to get around the denial.
 - **Second attempt (13:09 UTC).** The routine prompt explicitly authorized building both tools at the pinned commits. Both clones were checked out (cadical c6073042, VERSION 3.0.1; cake_lpr a36874a). The combined `./configure && make -j4` / `make cake_lpr` command was denied again by the classifier ("Code from External"). I did not retry it in another form. No leaves ran. S3 and S7 did build the tools in their sessions, so the block depends on the session, not the task.
-- So the closure check was not run. All 10 roots are OPEN, because none of their leaves exist in any log.
+- **Third attempt (14:30 UTC).** A new routine run again explicitly authorized the build. Clones checked out
+  again (cadical c6073042, VERSION 3.0.1; cake_lpr a36874a). The same `./configure && make -j4` / `make cake_lpr`
+  command was denied by the classifier for the same reason ("Code from External"). I did not retry it in another form.
+  No leaves ran.
+- At 14:30 UTC no other shard's `leaves_new.jsonl` contains any line for these roots (S3 is still on its own roots).
+- Closure check (run at 14:35 UTC with an empty `logs/leaves_new.jsonl`), saved in `logs/closecheck.txt`:
+
+```
+OPEN   1,2,3,4,2:27
+OPEN   1,2,3,4,2:28
+OPEN   1,2,3,4,2:29
+OPEN   1,2,3,4,2:30
+OPEN   1,2,3,4,2:31
+OPEN   1,2,3,4,2:32
+OPEN   1,2,3,4,2:33
+OPEN   1,2,3,4,2:34
+OPEN   1,2,3,4,2:35
+OPEN   1,2,3,4,2:36
+n=52 k=13: verified leaves used 0, internal 0, open branches 10, unverified UNSAT lines 0, SAT lines 0
+```
+
+- Leaf count 0, solver seconds 0, max leaf time n/a, LRAT volume 0, UNKNOWN re-splits 0.
 
 ## 4. Remaining cost and how to finish
 
@@ -52,4 +73,4 @@ Alternatively, S3 (which helps S2 in reverse order if it finishes early) can cov
 
 ## 5. Files
 
-`src/`: PUSH2's scripts, unchanged (no binaries committed).
+`src/`: PUSH2's scripts, unchanged (no binaries committed). `logs/closecheck.txt`: closure check output. `logs/leaves_new.jsonl`: empty.
