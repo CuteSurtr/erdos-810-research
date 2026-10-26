@@ -10,7 +10,7 @@ Mem:              15           0          14           0           0          15
 Swap:              0           0           0
 ```
 
-Run started 2026-10-26 13:03 UTC. A second run (routine re-fire) started 13:09 UTC on a machine with the same placement output, and it was blocked the same way (see §3).
+Run started 2026-10-26 13:03 UTC. A second run (routine re-fire) started 13:09 UTC and a third at 14:30 UTC, each on a machine with the same placement output, and both were blocked the same way (see §3).
 
 ## 2. Results
 
@@ -36,6 +36,13 @@ leaves in `leaves_n52_sample.jsonl`. `logs/leaves_new.jsonl` is empty.
   python-sat was not an option, and a self-written checker would not meet the cake_lpr requirement. So nothing ran this time either.
   To unblock, allow building and running these two pinned tools in the session's permission settings, or let S7 (or another shard that has
   the tools) run these roots.
+- **Third attempt (14:30 UTC).** The routine prompt now explicitly authorizes building and running the two pinned tools. Both repositories
+  were cloned and checked out (CaDiCaL `c6073042`, VERSION 3.0.1; cake_lpr `a36874a`). The build command
+  (`./configure && make -j4`, then `make cake_lpr`) was denied once more by the auto-mode classifier with "Code from External".
+  The written authorization in the routine prompt does not reach the session's permission classifier. I did not retry the build in another
+  form, because that would be working around the denial. The fix has to be in the session's permission settings (for example, an allow rule
+  for building in `/tmp/claude-0/b/`), or a different shard has to run these roots.
+- At 14:30 UTC no shard's `leaves_new.jsonl` contained any `(1,2,¬3,4)` leaf, so S7 had not started helping S8 yet.
 
 ## 4. Closure check (current state)
 
