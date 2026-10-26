@@ -10,7 +10,7 @@ Mem:              15           0          15           0           0          15
 Swap:              0           0           0
 ```
 
-Run started 2026-10-26 13:00 UTC.
+Run started 2026-10-26 13:00 UTC. Re-run (second attempt) started 13:09 UTC; same placement.
 
 ## 2. Results
 
@@ -30,6 +30,7 @@ No SAT leaf was found, because no leaf ran.
   CaDiCaL), with the reason "Code from External". Without CaDiCaL and cake_lpr, `leaf.py` cannot produce the
   cake_lpr-verified LRAT that the closure check requires. README rule 5's fallback is pip `python-sat`, but it
   provides neither CaDiCaL 3.0.1 nor cake_lpr, so its leaves would not count. I did not try to get around the denial.
+- **Second attempt (13:09 UTC).** The routine prompt explicitly authorized building both tools at the pinned commits. Both clones were checked out (cadical c6073042, VERSION 3.0.1; cake_lpr a36874a). The combined `./configure && make -j4` / `make cake_lpr` command was denied again by the classifier ("Code from External"). I did not retry it in another form. No leaves ran. S3 and S7 did build the tools in their sessions, so the block depends on the session, not the task.
 - So the closure check was not run. All 10 roots are OPEN, because none of their leaves exist in any log.
 
 ## 4. Remaining cost and how to finish
