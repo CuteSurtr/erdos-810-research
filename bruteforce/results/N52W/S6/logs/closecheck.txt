@@ -1,0 +1,18 @@
+OPEN   1,2,3,-4,2:18
+OPEN   1,2,3,-4,2:19
+OPEN   1,2,3,-4,2:20
+OPEN   1,2,3,-4,2:21
+OPEN   1,2,3,-4,2:22
+OPEN   1,2,3,-4,2:23
+OPEN   1,2,3,-4,2:24
+OPEN   1,2,3,-4,2:25
+OPEN   1,2,3,-4,2:26
+OPEN   1,2,3,-4,2:27
+OPEN   1,2,3,-4,2:28
+OPEN   1,2,3,-4,2:29
+OPEN   1,2,3,-4,2:30
+OPEN   1,2,3,-4,2:31
+OPEN   1,2,3,-4,2:32
+OPEN   1,2,3,-4,2:33
+OPEN   1,2,3,-4,2:34
+n=52 k=13: verified leaves used 2, internal 9, open branches 474, unverified UNSAT lines 0, SAT lines 0
