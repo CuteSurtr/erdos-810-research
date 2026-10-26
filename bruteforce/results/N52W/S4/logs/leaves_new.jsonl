@@ -1,0 +1,38 @@
+{"cube": ["1", "2", "3", "4", "2:45"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "2", "3", "4", "2:46"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "2", "3", "4", "2:50"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "2", "3", "4", "2:49"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:2"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:28"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:29"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "2", "3", "4", "2:51"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "2", "3", "4", "2:48"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "2", "3", "4", "2:47"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:32"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:31"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:33"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:30"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:35"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:34"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:39"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:36"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:38"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:40"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:41"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:37"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:42"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:43"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:47"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:48"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:46"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:45"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:49"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:50"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:44"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"cube": ["1", "-2", "3", "4", "3:51"], "res": "PRESPLIT", "t_end": "13:15:48"}
+{"n": 52, "k": 13, "cube": [1, 2, 3, 4, "2:45", "3:3"], "res": "UNSAT", "cnf_sha256": "c4fe3abb1705063835961c6ec85f54b86c5d4befbe7e65850a882b7f2d27309d", "solver": "cadical 3.0.1", "opts": [], "proof_bytes": 21636, "secs": 13.4, "check": "s VERIFIED UNSAT", "check_extra_secs": 0.1, "checker": "cake_lpr a36874a (streamed binary LRAT)", "cap": 400, "t_end": "13:16:02"}
+{"n": 52, "k": 13, "cube": [1, 2, 3, 4, "2:45", "3:1"], "res": "UNSAT", "cnf_sha256": "e9bbd98fff12fd611e8803925bfd0fed0301324425a800c3518644726f56831c", "solver": "cadical 3.0.1", "opts": [], "proof_bytes": 21636, "secs": 13.5, "check": "s VERIFIED UNSAT", "check_extra_secs": 0.1, "checker": "cake_lpr a36874a (streamed binary LRAT)", "cap": 400, "t_end": "13:16:02"}
+{"n": 52, "k": 13, "cube": [1, 2, 3, 4, "2:45", "3:2"], "res": "UNSAT", "cnf_sha256": "0442f21fdd0f7bce76a71af20697d9d7d80fa16ac34d73d3695858efd73f1f2d", "solver": "cadical 3.0.1", "opts": [], "proof_bytes": 21636, "secs": 13.5, "check": "s VERIFIED UNSAT", "check_extra_secs": 0.1, "checker": "cake_lpr a36874a (streamed binary LRAT)", "cap": 400, "t_end": "13:16:02"}
+{"n": 52, "k": 13, "cube": [1, 2, 3, 4, "2:45", "3:0"], "res": "UNSAT", "cnf_sha256": "3f4903d40a0b280c1ab6aa5e6b1f727719068a3940c4d9936ae57e172df4a81b", "solver": "cadical 3.0.1", "opts": [], "proof_bytes": 21636, "secs": 13.5, "check": "s VERIFIED UNSAT", "check_extra_secs": 0.1, "checker": "cake_lpr a36874a (streamed binary LRAT)", "cap": 400, "t_end": "13:16:02"}
+{"n": 52, "k": 13, "cube": [1, 2, 3, 4, "2:45", "3:4"], "res": "UNSAT", "cnf_sha256": "4b13aabc0b9c7b0e4674b2ffaf9c4c4a6068ddba5a97d7321da70b60afcfee97", "solver": "cadical 3.0.1", "opts": [], "proof_bytes": 21636, "secs": 2.8, "check": "s VERIFIED UNSAT", "check_extra_secs": 0.1, "checker": "cake_lpr a36874a (streamed binary LRAT)", "cap": 400, "t_end": "13:16:05"}
+{"n": 52, "k": 13, "cube": [1, 2, 3, 4, "2:45", "3:5"], "res": "UNSAT", "cnf_sha256": "d46a439faecefdf81b12660ffc39728bdabe6796ffce2fc0015091140719e596", "solver": "cadical 3.0.1", "opts": [], "proof_bytes": 76619876, "secs": 37.4, "check": "s VERIFIED UNSAT", "check_extra_secs": 0.1, "checker": "cake_lpr a36874a (streamed binary LRAT)", "cap": 400, "t_end": "13:16:40"}
