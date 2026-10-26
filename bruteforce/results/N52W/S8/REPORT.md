@@ -10,7 +10,7 @@ Mem:              15           0          14           0           0          15
 Swap:              0           0           0
 ```
 
-Run started 2026-10-26 13:03 UTC.
+Run started 2026-10-26 13:03 UTC. A second run (routine re-fire) started 13:09 UTC on a machine with the same placement output, and it was blocked the same way (see §3).
 
 ## 2. Results
 
@@ -30,6 +30,12 @@ leaves in `leaves_n52_sample.jsonl`. `logs/leaves_new.jsonl` is empty.
   for CaDiCaL, `make` for cake_lpr), with the reason "Code from External". This is the same denial that S2 reports.
   Without these two tools, `leaf.py` cannot produce cake_lpr-verified LRAT, so no leaf would count. I did not try to get around the denial.
   S3 and S7 did build the tools in their sessions.
+- **Second attempt (13:09 UTC).** A re-fired routine re-cloned and checked out both repositories (CaDiCaL `c6073042`, VERSION 3.0.1;
+  cake_lpr `a36874a`). The single build command (`./configure && make -j4` for CaDiCaL, then `make cake_lpr`) was again denied
+  by the auto-mode classifier with "Code from External". I did not retry it in another form. The routine forbids other external code, so
+  python-sat was not an option, and a self-written checker would not meet the cake_lpr requirement. So nothing ran this time either.
+  To unblock, allow building and running these two pinned tools in the session's permission settings, or let S7 (or another shard that has
+  the tools) run these roots.
 
 ## 4. Closure check (current state)
 
