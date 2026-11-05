@@ -1,0 +1,5 @@
+Linux jay-B850M-AORUS-ELITE-WIFI6E-ICE 7.0.0-42-generic #42-Ubuntu SMP PREEMPT_DYNAMIC Thu Oct 15 08:06:44 UTC 2026 x86_64 GNU/Linux
+32
+               total        used        free      shared  buff/cache   available
+Mem:              59          11          18           0          30          47
+Swap:              7           1           6
