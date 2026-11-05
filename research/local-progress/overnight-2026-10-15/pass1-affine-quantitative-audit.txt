@@ -1,0 +1,170 @@
+QUANTITATIVE VANISHING DENSITY FOR AFFINE COLORS WITH SMALL DEFECT
+15 October 2026. Independent hand audit and strengthening of the parent
+agent's deficit-count argument. No Lean certificate, no finite search,
+and no assertion of historical novelty or a general solution of #810.
+
+THEOREM.
+There are absolute constants C,c>0 such that the following holds.
+Let F be a finite field of size n, and let a B-colored bipartite graph
+on two copies of F have every color represented by a nonconstant affine
+permutation, with at most r of its n points omitted. If n>4r+1, then
+
+  number of colors <= C(r+1)n exp[-c(log n)^(1/12)],
+  number of edges  <= C(r+1)n^2 exp[-c(log n)^(1/12)].    (T)
+
+In particular, the edge count is o(n^2) if
+
+  log(r+1)=o((log n)^(1/12)).                            (V)
+
+The proof combines an elementary incidence inequality, the actual B
+support condition, and an existing quantitative Roth theorem. The
+representation and near-perfect-support assumptions remain essential
+to this proof. No claim is made for arbitrary fixed positive fractions
+of the affine color lines.
+
+1. AN EXACT LINEAR DEFECT INEQUALITY
+
+The n>4r+1 assumption implies n>2r, so different colors cannot have
+identical affine completions: two disjoint actual color classes on
+the same n-point line cannot each have n-r>n/2 points. Let d be the
+number of distinct color lines. If d=0 there is nothing to prove.
+Let L be the largest number of these lines in a parallel pencil or
+a pencil concurrent at a finite point.
+
+For each finite point p incident to m_p>=2 color lines, at most one
+of these lines retains p in its actual color class. Thus at least
+m_p-1 incidences at p have been omitted. Summing over such points,
+
+  sum_p (m_p-1) <= r*d.                                (1.1)
+
+Every nonparallel pair of color lines meets at one finite point, and
+m_p<=L. Therefore their number is
+
+  sum_p binom(m_p,2) <= (L/2) sum_p(m_p-1) <= L*r*d/2.  (1.2)
+
+If the sizes of the parallel classes are h_i, every h_i<=L, so the
+number of parallel pairs is
+
+  sum_i binom(h_i,2) <= (L-1)*d/2.                      (1.3)
+
+Adding (1.2) and (1.3) yields
+
+  d(d-1)/2 <= (L-1)*d/2 + L*r*d/2,
+
+and hence the EXACT inequality
+
+                       d <= (r+1)*L.                  (1.4)
+
+This does not require B; proper assignment of one color to each
+actual point is enough. In particular it is stronger, for bounding
+d, than covering the palette by (r+1)^2 pencils and pigeonholing.
+
+2. B AND SMALL DEFECT FORBID ALL STRONG PERMUTATION PROGRESSIONS
+
+Use composition of affine maps as group multiplication. Suppose three
+color completions A,B,C satisfy
+
+                       C=A B^(-1) A.                  (2.1)
+
+If A=B then C=A. Suppose instead A!=B. For any first row x put
+
+  y_1=A(x),     y_2=B(x),     z=A^(-1)B(x).
+
+Then C(z)=A(x) and A(z)=B(x), so the completed four-edge rectangle
+has color matrix
+
+      A  B
+      C  A.
+
+The conditions that its four edges are actual fail for at most 4r
+values of x: the missing sets for A at x, B at x, C at z, and A at z
+each have at most r preimages, since x -> z is a permutation. A and
+B are distinct affine maps, so A(x)=B(x) holds at at most one point.
+Moreover z=x if and only if A(x)=B(x). Removing this one possible
+degeneracy, at least n-4r-1>0 choices of x remain.
+
+Such a choice gives a genuine nonrainbow C4, contradicting B. Thus
+(2.1) has only the solution A=B=C within the palette. The case C=B
+with A!=B is also forbidden; this is the strong progression convention
+which includes repeated endpoints in groups with 2-torsion.
+
+3. NORMALIZING EACH PENCIL TO AN ABELIAN GROUP
+
+A parallel pencil lies in a coset of the additive translation group
+of F. A pencil through (s,t) consists of T_t M_a T_(-s) and is the
+left coset T_(t-s) H_s, where H_s={T_s M_a T_(-s):a in F*} is a
+conjugate of the multiplicative dilation group.
+
+Left translation of a group set preserves strong progression-freeness:
+if A=g*a, B=g*b, C=g*c, then C=A B^(-1) A is exactly
+c=a b^(-1) a. Consequently every pencil piece normalizes to a
+strongly three-term-progression-free subset of either (F,+) or the
+cyclic group F* of order n-1.
+
+4. PRIMARY QUANTITATIVE INPUT AND THE EXPONENT 1/12
+
+Schildkraut, "Abelian structure in approximate groups and Alon's
+conjecture on Ramsey Cayley graphs," arXiv:2512.15125v1, Theorem 11.4,
+states the following quantitative Roth bound: a progression-free
+subset of a finite abelian group of odd order N has size at most
+
+                     N exp[-c_0(log N)^(1/12)]          (4.1)
+
+for an absolute c_0>0. The paper attributes this to the Bloom--Sisask
+version of the Kelley--Meka improvement. Source checked directly:
+https://arxiv.org/html/2512.15125v1#S11.SS2 .
+
+The slower exponent 1/144 of its local Roth Lemma 9.2 is unnecessary
+for these two specific ambient abelian groups. Here are all torsion
+and size cases needed to use (4.1).
+
+4a. Additive pencils.
+
+If F has odd characteristic, (F,+) has odd order n and (4.1) applies
+directly. In characteristic 2, a strongly progression-free subset of
+(F,+) has size at most one: any two distinct elements x,x+h give the
+forbidden strong progression x,x+h,x+2h=x. This is stronger than the
+claimed bound after adjusting the absolute constant for small n.
+
+4b. Multiplicative pencils, including even cyclic order.
+
+Write M=n-1 and identify F* with Z/MZ using a generator. Represent the
+normalized pencil subset by exponents A subset {0,...,M-1}. It contains
+no nonconstant integer three-term progression, because any such
+progression reduces to a nontrivial progression modulo M.
+
+Now embed these same integer representatives into the ODD cyclic group
+Z/(2M+1)Z. If representatives u,v,w in A satisfy u+w=2v modulo 2M+1,
+then
+
+                 |u+w-2v| <= 2(M-1) < 2M+1,
+
+so the equation holds as an integer equation. It must therefore be
+trivial. This embedding is progression-free, so (4.1), with N=2M+1,
+implies
+
+  |A| <= (2n-1) exp[-c_0(log(2n-1))^(1/12)]
+       <= 2n exp[-c_0(log n)^(1/12)].                    (4.2)
+
+The case M=1 is immediate. No assumption that n-1 is odd is needed.
+
+Combining both types of pencil and adjusting absolute constants gives
+
+                         L <= C n exp[-c(log n)^(1/12)]. (4.3)
+
+5. FINISH AND QUANTIFIER CHECK
+
+Substitute (4.3) in (1.4), then multiply by n because each color has
+at most n edges. This proves (T). All constants are absolute and
+independent of the field, characteristic, r, and palette.
+
+If (V) holds, r=n^o(1), so n>4r+1 holds automatically for sufficiently
+large n. The factor r+1 is absorbed by the stretched-log exponential
+decay, proving the stated o(n^2) conclusion. More explicitly, if
+r+1<=exp[(c/2)(log n)^(1/12)], (T) is at most
+C n^2 exp[-(c/2)(log n)^(1/12)].
+
+This is a rigorously checked extension beyond fixed defect, obtained
+from existing quantitative Roth bounds and an elementary structural
+reduction. It does not supply affine representations for general
+B colorings, or a bound when colors omit a positive fraction of n.

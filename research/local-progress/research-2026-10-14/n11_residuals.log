@@ -1,0 +1,46 @@
+RESIDUAL graphmask=35947305942858879 independent4=0
+RESIDUAL graphmask=35947103005654143 independent4=0
+RESIDUAL graphmask=35947204474256511 independent4=0
+RESIDUAL graphmask=35947001537051775 independent4=0
+RESIDUAL graphmask=35947299550739583 independent4=0
+RESIDUAL graphmask=35946589270523007 independent4=0
+RESIDUAL graphmask=35946790609697919 independent4=0
+RESIDUAL graphmask=35946993546902655 independent4=0
+RESIDUAL graphmask=35947305010674815 independent4=0
+RESIDUAL graphmask=34821376515456127 independent4=0
+RESIDUAL graphmask=35947298618555519 independent4=0
+RESIDUAL graphmask=35946791275543679 independent4=0
+RESIDUAL graphmask=34821471591939199 independent4=0
+RESIDUAL graphmask=35946997408808063 independent4=0
+RESIDUAL graphmask=34821474787998847 independent4=0
+RESIDUAL graphmask=35947092485291135 independent4=0
+RESIDUAL graphmask=35947195551923327 independent4=0
+RESIDUAL graphmask=35946989418658943 independent4=0
+RESIDUAL graphmask=35946583544249471 independent4=0
+RESIDUAL graphmask=34821365329247359 independent4=0
+RESIDUAL graphmask=35946932959657087 independent4=0
+RESIDUAL graphmask=34821410338847871 independent4=0
+RESIDUAL graphmask=35947028036140159 independent4=0
+RESIDUAL graphmask=35946520693128319 independent4=0
+RESIDUAL graphmask=34820896603716735 independent4=0
+RESIDUAL graphmask=35947031232199807 independent4=0
+RESIDUAL graphmask=34821102736981119 independent4=0
+RESIDUAL graphmask=35946517497068671 independent4=0
+RESIDUAL graphmask=35946519095098495 independent4=0
+RESIDUAL graphmask=35946921773448319 independent4=0
+RESIDUAL graphmask=35946515899038847 independent4=0
+RESIDUAL graphmask=34820688872422527 independent4=0
+RESIDUAL graphmask=34821399818484863 independent4=0
+RESIDUAL graphmask=34820689538268287 independent4=0
+RESIDUAL graphmask=34820890877443199 independent4=0
+RESIDUAL graphmask=34821093814647935 independent4=0
+rows=18853748 early_pruned=9205593
+d0=7 total=4318 clique=4282 coloring_obstruction=36
+rows=34477158 early_pruned=17161024
+d0=8 total=4318 clique=4282 coloring_obstruction=36
+rows=39944045 early_pruned=19819421
+d0=9 total=4318 clique=4282 coloring_obstruction=36
+rows=41196311 early_pruned=20408270
+d0=10 total=4318 clique=4282 coloring_obstruction=36
+rows=41196311 early_pruned=20408270
+VERIFIED n=11 m=35 total=4318 clique=4282 coloring_obstruction=36

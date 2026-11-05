@@ -1,0 +1,9 @@
+{
+  "graphs": 54264,
+  "conflict_K8": 53844,
+  "alpha_at_most_2": 37569,
+  "both_obstructions": 37149,
+  "K8_free_alpha_at_most_2": 420,
+  "K8_free_with_independent_triple": 0,
+  "elapsed_seconds": 7.786224126815796
+}

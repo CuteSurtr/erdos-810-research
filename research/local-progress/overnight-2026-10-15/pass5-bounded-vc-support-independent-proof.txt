@@ -1,0 +1,204 @@
+BOUNDED VC SUPPORTS: AN INDEPENDENT GRAPHON/BRACKETING EXTRACTION PROOF
+2026-10-15, finite_audit agent. The measure-theoretic argument below passed
+formal_audit's independent check. It verifies and simplifies the transfer
+proposed by the literature agent; it is not a priority claim.
+
+APPLICATION THEOREM
+
+Let p range over primes, A_p subset F_p^*, and beta_p:A_p->F_p arbitrary.
+For each color a choose an arbitrary row domain D_a subset F_p and select
+the edges (x,a*x+beta_p(a)) for x in D_a. Suppose the actual coloring is
+proper and every C4 is rainbow. If the set family {D_a:a in A_p} has VC
+dimension bounded by one fixed integer D, then m=o(p^2).
+
+The proof uses the already audited near-common-domain theorem for arbitrary
+beta. It does not use any algebraic structure of the domains, and proves
+no effective rate. One color per nonzero slope remains part of this
+application. The extraction lemma itself is an abstract binary-matrix fact.
+
+1. THE PRECISE EXTRACTION LEMMA AND QUANTIFIER ORDER
+
+Suppose binary matrices M_n have row and column counts q_n,s_n tending to
+infinity, density at least delta>0, and row-neighborhood VC dimension <=D.
+Then a SUBSEQUENCE has row and column subsets I_n,J_n satisfying
+
+ |I_n|>=c*q_n, |J_n|>=c*s_n,
+ #{(i,j) in I_n x J_n:M_n(i,j)=0}=o(q_n*s_n),             (1)
+
+for one fixed c>0 along that subsequence. The value c can depend on the
+limiting object selected from the sequence. We do not claim a bound for c
+solely in terms of D,delta, or a uniform finite rate.
+
+This quantifier order is sufficient for the application: a hypothetical
+dense counterexample sequence supplies a subsequence to which (1) applies.
+
+2. THE LIMIT AND ITS FORBIDDEN PATTERN
+
+Use standard compactness for dense bipartite graphons to pass, after
+separate measure-preserving relabelings of the two sides, to a cut-norm
+limit W:[0,1]^2->[0,1]. The finite matrices are represented by rectangular
+step functions U_n. They have integral at least delta, so int W>=delta.
+
+Put k=D+1 and h=2^k. Let F_D be the bipartite binary pattern with k column
+vertices and one row for every subset of these k columns. Its row family
+shatters all k columns. Every finite M_n has induced density zero for this
+pattern. Repeated finite vertex choices cannot create an exception: the
+rows of F_D are all different, as are its columns, so any such repeated
+choice forces a conflicting 0/1 requirement. By the counting lemma,
+
+                         t_ind(F_D,W)=0.                (2)
+
+3. THE LIMIT IS BINARY, WITHOUT A PURE-REPRESENTATIVE ASSUMPTION
+
+If W were not 0/1 almost everywhere, some measurable set
+Z={epsilon<=W<=1-epsilon} would have positive measure. A positive-density
+bipartite measurable set has positive K_(h,k) density, by repeated Jensen
+(equivalently the elementary complete-bipartite counting inequality).
+On every such grid inside Z, each factor W or 1-W required by F_D is at
+least epsilon. This would give t_ind(F_D,W)>0, contradicting (2).
+
+Hence W is binary almost everywhere. We modify it on a null set so that
+its sections define measurable binary functions for almost all rows.
+
+4. A COUNTABLE VC FAMILY FROM THE ESSENTIAL ROW DISTRIBUTION
+
+Regard the row section x -> W(x,.) as a random element of the separable
+space L1([0,1]). Its pushforward probability measure is denoted nu, and
+let K be its topological support. The row map is measurable (for example
+by approximation by simple functions), and nu(K)=1. The binary functions
+form a closed subset of L1, so every point of K has a binary representative.
+
+Choose a countable L1-dense subset {f_i} of K, with measurable indicator
+representatives f_i=1_(C_i). Remove from the column space the union of all
+zero-measure Boolean atoms formed by finite subfamilies of the C_i. There
+are countably many such atoms, so the removed set N is null. On the
+remaining column space every nonempty finite Boolean atom has positive
+measure.
+
+CLAIM: {C_i minus N} has ordinary VC dimension at most D.
+
+Otherwise choose k shattered column points and h witnessing row sets.
+For each of the k columns, its incidence vector across those h sets
+defines a nonempty Boolean atom. All these atoms have positive measure
+after the deletion of N. Therefore, for this fixed row tuple, the
+conditional column-integral of the forbidden induced pattern is positive:
+it is the product of the measures of those k prescribed atoms.
+
+This conditional integral is continuous in the h row functions under
+their L1 distances. More explicitly, changing any selected row function
+by L1 distance epsilon changes each Boolean-atom measure by at most
+epsilon; the finite product is consequently continuous. Thus the integral
+stays positive on a product of L1 neighborhoods of the witnessing rows.
+Every neighborhood has positive nu-measure, since f_i belongs to K.
+Integrating over these row neighborhoods makes t_ind(F_D,W)>0, contrary
+to (2). This proves the claim.
+
+The null deletion is essential: pointwise shattering by exceptional
+zero-measure column atoms alone would not contradict an induced density.
+Using the row-law support is equally essential: arbitrary exceptional
+row sections need not have neighborhoods of positive sampling measure.
+
+5. FINITE BRACKETING YIELDS A POSITIVE COMPLETE RECTANGLE
+
+Use the Adams--Nobel finite-bracketing theorem for the countable VC family
+from Section 4, with column Lebesgue measure and bracket width epsilon.
+Countability ensures the separability hypothesis. We obtain finitely
+many measurable set brackets [A_j,B_j], with
+
+ A_j subset B_j, measure(B_j minus A_j)<=epsilon,
+
+covering the family. After restoring the null set, regard each bracket as
+a subset of L1 modulo equality almost everywhere. Such a bracket is
+closed in L1: along an L1-convergent sequence one can take an almost-
+everywhere convergent subsequence, preserving the two pointwise bounds.
+The finite union of these closed brackets contains the L1 closure K.
+
+Let epsilon=delta/4. Since the mean row measure is at least delta, a
+positive nu-measure set of rows has measure at least delta/2. One of the
+finitely many brackets contains a positive nu-measure set of these rows.
+For that bracket its lower set A has measure at least delta/4. Let P be
+the original row parameters whose section lies in this bracket and has
+measure at least delta/2. Then measure(P)>0, and
+
+                         W=1 a.e. on P x A.             (3)
+
+The row-class P is measurable: bracket membership is specified by
+int_A(1-W(x,y))dy=0 and int_(B^c)W(x,y)dy=0, two measurable nonnegative
+integrals, together with a measurable lower bound on row measure.
+
+The exact published input is Adams--Nobel, "Uniform approximation of
+Vapnik--Chervonenkis classes", Bernoulli 18(4) (2012), 1310--1319,
+Corollary 1 (preprint PDF page 5): every separable VC class has finitely
+many epsilon-brackets for every epsilon>0.
+https://arxiv.org/pdf/1010.4515
+https://doi.org/10.3150/11-BEJ379
+
+6. BINARY LIMITS UPGRADE ALIGNED CUT CONVERGENCE TO L1
+
+For 0<=U_n<=1 and binary W,
+
+ ||U_n-W||_1 = int U_n + int W - 2 int U_n W.
+
+The first integral tends to int W by cut convergence. Also int U_n W
+tends to int W^2=int W: approximate the fixed W in L1 by a finite linear
+combination of rectangle indicators, use cut convergence against that
+finite sum, and bound the two approximation errors by their L1 norms.
+Hence
+
+                         ||U_n-W||_1 -> 0.              (4)
+
+In particular, (3)-(4) give missing mass o(1) on the fixed rectangle P x A.
+
+7. PULLBACK TO ACTUAL FINITE VERTEX SETS
+
+The relabelings need not align P or A with finite vertex cells. Let
+alpha=measure(P)>0, beta=measure(A)>0. For each finite row cell i let u_i
+be the fraction of its relabeled cell lying in P, and for column cell j
+let v_j be the fraction lying in A. Then
+
+ sum_i u_i=alpha*q_n, sum_j v_j=beta*s_n,
+ sum_(i,j) u_i v_j (1-M_n(i,j))=o(q_n*s_n).               (5)
+
+Retain I_n={i:u_i>=alpha/2}, J_n={j:v_j>=beta/2}.
+The low-weight vertices account for at most half the total weight, so
+|I_n|>=alpha*q_n/2 and |J_n|>=beta*s_n/2. Each retained pair has
+u_i v_j>=alpha*beta/4, whence its total unweighted missing count is at
+most 4/(alpha*beta) times the last sum in (5). This proves (1).
+
+No step assumes that a measurable limiting rectangle is literally a union
+of finite vertices. Thresholding fractional pullback weights supplies the
+needed actual vertex subsets.
+
+8. APPLICATION TO AFFINE B COLORINGS
+
+Suppose m>=delta*p^2 along a sequence of the stated affine colorings.
+Take the color-by-row support matrix M(a,x)=1_(x in D_a). Its number of
+rows q=|A_p| lies between delta*p and p, and its density is at least delta.
+Apply the extraction lemma to obtain along a subsequence palettes I_p
+and row sets J_p, each of size Omega(p), for which only o(p^2) colored
+incidences are missing from I_p x J_p.
+
+Restrict the original graph to those colors and rows. It is still proper
+and B, contains Omega(p^2) edges, and has an arbitrary affine palette with
+distinct nonzero slopes. It is a near-common-domain instance with
+R=o(p^2). This contradicts the theorem proved and independently audited
+in pass4-arbitrary-affine-common-support-independent-audit.txt.
+
+Therefore m=o(p^2). All small-o conclusions are obtained by contradiction
+along subsequences; no uniform finite bracketing size or quantitative
+graphon rate was assumed.
+
+SOURCES AND SCOPE
+
+Standard dense bigraphon compactness and counting continuity are used in
+Section 2. Lovasz--Szegedy's treatment of excluded induced bigraphs and
+thin graphons gives a stronger structural framework:
+https://arxiv.org/abs/1002.4377 .
+The direct row-law argument here avoids needing a pointwise VC assertion
+for a particular pure representative, or uniform control of bracketing
+numbers over all probability measures.
+
+This proof is an application of established graph-limit and VC tools plus
+the previously audited affine near-common theorem. It does not imply
+bounded VC dimension for arbitrary color supports, and hence does not
+resolve the unrestricted affine-support problem or Erdős #810.

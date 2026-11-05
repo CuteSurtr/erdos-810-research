@@ -1,0 +1,222 @@
+INDEPENDENT AUDIT: A SQUARE IN A DENSE APPROXIMATE-GROUP REGION
+2026-10-15. Complete hand reduction using stated established theorems.
+Not Lean checked; no originality claim.
+
+The qualitative proof below does not require a proof sketch from a recent
+preprint, a quantitative approximate-group theorem, or a circular choice
+of the DHJ dimension.
+
+1. AN ENTIRE FIXED-DIMENSION COMMUTING CUBE INSIDE A^4
+
+Claim. Fix K and r. For every sufficiently large finite centered
+K-approximate group A, in any ambient group, there are pairwise commuting
+w_1,...,w_r such that every subset product belongs to A^4 and no nonempty
+subset product is the identity.
+
+Use Breuillard-Green-Tao, The Structure of Approximate Groups, Theorem 2.10,
+and Definitions 2.6 and 2.8:
+https://www.imo.universite-paris-saclay.fr/~emmanuel.breuillard/structure.pdf
+The source was checked directly, printed pages 12-13.
+
+It gives P subset A^4 with |P|>=c_K|A|, where P is the full preimage of a
+nilprogression Q in a quotient G_0/H, with H finite. The rank R and the
+normal-form constant C are bounded in terms of K. The defining normal form
+provides both a volume bound and local distinctness of ordered powers.
+
+Choose a threshold H_0(r) so that every finite group of order at least
+H_0(r) has an abelian subgroup of order greater than 2^(r-1). Such a
+threshold follows from the standard large-abelian-subgroup theorem used
+in group-representation-vanishing-density.txt.
+
+If |H|>=H_0(r), choose r weights inside such an abelian subgroup of H,
+greedily excluding the inverses of the preceding subset products at each
+step. At step i there are at most 2^(i-1) exclusions. The weights commute,
+no nonempty subset product is the identity, and the entire cube stays in
+H subset P subset A^4.
+
+Otherwise |H|<H_0(r). Write the side lengths of Q as L_1,...,L_R. The
+volume bound says
+
+                 |Q| <= C product_i(2 floor(L_i)+1).
+
+If all L_i/C<2^r, the right side is bounded by a constant depending only
+on K,r. Then |P|=|H||Q| is also so bounded, contrary to |P|>=c_K|A| for
+large enough |A|. Therefore some L_i/C>=2^r.
+
+Choose any lift g of that generator in G_0. Local properness says the
+cosets g^j H for 0<=j<=2^r-1 are pairwise distinct. In particular none
+of g^j, 1<=j<=2^r-1, is the identity. All these powers belong to P, since
+their images belong to Q and P is the FULL preimage of Q. Take
+
+                    w_i=g^(2^(i-1)),    1<=i<=r.
+
+Their subset products are precisely powers g^j with 0<=j<=2^r-1. This
+gives the required cube. The two cases give a uniform threshold in K,r;
+the argument is not merely a subsequence dichotomy. QED.
+
+2. DENSE LOCAL SQUARE LEMMA
+
+Fix K,s and epsilon>0, where s is a positive integer. If A is a sufficiently
+large centered K-approximate group and
+
+           F subset A^s x A^s,       |F|>=epsilon |A|^2,
+
+then F contains
+
+                 (x,y), (xt,y), (x,yt), (xt,yt)
+
+for some t!=1. The statement is uniform over the ambient group.
+
+Proof. Choose
+
+          delta=epsilon/K^(2(s+4)),
+          r=DHJ(4,delta),
+
+reducing epsilon if necessary to ensure delta<=1. The elementary power
+bound |A^j|<=K^(j-1)|A| makes this a conservative density choice.
+
+Choose the commuting r-cube from Section 1. For a word in
+{(0,0),(1,0),(0,1),(1,1)}^r, write its letters (a_i,b_i) and define
+
+       u(word)=product_i w_i^(a_i),
+       v(word)=product_i w_i^(b_i).
+
+Both products belong to A^4. Average over p,q in A^(s+4), mapping the word
+to (p u(word), q v(word)). For each fixed word, every target (x,y) in F
+has exactly one origin
+
+                 p=x u(word)^(-1), q=y v(word)^(-1),
+
+and these origins lie in A^(s+4), because A is symmetric. Thus the average
+proportion of words mapped into F is exactly
+
+                  |F|/|A^(s+4)|^2 >= delta.
+
+Some p,q attain at least this density. DHJ gives a line with a nonempty
+variable set I. The commuting weights let us factor its four images as
+
+                   (x t^a, y t^b),   (a,b) in {0,1}^2,
+
+where t=product_{i in I}w_i is nonidentity. Hence all four corners are
+distinct. QED.
+
+There is no quantifier cycle: K,s,epsilon determine delta and r first;
+Section 1 then supplies the cube for sufficiently large |A|. Increasing
+r does not enlarge A^4, so the averaging density does not deteriorate
+with r. This is the essential point of placing the ENTIRE cube in A^4.
+
+3. APPLICATION TO PARTIAL GROUP TABLES
+
+Under the convention color(x,y)=y x^(-1), opposite corners have equal
+color:
+
+                 (yt)(xt)^(-1)=y x^(-1).
+
+Therefore a partial group-table graph with every C4 rainbow cannot have
+positive normalized density inside A^s x A^s for a bounded-K approximate
+group A of unbounded size. Equivalently, for fixed K,s, its number of
+entries there is o(|A|^2), uniformly in the ambient group.
+
+This is a local qualitative statement. It gives no explicit decay rate
+and does not assert that arbitrary B graphs lie in such a region.
+
+4. OPTIONAL SIMPLE LIFT AFTER A PALETTE COSET HAS BEEN CHOSEN
+
+The following extraction verifies the action degeneracies without using
+entire stabilizer fibers. Suppose an original bipartite B graph has N
+vertices, at least epsilon N^2 edges, and injectively labeled permutation
+colors all lying in a centered approximate group A with |A|=O(N). Assume
+each edge x->y of color b satisfies y=b(x), after any fixed relabeling of
+the right side.
+
+Let the bipartition be X,Y. Averaging
+
+           sum_{x in X} sum_{y in N(x)} deg(y)
+                    = sum_{y in Y} deg(y)^2
+
+shows that some x_0 has a neighborhood Y_0 carrying Omega(N^2) incident
+edges. Indeed the average is at least m^2/(|X||Y|)>=4epsilon^2 N^2.
+For each y in Y_0 choose the color a_y in A of the edge x_0->y.
+
+Every left vertex x with an edge x->y in this retained graph can be written
+as x=b^(-1)a_y(x_0), hence belongs to A^2(x_0). Choose ONE representative
+g_x in A^2 with g_x(x_0)=x, for every such left vertex. Lift each retained
+edge of color b to
+
+                         (g_x,b g_x).
+
+The lift lies in A^2 x A^3, has the same number of edges, and has group-table
+color b. The row representatives are distinct and their projection to
+original left vertices is injective. If a lifted C4 has equal diagonal
+color b, its distinct rows project to distinct x_1,x_2, while its column
+projections are b(x_1),b(x_2), also distinct. It therefore projects to a
+genuine forbidden C4 in the original graph. So the lift remains B.
+
+If |A| tends to infinity, Section 3 contradicts its Omega(N^2) edges and
+|A|=O(N). If |A| stays bounded, its containment in A^3 x A^3 already
+contradicts that many edges. Thus the extraction is sufficient once a
+bounded-complexity palette cover by an approximate group has been supplied.
+That cover is an additional step, not an assumption proved by density.
+
+5. AUDIT OF THE COMPLETED PARTIAL-MATCHING THEOREM
+
+Independently read partial-small-difference-theorem.txt, including its
+stronger scale-free Section 9. The completed proof passes. In particular:
+
+* Removing small original colors before merging duplicate permutation
+  labels ensures that the loss is a fixed fraction. In the scale-free
+  statement, m>=epsilon qn leaves at least gamma qn edges with distinct
+  labels, gamma=epsilon^2/4, and at least gamma q distinct permutations.
+* Tao's covering parameter is then fixed. Selecting a translate by its
+  edge weight, rather than its color count, does preserve enough edges.
+* The note's basepoint lift is an alternative to Section 4 above and uses
+  fewer powers of A. For each z, it takes edges (u^(-1),v u^(-1)), with
+  u,v in the selected palette U. Distinct pairs (u,v) give distinct
+  lifted edges, and sum_z |F_z|=|U|m' exactly.
+* The projection of a forbidden lifted C4 either has two different row
+  labels, yielding a genuine original C4, or collapses all four edges to
+  the same original simple edge. In the second case the unique color of
+  that original edge forces the lifted rows to coincide, a contradiction.
+  Thus no freeness or injectivity of the group action has been smuggled in.
+* In the scale-free version, |U|>=gamma q/L, |A|<=Bq and
+  |F_z|>=gamma^2 q^2/L^2 give both |A|->infinity and fixed normalized
+  density. No comparison between q and n is needed.
+
+Hence the scale-free conclusion is valid: for fixed K, if q->infinity
+and the completion palette has |SS^(-1)|<=Kq, then m=o(qn), where n is
+the action-set size. This remains a conditional result because bounded
+global palette doubling has not been established for arbitrary B graphs.
+
+6. AUDIT OF THE MULTIPLICATIVE-ENERGY STRENGTHENING
+
+Independently read multiplicative-energy-obstruction.txt and checked
+Tao's Theorem 5.4(i) -> (iv) directly in the primary PDF, printed pp17-18:
+https://arxiv.org/pdf/math/0601431
+
+The application to (S,S^(-1)) is exact: its product energy is the number
+of quadruples ab^(-1)=ce^(-1). Positive normalized energy supplies a
+bounded-complexity approximate group A of size at most Bd and one left
+translate meeting S in at least alpha d elements. There is no assumption
+that the two subsets in a two-set BSG conclusion coincide.
+
+When each original color has at least eta n edges, the selected palette
+U still has m'>=eta n|U| edges. The basepoint average gives
+|F_z|>=eta|U|^2>=(eta alpha^2/B^2)|A|^2 for some z. This contradicts the
+local square lemma as d->infinity. Thus E(S)=o(d^3), uniformly for fixed
+eta, is proved by the stated dependencies.
+
+The collision identity has the correct multiplication order:
+
+  (ab^(-1))(x)=(ce^(-1))(x)
+       iff (e c^(-1) a b^(-1))(x)=x.
+
+Consequently sum_x E_x=sum_{a,b,c,e}|Fix(e c^(-1) a b^(-1))|. Cauchy-
+Schwarz gives E_x>=d^4/n at every x, whereas the globally identical
+products contribute nE(S). If d=Theta(n), this is o(d^4). The required
+remaining collision mass therefore comes from nonidentical products
+that agree at points. This last observation identifies a gap in a
+potential contradiction; it does not fill that gap.
+
+All these checks are mathematical audits, not kernel verification. The
+structural hypotheses, dependence on deep established theorems, and lack
+of a universal o(N^2) edge bound must remain explicit in any summary.

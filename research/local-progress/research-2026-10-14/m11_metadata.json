@@ -1,0 +1,14 @@
+{
+  "files_sha256": {
+    "exhaustive_pruned.cpp": "57d3fe81492cca85753c9f648778f4e429d65893b4cf92f0d91630ae6abb3c06",
+    "exhaustive_residuals.cpp": "9cc8e42f37a80aa1feaa69344d5a61a4f85fe5bb643aa19ed126d32aa66b4653",
+    "verify_n11_residuals.py": "587c0823ebdca29eb10151cd7c22336ca5b32757b73f2e4dd755adadcf3742b9",
+    "n11_residual_certificate.json": "070c3e3b6c5d168e70a4accdb468e63962bcc400736b4296b1bef5c75c2518bb",
+    "n11_residual_isomorphisms.json": "7405db0cd130c8e04130b82e3e9ed87356334db4145f50d6473cf1605901bf93",
+    "n11_residuals.log": "bb0ac3e2fba9ee8ba1a89e9c0ddf70877402c2bd37e22a94236c0a290c829244",
+    "exhaustive_pruned_n11_m35.log": "c72a9dd9aa43339428d375b2a4c6330cd5238833f182c3cae4a89106a51563b0"
+  },
+  "runtime_first_seconds": 117.845,
+  "runtime_residual_rerun_seconds": 116.077,
+  "evidence": "External exhaustive computation, not a Lean kernel theorem."
+}

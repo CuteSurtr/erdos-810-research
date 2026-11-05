@@ -1,0 +1,74 @@
+AFFINE COMPLETIONS: A PRECISE UNRESOLVED NEXT STEP
+15 October 2026. Research checkpoint, not a theorem or novelty claim.
+
+This direction was identified but not developed into a proof during the
+current pass. No finite graph searches were run.
+
+SETTING
+
+Let F be a finite field of order n. Suppose a properly colored bipartite
+graph on two copies of F has color c given on an actual domain D_c by
+
+           sigma_c(x)=a_c x+b_c,       a_c in F nonzero.
+
+There may be several colors of the same slope; affine transformations
+are assumed distinct after any duplicate-color reduction. Let q be the
+number of colors. A possible next target is:
+
+  q=O(n), every color support at least eta n, and all C4s rainbow
+  imply q=o(n), or equivalently exclude m=Omega(n^2) in this class.
+
+This assertion is UNPROVED here. It is a conditional representation
+class, not a reduction of general Erdos #810 to affine permutations.
+
+WHY THE PREVIOUS GROUP ARGUMENT DOES NOT AUTOMATICALLY APPLY
+
+The full affine group has n(n-1) elements and acts on n points with
+point stabilizers of size n-1. Thus the ambient-group-size hypothesis
+O(n) from the earlier group-representation theorem is absent. A palette
+of O(n) affine maps can also have a difference set of order n^2, so the
+small-difference theorem cannot simply be invoked. An argument here
+would have to exploit the specific action or its incidence geometry.
+
+EXACT LOCAL EQUATION
+
+For clarity consider the subcase with at most one color per nonzero
+slope, writing sigma_a(x)=a x+beta_a. A forbidden rectangle with
+diagonal color a and cross colors b,c has rows x,z satisfying
+
+  b x+beta_b = a z+beta_a,
+  c z+beta_c = a x+beta_a,
+
+as well as the support constraints
+
+  x,z in D_a,       x in D_b,       z in D_c,       x!=z.
+
+Eliminating z gives the exact equation
+
+  (bc-a^2)x = (a+c)beta_a-c beta_b-a beta_c.          (1)
+
+If bc!=a^2, each ordered triple of slopes a,b,c supplies at most one
+potential row pair, before testing the support constraints and x!=z.
+If bc=a^2, either the intercept relation is inconsistent (no solution)
+or it is an identity (every x solves the affine equations). The identity
+case is precisely the global permutation relation
+
+                 sigma_c = sigma_a sigma_b^(-1) sigma_a.
+
+The many nonidentity triples in (1) are local coincidences at one point.
+They need not imply repeated products or high global multiplicative
+energy, which is the central obstruction already exposed by the tensor
+example in formal-audit-energy-and-partial-kernel.txt.
+
+A rigorous continuation could ask for a density theorem forcing one of
+these locally determined row pairs to satisfy all four support tests,
+while accounting for properness (selected affine lines do not share a
+selected point). Counting potential solutions of (1) alone is not such
+a theorem: arbitrary domains D_a can correlate with all the solutions.
+No incidence estimate or removal lemma establishing the required
+uniform statement has yet been found or verified.
+
+For reference, the family sigma_a(x)=a x+a^2 has the simple collision
+identity sigma_a(x)=sigma_b(x) iff x=-(a+b), for a!=b. It is merely an
+algebraic test family for future proofs; no B construction or extremal
+claim is asserted for it.

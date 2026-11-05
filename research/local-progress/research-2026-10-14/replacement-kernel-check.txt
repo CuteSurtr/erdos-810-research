@@ -1,0 +1,8 @@
+'Erdos810ExtremalReplacement.gadget_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos810ExtremalReplacement.gadget_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos810ExtremalReplacement.gadget_linear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos810ExtremalReplacement.indexedTriple_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos810ExtremalReplacement.indexedTriple_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos810ExtremalReplacement.gadget_all_increasing_quadruples' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

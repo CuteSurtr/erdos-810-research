@@ -1,0 +1,111 @@
+LOW-DEGREE SYMMETRIC CROSSED POTENTIALS: AN ELEMENTARY CLASSIFICATION
+15 October 2026. Independent hand audit of the parent's candidate.
+This is an exact algebraic lemma, not a density or removal theorem.
+
+1. STATEMENT
+
+Let k be a field of characteristic p>2. Let G(s,t),H(a,b) be
+polynomials over k, with total degree of G at most p. Suppose the
+following is a FORMAL polynomial identity in independent a,b,c:
+
+ G(a+b,ac)-G(a+c,ab) = H(a,c)-H(a,b).                    (1)
+
+Then there are univariate polynomials g,h,q and a scalar kappa such
+that
+
+ G(s,t) = g(s)+h(t)+kappa*s*t,
+ H(a,b) = -g(a+b)+h(ab)+kappa*a^2*b+q(a).                (2)
+
+Conversely, every pair of the form (2) satisfies (1).
+The originally proposed assumption deg G<p/2 is therefore sufficient;
+the proof actually permits deg G<=p. In characteristic zero the same
+conclusion holds with no degree restriction.
+
+The premise is a formal identity. This note does not infer it from
+an identity only on F_p-valued points without sufficient separate
+degree bounds. It also does not classify all four unrelated slot
+potentials or nonpolynomial phases.
+
+2. MIXED DERIVATIVE
+
+Differentiate (1) once in b and once in c. Writing F=G_st gives
+
+        a F(a+b,ac) - a F(a+c,ab) = 0.
+
+Since the polynomial ring is an integral domain, cancel a:
+
+              F(a+b,ac)=F(a+c,ab).                     (3)
+
+3. A SHORT POLYNOMIAL ARGUMENT FOR CONSTANCY
+
+Set c=0 in (3), and put f(x)=F(x,0). Then
+
+                       F(a,ab)=f(a+b).                 (4)
+
+If f is zero, comparison of coefficients in b in (4) gives F=0.
+Otherwise let D=deg f, and write F(s,t)=sum_j F_j(s)t^j.
+For every j>D, comparison of b^j gives a^j F_j(a)=0,
+so F_j=0. Comparison of b^D gives
+
+                  a^D F_D(a)=leading_coefficient(f).
+
+If D>0 this is impossible: its left side is divisible by a and
+its right side is a nonzero constant. Therefore D=0, all F_j with
+j>0 vanish, and (4) forces F_0 to be constant as well. Thus
+
+                            G_st=kappa.                (5)
+
+This step works in every characteristic and needs no degree bound.
+It avoids any claim about which affine transformations are generated
+by the involutions (s,t) -> (a+t/a,as-a^2).
+
+4. INTEGRATION AND THE PRECISE CHARACTERISTIC CONDITION
+
+Write G=sum c_ij s^i t^j. For a mixed monomial with i,j>=1 and
+i+j<=p, both i and j are nonzero in k. Therefore (5) forces every
+mixed coefficient to vanish except possibly c_11=kappa. All pure
+s or pure t monomials are absorbed into g and h. This proves the
+first equation in (2). The same argument works for arbitrary degrees
+in characteristic zero.
+
+Substitution yields
+
+ G(a+b,ac)-G(a+c,ab)
+ = g(a+b)-g(a+c)+h(ac)-h(ab)+kappa*a^2*(c-b).
+
+Let H_0(a,b)=-g(a+b)+h(ab)+kappa*a^2*b. Then (1) says
+
+       [H-H_0](a,c)=[H-H_0](a,b).
+
+Setting c=0 shows H-H_0=q(a), proving the second equation in (2).
+Direct substitution establishes the converse.
+
+Above the stated characteristic range, vanishing mixed derivatives
+alone do not justify integrating into g(s)+h(t)+kappa st, because
+mixed monomials with an exponent divisible by p can have zero mixed
+derivative. No unrestricted positive-characteristic classification
+is asserted here.
+
+5. CONSEQUENCE FOR THE FOUR-SLOT SYSTEM
+
+On a solution of
+
+ a+b=d+e,  ac=de,  a+c=f+g,  ab=fg,
+
+the polynomial potential relation reads
+
+ H(a,b)-H(a,c)+G(d+e,de)-G(f+g,fg)=0.                   (6)
+
+For G(s,t)=st and H(a,b)=a^2*b this is the cubic identity
+
+        a^2*b-a^2*c+de(d+e)-fg(f+g)=0.
+
+Within the stated symmetric low-degree ansatz, every potential is
+the sum of a row-only term g(s), a column-only term h(t), this cubic
+term, and an irrelevant color-only term q(a) in H. Thus the cubic
+term is the only extra polynomial contribution in this ansatz after
+removing the evident row, column, and color terms.
+
+This limited classification does not provide an inverse theorem,
+quantitative control of arbitrary bounded functions, or a mechanism
+to transfer a hypergraph deletion back to original support pairs.

@@ -1,0 +1,148 @@
+COMMON ROW AND COLUMN MASKS: A BROADER ACTUAL-SUPPORT THEOREM
+15 October 2026, pass 5. Complete proof, independently audited.
+
+Let p be an odd prime, A subset F_p*, and sigma_a(x)=ax+beta(a), with
+one color per slope. Fix ANY row set X and column set Y. Define the
+eligible color-a domain
+
+                         H_a=X intersect sigma_a^-1(Y).
+
+Select actual domains D_a subset H_a. Assume the selected graph is
+simple, properly colored and B-colored (every C4 rainbow). Put
+
+                     m=sum_a |D_a|, R=sum_a |H_a minus D_a|.
+
+THEOREMS
+
+(1) If beta is a polynomial of fixed degree 2<=D<p, then
+
+                      m<=C_D p^(19/10)+sqrt(2)p sqrt(R).       (1)
+
+(2) For arbitrary beta:A->F_p, R=o(p^2) implies m=o(p^2), uniformly.
+
+In particular, the exact support D_a=X intersect sigma_a^-1(Y) forces
+vanishing density. These domains can vary substantially with the color.
+No interval, order or VC hypothesis is imposed on X or Y.
+
+The theorem concerns the common rectangle of eligible VERTEX pairs X x Y.
+It is stronger than requiring all colors to share one row domain. It is
+still a structured support class, not a general arbitrary-domain theorem.
+The explicit stretched-logarithmic estimate previously proved for exactly
+common ROW support is not asserted here: its pencil-Roth proof does not
+automatically survive a varying domain induced by Y.
+
+1. WHY THE SAME CROSSED OPERATOR COUNTS ACTUAL RECTANGLES
+
+Define tau_a(x,y)=(sigma_a^-1(y),sigma_a(x)) and S_A=sum_a P_tau_a as
+in pass 4. If two actual edge positions are crossed partners, write them
+
+                      (x,sigma_a(z)), (z,sigma_a(x)).
+
+Both belong to X x Y. It follows that x,z lie in X and both sigma_a(x)
+and sigma_a(z) lie in Y. Hence BOTH closing color-a incidences are eligible:
+x,z belong to H_a. This uses the rectangle geometry exactly; it does not
+require D_a to equal a common row set.
+
+If both closing incidences are actual and x!=z, the four edges are a
+genuine C4 with repeated opposite color a, contrary to B. If x=z and the
+color-a incidence is actual, it is one of the m allowed actual loops.
+Every remaining internal transition has a missing eligible incidence.
+This includes any fixed point whose completed color a differs from its
+actual edge color.
+
+A fixed missing (a,x) can be the first missing diagonal in at most
+deg_E(x)<=d transitions, and the second in at most that many. Thus
+
+                       <1_E,S_A1_E><=m+2dR.                  (2)
+
+For R=0 equality holds. This is the same rigorous charge as in pass 4,
+with the eligibility implication above replacing common row support.
+
+2. POLYNOMIAL INTERCEPTS
+
+The completed-map Fourier bound is independent of the selected supports.
+For beta of fixed degree D>=2, the pass-4 theorem gives a mean-zero norm
+
+          lambda<=C_D[p^(1/4)d^(1/2)+p^(1/8)d^(3/4)].
+
+Centering 1_E and applying (2) yields
+
+                    (d+lambda)m^2/p^2<=(1+lambda)m+2dR.
+
+For d>0 this implies m<=p^2(1+lambda)/d+sqrt(2)p sqrt(R). Combining it
+with m<=dp and splitting at d=p^(9/10) proves (1), exactly as before.
+For d=0 there are no edges. All constants remain uniform in X and Y.
+
+3. ARBITRARY INTERCEPTS: HEAVY PRUNING AND PUBLISHED ENERGY INPUTS
+
+Suppose toward a contradiction that m>=epsilon p^2 along a sequence,
+with epsilon>0 fixed and R=o(p^2). Discard colors carrying fewer than
+epsilon p/2 actual edges. Since there are at most p colors, fewer than
+epsilon p^2/2 edges are lost. The retained graph has m'>=epsilon p^2/2,
+and its d' colors each contain at least epsilon p/2 actual edges.
+In particular epsilon p/2<=d'<=p.
+
+Pruning whole colors preserves the eligible-domain description for every
+retained color, and its total missing budget R' is at most R. In the exact
+case R=0 it preserves completeness inside X x Y as well.
+
+Let L be the largest occupancy of a line in the retained coefficient
+palette {(a,beta(a))}. We have L=o(p). Otherwise a nonvertical line
+beta(a)=u a+v contains at least delta p colors along a subsequence.
+(Vertical lines contain at most one color.) Its actual subgraph has at
+least delta epsilon p^2/2 edges by the heavy-class condition. Relabel
+rows and columns by x'=x+u and y'=y-v. These colors now obey y'=a x'.
+Delete the at most one actual edge at (0,0); all remaining entries form
+a positive-density partial table of the multiplicative group F_p*.
+Solymosi's finite-group-table theorem supplies an actual rectangle with
+equal opposite color, a contradiction. Hence L=o(p).
+
+PRRW Theorem 2.1 now gives affine quotient energy
+
+                         E_aff << d'^(5/2)+L d'^2=o(p^3).
+
+Its hypotheses hold because there is one coefficient point per vertical
+line and d'<=p. The general crossed-moment inequality, already established
+for arbitrary intercepts in pass 4, gives
+
+ lambda^4<=max{(p-1)E_aff,
+                       p(L+2)d'^2+2sqrt(p)E_x(A')}=o(p^4).
+
+Thus lambda=o(p). Applying (2) to the retained actual graph gives
+
+ m'<=p^2(1+lambda)/d'+sqrt(2)p sqrt(R')=o(p^2),
+
+contrary to its positive density. This proves assertion (2) uniformly.
+
+4. ELIGIBILITY-BOX COVERS
+
+More generally suppose the actual colored incidences are covered by K
+fully present eligibility boxes (A_i,X_i,Y_i): for every a in A_i and
+x in X_i with sigma_a(x) in Y_i, that color-a incidence is actual, and
+every actual incidence belongs to at least one box. Restricting to each
+box preserves properness and B. Consequently the polynomial case gives
+
+                              m<=C_D K p^(19/10).
+
+A bounded number of boxes gives o(p^2) also for arbitrary intercepts.
+The boxes may overlap. This is not a biclique cover of the ACTUAL edge
+graph: a vertex rectangle can contain many nonedges because no selected
+palette line passes through them. Nor is it merely a color-row rectangle
+cover, since the common column condition is retained.
+
+5. SOURCES, AUDIT AND SCOPE
+
+The Fourier calculation, degenerate phases and the full polynomial norm
+bound are in pass4-polynomial-intercept-common-support-theorem.txt. The
+arbitrary-intercept norm and primary-source hypotheses are in
+pass4-arbitrary-intercept-common-support-theorem.txt.
+
+The classical inputs are Weil's Kloosterman bound, PRRW Theorem 2.1
+(https://arxiv.org/pdf/1911.03401), and Solymosi Theorem 5
+(https://arxiv.org/pdf/1309.0133). These have been checked in primary texts.
+
+The common-rectangle eligibility implication, virtual-loop charge,
+heavy pruning and arbitrary-intercept contradiction were independently
+checked by the finite-audit agent. No finite graph enumeration or new
+Lean certificate is used. Historical priority is unverified, and the
+unrestricted affine-domain and Erdos #810 problems remain open.

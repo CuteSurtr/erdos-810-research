@@ -1,0 +1,39 @@
+INDEPENDENT AUDIT OF THE MULTIPLICATIVE ENERGY OBSTRUCTION
+2026-10-15. Reviewer: finite_audit subagent. Result: PASS as a mathematical
+deduction from the named established inputs. This is not Lean verification
+and does not certify historical novelty.
+
+Reviewed multiplicative-energy-obstruction.txt in full after independently
+deriving the partial-color lift and local approximate-group square theorem.
+
+1. E(S) counts equal products in the pair (S,S^{-1}), so Tao Theorem 5.4
+   applies with both factor-set sizes equal to d. Its approximate-group
+   conclusion supplies |S intersect gA|>=alpha*d and |A|<=B*d directly.
+   The proof does not improperly identify two separate subsets from BSG.
+
+2. Relabeling right endpoints by g^{-1} turns the selected original colors
+   into U subset A, preserving each color's at least eta*n actual edges.
+   The completion itself is never assumed to have the B property.
+
+3. Each basepoint lift F_z is simple and B-colored, and lies in A x A^2.
+   The sum over z is exactly |U|m', not merely a heuristic averaging bound.
+   The resulting density eta*alpha^2/B^2 is fixed independently of d,n.
+   Since |A|>=alpha*d tends to infinity, the local square theorem applies.
+
+4. The dense-family reduction correctly handles duplicate permutation
+   completions: heavy classes have bounded multiplicity per completion,
+   so keeping one representative loses only a constant factor. The number
+   of retained distinct colors is Theta(N). Separate side injections give
+   |Omega|>=N/2, hence d=Theta(N)=Theta(n) in that application.
+
+5. The pointwise collision formula has the correct multiplication order:
+   (ab^{-1})(x)=(ce^{-1})(x) iff x is fixed by e c^{-1} a b^{-1}.
+   Cauchy--Schwarz gives E_x>=d^4/n for each x, so the total pointwise mass
+   is at least d^4. Identical global products contribute exactly nE(S).
+   When d=Theta(n), this is o(d^4). Therefore their fraction of the total
+   pointwise collision mass tends to zero, as claimed.
+
+6. No contradiction with arbitrary B colorings follows: equality of two
+   permutations at a point need not imply equality as group elements.
+   The report explicitly identifies that missing implication. The theorem
+   supplies a nonconstant structural constraint, not a resolution of #810.

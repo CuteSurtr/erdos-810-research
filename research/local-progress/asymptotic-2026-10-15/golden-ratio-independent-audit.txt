@@ -1,0 +1,164 @@
+Independent adversarial audit: golden-ratio quadratic coefficient
+2026-10-15
+
+VERDICT
+The proposed proof is valid. For an N-vertex graph with at most N edge colors
+and every four-cycle rainbow, it establishes
+
+    |E| <= ((sqrt(5)-1)/4 + o(1))*N^2.
+
+The argument below independently verifies both the counting/Jensen part for
+proper colorings and the reduction from arbitrary colorings. This is a written
+mathematical audit, not a Lean formalization. It does not assess publication
+novelty. Later stronger coefficients may supersede this intermediate bound.
+
+1. PROPERIFICATION FROM TRIANGLE REMOVAL
+Suppose every C4 in G is rainbow. If uv and vw have the same color, then
+u,w have exactly one common neighbor in G, namely v. Any second common
+neighbor z would give the nonrainbow C4 u-v-w-z-u.
+
+Take a maximal family P of pairwise edge-disjoint monochromatic two-edge
+paths. Deleting their 2|P| edges makes the coloring proper: any remaining
+monochromatic two-edge path could have been added to P.
+
+Claim: |P|=o(N^2), uniformly over the input graphs and colorings.
+Otherwise, along a sequence, |P|>=epsilon*N^2 for a fixed epsilon>0.
+Partition vertices randomly into three labelled parts A,B,C. Each packed
+path has probability 2/27 that its center is in A and its endpoints are
+one each in B,C. Some partition therefore retains at least (2/27)|P| paths.
+
+Build a tripartite auxiliary graph from those retained paths by including
+their two original edges (in A-B and A-C), and adding the endpoint pair
+as an edge in B-C. Endpoint pairs are distinct: any such pair has a unique
+common neighbor in G, and identical center/endpoints would repeat original
+path edges. Consequently the resulting triangles are edge-disjoint.
+
+There are no other triangles. If a,b,c form an auxiliary triangle, then
+bc was added for some retained path with center a'. But ab,ac are original
+G edges, so a is a common neighbor of b,c. Uniqueness gives a=a'. Thus the
+triangle is exactly the retained one that created bc.
+
+The auxiliary graph therefore has Theta(N^2) edge-disjoint triangles and
+only O(N^2) triangles in total. Triangle removal is incompatible with this:
+its triangle count is o(N^3), so o(N^2) edge deletions suffice to destroy all
+triangles, whereas edge-disjointness requires Theta(N^2) deletions.
+This contradiction proves the claim and hence properification after o(N^2)
+edge deletions. No bound on the number of colors was needed in this step.
+
+Potential pitfall avoided: adding endpoint pairs without a three-partition
+could overlap edges used in other packed paths. The partition separates
+these edge types and makes the edge-disjoint-triangle argument exact.
+
+2. THE BIPARTITE COUNTING INEQUALITY
+Let H be a properly B-colored bipartite graph with side sizes a,b, q available
+colors, m edges, and color-class sizes k_c. If either side is empty the bound
+below is trivial, so assume a,b>0.
+
+For one color c, its matching covers k_c vertices in each part. Among those
+endpoints there are the k_c matching edges and at most one cross-edge for
+each unordered pair of matching edges: both possible cross-edges would make
+a C4 with repeated color. Thus at most k_c(k_c+1)/2 edges join the covered
+left and covered right vertices.
+
+The sum of H-degrees over these 2k_c endpoints is at most
+
+    k_c(k_c+1) + k_c(b-k_c) + k_c(a-k_c)
+      = k_c(a+b+1-k_c).
+
+Summing over colors gives the exact degree-square identity on the left:
+
+    sum_v d_H(v)^2 <= (a+b+1)m - sum_c k_c^2.
+
+Properness is essential here: each incident edge has a different color.
+Cauchy-Schwarz in the two vertex parts and in the q color classes yields
+
+    m^2(1/a+1/b+1/q) <= (a+b+1)m.
+
+For m>0 this rearranges to
+
+    m <= q*a*b*(a+b+1)/(q*(a+b)+a*b).
+
+The m=0 case is automatic. Unused colors may be included with size zero.
+The right-hand side increases with q, so substituting an upper bound on
+available colors is valid.
+
+3. LOCAL ENDPOINTS IN A GENERAL PROPER B-COLORING
+Now G need not be bipartite, but has N vertices and at most N colors.
+Fix one color class of size k and let S be its set of 2k endpoints.
+The matching contributes k induced edges. Between each pair of matching
+edges, at most two of the four possible cross-edges may occur: each of the
+two disjoint pairs of cross-edges would otherwise close a C4 using the two
+same-colored matching edges. Therefore
+
+    e_G(S) <= k + 2*binom(k,2) = k^2.
+
+Apply the bipartite inequality to the cut G[S,V\S], with
+
+    a=2k, b=N-2k, q=N,
+    x=k/N, z=a*b/N^2=2x-4x^2.
+
+The cut has at most N(N+1)*z/(1+z) edges. Consequently
+
+    sum_{v in S} d_G(v)
+      = 2e_G(S)+e_G(S,V\S)
+      <= 2k^2 + N(N+1)*z/(1+z).
+
+This remains valid for k=0 or k=N/2, where the cut is empty.
+
+4. CONCAVITY AND THE SCALAR INEQUALITY
+Define on [0,1/2]
+
+    h_N(x)=2x^2+(1+1/N)*z(x)/(1+z(x)),
+    z(x)=2x-4x^2.
+
+Since z is between 0 and 1/4 and z''=-8,
+
+    h_N''(x)
+      = 4 - (1+1/N)*(8/(1+z)^2 + 2*(z')^2/(1+z)^3)
+      <= 4 - 128/25
+      = -28/25 < 0.
+
+Thus concavity holds uniformly, with slack; no numerical approximation of
+this derivative is needed.
+
+Pad the color classes to exactly N classes, with sizes k_c. Put
+rho=m/N^2. Properness gives sum_c k_c=m and k_c/N in [0,1/2]. Summing the
+endpoint degree bounds and applying Jensen gives
+
+    sum_v d_G(v)^2
+      <= N^2*sum_c h_N(k_c/N)
+      <= N^3*h_N(rho).
+
+Cauchy-Schwarz on all N vertex degrees gives
+
+    sum_v d_G(v)^2 >= (2m)^2/N = 4rho^2*N^3.
+
+Therefore 4rho^2<=h_N(rho), exactly as proposed.
+
+5. THE LIMITING ROOT
+For a subsequential positive limit rho of the densities, the inequality is
+
+    2rho^2 <= (2rho-4rho^2)/(1+2rho-4rho^2).
+
+For 0<rho<=1/2, this is equivalent to
+
+    (rho-1)*(4rho^2+2rho-1) >= 0.
+
+Since rho-1<0, it follows that 4rho^2+2rho-1<=0 and hence
+
+    rho <= (sqrt(5)-1)/4 = 0.3090169943... .
+
+A zero limit already satisfies the conclusion. This proves the coefficient
+for proper colorings. Properification removes only o(N^2) edges and uses no
+new vertices or colors, so it establishes the same asymptotic coefficient
+for arbitrary rainbow-C4 colorings with at most N colors.
+
+LIMITS OF THE RESULT
+This is a constant-factor quadratic upper bound, not an o(N^2) bound.
+The finite N inequality includes the explicit 1/N term in h_N; the limiting
+coefficient must not be advertised as an exact bound valid for every N.
+Publication novelty and comparison with later iterations need separate audit.
+
+Primary reference for the external removal theorem:
+Jacob Fox, A new proof of the graph removal lemma, Annals of Mathematics
+174 (2011), 561-579, https://annals.math.princeton.edu/2011/174-1/p17

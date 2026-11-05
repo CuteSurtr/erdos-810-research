@@ -1,0 +1,176 @@
+Second endpoint iteration for rainbow-C4 colorings
+2026-10-15. Proof draft; novelty not established; not Lean verified.
+
+RESULT. Let M(N) be the largest number of edges in an N-vertex graph whose
+edges receive at most N colors and whose every four-cycle is rainbow. Then
+
+                      M(N) <= (c+o(1)) N^2,
+
+where c=0.30052603570643976... is the unique root in [1/4, 0.31] of
+
+       32c^7 - 16c^6 + 4c^4 + 2c^3 - 2c^2 - 3c + 1 = 0.
+
+This refines the first endpoint iteration's (sqrt(5)-1)/4 constant.
+It is a constant upper bound, not the conjectured o(N^2) bound.
+
+0. Reduction to proper coloring.
+The companion properification-and-regularization.txt proves that deleting
+o(N^2) edges makes any rainbow-C4 coloring proper, with a palette-independent
+error. Thus it suffices to prove the result for proper rainbow-C4 colorings.
+The reduction uses the classical triangle-removal lemma; a primary reference
+for that lemma is Jacob Fox, A new proof of the graph removal lemma, Annals
+of Mathematics 174 (2011), 561-579, introduction:
+https://annals.math.princeton.edu/2011/174-1/p17
+
+1. Basic bipartite inequality.
+For a proper B-colored bipartite graph with parts of sizes A,B, at most Q
+colors, and E edges,
+
+           E <= Q A B (A+B+1) / [Q(A+B)+AB].                 (1)
+
+Proof: a color class of size K is a matching. Between the endpoints of two
+of its edges there is at most one of the two possible cross edges, since
+both would create a four-cycle with a repeated color. Its endpoint-induced
+rectangle therefore has at most K(K+1)/2 edges. Adding the edges from these
+endpoints to vertices outside gives endpoint degree sum at most
+K(A+B+1-K). Summing over colors yields
+
+ sum_v d(v)^2 <= (A+B+1)E - sum_color K^2
+              <= (A+B+1)E - E^2/Q.
+
+On the other hand sum_v d(v)^2 >= E^2/A + E^2/B. Rearrangement proves (1).
+Empty parts or E=0 can be treated separately.
+
+2. Second iteration in a bipartite graph.
+Set Q=N, A+B=N. Write a=A/N, b=B/N, p=E/N^2, so a+b=1, and t=ab.
+Unused colors may be added to reach Q=N. For a particular color class K,
+split the graph into its matched endpoint rectangle and the two rectangles
+from its endpoints to the outside. The endpoint degree sum is at most
+
+ K(K+1) + B1(K,B-K,N) + B1(A-K,K,N),                        (2)
+
+where B1 is the right side of (1). The first term counts the matched endpoint
+rectangle twice, and the other two rectangles once each.
+
+Define, for 0<=x<=s,
+
+            g_s(x) = s x(s-x) / [s+x(s-x)].
+
+After normalization, (2) is at most N^2 f(k)+O(N), uniformly in K,A,B, where
+k=K/N and
+
+                 f(k)=k^2+g_a(k)+g_b(k).
+
+The bound follows directly from (1); its extra '+1' contributes only O(N).
+For 0<s<=1, put z=x(s-x). Then
+
+ g_s''(x) = -2s^2/[s+z]^2 - 2s^2(s-2x)^2/[s+z]^3
+           <= -2/(1+s/4)^2 <= -32/25.
+
+Therefore f''<=2-64/25<0 on [0,min(a,b)]. Jensen applies to the N color
+classes (including empty classes). Since their normalized sizes sum to E/N,
+their average normalized size is p. Thus
+
+        sum_v d(v)^2 <= N^3 f(p)+O(N^2).
+
+The lower degree bound gives, for t>0,
+
+                 p^2/t <= f(p)+O(1/N).                    (3)
+
+Now rewrite
+
+ f(p)=p-p^2-p^2[(a-p)^2/(a+p(a-p))
+                       +(b-p)^2/(b+p(b-p))].
+
+Cauchy-Schwarz gives
+
+ [(a-p)^2/(a+p(a-p))+(b-p)^2/(b+p(b-p))]
+             >= (1-2p)^2/[1+p(1-2p)].
+
+Consequently, along any sequence with positive limiting t,p, (3) implies
+
+  p <= t R(p),  R(p)=(1-p+p^2-2p^3)/(1+p-2p^2).
+
+Define
+
+  T(p)=p/R(p)=p(1+p-2p^2)/(1-p+p^2-2p^3).
+
+Let phi be the inverse of T on the interval needed for 0<=t<=1/4. Then the
+second-iteration bipartite bound is
+
+                   E/N^2 <= phi(AB/N^2)+o(1).             (4)
+
+The error in (4) is uniform over all A+B=N and all such graphs. To justify
+this without dividing an error by small p, suppose uniformity fails and
+take a convergent subsequence of (a,b,p) in the compact feasible region.
+If p tends to zero, (4) cannot fail by a fixed positive amount. Otherwise
+a,b,t stay positive and the preceding limit argument applies.
+
+3. Calculus needed for the inverse and Jensen.
+The first-iteration bound (1) gives p<=t/(1+t)+o(1)<=1/5+o(1), so only
+0<=p<=1/5 is relevant. Put D=1-p+p^2-2p^3. Direct differentiation gives
+
+ T'(p)  = [1+2p-8p^2+8p^3]/D^2,
+ T''(p) = [4-18p+30p^2+28p^3-72p^4+48p^5]/D^3.
+
+On [0,1/5], D>0. The numerator of T' is at least 1-8/25>0.
+The numerator of T'' is at least 4-18/5-72/625>0.
+Also T(1/5)=28/103>1/4. Thus phi is defined, increasing, and concave on
+[0,1/4], with phi(1/4)<1/5.
+
+Finally T'<=2 on [0,1/5]. Indeed 2D^2 minus the numerator of T' equals
+
+ C(p)=1-6p+14p^2-20p^3+10p^4-8p^5+8p^6.
+
+The cubic Q(p)=1-6p+14p^2-20p^3 is decreasing on this interval because
+Q'=-6+28p-60p^2<0, and Q(1/5)=1/5. Hence
+C(p)>=1/5-8/3125>0. This proves phi'>=1/2.
+
+4. Return to a general graph.
+Fix a color matching of size K, and let S be its 2K endpoints. Between any
+two matching edges there are at most two other edges, and those two must
+share an endpoint: a disjoint pair would give a non-rainbow four-cycle.
+Hence the graph induced by S has at most K^2 edges. The endpoint degree sum
+is therefore at most 2K^2+e(S,V\S).
+
+Apply (4) to the bipartite graph across this cut, on all N vertices with at
+most N colors. For x=K/N the bound is
+
+ N^2 h(x)+o(N^2),  h(x)=2x^2+phi(2x(1-2x)),  0<=x<=1/2.
+
+The error is uniform by step 2, so it may be summed over N colors. Writing
+z=2x(1-2x), the calculus in step 3 gives
+
+ h''(x)=4-8phi'(z)+phi''(z)(2-8x)^2 <=0.
+
+Jensen and sum_v d(v)^2>=4E^2/N now show, with rho=E/N^2,
+
+                         4rho^2 <= h(rho)+o(1).
+
+Every subsequential density limit therefore satisfies
+
+                  2rho^2 <= phi(2rho-4rho^2).             (5)
+
+If rho<=1/4 there is nothing to prove. On rho>=1/4, T(2rho^2) is increasing
+and 2rho-4rho^2 is decreasing, so (5) has a unique upper boundary. At the
+boundary, clearing the positive denominator in
+
+             T(2rho^2)=2rho-4rho^2
+
+and dividing by 2rho gives
+
+           32rho^7-16rho^6+4rho^4+2rho^3-2rho^2-3rho+1=0.
+
+Its relevant root is 0.30052603570643976..., giving the stated result.
+The calculus domain causes no gap: phi(t)<1/5, so (5) already forces
+2rho^2<1/5. Thus T is evaluated only on its verified domain.
+
+What is and is not claimed.
+The inequalities above are a proof of the displayed constant bound, subject
+to independent review of this draft. The numerical root is descriptive;
+the polynomial and monotonicity uniquely define the constant. No claim is
+made that this improves the best published bound, since the literature
+comparison is ongoing. Iterating further may improve the constant, but the
+formal constant-density fixed point 1/2 for the bipartite bound does not
+justify a global 1/4 bound: the palette-to-side ratio changes in the smaller
+rectangles and a boundary layer can persist. No such limiting claim is made.

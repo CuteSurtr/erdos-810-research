@@ -1,0 +1,7 @@
+{
+  "source_sha256": "1089e98888fc0c835365bb9254a27db9435aae309546bf9f49a597341999b68c",
+  "binary_sha256": "422f248e04b0f773d32913f0a15175c1ee9f26ee341095ef2e8bb3843b40ad7c",
+  "compile_command": "c++ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk -O3 -std=c++17 exhaustive.cpp -o exhaustive",
+  "result": "d0=7 total=753459 clique=753459 coloring_obstruction=0\nd0=8 total=2165615 clique=2165615 coloring_obstruction=0\nd0=9 total=2735357 clique=2735357 coloring_obstruction=0\nVERIFIED n=10 m=31 total=2735357 clique=2735357 coloring_obstruction=0\n",
+  "exit_code": 0
+}

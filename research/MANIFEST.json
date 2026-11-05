@@ -1,0 +1,1532 @@
+{
+  "snapshot_date": "2026-11-06",
+  "source_directory": "erdos-810-lean",
+  "archive_directory": "research/local-progress",
+  "copy_policy": "Original included files copied byte-for-byte with paths preserved. No mathematical content changed. Source hashes verified at snapshot time.",
+  "included_files": 249,
+  "included_bytes": 2005081,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 18,
+      "sha256": "b0d698cffc6728111f61825500acaea96b9973351c87cb88338e9ef732ff2a92"
+    },
+    {
+      "path": "AntiRamsey.lean",
+      "bytes": 13588,
+      "sha256": "b9548a354869f6fd4ab30628384ecbb06cf9629eb6a81e8932131aa0f4766253"
+    },
+    {
+      "path": "Audit.lean",
+      "bytes": 1968,
+      "sha256": "1e07806d66dd271ddfd67dcf8745a7b0957dde5ce6d76a692251a0b001f1d6b7"
+    },
+    {
+      "path": "BruteForce.lean",
+      "bytes": 46759,
+      "sha256": "aa3ef0db275ec10a1ac1640c17bad35d19ed8e79111a7f23ee31641815323de3"
+    },
+    {
+      "path": "Erdos810.lean",
+      "bytes": 12060,
+      "sha256": "3f2827fd918a1ab9281d197eecd34ef40aed1e99aaf7d2e51f438dd78879b6de"
+    },
+    {
+      "path": "HypergraphReduction.lean",
+      "bytes": 13637,
+      "sha256": "135db3d64370d04b34d9603aac9b568d1ffd559db9e15fbd2f9207379ce09099"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6332,
+      "sha256": "7e85ae5ae2716022330305a2e6863f890f7675a51344b24ee8c8582a6af767df"
+    },
+    {
+      "path": "RESEARCH-STATUS.md",
+      "bytes": 3724,
+      "sha256": "b632e4d8bbc9293dff5ba57afe6c0ea60224b290650572573ed90d205f3e4aa6"
+    },
+    {
+      "path": "asymptotic-2026-10-15/RESULTS.md",
+      "bytes": 12206,
+      "sha256": "c46c6e4b529629be9745e05f879dc6f46a7348b82460a62923bd13c4b635b625"
+    },
+    {
+      "path": "asymptotic-2026-10-15/check_profile_polynomial.py",
+      "bytes": 4487,
+      "sha256": "cd8a3957562519e468a23cead3bdf3414a85f26fb857a62a84aea9f826a1dfaa"
+    },
+    {
+      "path": "asymptotic-2026-10-15/endpoint-method-moment-barrier.txt",
+      "bytes": 3517,
+      "sha256": "d8166e5253b48b50ed10bb60f0b8e85359667f957eaf62dc555cf68e8db645bc"
+    },
+    {
+      "path": "asymptotic-2026-10-15/golden-ratio-independent-audit.txt",
+      "bytes": 6583,
+      "sha256": "d15dd4cb50692a20a99b25cb5fce935bf67d4f3824d2578eecb6e7112bcc03f7"
+    },
+    {
+      "path": "asymptotic-2026-10-15/near-quadratic-extraction-barrier.txt",
+      "bytes": 6868,
+      "sha256": "5a6f0725448115c0e3bab9ac1160a052d1ba6440d18709863348767e7c950535"
+    },
+    {
+      "path": "asymptotic-2026-10-15/novelty.md",
+      "bytes": 24562,
+      "sha256": "8bffc570453e77771ef1f1c7cec67f855c61866b5cb722912edef1c07b46c2d5"
+    },
+    {
+      "path": "asymptotic-2026-10-15/profile-density-bound.txt",
+      "bytes": 7172,
+      "sha256": "39496dd9c498d582db0583ac90ca969652c566390298e9a25402080dd1e21238"
+    },
+    {
+      "path": "asymptotic-2026-10-15/profile-independent-audit.txt",
+      "bytes": 4253,
+      "sha256": "e3aa5564bbbbd39fceec5ff26ea9f8ad2645a289a2ba0a3e149e0adfaaa1da3c"
+    },
+    {
+      "path": "asymptotic-2026-10-15/profile-polynomial-certificate.json",
+      "bytes": 2239,
+      "sha256": "b7b6506855dc2df1790435a918b141b076ce12edf755836306cbecd3b3b6dfaa"
+    },
+    {
+      "path": "asymptotic-2026-10-15/properification-and-regularization.txt",
+      "bytes": 5756,
+      "sha256": "cee81a50199062f88e3de920066fada21f5ec9ff6d68e579aef47c5f95ac08fe"
+    },
+    {
+      "path": "asymptotic-2026-10-15/quarter-threshold-challenge.txt",
+      "bytes": 3523,
+      "sha256": "2e4ce62213888e0c5b95d766878aa6359d380bd234298216c7787a1b6641aad3"
+    },
+    {
+      "path": "asymptotic-2026-10-15/recursive-bound-independent-audit.txt",
+      "bytes": 7716,
+      "sha256": "2cb4398cdac91a84663e8db43e66e84974a43074936437f2118df9338fb81215"
+    },
+    {
+      "path": "asymptotic-2026-10-15/recursive-density-bound.txt",
+      "bytes": 8932,
+      "sha256": "3260e4b95e772190fcd0304fc658682c5fc9898f4db6ab735b0b7b40013c74ad"
+    },
+    {
+      "path": "asymptotic-2026-10-15/second-iteration-density-bound.txt",
+      "bytes": 6859,
+      "sha256": "cad594176caa593ad27d39650b912a9c96b5a490be6dbcadeff167253c05deb7"
+    },
+    {
+      "path": "asymptotic-2026-10-15/tensor-obstruction.txt",
+      "bytes": 6795,
+      "sha256": "c819b2183b2a35e3945ffb850972d3452ff6649ea5539096a68183528387dc80"
+    },
+    {
+      "path": "audit-2026-10-14/AUDIT.md",
+      "bytes": 10566,
+      "sha256": "eadf651ea0bc01d18dd0f0dc58da79a7f8e9a45601ef4eea307b97aca522d601"
+    },
+    {
+      "path": "audit-2026-10-14/BipartiteHypergraphExtraction.lean",
+      "bytes": 7278,
+      "sha256": "2048e7b7ec482a1557f1992efeecccfd1d8b7cbc7aa19fdee873b83d83811325"
+    },
+    {
+      "path": "audit-2026-10-14/ProperBipartiteLift.lean",
+      "bytes": 3965,
+      "sha256": "7d40d9e1e6a403c58206c04d3817330a9b2b55ad520a60be18ae6c77af26c8d2"
+    },
+    {
+      "path": "audit-2026-10-14/SemanticAudit.lean",
+      "bytes": 3658,
+      "sha256": "40d7b350f2ac76b6cc3727254287b425c1c1087a1419c73880468f883d2c03f3"
+    },
+    {
+      "path": "audit-2026-10-14/bruteforce-kernel-check.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "audit-2026-10-14/count_n7.py",
+      "bytes": 2627,
+      "sha256": "9b0655c2d89db475ba8fefbdd58391e77854a5214543620d8eabd56a055a418d"
+    },
+    {
+      "path": "audit-2026-10-14/cyclic_n10_certificate.json",
+      "bytes": 1419,
+      "sha256": "fe6bb1d6333925f07bcc3b5517336a0a6bbc1e62d577d0e23c1a923f9cf43581"
+    },
+    {
+      "path": "audit-2026-10-14/exhaustive.cpp",
+      "bytes": 4341,
+      "sha256": "1089e98888fc0c835365bb9254a27db9435aae309546bf9f49a597341999b68c"
+    },
+    {
+      "path": "audit-2026-10-14/exhaustive_metadata.json",
+      "bytes": 593,
+      "sha256": "bd18068830b83119f06ee624782c414f3514a2b323b47169980b98e48935ccca"
+    },
+    {
+      "path": "audit-2026-10-14/exhaustive_n10_m31.log",
+      "bytes": 314,
+      "sha256": "de08d452bb2f4711d2ec1276d87e7d51c364dd7d112ebbc8f908d9dcd2bc8e5d"
+    },
+    {
+      "path": "audit-2026-10-14/finite-results.md",
+      "bytes": 8315,
+      "sha256": "42d404d96ffd9ee8cab16aa9f237e0f0f3736fc281dc84eae93e44e91397c4a3"
+    },
+    {
+      "path": "audit-2026-10-14/finite_audit.py",
+      "bytes": 3027,
+      "sha256": "7d4de5c894328d679346697dbd0380a13dca24c8204de36271badd9856a7d84c"
+    },
+    {
+      "path": "audit-2026-10-14/finite_certificate_audit.json",
+      "bytes": 6978,
+      "sha256": "4f7f8c2be85e38f2fe786d9f2643e00877ed2c764aee63a3b4a152291e9d58b3"
+    },
+    {
+      "path": "audit-2026-10-14/formal-checks.md",
+      "bytes": 4365,
+      "sha256": "d1892467387b1f451f1d9430f3167f568ee90d5ccfed26c104216513fe56c59b"
+    },
+    {
+      "path": "audit-2026-10-14/formal-kernel-summary.json",
+      "bytes": 1943,
+      "sha256": "3ba30f36eccb9c7c3c59d9d62a32bd3c67ec8c7fba23c15238febabf69c96794"
+    },
+    {
+      "path": "audit-2026-10-14/global-extraction-kernel-check.txt",
+      "bytes": 397,
+      "sha256": "8ae35482410699a053703bb09d75fbc764bba71fd5bde2f81f8c463d9bfc9286"
+    },
+    {
+      "path": "audit-2026-10-14/input-sha256.json",
+      "bytes": 900,
+      "sha256": "4692515fb1c84d97331c9ba821f05fa3d3b9675afc4bdebd785a2d496203bc80"
+    },
+    {
+      "path": "audit-2026-10-14/lift-classification.txt",
+      "bytes": 2367,
+      "sha256": "e196bd30e4e79add4f3fccec27d1107f25b1c727ac09098a7582e56c45be7bc0"
+    },
+    {
+      "path": "audit-2026-10-14/literature-notes.md",
+      "bytes": 10862,
+      "sha256": "5973a17e219f10e4f57bf036a40c96d5cff3750a2ff23e662d50dcff9c35018e"
+    },
+    {
+      "path": "audit-2026-10-14/n7_labeled_counts.json",
+      "bytes": 218,
+      "sha256": "a18c49e7e49ec3a408653b0dc7b6e4b8e49486a7fb4136af03435f832031ffc8"
+    },
+    {
+      "path": "audit-2026-10-14/original-kernel-check.txt",
+      "bytes": 419,
+      "sha256": "78f5e38130addf04dd9f1e1143430118998a2c0c72fd7dc1b344003c27c7e6e2"
+    },
+    {
+      "path": "audit-2026-10-14/original_python_n10_m31.log",
+      "bytes": 373,
+      "sha256": "3067398c1ae1227b6c96126b21de2d7dcc1f781779c9050fa77bc33a28338ae7"
+    },
+    {
+      "path": "audit-2026-10-14/proper-lift-kernel-check.txt",
+      "bytes": 225,
+      "sha256": "8135f500a35f896b8f3fdf8ef036f9868b611f54256d2cd5c2c1b5747f641d4e"
+    },
+    {
+      "path": "audit-2026-10-14/semantic-kernel-check.txt",
+      "bytes": 395,
+      "sha256": "8d7f66ec89e3b2b7f907bcbe51c8a43374a1bdef655b2f72702ae2edf65e482e"
+    },
+    {
+      "path": "audit-2026-10-14/structural-check-results.json",
+      "bytes": 291,
+      "sha256": "6ea38ccd1b311a248278cf4e9bfd74c01720249d6b6acc55f13264f38fd48ad5"
+    },
+    {
+      "path": "audit-2026-10-14/structural_checks.py",
+      "bytes": 7347,
+      "sha256": "158f34bd074fd3356b96c0f06455253c76ff82b0710953d1a56fd2cb824d3ff4"
+    },
+    {
+      "path": "lake-manifest.json",
+      "bytes": 3507,
+      "sha256": "3ca249d501992b70543e373d4513104cf92409de2710e4dc1d4432c59b31cc0f"
+    },
+    {
+      "path": "lakefile.toml",
+      "bytes": 844,
+      "sha256": "37946029b89855776454b966fd6e1b92bf31c9a0fa104bfdc23e4bb4a9cb3b6e"
+    },
+    {
+      "path": "lean-toolchain",
+      "bytes": 25,
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+    },
+    {
+      "path": "multicolor-2026-10-15/REPORT.md",
+      "bytes": 17492,
+      "sha256": "92f79d299ea75eaa1512fac45a46f5af2b909cede116221fc6a524a1a8d5f0f2"
+    },
+    {
+      "path": "multicolor-2026-10-15/approximate-square-independent-audit.txt",
+      "bytes": 10120,
+      "sha256": "73d2418c1bd41a7bb267908d1f8b8e4737b1bdfe670cffbc2743f39b2cfe88d3"
+    },
+    {
+      "path": "multicolor-2026-10-15/commuting-color-cover-corollary.txt",
+      "bytes": 5169,
+      "sha256": "777838393a76878c1bde874447c5741bb7099429c52186cf16ff000f88ef1515"
+    },
+    {
+      "path": "multicolor-2026-10-15/crossed-pair-operator.txt",
+      "bytes": 11967,
+      "sha256": "baa1eba6bc0fe51001833822aa08faa1d3a933cc8606279b8c83b4c640db6e50"
+    },
+    {
+      "path": "multicolor-2026-10-15/energy-independent-audit.txt",
+      "bytes": 2270,
+      "sha256": "9af2e09f204afb57fed7576e46ce23020811a33e9bee17e3a6abbe80c8ad3030"
+    },
+    {
+      "path": "multicolor-2026-10-15/group-representation-independent-audit.txt",
+      "bytes": 3806,
+      "sha256": "cdb59da619280a5bd19bc9cee7a3129c6688d571980108d1fe1ba736f75a030e"
+    },
+    {
+      "path": "multicolor-2026-10-15/group-representation-vanishing-density.txt",
+      "bytes": 10950,
+      "sha256": "1ef2cb109100ad8532b6db2cde47ca6f49cc9c11bfde274088451d69e7352568"
+    },
+    {
+      "path": "multicolor-2026-10-15/local-roth-color-permutations.txt",
+      "bytes": 6275,
+      "sha256": "4579a52b41a3b558ae82bd7e3f7c2ad4dbb795df9856d52e12710bc51aa14a86"
+    },
+    {
+      "path": "multicolor-2026-10-15/multiplicative-energy-obstruction.txt",
+      "bytes": 5643,
+      "sha256": "4996ca8bcf34a311a3b3f674d56f3f307ded479a954a844e0772cd98e7826c03"
+    },
+    {
+      "path": "multicolor-2026-10-15/novelty-followup.md",
+      "bytes": 18770,
+      "sha256": "804c0ff12753e5ad62ea194e811337f5d202fe6720f8814edb2c9779798f9ac0"
+    },
+    {
+      "path": "multicolor-2026-10-15/partial-small-difference-theorem.txt",
+      "bytes": 14736,
+      "sha256": "e85225d3b7b74946801c9afdb0c3ac6bacc457d9ed51095f85ce3c577fae1f7c"
+    },
+    {
+      "path": "multicolor-2026-10-15/permutation-progression-audit.txt",
+      "bytes": 5688,
+      "sha256": "03b9b35c087e09811ea298fe091f90dabc207719adeea30913be49ecea962b1e"
+    },
+    {
+      "path": "overnight-2026-10-15/PASS1-REPORT.md",
+      "bytes": 8264,
+      "sha256": "d0f3b2ee3d15a38b41345961b38b29e895b50edaf884bf1f2b00f699d2bd517a"
+    },
+    {
+      "path": "overnight-2026-10-15/PASS2-REPORT.md",
+      "bytes": 7134,
+      "sha256": "771ade1ebcbd2efcddefb96db464690f73992b12bd53bfb0d17a050bd6436fd9"
+    },
+    {
+      "path": "overnight-2026-10-15/PASS3-REPORT.md",
+      "bytes": 9841,
+      "sha256": "1c124dfe1dbe9306baf85151530c318b14e3071df971d8ca1f0990e08e8cef57"
+    },
+    {
+      "path": "overnight-2026-10-15/PASS4-REPORT.md",
+      "bytes": 10601,
+      "sha256": "682e152e11b7d6f0d63e128711ed0e82809c1d2dfb072346b4c3168a670e48b5"
+    },
+    {
+      "path": "overnight-2026-10-15/PASS5-REPORT.md",
+      "bytes": 11405,
+      "sha256": "c0326e78bde41527d819ff92901fae6b1cd7ab56d1b3b75fd5b123c28d6d0645"
+    },
+    {
+      "path": "overnight-2026-10-15/README.md",
+      "bytes": 10695,
+      "sha256": "765fe1b04808eb072c130d250160e73a9c2d969fa162f423c82deefb601b91a9"
+    },
+    {
+      "path": "overnight-2026-10-15/affine-direction-checkpoint.txt",
+      "bytes": 3230,
+      "sha256": "b054c5945fd64642327f01f48aea89ea2f6187aa6d47a0614b02e503acfffd1d"
+    },
+    {
+      "path": "overnight-2026-10-15/finite-sampling-and-removal-barrier.txt",
+      "bytes": 5090,
+      "sha256": "3a9fcdc9d7e04ad2c04754fa07dad9761bbda3b2bc4cf2526570735023321cd6"
+    },
+    {
+      "path": "overnight-2026-10-15/formal-audit-energy-and-partial-kernel.txt",
+      "bytes": 14853,
+      "sha256": "e24a233d37275d8a5fdca58d1247711e3ecee080b68f88831c11979d4c389dcd"
+    },
+    {
+      "path": "overnight-2026-10-15/literature-bridges.md",
+      "bytes": 10860,
+      "sha256": "9248ed657f4d85766e6c9a7b610b13b89c758bff9d540545be5d934bd5b365a5"
+    },
+    {
+      "path": "overnight-2026-10-15/pass1-affine-bounded-deficit.txt",
+      "bytes": 8209,
+      "sha256": "4c7e2717a74b759b348ad186edc3cbabcb45ef092c42e96f7f5419b7b731d2da"
+    },
+    {
+      "path": "overnight-2026-10-15/pass1-affine-global-relations-barrier.txt",
+      "bytes": 5729,
+      "sha256": "78281a809bb342c67182d3392b1a81827f8203c26a3db7a68b8cc7a7cc5635cc"
+    },
+    {
+      "path": "overnight-2026-10-15/pass1-affine-homogeneous-palette-theorem.txt",
+      "bytes": 7791,
+      "sha256": "d2ed37ea89ae6641c66a9c79ea38fa8fa84824df19ea68e21e2a577d24ee0544"
+    },
+    {
+      "path": "overnight-2026-10-15/pass1-affine-independent-audit.txt",
+      "bytes": 8478,
+      "sha256": "c9cc1340245e84657c418870e540ccb4af6be296d5b9cffe056f74b95961f790"
+    },
+    {
+      "path": "overnight-2026-10-15/pass1-affine-literature.md",
+      "bytes": 9605,
+      "sha256": "f8e4c97a5bc9a1b1441e98cb2ce1ff1dce49752b130e7862d309594a8f6e837a"
+    },
+    {
+      "path": "overnight-2026-10-15/pass1-affine-quantitative-audit.txt",
+      "bytes": 6994,
+      "sha256": "2840f82d49c588e923db870d00d1551cb417a0ee10ab12f6437cbe610e90f66d"
+    },
+    {
+      "path": "overnight-2026-10-15/pass1-affine-quantitative-independent-audit.txt",
+      "bytes": 2477,
+      "sha256": "af2df5c8b7ef41f449e7a6c51f152141b1e383935d61ec44ee39991fe2a6138f"
+    },
+    {
+      "path": "overnight-2026-10-15/pass1-affine-sublinear-deficit-barrier.txt",
+      "bytes": 4523,
+      "sha256": "4230ec0b41a736c01b2fb47cc8204d93cdfff62b051a43a4ee39367887b12fcd"
+    },
+    {
+      "path": "overnight-2026-10-15/pass1-bounded-deletion-novelty.md",
+      "bytes": 5368,
+      "sha256": "aeb06431e39332b7efaf08c321586df457872f84bb94c4184bb8b33bdf72c6aa"
+    },
+    {
+      "path": "overnight-2026-10-15/pass1-fixed-points-and-coherent-kernel.txt",
+      "bytes": 10938,
+      "sha256": "3ed7688f9e4e93046f58168726015620101e497dab19dd52015292316a8f0b05"
+    },
+    {
+      "path": "overnight-2026-10-15/pass1-homogeneous-affine-novelty.md",
+      "bytes": 6586,
+      "sha256": "0335628b719cbd8b7ce5f56a3786fbdb162cae138c8df6e3537e31d7ced997d4"
+    },
+    {
+      "path": "overnight-2026-10-15/pass1-orbit-and-homogeneous-independent-audit.txt",
+      "bytes": 13220,
+      "sha256": "eaa035faca229de0b3579ea4fcea1d563dc58b8c395275ca0873ff98ebe39a65"
+    },
+    {
+      "path": "overnight-2026-10-15/pass2-commuting-linearization-obstruction.txt",
+      "bytes": 5127,
+      "sha256": "f558c1dd6a344e721efd4887e570de71874db65cfcbe0a5ecbedc1569042cfbf"
+    },
+    {
+      "path": "overnight-2026-10-15/pass2-prime-affine-deficit-independent-audit.txt",
+      "bytes": 7368,
+      "sha256": "04ba0695b7fd7c7028868e61b7b9a2c09b459858aed5090d0aa04fdf7c8fa887"
+    },
+    {
+      "path": "overnight-2026-10-15/pass2-prime-defect-literature.md",
+      "bytes": 6432,
+      "sha256": "d0ad279e686d6974d1fc2a05f96ac0a080f94c9152cf5f584668529843da5996"
+    },
+    {
+      "path": "overnight-2026-10-15/pass2-prime-field-average-defect.txt",
+      "bytes": 13281,
+      "sha256": "c1c2f39f5a389c057eff0ec0792626cf8d4691765e1702b8109ec2e0afdeeeaf"
+    },
+    {
+      "path": "overnight-2026-10-15/pass2-quadratic-arithmetic-progression-obstruction.txt",
+      "bytes": 3875,
+      "sha256": "cbe3a1b80c5183175337ece695e18b178a72d4e381a98ea6e129728622f9bddd"
+    },
+    {
+      "path": "overnight-2026-10-15/pass2-quadratic-arithmetic-support-constraint.txt",
+      "bytes": 7615,
+      "sha256": "4e8e009073876922d8d0637754daabd632c676582d16747913548099ede40413"
+    },
+    {
+      "path": "overnight-2026-10-15/pass2-quadratic-removal-target-audit.txt",
+      "bytes": 5752,
+      "sha256": "7c568ee6a586897f1bb8125ab413921779c145f26c277aa6efa4592ca49192ab"
+    },
+    {
+      "path": "overnight-2026-10-15/pass2-targeted-literature.md",
+      "bytes": 7094,
+      "sha256": "97cdcf0e592771626bced0ffafaaaf6c0df60933fd497d0492e063574000c036"
+    },
+    {
+      "path": "overnight-2026-10-15/pass3-all-polynomial-slot-potentials.txt",
+      "bytes": 5489,
+      "sha256": "a1ffad013bf0a579985b830e0de1fd7f1c469cc0e4ea79de8116f619e68c01ce"
+    },
+    {
+      "path": "overnight-2026-10-15/pass3-common-mask-spectral-intermediate.txt",
+      "bytes": 8604,
+      "sha256": "f23831d3b7c017710eb45e7bf1ef534df083ed5c7442eed482537b743b840661"
+    },
+    {
+      "path": "overnight-2026-10-15/pass3-conditional-prime-incidence-defect-upgrade.txt",
+      "bytes": 7071,
+      "sha256": "56f1e9384d7e0ff21c7594e90a2c313c2634626acf7d2133c519b40fdc2ac887"
+    },
+    {
+      "path": "overnight-2026-10-15/pass3-four-projection-linearization-obstruction.txt",
+      "bytes": 7319,
+      "sha256": "ea4cf33fbcf6c8ff7226581c1ca93782bae72203d90636675d630ee9d6037906"
+    },
+    {
+      "path": "overnight-2026-10-15/pass3-four-slot-literature.md",
+      "bytes": 13156,
+      "sha256": "5e5840a7f0b43a95883979d31c272a417b26ef81bebec0b52a240934372c1026"
+    },
+    {
+      "path": "overnight-2026-10-15/pass3-independent-phase-and-geometry-audit.txt",
+      "bytes": 5240,
+      "sha256": "4029c5cd53aad1ff71d6fd0fd3d7d2e821a1f187dcc11ee197e57262ea5285ee"
+    },
+    {
+      "path": "overnight-2026-10-15/pass3-lewko-incidence-source-audit.md",
+      "bytes": 6576,
+      "sha256": "68a29be8f2172edab1c739bf7116c235f48096c81a8bc712ab3cc2686cf638c4"
+    },
+    {
+      "path": "overnight-2026-10-15/pass3-pair-action-incidence-novelty.md",
+      "bytes": 6344,
+      "sha256": "1648ea6c9f7eb1276e26db09573dfa1f0781ed48d685937a84e4fe5311036b76"
+    },
+    {
+      "path": "overnight-2026-10-15/pass3-polynomial-phase-classification.txt",
+      "bytes": 5668,
+      "sha256": "ab41cee9616e30895ec09728bb34f5e7b81c7593bdf3d1c4678520fa26ac2bc9"
+    },
+    {
+      "path": "overnight-2026-10-15/pass3-polynomial-potential-classification-audit.txt",
+      "bytes": 4010,
+      "sha256": "72cde12ef6dc86bb37b42aad150fddc57496918eed26bca1e6ba4c579c3cbf72"
+    },
+    {
+      "path": "overnight-2026-10-15/pass3-prime-defect-upgrade-independent-audit.txt",
+      "bytes": 3642,
+      "sha256": "19782d1d012e6e2dbbd5591337fe4237cca4600fb6b83f5fbc39d8343df72584"
+    },
+    {
+      "path": "overnight-2026-10-15/pass3-quadratic-pair-action-spectral-audit.txt",
+      "bytes": 5207,
+      "sha256": "2fe0cf260519911ed13857a18c528a8db4e2b9ab613ac60cd540040753e92e07"
+    },
+    {
+      "path": "overnight-2026-10-15/pass3-quadratic-variety-and-cubic-phase-obstruction.txt",
+      "bytes": 10722,
+      "sha256": "541cfdd02dec84f8092fb6e434bc250ca0e21cd6cbf707d6aee5e80af9eac8b6"
+    },
+    {
+      "path": "overnight-2026-10-15/pass3-support-coherence-audit.txt",
+      "bytes": 4925,
+      "sha256": "abd4579a1bba1bb9d0563d4708ecdadc488642bf660784f0737166545f61c96c"
+    },
+    {
+      "path": "overnight-2026-10-15/pass3-triangle-representation-obstruction.txt",
+      "bytes": 5519,
+      "sha256": "55879a7b7afda9fad36da1e1a8a728c72cf1f8eb2e7659a523c8979287caa972"
+    },
+    {
+      "path": "overnight-2026-10-15/pass4-affine-linear-family-classification.txt",
+      "bytes": 9269,
+      "sha256": "dbc98f6397ca36c6a75e01037ef2e3b4df5ccd66c73f78cbfe78849348077176"
+    },
+    {
+      "path": "overnight-2026-10-15/pass4-affine-published-input-audit.md",
+      "bytes": 9078,
+      "sha256": "88882ca8dac1c89424ab82846114ceb16543f54d9103a0eb81938e41eed07e36"
+    },
+    {
+      "path": "overnight-2026-10-15/pass4-arbitrary-affine-common-support-independent-audit.txt",
+      "bytes": 15398,
+      "sha256": "f3ad40baec092cf67536a0fd5a54d80ef76acc1a37ad3064a9d2a7b3cb3d0cf8"
+    },
+    {
+      "path": "overnight-2026-10-15/pass4-arbitrary-intercept-common-support-theorem.txt",
+      "bytes": 12974,
+      "sha256": "e14f0e84d68b677bca897e725f063b8ad0525cd1c175e980373f6bf04db9dc72"
+    },
+    {
+      "path": "overnight-2026-10-15/pass4-common-mask-literature.md",
+      "bytes": 10996,
+      "sha256": "7ade5be14991632c1c788a09c03f43ea7edc81d965a6aa3e84d3ce00c0b71bca"
+    },
+    {
+      "path": "overnight-2026-10-15/pass4-crossed-operator-independent-audit.txt",
+      "bytes": 7454,
+      "sha256": "187f6ae09df6671caba5a7ee1f87b7db9d81e29430f421c32611a2caa3b5dfec"
+    },
+    {
+      "path": "overnight-2026-10-15/pass4-crossed-reflection-common-support-theorem.txt",
+      "bytes": 9854,
+      "sha256": "4f7c3b4d1a6ee018fe19a969726c41b805020998e8f1100b62ed3217b006b591"
+    },
+    {
+      "path": "overnight-2026-10-15/pass4-crossed-reflection-independent-audit-and-robustness.txt",
+      "bytes": 10234,
+      "sha256": "7b539994280125cd2d21967730a1ed7c4664251e2efff692cdec2a01b474a7be"
+    },
+    {
+      "path": "overnight-2026-10-15/pass4-fixed-root-pair-genus-checkpoint.txt",
+      "bytes": 2332,
+      "sha256": "2a5b23a187a5152c9504f156cad74da5538b11364ee4e1494f7beee69bcf0e0e"
+    },
+    {
+      "path": "overnight-2026-10-15/pass4-interval-support-theorem.txt",
+      "bytes": 4234,
+      "sha256": "65b94c99cd1c31eaff3eaaaa10ac90ed086a4ff0b4cf6dcee45f7bf18c11f9a2"
+    },
+    {
+      "path": "overnight-2026-10-15/pass4-nested-support-theorem.txt",
+      "bytes": 3047,
+      "sha256": "de8bf275edf176e5c6ecf8b399220bf81d74c2f2488ab57af44ff5caf99847ee"
+    },
+    {
+      "path": "overnight-2026-10-15/pass4-polynomial-intercept-common-support-theorem.txt",
+      "bytes": 7897,
+      "sha256": "45d6769121adc2c5338509d24f475316fe1ad3e398f139d06767cd3eb9c2e940"
+    },
+    {
+      "path": "overnight-2026-10-15/pass4-polynomial-palette-independent-audit.txt",
+      "bytes": 4494,
+      "sha256": "45474ab257e61b1242bd190d0f33d521580ba6861316c28b2fa3f3b660bf329f"
+    },
+    {
+      "path": "overnight-2026-10-15/pass5-affine-slope-multiplicity-theorem.txt",
+      "bytes": 9624,
+      "sha256": "e80fe79a4e86d996ab27fd164067b0ff6c15257445b326197bb86b4d3f35b078"
+    },
+    {
+      "path": "overnight-2026-10-15/pass5-bounded-vc-independent-audit.txt",
+      "bytes": 8339,
+      "sha256": "e13db393bbd51253013a1577ccb1a906f2a96064a3020e73be1dac7226aee912"
+    },
+    {
+      "path": "overnight-2026-10-15/pass5-bounded-vc-literature-and-transfer.md",
+      "bytes": 14172,
+      "sha256": "d5a58a616bafd8f929db539e3dd769f1175e1267d2d45bd65f810affd21c26a5"
+    },
+    {
+      "path": "overnight-2026-10-15/pass5-bounded-vc-support-independent-proof.txt",
+      "bytes": 10044,
+      "sha256": "4e0db533b61cb25ad2550e83abefaa664aa197b60dd5b94e38e37204ecd2f84f"
+    },
+    {
+      "path": "overnight-2026-10-15/pass5-common-vertex-rectangle-theorem.txt",
+      "bytes": 6659,
+      "sha256": "1e2aaca4b9dca036106a1c53ae1d89499cd3cc2cc15208d6b1d2e3ddb2bd9373"
+    },
+    {
+      "path": "overnight-2026-10-15/pass5-fourier-majorant-independent-audit.txt",
+      "bytes": 6743,
+      "sha256": "9adf806e09a93fdc7ce1cbb1edea70bee2249cbe78f48a7ad2c9516262b528f9"
+    },
+    {
+      "path": "overnight-2026-10-15/pass5-fourier-majorant-support-theorem.txt",
+      "bytes": 9230,
+      "sha256": "a4ad3a20d24eb95ab20f08b9dc5892d1f02ec1119293ce15f005c37ae821d590"
+    },
+    {
+      "path": "overnight-2026-10-15/pass5-masked-operator-negative-spectrum-obstruction.txt",
+      "bytes": 4874,
+      "sha256": "ae5b68ca438b57b39d9a870c067eb6f74c7171266a20f4f9fa90c5a004c5d0c2"
+    },
+    {
+      "path": "overnight-2026-10-15/pass5-offdiagonal-chirp-operator-checkpoint.txt",
+      "bytes": 3643,
+      "sha256": "584950364516d90e82306884c4ff0e1c9229df18f02ca2c06ab427b37466ed88"
+    },
+    {
+      "path": "overnight-2026-10-15/pass5-quadratic-common-potential-mask-checkpoint.txt",
+      "bytes": 4351,
+      "sha256": "3821017cd47721e4b4d49bd7a34509eee2cf32e531b0b13841ee1499051b8a35"
+    },
+    {
+      "path": "overnight-2026-10-15/pass6-oscillatory-affine-literature.md",
+      "bytes": 7262,
+      "sha256": "119c7b00eebc849a809bb090f18c1a9fa89316a6cad8aa42ceb2f0bef686b671"
+    },
+    {
+      "path": "overnight-2026-10-15/pass6-oscillatory-affine-operator-proof-and-audit.txt",
+      "bytes": 5535,
+      "sha256": "680b1823f2aa535464f3a5c4d96f7bc96e7f0a03b2b2319dc115cc9a1c6942d7"
+    },
+    {
+      "path": "overnight-2026-10-15/two-sided-gram-independent-audit.txt",
+      "bytes": 4115,
+      "sha256": "ed8b344c0fd34e6a79946abfb8d4f2f3221d413d9a52944a23f2184eed770d1b"
+    },
+    {
+      "path": "research-2026-10-14/ExtremalReplacementCertificate.lean",
+      "bytes": 2051,
+      "sha256": "617a522c7d2bef27af6e0a20c69f19d84cc616b7ff0730d6ed656099f9f8c15f"
+    },
+    {
+      "path": "research-2026-10-14/RESEARCH.md",
+      "bytes": 7046,
+      "sha256": "fbcb68b994a18e6064393d8fe934cbfefe2ed0085cf80491f5bba8c70d9d2e1a"
+    },
+    {
+      "path": "research-2026-10-14/classify_n10_extremal.cpp",
+      "bytes": 5523,
+      "sha256": "2b5e2f2d4c2989a959017e639a74e238f339cae4229154e87775cfe43d020056"
+    },
+    {
+      "path": "research-2026-10-14/exhaustive_n12.cpp",
+      "bytes": 5417,
+      "sha256": "08af401e582c184c245f3d005316663f6a3e6ea62d7e7ca5780de351089f485b"
+    },
+    {
+      "path": "research-2026-10-14/exhaustive_n12_m41.log",
+      "bytes": 31,
+      "sha256": "8ce390c953022c6b11b2d24cac428dde95f022f18fd9b8c72b8d62a16378709c"
+    },
+    {
+      "path": "research-2026-10-14/exhaustive_n12_m42.log",
+      "bytes": 31,
+      "sha256": "350f2797f940d6e932f14b38794a7b3bf41158578dac7f715c86c9eb8311cdd5"
+    },
+    {
+      "path": "research-2026-10-14/exhaustive_n12_m43.log",
+      "bytes": 30,
+      "sha256": "f51076e3cb591a9cda8aeba54ffa8fa11ef51d7a50200bf3d8842a2c87d96c19"
+    },
+    {
+      "path": "research-2026-10-14/exhaustive_pruned.cpp",
+      "bytes": 5417,
+      "sha256": "57d3fe81492cca85753c9f648778f4e429d65893b4cf92f0d91630ae6abb3c06"
+    },
+    {
+      "path": "research-2026-10-14/exhaustive_pruned_n10_m31.log",
+      "bytes": 321,
+      "sha256": "65f288b8f550c3334a5b9083b291db1d4591184eb52e05376299dda97a54ebee"
+    },
+    {
+      "path": "research-2026-10-14/exhaustive_pruned_n11_m35.log",
+      "bytes": 454,
+      "sha256": "c72a9dd9aa43339428d375b2a4c6330cd5238833f182c3cae4a89106a51563b0"
+    },
+    {
+      "path": "research-2026-10-14/exhaustive_residuals.cpp",
+      "bytes": 5940,
+      "sha256": "9cc8e42f37a80aa1feaa69344d5a61a4f85fe5bb643aa19ed126d32aa66b4653"
+    },
+    {
+      "path": "research-2026-10-14/extremal-overlap-checks.json",
+      "bytes": 865,
+      "sha256": "9f3d4182ccc639e146fb078bfd13de99dd4db6cdd8d819a82d97f21b86875b0b"
+    },
+    {
+      "path": "research-2026-10-14/extremal-overlap-progress.txt",
+      "bytes": 5518,
+      "sha256": "1996c0e3e72fb0c97e37d9d279b2ad43f6f21f0995b61a9b9e32dd961be6bc71"
+    },
+    {
+      "path": "research-2026-10-14/finite_research_status.json",
+      "bytes": 1284,
+      "sha256": "c13d3bfacaa718af59e2859bb2bed1ff996192e53d2d91cf90700f0143ddf29f"
+    },
+    {
+      "path": "research-2026-10-14/linear10-seven-certificate.json",
+      "bytes": 304,
+      "sha256": "744b2cf3cf35ad673352e9cfb523946d812dae4df16e26d994817685aceb322a"
+    },
+    {
+      "path": "research-2026-10-14/m10-extremal-classification.md",
+      "bytes": 2286,
+      "sha256": "f970c6fbf61c584b50832debb294e0f56dc2619e344c25867cc9d59bfc04e4b0"
+    },
+    {
+      "path": "research-2026-10-14/m11-result.md",
+      "bytes": 6699,
+      "sha256": "4548f69fb117f670908d792be80cab7532a389463e2a871a6cd091ee28597ceb"
+    },
+    {
+      "path": "research-2026-10-14/m11_metadata.json",
+      "bytes": 890,
+      "sha256": "3a596f7c26bf51f17990361a49cf140064c2ba3950761ba6a4e4e0924f88c51e"
+    },
+    {
+      "path": "research-2026-10-14/n10_classification_metadata.json",
+      "bytes": 526,
+      "sha256": "9df1a182f69daa6c11ffbcde51ee230751d6c1e33fbc433f84f2ccbffee81283"
+    },
+    {
+      "path": "research-2026-10-14/n10_extremal_classification.log",
+      "bytes": 30072,
+      "sha256": "729ff3de9941f166cb6f32e004c40f1bca7549888b8ef55fa59d0465756e6011"
+    },
+    {
+      "path": "research-2026-10-14/n10_extremal_isomorphisms.json",
+      "bytes": 78054,
+      "sha256": "a6deb9e40a6a6e5b5ea6d49a4cb924e3b7b911401fcb529025183098320fd333"
+    },
+    {
+      "path": "research-2026-10-14/n11_family_alignment.json",
+      "bytes": 1737,
+      "sha256": "b3a03d518f4686784f7151ef49166e819e6837e082016e6a330eafdd327c3cf0"
+    },
+    {
+      "path": "research-2026-10-14/n11_residual_certificate.json",
+      "bytes": 67572,
+      "sha256": "070c3e3b6c5d168e70a4accdb468e63962bcc400736b4296b1bef5c75c2518bb"
+    },
+    {
+      "path": "research-2026-10-14/n11_residual_isomorphisms.json",
+      "bytes": 20808,
+      "sha256": "7405db0cd130c8e04130b82e3e9ed87356334db4145f50d6473cf1605901bf93"
+    },
+    {
+      "path": "research-2026-10-14/n11_residuals.log",
+      "bytes": 2326,
+      "sha256": "bb0ac3e2fba9ee8ba1a89e9c0ddf70877402c2bd37e22a94236c0a290c829244"
+    },
+    {
+      "path": "research-2026-10-14/novelty.md",
+      "bytes": 19375,
+      "sha256": "18c1895682b81971389e23e924a2633e79d798389ab61426e0b40d2862363690"
+    },
+    {
+      "path": "research-2026-10-14/perfect_b_12_5.json",
+      "bytes": 1683,
+      "sha256": "05be0ea4abed4ad015c132fddf2b73333b1c507aaf4519a00ffec51d0b5fc72c"
+    },
+    {
+      "path": "research-2026-10-14/perfect_b_12_5.log",
+      "bytes": 16965,
+      "sha256": "9df6e6df55c71b3a9068f236fa14354c910ec3d5dbd823da526b3134edfa112a"
+    },
+    {
+      "path": "research-2026-10-14/perfect_b_12_6.json",
+      "bytes": 89,
+      "sha256": "43d5194e4295a4d064e1e6d7770e00d32ca28a3df4ff62bab02ecc378f597311"
+    },
+    {
+      "path": "research-2026-10-14/perfect_b_12_6.log",
+      "bytes": 19107,
+      "sha256": "263e63d6a0df63951db623df9976d065933854bb592a8ac0419741192f52eb06"
+    },
+    {
+      "path": "research-2026-10-14/perfect_b_13_6.json",
+      "bytes": 89,
+      "sha256": "933b0a6e16d07e6768924ac93d115aa6a4cca94c97d5211d02b6f33f66eaf9fc"
+    },
+    {
+      "path": "research-2026-10-14/perfect_b_13_6.log",
+      "bytes": 18964,
+      "sha256": "6208242afa4529c03e65e265dd1533b249b53a857c7f46ab4114f13901d1739f"
+    },
+    {
+      "path": "research-2026-10-14/perfect_b_search.py",
+      "bytes": 2801,
+      "sha256": "1b70992b23e53f503daf96a68f9ac5e1dc11cccec0ff3f7f33356f66898787bb"
+    },
+    {
+      "path": "research-2026-10-14/replacement-kernel-check.txt",
+      "bytes": 654,
+      "sha256": "e7081c8f48670a382de4eb5b6ffbc4de465f83cd360cf1f584813b9515ec701b"
+    },
+    {
+      "path": "research-2026-10-14/replacement-verification-status.json",
+      "bytes": 1152,
+      "sha256": "a1225420a7447a716a7a57ee42bda7d03e5f9cde08746f77034d1ef35bdafdd7"
+    },
+    {
+      "path": "research-2026-10-14/shadow-extraction-proof.txt",
+      "bytes": 10747,
+      "sha256": "10b123bbed9db781bf9aa846283e3009ba59c1b4641048a43d718e9222989483"
+    },
+    {
+      "path": "research-2026-10-14/shadow-localization-checks.json",
+      "bytes": 120,
+      "sha256": "5a0735018865e7e5878b4e2c607352b86954a4e7ca2dcf8b57fa3c14e2a6bb20"
+    },
+    {
+      "path": "research-2026-10-14/shadow_localization_check.py",
+      "bytes": 2633,
+      "sha256": "02e350ce8000c3de9db582e2cb635515757dd3ec3604650eb72b5d5e4df13eb3"
+    },
+    {
+      "path": "research-2026-10-14/verify_n10_classification.py",
+      "bytes": 2869,
+      "sha256": "75e0285f0a117ebaed24f2d8d4aa3ba6a87b7baeb66bb9b6c1145a118025fcba"
+    },
+    {
+      "path": "research-2026-10-14/verify_n11_residuals.py",
+      "bytes": 3610,
+      "sha256": "587c0823ebdca29eb10151cd7c22336ca5b32757b73f2e4dd755adadcf3742b9"
+    },
+    {
+      "path": "research-2026-10-18/NOVELTY-AUDIT.md",
+      "bytes": 8495,
+      "sha256": "25f448f5a745df96a2c3f7f7556e87262365b61713c3fd2c67eea26c1f0659b6"
+    },
+    {
+      "path": "research-2026-10-18/REPORT.md",
+      "bytes": 13891,
+      "sha256": "38570ec55861b814b634c0b554e08c0c6d58d19e73952c4c18b9dbb3c938c26a"
+    },
+    {
+      "path": "research-2026-10-18/common-potential-analysis.md",
+      "bytes": 14200,
+      "sha256": "9385b837faa5da84f3c6008a24a76009e06caabefb7a56af4863d62dbdb3febe"
+    },
+    {
+      "path": "research-2026-10-18/common-potential-combinatorics.md",
+      "bytes": 22545,
+      "sha256": "8da46af87f1bd3b21e9c737acad11f7803ead2542e0ef4bf3ff927c09f0426cd"
+    },
+    {
+      "path": "research-2026-10-18/common-potential-independent-counting-audit.md",
+      "bytes": 5320,
+      "sha256": "0f51acdd2e1adcc6bb41aa7516a8a75194c0851f501bd177e7bbe6c41fd4299e"
+    },
+    {
+      "path": "research-2026-10-18/common-potential-negative-spectrum.md",
+      "bytes": 8918,
+      "sha256": "250ffc898b2b318313ccfd44fa1ad54eab8a73fbd0c5b483d7427dfd09c0694a"
+    },
+    {
+      "path": "research-2026-10-18/coset-palette-independent-audit.md",
+      "bytes": 6258,
+      "sha256": "6345304de0ccf3e4939fbd0ce9a826f62c1c885d023a8da18a0f4dea3ee8d97a"
+    },
+    {
+      "path": "research-2026-10-18/cubic-correspondence-counting-independent-audit.md",
+      "bytes": 11150,
+      "sha256": "d758e8fd963eb559eabf568e47fe0d379901070137034bc450038781bb763cd6"
+    },
+    {
+      "path": "research-2026-10-18/cubic-equal-cross-configuration-checkpoint.md",
+      "bytes": 5651,
+      "sha256": "50f032979b863fbf05b1f960f15c5d36232d537b7079ae08020663b905176b0c"
+    },
+    {
+      "path": "research-2026-10-18/cubic-palette-geometry-audit.md",
+      "bytes": 11618,
+      "sha256": "7659a803fedaf3b3eb54ce65558271b3d6162bf4cb61cacac994b05a01e76964"
+    },
+    {
+      "path": "research-2026-10-18/final-literature-adversarial-audit.md",
+      "bytes": 8060,
+      "sha256": "c95e49e1e68bbdeaa9a08c67dc75abfcd5fc550897aa8ab78cbfb273726bbddd"
+    },
+    {
+      "path": "research-2026-10-18/fixed-index-palette-coset-independent-audit.md",
+      "bytes": 6446,
+      "sha256": "210315c8a1edeb248e4829cd2b68e5886ccc8799d10c57a8ace733701d2ebada"
+    },
+    {
+      "path": "research-2026-10-18/literature.md",
+      "bytes": 11218,
+      "sha256": "a9780db14bb8ee28121840884d2ec7d4388e136f8c909060b940c97f919ddf5e"
+    },
+    {
+      "path": "research-2026-10-18/monomial-common-potential-propriety.md",
+      "bytes": 9079,
+      "sha256": "3d7836cd8795a690409c052ed15a8938134b16c86d14aea3bad63b9b1d5615dd"
+    },
+    {
+      "path": "research-2026-10-18/monomial-properness-source-audit.md",
+      "bytes": 5198,
+      "sha256": "0f89bc0fd4fb9647b8145720732084dcb3cec0d425b40c57eb0e49d953b3d298"
+    },
+    {
+      "path": "research-2026-10-18/monomial-propriety-independent-audit.md",
+      "bytes": 2660,
+      "sha256": "3da53bd52bf403f56badb09c4ce6043aab995b98cc0619446b687e64bc6d2675"
+    },
+    {
+      "path": "research-2026-10-18/negative-spectrum-thinning-independent-audit.md",
+      "bytes": 2322,
+      "sha256": "1cc4a0ce838e68c4e658d1a0ca207fffeada8ee7cea38a2997e2bf76fb7e8461"
+    },
+    {
+      "path": "research-2026-10-18/novelty-2026-paper-audit.md",
+      "bytes": 10250,
+      "sha256": "516053daabb90df5e2640301c571c351e0362a30d13d00861ac23bde63c02177"
+    },
+    {
+      "path": "research-2026-10-18/novelty-expansion-framework-audit.md",
+      "bytes": 15230,
+      "sha256": "54521eff5a699e8cbc2dcb2f1bcd612a2e36a87ff3282de3b1f81267d6c372b5"
+    },
+    {
+      "path": "research-2026-10-18/novelty-graph-model-audit.md",
+      "bytes": 11460,
+      "sha256": "2fcef3195b4fe4ce701e8f0dffd687d5cd5847e9bbac5fdb83a9457e36004bd7"
+    },
+    {
+      "path": "research-2026-10-18/palette-dilation-extension.md",
+      "bytes": 11267,
+      "sha256": "95973426efc0bb819cc8e16686670d192592ce64b94fd79492f87f53ab9986c7"
+    },
+    {
+      "path": "research-2026-10-18/partial-rational-expansion-independent-audit.md",
+      "bytes": 15618,
+      "sha256": "c157c54a4c2e3b65a3d0e1a936c77a03d840fc6141267f0a54061f8271920924"
+    },
+    {
+      "path": "research-2026-10-18/perfect-colorings-full-text-comparison.md",
+      "bytes": 5031,
+      "sha256": "9c5b72120dcfab4247d6b09d2b19ed018df255292524bcd99ef78d93a61e3167"
+    },
+    {
+      "path": "research-2026-10-18/quadratic-coset-palette-extension.md",
+      "bytes": 7243,
+      "sha256": "29fac97f1c4b2eda2dbd65bb92ec325841f942f34f845909cb302de4484f964f"
+    },
+    {
+      "path": "research-2026-10-18/quadratic-coset-palette-independent-audit.md",
+      "bytes": 3741,
+      "sha256": "a26aa6b222ccd8f51e7565f8b90fb67c237001d2dc43a4d95a907cce39fa2cc3"
+    },
+    {
+      "path": "research-2026-10-18/rational-expander-cover-proof.md",
+      "bytes": 10811,
+      "sha256": "596e461ee6cc10392fba57369bd821d42a6069c5b5ff2c1bb69872a136990751"
+    },
+    {
+      "path": "research-2026-10-18/six-slot-literature-gap.md",
+      "bytes": 5888,
+      "sha256": "a9bf2f961ce47ef17d81fcaa33800f15e05a0ace94e306c12e5367639300cae0"
+    },
+    {
+      "path": "research-2026-10-18-followup/REPORT.md",
+      "bytes": 17562,
+      "sha256": "067f310d607130ce6f1ce10fb460fd8a538b3b7de767e2fe87ae2dba1dd8f03e"
+    },
+    {
+      "path": "research-2026-10-18-followup/affine-closure-independent-audit.md",
+      "bytes": 2184,
+      "sha256": "11c2c59ccfe626f39e63b9d21b201dc98b2ff3b9d7652151bdb479b9a3f5d062"
+    },
+    {
+      "path": "research-2026-10-18-followup/coset-quantitative.md",
+      "bytes": 20736,
+      "sha256": "2dca4e126b0edf22794851e748b5d1db2a996435a0af3be96fd3b6f206e6b458"
+    },
+    {
+      "path": "research-2026-10-18-followup/cubic-coset-spectral-independent-audit.md",
+      "bytes": 5552,
+      "sha256": "65abee787eab5e2e545c858564363cd26d8f01d16c0dae22505a74ed0c9f9768"
+    },
+    {
+      "path": "research-2026-10-18-followup/cubic-coset-spectral.md",
+      "bytes": 8500,
+      "sha256": "2ea1e0114736100d2041106d4e4f8dd94bac5cf36c629ab50bbceece66945230"
+    },
+    {
+      "path": "research-2026-10-18-followup/cubic-definable-palettes.md",
+      "bytes": 14945,
+      "sha256": "7454ce8c0193fb3a45494ff1c5a93df47cffca1b7edc5d7742f3507a66fe511e"
+    },
+    {
+      "path": "research-2026-10-18-followup/cubic-four-slot-fourier-independent-audit.md",
+      "bytes": 2474,
+      "sha256": "775fc109487df7b70b4445bc42540b0186d379d0a5477fc2afc1ac8dab7cc9f8"
+    },
+    {
+      "path": "research-2026-10-18-followup/cubic-four-slot-fourier-obstruction.md",
+      "bytes": 7410,
+      "sha256": "60d3f3224ef514b1bb2cffa42576b29a0a771a8a6d54699dbb404af28fcad0fa"
+    },
+    {
+      "path": "research-2026-10-18-followup/cubic-perturbation-independent-audit.md",
+      "bytes": 10148,
+      "sha256": "ae764de55d17125fcddebf8a55acd39cca66ed0242b8c47cf14e273e8fc88016"
+    },
+    {
+      "path": "research-2026-10-18-followup/cubic-perturbation-spectral.md",
+      "bytes": 8214,
+      "sha256": "a4b6f07cea00e8defc65bfc2c2d724cff6f8fd3ebac6e0ade434b64e4fe7fe29"
+    },
+    {
+      "path": "research-2026-10-18-followup/cubic-perturbation.md",
+      "bytes": 8378,
+      "sha256": "b64fdb473cc701e570fd9f3097da6f23e2a4bdfece6d4e69a5cf0dc523a38130"
+    },
+    {
+      "path": "research-2026-10-18-followup/cubic-wiener-supports-independent-audit.md",
+      "bytes": 3158,
+      "sha256": "9338295a9d6bc10d7bbfe4c80250f064ad46d2d213ced9c0b9e6da98ec0cfd86"
+    },
+    {
+      "path": "research-2026-10-18-followup/cubic-wiener-supports.md",
+      "bytes": 7394,
+      "sha256": "af07d16611c7f3a37ecf38c1426605233815add831795023fc0c1bf9e2f213b8"
+    },
+    {
+      "path": "research-2026-10-18-followup/definable-palette-independent-audit.md",
+      "bytes": 9821,
+      "sha256": "892bca04bc5157ef3a90e278c08c39f88a565166e7d012ec6f9348f2d8442150"
+    },
+    {
+      "path": "research-2026-10-18-followup/definable-palette-novelty-audit.md",
+      "bytes": 5685,
+      "sha256": "e84a500b7300766b32e9f27e8d89b9a74404a804b6f7e7c19120bb606dcf67d7"
+    },
+    {
+      "path": "research-2026-10-18-followup/definable-potential-supports-independent-audit.md",
+      "bytes": 6720,
+      "sha256": "b963f696bff2482093070ebe2da55219710092d2c399c9e73b7afa394cd5848d"
+    },
+    {
+      "path": "research-2026-10-18-followup/definable-potential-supports.md",
+      "bytes": 12524,
+      "sha256": "9633f17d5a9a00b7e40f595fd48682ff75fb356f269f9d77f0265e3364b996dc"
+    },
+    {
+      "path": "research-2026-10-18-followup/dense-palette.md",
+      "bytes": 14616,
+      "sha256": "39494bc9004334edc12c7babacd7759c423b65aeaaf7fcb1b4fac15808eedfbf"
+    },
+    {
+      "path": "research-2026-10-18-followup/finite-cover-palette-descent.md",
+      "bytes": 18132,
+      "sha256": "e03181d4f1261be0304cd9036b401dbea74f9af3de5d2c2b62aa73b80771ba51"
+    },
+    {
+      "path": "research-2026-10-18-followup/fixed-formula-publication-novelty-audit.md",
+      "bytes": 7792,
+      "sha256": "0dfe4f985e02e5fd5dd8cb4b7416420f407c060e33387eaa44c0376287fd7e1d"
+    },
+    {
+      "path": "research-2026-10-18-followup/fixed-formula-publication-proof-audit.md",
+      "bytes": 19268,
+      "sha256": "b0587806439bcd790bd145993748004484d51b6ce614f5a19dc01f9579115cd0"
+    },
+    {
+      "path": "research-2026-10-18-followup/foundational-chain-adversarial-audit.md",
+      "bytes": 10400,
+      "sha256": "fa600997df4f701ec438119ab23dc04b1e600870756af6a9579b38e97979fd11"
+    },
+    {
+      "path": "research-2026-10-18-followup/fractional-closure.md",
+      "bytes": 6639,
+      "sha256": "2a3d04170425ab1e4711d31eb703daa2372a3b561351d28bf766db6a67d06a73"
+    },
+    {
+      "path": "research-2026-10-18-followup/growing-index-wiener-independent-audit.md",
+      "bytes": 4711,
+      "sha256": "c64ea03405c9c0b748c1d9582c3efa39cd63c7c7da743c19081d20efaae48c48"
+    },
+    {
+      "path": "research-2026-10-18-followup/growing-index-wiener-palettes.md",
+      "bytes": 9240,
+      "sha256": "4c437c04fad189795a8dc57e66d330b54a62859cbb03d197083b9ea1a0b4f490"
+    },
+    {
+      "path": "research-2026-10-18-followup/nonlinear-base-closure.md",
+      "bytes": 7183,
+      "sha256": "0347c85a54132ff20ab46d0aa3d8d26c4aab712d0d5f610341c0a062f5e09bb3"
+    },
+    {
+      "path": "research-2026-10-18-followup/nonlinear-base-independent-audit.md",
+      "bytes": 3422,
+      "sha256": "534d62423c5e6601ab8fcbfa8515d2659249351e846c42ffce3cd4cc208f56f6"
+    },
+    {
+      "path": "research-2026-10-18-followup/partial-closure-independent-audit.md",
+      "bytes": 2825,
+      "sha256": "8f27228d55e3971dd4e1aec9b8bfbda1822fac1b6b18d6d2526ff9f0d356d297"
+    },
+    {
+      "path": "research-2026-10-18-followup/partial-path-closure-structure.md",
+      "bytes": 8278,
+      "sha256": "fa004f656e4db58974c363b159716fbde562dabb4403a122595076d7d21d0e8d"
+    },
+    {
+      "path": "research-2026-10-18-followup/path-closure-structure.md",
+      "bytes": 6747,
+      "sha256": "add28b8509bc4d0e65716677b8cedaf9c2d322ba2e4ba52fc0fb18171b054d83"
+    },
+    {
+      "path": "research-2026-10-18-followup/polynomial-residue-independent-audit.md",
+      "bytes": 7682,
+      "sha256": "2e142e4496c641b71e2b8ad1cced0bdce91979742345fac2c90cc7ef1e15dcb1"
+    },
+    {
+      "path": "research-2026-10-18-followup/quadratic-agreement-support-limits.md",
+      "bytes": 3890,
+      "sha256": "9384b43a7961f26fc42b0e69d3c3aaafa094900123f565ba7c3fc71c27c2610b"
+    },
+    {
+      "path": "research-2026-10-18-followup/quadratic-log-correlation-independent-audit.md",
+      "bytes": 3431,
+      "sha256": "2593d60f50e37345fb647cb3cf13e61e14d0376af1f374d593d418cdcd78ec5d"
+    },
+    {
+      "path": "research-2026-10-18-followup/quadratic-log-correlation-target.md",
+      "bytes": 7888,
+      "sha256": "925529c0915e02d8fa3436fcdcc191ad971d44f48c31517930c539b9c99756af"
+    },
+    {
+      "path": "research-2026-10-18-followup/random-palette-independent-audit.md",
+      "bytes": 7320,
+      "sha256": "a2d5ee28a9ba78786c87ffb5202a35c0f560eb8a12be0c8c498c559b50e3de60"
+    },
+    {
+      "path": "research-2026-10-18-followup/random-support-independent-audit.md",
+      "bytes": 2608,
+      "sha256": "16543be8e0d29109feeca018bc8ba2902290e5d24c6c16253d2c7340fef68b98"
+    },
+    {
+      "path": "research-2026-10-18-followup/random-support-simplicity.md",
+      "bytes": 5490,
+      "sha256": "b5316d418830bdc7b3dd5dd4100becdedb715cdaf1be4d9820f9cb230b27603d"
+    },
+    {
+      "path": "research-2026-10-18-followup/scope-and-writeup-assessment.md",
+      "bytes": 4850,
+      "sha256": "7d0e3bacb8e742672e9a01a67707f97c8e3b09755342f65ec62c9becc8b13c50"
+    },
+    {
+      "path": "research-2026-10-18-followup/six-slot-obstruction-independent-audit.md",
+      "bytes": 2256,
+      "sha256": "92930d588e11e928de08be17dbae318d5ca32d066b2738b3f36bae14bfd705f4"
+    },
+    {
+      "path": "research-2026-10-18-followup/six-slot-quadratic-obstruction.md",
+      "bytes": 13273,
+      "sha256": "5d647e678b8d57ae304350e5952b5f8db6e67cfabbeef45189bed5c1bb37b943"
+    },
+    {
+      "path": "research-2026-10-21/cubic-next-step.md",
+      "bytes": 2710,
+      "sha256": "86a1a63f3e97c34700831770bf8a06e72aa002b0e8eeeb7155ec5686cab4c538"
+    },
+    {
+      "path": "research-2026-10-21/growing-index-refinement.md",
+      "bytes": 6200,
+      "sha256": "ad6150fc9c5fac31f97c18a747a9d67895ae154990cc5ba21db064b5f77a0f23"
+    },
+    {
+      "path": "research-2026-10-21/repo-and-reduction-audit.md",
+      "bytes": 8466,
+      "sha256": "f454e17e366ea94bc5ebd8700d105811844eb7d2e669ccbe75067189e6507634"
+    },
+    {
+      "path": "search/bruteforce-2026-10-24.json",
+      "bytes": 4087,
+      "sha256": "26ed688f8b4bc0ec0a7967e1b80a24bb615e64ab2b39b53d4ea235ff7b16b0ab"
+    },
+    {
+      "path": "search/erdos810_search.py",
+      "bytes": 10698,
+      "sha256": "c6c4fee6de4d4035e61d5e69373eb3fc7d3f9b7437053f5601d3f7f923c6a7b2"
+    },
+    {
+      "path": "search/results.json",
+      "bytes": 80810,
+      "sha256": "ae571af9a99bb1b4808e097e422e53b16b8f9353197cf37e71e0cc3bea96c25e"
+    }
+  ],
+  "excluded_classes": [
+    "Git metadata and Lean/Python dependency or cache directories",
+    "Compiled Lean artifacts and native executables",
+    "Downloaded overnight-2026-10-15/reference-sources snapshot; see research/README.md for upstream sources"
+  ],
+  "excluded_files": [
+    {
+      "path": "audit-2026-10-14/HypergraphReduction.olean",
+      "bytes": 222800,
+      "reason": "compiled artifact"
+    },
+    {
+      "path": "audit-2026-10-14/exhaustive",
+      "bytes": 36296,
+      "reason": "compiled executable"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/Challenge.lean",
+      "bytes": 2482,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/AffineNormalization.lean",
+      "bytes": 5797,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/DegreeSpaces.lean",
+      "bytes": 3066,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/Exceptional.lean",
+      "bytes": 7093,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/ExceptionalExamples.lean",
+      "bytes": 1879,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/FamilySpace.lean",
+      "bytes": 8609,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/FamilySpaceExamples.lean",
+      "bytes": 2004,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/FinitePlaneIncidence.lean",
+      "bytes": 6605,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/GenericCoordinates.lean",
+      "bytes": 4201,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/GenericSlope.lean",
+      "bytes": 9707,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/GenericSlopeExamples.lean",
+      "bytes": 1788,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/IncidenceCounting.lean",
+      "bytes": 8324,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/IncidenceCountingExamples.lean",
+      "bytes": 2578,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/IncidenceOptimization.lean",
+      "bytes": 10432,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/IncidenceOptimizationExamples.lean",
+      "bytes": 3085,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/IncidencePrime.lean",
+      "bytes": 3107,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/IncidencePrimeAudit.lean",
+      "bytes": 2945,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/IncidenceSharper.lean",
+      "bytes": 5414,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/IncidenceSharperExamples.lean",
+      "bytes": 2980,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/IncidenceSubcritical.lean",
+      "bytes": 3588,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/IncidenceTheorem.lean",
+      "bytes": 4084,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/IncidenceTheoremExamples.lean",
+      "bytes": 3318,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/JetBudget.lean",
+      "bytes": 4236,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/JetBudgetAudit.lean",
+      "bytes": 4406,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/Jets.lean",
+      "bytes": 11249,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/JetsAudit.lean",
+      "bytes": 3009,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/MathlibSmoke.lean",
+      "bytes": 486,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/MulSpaces.lean",
+      "bytes": 6173,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/Multiplicity.lean",
+      "bytes": 12731,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/MultiplicityAudit.lean",
+      "bytes": 3465,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/MultiplicityParallel.lean",
+      "bytes": 6739,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/NormalizedIncidence.lean",
+      "bytes": 2535,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/NormalizedIncidenceExamples.lean",
+      "bytes": 1468,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/Parameterized.lean",
+      "bytes": 3199,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/SlopeForcing.lean",
+      "bytes": 5074,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/SlopeForcingExamples.lean",
+      "bytes": 3512,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/SlopeSubstitution.lean",
+      "bytes": 12001,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/SlopeSubstitutionExamples.lean",
+      "bytes": 3937,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/Smoke.lean",
+      "bytes": 374,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/SquarefreeFamily.lean",
+      "bytes": 6084,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab/SquarefreeFamilyExamples.lean",
+      "bytes": 2295,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/MathCollab.lean",
+      "bytes": 1743,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/PROVENANCE.md",
+      "bytes": 1200,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/Solution.lean",
+      "bytes": 2737,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/verification/linux-eb95d6f/official-comparator.log",
+      "bytes": 13212,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/verification/linux-eb95d6f/result.json",
+      "bytes": 7553,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "overnight-2026-10-15/reference-sources/lewko-2609.27023v3/verification/linux-eb95d6f/solution-axioms.log",
+      "bytes": 328,
+      "reason": "downloaded third-party reference snapshot"
+    },
+    {
+      "path": "research-2026-10-14/classify_n10_extremal",
+      "bytes": 36456,
+      "reason": "compiled executable"
+    },
+    {
+      "path": "research-2026-10-14/exhaustive_n12",
+      "bytes": 36464,
+      "reason": "compiled executable"
+    },
+    {
+      "path": "research-2026-10-14/exhaustive_pruned",
+      "bytes": 36480,
+      "reason": "compiled executable"
+    },
+    {
+      "path": "research-2026-10-14/exhaustive_residuals",
+      "bytes": 36552,
+      "reason": "compiled executable"
+    },
+    {
+      "path": "search/__pycache__/erdos810_search.cpython-314.pyc",
+      "bytes": 16730,
+      "reason": "dependency or cache directory"
+    }
+  ]
+}

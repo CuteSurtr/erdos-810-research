@@ -1,0 +1,112 @@
+SUBLINEAR AFFINE DEFICITS DO NOT FORCE A BOUNDED PENCIL COVER
+Overnight pass 1, 15 October 2026.
+Root-agent construction, independently audited by the finite-audit agent.
+Exact proof, no finite search. This graph is NOT B. No novelty claim.
+
+SUMMARY
+
+There are properly colored complete bipartite graphs with affine color
+completions on n points such that:
+
+ * there are n-1 colors;
+ * every color omits only sqrt(n)+1 points of its completed matching;
+ * global multiplicative energy is o(n^3);
+ * any cover of the palette by parallel or concurrent line pencils
+   needs at least about sqrt(n) pencils.
+
+Consequently the bounded-pencil structural lemma cannot be extended,
+using properness alone, from a fixed deficit to every o(n) deficit.
+The example also strengthens the warning that small global energy by
+itself says little about the actual repeated-color rectangles.
+
+1. CONSTRUCTION AND PROPERNESS
+
+Let s be a prime power, let n=s^2, and let F=F_{s^2} with its subfield
+F_s. For every a in F^* use the affine permutation
+
+                        sigma_a(x)=a x+a^s.
+
+Define
+
+             H={-t^(s-1):t in F^*},       D=F\H.
+
+The power map t->t^(s-1) on the cyclic group F^* has image size
+(s^2-1)/(s-1)=s+1. Thus |H|=s+1 and |D|=n-s-1.
+
+For fixed x, the map
+
+                         L_x(a)=x a+a^s
+
+is F_s-linear on the two-dimensional vector space F. It has a nonzero
+kernel element iff x=-a^(s-1), equivalently x in H. Therefore for x in D
+it is invertible and sends F^* bijectively onto F^*.
+
+For each color a retain precisely the edges (x,sigma_a(x)) with x in D.
+At every x in D, the n-1 colors produce exactly the n-1 distinct nonzero
+right coordinates. The resulting graph is exactly
+
+                         K_{n-s-1,n-1},
+
+with its rows labeled by D and columns by F^*. It is properly colored:
+at a row all outputs are distinct, and each color is an affine matching.
+Every class has n-s-1 edges, omitting only s+1=o(n) of its n possible
+matching edges. The edge count is (n-s-1)(n-1)=(1-o(1))n^2.
+
+2. EXACT GLOBAL ENERGY
+
+Write r=a/b for an ordered pair of nonzero parameters. Direct composition
+gives
+
+    sigma_a sigma_b^(-1)(x)=r x+(r^s-r)b^s.            (1)
+
+If r in F_s^*, then r^s-r=0. For each of these s-1 slopes there is one
+relative map, represented by all n-1 choices of b.
+
+If r in F^*\F_s^*, then r^s-r!=0. There are n-s such slopes. For each,
+the n-1 possible nonzero b give n-1 distinct intercepts, since the
+Frobenius map b->b^s is a bijection of F^*.
+
+Different relative slopes cannot give equal affine maps. Hence exactly
+
+    |S S^(-1)|=(s-1)+(n-s)(n-1),
+    E(S)=(s-1)(n-1)^2+(n-s)(n-1).                    (2)
+
+Since n=s^2, E(S)=O(n^(5/2))=o(n^3), although the underlying graph has
+(1-o(1))n^2 edges and its color supports are nearly complete.
+This family does have global permutation progressions; it does not
+replace the separate strong-progression-free quadratic example.
+
+3. A LOWER BOUND ON THE NUMBER OF PENCILS
+
+Slopes are distinct, so a parallel pencil contains at most one palette
+line. A concurrent pencil through (x,y) contains exactly the nonzero
+solutions a of L_x(a)=y.
+
+If x outside H, L_x is invertible, so there is at most one solution.
+If x in H, the F_s-linear map L_x is nonzero and singular; it has rank
+one and kernel size s. To see that it is not identically zero, note that
+the Frobenius map a->a^s is not scalar multiplication on F_{s^2}: at
+a=1 the alleged scalar would be 1, while elements outside F_s are not
+fixed by Frobenius. Thus each nonempty fiber has exactly s elements,
+and restricting to nonzero a can only decrease the count.
+
+Every concurrent pencil therefore contains at most s palette lines.
+Any cover by these two kinds of pencils has at least
+
+                         ceil((n-1)/s)
+
+members. This tends to infinity.
+
+4. WHY THIS IS NOT A B COLORING
+
+For sufficiently large s, every color has at least two edges. Choose
+two distinct retained edges of one color. Their rows differ and their
+columns differ because that color is a matching. Both cross edges are
+present because the graph is complete bipartite on D by F^*. Thus these
+four positions form a C4 with a repeated color on its diagonal.
+
+This explicit failure is the point of the example. It leaves open a
+possible theorem that uses the B condition itself to handle o(n)
+deficits or fixed-density affine supports. What it rules out is deriving
+a bounded pencil cover from properness and sublinear deficits alone,
+or deriving a density contradiction from small global energy alone.

@@ -1,0 +1,181 @@
+PRIME-FIELD INCIDENCE UPGRADE TO THE AFFINE DEFECT BOUND
+15 October 2026. Complete deduction using an attributed recent preprint.
+
+STATUS: HAND-AUDITED COROLLARY OF THE STATED LEWKO INCIDENCE THEOREM.
+The filename retains "conditional" from its initial source-pending
+draft. The source audit subsequently read the primary proof and all
+43 Lean source files and reported no gap or extra incidence hypothesis.
+Author-hosted verification logs were inspected; the external compiler
+was not rerun in this audit. Our deduction below is a hand proof,
+not a Lean-certified theorem and not an independent incidence proof.
+
+1. THE PRECISE EXTERNAL INPUT
+
+Assume that every finite set P of v points and every set L of w
+distinct affine lines over F_p satisfy
+
+       I(P,L) <= 3(vw)^(2/3)+v+w+vw/p.                 (ST_p)
+
+The official abstract of Mark Lewko, "A Szemeredi--Trotter Theorem
+in Arbitrary Fields", arXiv:2609.27023v3 (7 October 2026), states
+this prime-field inequality. Primary source:
+https://arxiv.org/abs/2609.27023v3
+
+The abstract was checked directly. The separate source audit also
+read the proof and formalization and reported no gap; see the status
+above for what was and was not verified. We use (ST_p) as the cited
+external mathematical input. None of its strength is attributed to
+our work.
+
+2. QUANTITATIVE CONCLUSION USING (ST_p)
+
+Consider a proper B-colored simple bipartite graph with both sides
+F_p, where every original color is a restriction of a nonconstant
+affine permutation. B means every C4 has four distinct colors.
+Let d_0 be the number of original color labels, m the number of
+actual edges, and
+
+                   D=d_0*p-m
+
+the total number of omitted colored incidences. Distinct original
+labels may initially have identical affine completions.
+
+Using (ST_p), absolute C,c>0 give
+
+ m <= C*p*sqrt(D+1)+8D
+        +C*p^2*exp[-c*(log p)^(1/12)].                 (1)
+
+In particular, D=o(p^2) implies m=o(p^2). The same follows if the
+average defect D/d_0=o(p), with the empty graph treated separately.
+
+3. PRUNING AND THE PENCIL BOUND
+
+Discard every color omitting at least p/8 incidences. There are at
+most 8D/p such labels, so at most 8D actual edges are discarded.
+Each retained class has more than 7p/8 edges. Thus their affine
+completions are distinct: two equal completions would have overlapping
+supports and assign different colors to the same graph edge.
+
+Write d for the retained number of colors and D' for their total
+defect. Since D'<=D and the actual graph has at most p^2 edges,
+
+                  d < 8p/7.                            (2)
+
+The retained affine palette is strongly progression-free: if
+nontrivially A B^{-1} A=C, choose a starting row x and put
+z=B^{-1}A(x). The potential four edges have colors A,B,A,C on
+rows x,z and columns A(x),A(z). Each of the four support failures
+excludes fewer than p/8 starting rows. Because B^{-1}A is a
+nonidentity affine map, x=z excludes at most one further row.
+For sufficiently large p, some x remains, producing a forbidden C4.
+
+Let L be the largest number of retained completed lines in any
+parallel or concurrent pencil. Every such pencil is a left coset
+of an abelian affine subgroup of order p or p-1. Normalization
+preserves A B^{-1} A=C. The previously audited quantitative Roth
+input therefore gives
+
+                  L <= C*p*exp[-c*(log p)^(1/12)].      (3)
+
+This is the same pencil estimate as in
+pass1-affine-quantitative-audit.txt and
+pass2-prime-field-average-defect.txt. It is an existing Roth input,
+not a new exponential-sum or progression estimate. For the even
+cyclic group of order p-1, its exponent representatives embed into
+the odd cyclic group of order 2(p-1)+1 without creating integer
+three-term progressions; the constants remain absolute.
+
+4. TOTAL DUAL INCIDENCE COST
+
+Dualize each distinct completed line y=a*x+b to the point (a,b).
+Every determined nonvertical dual line corresponds to a finite
+intersection point of completed original lines. If its richness
+is t>=2, at least t-1 colored incidences at that original point
+are omitted, because at most one actual edge/color occupies it.
+Summing over these points gives total nonvertical incidence count
+at most 2D'. Determined vertical dual lines partition their points
+by slope, so their total incidence count is at most d.
+
+If I_* is the sum of all richnesses over all determined dual lines,
+
+                         I_* <= 2D+d.                  (4)
+
+The largest dual richness is precisely L from Section 3.
+
+5. A BECK-TYPE DICHOTOMY FROM (ST_p)
+
+For any d-point dual set with d<8p/7, let T_k denote the number of
+determined lines whose richness lies in [k,2k), for dyadic k.
+Applying (ST_p) to that class gives
+
+ k*T_k <= 3(d*T_k)^(2/3)+d+(1+d/p)T_k.
+
+Since 1+d/p<3, for k>=8 we have
+
+ (k/2)T_k <= 3d^(2/3)T_k^(2/3)+d.
+
+Splitting according to which summand on the right is at least
+(k/4)T_k yields the convenient bound
+
+                 T_k <= 1728*d^2/k^3+4*d/k.            (5)
+
+Every pair of distinct dual points lies on exactly one determined
+line. Fix a large dyadic K>=8. Lines with richness below K account
+for at most (K/2)I_* pairs. For higher-richness lines, (5) gives
+
+ sum_{k>=K} sum_{lines in class k} binom(richness,2)
+   <= sum_{k>=K} [3456*d^2/k+8*d*k]
+   <= 6912*d^2/K+16*d*L.                               (6)
+
+The sums are dyadic and terminate at k<=L; this is why the second
+term is O(dL), with no logarithmic loss.
+
+For example choose the dyadic constant K=131072. Then
+6912/K<1/16. If L<=d/256, the last term in (6) is at most d^2/16.
+For d>=2, binom(d,2)>=d^2/4, so pair counting gives
+
+ d^2/4 <= (K/2)I_*+d^2/8,
+ hence I_* >= d^2/(4K).
+
+We have proved an absolute-constant alternative:
+
+       either L>d/256, or I_*>=d^2/(4K).               (7)
+
+The d=0,1 cases are harmless and absorbed into constants below.
+
+6. COMPLETING THE QUANTITATIVE BOUND
+
+In the first case of (7), (3) bounds d by a constant multiple of
+p*exp[-c*(log p)^(1/12)]. In the second case, (4) gives
+
+                   d^2/(4K)<=2D+d.
+
+Absorbing the linear term, or handling bounded d separately, gives
+d<=C*sqrt(D+1). In either case,
+
+ d <= C*sqrt(D+1)+C*p*exp[-c*(log p)^(1/12)].
+
+The retained graph has at most p*d edges. Adding back at most 8D
+discarded edges proves (1).
+
+If D=o(p^2), every term on its right is o(p^2). If instead
+D/d_0=o(p), then
+
+        m=d_0*(p-D/d_0)<=p^2
+
+implies d_0<=p/(1-o(1)), and consequently D=o(p^2). Thus the
+average-defect formulation follows as claimed.
+
+7. LIMITS
+
+This remains a near-complete-color-class condition: it allows an
+average o(p) missing incidences per color, but not an arbitrary fixed
+positive missing fraction. It does not settle common masks of size
+delta*p for fixed delta<1, arbitrary supports, extension fields, or
+Erdos #810 in general.
+
+The logical new input over pass 2 is entirely the cited (ST_p).
+The conclusion should be presented as an application of that recent
+incidence theorem, with our hand-audit status distinguished from the
+external author's Lean formalization. No historical novelty claim
+for this application is made.

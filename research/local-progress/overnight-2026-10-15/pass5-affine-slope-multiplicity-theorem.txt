@@ -1,0 +1,239 @@
+AFFINE PALETTES WITH REPEATED SLOPES: AN EXACT MOMENT AND A SPARSITY CLASS
+2026-10-15, overnight pass 5, finite_audit agent.
+
+Status: the moment calculation and its sparsity consequence independently
+passed formal_audit's audit. No finite graph searches were used. These are
+restricted-class results, not a solution of unrestricted Erdős #810; priority
+has not been established.
+
+1. STATEMENT
+
+Let p range over odd primes. Let S be a set of distinct affine maps
+
+                    sigma_(a,b)(x)=a*x+b,
+
+with a!=0 and d=|S|<=C*p for a fixed C. Several colors may share a slope.
+Write B_a={b:(a,b) in S}, v_a=|B_a|, v=max_a v_a. Define the weighted
+multiplicative energy of the slope counts by
+
+ T(S)=sum_(a1*a3=a2*a4) v_a1*v_a2*v_a3*v_a4.              (1)
+
+All slope indices in this sum are nonzero field elements. Let X,Y subset F_p.
+Select some of the eligible colored incidences
+
+             (x,a*x+b), (a,b) in S, x in X, a*x+b in Y,
+
+so that the actual graph is simple, properly colored, and every C4 is rainbow.
+Let R count the eligible colored incidences that were not selected.
+
+THEOREM. If T(S)=o(p^(7/2)) and R=o(p^2), then m=o(p^2).
+
+In particular the conclusion holds if v=o(sqrt(p)), since
+
+                         T(S)<=v*d^3.                   (2)
+
+The completely eligible case has R=0. Taking Y=F_p includes common row
+domains. The statement permits arbitrary intercept sets B_a; they need not
+come from polynomial graphs or share a shape.
+
+2. CROSSED FOURIER BLOCKS WITH MULTIPLICITY
+
+For each (a,b) in S define
+
+ tau_(a,b)(x,y)=((y-b)/a, a*x+b),
+ U_(a,b) f=f composed with tau_(a,b),
+ Q=sum_(a,b in S) U_(a,b).
+
+Q is selfadjoint, each tau is an involution, and Q1=d1. Fourier characters
+transform by
+
+ e_(xi,eta) composed with tau_(a,b)
+       =e_p(b*(eta-xi/a)) e_(a*eta,xi/a).
+
+As before, the product xi*eta is invariant. For t!=0 the (p-1)-dimensional
+Hermitian block has entries
+
+ M_t(r,s)=sum_(b in B_(rs/t)) e_p((r-s)*b/(rs/t)).         (3)
+
+The coordinate-axis block has norm to the fourth power at most
+
+                         (p-1) E_aff(S),                (4)
+
+where E_aff counts equal affine right quotients. This follows from the
+permutation character of Aff(F_p): p-1 at identity, -1 at nonidentity
+translations, and 0 at other affine maps, on the zero-sum representation.
+
+3. EXACT FOURTH-MOMENT CLASSIFICATION
+
+Expand tr(M_t^4) with cyclic Fourier indices r,s,u,v. Put
+
+ a=rs/t, q=u/r, h=v/s;
+ s=t*a/r, u=q*r, v=h*t*a/r.
+
+The four palette slopes are a,qa,qha,ha. Call their intercept choices
+b1,b2,b3,b4 in that order. The complete sum over the free nonzero r has
+phase alpha*r+gamma/r, with
+
+ alpha=(h*b1-h*b2+b3-b4)/(h*a),
+ gamma=(t/q)*(-q*b1+b2-b3+q*b4).                         (5)
+
+The total number of choices (a,q,h,b1,b2,b3,b4) is exactly T(S). Choosing
+three palette points fixes the fourth slope, with at most v intercepts,
+which proves (2).
+
+We now count precisely when both coefficients in (5) vanish.
+
+(i) q=h=1. All four slopes equal a, and the sole equation is
+b1+b3=b2+b4. The contribution is
+
+                          sum_a E_+(B_a).               (6)
+
+(ii) q=1,h!=1. The two equations force b1=b2 and b3=b4.
+The count is d^2-sum_a v_a^2. The case h=1,q!=1 has the same count.
+
+(iii) q!=1,h!=1. The coefficient rows in the four intercept variables are
+[h,-h,1,-1] and [-q,1,-1,q]. They are independent, and their kernel is spanned
+by the constant vector and (a,qa,qha,ha). Thus the four palette points are
+collinear, including all cases of repeated slopes. The first two points
+have distinct slopes, so they determine a nonvertical line. If L_nv is the
+maximum palette occupancy of such a line, choosing the fourth point on it
+gives at most L_nv choices; the third slope and its intercept are then fixed.
+Therefore this count is at most L_nv*d^2.
+
+Let D_0 be the full degenerate count. We have proved
+
+ D_0 <= (L_nv+2)d^2 + sum_a E_+(B_a).                    (7)
+
+Every nondegenerate coefficient pair in (5) gives a complete Kloosterman
+sum of absolute value at most 2sqrt(p); when exactly one coefficient is
+zero, the sum is exactly -1 and obeys the same bound. Hence
+
+ tr(M_t^4) <= p[(L_nv+2)d^2+sum_a E_+(B_a)]
+                                      +2sqrt(p)*T(S).   (8)
+
+For the classical Kloosterman input see Harcos, Theorem 1, page 1:
+https://users.renyi.hu/~gharcos/weil.pdf .
+
+4. THE ADDITIVE ENERGY TERM IS ALREADY PART OF AFFINE ENERGY
+
+Within a fixed slope a,
+
+ sigma_(a,b1) sigma_(a,b2)^(-1)(y)=y+b1-b2.
+
+For each translation amount t its quotient multiplicity is at least
+sum_a r_(B_a-B_a)(t). Squaring and summing, the nonnegative cross terms give
+
+                      sum_a E_+(B_a)<=E_aff(S).          (9)
+
+Thus the same-slope degeneracies are not a new unbounded term beyond the
+previous affine-energy obstruction.
+
+5. HEAVY B PALETTES HAVE FEW POINTS ON ANY LINE
+
+Suppose every original color has at least eta*p actual edges, with eta>0
+fixed. If a palette line contained epsilon*p colors, its original edges
+would contain Omega(p^2) edges of a partial group table:
+
+* On a vertical palette line a=a0, relabel the row by r=a0*x and keep
+  the column s=y. The color is the additive difference b=s-r in F_p.
+* On a nonvertical line b=u*a+w, relabel r=x+u,s=y-w. After deleting
+  the possible edge at r=0 (at most one actual edge by simplicity), the
+  color is the multiplicative quotient a=s/r in F_p^*.
+
+In either case Solymosi's group-table rectangle theorem produces a genuine
+rectangle with repeated opposite colors, contrary to B. Consequently the
+maximum occupancy L_all over ALL palette lines is o(p), uniformly for
+fixed eta. This step uses actual edges and permits arbitrary partial domains.
+
+Source: Solymosi, Theorem 5, printed page 4,
+https://arxiv.org/pdf/1309.0133 .
+
+6. AFFINE ENERGY AND THE SLOPE-ENERGY HYPOTHESIS
+
+PRRW Theorem 2.1 gives
+
+ E_aff(S) << sqrt(v)*d^(5/2) + L_all*d^2,                 (10)
+
+provided v*d<=p^2. The energy convention in that source equals the one here
+by rearranging a*b^(-1)=c*d^(-1) to c^(-1)*a=d^(-1)*b.
+Source, Theorem 2.1, printed page 3:
+https://arxiv.org/pdf/1911.03401 .
+
+The hypothesis T(S)=o(p^(7/2)) implies v^4<=T(S), so v=o(p^(7/8)), in
+particular v=o(p). Since d=O(p), the characteristic restriction in (10)
+holds for all sufficiently large p. For a heavy B palette, Section 5 and
+(10) now imply E_aff(S)=o(p^3).
+
+Equations (8)-(9) show that every nonzero Fourier block has fourth moment
+o(p^4), since sqrt(p)T(S)=o(p^4). The axis estimate (4) has the same bound.
+Therefore the nonconstant operator norm of Q is
+
+                             lambda=o(p).               (11)
+
+7. TRANSFER TO ACTUAL ELIGIBLE EDGES AND PRUNING
+
+Let E be the actual edge-point set. If e=(x,y) and tau_(a,b)(e)=(z,w) both
+lie in E, then x,z belong to X and y,w belong to Y. The two closing
+color-(a,b) incidences (x,w),(z,y) are therefore eligible. If both are
+present, B forces the transition to be the unique actual-color fixed loop.
+Every other transition can be charged to a missing eligible incidence.
+Each such incidence is charged at most d times in either row position.
+Consequently
+
+ <1_E,Q1_E> <= m+2dR,
+ <1_E,Q1_E> >= d*m^2/p^2-lambda*(m-m^2/p^2).             (12)
+
+Suppose m>=epsilon*p^2 along a sequence. Discard colors with fewer than
+eta*p actual edges, where eta=epsilon/(2C). At most d*eta*p<=epsilon*p^2/2
+edges are lost. The retained graph has m'=Omega(p^2), d'=Omega(p), and all
+its color classes are heavy. Its T, v, and R can only decrease. Sections
+5-6 give lambda=o(p) for this palette. The second line of (12) is then
+Omega(p^3), while its first line is at most p^2+2CpR=o(p^3). Contradiction.
+This completes the theorem.
+
+8. AN OBSTRUCTION TO DEDUCING THE SLOPE-ENERGY CONDITION FROM EXISTING DATA
+
+The following is a proper, heavy, common-domain construction. It is NOT B.
+It demonstrates that propriety plus L_all=o(p) and E_aff=o(p^3) do not by
+themselves force T=o(p^(7/2)); the missing B information must be used more
+deeply, or cancellation in (8) must be retained instead of termwise Weil.
+
+For all sufficiently large primes put
+
+ k=floor(log p), v=floor(p/(100k)),
+ S={(a,b):1<=a<=k, 1<=b<=v}.
+
+Let X be F_p with all intersection rows of pairs of distinct-slope palette
+lines deleted. Such rows lie among
+
+                 (b'-b)/(a-a'),  a!=a'.
+
+There are at most (2k-2)(2v-1)<p/20 such rows. Hence |X|>19p/20, and the
+full palette graph on X is proper: equal images at a common row would
+force precisely a deleted intersection, while distinct intercepts at the
+same slope never meet. Each class is heavy, d=kv=Theta(p), and m=Theta(p^2).
+
+A vertical palette line contains v points; a nonvertical line contains at
+most k points. Thus L_all=max(k,v)=o(p). PRRW implies
+
+ E_aff << sqrt(v)*d^(5/2)+L_all*d^2=o(p^3).
+
+But the slope counts are uniformly v on [1,k], so
+
+ T(S)=v^4 E_times([1,k])
+     >= (2k^2-k)v^4
+      = Omega(p^4/(log p)^2),
+
+which is much larger than p^(7/2). Only the two diagonal families in
+multiplicative energy were used; no number-theoretic estimate or finite
+computation is needed.
+
+To verify explicitly that this is not a B counterexample, use slope 1 and
+intercepts 1,2,3, which occur for large p. As |X|>p/2, some x,x+1 both lie
+in X. The two rows x,x+1 and columns x+2,x+3 form a rectangle with colors
+2,3 on its first row and 1,2 on its second. Thus a color repeats.
+
+This construction shows failure of a particular auxiliary implication,
+not failure of the desired B sparsity conclusion and not a lower bound
+on the actual crossed-operator norm. Cancellation may make the true
+fourth moment substantially smaller than the termwise upper bound (8).

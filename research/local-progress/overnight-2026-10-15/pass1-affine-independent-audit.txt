@@ -1,0 +1,187 @@
+INDEPENDENT AUDIT: NEAR-PERFECT AFFINE PENCILS AND A DENSE NON-B EXAMPLE
+15 October 2026. Audit of the finite_audit agent's two constructions.
+Both arguments below pass. Hand proof only; no finite enumeration,
+Lean certificate, general #810 solution, or historical novelty claim.
+
+Subsequent strengthening: pass1-affine-quantitative-audit.txt proves
+the small-defect bound with a linear factor r+1 and a quantitative
+Roth rate. pass1-orbit-and-homogeneous-independent-audit.txt gives an
+arbitrary-support theorem for intercept functions homogeneous over a
+growing multiplicative subgroup. The fixed-r proof below is retained
+as the elementary initial argument, not the strongest current result.
+
+1. FIXED DEFECT PER AFFINE COLOR IMPLIES VANISHING DENSITY
+
+Statement. Fix an integer r>=0. Let the two sides of a B-colored graph
+be copies of a finite field F of size n. Every color is a restriction
+of a nonconstant affine permutation x -> a*x+b, a!=0, and retains at
+least n-r of its n points. Then the number of edges is o(n^2) as n
+tends to infinity, uniformly over the field and the coloring.
+
+This is a conditional representation-class theorem. It does not cover
+classes retaining only eta*n points for a fixed eta<1.
+
+1a. Distinctness and elementary size issues.
+
+For n>2r two different colors cannot have the same affine line: their
+actual edges would be disjoint subsets of an n-point line, each of
+size at least n-r>n/2. Hence the affine completions are distinct for
+all sufficiently large n. Also d(n-r)<=n^2, so d=O(n). If fewer than
+k=r+1 color lines exist, the edge count is at most r*n=o(n^2).
+
+1b. A bounded pencil cover.
+
+Choose k=r+1 distinct base color lines. Cover all color lines belonging
+to any of these families:
+
+  - the k parallel pencils with directions of the base lines;
+  - pencils through each omitted point of any base line, at most kr.
+
+Repeated pencils may be counted several times; this only enlarges the
+bound. The number of pencils is at most
+
+  K_r=k+kr=(r+1)^2.                                    (1.1)
+
+Suppose a color line L were uncovered. It is not parallel to any base
+line, so it meets every base line in one point. These k intersections
+are all retained by the corresponding base colors, because otherwise
+L would pass through an omitted base-line point. They are therefore
+distinct: a coincidence would be an edge retained by two base colors,
+contrary to the unique assignment of an edge color.
+As an edge cannot carry two colors, L must omit all these k points.
+Distinct points on a nonvertical affine graph have distinct row
+coordinates, so these are k=r+1 separate omissions. Contradiction.
+
+There is no need to add pencils through base/base intersections:
+every such point must be omitted by at least one of its base colors,
+so its pencil is already among those counted. This proves the cover.
+The argument uses the actual supports and
+proper assignment of a unique color to each edge; no completed point
+is silently treated as an actual edge.
+
+1c. Why the earlier small-difference theorem applies.
+
+A parallel pencil with common slope a has maps T_b M_a, where T is
+translation and M is dilation. It is a coset of the translation group;
+all quotients lie in a group of size n.
+
+A pencil through (s,t) consists of maps
+
+  T_t M_a T_(-s) = T_(t-s) (T_s M_a T_(-s)).
+
+The parenthesized maps form a conjugate of the multiplicative dilation
+group, of size n-1. Thus this pencil is a left coset of that subgroup,
+and its difference set has size at most n-1. This checks the coset
+orientation explicitly.
+
+If the full graph had at least delta*n^2 edges along a subsequence,
+one of the boundedly many pencils would carry at least
+delta*n^2/K_r edges. Its palette size is Theta(n), its action size is
+n, and its difference set has size at most n. The previously audited
+partial-small-difference theorem therefore says its edge count is
+o(n^2), a contradiction. Alternatively normalize a parallel pencil
+to a partial additive group table, or a concurrent pencil (after
+discarding the exceptional zero row/column) to a partial multiplicative
+group table, and use the corresponding known group-table theorem.
+
+Conclusion: the proposed fixed-defect affine theorem is valid. The
+boundedness of r is essential to THIS proof: when r grows, the number
+of pencils grows quadratically, and no uniform rate has been supplied
+which would justify summing their o(n^2) bounds.
+
+2. DENSE HEAVY AFFINE COLORS WITH MINIMUM ENERGY NEED NOT BE B
+
+Let p>=7 be an odd prime, d=(p-1)/2, and
+
+  A={1,2,...,d} subset F_p,
+  sigma_a(x)=a*x+a^2,   a in A.                         (2.1)
+
+The set A contains exactly one of each pair {a,-a} of nonzero elements.
+
+2a. Strong three-term permutation relations are absent.
+
+The equation sigma_c=sigma_a sigma_b^(-1) sigma_a requires
+c=a^2/b from the slope. The intercept equation then becomes
+
+  a*(a-b)^2*(a+b)=0.
+
+Since a,b are nonzero and A contains no opposite pair, it follows that
+a=b=c. Thus this palette satisfies the strong translational
+three-term-progression avoidance condition previously found necessary
+for perfect B palettes. In the partial setting this algebraic
+condition is far from sufficient.
+
+2b. Global multiplicative energy is exactly minimal.
+
+For a!=b the quotient sigma_a sigma_b^(-1) has slope and intercept
+
+  u=a/b !=1,       v=a^2(1-1/u).                        (2.2)
+
+The pair (u,v) determines a^2. The only two possible nonzero roots
+are a and -a, and A contains at most one, so it determines a and then
+b uniquely. Every nonidentity ordered quotient is therefore distinct.
+The identity has d representations, and all other d(d-1) quotients
+have one representation, giving
+
+  E(S)=d^2+d(d-1)=2d^2-d.                              (2.3)
+
+2c. The actual supports can all be heavy.
+
+Lines a and b intersect at
+
+  x=-(a+b),       y=-ab.                               (2.4)
+
+No point lies on three such lines: its incident line parameters are
+roots of z^2+x*z-y=0. In particular, on each line the d-1 intersection
+points with other palette lines are distinct.
+
+Retain every point belonging to just one palette line. At each double
+point choose one of its two lines as its color. Orient a balanced
+tournament on the d line labels and use its edge orientation for this
+choice. Such a tournament exists explicitly: for odd d use cyclic
+orientation; for even d delete one vertex from a regular tournament
+on d+1 vertices. Every label receives at least floor((d-1)/2) of its
+double points. Consequently every color has at least
+
+  p-(d-1)+floor((d-1)/2)=p-ceil((d-1)/2)               (2.5)
+
+actual edges, asymptotic to 3p/4. Its color is a matching because each
+line has nonzero slope. A point is assigned only once, so this gives
+a proper coloring of a simple bipartite graph. The total edge count is
+
+  m=d*p-binom(d,2)=(3/8+o(1))*p^2.                     (2.6)
+
+2d. A nonrainbow rectangle is forced independently of the choices.
+
+At rows -1,+1 and columns 2,6 the four edge colors are
+
+      2  3
+      1  2.
+
+Each point belongs to exactly one palette line. The two roots for
+the respective color equations are {2,-1}, {3,-2}, {1,-2}, {2,-3};
+only the first listed root lies in A. Thus these four points are all
+retained, regardless of how double points were assigned. The rows
+and columns are distinct for p>=7, giving a genuine nonrainbow C4.
+
+Conclusion: this is an explicit asymptotic proper dense family with
+heavy partial affine classes, the smallest possible global energy,
+no nontrivial strong permutation progression, and at most one fixed
+point for every nonidentity affine word. It is NOT B. It disproves
+any proposed implication to vanishing density which uses only those
+listed weaker hypotheses. It does not disprove a route that uses the
+actual B support restrictions.
+
+3. CONNECTION WITH THE FIXED-POINT KERNEL AUDIT
+
+See pass1-fixed-points-and-coherent-kernel.txt for the completion-
+independent statistic R=sum <B_a^T B_b,B_c^T B_e>^2. In a heavy B
+family represented by an action with o(n) fixed points per nonidentity
+word, the earlier global-energy theorem forces R=o(n^5). The dense
+non-B construction above also has only O(n^4) such repeated patterns,
+by the same elementary inequality with f=1 and (2.3).
+
+Therefore the n^5 concentration required by the current Gowers--Long
+inverse theorem cannot be recovered from heaviness, affine algebra,
+and global energy alone. Any useful concentration argument must use
+the B constraints on the simultaneously defined partial maps.

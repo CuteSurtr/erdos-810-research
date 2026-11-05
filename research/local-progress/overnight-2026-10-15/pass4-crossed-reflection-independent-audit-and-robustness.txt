@@ -1,0 +1,267 @@
+CROSSED REFLECTIONS: INDEPENDENT AUDIT AND ROBUST COMMON-MASK THEOREM
+15 October 2026, pass 4. Complete hand proof and independent audit.
+
+STATUS. The parent's common-mask power-saving argument passes the
+independent checks below. The robustness argument in Section 7 also
+holds, including virtual fixed-point loops. The standard external
+input is the prime-field Kloosterman bound, cited in Section 4.
+No Lean certificate or historical-priority claim is made.
+
+1. SETUP AND THE POSITIVE CONCLUSIONS
+
+Let p be odd, A subset F_p* have size d, and sigma_a(x)=ax+a^2.
+For each a in A select a row support D_a subset X subset F_p.
+The selected colored incidences form a proper simple bipartite graph
+G on two F_p sides. Assume every C4 is rainbow (property B).
+Let E subset F_p^2 be its actual edge set and let m=|E|.
+
+If all D_a=X, then
+
+                         m=O(p^(19/10)).               (1)
+
+More generally, put R=sum_{a in A}(|X|-|D_a|). Then
+
+                  m<=C*p^(19/10)+sqrt(2)*p*sqrt(R)      (2)
+
+for an absolute C. In particular R=o(p^2) implies m=o(p^2),
+without assuming d or |X| has positive density.
+
+These conclusions concern this quadratic completion palette. They
+do not assert the same for arbitrary affine palettes or arbitrary
+edge colorings. Original labels correspond to distinct a values.
+
+2. THE CROSSED INVOLUTIONS AND THE ACTUAL GRAPH
+
+Define a permutation of the point space F_p^2 by
+
+ tau_a(x,y)=(sigma_a^-1(y),sigma_a(x))
+           =((y-a^2)/a, ax+a^2).
+
+It is an involution. Let
+
+                (S_A f)(u)=sum_{a in A} f(tau_a(u)).
+
+The operator is real symmetric and has every row and column sum d.
+
+First suppose D_a=X for all a. A selected point u=(x,sigma_b(x))
+is fixed by tau_b. No other tau_a can fix it, since properness
+would assign two colors to the same actual edge.
+
+If a!=b and tau_a(u)=(z,sigma_a(x)) were another selected point,
+then x,z are both in X. Thus the two a-colored incidences
+(x,sigma_a(x)) and (z,sigma_a(z)) are selected, and
+sigma_a(z)=sigma_b(x). If z=x, properness fails; otherwise these
+four selected incidences make a C4 with color a repeated on its
+diagonal. This contradicts B. Consequently
+
+                      <1_E,S_A 1_E>=m.                 (3)
+
+This exact internal-adjacency identity is the step that was missing
+from ordinary one- or two-point mixing: it retains the actual crossed
+selected-edge test, rather than replacing it by an unrelated set.
+
+3. FOURIER BLOCKS
+
+Use the orthogonal Fourier basis
+chi_(xi,eta)(x,y)=e_p(xi*x+eta*y), where e_p(t)=exp(2*pi*i*t/p).
+Then
+
+ P_tau_a chi_(xi,eta)
+   =e_p(eta*a^2-xi*a) chi_(a*eta,xi/a).
+
+The frequency product xi*eta is invariant. The zero frequency is
+the constant eigenvector of eigenvalue d.
+
+For t=xi*eta!=0, index its block by frequencies (r,t/r), r!=0.
+With row r and column s, its matrix is
+
+ M_t(r,s)=1_A(rs/t)*e_p(rs(r-s)/t).                     (4)
+
+It is Hermitian: swapping r,s conjugates the phase and keeps the
+indicator unchanged. Thus its fourth power has nonnegative trace
+and ||M_t||^4<=tr(M_t^4).
+
+The two nonzero coordinate axes form a block [[0,B],[B*,0]]. Its
+off-diagonal matrix, up to transpose conventions, is
+
+          B(r,s)=1_A(r/s)*e_p(r^2/s).
+
+This is exactly the nonconstant Fourier matrix of the earlier
+one-point operator sum_{a in A} P_sigma_a. The independently proved
+affine-character fourth-moment estimate gives
+
+           ||B||^4 <=(p-1)(3d^2-2d).                   (5)
+
+For completeness, every nonidentity quotient sigma_a sigma_b^-1
+has at most two representations: its slope rho=a/b and intercept
+rho(rho-1)b^2 determine b up to sign. The identity multiplicity is
+d, so the affine quotient energy is at most 3d^2-2d. On the
+one-point zero-sum representation the character is p-1 at identity,
+-1 at nonidentity translations, and zero otherwise. Expanding
+tr((BB*)^2) and dropping negative terms proves (5).
+
+4. THE NONZERO-PRODUCT FOURTH MOMENT
+
+Expanding the trace in (4), the phase numerator is
+
+ rs(r-s)+su(s-u)+uv(u-v)+vr(v-r)
+       =(r-u)(s-v)(r+u-s-v).                          (6)
+
+Make the bijective substitution
+
+       a=rs/t,  q=u/r,  h=v/s,
+       s=ta/r,  u=qr,  v=hta/r,
+
+with all a,q,h,r nonzero. The four indicator weights become
+
+                   1_A(a)1_A(qa)1_A(qha)1_A(ha).       (7)
+
+The phase becomes alpha*r+beta/r, where
+
+ alpha=a(1-q)(1-h)(1+q),
+ beta=-t*a^2*(1-q)(1-h)(1+h).                          (8)
+
+The required standard estimate is
+
+ |sum_{r!=0} e_p(alpha*r+beta/r)|<=2sqrt(p)
+
+when alpha,beta are both nonzero. If exactly one is nonzero the
+sum is -1, and if both are zero it is p-1. A primary reference is
+Iwaniec--Kowalski, Analytic Number Theory, Theorem 11.11 and (11.15),
+printed page 280, author-hosted chapter:
+https://people.math.ethz.ch/~kowalski/ik-ant-exp-sums.pdf
+
+Because a,t!=0 and p is odd, both coefficients in (8) vanish
+precisely if q=1, h=1, or q=h=-1. With weights (7), the first two
+sets have d^2 elements each and overlap in d elements. The third
+has |A intersect (-A)| elements and is disjoint from the first two.
+Thus the exact exceptional count is
+
+              2d^2-d+|A intersect (-A)| <=2d^2.         (9)
+
+The total number of supported (a,q,h) is the multiplicative energy
+E_x(A)=#{(a,b,c,e) in A^4 : ae=bc}, hence at most d^3.
+Bounding the nonexceptional sums in absolute value proves
+
+ tr(M_t^4) <=2p*d^2+2sqrt(p)*E_x(A)
+            <=2p*d^2+2sqrt(p)*d^3.                    (10)
+
+All algebraic degeneracies have been included in (9); no generic
+nonvanishing assumption was used to apply the exponential-sum bound.
+
+5. THE MEAN-ZERO NORM AND THE COMMON-MASK EDGE BOUND
+
+Equations (5) and (10) cover every nonconstant Fourier block. Thus
+on mean-zero functions on F_p^2,
+
+ ||S_A|| <=lambda,
+ lambda <=C[p^(1/4)d^(1/2)+p^(1/8)d^(3/4)].            (11)
+
+The sharper energy-dependent version replaces d^(3/4) by E_x(A)^(1/4).
+
+Using (3), center 1_E in the p^2-point space. The spectral lower
+bound gives
+
+ m>=d*m^2/p^2-lambda*(m-m^2/p^2).
+
+Therefore, for m>0,
+
+ m<=p^2*(1+lambda)/(d+lambda)
+   <=p^2/d+C*p^(9/4)d^(-1/2)+C*p^(17/8)d^(-1/4).     (12)
+
+There is also the trivial m<=dp. If d<=p^(9/10), this already
+gives (1). Otherwise the three terms in (12) have respective
+upper bounds p^(11/10), C*p^(9/5), C*p^(19/10).
+This proves (1) uniformly in d. If d is a fixed positive fraction
+of p, (12) instead gives the sharper m=O(p^(15/8)).
+
+6. WHY THIS IS STRONGER THAN THE PREVIOUS MIXING INTERMEDIATES
+
+The operator acts on potential graph edges, and an internal
+transition is exactly the crossed pair needed to complete a
+repeated-color square. Common support ensures both diagonal
+a-colored edges are actual edges. This converts B into (3), an
+independent-set-type condition for a single symmetric operator.
+
+The earlier pair-action operator acted simultaneously on two row
+points; its crossed-edge test remained a coupled tensor. The new
+operator removes that specific transfer gap. No inference from
+individual tournament-like color matrices is required.
+
+7. ROBUSTNESS, INCLUDING VIRTUAL FIXED-POINT LOOPS
+
+Return to D_a subset X and let R be as in Section 1. An ordered
+internal transition consists of (a,u) with u in E and tau_a(u) in E.
+Write u=(x,y), tau_a(u)=(z,w). If both (a,x) and (a,z) are selected
+colored incidences, then B forbids x!=z. If x=z, this is an actual
+a-colored loop. Properness gives exactly m such good loops in total.
+
+Every other internal transition has at least one missing diagonal
+incidence (a,x) or (a,z). This also includes a virtual loop fixed by
+tau_a when that a-incidence is missing and the point is selected in
+some other color; such loops must not be silently counted as actual
+color-a loops.
+
+For a fixed missing (a,x), there are at most deg_G(x)<=d internal
+transitions with x as their first row. Since tau_a is an involution,
+there are at most deg_G(x)<=d with x as their second row. A union
+bound, allowing double charging, gives the exact useful estimate
+
+ <1_E,S_A 1_E>
+   <=m+2 sum_{missing (a,x)} deg_G(x)
+   <=m+2dR.                                          (13)
+
+The same spectral lower bound now gives
+
+       (d+lambda)m^2/p^2 <=(1+lambda)m+2dR.            (14)
+
+Dropping lambda from the left denominator implies
+
+              m^2 <=[p^2(1+lambda)/d]m+2p^2R.
+
+For nonnegative m,B,C, the inequality m^2<=Bm+C implies
+m<=B+sqrt(C). Hence
+
+             m<=p^2(1+lambda)/d+sqrt(2)*p*sqrt(R).     (15)
+
+Combining this with m<=dp at the same threshold d=p^(9/10)
+proves (2). The d=0 case is the empty graph and needs no division.
+
+8. A LOW-COMPLEXITY ACTUAL-SUPPORT CONSEQUENCE
+
+Suppose the color-by-row support set is covered by L complete
+rectangles A_i x X_i, each contained in that support. Restricting
+the actual graph to any rectangle preserves properness and B, so
+(1) and a union bound give
+
+                         m<=C*L*p^(19/10).
+
+Thus L=o(p^(1/10)) forces m=o(p^2). In particular this applies to
+a bounded number of exact shared masks. It concerns rectangles in
+the COLOR-BY-ROW support matrix, not bicliques in the edge adjacency
+matrix; these are different complexity notions.
+
+For a partition of the palette into L clusters whose supports are
+subsets of common masks X_i, let R_i be their total missing entries.
+Summing (2) and using Cauchy--Schwarz gives
+
+ m<=C*L*p^(19/10)+sqrt(2)*p*sqrt(L*sum_i R_i).          (16)
+
+Consequently L=o(p^(1/10)) and L*sum_i R_i=o(p^2)
+are sufficient conditions for vanishing density.
+
+This does NOT by itself settle arbitrary bounded-VC support families.
+If an epsilon-cover uses L(epsilon) clusters and has total error
+O(epsilon*p^2), (16) still requires epsilon*L(epsilon) to be small.
+A polynomial covering bound alone need not supply that. No bounded-VC
+conclusion is asserted without an additional argument.
+
+9. SCOPE AND CERTIFICATION
+
+The theorem rules out positive-density proper B graphs in the
+quadratic common-mask subclass, and gives the stated robust and
+rectangle-cover extensions. It does not solve arbitrary-support
+quadratic colorings, arbitrary affine palettes, or Erdős #810.
+The algebra and combinatorial charging were independently checked;
+the Kloosterman estimate is standard cited input. This document is
+a hand proof and carries no Lean or historical-novelty certification.

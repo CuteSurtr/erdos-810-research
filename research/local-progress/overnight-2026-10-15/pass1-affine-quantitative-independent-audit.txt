@@ -1,0 +1,47 @@
+INDEPENDENT CHECK OF THE QUANTITATIVE AFFINE DEFICIT THEOREM
+15 October 2026. Finite-audit agent's independent hand check.
+
+Target: pass1-affine-quantitative-audit.txt.
+Verdict: PASS, including the improved exponent 1/12.
+
+1. The exact incidence inequality d<=(r+1)L is valid. Its parallel-pair
+   and finite-intersection categories partition all unordered pairs,
+   and every omitted incidence is counted at most once in the sum of
+   t_P-1 over intersection points.
+
+2. If C=A B^(-1) A and A!=B, the rows x and z=A^(-1)B(x) give the
+   completed rectangle A,B;C,A. Four actual-edge conditions exclude at
+   most 4r choices of x because each relevant affine map is a bijection.
+   Distinct affine maps A,B coincide at at most one point; this is also
+   precisely the possible row-degeneracy z=x. Thus n>4r+1 ensures an
+   actual nondegenerate forbidden rectangle. The strong progression
+   convention correctly includes C=B and order-two steps.
+
+3. Left-coset normalization preserves this exact noncommutative
+   progression equation. The specified translation and concurrent-
+   pencil cosets are correct. Their normalized ambient groups are
+   (F,+) and the cyclic group F^*.
+
+4. I independently read Schildkraut's Theorem 11.4 at
+   https://arxiv.org/html/2512.15125v1#S11.SS2 . It states the bound
+   |A|<=N exp[-Omega((log N)^(1/12))] for progression-free subsets of
+   odd-order finite abelian groups. The source explicitly calls this
+   a slight generalization of Bloom--Sisask Theorem 21, whose displayed
+   formulation is cyclic. The audited note attributes this accurately.
+
+5. In characteristic two, strong progression-freeness permits at most
+   one additive-group element. For the multiplicative cyclic group
+   of order M=n-1, the representatives 0,...,M-1 embed into odd cyclic
+   order 2M+1 without introducing a new three-term progression: the
+   relevant integer expression has absolute value at most 2(M-1).
+   This covers even M and all torsion issues without assuming that
+   F^* has odd order.
+
+6. Combining the uniform pencil bound with d<=(r+1)L and m<=dn gives
+   exactly m<=C(r+1)n^2 exp[-c(log n)^(1/12)]. The stated condition
+   log(r+1)=o((log n)^(1/12)) both implies the required n>4r+1
+   eventually and makes the density tend to zero.
+
+This verifies the conditional theorem and its source use; it does not
+verify the entire external Roth theorem from first principles, establish
+historical novelty, or remove the affine and deficit hypotheses.

@@ -1,0 +1,92 @@
+QUADRATIC AFFINE SUPPORTS: THE SLOPE-AP SUBPATTERN IS INSUFFICIENT
+15 October 2026. Exact algebra and an asymptotic construction; no finite
+search, Lean certificate, or novelty claim. This note is a barrier to
+one specific simplification, not a counterexample to #810.
+
+1. ROOT-PAIR COORDINATES
+
+For the quadratic palette sigma_a(x)=a*x+a^2 over an odd prime field,
+represent an actual edge of color a by the pair (a,z), where
+
+                         x=z-a,    y=a*z.               (1.1)
+
+Let E be the set of these selected ordered pairs. Given an edge (x,y),
+its possible completion colors are roots of t^2+x*t-y=0. For (1.1)
+these are a and -z, so the only possible second representation is
+(-z,-a). This identifies the actual properness constraint; it is NOT
+symmetry under the transpose (a,z)->(z,a).
+
+2. EXACT ARITHMETIC-PROGRESSION SUBFAMILY OF FORBIDDEN SQUARES
+
+Let a,b,c be nonzero slopes with b=a+t, c=a-t, t!=0. The rows -t,+t
+and columns a*c,a*b form a completed square with color matrix
+
+                           a   b
+                           c   a.
+
+All four vertices are distinct on their respective sides because
+2a*t!=0. The four edges are actual precisely when
+
+                  (a,c),(b,a),(c,a),(a,b) all lie in E.  (2.1)
+
+This can be checked directly from (1.1). It is a two-way star in the
+directed root-pair graph, centered at the middle slope a of a 3-term
+arithmetic progression. In particular, an E with no pair of opposite
+directed edges automatically avoids every square in this subfamily.
+
+The general B constraint is larger: for repeated color a and cross
+colors b,c the locally determined square need not have b+c=2a. Thus
+the implication from B to avoiding (2.1) is one-way.
+
+3. DENSE HEAVY PROPER SUPPORTS AVOID ALL OF (2.1)
+
+For each odd prime p put d=(p-1)/2 and h=floor(d/2). Use colors
+a in {1,...,h}, and select exactly the root pairs
+
+                 E={(a,z):1<=a<=h, a<z<=d}.             (3.1)
+
+There are no reciprocal pairs in E, by the ordinary integer ordering
+of these representatives, so no pattern (2.1) occurs.
+
+This does define a proper simple edge-colored graph. For every
+selected pair, its other possible color -z has representative p-z>d
+and therefore lies outside the palette {1,...,h}. Hence no two
+selected colors can assign the same graph edge. Each individual
+color is a matching, since sigma_a is a nonconstant affine map.
+
+Color a has d-a actual edges, at least d-h=(1/4+o(1))*p. The total is
+
+  m=sum_(a=1)^h(d-a)=h*d-h(h+1)/2=(3/32+o(1))*p^2.      (3.2)
+
+Thus the construction has a positive proportion of p colors, each
+with a fixed positive support fraction, and positive graph density.
+It satisfies the AP-subpattern avoidance exactly, not merely in
+expectation or after removing a small exceptional set.
+
+4. WHY THIS IS NOT B
+
+For every prime p>=211, the following four selected pairs exist:
+
+                   (3,34), (8,39), (1,102), (3,104).
+
+They give rows 31,101 and columns 102,312 (reduced modulo p), with
+color matrix
+
+                            3   8
+                            1   3.
+
+All support inequalities in (3.1) hold: h>=52 and d>=105 for p>=211.
+The rows are distinct; the columns differ by 210, nonzero modulo such
+a prime. The repeated-color square is therefore genuine. Its cross
+slopes have 8+1!=2*3, so it is outside the AP subfamily.
+
+5. CONSEQUENCE FOR THE NEXT ATTEMPT
+
+Ordinary Roth theory on slope triples only detects (2.1), which is
+compatible with dense heavy supports. It cannot by itself resolve
+arbitrary-support quadratic palettes. A successful argument has to
+use the full coupled root-pair sum/product conditions, including the
+non-AP triples that determine isolated local coincidences. The new
+prime-field small-total-defect theorem addresses a different regime
+through the total dual-incidence budget; it does not remove this
+arbitrary-positive-support gap.

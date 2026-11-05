@@ -1,0 +1,309 @@
+PRIME-FIELD AFFINE COLORS: A QUANTITATIVE TOTAL-DEFECT BOUND
+15 October 2026. Hand proof using an existing incidence theorem and
+quantitative Roth bounds. A qualitative alternative uses the previously
+audited group-table bound. No finite graph search or Lean certificate.
+No assertion of historical novelty or a general #810 result.
+
+QUANTITATIVE THEOREM.
+There are absolute constants C,c>0 such that every B-colored bipartite
+graph on two copies of F_p, whose colors are restrictions of nonconstant
+affine permutations, satisfies
+
+  m <= C*p*(D+1)^(7/11) + 8D
+                  + C*p^2*exp[-c(log p)^(1/12)],        (Q)
+
+where D is its total number of omitted colored incidences, counted
+over its original color labels. Duplicate completions are allowed.
+The proof of the quantitative statement is in Section 5A, combining
+the incidence dichotomy with a pruning and Roth argument. The bound
+can be trivial for large D; no small-D hypothesis is required in (Q).
+
+COROLLARY (TOTAL DEFECT, AND THE AVERAGE-DEFECT VERSION).
+Let p tend to infinity through primes. Let a B-colored bipartite graph
+have both vertex classes F_p. Every color is an arbitrary restriction
+of a nonconstant affine permutation x -> a*x+b. Let d be the number
+of color labels, m the edge count, and let
+
+  D=sum_colors (p-size of the actual color class)=d*p-m
+
+be the total number of omitted colored incidences. If
+
+                         D=o(p^(11/7)),                 (T)
+
+then m=o(p^2). The same conclusion follows from the AVERAGE-defect
+condition D/d=o(p^(4/7)); the case d=0 is interpreted trivially.
+
+In particular the conclusion holds when every color omits at most
+r=o(p^(4/7)) points. This extends the defect range from the preceding
+stretched-log result, over PRIME fields, and needs only average control.
+It does not handle arbitrary positive support fractions or all
+sublinear defects. The field restriction is used in the incidence
+theorem's characteristic condition.
+
+1. TWO INPUTS, WITH THEIR SCOPES
+
+1a. Incidences over a field.
+
+Stevens--de Zeeuw, "An Improved Point-Line Incidence Bound Over Arbitrary
+Fields," Theorem 3, states that a point set of size v and a line set
+of size w have O(v^(11/15) w^(11/15)) incidences when
+
+  v^(7/8)<w<v^(8/7),       v^(-2) w^13 << p^15           (1.1)
+
+in characteristic p. Constants are absolute. Primary source:
+https://arxiv.org/pdf/1609.06284 .
+
+We also use the elementary bound
+
+                         I(P,L)<=|P|+sqrt(|P|)*|L|.     (1.2)
+
+To verify it, if I is the incidence count, counting pairs of lines
+through points gives I^2/|P|-I<=|L|^2, and solving this quadratic
+implies (1.2). These estimates will be applied to dyadic richness
+classes, not outside the size range in (1.1).
+
+1b. A single affine pencil cannot contain dense B edges.
+
+A parallel pencil of affine permutations normalizes to the additive
+group table of F_p. A concurrent pencil normalizes to the multiplicative
+group table of F_p*, apart from its one possible edge at the common
+fixed point. The known uniform partial-group-table theorem therefore
+bounds the number of ACTUAL B edges in any one such pencil by o(p^2).
+Arbitrary supports are permitted. This is the group-table input used
+in pass1-orbit-and-homogeneous-independent-audit.txt, not a new theorem.
+
+2. DENSE-CASE REDUCTION AND DUPLICATE COMPLETIONS
+
+Suppose, for contradiction, that m>=delta*p^2 along a sequence, for
+some fixed delta>0. Under (T),
+
+  d*p=m+D<=p^2+D=p^2+o(p^(11/7)),
+
+while m<=dp implies d>=delta*p. Thus d=Theta(p), d<2p eventually, and
+
+                         D=o(d^(11/7))=o(p^2).          (2.1)
+
+For the average-defect alternative, write r_bar=D/d=o(p^(4/7)). The
+identity d*(p-r_bar)=m<=p^2 first gives d<2p for large p. Therefore
+D=d*r_bar=o(p^(11/7)), reducing to (T). No assumed bound on the number
+of colors or a per-color maximum defect is hidden in these deductions.
+
+Initially distinct color labels could have the same affine completion.
+For t colors on one completed p-point line, their actual edge sets
+are disjoint, so their combined defect is at least (t-1)*p. Summing,
+the number of labels in excess of the number of distinct completed
+lines is at most D/p=o(d). Keep one color from each completed line.
+At most D actual edges are discarded, since every discarded class
+has at most p edges. The retained graph is still dense and B; its
+total defect is at most D; and it has d'=d-o(d)=Theta(p) distinct
+completions. Rename d' as d. We may therefore assume all completed
+color lines are distinct, retaining (2.1).
+
+Let L be the largest number of these lines in a parallel or concurrent
+pencil. If L>=eta*d for any fixed eta>0 along a subsequence, that
+pencil has at least
+
+  L*p-D >= eta*delta*p^2-o(p^2)
+
+actual edges. This contradicts the group-table input in Section 1b.
+Consequently
+
+                              L=o(d).                  (2.2)
+
+This is where B is used. Properness and small defect alone do not
+give (2.2), and cannot substitute for the group-table theorem.
+
+3. DUALITY CONVERTS MISSING SUPPORTS INTO A TOTAL INCIDENCE BUDGET
+
+Associate to each completed line y=a*x+b the dual point (a,b) in F_p^2.
+Let P be this set of d points and let mathcal L be all dual lines
+determined by at least two points of P. For ell in mathcal L put
+k_ell=|ell intersect P|>=2. Then
+
+             sum_ell binom(k_ell,2)=binom(d,2),          (3.1)
+
+because every pair of dual points determines exactly one line.
+Moreover max k_ell=L: a vertical dual line corresponds to parallel
+original lines, and a nonvertical line b=-x*a+y corresponds to the
+original lines concurrent at (x,y).
+
+At an original point shared by t>=2 completed color lines, at most
+one of those incidences is retained in the actual graph. Therefore
+at least t-1 colored incidences there were omitted. Summing over these
+points gives sum(t-1)<=D. Since t<=2(t-1), the TOTAL incidences on
+nonvertical determined dual lines are at most 2D. Determined vertical
+dual lines have disjoint sets of dual points, so their total incidence
+count is at most d. Hence
+
+             I_*:=sum_ell k_ell <= 2D+d=o(d^(11/7)).    (3.2)
+
+The full incidence budget (3.2) is stronger than just bounding the
+number of determined dual lines. Using only their number with the
+published Beck corollary would yield the weaker defect exponent 1/7.
+
+4. THE INCIDENCE BUDGET AND L=o(d) CANNOT ACCOUNT FOR ALL PAIRS
+
+Fix a sufficiently large absolute constant A and set
+
+                              K=A*d^(3/7).
+
+Group the determined dual lines into dyadic classes: for k=2^j,
+let mathcal L_k consist of the lines with k<=k_ell<2k, and write
+T_k=|mathcal L_k|. There are O(log d) nonempty classes.
+
+4a. Low richness k<K.
+
+For these lines, binom(k_ell,2)<=K*k_ell. Their total contribution
+to (3.1) is at most
+
+                 K*I_*=A*d^(3/7)*o(d^(11/7))=o(d^2).    (4.1)
+
+Here A is fixed before taking the limit.
+
+For all remaining classes k>=K, equation (3.2) gives
+
+                    T_k<=I_*/k<=I_*/K=o(d^(8/7)).       (4.2)
+
+Thus the upper size restriction in (1.1) is available for every rich
+class where we will use the nontrivial incidence bound.
+
+4b. Large classes: T_k>d^(7/8).
+
+By (4.2), T_k<d^(8/7) eventually. The characteristic condition is
+satisfied with ample margin: since d=Theta(p),
+
+  d^(-2)*T_k^13 <= d^(90/7)=O(p^(90/7))=o(p^15).        (4.3)
+
+Apply (1.1) to P and mathcal L_k. As k*T_k is at most their incidence
+count, it follows that
+
+  k*T_k << d^(11/15)*T_k^(11/15),
+  T_k << d^(11/4)*k^(-15/4).                            (4.4)
+
+This class contributes at most 2*k^2*T_k to (3.1). Summing over the
+dyadic k>=K bounds the total contribution of these large classes by
+
+  C_1*d^(11/4)*K^(-7/4)=C_1*A^(-7/4)*d^2,             (4.5)
+
+where C_1 is absolute. The geometric sum, not the number of classes,
+controls this term.
+
+4c. Intermediate classes: d^(1/2)<T_k<=d^(7/8).
+
+Apply (1.2): k*T_k<=d+sqrt(d)*T_k<=2*sqrt(d)*T_k.
+Thus k<=2*sqrt(d), and the pair contribution of each class is at most
+
+  2*k^2*T_k<=8*d^(15/8).
+
+After summing O(log d) classes this is o(d^2).
+
+4d. Small classes: T_k<=d^(1/2).
+
+Now (1.2) gives k*T_k<=2d. Their pair contribution is at most
+2*k^2*T_k<=4d*k. Every such k is at most L; summing its dyadic values
+is at most 2L. The total is therefore at most
+
+                              8dL=o(d^2).              (4.6)
+
+4e. Contradiction.
+
+Combining (4.1), (4.5), and the other two ranges, equation (3.1) gives
+
+                   binom(d,2)<=C_1*A^(-7/4)*d^2+o(d^2).
+
+Choose A so large that C_1*A^(-7/4)<1/4, and then let d tend to
+infinity. The left side divided by d^2 tends to 1/2, a contradiction.
+This completes the proof of the theorem.
+
+5. QUANTITATIVE GEOMETRIC ALTERNATIVE
+
+The argument yields the following standalone incidence dichotomy.
+There are absolute constants c_1,c_2>0 such that, for sufficiently
+large d and any d-point set P in F_p^2 with d<=2p, either
+
+  some line contains at least c_1*d points of P, or
+  sum_{ell determined by P}|ell intersect P|>=c_2*d^(11/7).             (5.1)
+
+To see the constants explicitly at the level needed here, assume
+I_*<epsilon*d^(11/7) and L<epsilon'*d. Repeat Section 4 with
+K=A*d^(3/7). The low-richness contribution is at most A*epsilon*d^2;
+the large-class contribution is at most C_1*A^(-7/4)*d^2; the small-
+class contribution is at most 8*epsilon'*d^2; and the intermediate
+contribution is o(d^2), uniformly for d<=2p. Choose A first so that
+C_1*A^(-7/4)<1/16, then epsilon<1/(16A) and epsilon'<1/128.
+For all large d the sum is smaller than binom(d,2). Also
+T_k<=epsilon*d^(11/7)/K<d^(8/7), and d<=2p ensures the characteristic
+condition uniformly as d grows. This proves (5.1).
+
+Thus the operative deficit obstruction is an incidence alternative,
+not merely the published count of determined lines. Using only that
+count would give the weaker r=o(p^(1/7)) conclusion. That initial
+observation is superseded by the total-incidence argument above.
+
+5A. QUANTITATIVE PRUNING AND ROTH PROOF OF (Q)
+
+Delete every original color whose defect is at least p/8. There are
+at most 8D/p such labels, so this deletes at most 8D actual edges.
+Write d for the number of retained colors. Each retained class has
+more than 7p/8 edges. Their affine completions are automatically
+distinct, and d<8p/7 since the graph has at most p^2 edges.
+
+The retained completed palette is strongly permutation-progression-
+free. Indeed, if C=A B^(-1) A with A!=B, the rectangle construction
+in pass1-affine-quantitative-audit.txt loses fewer than p/2 starting
+rows to the four missing-edge tests and at most one more to affine
+degeneracy. For p>2 a genuine nonrainbow rectangle remains. The
+finitely many small cases are absorbed into the absolute constant.
+
+Normalize a parallel or concurrent retained pencil to the additive
+or multiplicative group of F_p. The quantitative Roth argument from
+pass1, with its cyclic-to-odd-order embedding where needed, gives
+
+                    L <= C*p*exp[-c(log p)^(1/12)].     (5A.1)
+
+The primary quantitative input here is Schildkraut, Theorem 11.4,
+https://arxiv.org/html/2512.15125v1#S11.SS2 ; the exponent is an existing
+Roth estimate, not an improvement established by this research.
+
+The retained palette has total defect at most D and total dual-line
+incidence at most 2D+d. If the large-pencil case of (5.1) holds, then
+d<=L/c_1, and (5A.1) applies. Otherwise
+
+                         c_2*d^(11/7)<=2D+d.            (5A.2)
+
+For all sufficiently large d, the last d is at most half the left
+side, giving d<=C*D^(7/11). Bounded d is handled by replacing D with
+D+1. Thus in both cases
+
+  d<=C*(D+1)^(7/11)+C*p*exp[-c(log p)^(1/12)].           (5A.3)
+
+The original graph has at most p*d+8D edges. Substitution proves (Q),
+with absolute constants. This quantitative proof avoids any duplicate
+merging and does not need a maximum-defect assumption for the original
+palette. It uses actual support restrictions precisely in the pruning,
+the robust forbidden-rectangle argument, and the dual incidence budget.
+
+When D=o(p^(11/7)), dividing (Q) by p^2 proves m=o(p^2). The average-
+defect reduction in Section 2 then gives the stated average-defect
+corollary. The qualitative group-table proof in Sections 1--4 is
+retained as an independent route with the same exponent and a weaker
+literature input; it is not the strongest final bound.
+
+6. WHAT HAS AND HAS NOT BEEN ACHIEVED
+
+The result uses the ACTUAL support deficits to bound all incidences
+of the dual palette, then uses B to rule out a large remaining pencil.
+It does not rely on global palette energy, arbitrary completions
+having a small difference set, or the earlier Gram relaxation.
+
+The prime-field condition is substantial. For a general extension
+field of size n, a dense palette has d=Theta(n), and (4.3) need not
+hold in its much smaller characteristic. The earlier Frobenius-family
+examples explain why those incidence structures require different
+arguments; their homogeneous subgroup decomposition remains useful.
+
+There is still no conclusion for all r=o(p), for arbitrary positive
+support fractions in quadratic or general affine palettes, or for
+unrestricted B colorings. This is a concrete conditional asymptotic
+advance obtained by combining existing inputs with the deficit
+count, not a new incidence theorem or a claimed solution of #810.

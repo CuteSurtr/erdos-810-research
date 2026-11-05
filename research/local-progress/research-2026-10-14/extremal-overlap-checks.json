@@ -1,0 +1,69 @@
+{
+  "gadget": {
+    "vertices": 10,
+    "edges": 7,
+    "pair_checks": 21,
+    "four_edge_checks": 35,
+    "minimum_four_edge_span": 8
+  },
+  "contraction_counterexample": {
+    "original_edges": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        2,
+        4,
+        5
+      ],
+      [
+        3,
+        6,
+        7
+      ],
+      [
+        4,
+        6,
+        8
+      ],
+      [
+        5,
+        7,
+        9
+      ]
+    ],
+    "original_four_edge_checks": 15,
+    "image_bad_quadruples": [
+      [
+        [
+          2,
+          6,
+          7
+        ],
+        [
+          2,
+          4,
+          5
+        ],
+        [
+          5,
+          7,
+          9
+        ],
+        [
+          4,
+          6,
+          8
+        ]
+      ]
+    ]
+  },
+  "status": "all assertions passed"
+}

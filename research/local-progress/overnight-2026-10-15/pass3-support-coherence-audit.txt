@@ -1,0 +1,117 @@
+ACTUAL-SUPPORT COHERENCE: INDEPENDENT AUDIT AND THE OPEN TRANSFER
+15 October 2026. Hand proofs and precise scope; no new #810 bound.
+
+1. COMMON-MASK SPECTRAL INTERMEDIATE: PASS
+
+Read and independently checked:
+  pass3-common-mask-spectral-intermediate.txt
+
+For sigma_a(x)=ax+a^2 and A subset F_p* of size d, the quotient
+sigma_a sigma_b^-1 has slope rho=a/b and intercept
+rho(rho-1)b^2. Every nonidentity quotient has at most two representing
+pairs, while the identity has d. Thus E(S)<=3d^2-2d.
+
+The zero-sum permutation character of Aff(F_p) is p-1 at identity,
+-1 at a nonidentity translation, and zero elsewhere. In the fourth
+moment tr((TT*)^2), all group-word coefficients are nonnegative.
+Discarding the negative translation terms therefore proves
+
+ ||sum_{a in A} P_sigma_a - (d/p)J||_op
+       <=[(p-1)(3d^2-2d)]^(1/4).
+
+The operator convention may reverse the order of compositions; this
+does not change the identity-word count E(S) or the estimate.
+
+For a common row mask X, properness is exactly
+X intersect -(A restricted-sum A)=empty. On those rows the operator
+matrix is the actual binary graph adjacency G. Its cut discrepancy,
+and the corresponding bound on every color cross matrix
+K_a(x,z)=G(x,sigma_a(z)), follow by row restriction and column
+permutation. These claims count actual selected edges.
+
+2. WHY THIS DOES NOT YET CONFLICT WITH B
+
+B imposes K_a(x,z)K_a(z,x)=0 for x!=z, while K_a(x,x)=1.
+These conditions are compatible with an individual matrix being
+spectrally close to a positive-density constant matrix.
+
+The independent oriented-edge random model in the companion note
+proves that assertion. For fixed real unit vectors u,v, the centered
+bilinear form is a sum over independent unordered pairs. The sum
+of squared ranges is bounded by
+
+ sum_{i<j} (|u_i v_j|+|u_j v_i|)^2
+       <=2 sum_{i!=j} u_i^2 v_j^2 <=2.
+
+Hoeffding's inequality and a constant-resolution net of both unit
+spheres then give an O(sqrt(k)) operator norm bound for some k-by-k
+outcomes. This is even smaller than the O(p^(3/4)) allowance in the
+dense common-mask spectral estimate.
+
+This is only a counterexample to an inference from the INDIVIDUAL
+cross-matrix conditions. The matrices from a graph must all arise
+from the same G and the prescribed sigma_a. No simultaneous graph
+realization, or dense B counterexample, is constructed by the model.
+
+The companion note's pair-action zero-frequency expression also
+checks: writing r=z-x and averaging over the common translation
+coordinate gives
+
+ (1/p) sum_{a in A,r!=0,x,y} G(x,y)G(x+r,y-ar).
+
+The line-occupancy Cauchy--Schwarz lower bound is valid. However the
+crossed test is a swapped tensor of G, and its nuclear norm may be
+as large as ||G||_*^2. The remaining Fourier modes are not controlled
+at the p^3 counting scale by the stated operator estimate alone.
+
+3. GENERIC LOW-COMPLEXITY SUPPORT CRITERIA
+
+These elementary criteria hold for every properly B-colored
+bipartite graph, and are recorded as boundaries rather than new
+quadratic-palette progress.
+
+If a color matching has k edges, restrict the adjacency G to its
+matched rows and columns in matching order. The resulting matrix M
+has diagonal ones and M_ij M_ji=0 for i!=j. Hence
+
+                 M Hadamard-product M^T = I_k.
+
+The Hadamard-product rank bound gives
+k<=rank(M)^2<=rank(G)^2. With q colors and m edges,
+
+                         m<=q*rank(G)^2.
+
+Thus q=O(p) and rank(G)=o(sqrt(p)) force m=o(p^2). This is the
+standard fooling-set rank mechanism, not a special property of
+affine colors. Low rank of the separate color-by-row mask matrix
+does not imply low rank of G: even one full permutation color has
+mask rank one but adjacency rank p.
+
+There is a similar biclique-cover criterion. Every complete
+bipartite subgraph has at most one edge of each color: two edges
+of a color are disjoint by properness, and their crossed edges
+would create a repeated-color C4. Thus each biclique contains at
+most q edges. A cover of G by t bicliques gives m<=qt. The same
+applies to a nonnegative rank-t factorization of its binary
+adjacency, because each factor's positive support is a biclique.
+
+None of these complexity bounds has been derived for a general
+quadratic common-mask graph in this pass.
+
+4. PRECISE UNPROVED TARGET
+
+For fixed delta>0, take A subset F_p*, X subset F_p with
+|A|,|X|>=delta*p and X avoiding -(A restricted-sum A). Must there
+exist a,b,c in A and distinct x,z in X such that
+
+       b^2+bx=a^2+az,     c^2+cz=a^2+ax ?
+
+An affirmative answer would rule out dense B graphs even when the
+color-by-row mask has rank one, and would consequently handle a
+bounded exact union of rectangular masks by restricting to one
+dense rectangle. It is not proved here.
+
+The new near-complete-color theorem derived from the cited prime
+incidence input concerns average defect o(p). It does not cover a
+common mask of size delta*p for a fixed delta<1. The two statements
+must not be conflated.

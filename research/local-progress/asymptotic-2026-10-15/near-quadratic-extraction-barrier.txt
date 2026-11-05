@@ -1,0 +1,146 @@
+Near-quadratic obstruction to uniform B-to-C extraction
+2026-10-15
+
+STATUS
+Complete written deduction using density Hales-Jewett. The proof includes
+an elementary sphere construction of the needed progression-free sets.
+No finite computation or unverified Lean assertion is used. The result is
+an obstruction to a proposed reduction, not a new upper or lower bound
+settling Erdos #810. Publication novelty remains unestablished.
+
+THEOREM
+There exists a sequence of properly edge-colored bipartite graphs G_j with
+N_j vertices, at most N_j/2 colors, and
+
+    m_j=|E(G_j)| = N_j^(2-o(1)),
+
+such that every subgraph whose inherited coloring is C-colored has o(m_j)
+edges. Here C means rainbow C4 and no alternating two-color four-edge path.
+All the original graphs are B-colored: proper with every C4 rainbow.
+
+The conclusion remains valid if every original color may be split into at
+most K subclasses, for any fixed K. It also remains valid when every left
+vertex and right vertex can be split into at most L and R copies respectively,
+for fixed L,R, with retained edges assigned arbitrarily to endpoint copies.
+
+Thus even the near-quadratic edge regime does not permit a density-independent
+constant-fraction B-to-C reduction by deletion or bounded local splitting.
+A fixed positive quadratic-density hypothesis remains outside this theorem.
+
+1. A BASE GRAPH FROM A PROGRESSION-FREE SET
+Let Q be odd and let S subset Z/QZ have at least two elements and satisfy
+
+    b+c=2a, with a,b,c in S, implies a=b=c.
+
+Let B(Q,S) have two disjoint vertex classes Z/QZ. Include xy exactly when
+y-x belongs to S, and color xy by y-x. Each color is a perfect matching.
+There are Q|S| edges and |S| colors.
+
+If a C4 has a repeated color a, properness puts the equal-colored edges on
+opposite sides. The other colors b,c satisfy b+c=2a. The property of S forces
+all these colors equal, contradicting the distinct C4 vertices. Hence the
+coloring is B.
+
+For distinct a,b in S, the union of their two perfect matchings is a disjoint
+union of even cycles of length 2*ord(a-b). The order is at least three because
+Q is odd and a-b is nonzero. Thus it contains an alternating cycle of length
+at least six, and therefore an alternating path of four edges on five vertices.
+
+2. TENSOR POWERS AND DENSITY HALES-JEWETT
+For a fixed base B=B(Q,S), its d-th bipartite tensor power has vertex classes
+(Z/QZ)^d and color set S^d. Edges satisfy y-x in S^d coordinatewise. The same
+progression-free calculation proves it is B-colored. Its parameters are
+
+    N=2Q^d,  q=|S|^d,  m=(Q|S|)^d.
+
+Let A=E(B), viewed as an alphabet of size M=Q|S|. The edge set of the tensor
+power is naturally A^d. A combinatorial line in A^d gives a color-preserving
+copy of the entire base B: outside the nonempty variable-coordinate set I,
+all endpoints and colors are fixed; on I, the left endpoint repeats a base
+left vertex, the right endpoint repeats a base right vertex, and the color
+repeats its base color. Nonemptiness of I makes the endpoint and color maps
+injective. In particular, the line contains the base's alternating four-edge
+path.
+
+Therefore a C-colored retained edge set must be combinatorial-line-free.
+If c(d,M) is the largest line-free subset of an M-letter d-dimensional cube,
+its size is at most c(d,M). Density Hales-Jewett states
+
+    c(d,M)/M^d -> 0 as d -> infinity, for every fixed finite M.
+
+For K color subclasses, partition retained edges by the extra subclass index.
+Every class must be line-free, so at most K*c(d,M) edges survive. With L and R
+endpoint-copy indices as well, the corresponding bound is LRK*c(d,M). A line
+within one common index class still embeds the base and preserves its two
+alternating colors and distinct vertices.
+
+3. ELEMENTARY NEAR-FULL-SIZE PROGRESSION-FREE SETS
+For an integer j>=4, put t=2^j, B=2t, and Q_j=B^j+1, which is odd.
+For each vector v in {0,...,t-1}^j, encode it as the integer
+
+    f(v)=sum_{i=0}^{j-1} v_i B^i.
+
+There are at most j(t-1)^2+1 values of the squared norm sum v_i^2. Choose a
+largest norm class V_j and let S_j={f(v):v in V_j}, viewed in Z/Q_jZ. Then
+
+    |S_j| >= t^j / (j(t-1)^2+1).
+
+Every encoded value is less than B^j/2. Consequently a congruence
+f(v)+f(w)=2f(u) modulo Q_j is an equality of ordinary integers: both sides
+lie in [0,B^j), shorter than a full residue interval. There are no carries in
+either side in base B, since every digit sum and every doubled digit is at
+most 2t-2<B. Hence v+w=2u coordinatewise. Since u,v,w have the same squared
+norm, strict convexity (or the parallelogram identity) implies u=v=w.
+Thus S_j is progression-free in the required strong sense.
+
+Moreover,
+
+    log_2 Q_j = j^2+j+o(1),
+    log_2 |S_j| >= j^2-2j-log_2 j-O(1),
+
+so log_{Q_j}|S_j| -> 1. This is the usual sphere idea behind Behrend's
+construction, with all details needed here supplied explicitly.
+
+4. DIAGONAL CHOICE
+For each j, let M_j=Q_j|S_j|. By density Hales-Jewett, choose d_j sufficiently
+large that
+
+    c(d_j,M_j)/M_j^{d_j} < 1/j^2.
+
+We may additionally choose d_j>=j and make N_j=2Q_j^{d_j} strictly increase.
+Let G_j be the d_j-th tensor power of B(Q_j,S_j). Then
+
+    log(m_j)/log(N_j/2)
+      = log(Q_j|S_j|)/log Q_j
+      = 1+log_{Q_j}|S_j| -> 2.
+
+Thus m_j=N_j^(2-o(1)), while q_j=|S_j|^{d_j}<=Q_j^{d_j}=N_j/2.
+Every inherited C-colored subgraph has fewer than m_j/j^2 edges, and every
+fixed (L,R,K) refinement has fewer than LRK*m_j/j^2 edges. Both fractions
+tend to zero. This proves the theorem.
+
+5. WHAT THE RESULT DOES AND DOES NOT ELIMINATE
+It eliminates a positive retained fraction independent of the input graph,
+even when the input is proper B-colored, has O(N) colors, and has
+N^(2-o(1)) edges. Bounded numbers of vertex/color copies do not repair it.
+
+It does not eliminate a theorem with the hypothesis m>=epsilon*N^2 for a
+fixed epsilon>0 and a retained fraction depending on epsilon. Our constructed
+graphs have m/(N/2)^2=(|S_j|/Q_j)^{d_j}->0. It also does not eliminate
+unbounded color refinement, arbitrary recoloring with O(N) total colors, or
+transformations that do not preserve edges through bounded labelled copies.
+In particular, no solution of the original asymptotic problem follows.
+
+SOURCE FOR THE EXTERNAL THEOREM
+Density Hales-Jewett: Furstenberg-Katznelson (1991), with elementary proof by
+D. H. J. Polymath, Annals of Mathematics 175 (2012), 1283-1327:
+https://annals.math.princeton.edu/2012/175-3/p06
+https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n3-p06-p.pdf
+
+B/C colorings and their relation to (7,4)-free lifts:
+Gyarfas-Sarkozy (2023), Proposition 1.6 and preceding discussion:
+https://real.mtak.hu/191892/1/012-article-p109.pdf
+
+The fixed-base F_3^d version is written separately in tensor-obstruction.txt.
+The near-quadratic amplification was suggested by the parent researcher and
+checked here. Publication novelty of this exact deduction remains unverified.

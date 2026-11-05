@@ -1,0 +1,34 @@
+{
+  "completed_results": [
+    "M(11)=34 by external exhaustive computation",
+    "Exactly two underlying graph types attain M(10)=30",
+    "Exactly two 35-edge order-11 types have no conflict K12"
+  ],
+  "n12_runs": [
+    {
+      "edges": 41,
+      "time_limit_seconds": 600,
+      "status": "inconclusive_timeout",
+      "completed_max_degree_branches": 0,
+      "log": "exhaustive_n12_m41.log"
+    },
+    {
+      "edges": 43,
+      "time_limit_seconds": 90,
+      "status": "inconclusive_timeout",
+      "completed_max_degree_branches": 0,
+      "log": "exhaustive_n12_m43.log"
+    },
+    {
+      "edges": 42,
+      "time_limit_seconds": 180,
+      "status": "inconclusive_timeout",
+      "completed_max_degree_branches": 0,
+      "log": "exhaustive_n12_m42.log"
+    }
+  ],
+  "n12_conclusion": "No upper bound obtained. Existing M(12)>=40 remains the only established n12 bound in this investigation.",
+  "background_processes": "All finite-search processes finished or were terminated by their explicit timeout.",
+  "n11_lower_witness_note": "Existing 34-edge witness is not proper: (0,2) and (2,7) both carry color10. M(11) here permits general edge colorings, as in original problem.",
+  "n12_source_sha256": "08af401e582c184c245f3d005316663f6a3e6ea62d7e7ca5780de351089f485b"
+}

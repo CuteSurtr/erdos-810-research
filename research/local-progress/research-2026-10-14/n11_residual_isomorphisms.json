@@ -1,0 +1,1292 @@
+{
+  "representatives": {
+    "130": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        10
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        5,
+        10
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        6,
+        10
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        9
+      ],
+      [
+        7,
+        10
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        8,
+        10
+      ],
+      [
+        9,
+        10
+      ]
+    ],
+    "128": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        3,
+        10
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        5,
+        10
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        6,
+        10
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        9
+      ],
+      [
+        7,
+        10
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        8,
+        10
+      ],
+      [
+        9,
+        10
+      ]
+    ]
+  },
+  "graphs": [
+    {
+      "graphmask": 35947305942858879,
+      "type_C4s": 130,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 0,
+        "1": 1,
+        "6": 6,
+        "8": 8,
+        "10": 10,
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "7": 7,
+        "9": 9
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": {
+        "0": 0,
+        "1": 5,
+        "2": 3,
+        "3": 4,
+        "4": 9,
+        "5": 6,
+        "6": 7,
+        "7": 1,
+        "8": 2,
+        "9": 8
+      }
+    },
+    {
+      "graphmask": 35947103005654143,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 0,
+        "1": 1,
+        "6": 6,
+        "8": 8,
+        "10": 10,
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "7": 7,
+        "9": 9
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 35947204474256511,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 0,
+        "1": 1,
+        "6": 6,
+        "8": 8,
+        "10": 10,
+        "2": 2,
+        "3": 4,
+        "4": 3,
+        "7": 7,
+        "9": 9
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 35947001537051775,
+      "type_C4s": 130,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 0,
+        "1": 1,
+        "6": 6,
+        "8": 8,
+        "10": 10,
+        "2": 2,
+        "3": 4,
+        "4": 3,
+        "7": 7,
+        "9": 9
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": {
+        "0": 0,
+        "1": 5,
+        "2": 3,
+        "3": 9,
+        "4": 4,
+        "5": 6,
+        "6": 7,
+        "7": 1,
+        "8": 2,
+        "9": 8
+      }
+    },
+    {
+      "graphmask": 35947299550739583,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 10,
+        "1": 6,
+        "6": 8,
+        "8": 0,
+        "10": 1,
+        "2": 9,
+        "3": 7,
+        "4": 3,
+        "7": 4,
+        "9": 2
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 35946589270523007,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 10,
+        "1": 6,
+        "6": 8,
+        "8": 0,
+        "10": 1,
+        "2": 9,
+        "3": 3,
+        "4": 7,
+        "7": 4,
+        "9": 2
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 35946790609697919,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 6,
+        "1": 10,
+        "6": 0,
+        "8": 8,
+        "10": 1,
+        "2": 9,
+        "3": 3,
+        "4": 7,
+        "7": 2,
+        "9": 4
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 35946993546902655,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 6,
+        "1": 10,
+        "6": 0,
+        "8": 8,
+        "10": 1,
+        "2": 9,
+        "3": 7,
+        "4": 3,
+        "7": 2,
+        "9": 4
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 35947305010674815,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 10,
+        "1": 6,
+        "6": 8,
+        "8": 0,
+        "10": 1,
+        "2": 7,
+        "3": 9,
+        "4": 3,
+        "7": 4,
+        "9": 2
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 34821376515456127,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 6,
+        "1": 0,
+        "6": 10,
+        "8": 1,
+        "10": 8,
+        "2": 3,
+        "3": 2,
+        "4": 7,
+        "7": 9,
+        "9": 4
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 35947298618555519,
+      "type_C4s": 130,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 0,
+        "1": 1,
+        "6": 6,
+        "8": 8,
+        "10": 10,
+        "2": 3,
+        "3": 2,
+        "4": 4,
+        "7": 7,
+        "9": 9
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": {
+        "0": 0,
+        "1": 5,
+        "2": 4,
+        "3": 3,
+        "4": 9,
+        "5": 6,
+        "6": 7,
+        "7": 1,
+        "8": 2,
+        "9": 8
+      }
+    },
+    {
+      "graphmask": 35946791275543679,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 6,
+        "1": 10,
+        "6": 0,
+        "8": 8,
+        "10": 1,
+        "2": 3,
+        "3": 9,
+        "4": 7,
+        "7": 2,
+        "9": 4
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 34821471591939199,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 0,
+        "1": 6,
+        "6": 1,
+        "8": 10,
+        "10": 8,
+        "2": 2,
+        "3": 3,
+        "4": 7,
+        "7": 4,
+        "9": 9
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 35946997408808063,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 6,
+        "1": 10,
+        "6": 0,
+        "8": 8,
+        "10": 1,
+        "2": 7,
+        "3": 9,
+        "4": 3,
+        "7": 2,
+        "9": 4
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 34821474787998847,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 0,
+        "1": 6,
+        "6": 1,
+        "8": 10,
+        "10": 8,
+        "2": 3,
+        "3": 2,
+        "4": 7,
+        "7": 4,
+        "9": 9
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 35947092485291135,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 0,
+        "1": 1,
+        "6": 6,
+        "8": 8,
+        "10": 10,
+        "2": 3,
+        "3": 2,
+        "4": 4,
+        "7": 7,
+        "9": 9
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 35947195551923327,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 0,
+        "1": 1,
+        "6": 6,
+        "8": 8,
+        "10": 10,
+        "2": 4,
+        "3": 2,
+        "4": 3,
+        "7": 7,
+        "9": 9
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 35946989418658943,
+      "type_C4s": 130,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 0,
+        "1": 1,
+        "6": 6,
+        "8": 8,
+        "10": 10,
+        "2": 4,
+        "3": 2,
+        "4": 3,
+        "7": 7,
+        "9": 9
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": {
+        "0": 0,
+        "1": 5,
+        "2": 9,
+        "3": 3,
+        "4": 4,
+        "5": 6,
+        "6": 7,
+        "7": 1,
+        "8": 2,
+        "9": 8
+      }
+    },
+    {
+      "graphmask": 35946583544249471,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 10,
+        "1": 6,
+        "6": 8,
+        "8": 0,
+        "10": 1,
+        "2": 3,
+        "3": 9,
+        "4": 7,
+        "7": 4,
+        "9": 2
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 34821365329247359,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 6,
+        "1": 0,
+        "6": 10,
+        "8": 1,
+        "10": 8,
+        "2": 2,
+        "3": 3,
+        "4": 7,
+        "7": 9,
+        "9": 4
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 35946932959657087,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 10,
+        "1": 6,
+        "6": 8,
+        "8": 0,
+        "10": 1,
+        "2": 7,
+        "3": 3,
+        "4": 9,
+        "7": 4,
+        "9": 2
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 34821410338847871,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 6,
+        "1": 0,
+        "6": 10,
+        "8": 1,
+        "10": 8,
+        "2": 3,
+        "3": 7,
+        "4": 2,
+        "7": 9,
+        "9": 4
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 35947028036140159,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 6,
+        "1": 10,
+        "6": 0,
+        "8": 8,
+        "10": 1,
+        "2": 3,
+        "3": 7,
+        "4": 9,
+        "7": 2,
+        "9": 4
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 35946520693128319,
+      "type_C4s": 130,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 0,
+        "1": 1,
+        "6": 6,
+        "8": 8,
+        "10": 10,
+        "2": 3,
+        "3": 4,
+        "4": 2,
+        "7": 7,
+        "9": 9
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": {
+        "0": 0,
+        "1": 5,
+        "2": 4,
+        "3": 9,
+        "4": 3,
+        "5": 6,
+        "6": 7,
+        "7": 1,
+        "8": 2,
+        "9": 8
+      }
+    },
+    {
+      "graphmask": 34820896603716735,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 0,
+        "1": 6,
+        "6": 1,
+        "8": 10,
+        "10": 8,
+        "2": 2,
+        "3": 7,
+        "4": 3,
+        "7": 4,
+        "9": 9
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 35947031232199807,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 6,
+        "1": 10,
+        "6": 0,
+        "8": 8,
+        "10": 1,
+        "2": 7,
+        "3": 3,
+        "4": 9,
+        "7": 2,
+        "9": 4
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 34821102736981119,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 0,
+        "1": 6,
+        "6": 1,
+        "8": 10,
+        "10": 8,
+        "2": 3,
+        "3": 7,
+        "4": 2,
+        "7": 4,
+        "9": 9
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 35946517497068671,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 0,
+        "1": 1,
+        "6": 6,
+        "8": 8,
+        "10": 10,
+        "2": 3,
+        "3": 4,
+        "4": 2,
+        "7": 7,
+        "9": 9
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 35946519095098495,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 0,
+        "1": 1,
+        "6": 6,
+        "8": 8,
+        "10": 10,
+        "2": 4,
+        "3": 3,
+        "4": 2,
+        "7": 7,
+        "9": 9
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 35946921773448319,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 10,
+        "1": 6,
+        "6": 8,
+        "8": 0,
+        "10": 1,
+        "2": 3,
+        "3": 7,
+        "4": 9,
+        "7": 4,
+        "9": 2
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 35946515899038847,
+      "type_C4s": 130,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 0,
+        "1": 1,
+        "6": 6,
+        "8": 8,
+        "10": 10,
+        "2": 4,
+        "3": 3,
+        "4": 2,
+        "7": 7,
+        "9": 9
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": {
+        "0": 0,
+        "1": 5,
+        "2": 9,
+        "3": 4,
+        "4": 3,
+        "5": 6,
+        "6": 7,
+        "7": 1,
+        "8": 2,
+        "9": 8
+      }
+    },
+    {
+      "graphmask": 34820688872422527,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 6,
+        "1": 0,
+        "6": 10,
+        "8": 1,
+        "10": 8,
+        "2": 2,
+        "3": 7,
+        "4": 3,
+        "7": 9,
+        "9": 4
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 34821399818484863,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 6,
+        "1": 0,
+        "6": 10,
+        "8": 1,
+        "10": 8,
+        "2": 7,
+        "3": 3,
+        "4": 2,
+        "7": 9,
+        "9": 4
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 34820689538268287,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 6,
+        "1": 0,
+        "6": 10,
+        "8": 1,
+        "10": 8,
+        "2": 7,
+        "3": 2,
+        "4": 3,
+        "7": 9,
+        "9": 4
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 34820890877443199,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 0,
+        "1": 6,
+        "6": 1,
+        "8": 10,
+        "10": 8,
+        "2": 7,
+        "3": 2,
+        "4": 3,
+        "7": 4,
+        "9": 9
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    },
+    {
+      "graphmask": 34821093814647935,
+      "type_C4s": 128,
+      "isomorphism_to_type_representative": {
+        "5": 5,
+        "0": 0,
+        "1": 6,
+        "6": 1,
+        "8": 10,
+        "10": 8,
+        "2": 7,
+        "3": 3,
+        "4": 2,
+        "7": 4,
+        "9": 9
+      },
+      "degree5_vertex": 5,
+      "neighbors": [
+        0,
+        1,
+        6,
+        8,
+        10
+      ],
+      "delete_vertex_isomorphism_to_original_n10": null
+    }
+  ]
+}

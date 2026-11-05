@@ -1,0 +1,123 @@
+LOCAL ROTH INPUT AND PERFECT B-COLORINGS
+15 October 2026 — attributed deduction, not an originality claim
+
+Source: Carl Schildkraut, Abelian structure in approximate groups and Alon's
+conjecture on Ramsey Cayley graphs, arXiv:2512.15125, as accessed today.
+https://arxiv.org/html/2512.15125v1
+https://arxiv.org/pdf/2512.15125
+
+INPUTS AND QUANTIFIERS
+
+Theorem 1.10: in a solvable group, a finite set A such that
+  x,xy,xy² in A ==> y=1
+satisfies |AA^-1|/|A| >= exp(c(log|A|)^(1/1305)), with absolute c>0.
+The convention includes xy²=x. See also its footnote 5.
+
+For arbitrary ambient groups, Remark 12.3 (printed p54) supplies the fixed-K
+abelian-structure input through BGT, with an ineffective threshold F(K).
+Here is the precise qualitative reduction. Set K=|AA^-1|/|A|.
+
+Use the original Tao Proposition 4.5, Product set estimates for
+non-commutative groups, https://arxiv.org/pdf/math/0601431, pp10–11:
+there is a symmetric identity-containing B with |B|>=|A|/(2K) and
+  |AB^m A^-1| <= 2^m K^(2m+1)|A|.                         (1)
+The cardinality on the right is |A| in Tao's original statement. His
+popular-difference construction also gives B subset A^-1 A and |B|<=2K|A|.
+Thus |B^3|<=16K^8|B|. For fixed K and |A|->infinity, Remark 12.3 supplies
+a commuting set T subset B^4 whose size tends to infinity. Let H=<T> and
+enlarge T to B^4 intersect H, which is still commuting.
+
+Write Q=TT^-1. Count pairs (a,q) by g=qa^-1:
+  sum_{g in QA^-1} |gA intersect Q| = |A| |Q|.
+Since |QA^-1|=|AQ|<=|AB^8|<=2^8 K^17 |A|, there is g such that
+  A0=gA intersect Q subset H,
+  |A0| >= 2^-8 K^-17 |Q| >= 2^-8 K^-17 |T|.              (2)
+
+To bound its difference set without suppressing an intersection estimate,
+Ruzsa covering gives B^16 subset ZB^2 with
+  |Z| <= |B^17|/|B| <= 2^18 K^36,
+using (1) and |A|<=2K|B|. Any nonempty zB^2 intersect H has at most |T|
+elements: fix h0 there and map h to h0^-1 h in B^4 intersect H=T. Hence
+  |A0 A0^-1| <= |B^16 intersect H|
+             <= 2^18 K^36 |T| <= 2^26 K^53 |A0|.        (3)
+
+Strong progression-freeness survives left translation and taking subsets.
+Abelian local Roth (Schildkraut Lemma 9.2) applied to A0 contradicts (2),
+its unbounded size, and (3). Therefore, for each K there is a uniform bound
+on the size of strong progression-free A with |AA^-1|<=K|A|, regardless of
+ambient group. Equivalently |AA^-1|/|A|->infinity uniformly. This uses
+Remark 12.3's proof sketch as an input; no explicit universal rate follows.
+
+SHARPENING THE SOLVABLE SPECIALIZATION OF THE DISPLAYED PROOF
+
+For solvable G, Theorem 1.2 applied to B gives directly
+  log|T| >= c (log|B|)^(1/6) / log(2K),
+after absorbing the constant tripling exponent into c. This is stronger
+than the common exponent used in the statement of Lemma 9.1. Set L=log(2K).
+Equations (2)–(3), followed by abelian local Roth, give
+  c(log|B|)^(1/6)/L - C L <= log|A0| <= C L^144.
+Consequently log|B| <= C L^870 and log|A|<=log|B|+L<=C' L^870.
+After adjusting absolute constants for small sets, this yields
+  |AA^-1| >= |A| exp(c'(log|A|)^(1/870))
+asymptotically in solvable groups. The exponent 1/1305 is what Theorem 1.10
+explicitly states; 1/870 is an immediate specialization of its proof using
+Theorem 1.2, not a separately claimed literature theorem or new method.
+In abelian groups Lemma 9.2 itself gives exponent 1/144 directly.
+
+APPLICATION: THE MATCHING PERMUTATIONS ARE STRONGLY PROGRESSION-FREE
+
+Let G be a bipartite graph with n vertices in each part. Every one of its d
+color classes is a perfect matching. Every C4 is rainbow. Identify both parts
+with [n], and let S={p_c} subset Sym(n) be their n-to-n matching bijections.
+
+Suppose a,b,c in S satisfy a b^-1 a=c with a!=b. For any x, let
+  x'=b^-1 a(x), y=a(x), y'=a(x').
+Properness gives x'!=x; bijectivity of a gives y'!=y. The four edges are
+  (x,y):a, (x',y):b, (x',y'):a, (x,y'):c.
+They form a nonrainbow C4, a contradiction. Therefore a b^-1 a=c implies
+a=b=c. This is exactly strong translational progression-freeness, since
+  (x,xt,xt²) = (b,a,a b^-1 a), with t=b^-1 a.
+If c=b, the same contradiction is a bichromatic C4; this case must not be
+excluded from the definition. Relabeling either bipartition transforms S
+to uSv, preserving both the equation and |SS^-1|.
+
+Consequently, for any sequence of these colorings with d->infinity,
+  D/d -> infinity, where D=|SS^-1|.
+
+CONDITIONAL VANISHING DENSITY
+
+Assume D<=K0 n for a fixed K0. If d>=epsilon n on an infinite subsequence,
+then D/d<=K0/epsilon while d->infinity, contradicting the previous result.
+Thus d=o(n), so |E(G)|=nd=o(n²). Bounded d also gives this conclusion.
+
+For the coordinate-invariant quantitative hypothesis, let
+  Gamma0=<SS^-1>.
+If Gamma0 is solvable, fix s0 in S and use A=S s0^-1 subset Gamma0.
+Right translation preserves strong progression-freeness and AA^-1=SS^-1.
+The proof specialization therefore gives
+  D >= d exp(c(log d)^(1/870)).
+When d>=sqrt(n), log d >= (log n)/2, and hence
+  d <= K0 n exp(-c 2^(-1/870) (log n)^(1/870)).
+When d<sqrt(n), this estimate holds after adjusting constants for large n.
+Thus, with some absolute c'>0,
+  d = O_K0(n exp(-c' (log n)^(1/870))),
+  |E(G)| = O_K0(n² exp(-c' (log n)^(1/870))).
+If Gamma0 is abelian, replace 1/870 by 1/144. Under relabeling S->uSv,
+Gamma0 is merely conjugated by u, so these hypotheses do not depend on
+the arbitrary identification of the bipartition classes.
+
+LIMITATION
+
+UPDATE: The qualitative perfect-color conclusion below is now subsumed by
+the stronger partial-small-difference-theorem.txt. That proof uses the full
+BGT Theorem 2.10 directly, so it does not depend on Remark 12.3's sketch.
+The route above is retained for its explicit solvable/abelian estimates
+and for an accurate record of what follows from the local Roth argument.
+
+The hypothesis D=O(n) is additional. The trivial bound is D<=d². The B
+condition alone has not been shown to give a useful upper bound on D.
+Solvability is needed for the stated explicit rate, not for the attributed
+qualitative fixed-K consequence. Arbitrary nonperfect color classes do not
+define these total permutations without a separate completion argument.
+The result is a corollary of existing local Roth/approximate-group work,
+not a proof of Erdős #810 and not a claim of a new published bound.

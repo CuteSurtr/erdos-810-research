@@ -1,0 +1,136 @@
+A DENSE PROPER AFFINE EXAMPLE WITH MINIMAL GLOBAL ENERGY
+Overnight pass 1, 15 October 2026.
+Exact algebraic construction; no finite search. This example is NOT B.
+No claim of historical novelty; not Lean checked.
+
+PURPOSE
+
+The previous theorem says that a dense B coloring with heavy classes
+must have very small normalized global multiplicative energy for every
+choice of distinct permutation completions. Could that condition, or
+absence of global three-term permutation relations, rule out a dense
+affine example? The following family shows that neither condition alone
+does so, even with fixed affine completions and supports about 3n/4.
+
+1. PALETTE AND GEOMETRY
+
+Let p>=7 be an odd prime and set
+
+        A={1,2,...,(p-1)/2} subset F_p,      d=|A|=(p-1)/2.
+
+Thus A contains exactly one representative from each pair {a,-a} of
+nonzero field elements. Define affine permutations
+
+                  sigma_a(x)=a x+a^2,   a in A.
+
+Two different graph lines a,b meet at exactly
+
+                       (x,y)=(-(a+b),-ab).             (1)
+
+There is no triple intersection: for any point (x,y), its incident
+palette parameters solve t^2+x t-y=0, which has at most two roots.
+In particular the d-1 intersection points on each line are distinct.
+
+Choose a tournament on the d colors with each outdegree at most
+ceil((d-1)/2). Such a balanced tournament exists: for odd d use the cyclic
+regular tournament; for even d, delete one vertex from a cyclic regular
+tournament on d+1 vertices.
+
+At each double intersection, retain the point in exactly one of its two
+colors, making the loser the tail of the corresponding tournament arc.
+Retain every other point of every palette line. The selected points are
+then given unique colors, so this is a proper bipartite coloring. Each
+color is a partial matching because its affine map is a permutation.
+The size of every color class is at least
+
+                      p-ceil((d-1)/2)=(3/4+o(1))p,
+
+and the exact number of edges is
+
+                      m=dp-binomial(d,2)
+                       =(3/8+o(1))p^2.                (2)
+
+No choices at different intersections conflict: all those points on a
+given line are distinct, and no point is incident with three lines.
+
+2. NO NONTRIVIAL STRONG THREE-TERM RELATIONS
+
+Suppose a,b,c are palette labels and
+
+                    sigma_c=sigma_a sigma_b^(-1) sigma_a.             (3)
+
+The slope identity gives c=a^2/b. Equating intercepts gives
+
+                    c^2=a^2+a^3/b-ab.
+
+After substituting c and multiplying by b^2/a (which is nonzero), this
+is equivalent to
+
+                    (a+b)(a-b)^2=0.                 (4)
+
+Hence a=b or a=-b. The second possibility is excluded by A. The first
+forces c=a=b and is the trivial relation. This includes exclusion of
+the order-two degeneracy c=b with a!=b; it is the strong, rather than
+merely three-distinct-elements, progression condition.
+
+3. EXACTLY MINIMAL MULTIPLICATIVE ENERGY
+
+For ordered palette labels a,b, the relative permutation is
+
+       sigma_a sigma_b^(-1)(x)
+           = (a/b)x + a^2-ab
+           = r x + a^2(1-1/r),   r=a/b.               (5)
+
+For a!=b, r!=1. Knowledge of the relative affine map determines r and
+a^2. Since A contains no antipodal pair, it determines a uniquely, and
+then b=a/r uniquely. Thus all d(d-1) nonidentity ordered differences
+are distinct, and none is the identity. The identity has d ordered
+representations, namely a=b. Therefore
+
+            |S S^(-1)|=d(d-1)+1,
+            E(S)=d^2+d(d-1)=2d^2-d.                  (6)
+
+The last value is the minimum possible energy for d distinct group
+elements: the identity necessarily contributes d^2 and the remaining
+d(d-1) representations contribute at least one apiece. Consequently
+E(S)/d^3->0 in this dense properly colored affine family, without any
+unused-point padding or arbitrary completion freedom.
+
+4. AN EXPLICIT NONRAINBOW C4, RETAINED FOR EVERY TOURNAMENT CHOICE
+
+The four graph positions on rows -1,1 and columns 2,6 are
+
+                      column 2       column 6
+          row -1       color 2        color 3
+          row  1       color 1        color 2.
+
+Indeed sigma_2(-1)=2, sigma_3(-1)=6,
+sigma_1(1)=2, and sigma_2(1)=6. These are distinct rows and columns for
+p>=7, and 1,2,3 all belong to A.
+
+All four positions are unique-line points of the palette. Their other
+possible quadratic roots are respectively -1,-2,-2,-3, none of which
+belongs to A. Thus no tournament choice ever deletes these four edges.
+The color-2 diagonal repeats, so every member of the constructed family
+violates the B condition. This is deliberately an obstruction to an
+insufficient proof strategy, not a candidate counterexample to #810.
+
+More generally, whenever t!=0 and a-t,a,a+t all belong to an antipodal-free
+palette of these quadratic lines, the rows -t,t produce a rectangle
+whose diagonal color is a and whose cross colors are a+t,a-t. Its four
+positions are unique-line points within that palette. The relation is
+an ADDITIVE progression of slope parameters, not the global permutation
+progression (3). This makes the missing local information explicit.
+
+5. LIMITATION OF A BOUNDED PENCIL COVER
+
+The slopes in this palette are distinct, so a parallel pencil contains
+at most one line. No three lines are concurrent, so a concurrent pencil
+contains at most two. Covering the d lines therefore takes at least
+ceil(d/2) pencils. The constant-support regime is not automatically
+covered by the bounded-pencil argument in pass1-affine-bounded-deficit.txt.
+
+The example does not rule out a method combining the full B condition
+with affine geometry. It isolates the exact issue such a method must
+use: local agreements of distinct global relative permutations and the
+actual supports of the colors.

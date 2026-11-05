@@ -1,0 +1,203 @@
+Independent audit of the F_alpha recursive bipartite bound
+2026-10-15
+
+SCOPE
+This audit verifies the endpoint decomposition, concavity, Cauchy step,
+uniform-asymptotic interpretation, and transfer to the general graph bound.
+The remaining one-variable minimization producing Phi(alpha) is being
+independently audited by the other mathematical auditor. Nothing here is
+claimed to be Lean-formalized or publication-new.
+
+NORMALIZATION AND INDUCTION HYPOTHESIS
+Use q as an AVAILABLE palette size, allowing unused colors. Let a,b denote
+the two vertex-class sizes divided by q, with s=a+b<=1. Let u=m/q^2 and
+p=ab. The claimed family is
+
+    u <= F_alpha(a,b)+o(1),
+    F_alpha(a,b)=ab*s/[s+ab*(1+alpha*s)].
+
+The error is required to be uniform over properly B-colored graphs and
+normalized sizes a,b with a+b<=1. Equivalently, the claim holds along every
+sequence with q tending to infinity. The base alpha=0 has uniform error
+at most 1/q, from the exact bipartite counting inequality.
+
+All cut subgraphs must retain the SAME available palette q, including unused
+colors. One must not replace q by each cut's possibly small actual number of
+used colors and then assume that smaller parameter tends to infinity.
+The unchanged-palette formulation is valid and avoids this issue.
+
+ENDPOINT DECOMPOSITION
+Consider a color class of size x*q. Its covered left/right endpoints each
+number x*q. The bipartite induced graph between these endpoints has at most
+k(k+1)/2 edges, where k=x*q. The sum of full graph degrees on the endpoints
+is consequently bounded, after division by q^2, by
+
+    x^2 + x/q
+      + F_alpha(x,a-x) + F_alpha(x,b-x) + o(1).
+
+Both cross rectangles have normalized total vertex count a or b, so fall
+within the induction hypothesis. The uniform o(1) is important here because
+there can be q color classes. Upon summing, each per-class error is multiplied
+by q, and the final degree-square sum is normalized by q^3, leaving o(1).
+The x/q affine errors also total only O(1/q) after normalization.
+
+CONCAVITY OF THE ENDPOINT INTEGRAND
+Write
+
+    g(x)=x^2+F_alpha(x,a-x)+F_alpha(x,b-x),
+    0<=x<=min(a,b).
+
+For a fixed positive r in {a,b}, put t=x(r-x) and D=1/r+alpha. Then
+
+    F_alpha(x,r-x)=t/(1+D*t),
+
+and its second derivative is
+
+    -2/(1+D*t)^2 - 2D*(r-2x)^2/(1+D*t)^3.
+
+Since r<=1, 0<=alpha<=1/2, and t<=r^2/4,
+
+    D*t <= (r+alpha*r^2)/4 <= 3/8.
+
+Hence
+
+    g''(x) <= 2-4/(11/8)^2 = -14/121 < 0.
+
+If a or b is zero there are no edges, so that degenerate case needs no
+calculus. Jensen is therefore valid, uniformly throughout the claimed range.
+Padding to q colors and using sum_c x_c=u gives
+
+    (s/p)*u^2 <= u^2+F_alpha(u,a-u)+F_alpha(u,b-u)+o(1).
+
+The lower bound is Cauchy-Schwarz on the two vertex-degree sequences.
+
+THE CAUCHY STEP
+Ignoring an asymptotically vanishing error in a subsequential limit, write
+
+    R = (a-u)^2/[a/(1+alpha*a)+u(a-u)]
+      + (b-u)^2/[b/(1+alpha*b)+u(b-u)].
+
+The preceding inequality becomes
+
+    (s/p+1+R)*u <= s.
+
+This algebra follows by expanding each F term as
+u(r-u)-u^2*(1/r+alpha)*(r-u)^2/[1+(1/r+alpha)*u(r-u)].
+
+Cauchy-Schwarz in Engel form gives
+
+    R >= (s-2u)^2/
+          [a/(1+alpha*a)+b/(1+alpha*b)+u(s-2u)].
+
+The map r -> r/(1+alpha*r) is concave, so its two terms sum to at most
+s/(1+alpha*s/2). Replacing the denominator by this upper bound yields
+
+    R >= (s-2u)^2/[s/(1+alpha*s/2)+u(s-2u)].
+
+All terms and denominators are nonnegative; for positive a,b the denominator
+is positive. The induction hypothesis also yields
+
+    u/s <= s/[4+s+alpha*s^2],
+
+because F_alpha is increasing in p and p<=s^2/4.
+These are precisely the inputs to the scalar minimization claimed by the
+parent researcher. No sign reversals or hidden regularity assumptions occur.
+
+UNIFORMITY OF THE ASYMPTOTICS
+A rigorous formulation can proceed entirely by subsequences. If a claimed
+uniform bound fails, take a violating sequence q->infinity and pass to
+convergent subsequences of (a,b,u) in the compact feasible region. If a or b
+tends to zero, u<=min(a,b) tends to zero and cannot create a fixed positive
+violation. If u tends to zero the same is true. Otherwise all divisions above
+are legitimate in the limit, and the uniform induction hypothesis applies
+to every color-class cross rectangle before averaging.
+
+For a fixed finite number of iterations this establishes a uniform o(1)
+error. It does not supply a useful numerical error rate. If infinitely many
+fixed iterations are used to approach a limiting coefficient, take the
+limsup in q FIRST, and only then let the number of iterations tend to infinity.
+No quantitative uniformity in iteration count is required in that order.
+
+TRANSFER TO GENERAL PROPER B-COLORED GRAPHS
+For a graph on q vertices and at most q colors, a class with x*q matching
+edges covers 2x*q vertices. As audited separately, its induced graph has at
+most x^2*q^2 edges. Its cut has part fractions 2x and 1-2x, so F_alpha gives
+
+    h_alpha(x)=2x^2+z/[1+(1+alpha)*z],
+    z=2x-4x^2,   0<=x<=1/2.
+
+Writing c=1+alpha, its second derivative is
+
+    h_alpha''(x)
+      =4-8/(1+c*z)^2-2c*(z')^2/(1+c*z)^3
+      <=4-8/(11/8)^2
+      =-28/121 <0,
+
+for 0<=alpha<=1/2. Thus summing endpoint degree bounds, applying Jensen,
+and comparing with Cauchy-Schwarz yields in the limit
+
+    4rho^2 <= h_alpha(rho),
+
+where rho=m/q^2. For positive rho this is equivalent to
+
+    4c*rho^3-2c*rho^2-3rho+1 >= 0.
+
+The polynomial is strictly decreasing on [0,1/2] for 1<=c<=3/2:
+its derivative is 12c*rho^2-4c*rho-3, whose maximum on this interval is at
+an endpoint and is at most c-3<0. Hence the unique root in that interval
+is a valid limiting density bound. Properification by o(q^2) deletions
+transfers it unchanged to arbitrary rainbow-C4 colorings.
+
+EXTERNAL INPUT
+The properification step uses triangle removal; its detailed independent
+audit is in golden-ratio-independent-audit.txt. A primary source for the
+removal statement is Jacob Fox, Annals of Mathematics 174 (2011), 561-579:
+https://annals.math.princeton.edu/2011/174-1/p17
+
+SCALAR MINIMIZATION: FOLLOW-UP CHECK
+The other auditor independently confirmed the remaining minimization, and
+its calculation also checks directly as follows. Put r=u/s and
+A=1/(1+alpha*s/2). The Cauchy lower bound divided by s is
+
+    (1-2r)^2/[A+s*r*(1-2r)].
+
+This decreases in r: setting t=1-2r, the derivative with respect to t of
+t^2/[A+(s/2)t(1-t)] has positive numerator 2At+(s/2)t^2. Substitute the
+upper bound r<=s/D, where D=4+s+alpha*s^2, and put T=4-s+alpha*s^2.
+The resulting lower bound is the reciprocal of
+
+    K(s)=D^2/[(1+alpha*s/2)*T^2]+s^2/T.
+
+The second summand has derivative s(8-s)/T^2>0. The logarithmic derivative
+of the first is
+
+    4(4-alpha*s^2)/(D*T)-alpha/(2+alpha*s).
+
+For 0<s<=1 and 0<=alpha<=1/2, D<=11/2, T<=4, so this is at least
+14/22-1/4=17/44>0. Thus K increases, and the lower bound is minimized at
+s=1. Therefore
+
+    R >= s*Phi(alpha),
+    Phi(alpha)=(3+alpha)^2/
+      [(5+alpha)^2/(1+alpha/2)+3+alpha].
+
+This proves the claimed improvement F_alpha -> F_{Phi(alpha)}.
+
+The fixed-point polynomial is
+
+    2alpha^3+17alpha^2+35alpha-18=0.
+
+Its derivative is positive on [0,1/2], and it has exactly one root alpha_*
+in that interval. Writing Phi as
+
+    (alpha^3+8alpha^2+21alpha+18)/(3alpha^2+25alpha+56),
+
+its derivative has strictly positive numerator
+
+    3alpha^4+50alpha^3+305alpha^2+788alpha+726.
+
+Also Phi(alpha)-alpha is minus the fixed-point polynomial divided by the
+positive denominator. Hence alpha_0=0 and alpha_{j+1}=Phi(alpha_j) increase
+to alpha_*. Taking the N-limsup separately for each fixed j, then taking
+j to infinity, justifies the limiting cubic coefficient without any uniform
+error claim in j. No flaw was found in the complete recursive argument.

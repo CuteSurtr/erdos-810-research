@@ -3,6 +3,9 @@
 Research notes on restricted cases of Erdős problem #810 and an
 oscillatory affine-operator estimate over prime fields.
 
+The [local research archive](research/README.md) preserves the earlier sources,
+audits, and computational records, with verification caveats and a file manifest.
+
 ## Setting
 
 Let $`p`$ tend to infinity through odd primes. A color $`a`$ is a partial

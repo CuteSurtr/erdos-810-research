@@ -1,0 +1,79 @@
+A positive-density feasible model for the endpoint-moment method
+2026-10-15
+
+STATUS AND MEANING
+This is an abstract leading-order moment model, NOT a graph construction
+or a counterexample to Erdos #810. It shows that the endpoint decomposition,
+degree Cauchy-Schwarz, and color-size Jensen inequalities used so far cannot,
+by themselves and further iteration, force edge density to zero. Additional
+structural information would be required.
+
+THE BIPARTITE FIXED PROFILE
+Use normalized side sizes a,b with a+b=s<=1, and consider the formal profile
+
+    F_*(a,b)=ab/2.
+
+In the exact endpoint recursion before the Cauchy/profile relaxations, a
+color matching of normalized size x contributes at most
+
+    g_*(x)=x^2+F_*(x,a-x)+F_*(x,b-x)
+          =x^2+x(a-x)/2+x(b-x)/2
+          =s*x/2.
+
+This function is linear, so Jensen loses nothing for uniform color sizes.
+Assign a formal total normalized edge count u=ab/2, and give every one of
+the q color classes normalized size x=u. Assign constant degree b/2 to
+left vertices and a/2 to right vertices. The degree-square lower bound is
+
+    (s/(ab))*u^2 = s*ab/4,
+
+and the summed endpoint upper bound is
+
+    g_*(u)=s*u/2 = s*ab/4.
+
+Thus the exact leading-order endpoint inequality and both moment equalities
+are all satisfied, with equality. The matching-size constraint is respected:
+u=ab/2<=min(a,b) because a,b<=1. The induced endpoint subgraph contributes
+x^2/2 edges, exactly the leading-order combinatorial endpoint bound; both
+cross rectangles use the same profile F_*.
+
+This exhibits F_* as a fixed profile of the full two-variable endpoint
+operator. It need not belong to the restricted one-variable rational profile
+families used for convenient closed-form bounds.
+
+THE GLOBAL QUARTER-DENSITY MODEL
+For a graph on q vertices, a color matching of normalized size x has an
+endpoint cut with part sizes 2x and 1-2x. Using F_* on that cut yields
+
+    h_*(x)=2x^2+F_*(2x,1-2x)
+          =2x^2+x(1-2x)
+          =x.
+
+Choose formal global edge density rho=1/4, uniform color-class sizes x=rho,
+and constant normalized vertex degree 2rho=1/2. The global moment constraint
+becomes
+
+    4rho^2 <= h_*(rho)=rho,
+
+with equality at rho=1/4. The local induced endpoint edge count is x^2,
+again saturating the combinatorial bound at leading order.
+
+WHY ITERATING THESE INEQUALITIES DOES NOT REMOVE THE MODEL
+The starting bipartite upper bound ab*s/(s+ab) dominates ab/2 for s<=1.
+Whenever a candidate upper profile dominates F_*, replacing the cross-cut
+terms by that candidate only raises the endpoint upper bound. Thus the
+formal edge count ab/2 remains feasible under the endpoint inequalities.
+Taking concave majorants or applying Jensen/Cauchy cannot eliminate a point
+that already satisfies the exact leading-order moment inequalities.
+The global density 1/4 consequently remains feasible for this method.
+
+WHAT IS NOT CLAIMED
+There is no assertion that graphs simultaneously realize all these local
+numbers, or that their colors can satisfy every rainbow-C4 condition. The
+model omits correlations among different colors, overlapping endpoint cuts,
+and actual forbidden configurations. Adding information about those
+correlations could invalidate the model and improve the bound, potentially
+below 1/4. Nor does this diagnose a limitation of every possible graph
+counting argument; it diagnoses the specific scalar endpoint-moment system.
+Finite endpoint inequalities include harmless O(q) terms, so the model is
+phrased for leading-order normalized inequalities only.

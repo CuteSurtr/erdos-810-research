@@ -1,0 +1,54 @@
+{
+  "audit_date": "2026-10-14",
+  "lean_version": "4.24.0",
+  "lean_commit": "797c613eb9b6d4ec95db23e3e00af9ac6657f24b",
+  "mathlib_version": "4.24.0",
+  "checks": [
+    {
+      "source": "erdos-810-lean/HypergraphReduction.lean",
+      "sha256": "135db3d64370d04b34d9603aac9b568d1ffd559db9e15fbd2f9207379ce09099",
+      "exit_code": 0,
+      "log": "original-kernel-check.txt",
+      "axiom_evidence": []
+    },
+    {
+      "source": "erdos-810-lean/BruteForce.lean",
+      "sha256": "aa3ef0db275ec10a1ac1640c17bad35d19ed8e79111a7f23ee31641815323de3",
+      "exit_code": 0,
+      "log": "bruteforce-kernel-check.txt",
+      "axiom_evidence": "Existing #assert_no_sorry declarations all accepted; compiler produced no diagnostics."
+    },
+    {
+      "source": "erdos-810-lean/audit-2026-10-14/SemanticAudit.lean",
+      "sha256": "40d7b350f2ac76b6cc3727254287b425c1c1087a1419c73880468f883d2c03f3",
+      "exit_code": 0,
+      "log": "semantic-kernel-check.txt",
+      "axiom_evidence": [
+        "propext"
+      ]
+    },
+    {
+      "source": "erdos-810-lean/audit-2026-10-14/ProperBipartiteLift.lean",
+      "sha256": "7d40d9e1e6a403c58206c04d3817330a9b2b55ad520a60be18ae6c77af26c8d2",
+      "exit_code": 0,
+      "log": "proper-lift-kernel-check.txt",
+      "axiom_evidence": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "source": "erdos-810-lean/audit-2026-10-14/BipartiteHypergraphExtraction.lean",
+      "sha256": "2048e7b7ec482a1557f1992efeecccfd1d8b7cbc7aa19fdee873b83d83811325",
+      "exit_code": 0,
+      "log": "global-extraction-kernel-check.txt",
+      "axiom_evidence": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "note": "Exit codes are independently observed completed tool runs. BruteForce.lean compiled without diagnostics and passed its internal no-sorry assertions. Project toolchain 4.33.1 was not installed or tested."
+}

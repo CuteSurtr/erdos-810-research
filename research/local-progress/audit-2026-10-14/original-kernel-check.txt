@@ -1,0 +1,5 @@
+'Erdos810Structural.cycleTripleSpan_le_seven_of_not_nodupFour' does not depend on any axioms
+'Erdos810Structural.isRainbowForC4_of_seven_four_free' does not depend on any axioms
+'Erdos810Structural.isRainbowForC4_of_bipartite_op' does not depend on any axioms
+'Erdos810Structural.sumFiberLengths_le_mul' does not depend on any axioms
+'Erdos810Structural.seven_color_alpha_two_obstruction' does not depend on any axioms

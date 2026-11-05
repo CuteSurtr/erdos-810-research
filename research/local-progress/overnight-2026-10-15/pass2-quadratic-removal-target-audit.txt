@@ -1,0 +1,140 @@
+AN EXACT FOUR-SLOT REMOVAL TARGET FOR QUADRATIC AFFINE SUPPORTS
+15 October 2026. Independent audit: the reduction below is correct.
+The proposed removal lemma is UNPROVED. It is a stronger sufficient
+target, not a theorem established by this research or a solution of #810.
+
+1. SUPPORT COORDINATES AND THE SYSTEM
+
+Let p be an odd prime. Let R subset F_p* x F_p encode the actual
+quadratic-affine edges as follows:
+
+    (a,b) represents color a, row -(a+b), column -ab.
+
+Indeed -ab=a[-(a+b)]+a^2. The first coordinate is required to be
+nonzero, so every color is a partial affine permutation. Assume the
+support is properly oriented: the map from selected pairs to graph
+edges assigns a unique color to each edge. In particular, distinct
+ordered pairs (a,b) and (b,a) cannot both be selected when both would
+be valid color pairs.
+
+Consider the four slots
+
+                 (a,b), (a,c), (d,e), (f,g) in R
+
+and the exact equations
+
+                 a+b=d+e,       ac=de,
+                 a+c=f+g,       ab=fg.                  (1.1)
+
+They specify two diagonal edges of color a, and the two crossed
+edges of colors d,f. Their rows are -(a+b), -(a+c), and their columns
+are -ab,-ac. Therefore a solution with b!=c gives a genuine C4 with
+a repeated color, contrary to B.
+
+Conversely, every nonrainbow C4 in the proper quadratic coloring has
+a repeated color on opposite edges and gives a solution after the
+appropriate ordering. The system retains all actual support tests.
+
+2. DEGENERACIES ARE EXACTLY b=c
+
+The two rows coincide if and only if b=c. Because a!=0, the two
+columns coincide if and only if b=c as well. Thus there is no other
+vertex-degeneracy case to remove from (1.1).
+
+When b=c, the crossed pair (d,e) satisfies
+
+                     d+e=a+b,      de=ab.
+
+Its entries are roots of (t-a)(t-b)=0, so it has at most two possible
+orders. The same holds independently for (f,g). There are at most
+p(p-1) choices of (a,b), hence at most 4p^2 degenerate solutions.
+
+For a properly oriented common support R, the sharper count is
+exactly |R|: the reversed ordered pair, if different and valid, would
+assign another color to the same graph edge and cannot also lie in R.
+Thus only the all-equal-slot solution remains for each pair in R.
+The weaker 4p^2 upper bound is already sufficient below.
+
+Consequently, if the actual graph is B, the TOTAL number of solutions
+of (1.1), including degeneracies, is O(p^2)=o(p^3).
+
+3. THE PRECISE UNPROVED REMOVAL STATEMENT
+
+The following uniform four-partite statement would suffice:
+
+  For every epsilon>0 there exist eta>0 and p_0 such that, for every
+  prime p>=p_0 and every four sets
+
+                 R_1,R_2,R_3,R_4 subset F_p* x F_p,
+
+  if (1.1) has at most eta*p^3 solutions with its four ordered pairs
+  in the four respective slots, one can delete at most epsilon*p^2
+  pairs from EACH R_i so that no solutions of (1.1) remain.
+
+All solutions, including the degenerate ones, must be counted and
+removed in this statement. The p^3 scale is appropriate to this
+parameterization: after a,b,c are fixed, each crossed pair has at
+most two possible orders, so the unrestricted count is O(p^3).
+
+This statement is not being invoked as a known polynomial-removal
+theorem. Its uniformity and its applicability to this coupled system
+are precisely the missing assertion.
+
+4. WHY THAT STATEMENT WOULD FORCE QUADRATIC B SPARSITY
+
+Suppose |R|>=delta*p^2 for a fixed delta>0 and the graph is B. Apply
+the hypothetical lemma to four identical copies R_i=R, choosing
+epsilon<delta/4. Section 2 gives at most 4p^2 solutions, which is
+below eta*p^3 for every sufficiently large p.
+
+Let D_i be the deleted pairs in slot i. For EVERY (a,b) in R there
+is the diagonal solution
+
+                      c=b,  d=f=a,  e=g=b.              (4.1)
+
+If that pair survived in all four slots, this solution would remain.
+Since all solutions were removed, every pair of R belongs to at
+least one D_i. Thus
+
+                   |R|<=sum_i |D_i|<=4epsilon*p^2,
+
+contradicting |R|>=delta*p^2. No additional argument for discarding or
+repairing degeneracies is needed; the diagonal solutions provide the
+contradiction themselves.
+
+5. SCOPE
+
+The full four-partite removal statement is stronger than needed.
+It would be enough to prove the corresponding deletion assertion
+for four identical properly oriented supports R in the small-solution
+regime just used. A direct supersaturation theorem for this special
+support class could also bypass removal entirely.
+
+The reduction is exact and elementary. The missing removal or
+supersaturation theorem would be substantive new mathematical work.
+Nothing here establishes it, and ordinary graph removal at the p^4
+rectangle scale cannot be substituted for the stated p^3-scale input.
+
+6. AN EXACT THREE-SLOT TRIANGLE PARAMETERIZATION, AND ITS MISSING TEST
+
+Set U=a, V=a+b, W=ac. Since U!=0, these are valid coordinates:
+
+  slot 1 = (U,V-U),
+  slot 2 = (U,W/U),
+  slot 3 = an ordered root pair with sum V and product W.
+
+The first membership test depends on (U,V), the second on (U,W),
+and the third on (V,W). Thus the first THREE tests can be represented
+by the edges of an ordinary tripartite triangle. Proper orientation
+ensures at most one selected ordered root pair for the third test.
+
+However the fourth selected root pair must have
+
+  sum U+W/U,        product U(V-U).
+
+That test depends simultaneously on all three triangle parameters.
+Counting triangles does not count the required four-support solutions,
+and B allows such triangles when this final crossed position is absent.
+This identifies the precise extra test an attempted triangle-removal
+representation must implement; it is not removed by the change of
+coordinates. No claim is made that another representation is impossible.

@@ -1,0 +1,99 @@
+Asymptotic properification of rainbow-C4 colorings
+Date: 2026-10-15
+Status: elementary consequence of the triangle-removal lemma; literature novelty
+is not asserted. The argument below has been independently checked, not Lean checked.
+
+Definitions. A B-coloring is an edge coloring of a simple graph in which every
+four-cycle has four different colors. A proper B-coloring is also proper at
+vertices. Write M(n,q) and P(n,q) for the maximum number of edges in such graphs
+on n vertices with at most q colors, without and with properness respectively.
+
+THEOREM. There is a function r(n)=o(n^2), independent of q, such that every
+B-colored n-vertex graph can be made properly B-colored by deleting at most
+2r(n) edges. In particular,
+                 P(n,q) <= M(n,q) <= P(n,q)+o(n^2),
+where the error is uniform over all palette sizes q.
+
+Proof.
+1. If uv and vw are distinct edges of the same color, u and w have exactly one
+   common neighbor, v. Indeed another common neighbor x would give the
+   non-rainbow four-cycle u-v-w-x-u. All four vertices are distinct.
+
+2. Greedily choose an inclusion-maximal family F of edge-disjoint monochromatic
+   paths of length two. Let t=|F|. The two legs of different chosen paths are
+   disjoint as graph edges. Their endpoint pairs are also distinct: two paths
+   with the same endpoint pair would have the same center by step 1 and thus
+   be the identical path.
+
+3. Take three disjoint copies A,B,C of the original vertex set. Orient the
+   endpoints of each chosen path arbitrarily, writing it u-v-w, and add the
+   three edges u_A v_B, v_B w_C, and u_A w_C. The resulting tripartite graph T
+   has exactly t edge-disjoint triangles.
+
+   Edge-disjointness: the A-B and B-C legs cannot repeat because the original
+   chosen paths are edge-disjoint; the A-C shortcut cannot repeat because
+   endpoint pairs are distinct. Edges in different bipartite pairs of parts
+   cannot coincide.
+
+   No extra triangle: every triangle in T has an A-C edge u_A w_C belonging to
+   some chosen path u-v-w. Its B vertex x_B gives original edges ux and xw.
+   The unique-common-neighbor conclusion of step 1 forces x=v. Thus this is
+   the selected triangle associated with that shortcut.
+
+4. The triangle-removal lemma implies that a graph on 3n vertices consisting
+   of edge-disjoint triangles and no other triangles has t=o(n^2) triangles.
+   More explicitly, if t>=epsilon n^2 along a sequence, every triangle-free
+   deletion would require at least t edges (one per edge-disjoint triangle).
+   The removal lemma would then force Omega_epsilon(n^3) triangles in T, but
+   T has exactly t<=n(n-1)/4 triangles, a contradiction for large n.
+
+5. Delete both original legs of every path in F. If the remaining coloring
+   were improper, it would contain a monochromatic two-edge path disjoint
+   from all selected paths, contradicting maximality. Deletion preserves B.
+   This costs 2t=o(n^2) edges. The construction and its bound do not mention q.
+
+Quantitative formulation. Let R(N) be the largest number of edge-disjoint
+triangles in an N-vertex graph having no other triangles. Then one can take
+r(n)=R(3n); the classical (6,3)/triangle-removal theorem says R(N)=o(N^2).
+The displayed upper bound t<=n(n-1)/4 uses two original edges per path.
+Primary reference for the triangle-removal lemma: Jacob Fox, A new proof of
+the graph removal lemma, Annals of Mathematics 174 (2011), 561-579:
+https://annals.math.princeton.edu/2011/174-1/p17
+This reference supplies the established removal theorem, not an attribution
+of the properification corollary to Fox.
+
+Consequences and limitations.
+- A proof of P(n,n)=o(n^2) is equivalent to the original M(n,n)=o(n^2).
+- Any asymptotic constant upper bound for proper B-colorings transfers with
+  the SAME constant to arbitrary B-colorings. The earlier elementary
+  minimum-degree/matching selection gave only quadratic loss in density.
+- This is not a proof that either extremal function is o(n^2).
+- It does not make the palette a perfect matching factorization. In a
+  perfect B-coloring every vertex sees every color. Properification merely
+  ensures that a vertex sees any given color at most once.
+
+Ordinary near-regularization.
+After deleting low-degree vertices from a dense proper B graph, split each
+remaining vertex into a bounded number of vertices, partitioning its incident
+edges into groups with sizes between delta/2 and delta. This preserves edges,
+colors, and B: a four-cycle in the split graph maps to a four-cycle in the
+original graph, since its two distinct incident edges at a clone arise from
+different original edges and opposite clone-identifications would require
+one original edge to have been duplicated. This makes degrees comparable,
+but leaves missing colors at each vertex.
+
+Related published tool: Kim, Lee, Liu and Tran, Rainbow Cycles in Properly
+Edge-Colored Graphs, Combinatorica 44 (2024), Lemma 3.1, uses this vertex
+splitting to obtain delta/2 <= degree <= delta with at most 4e/delta vertices.
+https://link.springer.com/article/10.1007/s00493-024-00101-7
+This citation is for the splitting operation, not for our properification
+claim or any perfect-B completion theorem.
+
+Perfect-B completion status. No density-preserving completion theorem has
+been established here. Extracting an ordinary regular factor does not solve
+the palette problem: its coloring can use more colors than its degree.
+Selecting vertices that see every color of a chosen large subpalette asks
+for a complete bipartite subgraph in the vertex-color incidence graph, which
+is not supplied at linear scale by ordinary density alone. These observations
+identify gaps in naive reductions, not an impossibility theorem for all
+possible regularization or completion constructions.

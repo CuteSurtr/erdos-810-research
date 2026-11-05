@@ -1,0 +1,192 @@
+Retaining the side-size profile in the endpoint recursion
+2026-10-15. Proof draft, not Lean verified. External novelty not established.
+
+RESULT. The recursive-density-bound.txt argument strengthens to
+
+             M(N) <= (rho_profile+o(1)) N^2,
+             rho_profile = 0.2984440375099955469... .
+
+Let C_* be the unique root greater than 1 of
+
+             9C^4+32C^3+13C^2-45C-36=0.
+
+Then C_*=1.1854165591228241566..., alpha=1/(1+C_*)
+=0.4575786688471771051..., and rho_profile is the unique root in [0,1/2]
+of 4(1+alpha)rho^3-2(1+alpha)rho^2-3rho+1=0.
+
+This is a refinement of the same proof method, not a proof of o(N^2).
+The proof uses the properification lemma only to pass from proper B to
+arbitrary rainbow-C4 colorings.
+
+1. A general profile and the endpoint induction.
+Normalize colors to N and let a,b be the bipartite part sizes divided by N,
+with s=a+b<=1. For a nonnegative profile A(s), use the bound
+
+                  F_A(a,b)=ab s/[s+ab(1+s A(s))].
+
+As in recursive-density-bound.txt, a bound F_A means a uniform error o(N^2)
+over all graphs and part sizes. That file proves the base profile A=0 using
+the exact elementary bipartite inequality.
+
+For C>=1 put A_C(s)=1/(1+C s). We will prove that a valid A_C profile implies
+a valid A_{K(C)} profile, where
+
+ K(C)=(19C^3+75C^2+93C+36)/(9C^3+51C^2+88C+48).             (1)
+
+The first application to A=0 yields the valid profile A_{19/9}.
+
+2. Concavity needed for Jensen.
+Fix u<=1 and write z=k(u-k), d=1/u+A_C(u). Then
+
+ F_A(k,u-k)=z/(1+dz),
+ (d^2/dk^2)F_A(k,u-k)
+      =-2/(1+dz)^2-2d(u-2k)^2/(1+dz)^3.
+
+Because 0<=A_C<=1 and 0<=u<=1,
+dz<=u/4+u^2/4<=u/2. Thus this second derivative is at most
+-2/(1+u/2)^2. For the endpoint integrand
+
+             h(k)=k^2+F_A(k,b-k)+F_A(a-k,k),
+
+convexity of u -> (1+u/2)^(-2) gives
+
+ h''<=2-2/(1+a/2)^2-2/(1+b/2)^2
+     <=2-4/(1+s/4)^2<=-14/25<0.
+
+This also covers the A=0 base profile. Therefore Jensen applies to the N
+color classes, including empty classes, exactly as in the earlier proof.
+
+3. Cauchy-Schwarz step with the profile retained.
+Let m be a positive limiting normalized edge count and write
+
+                  f_C(u)=u/(1+u A_C(u))
+                        =u(1+Cu)/(1+(C+1)u).
+
+Its second derivative is -2/[1+(C+1)u]^3<0. The two denominator terms in
+the Cauchy-Schwarz loss therefore sum to at most
+
+                 f_C(a)+f_C(b)<=s/[1+(s/2)A_C(s/2)].
+
+The endpoint argument consequently gives a new bound with denominator
+coefficient 1+R(s,m), where
+
+ R(s,m)=(s-2m)^2/[s/(1+(s/2)A_C(s/2))+m(s-2m)].
+
+As previously, R decreases with m. The assumed bound implies
+
+ m<=s^2/[4+s+s^2 A_C(s)].
+
+Set D=4+s+s^2 A_C(s), B=4-s+s^2 A_C(s). Then
+
+ R(s,m)/s >= Q_C(s)
+   := B^2/[D^2/(1+(s/2)A_C(s/2))+s^2 B].                   (2)
+
+We next prove Q_C(s)>=1/(1+K(C)s), uniformly for 0<=s<=1.
+
+4. Exact polynomial certificate for the profile recurrence.
+Put
+
+ U=1+Cs, W=2+Cs, V=2+(C+1)s,
+ Dn=4+(4C+1)s+(C+1)s^2,
+ Bn=4+(4C-1)s+(1-C)s^2.
+
+These are positive for C>=1 and s in [0,1]: in particular Dn=UD and Bn=UB.
+Then Q_C(s)=Bn^2 V/[Dn^2 W+s^2 Bn U V].
+Write K(C)=KN/KD, where KN and KD are the numerator and denominator in (1).
+Exact polynomial expansion gives
+
+ (KD+KN s)Bn^2 V - KD(Dn^2 W+s^2 Bn U V)
+       =s(1-s)[q0+q1 s+q2 s^2+q3 s^3+q4 s^4],             (3)
+
+where
+
+ q0=384+1568C+1584C^2+464C^3,
+ q1=-384+736C+3984C^2+3872C^3+1088C^4,
+ q2=-72-438C+771C^2+3345C^3+2964C^4+784C^5,
+ q3=-36-9C+34C^2+341C^3+822C^4+648C^5+160C^6,
+ q4=-36-9C+142C^2+116C^3-78C^4-107C^5-28C^6.
+
+For C>=1, q0,q1,q2,q3 and q3+q4 are all positive. Explicitly, q1's first
+two terms already sum to at least 352; q2's first three terms are positive
+because 771C^2-438C-72 is increasing and positive for C>=1. For q3 use
+341C^3-9C-36>0. Finally
+
+ q3+q4=-72-18C+176C^2+457C^3+744C^4+541C^5+132C^6>0,
+
+since its first three terms are already increasing and positive at C=1.
+Rewrite the last two terms in (3)'s bracket as
+
+               q3 s^3(1-s)+(q3+q4)s^4.
+
+Thus the right side of (3) is nonnegative. All denominators are positive,
+so (3) proves Q_C(s)>=1/(1+K(C)s). Combined with (2), it proves the profile
+recurrence (1).
+
+5. Starting from the base profile A=0.
+The same calculation before introducing C gives
+
+ Q_0(s)=(4-s)^2/[(4+s)^2+s^2(4-s)].
+
+Here the subscript denotes the zero profile, not A_C at C=0. The identity
+
+ (1+(19/9)s)(4-s)^2 - [(4+s)^2+s^2(4-s)]
+                  =(4/9)s(1-s)(40-7s)>=0
+
+shows that Q_0(s)>=1/(1+(19/9)s). Hence the base bound implies the first
+profile A_{19/9}, as asserted.
+
+6. Uniform errors and boundary cases.
+The uniform compactness proof in section F of recursive-density-bound.txt
+applies verbatim. Endpoint decomposition introduces at most twice the prior
+uniform normalized error plus O(1/N). Jensen is valid by section 2. If a new
+uniform bound failed by eta>0, a convergent subsequence of (a,b,m) would have
+m>=eta, forcing a,b,s positive. The limit then obeys sections 3-4, a
+contradiction. Thus no division by a vanishing m or part size is concealed.
+Each iteration is fixed before N tends to infinity.
+
+7. Limit of the profile parameters.
+Let C_0=19/9 and C_{j+1}=K(C_j). The derivative of K is positive: after
+multiplying by its squared denominator, its numerator is
+
+                294C^4+1670C^3+3621C^2+3528C+1296.
+
+For C>=1, K(C)>=1 because KN-KD=10C^3+24C^2+5C-12>0.
+The sign of C-K(C) is the sign of
+
+                       P(C)=9C^4+32C^3+13C^2-45C-36.
+
+P(1)<0, P(19/9)>0, and P'(C)=36C^3+96C^2+26C-45>0 for C>=1. There is
+therefore a unique fixed point C_*>1. Monotonicity of K shows C_j decreases
+to C_*, always remaining in [C_*,19/9]. The corresponding profiles increase.
+Take N->infinity for each fixed j, then j->infinity. This yields the limiting
+profile A_{C_*}, without needing an error estimate uniform in j.
+
+8. Global graph bound.
+For the cut between the endpoints of a color matching and all other
+vertices, the normalized side total is s=1. Thus only A_{C_*}(1)=alpha is
+used in the final global Jensen calculation. The internal endpoint graph
+still contributes at most K^2 edges. As in section H of the earlier proof,
+the function
+
+             2x^2 + z/[1+(1+alpha)z],  z=2x(1-2x),
+
+is concave because alpha<1/2. Summing endpoint degree inequalities gives
+the stated cubic density bound. Properification transfers it unchanged to
+arbitrary rainbow-C4 colorings with <=N colors.
+
+The numerical constant describes an exactly specified algebraic number;
+the proof does not depend on floating-point root calculations.
+
+9. Exact algebra and interval certificate.
+check_profile_polynomial.py uses integer polynomial arithmetic to verify (3)
+and rational arithmetic to certify
+
+ 1.18541655912282415 < C_* < 1.18541655912282417,
+ 0.29844403750999554 < rho_profile < 0.29844403750999556.
+
+The resulting exact signed numerators and denominators are saved in
+profile-polynomial-certificate.json. The density interval uses conservative
+endpoint signs over the entire certified C interval. The normalized cubic
+increases with C for a fixed rho in (0,1/2), and decreases with rho, so the
+sign certificates bracket its root. This check verifies algebra and root
+isolation; it does not replace the combinatorial proof above.

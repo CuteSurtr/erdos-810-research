@@ -1,0 +1,74 @@
+NESTED COLOR DOMAINS: A QUANTITATIVE POWER SAVING
+2026-10-15, finite_audit agent. Analytic consequence of the crossed-operator
+theorem; priority unverified. No finite graph enumeration.
+
+THEOREM
+
+Let p be an odd prime and A subset F_p^*. For each a in A choose a row domain
+D_a subset F_p. Select exactly the colored edges
+
+                    (x, a*x+a^2), x in D_a.
+
+Assume the domains are linearly ordered by inclusion. If the resulting
+coloring is proper and every C4 is rainbow, then
+
+                         m=O(p^(35/18)).                (1)
+
+The constant is absolute. In particular m=o(p^2), with genuinely varying
+color domains permitted. More generally, the same conclusion with constant
+depending on D holds for a*x+beta(a), where beta has fixed degree
+2<=D<p, using the polynomial extension of the crossed-operator theorem.
+
+INPUT FROM THE COMMON-DOMAIN THEOREM
+
+For any w distinct colors sharing one common row set, the inherited proper
+B subgraph has at most
+
+ C [p^2/w + p^(9/4) w^(-1/2) + p^(17/8) w^(-1/4)]       (2)
+
+edges. Here C is absolute for beta(a)=a^2 and may depend on D for polynomial
+beta. See pass4-crossed-operator-independent-audit.txt and the canonical
+crossed-reflection theorem and polynomial extension.
+
+PROOF OF THE NESTED-DOMAIN THEOREM
+
+Enumerate the d<=p-1 colors so that
+
+                      D_1 subset ... subset D_d.
+
+Choose an integer w between 1 and p. Split the ordered colors into consecutive
+full blocks of w colors and a final block of fewer than w colors. Discard the
+last block, losing fewer than wp edges. Within each full block i through j,
+retain only the common minimum domain D_i for all colors of that block.
+
+The number of edges discarded from this block is
+
+ sum_(ell=i)^j (|D_ell|-|D_i|)
+       <= w (|D_j|-|D_i|).
+
+Summing over the consecutive disjoint blocks gives at most wp, because the
+sum of these domain-size increments is at most |D_d|-|D_1|<=p; the increments
+in the gaps between blocks are nonnegative. This is the key telescoping
+advantage over a general support matrix.
+
+Each retained block is a common-domain proper B graph. There are at most p/w
+full blocks, so (2) yields
+
+ m <= 2wp + C [p^3 w^(-2) + p^(13/4) w^(-3/2)
+                                      + p^(25/8) w^(-5/4)].              (3)
+
+Take w=ceil(p^(17/18)), which is at most p. If d<w, the trivial bound m<=dp
+already proves (1). Otherwise (3) applies. Its last displayed term and 2wp
+are O(p^(35/18)); the other two terms are O(p^(10/9)) and O(p^(11/6)). This
+proves the theorem, including rounding with an absolute constant.
+
+SCOPE
+
+The decomposition is by COLOR ranks in the inclusion chain. It does not
+assume that any D_a is an interval in the field, or that the palette is an
+interval. Domain inclusion alone makes the total loss telescope.
+
+A union of a fixed number k of such support chains has at most
+O(k*p^(35/18)) edges, by applying the theorem to the inherited B subgraphs
+and summing. This is only a support-complexity subclass; arbitrary support
+matrices need not have a bounded chain cover.

@@ -1,0 +1,271 @@
+QUADRATIC AFFINE COLORS WITH COMMON OR NEARLY COMMON ROW SUPPORT
+15 October 2026, scheduled continuation 4.
+
+Status: analytic proof independently audited by two agents. The only
+exponential-sum input is the classical Weil bound for Kloosterman sums.
+This is a conditional class theorem, not a solution of unrestricted
+Erdos #810. Historical originality of the assembled result is unverified.
+No Lean certificate or finite graph enumeration is claimed.
+
+1. STATEMENTS
+
+Let p be an odd prime, A subset F_p* with d=|A|, and X subset F_p.
+For each a in A choose D_a subset X and retain precisely the edges
+
+                     x -> sigma_a(x)=a*x+a^2, x in D_a,
+
+with color a. Assume these edges form a simple properly colored
+bipartite graph and every C4 is rainbow (condition B). Put
+
+       m=sum_a |D_a|,       R=sum_a (|X|-|D_a|).
+
+Thus R counts omissions from A x X, not omissions from A x F_p.
+
+THEOREM. There is an absolute constant C such that
+
+                    m <= C p^(19/10) + sqrt(2) p sqrt(R).       (1)
+
+In particular:
+
+(a) COMMON SUPPORT: if every D_a=X, then m=O(p^(19/10)).
+    This permits any A and any X, including fixed positive support
+    fractions. No additive or multiplicative structure of A is assumed.
+
+(b) NEARLY COMMON SUPPORT: R=o(p^2) implies m=o(p^2), even if X has
+    a fixed density strictly below one.
+
+(c) MANY EXACT RECTANGLES: if the actual color-by-row support is
+    covered by K all-present rectangles A_i x X_i, then
+
+                         m <= C K p^(19/10).
+
+    This follows by restricting the graph to each rectangle and summing.
+    Thus K=o(p^(1/10)) suffices for m=o(p^2). Rectangles may overlap.
+
+The palette is specifically quadratic affine. This does not prove
+the same statements for arbitrary affine intercepts or permutations.
+
+2. CROSSED REFLECTIONS AND THEIR FOURIER BLOCKS
+
+On the p^2-element space V=F_p^2, define
+
+       tau_a(x,y)=(y/a-a, a*x+a^2),
+       (S_A f)(x,y)=sum_{a in A} f(tau_a(x,y)).
+
+Each tau_a is an involution. Hence S_A is a real symmetric operator
+with constant row and column sum d. It is the sum of the reflections
+fixing the affine lines y=a*x+a^2; those reflections preserve the
+split quadratic form on differences, Q(delta_x,delta_y)=delta_x*delta_y.
+
+Use counting-measure L2 norms. For e_p(t)=exp(2 pi i t/p), set
+chi_(xi,eta)(x,y)=e_p(xi*x+eta*y). Then
+
+ S_A chi_(xi,eta)
+   =sum_{a in A} e_p(-a*xi+a^2*eta) chi_(a*eta,xi/a).    (2)
+
+Thus the product xi*eta is invariant. The zero frequency has
+eigenvalue d. All other frequencies split into:
+
+  - one block consisting of the two nonzero coordinate axes;
+  - a block of size p-1 for each t=xi*eta != 0.
+
+For t!=0, index frequency vectors as (s,t/s). The output first
+frequency r equals ta/s, so a=rs/t. The block matrix is
+
+       M_t(r,s)=1_A(rs/t) e_p(rs(r-s)/t), r,s != 0.     (3)
+
+It is Hermitian: its weight is symmetric and its phase changes sign
+when r and s are interchanged.
+
+3. THE FOURTH MOMENT ON A NONZERO-PRODUCT BLOCK
+
+Expand tr(M_t^4) over r,s,u,v != 0. Its four weights are
+
+        1_A(rs/t) 1_A(su/t) 1_A(uv/t) 1_A(vr/t).
+
+The phase numerator factors exactly:
+
+ rs(r-s)+su(s-u)+uv(u-v)+vr(v-r)
+       =(r-u)(s-v)(r+u-s-v).                         (4)
+
+Make the bijective substitution
+
+       a=rs/t,  q=u/r,  h=v/s,
+       s=ta/r,  u=qr,  v=h*ta/r.
+
+For each a,q,h != 0 the four membership tests become
+
+                    a, qa, qha, ha in A,             (5)
+
+and the remaining sum over r is
+
+ sum_{r!=0} e_p(alpha*r+beta/r),                     (6)
+ alpha=a(1-q)(1-h)(1+q),
+ beta=-t*a^2(1-q)(1-h)(1+h).
+
+If alpha and beta are both nonzero, the classical Kloosterman bound
+gives absolute value at most 2 sqrt(p). If exactly one is zero,
+the sum is -1, by additive-character orthogonality.
+
+Both are zero precisely in these cases:
+
+                q=1, or h=1, or q=h=-1.             (7)
+
+Here p odd is used. The number of triples in (5) with q=1 or h=1
+is 2d^2-d. The third case adds |A intersect (-A)|, at most d.
+Consequently there are at most 2d^2 exceptional triples. Their
+individual sums are p-1.
+
+The total number of triples satisfying (5) is the multiplicative
+energy
+
+ E_x(A)=#{(a,b,c,e) in A^4 : a*c=b*e} <= d^3,
+
+since a,qa,ha determine the fourth entry. Taking absolute values
+of the nonexceptional sums in the fourth-moment expansion yields
+
+       0 <= tr(M_t^4)
+          <= 2p*d^2 + 2 sqrt(p) E_x(A)
+          <= 2p*d^2 + 2 sqrt(p) d^3.                 (8)
+
+Because M_t is Hermitian, its operator norm to the fourth power
+is at most its fourth trace. No claim of independence of the
+four palette membership tests is used.
+
+4. THE AXIS BLOCK
+
+The axis block has off-diagonal form [0 N; N* 0], where
+
+                N(r,s)=1_A(r/s)e_p(r^2/s).
+
+This is the zero-sum Fourier block of the one-point operator
+C_A=sum_{a in A} P_(sigma_a) on F_p. The following elementary
+fourth-moment bound was independently proved in pass 3:
+
+                ||N||^4 <= (p-1)(3d^2-2d).           (9)
+
+For completeness, sigma_a sigma_b^-1 has slope rho=a/b and
+intercept rho(rho-1)b^2. The identity quotient has multiplicity d;
+each other quotient has multiplicity at most two. Hence the
+noncommutative quotient energy is at most 3d^2-2d.
+
+On the zero-sum permutation representation of Aff(F_p), the trace
+of a group element is p-1 for the identity, -1 for a nontrivial
+translation, and 0 for an affine map of slope different from one.
+Expand tr((C_A C_A*)^2) on that representation. Identity words
+contribute at most (p-1)(3d^2-2d), translations have nonpositive
+contributions, and other words contribute zero. This proves (9).
+
+Together, (8)--(9) show that on the mean-zero space of V,
+
+ ||S_A|| <= lambda,
+ lambda := [3p*d^2+2 sqrt(p) E_x(A)]^(1/4)
+         <= C[p^(1/4)d^(1/2)+p^(1/8)d^(3/4)].         (10)
+
+The bracket is only an upper bound on the nontrivial operator
+norm. The argument does not assume that it is smaller than d
+in all ranges.
+
+5. THE ACTUAL EDGE SET AND THE B CONDITION
+
+Regard the actual bipartite edge set as E subset V. Its size is m.
+A term of <1_E,S_A 1_E> is an ordered triple (a,x,z) for which
+
+                  (x,sigma_a(z)), (z,sigma_a(x)) in E.          (11)
+
+If x!=z and both a-colored incidences at x,z are retained,
+the two edges in (11) complete a nondegenerate C4 whose opposite
+edges both have color a, violating B. The four vertices are
+distinct within their respective parts since sigma_a is bijective.
+
+If x=z and the a-colored incidence is retained, (11) is a loop.
+Properness gives exactly one such retained loop for each actual
+edge, hence exactly m of these terms in total.
+
+Every other term in (11) has at least one missing incidence
+(a,x) or (a,z) from A x X. This includes a virtual loop that
+coincides with an actual edge of a different color.
+
+Fix a missing incidence (a,x). At most deg_E(x)<=d choices of z
+can satisfy (11) with x in the first position: distinct z give
+distinct neighbors sigma_a(z) of row x. The same bound holds
+for the second position, either directly or by the involution.
+A union bound therefore proves
+
+ <1_E,S_A 1_E>
+     <= m+2 sum_{missing (a,x)} deg_E(x)
+     <= m+2dR.                                      (12)
+
+This is an actual-support estimate. It is the point missing from
+the earlier completed-map mixing arguments.
+
+6. SPECTRAL LOWER BOUND AND OPTIMIZATION
+
+Center 1_E on the p^2-element space. Since S_A is symmetric,
+has constant degree d, and satisfies (10),
+
+ <1_E,S_A 1_E>
+    >= d*m^2/p^2 - lambda*(m-m^2/p^2).               (13)
+
+Combining (12)--(13) gives
+
+          (d+lambda)m^2/p^2 <= (1+lambda)m+2dR.       (14)
+
+For R=0 and d>0, this gives the particularly useful bound
+
+                    m <= p^2(1+lambda)/(d+lambda).  (15)
+
+For general R, discard the extra lambda*m^2 term and put
+B=p^2(1+lambda)/d. The resulting m^2<=B*m+2p^2 R implies
+
+                       m <= B+sqrt(2)p sqrt(R).     (16)
+
+If d=0 the theorem is immediate. For d>0, (10) gives
+
+ B <= p^2/d + C p^(9/4)d^(-1/2)
+                 + C p^(17/8)d^(-1/4).              (17)
+
+If d<=p^(9/10), use simply m<=dp<=p^(19/10).
+If d>p^(9/10), the three exponents in (17) are at most
+11/10, 9/5, and 19/10 respectively. Equation (16) proves (1).
+
+If d>=delta*p for a fixed delta>0 and R=0, (17) also gives
+
+                       m=O_delta(p^(15/8)).          (18)
+
+This already contradicts m=d|X| when both d and |X| are fixed
+positive fractions of p.
+
+7. INPUT, INTERPRETATION, AND LIMITS
+
+Kloosterman input:
+Iwaniec--Kowalski, Analytic Number Theory, Theorem 11.11 and
+equation (11.15), printed p.280, author-hosted extract:
+https://people.math.ethz.ch/~kowalski/ik-ant-exp-sums.pdf
+The one-zero and both-zero parameter cases in (6) are handled
+explicitly above. Only the two-nonzero case uses Weil's estimate.
+
+The source of the power saving is the exact action of the crossed
+involutions and a fourth-moment estimate that retains all four
+palette membership tests. It is not an inference from small
+one-coordinate marginals, a claim of generic nonlinear mixing,
+or an application of ordinary dense colored removal.
+
+The common row support turns actual B into an independent-set
+condition for these involutions. For nearly common supports,
+(12) measures the exact failure of that condition. Arbitrary
+partial supports need not have R=o(p^2) for any common container.
+
+For K groups of colors with respective containers X_i and total
+omission R_total, summing (1) gives
+
+ m <= C K p^(19/10) + sqrt(2) p sqrt(K R_total).
+
+This requires K=o(p^(1/10)) and K R_total=o(p^2) to force
+vanishing density. A bounded VC-dimension assertion alone does
+not imply these conditions by the naive covering argument:
+its covering number can grow too rapidly as the error shrinks.
+No such VC corollary is asserted.
+
+The theorem's historical priority has not been established.
+The universal 0.298444... bound and its novelty status are unchanged.
