@@ -5,7 +5,7 @@ proof=drat: CaDiCaL writes a binary DRAT file, checked by drat-trim after an UNS
 proof=lrat (or 1): CaDiCaL streams a binary LRAT proof through a fifo into cake_lpr, which checks it
 on the fly (no proof file on disk; the byte count is taken by a tee in between).
 SAT models are decoded and re-checked with check.py.  Prints one JSON line on stdout."""
-import sys, os, json, subprocess, time, hashlib
+import sys, os, json, subprocess, time, hashlib, signal
 SRC = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, SRC)
 from check import check
 WORK = os.environ["CYCWORK"]; B = os.environ["CYC_TOOLS"]
@@ -42,17 +42,50 @@ if pm == "lrat":
     # Keep a writer open while CaDiCaL opens/reopens the proof path, so the
     # relay cannot mistake the interval between opens for end-of-file.
     fifo_guard = os.open(fa, os.O_RDWR)
-    ck = subprocess.Popen(f"{CAKE} --CML_HEAP_SIZE=1000 --CML_STACK_SIZE=64 {cnf} {fb} > {ckf} 2>&1", shell=True)
-    tp = subprocess.Popen(f"cat {fa} | tee {fb} | wc -c > {szf}", shell=True)
+    with open(ckf, "w") as checker_log:
+        ck = subprocess.Popen([CAKE, "--CML_HEAP_SIZE=1000", "--CML_STACK_SIZE=64", cnf, fb],
+                              stdout=checker_log, stderr=subprocess.STDOUT, start_new_session=True)
+    tp = subprocess.Popen(f"set -o pipefail; cat {fa} | tee {fb} | wc -c > {szf}",
+                          shell=True, executable="/bin/bash", start_new_session=True)
     cmd = [CAD, "-q", "-t", str(tl), "--lrat"] + extra + [cnf, fa]
 else:
     cmd = [CAD, "-q", "-t", str(tl)] + extra + [cnf] + ([prf] if proof else [])
-r = subprocess.run(cmd, capture_output=True, text=True); lines = r.stdout.splitlines()
+r = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
+                     start_new_session=True)
+while True:
+    try:
+        stdout, stderr = r.communicate(timeout=1)
+        break
+    except subprocess.TimeoutExpired:
+        reason = None
+        if pm == "lrat" and ck.poll() not in (None, 0):
+            reason = "proof checker failed"
+        elif pm == "lrat" and tp.poll() not in (None, 0):
+            reason = "proof relay failed"
+        elif time.time() - t0 > tl + 10:
+            reason = "external wall-clock deadline"
+        if reason:
+            out["abort_reason"] = reason
+            # A solver blocked on a dead proof pipe can catch SIGTERM and stay
+            # blocked in its handler. SIGKILL guarantees bounded cleanup.
+            r.kill()
+            stdout, stderr = r.communicate()
+            break
+lines = stdout.splitlines()
 out["solver_returncode"] = r.returncode
+if stderr.strip(): out["solver_stderr"] = stderr.strip()[-1000:]
 if pm == "lrat":
     os.close(fifo_guard)
-    tp.wait(); t1 = time.time(); ck.wait()
-    ckout = open(ckf).read(); out["proof_bytes"] = int(open(szf).read().split()[0])
+    for proc in (tp, ck):
+        try: proc.wait(timeout=30)
+        except subprocess.TimeoutExpired:
+            os.killpg(proc.pid, signal.SIGKILL)
+            proc.wait()
+            out["abort_reason"] = "proof cleanup deadline"
+    t1 = time.time()
+    ckout = open(ckf).read()
+    sizes = open(szf).read().split()
+    out["proof_bytes"] = int(sizes[0]) if sizes else None
     out["checker_returncode"] = ck.returncode
     out["checker_output"] = ckout.strip()
     out["stream_returncode"] = tp.returncode
@@ -68,7 +101,7 @@ elif any(l.startswith("s UNSATISFIABLE") for l in lines):
     out["res"] = "UNSAT"
     if pm == "lrat":
         sl = [l for l in ckout.splitlines() if l.startswith("s ")]
-        out["check"] = sl[-1] if sl and ck.returncode == 0 and tp.returncode == 0 else "no successful verdict: " + ckout[-200:]
+        out["check"] = sl[-1] if sl and ck.returncode == 0 and tp.returncode == 0 and not out.get("abort_reason") else "no successful verdict: " + ckout[-200:]
         out["check_extra_secs"] = round(time.time() - t1, 1); out["checker"] = "cake_lpr a36874a (streamed binary LRAT)"
     if pm == "drat":
         out["proof_bytes"] = os.path.getsize(prf); t1 = time.time()

@@ -1,19 +1,19 @@
 {
-  "checked_at_utc": "2026-11-05T18:12:21.351353+00:00",
-  "new_records": 76,
+  "checked_at_utc": "2026-11-05T18:27:26.603642+00:00",
+  "new_records": 133,
   "results": {
-    "UNSAT": 59,
-    "UNKNOWN": 17
+    "UNSAT": 115,
+    "UNKNOWN": 18
   },
-  "verified_unsat_records": 59,
-  "verified_unsat_unique_cubes": 59,
+  "verified_unsat_records": 115,
+  "verified_unsat_unique_cubes": 115,
   "verified_by_top_level_root": {
-    "1,-2,-3,4": 28,
-    "1,-2,3,-4": 29,
-    "1,2,-3,-4": 2
+    "1,-2,-3,4": 56,
+    "1,-2,3,-4": 56,
+    "1,2,-3,-4": 3
   },
-  "solver_wall_seconds_sum": 3382.4,
-  "verified_proof_bytes": 3030208983,
+  "solver_wall_seconds_sum": 4727.5,
+  "verified_proof_bytes": 7757129233,
   "interrupted_records": 17,
   "errors_or_unverified_unsat": [],
   "sat": []

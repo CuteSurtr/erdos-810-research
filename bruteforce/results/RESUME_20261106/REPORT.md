@@ -1,9 +1,11 @@
-# Cyclic-family search resumed, 6 November 2026 (Korea time)
+# Erdős #810 search resumed, 6 November 2026 (Korea time)
 
 Session began 2026-11-05 18:02 UTC, with a two-hour budget.
 Starting branch: `bruteforce-2026-10`, commit
 `445837e53b2fc8b0541e18d1a2f8b77b0775a227`.
-This report concerns the cyclic orbit family, not unrestricted Erdős #810.
+The upper-bound searches concern the cyclic orbit family. The new explicit
+constructions below give lower bounds for unrestricted M(n). Neither gives
+a solution of the asymptotic Erdős #810 problem.
 
 ## Placement and resource limit
 
@@ -13,6 +15,16 @@ resources; the extra solvers were terminated and their partial work is marked
 UNKNOWN. The resumed run uses two workers, CPU affinity 30–31, niceness 19,
 and idle I/O priority. Each proof checker has a 1000 MB heap and 64 MB stack.
 The run stops accepting new jobs at 19:52 UTC; leaf cap is 400 seconds.
+From 18:16 UTC, one worker on CPU 31 continues n = 56 and one on CPU 30
+tests the previously unresolved full n = 43, k = 11 formula (4200-second
+cap). CPU and I/O priorities remain unchanged. These are at most two
+logical CPUs in total, including proof checking.
+The n = 56 driver was stopped gracefully at 18:39 UTC and CPU 31 reassigned
+to construction searches. The n = 43 full-formula checker exhausted its
+1000 MB heap; this attempt is UNKNOWN, not a proof. At 18:52 it was stopped
+and the runner repaired to detect failed proof checkers and enforce an
+external wall-clock deadline. At 18:53, CPU 30 began smaller n = 43 cubes
+with 90-second caps and the same memory limit. No memory increase was made.
 
 ## Results
 
@@ -20,7 +32,105 @@ The run stops accepting new jobs at 19:52 UTC; leaf cap is 400 seconds.
 |---|---|
 | Cyclic `k_max(52) = 12`, hence maximum 624 edges in this family | **Proof-checked historical result; consolidated coverage verified in this session.** Both closure checkers accept all 10,872 leaves, with zero missing branches or symmetry-covered leaves. |
 | Cyclic `k = 13` at `n = 56`, 728 edges | **Certificate-verified again in this session**, by both independent graph checkers. |
-| Cyclic `k = 14` at `n = 56`, 784 edges | **Unfinished; search running.** Counts in `logs/n56-status.json`. |
+| Cyclic `k = 14` at `n = 56`, 784 edges | **Unfinished; checkpointed.** 115 new verified UNSAT leaves; four of nine top-level roots closed including historical work. |
+| Cyclic `k = 10` at `n = 43`, 430 edges | **Certificate-verified again**, using both checkers; 16,813 rainbow four-cycles. |
+| Cyclic `k = 11` at `n = 43`, 473 edges | **Unfinished; smaller proof-producing cubes running.** The full attempt exhausted the checker heap. |
+
+## New certificate lower bounds
+
+The checkpoint at 18:54 UTC contains **38 improved lower bounds** compared
+with `paper/data/best_lower_bounds.json`, including the old table's implicit
+pendant padding at omitted sizes. Every candidate passed two different
+cycle enumerations: `src/fourset_check.c` visits the three cycles on each
+four-set, while `src/certcheck.py` uses common-neighbor walks. Their cycle
+counts agree. Explicit edges and colors are in `certs.json`; closure details
+and the full comparison table are in `closure/`.
+
+Selected improvements:
+
+| n | Previous repository bound | New verified bound |
+|---|---:|---:|
+| 35 | 288 | 298 |
+| 39 | 351 | 371 |
+| 52 | 624 | 651 |
+| 54 | 690 | 702 |
+| 55 | 691 | 717 |
+| 60 | 780 | 871 |
+| 106 | 1941 | 2015 |
+| 118 | 2282 | 2404 |
+| 120 | 2284 (implicit padding) | 2512 |
+
+These are improvements to this repository's table, not claims of published
+records or exact M(n) values. In particular, the 651-edge construction at
+n = 52 is outside the cyclic family and is consistent with its 624-edge
+family optimum.
+
+Two methods are used:
+
+1. **One-vertex SAT extensions.** Keep every old edge and color and attach
+   a new vertex using a palette of n+1 colors. For each pair of attachment
+   vertices a,d and each old common neighbor b, impose that the cycle
+   new-a-b-d-new is rainbow. `extend_vertex.py` also enforces one color per
+   selected edge and a cardinality target. Every returned SAT assignment
+   satisfies every CNF clause, and its graph is independently checked.
+   The 54-vertex certificate adds 13 edges to the old 53-vertex graph;
+   the 55-vertex certificate adds 15 more. Logs and bases are in `extensions/`.
+   UNSATs here are restricted-extension answers only; they are not used as
+   mathematical upper bounds. Timeouts are UNKNOWN, never optimality.
+2. **Deletion and pendant closure.** Given an n-vertex certificate, delete
+   a vertex v and every edge of color c, then relabel to n-1 vertices/colors.
+   The retained edge count is
+   `e - degree(v) - color_size(c) + incident_count(v,c)`.
+   All pairs (v,c) are tried; the best certificate is retained. Iterate this
+   and pendant padding across the size table. `shrink_certificates.py` records
+   the complete operation chain and source hash for each improvement.
+
+The second method is an elementary consequence of heredity, not a claimed
+new theorem. It exposes useful lower bounds already implicit in the larger
+recorded constructions. Further extension searches are ongoing.
+
+## Publication assessment of existing results
+
+The strongest near-term paper candidate is the existing computational
+package: exact M(n) for n <= 12, independently checked lower-bound
+certificates, and cyclic-family optima including the break of the n/4
+pattern. `paper/main.tex` already develops this package. This session's
+bound improvements and n = 52 consolidation strengthen it. Publication
+priority and journal acceptance are not established by these checks.
+
+The separate main-branch affine results and the archived 0.298444... density
+bound are analytic proofs with recorded audits, not Lean results. Their
+novelty and external review remain pending; they should not be merged into
+a claim that #810 is solved.
+
+Primary literature located in this session includes the accessible
+[Sárközy–Selkow preprint](https://ftp.cs.wpi.edu/pub/techreports/pdf/04-02.pdf),
+the related [2023 B-coloring paper](https://www.renyi.hu/~gyarfas/Cikkek/204_studia.pdf),
+and [Gyárfás–Sárközy–Wagner (2026)](https://doi.org/10.1016/j.disc.2026.115005).
+The latter two address proper colorings and restricted families. They must
+be compared carefully before asserting novelty of cyclic or affine results.
+Finding these sources is not a completed historical-priority audit.
+
+At 18:21 UTC, the formerly open n = 56 root `(1,-2,-3,4)` closed by 56
+new checked leaves. The independent closure check reports zero open
+branches, zero unverified UNSAT lines and no SAT witness. Other roots
+remain open; this partial closure does not establish the family optimum.
+At 18:26 UTC, root `(1,-2,3,-4)` also closed by 56 new checked leaves.
+Together with the two previously closed roots, four of nine top-level
+roots are now closed. These roots are not equally costly; this is not a
+percentage estimate for remaining runtime.
+
+## Independent census-total check
+
+`src/burnside_graph_count.py` independently recomputes the number of
+unlabeled 12-vertex, 41-edge simple graphs. It enumerates the 77 conjugacy
+classes of S_12, their induced edge cycles, and fixed-size invariant edge
+subsets, then applies Burnside's lemma with exact integer arithmetic.
+The result is **2,411,961,516**, matching the total reported by the V12
+enumeration. The full class-by-class data are in
+`logs/n12e41-burnside-count.json`. This validates the reference total,
+not the individual coloring tests, uniqueness of generated hosts, or
+historical novelty of M(12).
 
 ### Completed n = 52 consolidation
 

@@ -13,7 +13,8 @@ for root in roots:
     if (src.parent / 'STOP').exists() or time.time() >= float(os.environ['CYC_DEADLINE']):
         break
     print(time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime()), 'START', root, flush=True)
-    proc = subprocess.run([sys.executable, str(src / 'tree.py'), '56', '14', '400', '2', root])
+    proc = subprocess.run([sys.executable, str(src / 'tree.py'), '56', '14', '400',
+                           os.environ.get('CYC_WORKERS', '2'), root])
     if proc.returncode:
         raise SystemExit(proc.returncode)
     print(time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime()), 'FINISH', root, flush=True)
