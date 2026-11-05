@@ -1,9 +1,9 @@
 {
-  "checked_at_utc": "2026-11-05T18:27:26.603642+00:00",
-  "new_records": 133,
+  "checked_at_utc": "2026-11-05T19:01:44.959589+00:00",
+  "new_records": 135,
   "results": {
     "UNSAT": 115,
-    "UNKNOWN": 18
+    "UNKNOWN": 20
   },
   "verified_unsat_records": 115,
   "verified_unsat_unique_cubes": 115,
@@ -12,7 +12,7 @@
     "1,-2,3,-4": 56,
     "1,2,-3,-4": 3
   },
-  "solver_wall_seconds_sum": 4727.5,
+  "solver_wall_seconds_sum": 5530.2,
   "verified_proof_bytes": 7757129233,
   "interrupted_records": 17,
   "errors_or_unverified_unsat": [],

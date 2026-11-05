@@ -1,6 +1,9 @@
 # Erdős #810 search resumed, 6 November 2026 (Korea time)
 
 Session began 2026-11-05 18:02 UTC, with a two-hour budget.
+**Stopped at the user's request at 19:00 UTC, after about 58 minutes.**
+All search and proof-checking jobs were stopped; no search is left running.
+Final certificate verification and checkpointing followed the stop.
 Starting branch: `bruteforce-2026-10`, commit
 `445837e53b2fc8b0541e18d1a2f8b77b0775a227`.
 The upper-bound searches concern the cyclic orbit family. The new explicit
@@ -34,28 +37,39 @@ with 90-second caps and the same memory limit. No memory increase was made.
 | Cyclic `k = 13` at `n = 56`, 728 edges | **Certificate-verified again in this session**, by both independent graph checkers. |
 | Cyclic `k = 14` at `n = 56`, 784 edges | **Unfinished; checkpointed.** 115 new verified UNSAT leaves; four of nine top-level roots closed including historical work. |
 | Cyclic `k = 10` at `n = 43`, 430 edges | **Certificate-verified again**, using both checkers; 16,813 rainbow four-cycles. |
-| Cyclic `k = 11` at `n = 43`, 473 edges | **Unfinished; smaller proof-producing cubes running.** The full attempt exhausted the checker heap. |
+| Cyclic `k = 11` at `n = 43`, 473 edges | **Unfinished; stopped and checkpointed.** Five of nine top-level roots closed. The full attempt exhausted the checker heap. |
 
 ## New certificate lower bounds
 
-The checkpoint at 18:54 UTC contains **38 improved lower bounds** compared
+The final checkpoint contains **50 improved lower bounds** compared
 with `paper/data/best_lower_bounds.json`, including the old table's implicit
 pendant padding at omitted sizes. Every candidate passed two different
 cycle enumerations: `src/fourset_check.c` visits the three cycles on each
 four-set, while `src/certcheck.py` uses common-neighbor walks. Their cycle
-counts agree. Explicit edges and colors are in `certs.json`; closure details
-and the full comparison table are in `closure/`.
+counts agree. Explicit edges and colors are in `certs.json`; the complete
+comparison is in `lower-bound-updates.json` and `.csv`, with certificate
+source paths and hashes in `certificate-sources.json`. Final checker outputs
+are `logs/final-fourset-check.txt` and `logs/final-independent-check.txt`.
+The 18:54 checkpoint had 38 improvements; subsequent completed searches
+and the full source catalog raised this to 50 before the user stopped work.
 
 Selected improvements:
 
 | n | Previous repository bound | New verified bound |
 |---|---:|---:|
+| 26 | 169 | 170 |
+| 28 | 196 | 198 |
+| 34 | 274 | 281 |
 | 35 | 288 | 298 |
 | 39 | 351 | 371 |
+| 43 | 430 | 434 |
+| 44 | 440 | 463 |
 | 52 | 624 | 651 |
 | 54 | 690 | 702 |
 | 55 | 691 | 717 |
 | 60 | 780 | 871 |
+| 65 | 919 | 976 |
+| 67 | 938 | 1011 |
 | 106 | 1941 | 2015 |
 | 118 | 2282 | 2404 |
 | 120 | 2284 (implicit padding) | 2512 |
@@ -87,7 +101,32 @@ Two methods are used:
 
 The second method is an elementary consequence of heredity, not a claimed
 new theorem. It exposes useful lower bounds already implicit in the larger
-recorded constructions. Further extension searches are ongoing.
+recorded constructions. All extension searches are now stopped. Interrupted
+targets are recorded as UNKNOWN in `logs/user-stop.json`.
+
+The completed n = 61 to 67 extension chain gives 928, 943, 959, 976,
+993 and 1011 edges at n = 62 through 67. A separate short batch improved
+n = 26, 28, 32, 33, 34, 37 and 38. The final table keeps whichever checked
+certificate is best; losing candidates remain in the per-attempt folders.
+
+`catalog/` normalizes the existing paper loader's sources, including cyclic
+offset-only files that the first deletion pass did not include. Every one
+of its 112 selected certificates was checked. Its source hashes refer to
+the repository state at checkpoint `e05b493`; in particular its copy of
+this task's then-current `certs.json` predates the final replacement.
+`closure_catalog/` records the completed additional deletion pass from
+that catalog, yielding 434 and 463 edges at n = 43 and 44.
+
+To verify the final lower bounds from the repository root:
+
+```
+python3 bruteforce/results/RESUME_20261106/src/certcheck.py \
+  bruteforce/results/RESUME_20261106/certs.json
+```
+
+For the second checker, compile `src/fourset_check.c` with `gcc -O2` and
+feed each certificate as `n m` followed by its m `u v color` lines.
+The final verification used CPU affinity and low priority as above.
 
 ## Publication assessment of existing results
 
@@ -119,6 +158,13 @@ At 18:26 UTC, root `(1,-2,3,-4)` also closed by 56 new checked leaves.
 Together with the two previously closed roots, four of nine top-level
 roots are now closed. These roots are not equally costly; this is not a
 percentage estimate for remaining runtime.
+
+The final n = 43 checkpoint has **399 verified UNSAT leaves** and five
+closed top-level roots. Independent recursive coverage checking recomputed
+their CNF hashes; four top-level roots remain open. See
+`logs/n43-final-closecheck.txt` and `logs/n43-status.json`. The 399 leaves
+account for 522,150,784 checked streamed proof bytes. No complete n = 43
+upper bound or new cyclic optimum is claimed.
 
 ## Independent census-total check
 

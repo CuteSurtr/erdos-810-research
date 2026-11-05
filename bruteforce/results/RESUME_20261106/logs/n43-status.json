@@ -1,0 +1,11 @@
+{
+  "results": {
+    "UNSAT": 399,
+    "UNKNOWN": 1,
+    "PRESPLIT": 22
+  },
+  "verified_unsat": 399,
+  "proof_bytes": 522150784,
+  "unfinished": true,
+  "stopped_by_user": true
+}

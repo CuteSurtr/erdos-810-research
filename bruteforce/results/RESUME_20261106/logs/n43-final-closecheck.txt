@@ -1,0 +1,10 @@
+CLOSED -1
+CLOSED 1,-2,-3,-4
+CLOSED 1,-2,-3,4
+CLOSED 1,-2,3,-4
+CLOSED 1,2,-3,-4
+OPEN   1,2,3,-4
+OPEN   1,2,-3,4
+OPEN   1,-2,3,4
+OPEN   1,2,3,4
+n=43 k=11: verified leaves used 399, internal 23, open branches 576, unverified UNSAT lines 0, SAT lines 0
