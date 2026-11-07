@@ -1,0 +1,24 @@
+{
+  "finished_utc": "2026-11-07T20:51:02.874641+00:00",
+  "improved_sizes": 29,
+  "worker_exit_status": {
+    "cyclic": {
+      "pid": 40831,
+      "returncode": 0
+    },
+    "constructions": {
+      "pid": 40832,
+      "returncode": 0
+    }
+  },
+  "total_edge_gain": 85,
+  "new_verified_leaves": 1005,
+  "proof_hashes_checked": 1005,
+  "proof_hash_audit_budget_exhausted": false,
+  "proof_errors": [],
+  "coverage_exit": 1,
+  "historical_proofs_replayed_here": false,
+  "new_compressed_proof_bytes": 7999676069,
+  "sat_records": [],
+  "errors_or_unverified_unsat": []
+}

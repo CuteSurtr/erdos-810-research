@@ -1,0 +1,176 @@
+[
+  {
+    "n": 68,
+    "before": 1037,
+    "after": 1038,
+    "gain": 1
+  },
+  {
+    "n": 69,
+    "before": 1055,
+    "after": 1057,
+    "gain": 2
+  },
+  {
+    "n": 70,
+    "before": 1072,
+    "after": 1076,
+    "gain": 4
+  },
+  {
+    "n": 71,
+    "before": 1092,
+    "after": 1096,
+    "gain": 4
+  },
+  {
+    "n": 72,
+    "before": 1112,
+    "after": 1116,
+    "gain": 4
+  },
+  {
+    "n": 73,
+    "before": 1130,
+    "after": 1135,
+    "gain": 5
+  },
+  {
+    "n": 74,
+    "before": 1138,
+    "after": 1143,
+    "gain": 5
+  },
+  {
+    "n": 77,
+    "before": 1236,
+    "after": 1237,
+    "gain": 1
+  },
+  {
+    "n": 81,
+    "before": 1325,
+    "after": 1327,
+    "gain": 2
+  },
+  {
+    "n": 88,
+    "before": 1509,
+    "after": 1514,
+    "gain": 5
+  },
+  {
+    "n": 89,
+    "before": 1536,
+    "after": 1539,
+    "gain": 3
+  },
+  {
+    "n": 93,
+    "before": 1688,
+    "after": 1689,
+    "gain": 1
+  },
+  {
+    "n": 94,
+    "before": 1713,
+    "after": 1714,
+    "gain": 1
+  },
+  {
+    "n": 95,
+    "before": 1739,
+    "after": 1740,
+    "gain": 1
+  },
+  {
+    "n": 99,
+    "before": 1893,
+    "after": 1894,
+    "gain": 1
+  },
+  {
+    "n": 102,
+    "before": 1974,
+    "after": 1976,
+    "gain": 2
+  },
+  {
+    "n": 103,
+    "before": 2000,
+    "after": 2004,
+    "gain": 4
+  },
+  {
+    "n": 104,
+    "before": 2019,
+    "after": 2024,
+    "gain": 5
+  },
+  {
+    "n": 105,
+    "before": 2026,
+    "after": 2031,
+    "gain": 5
+  },
+  {
+    "n": 106,
+    "before": 2031,
+    "after": 2036,
+    "gain": 5
+  },
+  {
+    "n": 107,
+    "before": 2065,
+    "after": 2066,
+    "gain": 1
+  },
+  {
+    "n": 108,
+    "before": 2095,
+    "after": 2096,
+    "gain": 1
+  },
+  {
+    "n": 111,
+    "before": 2197,
+    "after": 2198,
+    "gain": 1
+  },
+  {
+    "n": 112,
+    "before": 2228,
+    "after": 2229,
+    "gain": 1
+  },
+  {
+    "n": 116,
+    "before": 2370,
+    "after": 2372,
+    "gain": 2
+  },
+  {
+    "n": 117,
+    "before": 2371,
+    "after": 2376,
+    "gain": 5
+  },
+  {
+    "n": 123,
+    "before": 2625,
+    "after": 2633,
+    "gain": 8
+  },
+  {
+    "n": 124,
+    "before": 2661,
+    "after": 2665,
+    "gain": 4
+  },
+  {
+    "n": 126,
+    "before": 2750,
+    "after": 2751,
+    "gain": 1
+  }
+]

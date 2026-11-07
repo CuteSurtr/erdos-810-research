@@ -1,0 +1,1 @@
+{"utc": 1794084593.826594, "reason": "deadline", "terminal_unknown": [], "disk_bytes": 8044967276, "disk_limit": 20000000000, "max_workers": 1, "scheduler": "balanced round-robin across roots"}
