@@ -1,0 +1,35 @@
+{
+  "created_utc": "2026-11-06T09:09:43.256120+00:00",
+  "files": [
+    {
+      "path": "src/closecheck.py",
+      "sha256": "273e9346d22a5e530660648702ad81f2a4257769a646c743727afae3e788b5dc",
+      "bytes": 3860
+    },
+    {
+      "path": "src/check.py",
+      "sha256": "ebbf1de5b10eef6b1c7849658d3801e1aad44afeb58b592be8d172a4f5d478a1",
+      "bytes": 1424
+    },
+    {
+      "path": "src/background_n56.py",
+      "sha256": "5cd02c189c76161ba8dabe113ca3c0f4fe3e520e29cd181ffda760f96ac03eab",
+      "bytes": 7949
+    },
+    {
+      "path": "src/cycenc.c",
+      "sha256": "7a23149b7068a54eedc7837e05110683dd37d1d234579ecee95f2265dbe9a8ee",
+      "bytes": 7470
+    },
+    {
+      "path": "src/resume_native.py",
+      "sha256": "5eb369c1dc3c363eca3e9c57a6f886882c60efe3e4f570f3d5b6966e59d278e2",
+      "bytes": 19120
+    },
+    {
+      "path": "logs/prior-run-normalized.jsonl",
+      "sha256": "5b2d91b3ef3916cc93f64ba8117db78970bed6427e53b32aff71471124d40590",
+      "bytes": 9790751
+    }
+  ]
+}

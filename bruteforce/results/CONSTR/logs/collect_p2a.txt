@@ -1,0 +1,50 @@
+26	169	0.2500	general local search (SA/tabu, random start)
+27	189	0.2593	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)
+28	196	0.2500	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)
+29	206	0.2449	general local search (SA/tabu, random start)
+30	219	0.2433	general local search (SA/tabu, random start)
+31	232	0.2414	general local search (SA/tabu, random start)
+32	256	0.2500	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)
+33	264	0.2424	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)
+34	273	0.2362	general local search (SA/tabu, random start)
+35	286	0.2335	general local search (SA/tabu, random start)
+36	324	0.2500	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)
+37	317	0.2316	general local search (SA/tabu, random start)
+38	342	0.2368	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)
+39	351	0.2308	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)
+40	360	0.2250	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)
+41	369	0.2195	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)
+42	378	0.2143	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)
+43	430	0.2326	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)
+44	440	0.2273	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)
+45	450	0.2222	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)
+46	460	0.2174	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)
+47	470	0.2128	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)
+48	480	0.2083	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)
+49	490	0.2041	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)
+50	500	0.2000	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)
+51	561	0.2157	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)
+52	515	0.1905	sum colouring (colour = i+j in group 52), edge set by local search
+53	500	0.1780	sum colouring (colour = i+j in group 53), edge set by local search
+54	519	0.1780	sum colouring (colour = i+j in group 54), edge set by local search
+55	532	0.1759	sum colouring (colour = i+j in group 55), edge set by local search
+56	584	0.1862	sum colouring (colour = i+j in group 56), edge set by local search
+57	565	0.1739	sum colouring (colour = i+j in group 57), edge set by local search
+58	587	0.1745	sum colouring (colour = i+j in group 58), edge set by local search
+59	600	0.1724	sum colouring (colour = i+j in group 59), edge set by local search
+60	663	0.1842	sum colouring (colour = i+j in group 60), edge set by local search
+61	635	0.1707	sum colouring (colour = i+j in group 61), edge set by local search
+62	654	0.1701	sum colouring (colour = i+j in group 62), edge set by local search
+63	674	0.1698	sum colouring (colour = i+j in group 63), edge set by local search
+64	715	0.1746	sum colouring (colour = i+j in group 64), edge set by local search
+67	748	0.1666	sum colouring (colour = i+j in group 67), edge set by local search
+71	823	0.1633	sum colouring (colour = i+j in group 71), edge set by local search
+73	861	0.1616	sum colouring (colour = i+j in group 73), edge set by local search
+79	987	0.1581	sum colouring (colour = i+j in group 79), edge set by local search
+81	1026	0.1564	sum colouring (colour = i+j in group 81), edge set by local search
+83	1077	0.1563	sum colouring (colour = i+j in group 83), edge set by local search
+89	1207	0.1524	sum colouring (colour = i+j in group 89), edge set by local search
+97	1395	0.1483	sum colouring (colour = i+j in group 97), edge set by local search
+101	1496	0.1467	sum colouring (colour = i+j in group 101), edge set by local search
+103	1547	0.1458	sum colouring (colour = i+j in group 103), edge set by local search
+107	1651	0.1442	sum colouring (colour = i+j in group 107), edge set by local search

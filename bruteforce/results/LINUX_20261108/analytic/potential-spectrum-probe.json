@@ -1,0 +1,86 @@
+{
+  "utc": "2026-11-07T16:24:13.351088+00:00",
+  "status": "completed",
+  "rows": [
+    {
+      "p": 193,
+      "mode": "random-half",
+      "support_size": 33,
+      "edges": 6336,
+      "transitions": 209088,
+      "iterations": 24,
+      "ritz_min": -4.770720954365254,
+      "ritz_max": 5.160901582749588,
+      "min_over_sqrt_p": -0.34340400853789543,
+      "max_over_sqrt_p": 0.3714898247327021,
+      "seconds": 0.738
+    },
+    {
+      "p": 193,
+      "mode": "exponent-interval",
+      "support_size": 32,
+      "edges": 6144,
+      "transitions": 196608,
+      "iterations": 24,
+      "ritz_min": -4.627163155975586,
+      "ritz_max": 4.921362642121208,
+      "min_over_sqrt_p": -0.3330704920955265,
+      "max_over_sqrt_p": 0.35424743449450563,
+      "seconds": 0.803
+    },
+    {
+      "p": 193,
+      "mode": "quadratic-exponent",
+      "support_size": 40,
+      "edges": 7680,
+      "transitions": 307200,
+      "iterations": 24,
+      "ritz_min": -5.631477563116617,
+      "ritz_max": 6.079191378477525,
+      "min_over_sqrt_p": -0.40536262499192166,
+      "max_over_sqrt_p": 0.4375897706043791,
+      "seconds": 1.12
+    },
+    {
+      "p": 379,
+      "mode": "random-half",
+      "support_size": 66,
+      "edges": 24948,
+      "transitions": 1646568,
+      "iterations": 24,
+      "ritz_min": -6.705024915904778,
+      "ritz_max": 7.058100921210292,
+      "min_over_sqrt_p": -0.34441399554066415,
+      "max_over_sqrt_p": 0.3625502917128611,
+      "seconds": 10.17
+    },
+    {
+      "p": 379,
+      "mode": "exponent-interval",
+      "support_size": 63,
+      "edges": 23814,
+      "transitions": 1500282,
+      "iterations": 24,
+      "ritz_min": -6.3659842721594195,
+      "ritz_max": 6.679212672225026,
+      "min_over_sqrt_p": -0.3269986474655167,
+      "max_over_sqrt_p": 0.3430881096429809,
+      "seconds": 10.152
+    },
+    {
+      "p": 379,
+      "mode": "quadratic-exponent",
+      "support_size": 63,
+      "edges": 23814,
+      "transitions": 1500282,
+      "iterations": 24,
+      "ritz_min": -6.461476964156375,
+      "ritz_max": 6.801503793421221,
+      "min_over_sqrt_p": -0.33190377757436845,
+      "max_over_sqrt_p": 0.34936978259700985,
+      "seconds": 9.07
+    }
+  ],
+  "scope": "exploratory floating-point Ritz estimates, not certified extremal eigenvalues or an asymptotic theorem",
+  "script_sha256": "4ea4e9c33101e300c1e960c76e4cd029b166ef5415525ea9408bb2305bd91ba2"
+}

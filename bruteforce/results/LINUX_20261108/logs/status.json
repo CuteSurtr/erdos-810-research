@@ -1,0 +1,17 @@
+{
+  "phase": "running",
+  "utc": "2026-11-07T16:56:11.316584+00:00",
+  "jobs": {
+    "cyclic": {
+      "pid": 40831,
+      "returncode": null
+    },
+    "constructions": {
+      "pid": 40832,
+      "returncode": null
+    }
+  },
+  "sampled_system_cpu": 0.06501015783716202,
+  "constructor_paused": false,
+  "compute_deadline_utc": "2026-11-07T20:50:00+00:00"
+}

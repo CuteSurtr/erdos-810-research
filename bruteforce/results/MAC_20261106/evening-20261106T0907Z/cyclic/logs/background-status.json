@@ -1,0 +1,32 @@
+{
+  "updated_utc": "2026-11-06T10:20:44.898705+00:00",
+  "phase": "finished",
+  "pid": 3678,
+  "started_epoch": 1793957072.560338,
+  "compute_deadline_utc": "2026-11-06T10:20:00+00:00",
+  "audit_deadline_utc": "2026-11-06T10:28:00+00:00",
+  "new_records": 2226,
+  "results": {
+    "UNSAT": 2131,
+    "UNKNOWN": 83,
+    "PRESPLIT": 12
+  },
+  "new_verified_leaves": 2131,
+  "stop_file": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/evening-20261106T0907Z/cyclic/STOP",
+  "summary": {
+    "finished_utc": "2026-11-06T10:20:44.889294+00:00",
+    "new_verified_leaves": 2131,
+    "proof_hashes_checked": 2131,
+    "proof_hash_failures": [],
+    "all_new_proof_hashes_ok": true,
+    "mixed_history_coverage_exit": 1,
+    "fresh_only_coverage_exit": 1,
+    "lower_bound_orbits": 13,
+    "lower_bound_edges": 728,
+    "lower_bound_rainbow_four_cycles": 50960,
+    "raw_proof_bytes": 24657431225,
+    "compressed_proof_bytes": 11055333041,
+    "sat_records": [],
+    "errors_or_unverified_unsat": []
+  }
+}

@@ -1,0 +1,1 @@
+{"leaves_that_must_be_SAT": {"sb:1.2.3.5": [0], "sb:1.2.5.6": [1], "sb:1.2.3.4": [2, 3]}, "leaves_found_SAT": {"sb:1.2.3.5": "OK", "sb:1.2.5.6": "OK", "sb:1.2.3.4": "OK"}, "orbit_index_of_each_decoded_model": [0, 1, 2], "match": true}

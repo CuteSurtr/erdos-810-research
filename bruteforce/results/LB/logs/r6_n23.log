@@ -1,0 +1,9 @@
+FOUND n=23 e=135 -> out/r6_n23_e135.txt
+FOUND n=23 e=136 -> out/r6_n23_e136.txt
+FOUND n=23 e=137 -> out/r6_n23_e137.txt
+FOUND n=23 e=138 -> out/r6_n23_e138.txt
+FOUND n=23 e=139 -> out/r6_n23_e139.txt
+FOUND n=23 e=140 -> out/r6_n23_e140.txt
+FOUND n=23 e=141 -> out/r6_n23_e141.txt
+t=9 it=1048576 e=142 cost=32 best=23
+t=18 it=2097152 e=142 cost=40 best=25

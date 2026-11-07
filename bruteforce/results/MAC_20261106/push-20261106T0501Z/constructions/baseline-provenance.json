@@ -1,0 +1,12 @@
+{
+  "prior_checkpoint": "bruteforce/results/MAC_20261106/resume-20261106T0056Z/verified/certs.json",
+  "prior_sha256": "c8ecdbe201d17d07545bfd706aee635e31fbfc5c56e1e2813a0d0790e7a43a4c",
+  "prior_summary": {
+    "updated_utc": "2026-11-06T04:45:22.575957+00:00",
+    "state": "Final checkpoint",
+    "new_improved_sizes": 42,
+    "total_gain": 451,
+    "certificates_sha256": "c8ecdbe201d17d07545bfd706aee635e31fbfc5c56e1e2813a0d0790e7a43a4c"
+  },
+  "new_comparison": "Latest completed checkpoint, not the earlier baseline."
+}

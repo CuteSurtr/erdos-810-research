@@ -1,0 +1,6 @@
+n=7 e=14: satcheck: graphs=65 good=5
+n=7 e=15: satcheck: graphs=41 good=0
+n=8 e=17: satcheck: graphs=980 good=45
+n=8 e=18: satcheck: graphs=663 good=0
+n=9 e=23: satcheck: graphs=10120 good=3
+n=9 e=24: satcheck: graphs=5995 good=0

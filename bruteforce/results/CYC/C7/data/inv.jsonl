@@ -1,0 +1,4 @@
+{"n": 40, "k": 10, "sym": 0, "solver": "kissat", "seed": 1, "res": "UNKNOWN", "secs": 300.0, "U": 19, "T": -1}
+{"n": 40, "k": 10, "sym": 2, "solver": "cadical", "seed": 3, "res": "UNKNOWN", "secs": 300.0, "U": 19, "T": -1}
+{"n": 44, "k": 11, "sym": 0, "solver": "kissat", "seed": 1, "res": "UNKNOWN", "secs": 144.3, "U": 21, "T": -1}
+{"n": 44, "k": 11, "sym": 2, "solver": "cadical", "seed": 3, "res": "UNKNOWN", "secs": 144.2, "U": 21, "T": -1}

@@ -1,0 +1,4 @@
+ 3526   11131 ./cadical_bin -q cnf/n12e41_lex_d9.cnf /tmp/claude-0/-home-user-erdos-810-re
+ 7293    7887 ./kissat_bin -q --sat --seed=1 cnf/n13e48_lex.cnf
+ 7295    7887 ./kissat_bin -q --sat --seed=1 cnf/n12e41_lex.cnf
+ 8346    4768 ./kissat_bin -q --sat --seed=1 cnf/n15e61_lex.cnf

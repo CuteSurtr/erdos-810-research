@@ -1,0 +1,18 @@
+CLOSED 1,2,3,-4,2:35
+CLOSED 1,2,3,-4,2:36
+CLOSED 1,2,3,-4,2:37
+CLOSED 1,2,3,-4,2:38
+CLOSED 1,2,3,-4,2:39
+CLOSED 1,2,3,-4,2:40
+CLOSED 1,2,3,-4,2:41
+CLOSED 1,2,3,-4,2:42
+CLOSED 1,2,3,-4,2:43
+CLOSED 1,2,3,-4,2:44
+CLOSED 1,2,3,-4,2:45
+CLOSED 1,2,3,-4,2:46
+CLOSED 1,2,3,-4,2:47
+CLOSED 1,2,3,-4,2:48
+CLOSED 1,2,3,-4,2:49
+CLOSED 1,2,3,-4,2:50
+CLOSED 1,2,3,-4,2:51
+n=52 k=13: verified leaves used 884, internal 17, open branches 0, unverified UNSAT lines 0, SAT lines 0

@@ -1,0 +1,153 @@
+{
+  "finished_epoch": 1794009306.651341,
+  "all_checked": true,
+  "all_valid": true,
+  "checks": [
+    {
+      "n": 66,
+      "edges": 998,
+      "ok": true,
+      "native": "66 998 edges 98093 4-cycles OK",
+      "python": "66 998 edges 98093 4-cycles OK"
+    },
+    {
+      "n": 68,
+      "edges": 1035,
+      "ok": true,
+      "native": "68 1035 edges 101984 4-cycles OK",
+      "python": "68 1035 edges 101984 4-cycles OK"
+    },
+    {
+      "n": 69,
+      "edges": 1051,
+      "ok": true,
+      "native": "69 1051 edges 103196 4-cycles OK",
+      "python": "69 1051 edges 103196 4-cycles OK"
+    },
+    {
+      "n": 70,
+      "edges": 1066,
+      "ok": true,
+      "native": "70 1066 edges 104667 4-cycles OK",
+      "python": "70 1066 edges 104667 4-cycles OK"
+    },
+    {
+      "n": 71,
+      "edges": 1091,
+      "ok": true,
+      "native": "71 1091 edges 107384 4-cycles OK",
+      "python": "71 1091 edges 107384 4-cycles OK"
+    },
+    {
+      "n": 72,
+      "edges": 1111,
+      "ok": true,
+      "native": "72 1111 edges 110065 4-cycles OK",
+      "python": "72 1111 edges 110065 4-cycles OK"
+    },
+    {
+      "n": 73,
+      "edges": 1128,
+      "ok": true,
+      "native": "73 1128 edges 111515 4-cycles OK",
+      "python": "73 1128 edges 111515 4-cycles OK"
+    },
+    {
+      "n": 80,
+      "edges": 1303,
+      "ok": true,
+      "native": "80 1303 edges 132091 4-cycles OK",
+      "python": "80 1303 edges 132091 4-cycles OK"
+    },
+    {
+      "n": 100,
+      "edges": 1921,
+      "ok": true,
+      "native": "100 1921 edges 263779 4-cycles OK",
+      "python": "100 1921 edges 263779 4-cycles OK"
+    },
+    {
+      "n": 101,
+      "edges": 1948,
+      "ok": true,
+      "native": "101 1948 edges 268770 4-cycles OK",
+      "python": "101 1948 edges 268770 4-cycles OK"
+    },
+    {
+      "n": 115,
+      "edges": 2340,
+      "ok": true,
+      "native": "115 2340 edges 317326 4-cycles OK",
+      "python": "115 2340 edges 317326 4-cycles OK"
+    },
+    {
+      "n": 116,
+      "edges": 2357,
+      "ok": true,
+      "native": "116 2357 edges 319169 4-cycles OK",
+      "python": "116 2357 edges 319169 4-cycles OK"
+    }
+  ],
+  "improvements_over_resume_baseline": [
+    {
+      "n": 66,
+      "before": 997,
+      "after": 998
+    },
+    {
+      "n": 68,
+      "before": 1028,
+      "after": 1035
+    },
+    {
+      "n": 69,
+      "before": 1029,
+      "after": 1051
+    },
+    {
+      "n": 70,
+      "before": 1050,
+      "after": 1066
+    },
+    {
+      "n": 71,
+      "before": 1069,
+      "after": 1091
+    },
+    {
+      "n": 72,
+      "before": 1090,
+      "after": 1111
+    },
+    {
+      "n": 73,
+      "before": 1111,
+      "after": 1128
+    },
+    {
+      "n": 80,
+      "before": 1301,
+      "after": 1303
+    },
+    {
+      "n": 100,
+      "before": 1919,
+      "after": 1921
+    },
+    {
+      "n": 101,
+      "before": 1946,
+      "after": 1948
+    },
+    {
+      "n": 115,
+      "before": 2325,
+      "after": 2340
+    },
+    {
+      "n": 116,
+      "before": 2328,
+      "after": 2357
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "pid": 17404,
+  "max_workers": 9,
+  "guard": "individual_child",
+  "pause_load": 0.93,
+  "resume_load": 0.9,
+  "disk_limit": 140000000000,
+  "status_file": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/compute-20261107T0505KST/cyclic/logs/background-status.json",
+  "stop_file": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/compute-20261107T0505KST/cyclic/STOP",
+  "global_stop_file": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/compute-20261107T0505KST/STOP",
+  "compute_deadline_utc": "2026-11-06T23:55:00Z",
+  "audit_deadline_utc": "2026-11-07T00:03:00Z",
+  "hard_stop_utc": "2026-11-07T00:05:00Z"
+}

@@ -1,0 +1,57 @@
+n	best_LB	LB/n^2	family	detail	sha256_sorted_edges
+26	169	0.2500	best structured/other example of this n + general local search	b26_s7	73feb7e075dfcff22790f5bc06d81fc4d1d1f18aff9a3b65b2868beb4c694fcd
+27	189	0.2593	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 12), (4, 3), (6, 14), (7, 13), (11, 5), (12, 9), (13, 2)]	9713d7396e684a3f5a3f5521f52c16e0a3a5731c7e8b00ac8f79c4f26ca6f91f
+28	196	0.2500	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(3, 5), (4, 24), (5, 18), (6, 10), (9, 21), (11, 14), (12, 23)]	4366fde89a10fd5f7e5afb608b332b3d82ffd64b644544f30ab3f149b456fb5c
+29	206	0.2449	general local search (SA/tabu, random start)	g29_s1	d394244d1de49be182a2efca159992a329b6686c8e192852769b2074cc341f06
+30	219	0.2433	general local search (SA/tabu, random start)	g30_s1	4a13845139d3198d8220f295d39eef16517cc149a81dfadd694426a98ec8c327
+31	248	0.2581	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[2, 0], [6, 5], [7, 3], [9, 2], [12, 6], [13, 26], [14, 4], [15, 16]] (SAT)	efbcb898b2047a9c213590cf17700ef6f9cc775ced4c86f35204fb3d1004592f
+32	256	0.2500	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 28), (3, 18), (5, 4), (9, 20), (12, 22), (13, 0), (14, 21), (15, 12)]	64f6532ff0908ea3f1b28b3b1269b18d06304a741a0ee22d4c428c143d37ef9a
+33	264	0.2424	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 25), (5, 16), (7, 2), (10, 10), (11, 9), (12, 27), (14, 7), (15, 1)]	aa4d04fd9222b9da6453ab835ae4be9589f9afc6b6a0be5f74b947bb65440953
+34	274	0.2370	best structured/other example of this n + general local search	b34_s7	18e95bd910a18647cd778c23d958ed72990db7e96775b9a0ef1a3da4c50c6a97
+35	288	0.2351	general local search (SA/tabu, random start)	g35_s1	6828374218c3fb9f2b08db54d3c2bd73f81532ceb4eb781abbc25984c2b2d6ac
+36	324	0.2500	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 31), (3, 7), (6, 5), (7, 21), (8, 11), (11, 20), (13, 2), (14, 8), (15, 34)]	20909c0375e30f9923852fa4b0120f29e2fcad5fe7d2d0b01fec3db3748a3998
+37	333	0.2432	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[1, 0], [2, 12], [4, 7], [6, 29], [9, 22], [10, 28], [11, 31], [14, 15], [17, 25]] (SAT)	56d7a3b385b63452ec2490df3c45e5d7e4f051ce30efca5f0c0d6496bf600a1f
+38	342	0.2368	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(4, 34), (6, 23), (9, 29), (10, 36), (11, 22), (12, 25), (15, 8), (16, 6), (18, 27)]	825717ee5c3b4747d211322be9b4e4e9494bbff311e7857cd2402e33b7cf5679
+39	351	0.2308	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 33), (5, 22), (6, 7), (9, 20), (14, 30), (16, 29), (17, 5), (18, 3), (19, 19)]	3f5c78e77a53038db56c7e137072b9340ad1b8b8a27619fef9c41189cfc6ce5c
+40	400	0.2500	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[2, 0], [3, 2], [6, 11], [7, 26], [8, 18], [10, 7], [13, 14], [15, 21], [16, 25], [18, 30]] (SAT)	0e33a737e36314eab5b2d523f9d62869685bb1d58cdded7111b76766da1f98c1
+41	410	0.2439	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[1, 0], [5, 11], [6, 39], [7, 32], [10, 12], [13, 21], [15, 10], [16, 30], [17, 35], [20, 3]] (SAT)	a2bb3c0d5ed3aaa4e9d570e92bc58d9050cce0ac8b0940fcf4cfe39f5c8e6ce1
+42	420	0.2381	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[3, 0], [4, 15], [8, 38], [10, 13], [11, 33], [12, 36], [13, 29], [14, 32], [17, 6], [20, 12]] (SAT)	c42f00767c06bd50cba81dafd5411c34ba9e45504c0cf8b56ece209bda91284c
+43	430	0.2326	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(3, 22), (5, 14), (7, 39), (11, 29), (12, 33), (14, 41), (15, 38), (16, 20), (17, 17), (20, 28)]	edd861323006a0f73569181bd63298d92c9b800c4c30fcd04fb2b032e84fd4e1
+44	440	0.2273	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 13), (3, 37), (4, 43), (6, 18), (7, 28), (12, 10), (14, 17), (15, 1), (17, 36), (21, 29)]	7a81a3c4869e3fc057ebb62164f0b6e91cc05a21990e66ca9aa035349c3d3849
+45	450	0.2222	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 27), (4, 10), (11, 24), (12, 26), (13, 20), (14, 0), (15, 30), (17, 1), (18, 36), (22, 5)]	cd063af720bcb184f6a33a05311cdd587e718200ba17ecd2c8704b57c56c71d8
+46	506	0.2391	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[3, 0], [6, 24], [7, 8], [8, 30], [10, 13], [11, 16], [12, 33], [14, 2], [19, 12], [20, 26], [22, 17]] (SAT)	a7201ed3a01643a1a17bfeceb2bd3900e4766f66950a80705e243127032892c8
+47	518	0.2345	best structured/other example of this n + general local search	b47_s7	63cc31de3041e08d4e272c69d510ee53f188e9532afce7810ef93ba689516458
+48	528	0.2292	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[1, 0], [3, 24], [4, 32], [5, 22], [9, 6], [12, 43], [13, 14], [14, 30], [18, 9], [20, 13], [23, 38]] (SAT)	05eac56a815b340c9d480ff16e8cf6b3cc09342aaa4548c2b3c48b7ca71d1723
+49	539	0.2245	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[4, 0], [6, 38], [7, 31], [9, 42], [10, 37], [18, 17], [19, 10], [20, 15], [22, 23], [23, 35], [24, 4]] (SAT)	ac09a3533373ed4ce0899d4fa15f9d06a7c5a23d9640a1d7d8d05f27264a2629
+50	550	0.2200	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[1, 0], [2, 3], [5, 7], [7, 4], [9, 26], [11, 20], [12, 36], [15, 28], [17, 40], [22, 6], [24, 46]] (SAT)	80d321746a9ac7f13755fd2493031634aa8a951b18928be28a2148f7b77ddb4f
+51	561	0.2157	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(1, 4), (4, 37), (7, 8), (8, 49), (10, 39), (13, 9), (14, 38), (15, 35), (17, 10), (18, 30), (19, 26)]	cd6e36b4951e1f2bd9f59d2040cf1219ec5da4e8b28b59fcf0a4076877cf46a9
+52	624	0.2308	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[1, 0], [2, 20], [4, 11], [6, 2], [7, 28], [8, 25], [9, 31], [15, 44], [17, 43], [19, 3], [21, 16], [24, 13]] (SAT)	4acdc296afd5a4ff4ac9c60d33c82e3aa98799d66667a06e68021a630015020c
+53	636	0.2264	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[2, 0], [5, 14], [7, 6], [8, 26], [11, 38], [12, 40], [15, 37], [17, 29], [18, 49], [19, 43], [21, 15], [23, 48]] (SAT)	0b2733f07b87969ad04df34446ddff1dcdd81dd317282ee3030beaa47a504a06
+54	648	0.2222	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[2, 0], [10, 48], [12, 46], [13, 45], [14, 9], [15, 4], [16, 31], [18, 3], [20, 7], [23, 6], [24, 26], [25, 35]] (SAT)	37265d5d51df50db769b633526a15a551ccf92a457e02b82c5f5f8fdfbd6833c
+55	660	0.2182	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[1, 0], [3, 34], [6, 17], [7, 8], [8, 44], [10, 23], [11, 6], [12, 28], [13, 32], [14, 52], [20, 49], [26, 4]] (SAT)	23d8227cdb49110b15f27646ee813a7b445692c4c08e2d37b1ff5c3f3c371b24
+56	672	0.2143	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 1), (4, 44), (9, 6), (11, 16), (13, 22), (14, 8), (16, 23), (23, 43), (24, 52), (25, 4), (26, 15), (27, 27)]	a55c4dbe8725d147a184d2c76a2042cf35d5bbf31d39805a30f8d8b9c6155cd8
+57	684	0.2105	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[(2, 34), (3, 9), (8, 7), (9, 42), (10, 46), (12, 40), (15, 27), (16, 29), (18, 2), (19, 22), (22, 8), (27, 47)]	1ac8ed7699f02b8cb4fae5d3f3abf4765a73dc61fb5f486130f25118a8127e82
+58	702	0.2087	best structured/other example of this n + general local search	b58_s7	298537e3967b9ab4e05f635e0ad41861d9689c54bf9e1db990ccf9f6f9bcc348
+59	767	0.2203	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[1, 0], [3, 29], [4, 1], [5, 41], [8, 57], [12, 31], [14, 9], [16, 7], [17, 47], [20, 38], [24, 8], [26, 37], [27, 20]] (SAT)	11bbbed25260ec3713a1cfb8d5e443b39156817a7f371717139756624e464b9b
+60	780	0.2167	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[1, 0], [2, 26], [4, 16], [10, 32], [11, 55], [13, 30], [14, 52], [15, 5], [17, 21], [19, 46], [20, 49], [21, 56], [25, 23]] (SAT)	30487f9f98ce3603fdfc8d8625e006ea1064a9f170b96c7798df098b7cfea043
+61	793	0.2131	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[2, 0], [3, 13], [5, 51], [6, 50], [7, 25], [8, 30], [9, 29], [13, 49], [16, 37], [22, 17], [24, 23], [25, 6], [28, 7]] (SAT)	e508e14fa1c3afdc73e1a4b1bb256122a17385def7beb49c5fe53b5358f3e596
+62	806	0.2097	cyclic orbit colouring: edges {i,i+d}, d in D, colour i+g(d)	D,g=[[1, 0], [2, 3], [5, 7], [7, 4], [9, 14], [11, 17], [16, 50], [19, 38], [21, 30], [22, 42], [24, 56], [26, 48], [27, 51]] (SAT)	878ffb6f2400d9013cbd234f7048670c03a3af276f01bcac28d461b1b2c32d98
+63	812	0.2046	best structured/other example of this n + general local search	b63_s7	ea905bea834ce7af9e74aaa38b3c2599551281edf4e77d1e406c740791691c66
+64	835	0.2039	best structured/other example of this n + general local search	b64_s7	eae9334f7e11b16d726d4f97a140507c2a99830d31eb32bc084856f38b49cd78
+67	909	0.2025	best structured/other example of this n + general local search	b67_s7	dad687424bd2c35f3c3a2862d7591a0103e3538406883de5b344594ded2377eb
+71	1005	0.1994	best structured/other example of this n + general local search	b71_s7	5cd9ff421eff0be272545fe8e7b335e0ae476039473ffe8796253324b0dad75e
+73	1057	0.1983	best structured/other example of this n + general local search	b73_s7	992997ae8f37bb796b0858f20e93ece11235c25e0e219985f912d63ca1a3afeb
+79	1214	0.1945	best structured/other example of this n + general local search	b79_s7	eff4d84ac93f75b4a9ce01e99468f597e4fa7bdacce1f457de0e83ee3193642a
+81	1273	0.1940	best structured/other example of this n + general local search	b81_s7	8355e7ca7df349a21245c979ebd92daf8cf26c55418279addc2ca9efd96f745a
+83	1325	0.1923	best structured/other example of this n + general local search	b83_s7	00d00768ed3c4ad4ed737084d882aaeb5d346f97512cebe9f33bc5dbb069fef2
+89	1519	0.1918	best structured/other example of this n + general local search	b89_s7	2620f0b9ad5c3bcbfa98211fdebcee597b62d142de40f554c4727cebdab6b07d
+97	1740	0.1849	best structured/other example of this n + general local search	b97_s7	39369667a263c4b9c514b38adc382e4c303ef875a18fec80bdf17259f9830efd
+101	1867	0.1830	best structured/other example of this n + general local search	b101_s7	c8b9754a56575701da4729a90bc020f2a3a775f66b892c55897f4edc419dca0d
+103	1938	0.1827	best structured/other example of this n + general local search	b103_s7	23847b4fea772a9182a68209c3d97d89a6c2eed09762dbc83abd3d675d93e78b
+107	2065	0.1804	best structured/other example of this n + general local search	b107_s7	1d78a3fae098e431704083c9e33a9a3a5663ab31bc1e77d2bf4af3f335ff8663
+109	2136	0.1798	best structured/other example of this n + general local search	b109_s7	a5c29313fdcb88d6c026c5884486f3af784dba9a338a0fb88129f708d3e08cfb
+113	2277	0.1783	best structured/other example of this n + general local search	b113_s7	0e71393ecdb2c2dbc393b39dbf067bedfbe5d1499c3ccc46f683386e604c6885
+121	2568	0.1754	best structured/other example of this n + general local search	b121_s7	2506a9954c874ff7afa2d77e08a94893940761d768d0f6a2a19b0336eadaf368
+125	2716	0.1738	best structured/other example of this n + general local search	b125_s7	f46d25020a676612fa8420a8e68fe3e2852b971ee022360db2a1a5bb07a7d7a2
+127	2798	0.1735	best structured/other example of this n + general local search	b127_s7	1a1ba5fff17ec037845f41f862d18395e1462e731bab32b002c6b053d5424a5a
+128	2831	0.1728	best structured/other example of this n + general local search	b128_s7	c9191c604d4dc274d063abf5359753d34835049befa4d1f0761ff90aac9d3145

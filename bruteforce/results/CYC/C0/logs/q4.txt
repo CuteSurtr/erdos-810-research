@@ -1,0 +1,2 @@
+python3 src/anneal.py 58 14 2 1200 --log logs/prod.jsonl
+python3 src/anneal.py 69 15 3 1200 --log logs/prod.jsonl

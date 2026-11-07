@@ -1,0 +1,9 @@
+13 4 solutions(g(minD)=0): 0 example: None
+14 4 solutions(g(minD)=0): 0 example: None
+15 5 solutions(g(minD)=0): 0 example: None
+16 5 solutions(g(minD)=0): 0 example: None
+17 5 solutions(g(minD)=0): 0 example: None
+18 6 solutions(g(minD)=0): 0 example: None
+19 6 solutions(g(minD)=0): 0 example: None
+20 6 solutions(g(minD)=0): 0 example: None
+21 7 solutions(g(minD)=0): 0 example: None

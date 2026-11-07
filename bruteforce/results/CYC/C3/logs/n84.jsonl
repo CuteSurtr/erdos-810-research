@@ -1,0 +1,3 @@
+{"n": 84, "k": 17, "sym": "full", "res": "SAT", "by": "kissat-sat-trans-s3", "secs": 285.8, "enc": "n=84 k=17 vars=77089 clauses=6062368 keys=259724 units=11", "Dg": [[2, 0], [3, 46], [6, 3], [8, 27], [11, 72], [15, 68], [17, 64], [18, 23], [19, 51], [22, 26], [23, 60], [27, 39], [30, 48], [31, 14], [35, 44], [39, 77], [41, 13]], "check": "VALID ok n=84 |D|=17 edges=1428 four-cycles=155904"}
+{"n": 84, "k": 18, "sym": "full", "res": "UNKNOWN", "by": null, "secs": 612.8, "enc": "n=84 k=18 vars=77049 clauses=6062289 keys=259724 units=11"}
+{"n": 84, "k": 21, "sym": "full", "res": "UNKNOWN", "by": null, "secs": 599.6, "enc": "n=84 k=21 vars=76929 clauses=6062052 keys=259724 units=11"}

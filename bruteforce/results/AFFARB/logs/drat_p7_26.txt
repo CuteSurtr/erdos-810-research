@@ -1,0 +1,16 @@
+CNF: python3 write_cnf.py 7 26 p7_26.cnf
+4cdb04cc1b5975ec7ad4f8394e73ac2886d34c0a6a006a3f8ebf80ff0929dfcd  p7_26.cnf
+solver: CaDiCaL (github.com/arminbiere/cadical, master, built from source) -q p7_26.cnf p7_26.drat
+s UNSATISFIABLE
+proof size bytes: 190453085
+1db70eb9f72638c68a1a883bd7e9f539878d30e18464b3a7fb8d3181048c97fd  p7_26.drat
+checker: drat-trim (github.com/marijnheule/drat-trim, built from source)
+c turning on binary mode checking
+c parsing input formula with 7353 variables and 16083 clauses
+c finished parsing, read 190453085 bytes from proof file
+c detected empty clause; start verification via backward checking
+c 6041 of 16083 clauses in core                            
+c 1647707 of 2863065 lemmas in core using 134706975 resolution steps
+c 0 RAT lemmas in core; 751563 redundant literals in core lemmas
+s VERIFIED
+c verification time: 254.588 seconds

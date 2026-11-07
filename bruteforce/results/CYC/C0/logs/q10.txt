@@ -1,0 +1,2 @@
+python3 src/run.py 47 12 --cube=2,3,4,5,-6 --opt=--unsat --timeout 1500 --log logs/cube47.jsonl
+python3 src/run.py 47 12 --cube=2,3,4,-5,6 --opt=--unsat --timeout 1500 --log logs/cube47.jsonl

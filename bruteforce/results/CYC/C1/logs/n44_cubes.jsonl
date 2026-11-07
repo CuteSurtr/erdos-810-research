@@ -1,0 +1,4 @@
+{"n": 44, "k": 11, "cube": [1, -2, 3, 4], "seed": 0, "res": "UNSAT", "secs": 119.8}
+{"n": 44, "k": 11, "cube": [1, -2, 3, -4], "seed": 0, "res": "UNSAT", "secs": 5.7}
+{"n": 44, "k": 11, "cube": [1, -2, -3, 4], "seed": 0, "res": "UNSAT", "secs": 4.4}
+{"n": 44, "k": 11, "cube": [1, -2, -3, -4], "seed": 0, "res": "UNSAT", "secs": 0.3}

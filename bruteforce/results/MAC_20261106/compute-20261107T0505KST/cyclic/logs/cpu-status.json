@@ -1,0 +1,1 @@
+{"samples": 35220, "last_busy": 0.60828025477707, "mean_busy": 0.8714456368474001, "peak_busy": 1.0, "guard": "individual_child", "paused_processes": 0, "running_processes": 5, "active_processes": 5, "max_workers": 9, "active_worker_limit": 9, "pause_load": 0.93, "resume_load": 0.9, "pause_actions": 4309, "resume_actions": 8204, "all_paused_samples": 0}

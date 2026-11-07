@@ -1,0 +1,5 @@
+13 unbroken 20 orbits 4 broken 4 broken_are_lexmax True subset True
+15 unbroken 14 orbits 4 broken 4 broken_are_lexmax True subset True
+24 unbroken 144 orbits 43 broken 43 broken_are_lexmax True subset True
+20 unbroken 42 orbits 12 broken 12 broken_are_lexmax True subset True
+27 unbroken 63 orbits 7 broken 7 broken_are_lexmax True subset True

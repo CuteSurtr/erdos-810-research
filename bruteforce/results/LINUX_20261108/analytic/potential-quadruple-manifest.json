@@ -1,0 +1,29 @@
+{
+  "utc": "2026-11-07T16:47:50.646250+00:00",
+  "returncode": 0,
+  "seconds": 11.495,
+  "source_sha256": "cdbae3d4752e984bc8f4b695815d181bb2dd1e4893a2c54d2be713de83a1b383",
+  "binary_sha256": "0e3c1fe6144d46d97ec6a1510ae4e551caf2a76041032c8e785a0b1f0fbd178c",
+  "primes": [
+    5,
+    13,
+    17,
+    31,
+    61,
+    101,
+    127,
+    251,
+    509,
+    1009,
+    1019
+  ],
+  "limits": {
+    "cpu_affinity": [
+      31
+    ],
+    "nice": 19,
+    "address_space_MiB": 768,
+    "wall_seconds": 120
+  },
+  "scope": "exact finite multiplicity counts; no asymptotic formula for distinct potential sets asserted"
+}

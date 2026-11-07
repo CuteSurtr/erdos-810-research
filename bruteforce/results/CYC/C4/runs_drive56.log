@@ -1,0 +1,6 @@
+{"n": 56, "k": 13, "sym": 1, "solver": "kissat-sat", "res": "SAT", "secs": 1092.3} VALID
+{"n": 56, "k": 14, "sym": 2, "solver": "kissat", "res": "UNKNOWN", "secs": 406.0} 
+{"n": 56, "k": 14, "sym": 1, "solver": "kissat-sat", "res": "UNKNOWN", "secs": 406.0} 
+{"n": 56, "k": 14, "sym": 2, "solver": "kissat-unsat", "res": "UNKNOWN", "secs": 406.0} 
+{"n": 56, "k": 15, "sym": 1, "solver": "kissat-sat", "res": "UNKNOWN", "secs": 406.0} 
+SUMMARY {"n": 56, "best": 13, "unsat": null, "unknown": [14, 15], "secs": 1500.4}

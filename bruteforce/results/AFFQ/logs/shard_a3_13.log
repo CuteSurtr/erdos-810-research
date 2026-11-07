@@ -1,0 +1,7 @@
+{"beta": "a3", "p": 13, "target": 78, "shard": 13, "status": "INFEASIBLE", "time": 0.007659435272216797}
+{"beta": "a3", "p": 13, "target": 78, "shard": 12, "status": "UNKNOWN", "time": 1500.0013835430145}
+{"beta": "a3", "p": 13, "target": 78, "shard": 11, "status": "UNKNOWN", "time": 1500.002690076828}
+{"beta": "a3", "p": 13, "target": 78, "shard": 10, "status": "UNKNOWN", "time": 1500.0037620067596}
+{"beta": "a3", "p": 13, "target": 78, "shard": 9, "status": "UNKNOWN", "time": 1500.0048458576202}
+{"beta": "a3", "p": 13, "target": 78, "shard": 8, "status": "UNKNOWN", "time": 1500.004149198532}
+{"beta": "a3", "p": 13, "target": 78, "shard": 7, "status": "UNKNOWN", "time": 1500.0036900043488}

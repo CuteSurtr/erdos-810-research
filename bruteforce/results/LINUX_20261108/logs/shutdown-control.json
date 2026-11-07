@@ -1,0 +1,8 @@
+{
+  "utc": "2026-11-07T15:59:20.384156+00:00",
+  "result": "PASS",
+  "tested": "isolated copy of production watchdog",
+  "exact_tagged_child_killed": true,
+  "near_match_tag_and_untagged_children_preserved": true,
+  "live_research_processes_affected": false
+}

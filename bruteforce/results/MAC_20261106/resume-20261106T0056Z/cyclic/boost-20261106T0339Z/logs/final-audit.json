@@ -1,0 +1,43 @@
+{
+  "finished_utc": "2026-11-06T04:41:34.707423+00:00",
+  "new_verified_leaves": 1786,
+  "proof_hashes_checked": 1786,
+  "proof_hash_failures": [],
+  "all_new_proof_hashes_ok": true,
+  "mixed_history_coverage_exit": 1,
+  "fresh_only_coverage_exit": 1,
+  "lower_bound_orbits": 13,
+  "lower_bound_edges": 728,
+  "lower_bound_rainbow_four_cycles": 50960,
+  "raw_proof_bytes": 26458431706,
+  "compressed_proof_bytes": 11847340846,
+  "sat_records": [],
+  "errors_or_unverified_unsat": [
+    {
+      "n": 56,
+      "k": 14,
+      "cube": [
+        "1",
+        "2",
+        "-3",
+        "-4",
+        "2:31",
+        "5",
+        "5:52"
+      ],
+      "cnf_sha256": "bf4447e22f80a8f7629788f6a00442ee3023cdea66416a7c2cb31a818ba35595",
+      "res": "UNSAT",
+      "solver": "cadical 3.0.1",
+      "cap": 30,
+      "started_utc": "2026-11-06T04:39:43.100771+00:00",
+      "solver_returncode": 20,
+      "solver_secs": 11.397,
+      "checker_returncode": -9,
+      "checker": "drat-trim native",
+      "check_secs": 5.511,
+      "checker_output": "",
+      "check": "UNVERIFIED",
+      "secs": 16.908
+    }
+  ]
+}

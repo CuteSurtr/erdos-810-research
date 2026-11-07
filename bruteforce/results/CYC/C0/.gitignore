@@ -1,0 +1,6 @@
+src/cycenc
+src/cycenc_dbg
+*.cnf
+*.drat
+__pycache__/
+src/cycls

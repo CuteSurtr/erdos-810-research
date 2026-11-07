@@ -1,0 +1,8 @@
+39 edges 351 4-cycles 11193 bad 0 OK
+48 edges 528 4-cycles 25608 bad 0 OK
+50 edges 550 4-cycles 25875 bad 0 OK
+61 edges 915 4-cycles 89670 bad 0 OK
+71 edges 1065 4-cycles 91022 bad 0 OK
+80 edges 1280 4-cycles 121520 bad 0 OK
+82 edges 1312 4-cycles 119105 bad 0 OK
+93 edges 1674 4-cycles 195858 bad 0 OK

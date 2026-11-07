@@ -1,0 +1,2 @@
+{"n": 51, "k": 12, "sym": "full", "res": "SAT", "by": "kissat-unsat-drat", "secs": 148.4, "enc": "n=51 k=12 vars=18499 clauses=845067 keys=58056 units=15", "Dg": [[1, 0], [2, 7], [3, 49], [6, 48], [10, 19], [11, 23], [12, 41], [13, 28], [15, 36], [16, 40], [18, 32], [20, 37]], "check": "VALID ok n=51 |D|=12 edges=612 four-cycles=36261"}
+{"n": 51, "k": 13, "sym": "full", "res": "UNKNOWN", "by": null, "secs": 1351.1, "enc": "n=51 k=13 vars=18475 clauses=845020 keys=58056 units=15"}

@@ -1,0 +1,17 @@
+t=15 it=1048576 e=191 cost=9 best=3
+t=29 it=2097152 e=191 cost=18 best=3
+t=43 it=3145728 e=191 cost=15 best=4
+t=56 it=4194304 e=191 cost=15 best=5
+t=69 it=5242880 e=191 cost=13 best=3
+t=83 it=6291456 e=191 cost=12 best=3
+t=97 it=7340032 e=191 cost=14 best=3
+t=111 it=8388608 e=191 cost=14 best=3
+t=126 it=9437184 e=191 cost=15 best=3
+t=140 it=10485760 e=191 cost=15 best=2
+t=162 it=11534336 e=191 cost=17 best=3
+t=188 it=12582912 e=191 cost=17 best=3
+t=216 it=13631488 e=191 cost=14 best=4
+t=242 it=14680064 e=191 cost=16 best=5
+t=267 it=15728640 e=191 cost=12 best=4
+t=295 it=16777216 e=191 cost=18 best=2
+Terminated

@@ -1,0 +1,236 @@
+[
+  {
+    "n": 34,
+    "previous_table_bound": 274,
+    "edges": 275,
+    "verification": "34 275 edges 7026 4-cycles OK"
+  },
+  {
+    "n": 35,
+    "previous_table_bound": 288,
+    "edges": 298,
+    "verification": "35 298 edges 8725 4-cycles OK"
+  },
+  {
+    "n": 38,
+    "previous_table_bound": 342,
+    "edges": 345,
+    "verification": "38 345 edges 11554 4-cycles OK"
+  },
+  {
+    "n": 39,
+    "previous_table_bound": 351,
+    "edges": 371,
+    "verification": "39 371 edges 14062 4-cycles OK"
+  },
+  {
+    "n": 43,
+    "previous_table_bound": 430,
+    "edges": 434,
+    "verification": "43 434 edges 17854 4-cycles OK"
+  },
+  {
+    "n": 44,
+    "previous_table_bound": 440,
+    "edges": 463,
+    "verification": "44 463 edges 21237 4-cycles OK"
+  },
+  {
+    "n": 49,
+    "previous_table_bound": 539,
+    "edges": 554,
+    "verification": "49 554 edges 28013 4-cycles OK"
+  },
+  {
+    "n": 50,
+    "previous_table_bound": 550,
+    "edges": 584,
+    "verification": "50 584 edges 32024 4-cycles OK"
+  },
+  {
+    "n": 51,
+    "previous_table_bound": 612,
+    "edges": 616,
+    "verification": "51 616 edges 36739 4-cycles OK"
+  },
+  {
+    "n": 52,
+    "previous_table_bound": 624,
+    "edges": 651,
+    "verification": "52 651 edges 42558 4-cycles OK"
+  },
+  {
+    "n": 54,
+    "previous_table_bound": 690,
+    "edges": 702,
+    "verification": "54 702 edges 50583 4-cycles OK"
+  },
+  {
+    "n": 55,
+    "previous_table_bound": 691,
+    "edges": 717,
+    "verification": "55 717 edges 51806 4-cycles OK"
+  },
+  {
+    "n": 57,
+    "previous_table_bound": 741,
+    "edges": 755,
+    "verification": "57 755 edges 53833 4-cycles OK"
+  },
+  {
+    "n": 58,
+    "previous_table_bound": 754,
+    "edges": 791,
+    "verification": "58 791 edges 60695 4-cycles OK"
+  },
+  {
+    "n": 59,
+    "previous_table_bound": 767,
+    "edges": 830,
+    "verification": "59 830 edges 68925 4-cycles OK"
+  },
+  {
+    "n": 60,
+    "previous_table_bound": 780,
+    "edges": 871,
+    "verification": "60 871 edges 78452 4-cycles OK"
+  },
+  {
+    "n": 68,
+    "previous_table_bound": 952,
+    "edges": 965,
+    "verification": "68 965 edges 72073 4-cycles OK"
+  },
+  {
+    "n": 69,
+    "previous_table_bound": 966,
+    "edges": 1006,
+    "verification": "69 1006 edges 80484 4-cycles OK"
+  },
+  {
+    "n": 74,
+    "previous_table_bound": 1110,
+    "edges": 1125,
+    "verification": "74 1125 edges 97936 4-cycles OK"
+  },
+  {
+    "n": 75,
+    "previous_table_bound": 1125,
+    "edges": 1169,
+    "verification": "75 1169 edges 108446 4-cycles OK"
+  },
+  {
+    "n": 81,
+    "previous_table_bound": 1296,
+    "edges": 1314,
+    "verification": "81 1314 edges 127564 4-cycles OK"
+  },
+  {
+    "n": 82,
+    "previous_table_bound": 1312,
+    "edges": 1361,
+    "verification": "82 1361 edges 140060 4-cycles OK"
+  },
+  {
+    "n": 89,
+    "previous_table_bound": 1519,
+    "edges": 1535,
+    "verification": "89 1535 edges 163186 4-cycles OK"
+  },
+  {
+    "n": 90,
+    "previous_table_bound": 1530,
+    "edges": 1585,
+    "verification": "90 1585 edges 177663 4-cycles OK"
+  },
+  {
+    "n": 95,
+    "previous_table_bound": 1710,
+    "edges": 1734,
+    "verification": "95 1734 edges 212306 4-cycles OK"
+  },
+  {
+    "n": 96,
+    "previous_table_bound": 1711,
+    "edges": 1787,
+    "verification": "96 1787 edges 229901 4-cycles OK"
+  },
+  {
+    "n": 105,
+    "previous_table_bound": 1940,
+    "edges": 1965,
+    "verification": "105 1965 edges 224737 4-cycles OK"
+  },
+  {
+    "n": 106,
+    "previous_table_bound": 1941,
+    "edges": 2015,
+    "verification": "106 2015 edges 239338 4-cycles OK"
+  },
+  {
+    "n": 108,
+    "previous_table_bound": 2066,
+    "edges": 2086,
+    "verification": "108 2086 edges 255438 4-cycles OK"
+  },
+  {
+    "n": 111,
+    "previous_table_bound": 2138,
+    "edges": 2172,
+    "verification": "111 2172 edges 269581 4-cycles OK"
+  },
+  {
+    "n": 112,
+    "previous_table_bound": 2139,
+    "edges": 2224,
+    "verification": "112 2224 edges 286244 4-cycles OK"
+  },
+  {
+    "n": 116,
+    "previous_table_bound": 2280,
+    "edges": 2298,
+    "verification": "116 2298 edges 283983 4-cycles OK"
+  },
+  {
+    "n": 117,
+    "previous_table_bound": 2281,
+    "edges": 2350,
+    "verification": "117 2350 edges 300240 4-cycles OK"
+  },
+  {
+    "n": 118,
+    "previous_table_bound": 2282,
+    "edges": 2404,
+    "verification": "118 2404 edges 318085 4-cycles OK"
+  },
+  {
+    "n": 119,
+    "previous_table_bound": 2283,
+    "edges": 2458,
+    "verification": "119 2458 edges 336526 4-cycles OK"
+  },
+  {
+    "n": 120,
+    "previous_table_bound": 2284,
+    "edges": 2512,
+    "verification": "120 2512 edges 355266 4-cycles OK"
+  },
+  {
+    "n": 123,
+    "previous_table_bound": 2570,
+    "edges": 2602,
+    "verification": "123 2602 edges 370950 4-cycles OK"
+  },
+  {
+    "n": 124,
+    "previous_table_bound": 2571,
+    "edges": 2659,
+    "verification": "124 2659 edges 391766 4-cycles OK"
+  },
+  {
+    "n": 126,
+    "previous_table_bound": 2717,
+    "edges": 2741,
+    "verification": "126 2741 edges 416190 4-cycles OK"
+  }
+]

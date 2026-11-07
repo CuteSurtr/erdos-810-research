@@ -1,0 +1,6 @@
+36 9 2 kissat 1800
+36 10 2 cadical-drat 1800
+29 8 0 kissat 1800
+30 8 0 kissat 1800
+32 9 0 kissat 1800
+36 10 0 kissat 1800

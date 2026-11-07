@@ -1,0 +1,3 @@
+{"60": "first pass 1500 s (k=15 for 750 s, then k=14) + phase 2 4458 s at k=14 (CaDiCaL + kissat --sat, translation fix only); seconds column = 1500 + 4458",
+ "92": "first pass 1502 s (k=23 for 752 s, then climb 17->19) + phase 2 4461 s at k=19 (CaDiCaL + kissat --sat, translation fix only); seconds column = 1502 + 4461",
+ "43": "first pass with 3 default kissat seeds + CaDiCaL (all with lex breaking)"}

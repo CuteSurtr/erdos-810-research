@@ -1,0 +1,18 @@
+{
+  "result": "SAT",
+  "target": 20,
+  "seed": 944199,
+  "cnf_sha256": "1c5193b0e4c59c565c80ccd2a1e1b2680012baf64e266b05898392a6446539ed",
+  "returncode": 10,
+  "seconds": 0.122,
+  "check": "72 1091 edges 106708 4-cycles OK",
+  "edges": 1091,
+  "neighborhood_sha256": "2116cc31b6b007e32955002255126453b9a88ba18f4ad96527cd0e1aa4e17803",
+  "n": 72,
+  "round": 3,
+  "mode": "extend",
+  "vertex": null,
+  "base_edges": 1071,
+  "prior": 1090,
+  "time": 1794000488.0035388
+}

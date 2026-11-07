@@ -1,0 +1,40 @@
+{
+  "utc": "2026-11-07T16:55:23.372648+00:00",
+  "status": "PASS",
+  "all_primes_checked_against_independent_python": [
+    5,
+    13,
+    17,
+    31,
+    61,
+    101,
+    127,
+    251,
+    509,
+    1009,
+    1019
+  ],
+  "extra_python_dense_counts": [
+    {
+      "p": 101,
+      "edges": 2500,
+      "n2": 300,
+      "n3": 14350,
+      "independent_n3": null,
+      "n3_over_p_cubed": 0.013927968622761697,
+      "limiting_coefficient": 0.015625
+    },
+    {
+      "p": 1019,
+      "edges": 259081,
+      "n2": 0,
+      "n3": 16413214,
+      "independent_n3": null,
+      "n3_over_p_cubed": 0.015512117293622035,
+      "limiting_coefficient": 0.015625
+    }
+  ],
+  "cycle_histogram_and_cube_symmetry_checks": true,
+  "scope": "independent exact finite counts; not an asymptotic priority assessment",
+  "python_source_sha256": "1460361ee954a7aed86bc6f7abf8febf5d69e68ecfb517fe87d9bf7729f69893"
+}

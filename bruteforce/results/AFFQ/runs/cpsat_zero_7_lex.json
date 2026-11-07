@@ -1,0 +1,1 @@
+{"beta": "zero", "p": 7, "m": 22, "ub": 22, "status": "OPTIMAL", "time": 2.5665183067321777, "nclauses": 96, "sol": [0, 1, 2, 3, 4, 5, 8, 10, 13, 16, 19, 20, 22, 26, 27, 31, 32, 34, 36, 37, 39, 41], "check": "ok, 14 four-cycles", "symbreak": "lex"}

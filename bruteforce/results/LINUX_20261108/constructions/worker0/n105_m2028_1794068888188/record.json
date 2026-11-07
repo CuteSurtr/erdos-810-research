@@ -1,0 +1,18 @@
+{
+  "result": "SAT",
+  "target": 8,
+  "seed": 185087,
+  "cnf_sha256": "7a7b44ada3ac1aa21f6a2a21b397e4f944b34f33323bdb325765f77a9ea1871e",
+  "returncode": 10,
+  "seconds": 0.124,
+  "check": "105 2028 edges 281092 4-cycles OK",
+  "edges": 2028,
+  "neighborhood_sha256": "1f654a3fe8faba3fe77ead3ccf631a1157c6fb66a0f02ef3aaa6b4d832c06000",
+  "n": 105,
+  "round": 2,
+  "mode": "extend",
+  "vertex": null,
+  "base_edges": 2020,
+  "prior": 2027,
+  "time": 1794068888.1882977
+}

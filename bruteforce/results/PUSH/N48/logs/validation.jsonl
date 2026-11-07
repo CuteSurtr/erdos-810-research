@@ -1,0 +1,6 @@
+{"n":36,"k":9,"res":"SAT","check":"OK","note":"expected SAT (k_max(36)=9)"}
+{"n":36,"k":10,"res":"UNSAT","cnf_sha256":"4e23355ad6ea94ea3106b72fd66066b20c264e4dfacd7911f740d988d143f1d5","proof_bytes":51155587,"check":"s VERIFIED","secs":26.9,"check_secs":75.7,"note":"expected UNSAT"}
+{"n":48,"k":11,"res":"SAT","check":"OK","Dg":[[1, 0], [2, 3], [5, 7], [7, 4], [9, 34], [16, 5], [17, 10], [19, 30], [20, 35], [21, 43], [22, 40]],"note":"k>=11 known"}
+{"n":36,"k":10,"cube":[],"res":"UNSAT","proof":"streamed binary LRAT","proof_bytes":108729231,"check":"s VERIFIED UNSAT","checker":"cake_lpr a36874a"}
+{"n":36,"k":10,"cube":[1,2,3],"res":"UNSAT","proof":"streamed binary LRAT","proof_bytes":79236626,"check":"s VERIFIED UNSAT","checker":"cake_lpr a36874a"}
+{"test":"negative","what":"LRAT proof of (n36 k10 CNF + unit p1) checked against the CNF without the unit","check":"c Checking failed at line: 0. Reason: clause index unavailable: 187732"}

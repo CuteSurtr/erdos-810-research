@@ -1,0 +1,5 @@
+{"n": 74, "k": 16, "sym": 2, "solver": "kissat", "res": "UNKNOWN", "secs": 1499.0} 
+{"n": 74, "k": 16, "sym": 1, "solver": "kissat-sat", "res": "UNKNOWN", "secs": 1499.0} 
+{"n": 74, "k": 16, "sym": 2, "solver": "kissat-unsat", "res": "UNKNOWN", "secs": 1499.0} 
+{"n": 74, "k": 17, "sym": 1, "solver": "kissat-sat", "res": "UNKNOWN", "secs": 1499.3} 
+SUMMARY {"n": 74, "best": 15, "unsat": null, "unknown": [16, 17], "secs": 1500.4}

@@ -1,0 +1,3 @@
+>A ./src/geng_pruneb -X0x25600d0D9 n=12 e=41 class=497/512
+>P prune_calls=369222 prune_rejects=348426
+>Z 0 graphs generated in 9.33 sec

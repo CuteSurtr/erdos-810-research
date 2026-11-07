@@ -1,0 +1,1 @@
+{"beta": "zero", "p": 5, "m": 11, "ub": 11, "status": "OPTIMAL", "time": 0.007809162139892578, "nclauses": 26, "sol": [0, 1, 2, 3, 4, 6, 8, 13, 14, 17, 19], "check": "ok, 2 four-cycles"}

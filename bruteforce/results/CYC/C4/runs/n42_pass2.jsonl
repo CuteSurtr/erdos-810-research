@@ -1,0 +1,2 @@
+{"n": 42, "k": 11, "sym": 2, "solver": "cadical-drat", "res": "UNSAT", "secs": 1918}
+{"n": 42, "k": 11, "sym": 2, "solver": "kissat-unsat", "seed": 1, "res": "UNSAT", "secs": 3923.8}

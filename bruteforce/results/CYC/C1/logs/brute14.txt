@@ -1,0 +1,2 @@
+14 4 tried 41160 valid 0
+14 3 tried 3920 valid 614

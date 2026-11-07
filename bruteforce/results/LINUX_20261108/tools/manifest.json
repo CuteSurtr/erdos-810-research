@@ -1,0 +1,19 @@
+{
+  "/home/jay/research/data/erdos810-20261106/cadical/build/cadical": {
+    "sha256": "3d30460106b047176769a343696ce13e6c1e11e7d17407487a18f30a975f7544"
+  },
+  "bruteforce/results/LINUX_20261108/tools/drat-trim": {
+    "sha256": "99ac5be78c864dbf59c4d60d2e98410f6b1c9c1b516af166a864fc543d4ca41f"
+  },
+  "bruteforce/results/LINUX_20261108/cyclic/src/cycenc": {
+    "sha256": "55b06f1095012f7739acaa818aca1a9f8ae4ea092f2d0fe32ff7301e78a04cb7"
+  },
+  "bruteforce/results/LINUX_20261108/constructions/fourset_check": {
+    "sha256": "c570969a9855b6404a65f250a29b8f9cbd045e5cea4d295f1ed8a142d32ccc5b"
+  },
+  "source_revisions": {
+    "cadical": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+    "drat-trim": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985"
+  },
+  "drat_compile": "gcc drat-trim.c -std=gnu99 -O2"
+}

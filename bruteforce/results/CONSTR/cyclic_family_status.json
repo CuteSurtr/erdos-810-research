@@ -1,0 +1,217 @@
+{
+"13": {
+"sat": 0,
+"unsat": 4,
+"unknown": null
+},
+"14": {
+"sat": 0,
+"unsat": 4,
+"unknown": null
+},
+"15": {
+"sat": 0,
+"unsat": 5,
+"unknown": null
+},
+"16": {
+"sat": 0,
+"unsat": 5,
+"unknown": null
+},
+"17": {
+"sat": 0,
+"unsat": 5,
+"unknown": null
+},
+"18": {
+"sat": 0,
+"unsat": 6,
+"unknown": null
+},
+"19": {
+"sat": 0,
+"unsat": 6,
+"unknown": null
+},
+"20": {
+"sat": 0,
+"unsat": 6,
+"unknown": null
+},
+"21": {
+"sat": 0,
+"unsat": 7,
+"unknown": null
+},
+"22": {
+"sat": 0,
+"unsat": 6,
+"unknown": null
+},
+"23": {
+"sat": 0,
+"unsat": 7,
+"unknown": null
+},
+"24": {
+"sat": 0,
+"unsat": 7,
+"unknown": null
+},
+"25": {
+"sat": 0,
+"unsat": 7,
+"unknown": null
+},
+"26": {
+"sat": 0,
+"unsat": 7,
+"unknown": null
+},
+"27": {
+"sat": 0,
+"unsat": 8,
+"unknown": null
+},
+"28": {
+"sat": 0,
+"unsat": 8,
+"unknown": null
+},
+"29": {
+"sat": 0,
+"unsat": 8,
+"unknown": null
+},
+"30": {
+"sat": 0,
+"unsat": 8,
+"unknown": null
+},
+"31": {
+"sat": 8,
+"unsat": 9,
+"unknown": null
+},
+"32": {
+"sat": 0,
+"unsat": 9,
+"unknown": null
+},
+"33": {
+"sat": 0,
+"unsat": 9,
+"unknown": null
+},
+"34": {
+"sat": 0,
+"unsat": 9,
+"unknown": null
+},
+"36": {
+"sat": 0,
+"unsat": 10,
+"unknown": null
+},
+"37": {
+"sat": 9,
+"unsat": null,
+"unknown": null
+},
+"40": {
+"sat": 10,
+"unsat": null,
+"unknown": null
+},
+"41": {
+"sat": 10,
+"unsat": null,
+"unknown": null
+},
+"42": {
+"sat": 10,
+"unsat": null,
+"unknown": null
+},
+"46": {
+"sat": 11,
+"unsat": null,
+"unknown": null
+},
+"47": {
+"sat": 11,
+"unsat": null,
+"unknown": null
+},
+"48": {
+"sat": 11,
+"unsat": null,
+"unknown": null
+},
+"49": {
+"sat": 11,
+"unsat": null,
+"unknown": 12
+},
+"50": {
+"sat": 11,
+"unsat": null,
+"unknown": 12
+},
+"51": {
+"sat": 0,
+"unsat": null,
+"unknown": 12
+},
+"52": {
+"sat": 12,
+"unsat": null,
+"unknown": 13
+},
+"53": {
+"sat": 12,
+"unsat": null,
+"unknown": 13
+},
+"54": {
+"sat": 12,
+"unsat": null,
+"unknown": 13
+},
+"55": {
+"sat": 12,
+"unsat": null,
+"unknown": 13
+},
+"56": {
+"sat": 0,
+"unsat": null,
+"unknown": 13
+},
+"57": {
+"sat": 0,
+"unsat": null,
+"unknown": 13
+},
+"59": {
+"sat": 13,
+"unsat": null,
+"unknown": 14
+},
+"60": {
+"sat": 13,
+"unsat": null,
+"unknown": 14
+},
+"61": {
+"sat": 13,
+"unsat": null,
+"unknown": 14
+},
+"62": {
+"sat": 13,
+"unsat": null,
+"unknown": 14
+}
+}

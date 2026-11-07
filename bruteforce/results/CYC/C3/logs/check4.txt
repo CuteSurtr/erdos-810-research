@@ -1,0 +1,8 @@
+VALID ok n=41 |D|=10 edges=410 four-cycles=16974
+VALID ok n=51 |D|=12 edges=612 four-cycles=36261
+VALID ok n=52 |D|=12 edges=624 four-cycles=36374
+VALID ok n=62 |D|=13 edges=806 four-cycles=50716
+VALID ok n=73 |D|=15 edges=1095 four-cycles=93221
+VALID ok n=83 |D|=17 edges=1411 four-cycles=154380
+VALID ok n=84 |D|=17 edges=1428 four-cycles=155904
+VALID ok n=94 |D|=18 edges=1692 four-cycles=195802

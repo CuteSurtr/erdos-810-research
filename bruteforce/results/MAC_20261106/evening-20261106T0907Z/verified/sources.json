@@ -1,0 +1,87 @@
+{
+  "115": {
+    "path": "constructions/best/115.json",
+    "sha256": "16112b2c33999663107604fe1d6baacc1f95bc783dc52dc5e2c0594a741e75de",
+    "snapshot": "sources/16112b2c33999663107604fe1d6baacc1f95bc783dc52dc5e2c0594a741e75de.json"
+  },
+  "103": {
+    "path": "constructions/best/103.json",
+    "sha256": "e74e1335b5ebe78f1054ccd06f5e0232bc0c757ee93b489fc0486ac8de14797c",
+    "snapshot": "sources/e74e1335b5ebe78f1054ccd06f5e0232bc0c757ee93b489fc0486ac8de14797c.json"
+  },
+  "94": {
+    "path": "recolor/best/94.json",
+    "sha256": "813e07cfd2d0ce8f7001e260256028d9e8094fc9492c69c768266f2d86b45877",
+    "snapshot": "sources/813e07cfd2d0ce8f7001e260256028d9e8094fc9492c69c768266f2d86b45877.json"
+  },
+  "123": {
+    "path": "constructions/best/123.json",
+    "sha256": "e0ed87833e47160098f9578e1aa64f46e405974dc8a7541c650f144c9fa239eb",
+    "snapshot": "sources/e0ed87833e47160098f9578e1aa64f46e405974dc8a7541c650f144c9fa239eb.json"
+  },
+  "95": {
+    "path": "constructions/best/95.json",
+    "sha256": "51f5ed58a6e0e0442d19473c4aee2eaf330d1423498913d7f83ee7d5442d7909",
+    "snapshot": "sources/51f5ed58a6e0e0442d19473c4aee2eaf330d1423498913d7f83ee7d5442d7909.json"
+  },
+  "102": {
+    "path": "constructions/best/102.json",
+    "sha256": "ab1887a7ed6c6ef2339af9ba29c37f600c6e4e041be2c025e50968e1b0d3650f",
+    "snapshot": "sources/ab1887a7ed6c6ef2339af9ba29c37f600c6e4e041be2c025e50968e1b0d3650f.json"
+  },
+  "105": {
+    "path": "constructions/best/105.json",
+    "sha256": "903eed4bcfbba3dc6bc902a23c4f09367e3f906385ec0fe66fd65dd40c937167",
+    "snapshot": "sources/903eed4bcfbba3dc6bc902a23c4f09367e3f906385ec0fe66fd65dd40c937167.json"
+  },
+  "88": {
+    "path": "constructions/best/88.json",
+    "sha256": "11070fc1664cd97fdeb8b720c5ee7efed861ae8e28a81fde51825b429df641b3",
+    "snapshot": "sources/11070fc1664cd97fdeb8b720c5ee7efed861ae8e28a81fde51825b429df641b3.json"
+  },
+  "104": {
+    "path": "constructions/best/104.json",
+    "sha256": "14e445294b6ec35010a4fd4cb5dbbc0346a4d1ea8e50ac3f11182c1c4aa59330",
+    "snapshot": "sources/14e445294b6ec35010a4fd4cb5dbbc0346a4d1ea8e50ac3f11182c1c4aa59330.json"
+  },
+  "69": {
+    "path": "constructions/best/69.json",
+    "sha256": "7f41c6c4ac01b2d0cc8a83603d9378190b175fb9bccc78361500d59d2057ce23",
+    "snapshot": "sources/7f41c6c4ac01b2d0cc8a83603d9378190b175fb9bccc78361500d59d2057ce23.json"
+  },
+  "111": {
+    "path": "constructions/best/111.json",
+    "sha256": "792634f8c62d63b3f08753dc6a28fe33cc2f98be2f52fa01da0d61722ebf7ce8",
+    "snapshot": "sources/792634f8c62d63b3f08753dc6a28fe33cc2f98be2f52fa01da0d61722ebf7ce8.json"
+  },
+  "106": {
+    "path": "constructions/best/106.json",
+    "sha256": "27436f86a7800c6ae4951f920e60f86d97ce96ab74fc8eccd741d7dddc335285",
+    "snapshot": "sources/27436f86a7800c6ae4951f920e60f86d97ce96ab74fc8eccd741d7dddc335285.json"
+  },
+  "68": {
+    "path": "constructions/best/68.json",
+    "sha256": "63a7d1dd3f5ca842c7af84daf6b349135bfe4ba286f9d838ea04fddf94fd2e0e",
+    "snapshot": "sources/63a7d1dd3f5ca842c7af84daf6b349135bfe4ba286f9d838ea04fddf94fd2e0e.json"
+  },
+  "87": {
+    "path": "constructions/best/87.json",
+    "sha256": "671648f2c3418ab7824eee29a77ad622ef377b82b593ce9364e6fc24dad00591",
+    "snapshot": "sources/671648f2c3418ab7824eee29a77ad622ef377b82b593ce9364e6fc24dad00591.json"
+  },
+  "81": {
+    "path": "constructions/best/81.json",
+    "sha256": "5c179d96267a3c22071393d07878c016f99da32c156d6508da032d8b93f03c1c",
+    "snapshot": "sources/5c179d96267a3c22071393d07878c016f99da32c156d6508da032d8b93f03c1c.json"
+  },
+  "116": {
+    "path": "constructions/best/116.json",
+    "sha256": "e516a8b2e6ac458003867e357bb20429cf4237c4659824ebd61ce0e07420da83",
+    "snapshot": "sources/e516a8b2e6ac458003867e357bb20429cf4237c4659824ebd61ce0e07420da83.json"
+  },
+  "101": {
+    "path": "recolor/best/101.json",
+    "sha256": "a1656fdcae4a7b1fc889e1265575966e463393754059e205177e1f95039cfa9f",
+    "snapshot": "sources/a1656fdcae4a7b1fc889e1265575966e463393754059e205177e1f95039cfa9f.json"
+  }
+}

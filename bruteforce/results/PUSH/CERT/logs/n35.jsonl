@@ -1,0 +1,2 @@
+{"n": 35, "k": 8, "sym": 1, "opts": "--sat", "cnf_sha256": "bb73bfaa76d0eae3dd7e1db1882fbb62ef821322b069b95e331f62f945d744ed", "secs": 1.0, "res": "SATISFIABLE", "Dg": [[2, 0], [3, 2], [4, 7], [6, 1], [10, 16], [14, 28], [15, 23], [16, 25]], "check": "VALID ok: 280 edges, 13650 4-cycles (each counted twice), all rainbow"}
+{"n": 35, "k": 9, "sym": 1, "opts": "--sat", "cnf_sha256": "9cae6d2968cdae01e1da7e2fcaf6c4a64bd20e8ceeaffb12a61df323e19251e6", "secs": 600.0, "res": "UNKNOWN"}

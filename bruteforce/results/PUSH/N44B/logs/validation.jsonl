@@ -1,0 +1,1 @@
+{"cube": [1, 2, -3, -4], "cnf_sha256": "4e4cdcf3c33bdbc2588dd1584e63a92d46f7c977b8694e1ce85618ba1bfe7b1e", "solver": "CaDiCaL 3.0.1 (git c607304)", "res": "UNSAT", "solve_secs": 379.2, "check_secs": 0.1, "checker": "cake_lpr (git a36874a)", "checker_verdict": "s VERIFIED UNSAT", "proof_bytes": 1446923032, "proof": "checked"}

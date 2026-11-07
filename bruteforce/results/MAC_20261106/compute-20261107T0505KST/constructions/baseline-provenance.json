@@ -1,0 +1,8 @@
+{
+  "previous_run": "bruteforce/results/MAC_20261106/evening-20261106T0907Z",
+  "sources": {
+    "bruteforce/results/MAC_20261106/evening-20261106T0907Z/constructions/baseline.json": "17572301d1e3f70b6a73b766fde2e76400a6331b0e88b04dead5d2b6e553a301",
+    "bruteforce/results/MAC_20261106/evening-20261106T0907Z/verified/certs.json": "e91c175d11d556de55695ef65835b5e2487a114b3c62747ee71be9df1c1c5eeb"
+  },
+  "sizes": 123
+}

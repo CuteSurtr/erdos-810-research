@@ -1,0 +1,68 @@
+{
+  "utc": "2026-11-07T16:01:58.700134+00:00",
+  "rows": [
+    {
+      "p": 31,
+      "palette": 3,
+      "rows": 7,
+      "edges": 21,
+      "n3_exact": 0,
+      "independent_n3": 0,
+      "normalized_n3": 0.0,
+      "limiting_coefficient": 6.103515625e-05
+    },
+    {
+      "p": 61,
+      "palette": 7,
+      "rows": 15,
+      "edges": 105,
+      "n3_exact": 6,
+      "independent_n3": 6,
+      "normalized_n3": 2.643393059330957e-05,
+      "limiting_coefficient": 6.103515625e-05
+    },
+    {
+      "p": 127,
+      "palette": 15,
+      "rows": 31,
+      "edges": 465,
+      "n3_exact": 81,
+      "independent_n3": 81,
+      "normalized_n3": 3.954338617338652e-05,
+      "limiting_coefficient": 6.103515625e-05
+    },
+    {
+      "p": 251,
+      "palette": 31,
+      "rows": 62,
+      "edges": 1922,
+      "n3_exact": 806,
+      "independent_n3": 806,
+      "normalized_n3": 5.096991124721918e-05,
+      "limiting_coefficient": 6.103515625e-05
+    },
+    {
+      "p": 509,
+      "palette": 63,
+      "rows": 127,
+      "edges": 8001,
+      "n3_exact": 7401,
+      "independent_n3": null,
+      "normalized_n3": 5.612250627840681e-05,
+      "limiting_coefficient": 6.103515625e-05
+    },
+    {
+      "p": 1009,
+      "palette": 126,
+      "rows": 252,
+      "edges": 31752,
+      "n3_exact": 60983,
+      "independent_n3": null,
+      "normalized_n3": 5.936565809884832e-05,
+      "limiting_coefficient": 6.103515625e-05
+    }
+  ],
+  "seconds": 0.55,
+  "script_sha256": "8510aafdbb1c427cafb3507420a73d4383eb4591632df6924fcca6875cef823a",
+  "scope": "exact finite counts; the asymptotic formula requires the archived operator theorem"
+}

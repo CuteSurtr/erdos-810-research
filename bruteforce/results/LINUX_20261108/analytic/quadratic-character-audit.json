@@ -1,0 +1,102 @@
+{
+  "utc": "2026-11-07T16:18:29.757646+00:00",
+  "character_separation_exact_cases": 78640,
+  "cubic_phase_exact_cases": 290144,
+  "axis_phase_exact_cases": 24384,
+  "small_prime_weil_max_over_sqrt_p": 1.954864300055874,
+  "dense_example": [
+    {
+      "p": 5,
+      "edges": 4,
+      "n2": 0,
+      "n3": 0,
+      "independent_n3": 0,
+      "n3_over_p_cubed": 0.0,
+      "limiting_coefficient": 0.015625
+    },
+    {
+      "p": 7,
+      "edges": 9,
+      "n2": 0,
+      "n3": 0,
+      "independent_n3": 0,
+      "n3_over_p_cubed": 0.0,
+      "limiting_coefficient": 0.015625
+    },
+    {
+      "p": 13,
+      "edges": 36,
+      "n2": 3,
+      "n3": 6,
+      "independent_n3": 6,
+      "n3_over_p_cubed": 0.0027309968138370506,
+      "limiting_coefficient": 0.015625
+    },
+    {
+      "p": 17,
+      "edges": 64,
+      "n2": 8,
+      "n3": 16,
+      "independent_n3": 16,
+      "n3_over_p_cubed": 0.003256665988194586,
+      "limiting_coefficient": 0.015625
+    },
+    {
+      "p": 31,
+      "edges": 225,
+      "n2": 0,
+      "n3": 375,
+      "independent_n3": 375,
+      "n3_over_p_cubed": 0.012587694270081568,
+      "limiting_coefficient": 0.015625
+    },
+    {
+      "p": 61,
+      "edges": 900,
+      "n2": 105,
+      "n3": 2850,
+      "independent_n3": 2850,
+      "n3_over_p_cubed": 0.012556117031822047,
+      "limiting_coefficient": 0.015625
+    },
+    {
+      "p": 127,
+      "edges": 3969,
+      "n2": 0,
+      "n3": 29358,
+      "independent_n3": null,
+      "n3_over_p_cubed": 0.014332280633065204,
+      "limiting_coefficient": 0.015625
+    },
+    {
+      "p": 251,
+      "edges": 15625,
+      "n2": 0,
+      "n3": 238750,
+      "independent_n3": null,
+      "n3_over_p_cubed": 0.015098097159148362,
+      "limiting_coefficient": 0.015625
+    },
+    {
+      "p": 509,
+      "edges": 64516,
+      "n2": 8001,
+      "n3": 2007108,
+      "independent_n3": null,
+      "n3_over_p_cubed": 0.015220096112882114,
+      "limiting_coefficient": 0.015625
+    },
+    {
+      "p": 1009,
+      "edges": 254016,
+      "n2": 31752,
+      "n3": 15872976,
+      "independent_n3": null,
+      "n3_over_p_cubed": 0.015452005743030435,
+      "limiting_coefficient": 0.015625
+    }
+  ],
+  "scope": "exact finite identities and counts; small-prime character sums are floating-point consistency checks",
+  "script_sha256": "1460361ee954a7aed86bc6f7abf8febf5d69e68ecfb517fe87d9bf7729f69893",
+  "seconds": 0.545
+}

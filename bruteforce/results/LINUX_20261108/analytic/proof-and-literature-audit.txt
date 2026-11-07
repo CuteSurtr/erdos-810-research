@@ -1,0 +1,291 @@
+PROOF AND LITERATURE AUDIT, 8 NOVEMBER 2026
+
+This is a self-audit in the same session, not an independent agent review
+or a formal proof. No historical-priority or publication-readiness claim.
+
+MATERIAL CHECKS
+
+1. Counting identity: every repeated opposite pair contributes TWO ordered
+crossed transitions. A two-color C4 contributes four; a three-color C4 two.
+Fixed transitions count actual edges exactly once only because the graph
+is simple with unambiguous colors. The exact script checked 360 randomly
+generated simple proper affine graphs, including 397 two-color and 3,688
+three-color cycles. Thus the audit exercises both multiplicities.
+
+2. Two-color exception: subtracting the two equations gives a+b=0.
+The row involution has a unique fixed point because p is odd. A color pair
+therefore supplies at most (p-1)/2 cycles; there are at most floor(d/2)
+pairs. This conclusion would fail for unrestricted permutations and must
+not be silently transferred there.
+
+3. Robustness: the tested quadratic form, rather than a general operator
+norm perturbation, charges each error at (a,x) at most rho_x times.
+The masks must be in [0,1]. The second product error uses the involution
+to interchange the two states. Cauchy-Schwarz is over d colors and then
+p rows. These steps, including the positive-part lower bound, were tested
+with exact rational masks. For fractional gamma_2<1, the displayed bound
+retains max{1,gamma_2}; dropping it would be unjustified.
+
+4. Exponents: (5+7/8)/3=47/24. Trace trimming produces
+(3*(47/24)+2)/5=63/40 as the p exponent before replacing d by p, and
+63/40+2/5=79/40 afterwards. Its zero-density threshold is again p^(1/16).
+These arithmetic identities are checked with exact fractions.
+
+5. Norm direction: normalized trace norm is at most gamma_2. That does
+NOT transfer a gamma_2 lower bound to a trace-norm lower bound. The proofs
+instead trim the SVD factors, preserve a specified positive fraction of
+actual graph edges, and apply the gamma_2 theorem to that actual subgraph.
+
+6. Dyadic factorization: at most 2k blocks per level, at most L levels,
+and each column lies in one dyadic block per level. The two squared factor
+norms are 2kL and L, giving sqrt(2k)*L, not sqrt(2kL).
+All 8,190 binary rows of lengths 1 through 12 passed the decomposition
+checks. The q-ordering construction enlarges the squared column norm by
+q, giving sqrt(q) in gamma_2. The existing one-ordering interval result
+has a better exponent for fixed k and is explicitly acknowledged.
+
+7. Dense example: A=[1,floor(p/8)], X=[0,floor(p/4)-1], beta(a)=a^2.
+The collision factor x+a+b is nonzero modulo p, so the graph really is
+simple and proper. Its gamma_2 is one and it has no antipodal palette
+pair. The three-color count is
+|A|^3|X|^2/(2p^2)+O(p^(23/8)), hence p^3/16384+O(p^(23/8)).
+An exact O(|A|^3) enumeration through p=1009 agrees with a separate
+common-neighbor enumeration through p=251. At p=1009 the exact count is
+60,983; this is a finite check, not an estimate of the asymptotic error
+constant. Counts and script hashes are saved separately.
+
+8. Arbitrary intercepts: only the archived common-support theorem is
+used here, not the polynomial weighted operator bound. The extracted
+all-one support rectangle is an actual subgraph on the original field.
+There is no claim that the extracted vertex set is itself a field.
+The matrix theorem's all-zero OR all-one alternative would not suffice;
+the proof first sparsifies the COMPLEMENT and then applies its one-sided
+zero-rectangle theorem. The palette and density losses are explicit.
+
+9. The rank count: pivot-coordinate restriction is injective on a real
+row space of rank r. Binary rows therefore have at most 2^r types. This
+was checked on all 4,096 binary 3-by-4 matrices, although the short linear
+algebra proof, not this finite check, establishes the general assertion.
+
+10. Uniform trace bound for arbitrary intercepts: write delta=m/p^2 and
+L=(log p)^(1/9). Nuclear/operator duality gives t>=m/(dp)>=delta. After
+trimming, H'<=5t/delta and at least delta p^2/2 edges survive. The comparison
+with the common-support bound gives
+L<=C[t^3/delta^3+t/delta^2+log(C/delta)]. The three alternatives yield
+delta<=C[t L^(-1/3)+sqrt(t)L^(-1/2)+exp(-cL)]. Thus the logarithmic
+threshold is t=o((log p)^(1/27)); bounded t gives an explicit
+O(p^2/(log p)^(1/27)) bound. No Boolean-to-fractional-mask extension is made.
+
+PRIMARY SOURCES CHECKED ON 7 NOVEMBER UTC / 8 NOVEMBER KST
+
+A. Matousek, Nikolov, Talwar, Factorization Norms and Hereditary Discrepancy.
+https://arxiv.org/html/1408.1376
+Published in International Mathematics Research Notices 2020(3), 751-780
+(online 2018), https://doi.org/10.1093/imrn/rny033 . Journal metadata
+was verified in the fresh literature pass.
+Section 3.1, Theorem 3.1: gamma_2 is bounded by a logarithmic rank factor
+times the determinant lower bound, hence hereditary discrepancy. We use
+log(2r) to handle rank one. This comparison is existing mathematics.
+
+B. Balla, Hambardzumyan, Tomon, Factorization norms and an inverse theorem
+for MaxCut. Math. Ann. 394 (2026), article 52.
+https://doi.org/10.1007/s00208-026-03355-2
+https://pmc.ncbi.nlm.nih.gov/articles/PMC12916507/
+Lemmas 4.4 and 5.1, Theorem 5.2. IMPORTANT VERSION DIFFERENCE: the final
+Lemma 4.4 has H/epsilon in the exponent; arXiv v1 had H/epsilon^2.
+The current arbitrary-intercept note uses the published stronger form.
+The trace trimming lemma, homogeneous-rectangle theorem, and bounded-norm
+structural theory are theirs, not discoveries of this project.
+
+C. Bloom, Sisask, An improvement to the Kelley-Meka bounds on three-term
+arithmetic progressions, Theorem 1.
+https://arxiv.org/html/2309.02353v1
+The explicit exponent 1/9 was checked directly. Substituting it into the
+archive's common-support formula replaces 1/12 by 1/9, changing constants
+after the sixth root. This is an updated input, not a new Roth theorem.
+
+D. E. Kowalski, Exponential sums over finite fields: elementary methods,
+Theorem 3.2, printed page 31 / PDF page 33.
+https://people.math.ethz.ch/~kowalski/exponential-sums-elementary.pdf
+The classical Weil estimate gives 2sqrt(p) for the nondegenerate cubic
+additive sums in quadratic-color-fourier.txt, for p>3. The p=3 case is
+bounded separately by the two available colors. The original attribution
+is A. Weil, On Some Exponential Sums, PNAS 34 (1948), 204-207,
+https://doi.org/10.1073/pnas.34.5.204 . The original scan was not inspected;
+the theorem statement was checked in Kowalski's text.
+
+E. Lucas Reis, Arithmetic constraints of polynomial maps through discrete
+logarithms, Theorem 3.2 (the standard multiplicative Weil bound).
+https://arxiv.org/pdf/2007.04114
+Published in Journal of Number Theory 229 (2021), 432-443,
+https://doi.org/10.1016/j.jnt.2020.10.015 . Journal metadata verified.
+The direct quadratic-residue count applies this to seven non-square
+polynomial products of degree at most six. Exceptional parameters and
+common roots are removed explicitly, rather than assuming character
+independence for every parameter. The input theorem is not new.
+
+F. Forey, Fresan, Kowalski, Wigderson, Spectrally indistinguishable
+pseudorandom graphs (2025 PREPRINT), Theorem 1.1 and Section 3.
+https://arxiv.org/html/2511.21351v1
+Their cubic Cayley sum graph has spectra described by the same classical
+Birch sums that appear in the new operator factorization. This is relevant
+prior spectral technology. The current application must not be presented
+as a new cubic-sum estimate or as the first use of these sums in graph
+spectra. No equivalence of the two graph constructions is claimed here.
+No journal publication for this title was verified in the fresh search.
+
+G. Chen and Greenhill, Threshold functions for substructures in random
+subsets of finite vector spaces. Journal of Combinatorics 12(1) (2021),
+157-183, https://doi.org/10.4310/JOC.2021.v12.n1.a6 . Theorem 1.1 and its
+Section 3 proof were inspected in https://arxiv.org/pdf/1805.03778v3 .
+The translation q=p,n=1,a=4,b=3,c=0 is given in Appendix B of the
+random-potential note. Deduplicate potential sets before applying it:
+Delta_4<=72 ensures their number is Theta(p^3); the other overlap bounds
+verify its remaining hypotheses. The threshold method is established
+literature. A distinct-set Poisson corollary also follows, including
+rainbow probability exp(-lambda) when M_p eta^4 tends to lambda>0.
+
+H. Kim, Lund, Pham, Yoo, Threshold functions for incidence properties in
+finite vector spaces. Finite Fields and Their Applications 87 (2023),
+102149, https://doi.org/10.1016/j.ffa.2022.102149 . Propositions 1.2-1.3
+were inspected in https://arxiv.org/pdf/2203.12801v2 . Their general
+set-family criterion supplies another existing route to the coarse
+threshold. No new general threshold principle is claimed here.
+
+QUADRATIC CHARACTER-OPERATOR AUDIT
+
+11. Character weighting preserves the mean-zero completed-operator norm
+for any intercept function and any palette. The diagonal factors depend
+on which frequency coordinate is zero; using the nonzero-product formula
+on the axes would be invalid. The exact modular-log audit checked 78,640
+transitions covering both axes and all nonconstant frequency vectors.
+
+12. For a full quadratic palette the nonzero-product block is a principal
+compression of cubic convolution, up to unitary diagonal factors. The
+two factors are not necessarily adjoints for a complex character; norm
+invariance still holds. The audit checked 290,144 exact cubic identities.
+The two frequency-axis blocks are compressed Fourier matrices with at
+most two copies of each squared index, giving sqrt(2p); 24,384 exact
+axis-phase cases passed. The constant block is removed before estimating.
+The published Weil bound, rather than finite evaluations, establishes
+the general 2sqrt(p) theorem.
+
+13. The mask is COLOR-BY-COLUMN. Fourier coefficients use all p-1 colors,
+with zero extension of unused colors, and max_y is inside the sum over
+characters. Palette restriction costs M_A in the operator norm, not in
+each mask. This gives M_A^(1/3) M_H^(2/3) after taking the cube root.
+The binary mask ensures V>=1; fractional robustness retains max{1,V}.
+The actual-support and positivity identities are the column versions of
+items 1 and 3, obtained by exchanging the coordinate roles.
+
+14. The quadratic-residue example already appears in the 18 October
+common-potential notes. Its properness is essential: intersections have
+column character chi_2(-1), while the selected columns have the opposite
+character. Its V is exactly one, and the positive main term is
+(p-1)^5/(64p^2). Exact counts reach p=1009 (N_3=15,872,976); direct
+four-cycle enumeration independently agrees through p=61. The new part
+being assessed is the counting application, not the example itself.
+
+15. The October follow-up growing-index-wiener-palettes.md already has
+p^(11/6) M_A M_H. The new character argument improves the powers of the
+norms, not that p exponent. The old coset-union estimate ell*p^(5/3)
+may still be stronger. The robust errors p^(3/2)R^(1/4) here and
+p^(4/3)R^(1/3) there must not be described as a uniform improvement.
+For some ROW-mask families, simplicity gives stronger bounds; the
+column formulation has a genuinely dense proper example and avoids
+mistaking such a vacuous row specialization for progress.
+
+16. Six exploratory Lanczos runs at p=193,379 for proper common-potential
+graphs returned small Ritz magnitudes. These are floating-point estimates
+from 24 iterations, with no certified enclosure of the true spectrum.
+They cannot establish a universal square-root bound for arbitrary masks.
+The probe is kept separately from the written character-envelope theorem.
+
+17. Random thinning: a three-color base cycle has three or four distinct
+potential values, never two. Row collisions and opposite-pair collisions
+give at most 3d(d-1) three-potential cycles. Two-color cycles have four
+distinct potentials. These distinctions are needed for the below-threshold
+first moment. The script exhaustively checked 332 masks through p=17,
+including exact rational Bernoulli averaging, and 96 additional sampled
+masks across the listed primes. Separate cycle and color-ratio counts agree.
+
+18. The second moment counts graph cycles, including different cycles
+sharing the same entire potential set. Maximum overlaps are bounded by
+p^2,108p,216,72 for one through four specified potentials. The last bound
+must not be replaced by one. A degree-nine elimination has nonzero leading
+coefficient 1/u^3, while the triple-slot elimination is monic cubic.
+These bounds give the threshold eta=p^(-3/4) and the relative asymptotic
+N_3~eta^4 p^3/64 above it. Finite overlap bounds were checked through p=101.
+
+19. The independent direct base count excludes at most six q parameters.
+Its factors r,L,D,Q are squarefree and pairwise coprime over the algebraic
+closure outside those exceptions; each of the three character conditions
+has a private odd-multiplicity factor. This proves the hypotheses for
+each of the seven multiplicative Weil estimates, including products in
+which D occurs twice. The factor of two in counting ordered ratios was
+checked against actual unordered cycles. This alternative proof makes
+the random-threshold note independent of the new operator theorem.
+
+20. Exact C potential-set counts through p=1019 agree with the Python
+cycle totals on common inputs. Cube roots of unity act freely on the
+three-color cycles while preserving every potential value. Multiplicities
+are therefore divisible by gcd(3,p-1). No critical-window Poisson claim
+is inferred from the numerical multiplicities alone.
+The new Appendix B instead derives a law for DISTINCT sets from the
+published Chen-Greenhill theorem with the exact normalization M_p.
+
+21. The literature follow-up resolves the distinct-set count in the
+companion potential-set-orbits.txt. The degree-five relation F is
+necessary for every ordered cycle. Of its 24 slot permutations after
+the ratio parametrization, exactly the identity and reversal vanish
+identically. Each of the other 22 integer polynomials has a coefficient
+equal to +1 or -1, hence is nonzero in every prime characteristic.
+The exact coefficient certificate and sign pairing passed; independent
+rectangle enumeration at p=13,23,31,61,101 checks generic orbit size and
+the complete cube-root action. All four cases overlapping the previous
+C enumeration agree. The count uses the elementary polynomial zero bound
+to give at most 220p^2 exceptional cycles, not a statistical extrapolation.
+
+22. Generic potential sets have exactly g=gcd(3,p-1) cycle realizations.
+This yields M_p=N_4pot/g+O(p^2)=p^3/(64g)+O(p^(5/2)). At eta=c p^(-3/4),
+exceptional four-potential cycles and three-potential cycles vanish with
+high probability by their first moments. Consequently N_3=g X_p with
+probability tending to one. Chen-Greenhill then gives N_3/g converging
+to Poisson(c^4/(64g)) along either fixed class p mod 3. Two-color cycles
+also vanish, giving rainbow probability exp(-c^4/(64g)). This application
+does not claim a new general Poisson theorem or an ordinary Poisson law
+for raw cycles when g=3. The scalar c is fixed and positive.
+
+NOVELTY AND PAPER ASSESSMENT
+
+Targeted searches for Erdos 810 / affine rainbow C4 supports combined with
+factorization norms, hereditary discrepancy and supersaturation did not
+establish historical priority. Absence of a search result is not a novelty
+proof. The strongest new lead is the explicit quadratic character-operator
+factorization and the resulting column-support theorem. Its only external
+analytic input is the classical cubic Weil estimate. The accompanying
+random-potential threshold is another concrete candidate: it strengthens
+the archive's fixed-density random-thinning obstruction to a threshold
+and a relative counting law, with an independent direct base count.
+The fresh journal search shows that its general threshold step is already
+covered by Chen-Greenhill (2021) and Kim-Lund-Pham-Yoo (2023). Its possible
+original content is the algebraic configuration count and overlap
+verification. The distinct-set Poisson extension is an explicitly
+attributed corollary of the former, not a separate new probability method.
+The additional generic-orbit count supplies an explicit leading constant
+and an arithmetic distinction between the two prime residue classes.
+This is a further concrete application candidate, with historical novelty
+still unverified; it was derived after identifying the published framework.
+See journal-literature-comparison.txt for the published bibliography and
+the comparisons with the project's older fixed-formula theorem.
+The broader package gives quantitative support-norm obstructions and
+growing-complexity consequences for arbitrary intercepts.
+The elementary rank and interval corollaries should remain supporting
+observations, not headline claims. Searches for cubic convolution, affine
+rainbow C4 operators, and the kernel rs(r-s) did not establish priority.
+
+Before calling this paper-ready: independently review the archived weighted
+and common-support inputs and the new applications, compare with the
+relevant coloring literature beyond keyword searches, and decide whether
+the quantitative scope is substantial enough for the intended venue.
+No such external review or venue judgment has been completed here.

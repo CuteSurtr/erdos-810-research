@@ -1,0 +1,1 @@
+{"beta": "a2", "p": 5, "m": 12, "ub": 12, "status": "OPTIMAL", "time": 0.009140253067016602, "nclauses": 18, "sol": [0, 1, 3, 4, 6, 8, 10, 12, 14, 17, 18, 19], "check": "ok, 2 four-cycles"}

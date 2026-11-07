@@ -1,0 +1,2 @@
+{"n":40,"k":10,"case":"unit2:4","cnf_sha256":"cdedd1d5861bb9bfa809051302a31c3bb6b48a9edc9df7bde7df2669ebe26ddd","solver":"kissat 4.0.4","result":"UNSATISFIABLE","solve_s":419.9,"proof_bytes":773567387,"check":"drat-trim killed by me after 1936 s without verdict (pipeline switched to CaDiCaL LRAT + cake_lpr)"}
+{"n":44,"k":11,"case":"sb:1.2.3.4","cnf_sha256":"962dfcafad7a8912f3c73de630496cc59ae68c7f87d50afcfc87f6055bcbf671","solver":"kissat 4.0.4","result":"UNKNOWN (killed at 656 s on pipeline switch)"}

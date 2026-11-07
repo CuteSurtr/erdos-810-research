@@ -1,0 +1,6 @@
+{"n": 76, "k": 17, "sym": 3, "solver": "cadical", "seed": 0, "res": "UNKNOWN", "secs": 1499.1, "t": "07:38:47"}
+{"n": 76, "k": 17, "sym": 3, "solver": "cadical", "seed": 1, "res": "UNKNOWN", "secs": 1499.1, "t": "07:38:47"}
+{"n": 76, "k": 17, "sym": 3, "solver": "cadical", "seed": 2, "res": "UNKNOWN", "secs": 1499.1, "t": "07:38:47"}
+{"n": 76, "k": 17, "solver": "kissat", "seed": 0, "res": "UNKNOWN", "note": "killed at deadline", "t": "07:39:08"}
+{"n": 76, "summary": "UNKNOWN", "k": 17, "t": "07:39:08"}
+{"n": 76, "summary": "done", "k_best": null, "secs": 1521.7, "t": "07:39:08"}

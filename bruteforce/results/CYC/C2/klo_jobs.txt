@@ -1,0 +1,7 @@
+48 11 2 kissat 900
+50 11 2 kissat 900
+61 13 2 kissat 900
+71 14 2 kissat 900
+80 18 2 kissat 900
+82 18 2 kissat 900
+93 21 2 kissat 900

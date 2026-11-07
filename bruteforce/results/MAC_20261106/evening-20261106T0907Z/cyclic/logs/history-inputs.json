@@ -1,0 +1,13 @@
+{
+  "sources": [
+    {
+      "path": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/push-20261106T0501Z/cyclic/logs/prior-run-normalized.jsonl",
+      "sha256": "55c08892f2fcb6301876fb04fa33d7c0cd0a162b1ed8d074df2c310d2b5a519c"
+    },
+    {
+      "path": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/push-20261106T0501Z/cyclic/logs/new-leaves.jsonl",
+      "sha256": "ba76ee43a2d16a1b7dda3a9fbf9d43962ab8dc82fea8aedbeb9436f4bb85b798"
+    }
+  ],
+  "normalization": "No records changed; deadline-interrupted checks remain UNKNOWN."
+}

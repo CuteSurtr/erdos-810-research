@@ -1,0 +1,5 @@
+t=12 it=1048576 e=197 cost=27 best=16
+t=22 it=2097152 e=197 cost=30 best=12
+t=33 it=3145728 e=197 cost=22 best=15
+t=44 it=4194304 e=197 cost=23 best=12
+t=55 it=5242880 e=197 cost=27 best=15

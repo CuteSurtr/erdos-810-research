@@ -1,0 +1,200 @@
+
+Starting CP-SAT solver v9.15.6755
+Parameters: max_time_in_seconds: 2700 log_search_progress: true num_workers: 3
+
+Initial optimization model '': (model_fingerprint: 0xb617facf74a4d6ce)
+#Variables: 1'505 (#bools: 1'210 in objective) (1'343 primary variables)
+  - 1'441 Booleans in [0,1]
+  - 22 in [0,10]
+  - 10 in [0,11]
+  - 22 in [0,45]
+  - 10 in [0,55]
+#kBoolAnd: 1'210 (#enforced: 1'210) (#literals: 2'420)
+#kBoolOr: 6'059 (#literals: 24'254)
+#kElement: 32
+#kExactlyOne: 10 (#literals: 110)
+#kLinear1: 1
+#kLinearN: 275 (#terms: 7'477)
+
+Starting presolve at 0.00s
+  1.71e-03s  0.00e+00d  [DetectDominanceRelations] 
+  9.24e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=2 #num_dual_strengthening=1 
+  7.17e-05s  0.00e+00d  [ExtractEncodingFromLinear] #potential_supersets=130 #potential_subsets=32 
+  5.25e-04s  0.00e+00d  [DetectDuplicateColumns] 
+  3.79e-04s  0.00e+00d  [DetectDuplicateConstraints] 
+[Symmetry] Graph for symmetry has 14'067 nodes and 38'972 arcs.
+[Symmetry] Symmetry computation done. time: 0.00463438 dtime: 0.00748929
+[SAT presolve] num removable Booleans: 0 / 2'012
+[SAT presolve] num trivial clauses: 0
+[SAT presolve] [0s] clauses:6'598 literals:24'232 vars:1'320 one_side_vars:1312 simple_definition:1 singleton_clauses:0
+[SAT presolve] [0.000368128s] clauses:6'598 literals:24'232 vars:1'320 one_side_vars:1312 simple_definition:1 singleton_clauses:0
+[SAT presolve] [0.000488328s] clauses:6'598 literals:24'232 vars:1'320 one_side_vars:1312 simple_definition:1 singleton_clauses:0
+  5.51e-04s  0.00e+00d  [DetectDuplicateConstraintsWithDifferentEnforcements] 
+  4.76e-02s  2.84e-02d  [Probe] #probed=4'808 #fixed_bools=108 #equiv=1 #new_binary_clauses=3'881 
+  1.56e-03s  2.93e-03d  [MaxClique] 
+  1.91e-03s  0.00e+00d  [DetectDominanceRelations] 
+  1.18e-02s  0.00e+00d  [PresolveToFixPoint] #num_loops=2 #num_dual_strengthening=1 
+  1.05e-03s  0.00e+00d  [ProcessAtMostOneAndLinear] 
+  4.59e-04s  0.00e+00d  [DetectDuplicateConstraints] 
+  3.61e-04s  0.00e+00d  [DetectDuplicateConstraintsWithDifferentEnforcements] 
+  1.98e-04s  2.01e-05d  [DetectDominatedLinearConstraints] #relevant_constraints=154 
+  7.77e-05s  0.00e+00d  [DetectDifferentVariables] 
+  1.73e-03s  1.50e-04d  [ProcessSetPPC] #relevant_constraints=6'318 
+  7.94e-04s  1.20e-04d  [TransformClausesToExactlyOne] #num_amos=990 #num_clauses=5'013 #num_checked=5'013 
+  1.19e-03s  0.00e+00d  [DetectEncodedComplexDomains] 
+  9.02e-05s  1.20e-06d  [FindAlmostIdenticalLinearConstraints] #num_tested_pairs=20 
+  8.87e-03s  2.24e-02d  [FindBigAtMostOneAndLinearOverlap] 
+  2.06e-03s  1.15e-02d  [FindBigVerticalLinearOverlap] #blocks=7 #saved_nz=601 
+  6.62e-04s  7.60e-04d  [FindBigHorizontalLinearOverlap] #blocks=1 #saved_nz=1'008 #linears=154 
+  1.02e-03s  1.00e-04d  [MergeClauses] 
+  1.29e-03s  0.00e+00d  [DetectDominanceRelations] 
+  7.56e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=2 #num_dual_strengthening=1 
+  1.26e-03s  0.00e+00d  [DetectDominanceRelations] 
+  7.30e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=1 #num_dual_strengthening=1 
+  1.98e-04s  0.00e+00d  [DetectDuplicateColumns] 
+  3.66e-04s  0.00e+00d  [DetectDuplicateConstraints] 
+[Symmetry] Graph for symmetry has 12'555 nodes and 33'176 arcs.
+[Symmetry] Symmetry computation done. time: 0.00449955 dtime: 0.00550485
+[SAT presolve] num removable Booleans: 0 / 1'541
+[SAT presolve] num trivial clauses: 0
+[SAT presolve] [0s] clauses:6'003 literals:22'052 vars:1'211 one_side_vars:1203 simple_definition:1 singleton_clauses:0
+[SAT presolve] [0.000551787s] clauses:6'003 literals:22'052 vars:1'211 one_side_vars:1203 simple_definition:1 singleton_clauses:0
+[SAT presolve] [0.000679429s] clauses:6'003 literals:22'052 vars:1'211 one_side_vars:1203 simple_definition:1 singleton_clauses:0
+  7.33e-04s  0.00e+00d  [DetectDuplicateConstraintsWithDifferentEnforcements] 
+  5.31e-02s  2.52e-02d  [Probe] #probed=4'808 #new_binary_clauses=1'239 
+  1.35e-03s  2.85e-03d  [MaxClique] 
+  1.31e-03s  0.00e+00d  [DetectDominanceRelations] 
+  7.38e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=1 #num_dual_strengthening=1 
+  1.09e-03s  0.00e+00d  [ProcessAtMostOneAndLinear] 
+  5.91e-04s  0.00e+00d  [DetectDuplicateConstraints] 
+  4.71e-04s  0.00e+00d  [DetectDuplicateConstraintsWithDifferentEnforcements] 
+  2.25e-04s  1.26e-05d  [DetectDominatedLinearConstraints] #relevant_constraints=162 
+  1.11e-04s  0.00e+00d  [DetectDifferentVariables] 
+  1.80e-03s  1.44e-04d  [ProcessSetPPC] #relevant_constraints=6'285 
+  8.43e-04s  1.20e-04d  [TransformClausesToExactlyOne] #num_amos=990 #num_clauses=5'013 #num_checked=5'013 
+  1.05e-03s  0.00e+00d  [DetectEncodedComplexDomains] 
+  1.22e-04s  1.20e-06d  [FindAlmostIdenticalLinearConstraints] #num_tested_pairs=20 
+  4.99e-03s  1.19e-02d  [FindBigAtMostOneAndLinearOverlap] 
+  1.15e-03s  6.02e-03d  [FindBigVerticalLinearOverlap] 
+  5.90e-04s  1.55e-03d  [FindBigHorizontalLinearOverlap] #linears=155 
+  1.13e-03s  1.00e-04d  [MergeClauses] 
+  1.58e-03s  0.00e+00d  [DetectDominanceRelations] 
+  8.32e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=1 #num_dual_strengthening=1 
+  1.34e-03s  0.00e+00d  [DetectDominanceRelations] 
+  7.52e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=1 #num_dual_strengthening=1 
+  2.33e-04s  0.00e+00d  [DetectDuplicateColumns] 
+  4.55e-04s  0.00e+00d  [DetectDuplicateConstraints] 
+[Symmetry] Graph for symmetry has 12'555 nodes and 33'176 arcs.
+[Symmetry] Symmetry computation done. time: 0.00534365 dtime: 0.00550485
+[SAT presolve] num removable Booleans: 0 / 1'541
+[SAT presolve] num trivial clauses: 0
+[SAT presolve] [0s] clauses:6'003 literals:22'052 vars:1'211 one_side_vars:1203 simple_definition:1 singleton_clauses:0
+[SAT presolve] [0.000406214s] clauses:6'003 literals:22'052 vars:1'211 one_side_vars:1203 simple_definition:1 singleton_clauses:0
+[SAT presolve] [0.000494751s] clauses:6'003 literals:22'052 vars:1'211 one_side_vars:1203 simple_definition:1 singleton_clauses:0
+  8.16e-04s  0.00e+00d  [DetectDuplicateConstraintsWithDifferentEnforcements] 
+  5.22e-02s  2.52e-02d  [Probe] #probed=4'808 #new_binary_clauses=1'239 
+  1.57e-03s  2.85e-03d  [MaxClique] 
+  1.40e-03s  0.00e+00d  [DetectDominanceRelations] 
+  7.82e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=1 #num_dual_strengthening=1 
+  1.15e-03s  0.00e+00d  [ProcessAtMostOneAndLinear] 
+  4.98e-04s  0.00e+00d  [DetectDuplicateConstraints] 
+  4.44e-04s  0.00e+00d  [DetectDuplicateConstraintsWithDifferentEnforcements] 
+  2.95e-04s  1.26e-05d  [DetectDominatedLinearConstraints] #relevant_constraints=162 
+  1.41e-04s  0.00e+00d  [DetectDifferentVariables] 
+  1.87e-03s  1.44e-04d  [ProcessSetPPC] #relevant_constraints=6'285 
+  8.40e-04s  1.20e-04d  [TransformClausesToExactlyOne] #num_amos=990 #num_clauses=5'013 #num_checked=5'013 
+  1.11e-03s  0.00e+00d  [DetectEncodedComplexDomains] 
+  1.57e-04s  1.26e-06d  [FindAlmostIdenticalLinearConstraints] #num_tested_pairs=21 
+  4.98e-03s  1.19e-02d  [FindBigAtMostOneAndLinearOverlap] 
+  1.16e-03s  6.02e-03d  [FindBigVerticalLinearOverlap] 
+  5.76e-04s  1.55e-03d  [FindBigHorizontalLinearOverlap] #linears=155 
+  1.19e-03s  1.00e-04d  [MergeClauses] 
+  1.44e-03s  0.00e+00d  [DetectDominanceRelations] 
+  7.30e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=1 #num_dual_strengthening=1 
+  1.07e-04s  0.00e+00d  [MergeNoOverlap] 
+  1.33e-04s  0.00e+00d  [MergeNoOverlap2D] 
+  7.12e-04s  0.00e+00d  [ExpandObjective] #entries=11'472 #tight_variables=1'257 #tight_constraints=168 #expands=121 
+
+Presolve summary:
+  - 331 affine relations were detected.
+  - rule 'TODO dual: only one blocking constraint?' was applied 55 times.
+  - rule 'affine: new relation' was applied 331 times.
+  - rule 'at_most_one: satisfied' was applied 99 times.
+  - rule 'bool_and: always false' was applied 110 times.
+  - rule 'bool_or: always true' was applied 1'045 times.
+  - rule 'bool_or: implications' was applied 1 time.
+  - rule 'bool_or: only one literal' was applied 110 times.
+  - rule 'deductions: 1448 stored' was applied 1 time.
+  - rule 'element: expanded value element' was applied 32 times.
+  - rule 'element: reduce target domain' was applied 32 times.
+  - rule 'exactly_one: removed literals' was applied 209 times.
+  - rule 'exactly_one: satisfied' was applied 1 time.
+  - rule 'exactly_one: size two' was applied 32 times.
+  - rule 'exactly_one: x and not(x)' was applied 9 times.
+  - rule 'linear matrix: common horizontal rectangle' was applied 1 time.
+  - rule 'linear matrix: common vertical rectangle' was applied 7 times.
+  - rule 'linear1: x in domain' was applied 1 time.
+  - rule 'linear: fixed or dup variables' was applied 226 times.
+  - rule 'linear: positive equal one' was applied 121 times.
+  - rule 'linear: reduced variable domains' was applied 1 time.
+  - rule 'linear: remapped using affine relations' was applied 11 times.
+  - rule 'linear: simplified rhs' was applied 1'288 times.
+  - rule 'new_bool: integer encoding' was applied 692 times.
+  - rule 'new_bool: with clause' was applied 32 times.
+  - rule 'objective: expanded via tight equality' was applied 121 times.
+  - rule 'objective: variable not used elsewhere' was applied 110 times.
+  - rule 'presolve: 229 unused variables removed.' was applied 1 time.
+  - rule 'presolve: iteration' was applied 3 times.
+  - rule 'probing: bool_or reduced to implication' was applied 495 times.
+  - rule 'variables: add encoding constraint' was applied 692 times.
+  - rule 'variables: detected encoding of a complex domain with multiple linear1' was applied 32 times.
+
+Presolved optimization model '': (model_fingerprint: 0xffd007b90f146d5d)
+#Variables: 1'613 (#bools: 121 in objective) (1'447 primary variables)
+  - 1'541 Booleans in [0,1]
+  - 22 in [0,1][3][6][10][15][21][28][36][45]
+  - 10 in [0,1][3][6][10][15][21][28][36][45][55]
+  - 4 in [0,2]
+  - 1 in [0,3]
+  - 1 in [0,4]
+  - 1 in [0,5]
+  - 22 in [0,10]
+  - 10 in [0,11]
+  - 1 in [0,1210]
+#kBoolAnd: 90 (#enforced: 90) (#literals: 1'080)
+#kBoolOr: 5'013 (#literals: 20'072)
+#kExactlyOne: 129 (#literals: 1'210)
+#kLinear1: 1'320 (#enforced: 1'320)
+#kLinear3: 7
+#kLinearN: 155 (#terms: 3'559)
+[Symmetry] Graph for symmetry has 11'931 nodes and 33'176 arcs.
+[Symmetry] Symmetry computation done. time: 0.0029502 dtime: 0.00496836
+
+Preloading model.
+#Bound   0.34s best:-inf  next:[-0,121]   initial_domain
+#Model   0.35s var:1613/1613 constraints:6714/6714
+
+Starting search at 0.35s with 3 workers.
+2 full problem subsolvers: [core, default_lp]
+1 first solution subsolver: [fj]
+9 interleaved subsolvers: [feasibility_pump, graph_arc_lns, graph_cst_lns, graph_dec_lns, graph_var_lns, ls, rins/rens, rnd_cst_lns, rnd_var_lns]
+3 helper subsolvers: [neighborhood_helper, synchronization_agent, update_gap_integral]
+
+#1       0.36s best:-0    next:[1,121]    fj_restart(batch:1 lin{mvs:50 evals:235} #w_updates:3 #perturb:0)
+#2       0.36s best:2     next:[3,121]    rnd_var_lns (d=5.00e-01 s=4 t=0.10 p=0.00 stall=0 h=base) [hint]
+#3       0.39s best:3     next:[4,121]    ls_restart_decay(batch:1 lin{mvs:150 evals:1'045} #w_updates:48 #perturb:0)
+#4       0.41s best:6     next:[7,121]    rnd_var_lns (d=7.07e-01 s=11 t=0.10 p=1.00 stall=0 h=base)
+#Bound   0.43s best:6     next:[7,110]    default_lp
+#5       0.66s best:7     next:[8,110]    graph_arc_lns (d=7.07e-01 s=14 t=0.10 p=1.00 stall=1 h=base)
+#6       1.00s best:36    next:[37,110]   default_lp
+#7       1.15s best:47    next:[48,110]   default_lp
+#8       1.63s best:48    next:[49,110]   default_lp
+#9       1.73s best:49    next:[50,110]   default_lp
+#10      2.28s best:50    next:[51,110]   default_lp
+#11      2.51s best:51    next:[52,110]   default_lp
+#12      2.91s best:52    next:[53,110]   default_lp
+#13      5.65s best:54    next:[55,110]   rnd_var_lns (d=8.61e-01 s=63 t=0.10 p=0.71 stall=4 h=base)
+#14      8.07s best:55    next:[56,110]   default_lp
+#15     11.37s best:56    next:[57,110]   graph_dec_lns (d=7.97e-01 s=117 t=0.10 p=0.60 stall=8 h=base)
+#Bound  18.47s best:56    next:[57,109]   bool_core (num_cores=12 [size:11 mw:1 d:8] a=1 d=8 fixed=0/2227 clauses=23'024)
+#16     25.00s best:57    next:[58,109]   graph_dec_lns (d=8.43e-01 s=233 t=0.10 p=0.57 stall=12 h=stalling)

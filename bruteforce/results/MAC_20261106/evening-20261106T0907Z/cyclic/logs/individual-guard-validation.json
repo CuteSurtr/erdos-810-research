@@ -1,0 +1,9 @@
+{
+  "single_child_pause": true,
+  "single_child_resume": true,
+  "dead_pid_cleanup": true,
+  "shutdown_resumes_all": true,
+  "STOP_prevents_new_process": true,
+  "tested_utc": 1793957025.6773682,
+  "shutdown_resumes_live_child": true
+}

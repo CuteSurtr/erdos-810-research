@@ -1,0 +1,14 @@
+STOP
+**/STOP
+**/__pycache__/
+cyclic/work/
+cyclic/proofs/
+tools/drat-trim
+tools/potential-quadruples
+cyclic/src/cycenc
+constructions/fourset_check
+**/current.cnf
+logs/pids.json
+logs/run.lock
+logs/git-checkpoint.log
+logs/hard-stop.json

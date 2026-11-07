@@ -1,0 +1,16 @@
+t=16 it=1048576 e=203 cost=11 best=3
+t=31 it=2097152 e=203 cost=15 best=3
+t=45 it=3145728 e=203 cost=12 best=4
+t=59 it=4194304 e=203 cost=14 best=4
+t=74 it=5242880 e=203 cost=14 best=3
+t=88 it=6291456 e=203 cost=12 best=2
+t=103 it=7340032 e=203 cost=11 best=3
+t=119 it=8388608 e=203 cost=11 best=3
+t=133 it=9437184 e=203 cost=16 best=4
+t=152 it=10485760 e=203 cost=10 best=2
+t=181 it=11534336 e=203 cost=11 best=4
+t=208 it=12582912 e=203 cost=12 best=3
+t=236 it=13631488 e=203 cost=14 best=3
+t=265 it=14680064 e=203 cost=14 best=4
+t=295 it=15728640 e=203 cost=14 best=2
+Terminated

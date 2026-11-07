@@ -1,0 +1,8 @@
+38 342 edges 11020 4-cycles OK
+44 440 edges 17567 4-cycles OK
+49 539 edges 25578 4-cycles OK
+59 767 edges 50799 4-cycles OK
+70 1050 edges 90370 4-cycles OK
+76 1216 edges 120650 4-cycles OK
+81 1296 edges 120528 4-cycles OK
+91 1638 edges 194103 4-cycles OK

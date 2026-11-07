@@ -1,0 +1,22 @@
+{
+  "utc": "2026-11-07T16:51:43.751610+00:00",
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "full",
+      "returncode": 0,
+      "proof_hashes_checked": 2,
+      "report_and_coverage_saved": true,
+      "live_searches_affected": false
+    },
+    {
+      "case": "exhausted",
+      "returncode": 1,
+      "proof_hashes_checked": 0,
+      "report_and_coverage_saved": true,
+      "live_searches_affected": false
+    }
+  ],
+  "scope": "isolated synthetic proof-budget control flow; real graph checkers; no SAT proof assertion",
+  "finalizer_sha256": "9fc19bb335c96a2d9fd88b517700d3797fd0c0a1d6566a3c6712e68186eef172"
+}

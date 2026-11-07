@@ -1,0 +1,13 @@
+{
+  "sources": [
+    {
+      "path": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/evening-20261106T0907Z/cyclic/logs/prior-run-normalized.jsonl",
+      "sha256": "5b2d91b3ef3916cc93f64ba8117db78970bed6427e53b32aff71471124d40590"
+    },
+    {
+      "path": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/evening-20261106T0907Z/cyclic/logs/new-leaves.jsonl",
+      "sha256": "a0a68ce20badd42dffdc2e21e302c68cc6881e8b5f84e22c11ffd1abdfa25ae2"
+    }
+  ],
+  "normalization": "No records changed. Timeouts and controlled interruptions remain UNKNOWN."
+}
