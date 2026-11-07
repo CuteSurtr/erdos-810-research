@@ -1,0 +1,335 @@
+RANDOM POTENTIAL THINNING: A p^(-3/4) THRESHOLD AND A THREE-COLOR COUNT
+8 November 2026. Candidate deduction from the quadratic character estimate.
+
+Status: written proof with exact finite consistency checks. Historical
+novelty and external review are unverified. This is a theorem for one
+specified random family, not a bound for all graphs in Erdos #810.
+
+1. THE RANDOM FAMILY AND THE CONCLUSIONS
+
+Let p tend to infinity through odd primes. Write chi for the quadratic
+character and put
+
+ A={a!=0:chi(a)=1}, J={h!=0:chi(h)=-chi(-1)}, d=(p-1)/2.
+
+Include each h in J in H independently with probability eta=eta(p),
+0<=eta<=1. For every a in A and h in H retain the color-a edge
+
+                     (h/a^2-a, h/a).                     (1)
+
+This graph is always simple and properly colored, and has exactly
+m=d|H| edges. Its unthinned version is the old quadratic-residue example
+in the 18 October notes. Indeed a collision between distinct colors a,b
+would require potentials -a^2 b,-ab^2, which have quadratic character
+chi(-1), while all selected potentials have the opposite character.
+
+THEOREM. The following statements hold for this distribution.
+
+(i) If eta=o(p^(-3/4)), then with probability tending to one EVERY C4
+    is rainbow.
+
+(ii) If eta/p^(-3/4) tends to infinity, then, writing N_3 for the number
+     of unordered three-color C4s,
+
+                   N_3 / (eta^4 p^3/64) -> 1              (2)
+
+     in probability. In particular the graph fails the rainbow-C4
+     condition with probability tending to one.
+
+Thus p^(-3/4) is a threshold scale for this random model. In its critical
+range eta is of that order, m is of order p^(5/4) with high probability.
+No limiting probability or Poisson law in the constant-factor critical
+window is asserted. The sparse construction in (i) is not claimed to
+improve the archive's best lower-bound constructions.
+
+For every eta there is also the uniform expectation formula
+
+ E N_3 = eta^4 p^3/64 + O(eta^4 p^(5/2)+eta^3 p^2),       (3)
+
+with an absolute implied constant. The proof below uses elementary
+counting and a second moment after a base counting input. The appendix
+proves that input directly as well, independently of the spectral
+argument. No unproved estimate for arbitrary masks is used.
+
+2. THE UNTHINNED COUNT AND POTENTIAL COLLISIONS
+
+The unthinned graph is equivalent to the column mask
+F(a,y)=1_A(a)1_J(y), since a is a square. The companion note
+quadratic-color-fourier.txt, Section 5, proves
+
+                  N_3(base)=p^3/64+O(p^(5/2)).             (4)
+
+Its ingredients are the exact actual-support identity, the classical
+cubic Weil bound, and the completed-operator factorization. This is the
+only asymptotic input in Sections 2-4. An independent character-sum proof
+is supplied in the appendix below.
+
+In a three-color C4, label the repeated color a and the other two colors
+b,c, with positions
+
+                     y             w
+              x      a             b
+              z      c             a.
+
+Write h=ay, k=aw, u=bw, v=cy for the four edge potentials. Put q=b/a,
+r=c/a and zeta=a^3. The row equations are exactly
+
+ k=q h+zeta q(q-1),    h=r k+zeta r(r-1).                 (5)
+
+Here q,r are nonzero, different from 1 and from each other. Also qr!=1:
+if qr=1, consistency in (5) would give (q-1)^2(q+1)=0;
+q=1 is forbidden and q=-1 gives q=r, also forbidden. Consequently the
+two linear equations (5) determine h,k uniquely from a,b,c.
+
+There are at least three distinct potential values in such a cycle.
+The repeated pair h,k is distinct; adjacent edges in a column also
+have distinct potentials because the column is nonzero and its colors
+differ. Two values would therefore force u=h and v=k, implying qr=1.
+This contradiction also shows that at most one potential equality occurs.
+
+Let D count the cycles with three, rather than four, potential values.
+They arise only in the following ways.
+
+* Equal potentials on one row: for distinct colors a,b, equality gives
+  (a+b)x+a^2+ab+b^2=0. If a+b=0 there is no solution, and otherwise the
+  row is unique. Its two edges have at most two three-color completions:
+  either a or b must be the repeated color, and then the other row is
+  determined. There are at most 2*binom(d,2)=d(d-1) such cycles.
+
+* Equal potentials on the opposite, differently colored pair: u=v.
+  Using (5) and q!=r, this requires
+
+                         q^2+r^2=q+r.                    (6)
+
+  For each a,b there are at most two r values. Each color triple
+  determines at most one cycle by qr!=1. This contributes at most
+  2d(d-1) cycles, allowing overcounting of orientations.
+
+Therefore
+
+                  0<=D<=3d(d-1)=O(p^2).                  (7)
+
+Let N_4pot=N_3(base)-D denote the number of three-color cycles with four
+distinct potentials (this is NOT a count of four-color cycles). A base
+cycle survives exactly when all its potentials are selected. Hence
+
+ E N_3=eta^4 N_4pot+eta^3 D
+       =eta^4 N_3(base)+(eta^3-eta^4)D.                   (8)
+
+This proves (3), and N_4pot~p^3/64.
+
+Two-color cycles cause no earlier obstruction. They require b=-a and
+have columns y=a^2+ax, w=a^2-ax. Their potentials are
+{ay,aw,-ay,-aw}. All four are distinct: zero is excluded, y!=w, and
+y+w=2a^2!=0. There are at most floor(d/2)(p-1)/2=O(p^2) such cycles.
+
+3. BOUNDED OVERLAPS OF THE FOUR-POTENTIAL CYCLES
+
+For j=1,2,3,4, let Delta_j be the maximum number of three-color base
+cycles with FOUR DISTINCT potentials containing a prescribed j-element
+potential set. The following deliberately loose bounds suffice:
+
+ j                 1        2         3        4
+ Delta_j        <= p^2    <=108p    <=216     <=72.        (9)
+
+For j=1, a given potential occurs on d graph edges. In any simple proper
+affine graph a fixed edge belongs to at most p+d-2 nonrainbow C4s:
+at most p-1 repeat that edge's own color, and at most d-1 repeat another
+color on the other opposite pair. Properness determines each completion.
+Thus Delta_1<=d(p+d-2)<=p^2.
+
+For two prescribed values, assign them to two of the ordered slots
+h,k,u,v above. There are at most 12 assignments. The possible slot types
+are as follows, with the repeated color a fixed when used.
+
+* h,k: at most d choices for a; these two edges determine the cycle.
+* One row, such as h,u: for each a the first edge fixes x. The second
+  color satisfies b^3+x b^2-u=0, with at most three roots; there are at
+  most two three-color completions. This gives at most 6d cycles.
+* One column, such as h,v: each a fixes the common column and hence c;
+  at most two completions give at most 2d cycles.
+* Opposite different colors, u,v: for each a, equations (5) give
+
+       k^3=u h k+zeta u(u-k),
+       h^3=v k h+zeta v(v-h),
+       h=k^2/u+zeta-zeta u/k.                            (10)
+
+  Substituting the last expression in the second and multiplying by k^3
+  gives a polynomial of degree nine with nonzero leading coefficient
+  1/u^3. There are at most nine nonzero k solutions. Each fixes h,b,c
+  and all four vertices. Thus there are at most 9d cycles.
+
+This proves Delta_2<=12*9p, including possible overcounts.
+
+For three specified slots, if both h,k and one other value are fixed,
+q or r is fixed and (5) determines zeta, giving at most three a values.
+Otherwise take h,u,v fixed. Then r=v/h!=1 is fixed, and
+
+                 zeta=(h-r k)/(r(r-1)).                  (11)
+
+Substitution into the first equation of (10) gives a monic cubic in k.
+It has at most three roots, each allowing at most three a values.
+The case with k,u,v fixed is symmetric. With at most 24 slot assignments
+this proves Delta_3<=216. If all four slots are fixed, h,k,u already
+allow at most three a values; at most 24 assignments give Delta_4<=72.
+No claim of uniqueness of a cycle from its potential set is made.
+
+4. SECOND MOMENT AND THE THRESHOLD
+
+Let Y be the number of surviving three-color base cycles with four
+distinct potentials, counting graph cycles even if they share exactly
+the same potential set. Its mean is
+
+               mu=N_4pot eta^4~p^3 eta^4/64.
+
+Disjoint potential sets give independent indicators. Two four-potential
+cycles sharing j values have joint survival probability eta^(8-j).
+By (9), summing covariances, including identical potential sets, gives
+
+ Var(Y)<=C[p^3 eta^4+p^5 eta^7+p^4 eta^6+p^3 eta^5].       (12)
+
+Consequently, when eta>0,
+
+ Var(Y)/mu^2 <= C[1/(p^3 eta^4)+1/(p eta)
+                       +1/(p^2 eta^2)+1/(p^3 eta^3)]     (13)
+
+for all sufficiently large p. If eta>>p^(-3/4), every term tends to zero.
+Chebyshev's inequality gives Y/mu->1 in probability. The other three-color
+cycles have expected count at most 3p^2 eta^3, whose ratio to mu is
+O(1/(p eta))=o(1). Markov's inequality shows that they do not change the
+relative asymptotic. This proves (ii).
+
+If eta<<p^(-3/4), the expected number of all nonrainbow cycles is at most
+
+                   C[p^3 eta^4+p^2 eta^3+p^2 eta^4]=o(1).
+
+The last term covers two-color cycles. Markov's inequality proves (i).
+The graph is always proper, so no one-color or adjacent-repetition cases
+are missing. Finally |H| is binomial with mean d eta and variance at most
+d eta. If d eta tends to infinity, |H|/(d eta)->1 in probability, hence
+m~eta p^2/4. This covers the threshold range.
+
+5. COMPARISON AND AUDIT STATUS
+
+The 18 October common-potential-negative-spectrum.md already proved that
+fixed-density independent thinning of this proper family is not rainbow-C4
+with high probability. It used a p^(7/8) lower spectral estimate and matrix
+bounded differences. The present deductions add an explicit three-color
+asymptotic, vanishing sampling probabilities, and a two-sided threshold
+scale. The old example, the first/second moment methods, and the classical
+Weil estimate are not claimed as new.
+
+The proof does not require a small Fourier norm for the sampled H. It
+also does not assert a deterministic spectral bound for every H or forbid
+exceptional adversarial supports above the random threshold. Historical
+novelty of this application remains unverified.
+
+audit_random_thinning.py checks the potential identities, potential-count
+classification, and overlap bounds at small primes. It also compares with
+independent four-cycle enumeration and exhaustively averages all masks
+through p=17 using exact rational Bernoulli weights. Finite checks support
+the calculations; the written arguments establish the general statements.
+
+6. CUBE SYMMETRY AND EXACT POTENTIAL-SET MULTIPLICITIES
+
+If omega^3=1 in F_p*, then
+
+        (x,y,a) -> (omega*x, omega^2*y, omega*a)
+
+is an automorphism of every sampled graph, preserving each edge potential
+ay. Such omega is a square, so it preserves the palette A. The group of
+these roots has size g=gcd(3,p-1). It acts freely on three-color C4s:
+their unique repeated color would otherwise satisfy omega*a=a. Thus the
+number of graph cycles realizing any given potential set is divisible by
+g. In particular, raw graph-cycle counts must not be modeled as independent
+Poisson events when p=1 mod 3.
+
+The local C enumerator potential_quadruples.c counts distinct four-value
+sets with their exact cycle multiplicities. For example:
+
+ p       four-potential cycles    distinct sets       multiplicities
+ 509          1,983,232             1,973,072             1,2
+1009         15,773,184             5,254,032             3,6
+1019         16,327,702            16,281,383             1,2.
+
+Its total cycle counts agree with the separate Python methods on shared
+inputs. The run used one low-priority CPU core, a 768 MiB memory limit,
+and about 11.5 seconds. Source and binary hashes are in the manifest.
+
+A concrete next question is whether the number M_p of distinct four-value
+sets equals N_4pot/g+O(p^2), as these data suggest. This would require
+bounding collisions between different cube-symmetry orbits; no such
+asymptotic has been proved here. The threshold and counting theorems above
+do not depend on it, or on an unproved critical-window limit law.
+
+APPENDIX. A DIRECT PROOF OF THE BASE COUNT
+
+This gives an independent mathematical check of the coefficient 1/64
+and allows the random-threshold argument to stand without the completed
+operator estimate. Only the classical multiplicative Weil bound is used.
+
+For each repeated color a, put q=b/a,r=c/a. Both ratios lie in A, neither
+equals 1, q!=r, and qr!=1. Solving (5), the columns divided by a^2 are
+
+ Y=r(q^2-q+r-1)/(1-qr),
+ W=q(r^2-r+q-1)/(1-qr).                                  (A1)
+
+Conversely every such pair with chi(Y)=chi(W)=epsilon=-chi(-1) gives a
+three-color cycle. The equations and q!=r ensure Y!=W. Each cycle is
+counted twice, from (q,r) and (r,q). Thus if B counts the admissible
+ordered ratio pairs,
+
+                       N_3(base)=d B/2.                   (A2)
+
+Fix q in A. Outside finitely many excluded r values, the conditions on
+r are that the following three polynomials have prescribed quadratic
+characters (1,epsilon,epsilon):
+
+ P_1(r)=r,
+ P_2(r)=(r+q^2-q-1)(1-qr),
+ P_3(r)=(r^2-r+q-1)(1-qr).                               (A3)
+
+The identities in (A3) use that q,r are squares; the initial condition
+chi(P_1)=1 supplies the latter. Zero values, r=1,q, and qr=1 are removed
+at a cost O(1) per q.
+
+For all q outside the set
+
+     {0,1,-1,5/4} union {q:q^2-q-1=0},                   (A4)
+
+the four polynomials
+r, L=r+q^2-q-1, D=1-qr, Q=r^2-r+q-1
+are squarefree and pairwise relatively prime over the algebraic closure.
+For clarity, Q has discriminant 5-4q; its value at zero is q-1, and L
+vanishes at zero only if q^2-q-1=0. The other possible common roots are
+excluded by
+
+ q L(1/q)=(q-1)^2(q+1),
+ q^2 Q(1/q)=(q-1)^2(q+1),
+ Q(-q^2+q+1)=(q-1)^3(q+1).
+
+Every nonempty product P_1^e P_2^f P_3^g, e,f,g in {0,1}, has a root
+of odd multiplicity: P_1 has its private factor r, P_2 has L, and P_3
+has Q. The shared factor D does not affect this conclusion. Hence none
+is a constant times a square. Its degree is at most six.
+
+Expand the three quadratic-character indicators into their eight terms.
+The constant term contributes p/8+O(1); each nonconstant term is
+O(sqrt(p)) by the multiplicative-character Weil bound. Therefore each
+nonexceptional q in A supplies p/8+O(sqrt(p)) admissible r values.
+The at most six exceptional q values contribute O(p) altogether.
+Summing over d=(p-1)/2 choices yields
+
+                       B=p^2/16+O(p^(3/2)).
+
+Equation (A2) proves (4). This proof checks the same asymptotic through
+a different Fourier expansion from the cubic-convolution operator proof.
+
+Primary source for the standard character-sum input: Lucas Reis,
+Arithmetic constraints of polynomial maps through discrete logarithms,
+Theorem 3.2 (citing Lidl--Niederreiter, Theorem 5.41):
+https://arxiv.org/pdf/2007.04114 . For a non-square polynomial the
+quadratic-character sum is bounded by (z-1)sqrt(p), where z is the
+number of distinct roots in its splitting field. Here z<=6.
+The direct color-ratio count is also checked against the separate
+cycle enumeration in random-thinning-audit.json.

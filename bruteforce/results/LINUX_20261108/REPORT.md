@@ -65,6 +65,12 @@ and similar-tagged controls.
   The proof includes both exceptional frequency axes. Its dense proper
   example has p^3/64+O(p^(5/2)) three-color four-cycles, counted exactly
   through p=1009. This is the strongest analytic lead of this session.
+- `analytic/random-potential-threshold.txt` gives a two-sided threshold
+  eta=p^(-3/4) for independent potential thinning of the October quadratic-
+  residue family. Above that scale, N_3~eta^4 p^3/64 in probability;
+  below it, every C4 is rainbow with high probability. The proof includes
+  overlap bounds and an independent direct character-sum proof of the
+  unthinned count. This is a result for a specified random model.
 - `analytic/factorization-and-defects.txt` develops a gamma_2 support bound,
   a three-color C4 counting formula, a degree-weighted robust inequality,
   and discrepancy/trace-norm consequences for fixed nonlinear polynomial
@@ -96,3 +102,27 @@ The additional common-potential spectrum probe used six small examples
 at p=193 and 379. Its floating-point Ritz values are exploratory lower
 bounds on extremal magnitudes, not certified spectral upper bounds or a
 proof of a general estimate. See `analytic/potential-spectrum-probe.json`.
+
+Exact potential-set multiplicities were also counted locally in C through
+p=1019, with a 768 MiB memory cap and one of the same two CPU cores.
+The counts agree with the separate Python cycle counts on shared inputs.
+Different graph cycles can have the same potential set; these multiplicities
+must be retained in a second-moment argument. The calculation took about
+11.5 seconds and is recorded in `analytic/potential-quadruple-counts.jsonl`.
+
+## Latest verified live checkpoint
+
+`verified/0155KST/` completed at 16:54 UTC (01:54 KST). Sixteen sizes
+improve over the merged baseline, with 29 edges of total gain. The largest
+single gain is n=123: 2625 to 2631 edges. Every saved improvement passed
+both graph checkers. All 536 new UNSAT leaves passed native DRAT checking,
+and all 536 retained proof archives passed a fresh hash check. Combined
+n=56 coverage has 18,727 verified leaves and 318 open branches; four of
+nine top-level cases are closed. There is still no exact n=56 conclusion.
+
+The finalizer now reserves 90 seconds for coverage and reporting if the
+proof-hash audit reaches its time budget. An isolated control-flow test
+confirmed that both full and time-limited audits save their report and
+clearly distinguish an incomplete hash pass from corrupted proof data.
+This test did not affect the live workers. The searches remain authorized
+until 05:50 KST, with the independent hard stop at 06:00 KST.

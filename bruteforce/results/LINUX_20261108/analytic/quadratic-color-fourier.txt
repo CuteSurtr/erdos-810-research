@@ -291,6 +291,13 @@ The matrix factorization in (4) uses a standard cubic convolution and
 a classical Weil bound. A complete novelty assessment must investigate
 earlier uses of this operator, not merely search for the final exponent.
 
+Related prior spectral work: Forey--Fresan--Kowalski--Wigderson,
+Spectrally indistinguishable pseudorandom graphs (2025), Section 3,
+https://arxiv.org/html/2511.21351v1 . Their cubic Cayley sum graphs also
+use these classical Birch sums. The potential contribution here is the
+explicit crossed-operator factorization and actual column-mask application,
+not a new exponential-sum estimate or the first cubic graph-spectrum bound.
+
 LOCAL CHECKS. audit_quadratic_characters.py passed 78,640 exact character
 separation cases, 290,144 cubic phase cases and 24,384 axis phase cases.
 Its small-prime floating-point Weil-sum evaluations are consistency checks,

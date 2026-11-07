@@ -111,6 +111,23 @@ is A. Weil, On Some Exponential Sums, PNAS 34 (1948), 204-207,
 https://doi.org/10.1073/pnas.34.5.204 . The original scan was not inspected;
 the theorem statement was checked in Kowalski's text.
 
+E. Lucas Reis, Arithmetic constraints of polynomial maps through discrete
+logarithms, Theorem 3.2 (the standard multiplicative Weil bound).
+https://arxiv.org/pdf/2007.04114
+The direct quadratic-residue count applies this to seven non-square
+polynomial products of degree at most six. Exceptional parameters and
+common roots are removed explicitly, rather than assuming character
+independence for every parameter. The input theorem is not new.
+
+F. Forey, Fresan, Kowalski, Wigderson, Spectrally indistinguishable
+pseudorandom graphs (2025), Theorem 1.1 and Section 3.
+https://arxiv.org/html/2511.21351v1
+Their cubic Cayley sum graph has spectra described by the same classical
+Birch sums that appear in the new operator factorization. This is relevant
+prior spectral technology. The current application must not be presented
+as a new cubic-sum estimate or as the first use of these sums in graph
+spectra. No equivalence of the two graph constructions is claimed here.
+
 QUADRATIC CHARACTER-OPERATOR AUDIT
 
 11. Character weighting preserves the mean-zero completed-operator norm
@@ -160,6 +177,38 @@ from 24 iterations, with no certified enclosure of the true spectrum.
 They cannot establish a universal square-root bound for arbitrary masks.
 The probe is kept separately from the written character-envelope theorem.
 
+17. Random thinning: a three-color base cycle has three or four distinct
+potential values, never two. Row collisions and opposite-pair collisions
+give at most 3d(d-1) three-potential cycles. Two-color cycles have four
+distinct potentials. These distinctions are needed for the below-threshold
+first moment. The script exhaustively checked 332 masks through p=17,
+including exact rational Bernoulli averaging, and 96 additional sampled
+masks across the listed primes. Separate cycle and color-ratio counts agree.
+
+18. The second moment counts graph cycles, including different cycles
+sharing the same entire potential set. Maximum overlaps are bounded by
+p^2,108p,216,72 for one through four specified potentials. The last bound
+must not be replaced by one. A degree-nine elimination has nonzero leading
+coefficient 1/u^3, while the triple-slot elimination is monic cubic.
+These bounds give the threshold eta=p^(-3/4) and the relative asymptotic
+N_3~eta^4 p^3/64 above it. Finite overlap bounds were checked through p=101.
+
+19. The independent direct base count excludes at most six q parameters.
+Its factors r,L,D,Q are squarefree and pairwise coprime over the algebraic
+closure outside those exceptions; each of the three character conditions
+has a private odd-multiplicity factor. This proves the hypotheses for
+each of the seven multiplicative Weil estimates, including products in
+which D occurs twice. The factor of two in counting ordered ratios was
+checked against actual unordered cycles. This alternative proof makes
+the random-threshold note independent of the new operator theorem.
+
+20. Exact C potential-set counts through p=1019 agree with the Python
+cycle totals on common inputs. Cube roots of unity act freely on the
+three-color cycles while preserving every potential value. Multiplicities
+are therefore divisible by gcd(3,p-1). The proposed more precise count
+of distinct four-value sets is explicitly left unproved. No critical-
+window Poisson claim is inferred from the numerical multiplicities.
+
 NOVELTY AND PAPER ASSESSMENT
 
 Targeted searches for Erdos 810 / affine rainbow C4 supports combined with
@@ -168,8 +217,11 @@ establish historical priority. Absence of a search result is not a novelty
 proof. The strongest new lead is the explicit quadratic character-operator
 factorization and the resulting column-support theorem. Its only external
 analytic input is the classical cubic Weil estimate. The accompanying
-package gives three-color counting formulas, quantitative support-norm
-obstructions, and growing-complexity consequences for arbitrary intercepts.
+random-potential threshold is another concrete candidate: it strengthens
+the archive's fixed-density random-thinning obstruction to a threshold
+and a relative counting law, with an independent direct base count.
+The broader package gives quantitative support-norm obstructions and
+growing-complexity consequences for arbitrary intercepts.
 The elementary rank and interval corollaries should remain supporting
 observations, not headline claims. Searches for cubic convolution, affine
 rainbow C4 operators, and the kernel rs(r-s) did not establish priority.

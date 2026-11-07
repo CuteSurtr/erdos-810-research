@@ -4,6 +4,7 @@ STOP
 cyclic/work/
 cyclic/proofs/
 tools/drat-trim
+tools/potential-quadruples
 cyclic/src/cycenc
 constructions/fourset_check
 **/current.cnf

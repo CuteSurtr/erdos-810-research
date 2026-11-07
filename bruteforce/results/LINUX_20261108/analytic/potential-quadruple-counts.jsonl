@@ -1,0 +1,11 @@
+{"p":5,"n3":0,"four_potential_cycles":0,"three_potential_cycles":0,"n2":0,"distinct_quadruples":0,"quadruples_over_p_cubed":0,"multiplicity_histogram":{}}
+{"p":13,"n3":6,"four_potential_cycles":6,"three_potential_cycles":0,"n2":3,"distinct_quadruples":2,"quadruples_over_p_cubed":0.000910332271279,"multiplicity_histogram":{"3":2}}
+{"p":17,"n3":16,"four_potential_cycles":0,"three_potential_cycles":16,"n2":8,"distinct_quadruples":0,"quadruples_over_p_cubed":0,"multiplicity_histogram":{}}
+{"p":31,"n3":375,"four_potential_cycles":285,"three_potential_cycles":90,"n2":0,"distinct_quadruples":85,"quadruples_over_p_cubed":0.00285321070122,"multiplicity_histogram":{"3":75,"6":10}}
+{"p":61,"n3":2850,"four_potential_cycles":2460,"three_potential_cycles":390,"n2":105,"distinct_quadruples":820,"quadruples_over_p_cubed":0.00361263718109,"multiplicity_histogram":{"3":820}}
+{"p":101,"n3":14350,"four_potential_cycles":13750,"three_potential_cycles":600,"n2":300,"distinct_quadruples":13400,"quadruples_over_p_cubed":0.0130059079822,"multiplicity_histogram":{"1":13100,"2":250,"3":50}}
+{"p":127,"n3":29358,"four_potential_cycles":27909,"three_potential_cycles":1449,"n2":0,"distinct_quadruples":9156,"quadruples_over_p_cubed":0.00446986720745,"multiplicity_histogram":{"3":9009,"6":147}}
+{"p":251,"n3":238750,"four_potential_cycles":233125,"three_potential_cycles":5625,"n2":0,"distinct_quadruples":231000,"quadruples_over_p_cubed":0.0146080018587,"multiplicity_histogram":{"1":228875,"2":2125}}
+{"p":509,"n3":2007108,"four_potential_cycles":1983232,"three_potential_cycles":23876,"n2":8001,"distinct_quadruples":1973072,"quadruples_over_p_cubed":0.0149619977986,"multiplicity_histogram":{"1":1962912,"2":10160}}
+{"p":1009,"n3":15872976,"four_potential_cycles":15773184,"three_potential_cycles":99792,"n2":31752,"distinct_quadruples":5254032,"quadruples_over_p_cubed":0.0051146888043,"multiplicity_histogram":{"3":5250336,"6":3696}}
+{"p":1019,"n3":16413214,"four_potential_cycles":16327702,"three_potential_cycles":85512,"n2":0,"distinct_quadruples":16281383,"quadruples_over_p_cubed":0.0153875239059,"multiplicity_histogram":{"1":16235064,"2":46319}}

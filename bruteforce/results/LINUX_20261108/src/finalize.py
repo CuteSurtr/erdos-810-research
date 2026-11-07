@@ -30,27 +30,32 @@ updates=[{'n':int(n),'before':len(base[n]),'after':len(E),'gain':len(E)-len(base
 log=R/'cyclic/logs/new-leaves.jsonl';log.touch(exist_ok=True)
 rows=[json.loads(l) for l in log.read_text().splitlines() if l.strip()]
 verified=[r for r in rows if r.get('res')=='UNSAT' and r.get('check')=='s VERIFIED UNSAT']
-checked=0;errors=[]
+checked=0;errors=[];proof_budget_exhausted=False
+# Reserve time for coverage and reporting even if the retained archives
+# exceed the time available for a full hash pass.
+proof_deadline=deadline-90
 for rec in verified:
-    if time.time()>=deadline:break
+    if time.time()>=proof_deadline:proof_budget_exhausted=True;break
     try:
         assert native.cnf_digest(tuple(rec['cube']))==rec['cnf_sha256']
         assert rec['solver_returncode']==20 and rec['checker_returncode']==0
         h=hashlib.sha256();size=0
         with gzip.open(R/'cyclic'/rec['proof_gzip'],'rb') as f:
             while chunk:=f.read(1024*1024):
-                if time.time()>=deadline:raise TimeoutError('audit deadline')
+                if time.time()>=proof_deadline:raise TimeoutError('proof audit time budget')
                 h.update(chunk);size+=len(chunk)
         assert size==rec['proof_bytes'] and h.hexdigest()==rec['proof_sha256']
         checked+=1
+    except TimeoutError:proof_budget_exhausted=True;break
     except Exception as exc:errors.append({'cube':rec['cube'],'error':repr(exc)})
 cmd=[sys.executable,str(R/'cyclic/src/closecheck.py'),'56','14',str(native.BASE),'--roots']
 cmd +=[','.join(c) for c in native.ROOTS]+['--logs']+[str(p) for p in native.history_paths()]+[str(log)]
-coverage=subprocess.run(cmd,text=True,capture_output=True,timeout=60)
+coverage=subprocess.run(cmd,text=True,capture_output=True,timeout=max(1,min(60,deadline-time.time()-5)))
 (R/'cyclic/logs/final-closecheck.txt').write_text(coverage.stdout+coverage.stderr)
 summary={'finished_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'improved_sizes':len(best),
     'worker_exit_status':controller_status.get('jobs',{}),
     'total_edge_gain':sum(x['gain'] for x in updates),'new_verified_leaves':len(verified),'proof_hashes_checked':checked,
+    'proof_hash_audit_budget_exhausted':proof_budget_exhausted,
     'proof_errors':errors,'coverage_exit':coverage.returncode,'historical_proofs_replayed_here':False,
     'new_compressed_proof_bytes':sum(x.get('proof_gzip_bytes',0) for x in verified),
     'sat_records':[r for r in rows if r.get('res')=='SAT'],
@@ -72,7 +77,10 @@ No published-record or exact-value claim is made.
 
 The n=56 cyclic continuation added {len(verified)} checked UNSAT leaves.
 Retained-proof hash audit: {checked} of {len(verified)} checked, {len(errors)} errors.
+Hash-audit time budget exhausted: {proof_budget_exhausted}.
 Combined coverage exit: {coverage.returncode}; zero means complete coverage.
+New SAT records: {len(summary['sat_records'])}; their witness checks are retained
+in the summary and must be inspected before using a positive result.
 Earlier Mac proof archives were not copied or replayed here. Their recorded
 verdicts are trusted only after matching leaf CNF hashes. Full proof replay
 requires those earlier archives in addition to this run's local proofs.

@@ -1,0 +1,163 @@
+{
+  "utc": "2026-11-07T16:43:43.351790+00:00",
+  "rows": [
+    {
+      "p": 5,
+      "n3": 0,
+      "distinct_potential_histogram": {},
+      "adjacent_row_collision_cycles": 0,
+      "opposite_collision_cycles": 0,
+      "degenerate_bound": 6,
+      "exhaustive_masks_checked": 4,
+      "random_masks_checked": 12,
+      "direct_cycle_check": true,
+      "four_potential_max_codegrees": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0
+      },
+      "independent_color_ratio_n3": 0
+    },
+    {
+      "p": 7,
+      "n3": 0,
+      "distinct_potential_histogram": {},
+      "adjacent_row_collision_cycles": 0,
+      "opposite_collision_cycles": 0,
+      "degenerate_bound": 18,
+      "exhaustive_masks_checked": 8,
+      "random_masks_checked": 12,
+      "direct_cycle_check": true,
+      "four_potential_max_codegrees": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0
+      },
+      "independent_color_ratio_n3": 0
+    },
+    {
+      "p": 13,
+      "n3": 6,
+      "distinct_potential_histogram": {
+        "4": 6
+      },
+      "adjacent_row_collision_cycles": 0,
+      "opposite_collision_cycles": 0,
+      "degenerate_bound": 90,
+      "exhaustive_masks_checked": 64,
+      "random_masks_checked": 12,
+      "direct_cycle_check": true,
+      "four_potential_max_codegrees": {
+        "1": 6,
+        "2": 6,
+        "3": 3,
+        "4": 3
+      },
+      "independent_color_ratio_n3": 6
+    },
+    {
+      "p": 17,
+      "n3": 16,
+      "distinct_potential_histogram": {
+        "3": 16
+      },
+      "adjacent_row_collision_cycles": 8,
+      "opposite_collision_cycles": 8,
+      "degenerate_bound": 168,
+      "exhaustive_masks_checked": 256,
+      "random_masks_checked": 12,
+      "direct_cycle_check": true,
+      "four_potential_max_codegrees": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0
+      },
+      "independent_color_ratio_n3": 16
+    },
+    {
+      "p": 31,
+      "n3": 375,
+      "distinct_potential_histogram": {
+        "3": 90,
+        "4": 285
+      },
+      "adjacent_row_collision_cycles": 75,
+      "opposite_collision_cycles": 15,
+      "degenerate_bound": 630,
+      "exhaustive_masks_checked": 0,
+      "random_masks_checked": 12,
+      "direct_cycle_check": true,
+      "four_potential_max_codegrees": {
+        "1": 99,
+        "2": 36,
+        "3": 12,
+        "4": 6
+      },
+      "independent_color_ratio_n3": 375
+    },
+    {
+      "p": 61,
+      "n3": 2850,
+      "distinct_potential_histogram": {
+        "3": 390,
+        "4": 2460
+      },
+      "adjacent_row_collision_cycles": 270,
+      "opposite_collision_cycles": 120,
+      "degenerate_bound": 2610,
+      "exhaustive_masks_checked": 0,
+      "random_masks_checked": 12,
+      "direct_cycle_check": true,
+      "four_potential_max_codegrees": {
+        "1": 333,
+        "2": 54,
+        "3": 12,
+        "4": 3
+      },
+      "independent_color_ratio_n3": 2850
+    },
+    {
+      "p": 101,
+      "n3": 14350,
+      "distinct_potential_histogram": {
+        "3": 600,
+        "4": 13750
+      },
+      "adjacent_row_collision_cycles": 300,
+      "opposite_collision_cycles": 300,
+      "degenerate_bound": 7350,
+      "exhaustive_masks_checked": 0,
+      "random_masks_checked": 12,
+      "direct_cycle_check": false,
+      "four_potential_max_codegrees": {
+        "1": 1100,
+        "2": 86,
+        "3": 10,
+        "4": 3
+      },
+      "independent_color_ratio_n3": 14350
+    },
+    {
+      "p": 251,
+      "n3": 238750,
+      "distinct_potential_histogram": {
+        "3": 5625,
+        "4": 233125
+      },
+      "adjacent_row_collision_cycles": 3875,
+      "opposite_collision_cycles": 1750,
+      "degenerate_bound": 46500,
+      "exhaustive_masks_checked": 0,
+      "random_masks_checked": 12,
+      "direct_cycle_check": false,
+      "four_potential_max_codegrees": {},
+      "independent_color_ratio_n3": 238750
+    }
+  ],
+  "scope": "exact finite algebra and counting checks; not a proof of the asymptotic or concentration theorem",
+  "script_sha256": "f0ee486e212c0a3ad630bd2deb1abdc961ad0d8862e7c7c06496fe4b27c07a4b",
+  "seconds": 0.888
+}

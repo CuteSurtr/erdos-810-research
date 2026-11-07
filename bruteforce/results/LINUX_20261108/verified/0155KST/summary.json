@@ -1,0 +1,110 @@
+{
+  "utc": "2026-11-07T16:54:10.977647+00:00",
+  "phase": "live_snapshot",
+  "improvements": [
+    {
+      "n": 68,
+      "before": 1037,
+      "after": 1038,
+      "gain": 1
+    },
+    {
+      "n": 69,
+      "before": 1055,
+      "after": 1056,
+      "gain": 1
+    },
+    {
+      "n": 70,
+      "before": 1072,
+      "after": 1074,
+      "gain": 2
+    },
+    {
+      "n": 71,
+      "before": 1092,
+      "after": 1093,
+      "gain": 1
+    },
+    {
+      "n": 72,
+      "before": 1112,
+      "after": 1113,
+      "gain": 1
+    },
+    {
+      "n": 73,
+      "before": 1130,
+      "after": 1132,
+      "gain": 2
+    },
+    {
+      "n": 74,
+      "before": 1138,
+      "after": 1140,
+      "gain": 2
+    },
+    {
+      "n": 81,
+      "before": 1325,
+      "after": 1326,
+      "gain": 1
+    },
+    {
+      "n": 88,
+      "before": 1509,
+      "after": 1511,
+      "gain": 2
+    },
+    {
+      "n": 103,
+      "before": 2000,
+      "after": 2001,
+      "gain": 1
+    },
+    {
+      "n": 104,
+      "before": 2019,
+      "after": 2021,
+      "gain": 2
+    },
+    {
+      "n": 105,
+      "before": 2026,
+      "after": 2028,
+      "gain": 2
+    },
+    {
+      "n": 106,
+      "before": 2031,
+      "after": 2033,
+      "gain": 2
+    },
+    {
+      "n": 116,
+      "before": 2370,
+      "after": 2371,
+      "gain": 1
+    },
+    {
+      "n": 117,
+      "before": 2371,
+      "after": 2373,
+      "gain": 2
+    },
+    {
+      "n": 123,
+      "before": 2625,
+      "after": 2631,
+      "gain": 6
+    }
+  ],
+  "total_edge_gain": 29,
+  "new_verified_leaves": 536,
+  "proof_hashes_checked": 536,
+  "coverage_exit": 1,
+  "new_log_sha256": "cd492d923517dac9ebb1dbe6b2557a2ad017c10fc04d22df4cda173aa7ec6a9d",
+  "certs_sha256": "77d040084d9deeb2983e2c307f97d895a326ab4a8ec57e09c9cb97d826d4e3dd",
+  "historical_proofs_replayed_here": false,
+  "searches_still_authorized_until": "2026-11-07T20:50:00+00:00"
+}
