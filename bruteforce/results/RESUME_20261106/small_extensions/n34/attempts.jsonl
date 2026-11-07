@@ -1,0 +1,5 @@
+{"base_n": 33, "base_edges": 269, "target_degree": 7, "cnf_sha256": "c6df93faf66b160542ad0e22c6631c5a2f98645f5b642143c0b9180e5be1e427", "solver_returncode": 10, "seconds": 0.014, "result": "SAT", "edges": 277, "degree": 8, "checked_cycles": 7643}
+{"base_n": 33, "base_edges": 269, "target_degree": 16, "cnf_sha256": "b9ed1201c007d2f68698dc1d9d0b41962d5490107190960ebfa412e21923bfa4", "solver_returncode": 0, "seconds": 5.005, "result": "UNKNOWN"}
+{"base_n": 33, "base_edges": 269, "target_degree": 12, "cnf_sha256": "7fe9360799c77f1e51da789ef66a093292fbda17c5b0d1045d83e44832abe583", "solver_returncode": 10, "seconds": 2.069, "result": "SAT", "edges": 281, "degree": 12, "checked_cycles": 7936}
+{"base_n": 33, "base_edges": 269, "target_degree": 14, "cnf_sha256": "45da53ea36631d02ddba6cbb0b423ed6e5ed6a2bd05e0cc52cc4301f814c38ea", "solver_returncode": 0, "seconds": 5.007, "result": "UNKNOWN"}
+{"base_n": 33, "base_edges": 269, "target_degree": 13, "cnf_sha256": "cb01fb6ef46a1ade4597d8f600467c654bf4d97770793694bccae41f02057bd7", "solver_returncode": 0, "seconds": 2.003, "result": "UNKNOWN"}

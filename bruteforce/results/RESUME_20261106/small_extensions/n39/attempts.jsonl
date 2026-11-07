@@ -1,0 +1,2 @@
+{"base_n": 38, "base_edges": 348, "target_degree": 24, "cnf_sha256": "c924ead0c70812637ab0e07b6c349eefa735e79ab0686553f6cdab52ff290cfd", "solver_returncode": 0, "seconds": 5.006, "result": "UNKNOWN"}
+{"base_n": 38, "base_edges": 348, "target_degree": 12, "cnf_sha256": "aec777687e180fa47d9407d23828997c04f003bf6488702200937217730b248e", "solver_returncode": 10, "seconds": 0.116, "result": "SAT", "edges": 360, "degree": 12, "checked_cycles": 12620}

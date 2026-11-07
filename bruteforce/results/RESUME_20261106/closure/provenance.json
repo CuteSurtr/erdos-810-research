@@ -1,0 +1,749 @@
+{
+  "34": {
+    "source": "bruteforce/results/CONSTR/certs.json",
+    "source_n": 36,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 36,
+        "vertex": 0,
+        "color": 2,
+        "removed_edges": 26
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 35,
+        "vertex": 2,
+        "color": 4,
+        "removed_edges": 23
+      }
+    ],
+    "source_sha256": "1efeb1cd62e43018e930614ee2c4a83c0f2e63fec6492c4c2c4821c8c7271160"
+  },
+  "35": {
+    "source": "bruteforce/results/CONSTR/certs.json",
+    "source_n": 36,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 36,
+        "vertex": 0,
+        "color": 2,
+        "removed_edges": 26
+      }
+    ],
+    "source_sha256": "1efeb1cd62e43018e930614ee2c4a83c0f2e63fec6492c4c2c4821c8c7271160"
+  },
+  "38": {
+    "source": "bruteforce/results/CYC/C0/certs.json",
+    "source_n": 40,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 40,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 29
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 39,
+        "vertex": 4,
+        "color": 3,
+        "removed_edges": 26
+      }
+    ],
+    "source_sha256": "d177c7ef6b56cad720b593682d9edb46baabb7018ca9768a69f29f974a3b0538"
+  },
+  "39": {
+    "source": "bruteforce/results/CYC/C0/certs.json",
+    "source_n": 40,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 40,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 29
+      }
+    ],
+    "source_sha256": "d177c7ef6b56cad720b593682d9edb46baabb7018ca9768a69f29f974a3b0538"
+  },
+  "44": {
+    "source": "bruteforce/results/CYC/C7/certs.json",
+    "source_n": 46,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 46,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 32
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 45,
+        "vertex": 2,
+        "color": 2,
+        "removed_edges": 29
+      }
+    ],
+    "source_sha256": "26313539c6ec78d24507dc7228b7a0f563ef9b33d5a3f660c1c8aaf850cdcbbc"
+  },
+  "49": {
+    "source": "bruteforce/results/CYC/C4/certs.json",
+    "source_n": 53,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 53,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 38
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 52,
+        "vertex": 3,
+        "color": 1,
+        "removed_edges": 35
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 51,
+        "vertex": 9,
+        "color": 13,
+        "removed_edges": 32
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 50,
+        "vertex": 21,
+        "color": 15,
+        "removed_edges": 30
+      }
+    ],
+    "source_sha256": "8ad9cf36e0eaaf3c827d357eb5787fe306287e49d229028e9c651b691c04b159"
+  },
+  "50": {
+    "source": "bruteforce/results/CYC/C4/certs.json",
+    "source_n": 53,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 53,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 38
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 52,
+        "vertex": 3,
+        "color": 1,
+        "removed_edges": 35
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 51,
+        "vertex": 9,
+        "color": 13,
+        "removed_edges": 32
+      }
+    ],
+    "source_sha256": "8ad9cf36e0eaaf3c827d357eb5787fe306287e49d229028e9c651b691c04b159"
+  },
+  "51": {
+    "source": "bruteforce/results/CYC/C4/certs.json",
+    "source_n": 53,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 53,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 38
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 52,
+        "vertex": 3,
+        "color": 1,
+        "removed_edges": 35
+      }
+    ],
+    "source_sha256": "8ad9cf36e0eaaf3c827d357eb5787fe306287e49d229028e9c651b691c04b159"
+  },
+  "52": {
+    "source": "bruteforce/results/CYC/C4/certs.json",
+    "source_n": 53,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 53,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 38
+      }
+    ],
+    "source_sha256": "8ad9cf36e0eaaf3c827d357eb5787fe306287e49d229028e9c651b691c04b159"
+  },
+  "54": {
+    "source": "bruteforce/results/RESUME_20261106/extensions/n54/certs.json",
+    "source_n": 54,
+    "steps": [],
+    "source_sha256": "ddf864240758c7ff419523510b56578d0eba1d06e4d20d5149b1144138cbd15b"
+  },
+  "55": {
+    "source": "bruteforce/results/RESUME_20261106/extensions/n55/certs.json",
+    "source_n": 55,
+    "steps": [],
+    "source_sha256": "2740e470235c2f2f2aee317ef38be6c033b80446e4f03e226b79f723d67f75d9"
+  },
+  "57": {
+    "source": "bruteforce/results/CYC/C2/certs.json",
+    "source_n": 61,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 61,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 44
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 60,
+        "vertex": 8,
+        "color": 0,
+        "removed_edges": 41
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 59,
+        "vertex": 8,
+        "color": 6,
+        "removed_edges": 39
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 58,
+        "vertex": 54,
+        "color": 8,
+        "removed_edges": 36
+      }
+    ],
+    "source_sha256": "83ba80aedd87f678e90f33bb4de8dbdc1ea620e2e76fd7dc432cd6d5aa1240f1"
+  },
+  "58": {
+    "source": "bruteforce/results/CYC/C2/certs.json",
+    "source_n": 61,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 61,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 44
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 60,
+        "vertex": 8,
+        "color": 0,
+        "removed_edges": 41
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 59,
+        "vertex": 8,
+        "color": 6,
+        "removed_edges": 39
+      }
+    ],
+    "source_sha256": "83ba80aedd87f678e90f33bb4de8dbdc1ea620e2e76fd7dc432cd6d5aa1240f1"
+  },
+  "59": {
+    "source": "bruteforce/results/CYC/C2/certs.json",
+    "source_n": 61,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 61,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 44
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 60,
+        "vertex": 8,
+        "color": 0,
+        "removed_edges": 41
+      }
+    ],
+    "source_sha256": "83ba80aedd87f678e90f33bb4de8dbdc1ea620e2e76fd7dc432cd6d5aa1240f1"
+  },
+  "60": {
+    "source": "bruteforce/results/CYC/C2/certs.json",
+    "source_n": 61,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 61,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 44
+      }
+    ],
+    "source_sha256": "83ba80aedd87f678e90f33bb4de8dbdc1ea620e2e76fd7dc432cd6d5aa1240f1"
+  },
+  "68": {
+    "source": "bruteforce/results/CYC/C1/certs.json",
+    "source_n": 70,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 70,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 44
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 69,
+        "vertex": 1,
+        "color": 8,
+        "removed_edges": 41
+      }
+    ],
+    "source_sha256": "d964b19cbbae2f96ded5e85931d000c58a20f91b3d024a426a29d91456e4231d"
+  },
+  "69": {
+    "source": "bruteforce/results/CYC/C1/certs.json",
+    "source_n": 70,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 70,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 44
+      }
+    ],
+    "source_sha256": "d964b19cbbae2f96ded5e85931d000c58a20f91b3d024a426a29d91456e4231d"
+  },
+  "74": {
+    "source": "bruteforce/results/CYC/C1/certs.json",
+    "source_n": 76,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 76,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 47
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 75,
+        "vertex": 1,
+        "color": 17,
+        "removed_edges": 44
+      }
+    ],
+    "source_sha256": "d964b19cbbae2f96ded5e85931d000c58a20f91b3d024a426a29d91456e4231d"
+  },
+  "75": {
+    "source": "bruteforce/results/CYC/C1/certs.json",
+    "source_n": 76,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 76,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 47
+      }
+    ],
+    "source_sha256": "d964b19cbbae2f96ded5e85931d000c58a20f91b3d024a426a29d91456e4231d"
+  },
+  "81": {
+    "source": "bruteforce/results/CYC/C3/certs.json",
+    "source_n": 83,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 83,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 50
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 82,
+        "vertex": 2,
+        "color": 2,
+        "removed_edges": 47
+      }
+    ],
+    "source_sha256": "0986ad881c9c2d80323e2e8a6976e9928684662918490f89ec531ed943e8f150"
+  },
+  "82": {
+    "source": "bruteforce/results/CYC/C3/certs.json",
+    "source_n": 83,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 83,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 50
+      }
+    ],
+    "source_sha256": "0986ad881c9c2d80323e2e8a6976e9928684662918490f89ec531ed943e8f150"
+  },
+  "89": {
+    "source": "bruteforce/results/CYC/C1/certs.json",
+    "source_n": 91,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 91,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 53
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 90,
+        "vertex": 1,
+        "color": 1,
+        "removed_edges": 50
+      }
+    ],
+    "source_sha256": "d964b19cbbae2f96ded5e85931d000c58a20f91b3d024a426a29d91456e4231d"
+  },
+  "90": {
+    "source": "bruteforce/results/CYC/C1/certs.json",
+    "source_n": 91,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 91,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 53
+      }
+    ],
+    "source_sha256": "d964b19cbbae2f96ded5e85931d000c58a20f91b3d024a426a29d91456e4231d"
+  },
+  "95": {
+    "source": "bruteforce/results/CYC/C5/certs.json",
+    "source_n": 97,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 97,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 56
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 96,
+        "vertex": 5,
+        "color": 9,
+        "removed_edges": 53
+      }
+    ],
+    "source_sha256": "561c034c3e8200913fe29a8ef89feb03d99eeb84119fc57e5dd0c80e17b1f714"
+  },
+  "96": {
+    "source": "bruteforce/results/CYC/C5/certs.json",
+    "source_n": 97,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 97,
+        "vertex": 0,
+        "color": 0,
+        "removed_edges": 56
+      }
+    ],
+    "source_sha256": "561c034c3e8200913fe29a8ef89feb03d99eeb84119fc57e5dd0c80e17b1f714"
+  },
+  "105": {
+    "source": "bruteforce/results/CONSTR/certs_large.json",
+    "source_n": 107,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 107,
+        "vertex": 10,
+        "color": 36,
+        "removed_edges": 50
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 106,
+        "vertex": 2,
+        "color": 86,
+        "removed_edges": 50
+      }
+    ],
+    "source_sha256": "8ca76ae262f301426980644e8f1fe0e63dddef2c9416ff581e287910ced462d5"
+  },
+  "106": {
+    "source": "bruteforce/results/CONSTR/certs_large.json",
+    "source_n": 107,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 107,
+        "vertex": 10,
+        "color": 36,
+        "removed_edges": 50
+      }
+    ],
+    "source_sha256": "8ca76ae262f301426980644e8f1fe0e63dddef2c9416ff581e287910ced462d5"
+  },
+  "108": {
+    "source": "bruteforce/results/CONSTR/certs_large.json",
+    "source_n": 109,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 109,
+        "vertex": 62,
+        "color": 108,
+        "removed_edges": 50
+      }
+    ],
+    "source_sha256": "8ca76ae262f301426980644e8f1fe0e63dddef2c9416ff581e287910ced462d5"
+  },
+  "111": {
+    "source": "bruteforce/results/CONSTR/certs_large.json",
+    "source_n": 113,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 113,
+        "vertex": 55,
+        "color": 40,
+        "removed_edges": 53
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 112,
+        "vertex": 86,
+        "color": 24,
+        "removed_edges": 52
+      }
+    ],
+    "source_sha256": "8ca76ae262f301426980644e8f1fe0e63dddef2c9416ff581e287910ced462d5"
+  },
+  "112": {
+    "source": "bruteforce/results/CONSTR/certs_large.json",
+    "source_n": 113,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 113,
+        "vertex": 55,
+        "color": 40,
+        "removed_edges": 53
+      }
+    ],
+    "source_sha256": "8ca76ae262f301426980644e8f1fe0e63dddef2c9416ff581e287910ced462d5"
+  },
+  "116": {
+    "source": "bruteforce/results/CONSTR/certs_large.json",
+    "source_n": 121,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 121,
+        "vertex": 28,
+        "color": 99,
+        "removed_edges": 56
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 120,
+        "vertex": 49,
+        "color": 112,
+        "removed_edges": 54
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 119,
+        "vertex": 97,
+        "color": 21,
+        "removed_edges": 54
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 118,
+        "vertex": 5,
+        "color": 40,
+        "removed_edges": 54
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 117,
+        "vertex": 65,
+        "color": 81,
+        "removed_edges": 52
+      }
+    ],
+    "source_sha256": "8ca76ae262f301426980644e8f1fe0e63dddef2c9416ff581e287910ced462d5"
+  },
+  "117": {
+    "source": "bruteforce/results/CONSTR/certs_large.json",
+    "source_n": 121,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 121,
+        "vertex": 28,
+        "color": 99,
+        "removed_edges": 56
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 120,
+        "vertex": 49,
+        "color": 112,
+        "removed_edges": 54
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 119,
+        "vertex": 97,
+        "color": 21,
+        "removed_edges": 54
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 118,
+        "vertex": 5,
+        "color": 40,
+        "removed_edges": 54
+      }
+    ],
+    "source_sha256": "8ca76ae262f301426980644e8f1fe0e63dddef2c9416ff581e287910ced462d5"
+  },
+  "118": {
+    "source": "bruteforce/results/CONSTR/certs_large.json",
+    "source_n": 121,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 121,
+        "vertex": 28,
+        "color": 99,
+        "removed_edges": 56
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 120,
+        "vertex": 49,
+        "color": 112,
+        "removed_edges": 54
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 119,
+        "vertex": 97,
+        "color": 21,
+        "removed_edges": 54
+      }
+    ],
+    "source_sha256": "8ca76ae262f301426980644e8f1fe0e63dddef2c9416ff581e287910ced462d5"
+  },
+  "119": {
+    "source": "bruteforce/results/CONSTR/certs_large.json",
+    "source_n": 121,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 121,
+        "vertex": 28,
+        "color": 99,
+        "removed_edges": 56
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 120,
+        "vertex": 49,
+        "color": 112,
+        "removed_edges": 54
+      }
+    ],
+    "source_sha256": "8ca76ae262f301426980644e8f1fe0e63dddef2c9416ff581e287910ced462d5"
+  },
+  "120": {
+    "source": "bruteforce/results/CONSTR/certs_large.json",
+    "source_n": 121,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 121,
+        "vertex": 28,
+        "color": 99,
+        "removed_edges": 56
+      }
+    ],
+    "source_sha256": "8ca76ae262f301426980644e8f1fe0e63dddef2c9416ff581e287910ced462d5"
+  },
+  "123": {
+    "source": "bruteforce/results/CONSTR/certs_large.json",
+    "source_n": 125,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 125,
+        "vertex": 50,
+        "color": 23,
+        "removed_edges": 57
+      },
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 124,
+        "vertex": 32,
+        "color": 97,
+        "removed_edges": 57
+      }
+    ],
+    "source_sha256": "8ca76ae262f301426980644e8f1fe0e63dddef2c9416ff581e287910ced462d5"
+  },
+  "124": {
+    "source": "bruteforce/results/CONSTR/certs_large.json",
+    "source_n": 125,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 125,
+        "vertex": 50,
+        "color": 23,
+        "removed_edges": 57
+      }
+    ],
+    "source_sha256": "8ca76ae262f301426980644e8f1fe0e63dddef2c9416ff581e287910ced462d5"
+  },
+  "126": {
+    "source": "bruteforce/results/CONSTR/certs_large.json",
+    "source_n": 127,
+    "steps": [
+      {
+        "operation": "delete_vertex_and_color",
+        "from_n": 127,
+        "vertex": 61,
+        "color": 52,
+        "removed_edges": 57
+      }
+    ],
+    "source_sha256": "8ca76ae262f301426980644e8f1fe0e63dddef2c9416ff581e287910ced462d5"
+  }
+}

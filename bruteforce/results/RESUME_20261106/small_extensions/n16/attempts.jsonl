@@ -1,0 +1,4 @@
+{"base_n": 15, "base_edges": 63, "target_degree": 8, "cnf_sha256": "39c54632aa29b98f3a3eef373799ada46206accc18de604a9f2c40f37e3c8abb", "solver_returncode": 20, "seconds": 0.015, "result": "UNSAT (restricted extension; proof not checked)"}
+{"base_n": 15, "base_edges": 63, "target_degree": 4, "cnf_sha256": "7de9798a272e62be2e89c87e9df235cd464585abc069e5d2cce4f231d9c7d471", "solver_returncode": 10, "seconds": 0.006, "result": "SAT", "edges": 67, "degree": 4, "checked_cycles": 445}
+{"base_n": 15, "base_edges": 63, "target_degree": 6, "cnf_sha256": "7c65f4470df89fa2fd41a2ef9afd0374671d6fa4b2593311e3b57f24b1cd0f4a", "solver_returncode": 10, "seconds": 0.005, "result": "SAT", "edges": 69, "degree": 6, "checked_cycles": 482}
+{"base_n": 15, "base_edges": 63, "target_degree": 7, "cnf_sha256": "633659ee0553c6e46b6dc3089945df1829374abcd85ba49d65b82be78a1e6e93", "solver_returncode": 20, "seconds": 0.017, "result": "UNSAT (restricted extension; proof not checked)"}
