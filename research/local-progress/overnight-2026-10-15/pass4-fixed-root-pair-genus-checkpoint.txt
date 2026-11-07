@@ -1,0 +1,49 @@
+FIXED-ROOT-PAIR FIBERS: AN EXACT GENUS-ONE CHECKPOINT
+2026-10-15. Analytic calculation; no novelty claim.
+
+This records a paused algebraic direction. The positive common-domain result
+in pass4-crossed-operator-independent-audit.txt takes priority.
+
+Work over a field of characteristic different from 2. The four-slot variety
+has root pairs (a,b),(a,c),(d,e),(f,g) and equations
+
+ a+b=d+e, ac=de, a+c=f+g, ab=fg.
+
+Fix a!=0 and b, and write r=b/a, u=d/a, v=f/a. Eliminating c,e,g on the open
+set f!=0 gives the following plane equation for the remaining fiber:
+
+       v^2 + [u^2-(1+r)u-1]v + r = 0.                   (1)
+
+Indeed e/a=1+r-u, g/a=r/v, and c/a=u(1+r-u); the equality
+1+c/a=v+r/v is exactly (1). Put B_r(u)=u^2-(1+r)u-1 and y=2v+B_r(u). Then
+
+                     y^2=B_r(u)^2-4r.                  (2)
+
+When r!=0, a repeated root of the quartic on the right must satisfy
+B_r'(u)=0 and B_r(u)^2=4r. Thus u=(1+r)/2, and the repeated-root condition is
+
+ (r^2+2r+5)^2-64r = (r-1)^2(r^2+6r+25) = 0.
+
+Consequently, if r!=0, r!=1, and r^2+6r+25!=0, the quartic is squarefree.
+Its smooth projective double cover of P^1 is branched at four simple points,
+and has genus one by Riemann-Hurwitz. The point (u,v)=(1,1), equivalently
+(u,y)=(1,1-r), is rational and smooth under these hypotheses. Thus the smooth
+projective fiber is an elliptic curve after choosing that point as origin.
+
+There is no nonconstant rational one-parameter parametrization of this
+generic fixed-(a,b) fiber, even over an algebraic closure. A map from P^1 to
+its smooth genus-one model would contradict Riemann-Hurwitz after factoring
+off its inseparable Frobenius part when necessary. This excludes rational
+families that keep this root pair fixed; it does not exclude families that
+vary a and b, or finite-field recurrence arguments using arbitrary supports.
+
+The two obvious root swaps are u -> 1+r-u and v -> r/v. They commute and
+generate at most a Klein four group on this fiber, so these swaps by
+themselves do not supply an infinite recurrence orbit.
+
+Standard curve facts used:
+https://stacks.math.columbia.edu/tag/0C1B (Riemann-Hurwitz)
+https://stacks.math.columbia.edu/tag/0CCV (inseparable morphisms of curves)
+
+The exact exceptional parameter list above is part of the statement; this
+note makes no blanket genus-one claim for every fixed edge.

@@ -1,0 +1,5 @@
+'Erdos810SemanticAudit.rainbow_iff_local_span' depends on axioms: [propext]
+'Erdos810SemanticAudit.monochromatic_star_rainbow' depends on axioms: [propext]
+'Erdos810SemanticAudit.star_four_distinct_triples' depends on axioms: [propext]
+'Erdos810SemanticAudit.star_triples_each_three_points' depends on axioms: [propext]
+'Erdos810SemanticAudit.star_triples_span_six' depends on axioms: [propext]

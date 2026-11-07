@@ -1,0 +1,10 @@
+{
+  "runtime_seconds": 1.637,
+  "sha256": {
+    "classify_n10_extremal.cpp": "2b5e2f2d4c2989a959017e639a74e238f339cae4229154e87775cfe43d020056",
+    "n10_extremal_classification.log": "729ff3de9941f166cb6f32e004c40f1bca7549888b8ef55fa59d0465756e6011",
+    "verify_n10_classification.py": "75e0285f0a117ebaed24f2d8d4aa3ba6a87b7baeb66bb9b6c1145a118025fcba",
+    "n10_extremal_isomorphisms.json": "a6deb9e40a6a6e5b5ea6d49a4cb924e3b7b911401fcb529025183098320fd333"
+  },
+  "evidence": "external exhaustive computation, not Lean"
+}

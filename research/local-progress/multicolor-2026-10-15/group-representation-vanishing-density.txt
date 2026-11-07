@@ -1,0 +1,219 @@
+GROUP REPRESENTATIONS FORCE VANISHING EDGE DENSITY
+Research note, 2026-10-15. Status: complete elementary reductions using two
+established theorems; not a proof of Erdős problem #810 and not Lean checked.
+Theorem A is already a theorem of Solymosi (2013 preprint, 2015 publication).
+The DHJ argument below is an alternative derivation, and Theorem B is a
+representation/lifting corollary. Neither is asserted historically new.
+
+Conventions. A B-colored graph is properly edge-colored and has every
+four-cycle rainbow. The permutation representations below automatically
+enforce properness. A partial
+group-table graph for a finite group G has two disjoint copies of G as its
+bipartition classes, any subset of the possible edges, and color
+
+                         color(x,y) = y x^{-1}.
+
+This coloring is automatically proper. The result below is uniform over all
+finite groups, including groups of even order and nonabelian groups.
+
+THEOREM A (Solymosi, in group-table language). For every epsilon>0 there is
+M(epsilon) such that if |G| is at
+least M(epsilon), every B-colored partial group-table graph has fewer than
+epsilon |G|^2 edges.
+
+THEOREM B. Fix K. Consider any sequence of bipartite B-colored simple graphs
+with N vertices in total, with N tending to infinity. Suppose each graph has
+a representation of the following form:
+  * a finite group G with |G| <= K N acts on a set Omega;
+  * each bipartition class is separately injected into Omega (their images
+    need not be disjoint);
+  * colors are injectively labeled by elements sigma_c of G;
+  * every edge xy of color c satisfies label(y)=sigma_c label(x).
+Then the number of edges is o(N^2). The action need not be transitive or
+faithful. The representation may depend on N.
+
+Thus a positive-density counterexample family to #810 cannot have such
+representations with bounded |G|/N. General partial matching colorings always
+have permutation representations after extending their matchings, but the
+generated group can be enormously larger than N. No small-group completion
+or representation theorem is supplied here.
+
+1. PRIOR THEOREM AND EXTERNAL INPUTS
+
+Direct prior theorem: J. Solymosi, The (7,4)-conjecture in finite groups,
+arXiv:1309.0133, Theorem 5 on PDF page 4. It states that every positive-density
+subset of G x G, for G sufficiently large, contains a rectangle whose two
+opposite entries have equal products. Applying its coordinate map to
+(x,y) -> (y,x^{-1}) gives Theorem A exactly. The original proof uses
+hypergraph removal inside coset rectangles of a large abelian subgroup.
+https://arxiv.org/pdf/1309.0133
+
+Our alternative proof uses the following two inputs instead of hypergraph
+removal. The prior theorem establishes that Theorem A is known, not merely
+that similar techniques have appeared before.
+
+(DHJ) For every delta>0 there is an integer r=DHJ(4,delta) such that every
+subset of a four-letter alphabet to the rth power with density at least
+delta contains a combinatorial line. A line has a nonempty set I of variable
+coordinates, a fixed letter at every other coordinate, and all four words
+obtained by putting the same variable letter in every position of I.
+
+Reference: D. H. J. Polymath, A new proof of the density Hales-Jewett theorem,
+Annals of Mathematics 175 (2012), 1283-1327.
+https://annals.math.princeton.edu/2012/175-3/p06
+https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n3-p06-p.pdf
+
+(Large abelian subgroup) The minimum, over groups of order at least m, of
+the largest abelian subgroup order tends to infinity as m tends to infinity.
+For example, Erdős and Straus prove that a group of order m contains an
+abelian p-subgroup of size greater than log m-o(log m).
+
+Reference: P. Erdős and E. G. Straus, How Abelian is a Finite Group?, Linear
+and Multilinear Algebra 3 (1976), 307-312, Theorem 1.1 on printed page 308
+(PDF page 2). The PDF itself identifies 1976 as publication year.
+https://www.renyi.hu/~p_erdos/1975-16.pdf
+
+Only qualitative divergence is needed. Pyber's stronger bound is unnecessary.
+All remaining arguments are given here.
+
+2. UNIFORM SQUARE LEMMA FOR ALL FINITE ABELIAN GROUPS
+
+Lemma. Let delta>0 and r=DHJ(4,delta). If H is a finite abelian group with
+|H|>2^(r-1), every A subset of H x H of size at least delta |H|^2 contains
+
+                   (x,y), (x+t,y), (x,y+t), (x+t,y+t)
+
+for some t!=0. These are four distinct points, including in characteristic 2.
+
+Proof. Choose w_1,...,w_r in H with no nonempty subset summing to zero.
+Inductively, when choosing w_i, exclude the negatives of all subset sums of
+the previous i-1 weights, including the empty sum. At most 2^(i-1) elements
+are excluded, strictly fewer than |H|. This ensures the asserted property.
+
+Use the four-letter alphabet E={(0,0),(1,0),(0,1),(1,1)}. For u,v in H map a
+word ((a_i,b_i)) in E^r to
+
+                 (u + sum_i a_i w_i, v + sum_i b_i w_i).
+
+The map need not be injective. If u,v are uniform and independent, every
+fixed word maps uniformly into H x H. The average density of words mapping
+into A is |A|/|H|^2 >= delta. Consequently some u,v give a word subset of
+density at least delta. DHJ supplies a combinatorial line in that subset.
+
+The four line words map to the four corners displayed in the lemma, with
+t=sum_{i in I} w_i, where I is the nonempty variable-coordinate set. The
+choice of the weights gives t!=0. Adding a nonzero element changes a group
+coordinate, so these four corners are pairwise distinct. QED.
+
+The argument is uniform in the exponent, rank, and prime divisors of H.
+It does not require an odd-order hypothesis, a cyclic subgroup, an injective
+cube embedding, or a separate multidimensional Szemerédi theorem.
+
+3. PROOF OF THEOREM A
+
+Fix epsilon>0. Let H be an abelian subgroup of G with size greater than
+2^(DHJ(4,epsilon)-1); such an H exists when |G| is sufficiently large.
+Suppose A subset G x G has density at least epsilon. Partition G x G into
+rectangles gH x kH using left cosets in both coordinates. At least one such
+rectangle has relative A-density at least epsilon.
+
+Write its coordinates as x=g h_1 and y=k h_2. The square lemma in H x H,
+in multiplicative notation, supplies four edges at
+
+  (g h_1,   k h_2),       (g h_1 t, k h_2),
+  (g h_1,   k h_2 t),     (g h_1 t, k h_2 t),
+
+with t!=e. These are the edges of a genuine four-cycle: the two row labels
+are distinct and the two column labels are distinct. The diagonal colors
+are equal, since
+
+ (k h_2)(g h_1)^{-1} = k h_2 h_1^{-1} g^{-1},
+ (k h_2 t)(g h_1 t)^{-1} = k h_2 t t^{-1} h_1^{-1} g^{-1}
+                        = k h_2 h_1^{-1} g^{-1}.
+
+The four-cycle is not rainbow, proving the theorem. Notice that the final
+identity itself needs no commutativity; commutativity was used to produce
+the square in the abelian subgroup. The same argument works for any group
+family whose largest abelian subgroup order tends to infinity; the external
+subgroup theorem supplies that property uniformly over all finite groups.
+
+4. LIFTING A TRANSITIVE ACTION TO THE GROUP TABLE
+
+Let G act transitively on a finite orbit Omega. Fix a basepoint o, set
+pi(g)=g o, and h=|Stab_G(o)|, so every pi-fiber has size h and |G|=h|Omega|.
+Suppose a bipartite B graph is represented in this action as in Theorem B.
+Use the injective vertex labels to identify its sides with subsets X,Y of
+Omega. For each original edge xy of color c, and every g with pi(g)=x,
+insert the lifted edge
+
+                            (g, sigma_c g)
+
+in the two copies of G. The right projection is sigma_c x=y. Each original
+edge has exactly h lifts. Distinct original edges have distinct lifts;
+injectivity of c -> sigma_c ensures that the lifted graph is simple. Its
+group-table color is (sigma_c g)g^{-1}=sigma_c.
+
+Claim: the lifted graph is B-colored. Since group-table colorings are
+proper, a nonrainbow four-cycle would have equal diagonal colors. Write its
+distinct rows g_1,g_2, distinct columns k_1,k_2, and equal diagonal color
+sigma_a, so k_i=sigma_a g_i. Project to x_i=pi(g_i), y_i=pi(k_i).
+
+If x_1!=x_2, the permutation sigma_a gives y_1!=y_2. The four lifted edges
+then project to a four-cycle in the original graph with equal diagonal
+color a, a contradiction.
+
+If x_1=x_2, then y_1=y_2. Every one of the four edges projects to the same
+original simple edge. Its unique color is a, so, in particular, the lifted
+cross edge (g_1,k_2) also has group-table color sigma_a. Hence
+k_2=sigma_a g_1=sigma_a g_2 and g_1=g_2, again a contradiction.
+
+Thus an original graph with m edges lifts to a B-colored partial group-table
+graph with exactly h m edges. Theorem A applies without any perfect-matching
+or regularity assumption on the original graph.
+
+5. PROOF OF THEOREM B, INCLUDING NONTRANSITIVE ACTIONS
+
+Suppose for contradiction that along a subsequence m>=epsilon N^2, for a
+fixed epsilon>0. Split the original graph according to the G-orbits of the
+vertex labels. Every edge remains within one orbit because its endpoint
+labels are related by an element of G. Let n_i be the total number of original
+vertices on the two sides in orbit i, and m_i its edge count. Then
+
+  sum_i n_i=N,  sum_i m_i=m,  and m_i<=|X_i||Y_i|<=n_i^2/4.
+
+Some orbit has m_i/n_i>=m/N>=epsilon N. For that orbit,
+
+                    n_i>=4 epsilon N,
+                    m_i>=4 epsilon^2 N^2.
+
+Its orbit Omega_i has size at least max(|X_i|,|Y_i|)>=n_i/2. In particular
+|G|>=|Omega_i|>=2 epsilon N tends to infinity. Lifting this orbit as in
+Section 4 produces a B-colored partial group-table graph with h_i m_i edges.
+Its relative density in G x G is at least
+
+        h_i m_i/|G|^2 >= m_i/(K^2 N^2) >=4 epsilon^2/K^2.
+
+This contradicts Theorem A as |G| tends to infinity. QED.
+
+One can additionally note h_i=|G|/|Omega_i|<=K/(2 epsilon), but that upper
+bound is not needed for the displayed density contradiction. For a
+transitive action using all N original vertices, h<=2K follows immediately
+from the separate injections into Omega.
+
+6. SCOPE AND LIMITS
+
+* This is a genuine vanishing-density result for a structurally restricted
+  class, rather than an improvement of a quadratic coefficient.
+* It covers partial group tables, arbitrary deletions of their entries,
+  and partial permutation colorings represented by groups of O(N) elements.
+* It does not cover all proper B colorings. Extending color matchings to
+  permutations only gives a subgroup of a symmetric group, with no useful
+  O(N) bound on its order.
+* Group-table multiplication conventions matter. The chosen y x^{-1}
+  convention is compatible with the left action and the lift (g,sigma_c g).
+* The proof uses no finite graph search and gives no practical numerical
+  bound: its threshold inherits the size of a density-Hales-Jewett number.
+* Theorem A is exactly Solymosi's established theorem after a change of
+  coordinates. The square lemma is a direct DHJ consequence, and the action
+  result is a lifting corollary. No historical originality is claimed for
+  the alternative proof or corollary.

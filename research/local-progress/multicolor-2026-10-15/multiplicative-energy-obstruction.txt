@@ -1,0 +1,131 @@
+VANISHING GLOBAL COLOR ENERGY AND THE POINTWISE COLLISION GAP
+2026-10-15. Mathematical deduction, not Lean formalized.
+Historical novelty of this formulation is unverified.
+
+This strengthens the small-difference-set conclusion from a bound on the
+number of relative permutations to a bound on their collision energy.
+It uses the independently audited local square and basepoint lifting
+lemmas in partial-small-difference-theorem.txt.
+
+THEOREM. Fix eta>0. Let a properly colored bipartite simple graph have
+every C4 rainbow. Embed each side injectively into the same n-point set
+Omega. Take d colors, each containing at least eta*n original edges,
+and choose pairwise distinct permutations extending their matchings.
+Let S be this set of d permutations. Uniformly over all such graphs,
+sets Omega, and choices of extensions, as d tends to infinity,
+
+ E(S) := #{(a,b,c,e) in S^4 : a b^{-1}=c e^{-1}} = o(d^3).
+
+There is no assumption that the completed permutation graphs are
+B-colored. The original partial matchings supply all graph constraints.
+There is also no solvability assumption or bound on the generated group.
+
+PROOF.
+Suppose for contradiction that E(S)>=kappa*d^3 along a sequence with
+d tending to infinity, for fixed kappa>0. Apply Tao's noncommutative
+Balog--Szemeredi--Gowers theorem, in its approximate-group formulation:
+Theorem 5.4, implication (i) => (iv), to (S,S^{-1}).
+There is a K-approximate group A and g in the permutation group with
+
+       |A| <= B*d,        |S intersect gA| >= alpha*d,
+
+where K,B,alpha>0 depend only on kappa. In particular |A|>=alpha*d.
+This is a direct application of the stated theorem; it does not require
+the two subsets supplied by a two-set BSG theorem to be identical.
+
+Retain the colors in S intersect gA, and change the right-side labels
+by g^{-1}. The representing permutations now form U subset A, with
+|U|>=alpha*d. Every retained color still has at least eta*n edges,
+so the retained graph has m'>=eta*n*|U| edges.
+
+For z in Omega, use the basepoint lift from the companion note:
+
+ F_z = {(u^{-1},v u^{-1}) : u,v in U and the original color-v
+                              edge exists at row u^{-1}z}.
+
+It is a B-colored partial group table inside A x A^2. The exact identity
+
+                  sum_z |F_z| = |U| m'
+
+shows that some z satisfies
+
+ |F_z| >= |U|m'/n >= eta*|U|^2
+       >= (eta*alpha^2/B^2)*|A|^2.
+
+Since |A| tends to infinity, the local square lemma contradicts this
+fixed positive density. Thus every fixed kappa is eventually impossible.
+This proves the theorem.
+
+SOURCE FOR THE ADDITIONAL INPUT
+T. Tao, Product set estimates for non-commutative groups,
+Theorems 5.2 and 5.4 (especially 5.4(i) => (iv)), PDF pp.15--18:
+https://arxiv.org/pdf/math/0601431
+
+The local square lemma uses the full Breuillard--Green--Tao structure
+theorem, large abelian subgroups of finite groups, and density
+Hales--Jewett. No informal 2025 remark is needed for this qualitative
+energy conclusion. The detailed dependencies are in the companion note.
+
+COROLLARY 1: SUPERCONSTANT PRODUCT GROWTH.
+If r(h)=#{(a,b) in S^2:a b^{-1}=h}, then
+
+ sum_h r(h)=d^2,       sum_h r(h)^2=E(S).
+
+By Cauchy--Schwarz,
+
+                    |SS^{-1}| >= d^4/E(S).
+
+Consequently |SS^{-1}|/d tends to infinity. The energy assertion is
+stronger: a large support by itself would allow a positive fraction of
+the products to remain concentrated in a small subset.
+
+COROLLARY 2: ROBUSTNESS FOR DENSE CANDIDATE COUNTEREXAMPLES.
+Suppose m>=epsilon*N^2, q<=D*N and |Omega|<=C*N, with fixed positive
+epsilon,C,D. Discard colors with fewer than epsilon*N/(2D) edges.
+At least half the edges remain. Colors represented by the same
+permutation occupy disjoint subsets of its graph, so at most
+2*C*D/epsilon of these retained colors have the same permutation.
+Select one largest color from each duplicate class, retaining a constant
+fraction of the edges. There remain d=Theta(N) distinct permutations;
+each retained color has at least
+
+                  (epsilon/(2*C*D))*|Omega|
+
+edges. The theorem therefore forces E(S)=o(N^3) and
+|SS^{-1}|/N tending to infinity, for EVERY initial completion.
+
+COROLLARY 3: THE PRECISE LOCAL/GLOBAL OBSTRUCTION.
+For x in Omega define the pointwise collision count
+
+ E_x(S) = #{(a,b,c,e) in S^4 :
+                    (a b^{-1})(x)=(c e^{-1})(x)}.
+
+There are d^2 ordered products and at most n possible images of x.
+Therefore Cauchy--Schwarz gives, for EVERY x,
+
+                         E_x(S) >= d^4/n.
+
+In a hypothetical dense counterexample, d=Theta(n), so the pointwise
+energy is Omega(d^3) at every x while global energy is o(d^3).
+Equivalently,
+
+ sum_{a,b,c,e in S} |Fix(e c^{-1} a b^{-1})|
+                      = sum_x E_x(S) >= d^4.
+
+The quadruples with identical global products contribute only
+n*E(S)=o(n*d^3). When d=Theta(n), they account for a vanishing fraction
+of this lower bound. Thus the overwhelming required collision mass
+must come from NONIDENTICAL products agreeing at individual points.
+
+This does not contradict the B condition. The B condition excludes
+particular repeated-color four-step words, but permits rainbow
+four-cycles with four different colors. No argument here turns the
+remaining pointwise agreements into global product equalities.
+
+WHAT HAS AND HAS NOT ADVANCED
+This gives an asymptotic constraint involving arbitrarily many colors,
+not a new constant in an edge-density estimate. It rules out bounded
+product complexity and any positive normalized global energy among
+many large color classes. It does not prove the missing universal
+edge bound o(N^2), because large pointwise collision counts need not
+imply large global permutation energy.

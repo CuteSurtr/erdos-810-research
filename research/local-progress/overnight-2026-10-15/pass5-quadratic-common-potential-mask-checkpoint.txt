@@ -1,0 +1,116 @@
+NEXT TARGET ONLY: A SHARED QUADRATIC-POTENTIAL MASK
+15 October 2026, pass 5 checkpoint. Algebra audited; transfer UNPROVED.
+
+This note verifies an exact decomposition for a proposed next research
+target. It does not claim a new sparsity theorem or a small error estimate
+for the terms identified below as unresolved.
+
+1. SETUP AND EXACT IDENTITY
+
+For a in A subset F_p* set
+
+ sigma_a(x)=ax+a^2,
+ tau_a(x,y)=((y-a^2)/a,ax+a^2),
+ u_a(x)=a^2x+a^3=a sigma_a(x), Q(x,y)=xy.
+
+Write z=(y-a^2)/a. Direct substitution gives
+
+ u_a(z)=ay,
+ Q(tau_a(x,y))-Q(x,y)=ay-a^2x-a^3=u_a(z)-u_a(x).            (1)
+
+Both the signs and the constant term in (1) matter.
+
+Take a common set H subset F_p, h=1_H, and actual domains
+
+                         D_a={x:u_a(x) in H}.
+
+Each u_a is an affine permutation, so |D_a|=|H|. If the resulting
+selected graph is simple, its edge count is m=d|H|, d=|A|. Properness
+and B are additional hypotheses, not automatic consequences of this
+domain formula.
+
+2. FOURIER EXPANSION AND THE EXACT GAUGE-DIAGONAL SLICE
+
+Use normalized Fourier coefficients hhat(k)=p^-1 sum_t h(t)e_p(-kt).
+The masked crossed operator is
+
+ T_D=sum_(k,l) hhat(k)hhat(l)
+            sum_a M_[e_p(k u_a(x)+l u_a(z))] U_tau_a.        (2)
+
+Here the multiplier is evaluated at (x,y), with z=sigma_a^-1(y).
+Set C_l=M_[e_p(l Q)] and S_A=sum_a U_tau_a. Since h is real,
+hhat(-l)=conj(hhat(l)). Equation (1) shows that the k+l=0 terms in (2)
+are precisely
+
+                 T_diag=sum_l |hhat(l)|^2 C_l* S_A C_l.     (3)
+
+If P is the constant projection on F_p^2, the constant parts of (3)
+form the positive semidefinite operator
+
+ B_0=d sum_l |hhat(l)|^2 C_l* P C_l
+    =(d/p^2)sum_l |hhat(l)|^2
+                  |e_p(-lQ)><e_p(-lQ)|.                    (4)
+
+The conjugation signs in (3)--(4) are correct: C_l* U_tau_a C_l
+multiplies the crossed transition by e_p(l(Q(tau_a v)-Q(v))).
+
+The completed quadratic operator has a previously audited mean-zero
+norm at most lambda, so Parseval gives a valid bound for THIS slice:
+
+            ||T_diag-B_0||<=lambda sum_l |hhat(l)|^2
+                            =lambda |H|/p.                 (5)
+
+This statement does not control T_D-T_diag.
+
+3. WHAT REMAINS OUTSIDE THE ESTABLISHED WEIGHTED ESTIMATE
+
+Put s=k+l and define
+
+                 V_s=sum_a M_[e_p(s u_a(x))] U_tau_a.
+
+The full expansion can be rewritten exactly as
+
+          T_D=sum_(s,l) hhat(s-l)hhat(l) C_l* V_s C_l.       (6)
+
+For s=0, V_s=S_A and (6) gives (3). For s!=0 the extra multiplier
+e_p(s(a^2x+a^3)) depends on BOTH the color and the row. Therefore the
+color-only weighted crossed-operator bound proved earlier does not apply
+to V_s as stated. Its Fourier action also mixes the former product blocks:
+apart from its scalar phase it sends (xi,eta) to
+
+                           (a eta+s a^2, xi/a).
+
+The product becomes xi eta+s a xi, rather than remaining xi eta.
+
+The full remaining slice is self-adjoint after pairing terms, but it is
+not known to be positive. Its coefficients need not be nonnegative.
+Consequently it cannot be discarded in a lower bound, and the positive
+main term (4) alone gives no sparsity conclusion.
+
+4. A PRECISE CONDITIONAL CANCELLATION TARGET
+
+If a positive-density B example existed in this class, put eta=|H|/p.
+Then m=d eta p, with both d/p and eta bounded below. The exact B identity
+still gives <1_E,T_D1_E>=m. The l=0 term of (4), and (5), imply
+
+ <1_E,T_diag1_E> >=d eta^2 m^2/p^2-lambda eta m.
+
+For quadratic palettes lambda=O(p^(7/8)). Under the stated hypothetical
+density, the first term is Omega(p^3) and the error is o(p^3). Hence the
+remaining slice would have to satisfy
+
+                       <1_E,(T_D-T_diag)1_E><=-c p^3
+
+for some fixed c>0 along that hypothetical sequence. Excluding such
+negative cancellation using the actual supports and B would settle this
+particular mask class. No exclusion is proved here.
+
+The trivial norm bounds give only ||T_D||<=d and
+||T_diag||<=d eta, so their difference can be of order d. They supply
+no required o(p) control in the dense regime. No Parseval argument or
+completed-map mixing estimate presently closes this gap.
+
+AUDIT CONCLUSION. Equations (1)--(6), the positive rank-one slice and
+the slice-specific error (5) are sound. The off-diagonal slice is the
+explicit unproved target. This checkpoint must not be reported as an
+established new edge bound.

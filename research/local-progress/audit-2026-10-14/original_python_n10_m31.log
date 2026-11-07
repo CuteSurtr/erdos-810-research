@@ -1,0 +1,4 @@
+Invocation: import search/erdos810_search.py and call verify_upper_bound(10,31) using Python 3 without -O.
+Returned tuple: (2735357, 2735357, 0, 0, 476.57303404808044)
+Tuple fields: representatives, clique_obstructions, independence_obstructions, exact_coloring_obstructions, elapsed_seconds.
+Source SHA256: c6c4fee6de4d4035e61d5e69373eb3fc7d3f9b7437053f5601d3f7f923c6a7b2

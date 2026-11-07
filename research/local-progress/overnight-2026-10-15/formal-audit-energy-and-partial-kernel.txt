@@ -1,0 +1,324 @@
+GLOBAL ENERGY CAN BE SMALL FOR DENSE NON-B GRAPHS;
+AN INTRINSIC PARTIAL-COMPOSITION REPLACEMENT
+15 October 2026. Adversarial research note, hand proofs, no finite graph
+enumeration and no Lean certificate. No historical novelty claim.
+
+The earlier energy theorem remains valid: in a B-colored graph, many
+large color classes force E(S)=o(|S|^3) for EVERY choice of distinct
+permutation completions. This note audits how much information that
+conclusion contains. It proves that a naive local-to-global energy bridge
+is false even for complete bipartite graphs with perfect color matchings,
+and records an intrinsic kernel which retains the actual B constraint.
+
+1. AN INTRINSIC TENSOR COUNTEREXAMPLE TO THE NAIVE ENERGY BRIDGE
+
+Write T_s(x)=x+s on Z/6Z, and let tau exchange 0 and 3 and fix the other
+four elements. Define the six permutation colors
+
+              S_0={tau,T_3 tau,T_1,T_2,T_4,T_5}.
+
+Their graphs partition K_{6,6}. At inputs other than 0 and 3 these are
+the six ordinary translations. At inputs 0 and 3, the outputs belonging
+to T_0 and T_3 have merely been exchanged. Thus every input-output pair
+belongs to exactly one of the six matchings.
+
+Let D_0=S_0 S_0^(-1). Differences of the four unchanged translations
+already give all six translations. Indeed {1,2,4,5}-{1,2,4,5}=Z/6Z:
+the residues 0,1,2,3,4,5 are represented by 1-1,2-1,1-5,4-1,5-1,1-2.
+Also tau T_1^(-1) belongs to D_0 and is not a translation. Otherwise tau
+would be a translation, impossible since it is nonidentity and has fixed
+points. Therefore |D_0|>=7.
+
+For a finite set S of d group elements, put
+
+             r(g)=#{(a,b) in S^2:ab^(-1)=g}.
+
+Then 0<=r(g)<=d, sum_g r(g)=d^2, and
+
+             E(S)=sum_g r(g)^2 <= d^3.                  (1.1)
+
+If equality holds, every positive r(g) equals d, so |SS^(-1)|=d.
+For completeness this is precisely the coset case: r(g)=d implies
+gS=S; the difference set is then the setwise left stabilizer of S, is
+a subgroup of size d, and S is one of its right cosets. Only the easy
+implication equality => |SS^(-1)|=d is needed here.
+
+Since |D_0|>6, (1.1) is strict. Its integer value therefore gives
+
+                         E(S_0)<=215<216.              (1.2)
+
+No enumeration or numerical energy calculation is used.
+
+Take r coordinatewise products of this coloring. The vertex sets are
+(Z/6Z)^r, of size n=6^r; the palette S=S_0^r has d=6^r=n colors.
+For every row and column there is exactly one color tuple, so this is
+a proper perfect-matching coloring of the COMPLETE graph K_{n,n}.
+Group multiplication and equality hold coordinatewise, hence
+
+                         E(S)=E(S_0)^r<=215^r,
+                         E(S)/n^3<=(215/216)^r ->0.    (1.3)
+
+There is NO permutation-completion freedom in this example: all colors
+are already perfect on the n-point set.
+
+At every point x, by contrast, the pointwise energy is exactly n^3.
+For a fixed target y and each b in S, there is exactly one a in S with
+a(b^(-1)(x))=y, because the palette partitions the complete bipartite
+graph. Thus each target has exactly n representations by an ordered
+product ab^(-1), giving
+
+        E_x(S)=sum_y n^2=n^3       for EVERY x.          (1.4)
+
+Equations (1.3)-(1.4) give the same asymptotic local/global separation
+previously found necessary for a hypothetical dense B example, while
+the underlying graph is as dense as possible.
+
+Scope. These graphs are NOT B-colored. Already T_1 and T_4 in the base
+have relative permutation T_3 of order 2, and give a bichromatic C4.
+The tensor product preserves such violations. Consequently this does
+not refute a bridge that uses the full B condition; it refutes any
+inference from density, perfect matching colors and large pointwise
+energy alone to positive normalized global energy.
+
+It also does not satisfy the B crossed-pair identities. In this example
+C=J and d=n, so <C,T(C)>=n^2 rather than the required n. The centered
+matrix C-(d/n)J is zero. Therefore the earlier negative-spectrum
+criterion is not being contradicted or satisfied by this family.
+
+2. ARBITRARY COMPLETIONS CAN HIDE GLOBAL RELATIONS EVEN MORE COMPLETELY
+
+There is a separate and stronger warning for partial matchings. Start
+with ANY properly colored bipartite simple graph represented on an
+n-point set, with q=O(n) colors. No B hypothesis is imposed. Extend each
+color arbitrarily to a permutation p_c of these n points.
+
+Add a disjoint block of n unused points. On it choose independent uniform
+permutations R_c, and set sigma_c=p_c direct-sum R_c. With positive
+probability, for sufficiently large n, the resulting palette has only
+the unavoidable relations
+
+       sigma_a sigma_b^(-1)=sigma_c sigma_e^(-1)
+
+coming from (a=c,b=e) or from (a=b,c=e). In particular
+
+           E(S)=2q^2-q,
+           |SS^(-1)|=q(q-1)+1.                         (2.1)
+
+Here is a direct union-bound proof. For a quadruple of labels outside
+the two trivial patterns, if some label occurs exactly once, conditioning
+on all other random permutations determines that remaining permutation
+uniquely. Its relation has probability 1/n!.
+
+If no label occurs exactly once, the only nontrivial pattern is
+a=e, b=c, a!=b. Its relation says that the uniform permutation
+R_a R_b^(-1) is an involution. If I_n is the number of involutions,
+
+ I_n <= sum_{k=0}^{floor(n/2)} binom(n,2k)n^k
+     <= 2^n n^(n/2),
+ I_n/n! <= (2e/sqrt(n))^n.
+
+The first inequality chooses the moved points and bounds the number of
+pairings by n^k. Thus a union bound over at most q^4 quadruples tends to
+zero. Distinctness of the R_c is forced by the absence of the same
+nontrivial relations. This proves (2.1) by existence, without a search.
+
+Padding changes the action size by only a factor of two. If the original
+classes have at least eta n edges, they still have at least (eta/2)
+times the new action size. Thus even the large-color-class scale of the
+earlier energy theorem does not prevent this graph-independent way of
+making global energy tiny.
+
+The valid theorem quantifies over EVERY completion, so this observation
+does not invalidate it. It explains its actual content: it prohibits
+structured completions of B graphs. Merely finding one low-energy
+completion is uninformative. Minimizing global energy over completions
+is correspondingly useless for an unrestricted density argument.
+
+3. A COMPLETION-INDEPENDENT PARTIAL-COMPOSITION KERNEL
+
+Let the original bipartition be X,Y. For color a let
+
+                    f_a:D_a subset X -> R_a subset Y
+
+be its actual partial bijection. Let B_a be its X by Y matching matrix,
+with B_a(x,f_a(x))=1 and all other entries zero. Define
+
+        Q_ab=B_a^T B_b,
+        tau_ab=f_a composed with f_b^(-1).              (3.1)
+
+The domain of tau_ab is f_b(D_a intersect D_b); it maps f_b(x) to f_a(x)
+for x in D_a intersect D_b. Q_ab is its Y by Y partial permutation
+matrix, with rows indicating output and columns indicating input.
+For a!=b it has zero diagonal, by properness of the original coloring.
+
+Index only ordered pairs (a,b) with a!=b. Set
+
+  G_(ab),(ce)=<Q_ab,Q_ce>_F
+            =#{y in dom(tau_ab) intersect dom(tau_ce):
+                                      tau_ab(y)=tau_ce(y)}.             (3.2)
+
+This is an actual positive-semidefinite Gram matrix. Its entries count
+agreements of DEFINED partial maps, not agreements of arbitrary added
+edges. The associated squared distance
+
+       ||Q_ab-Q_ce||_F^2
+        =|D_a intersect D_b|+|D_c intersect D_e|-2G_(ab),(ce)             (3.3)
+
+is a completion-independent measure of their disagreement, including
+the difference between their domains.
+
+Adding unused points only adds zero rows and columns to these matrices,
+and cannot change G. Relabeling X cancels out of (3.1); relabeling Y
+simultaneously conjugates the Q_ab and also leaves G unchanged.
+
+4. EXACTLY HOW B APPEARS IN THIS KERNEL
+
+For a B-colored graph,
+
+          G_(ab),(ab)=|D_a intersect D_b|,              (4.1)
+
+and, if (a,b)!=(c,e) and {a,b} intersects {c,e},
+
+                         G_(ab),(ce)=0.               (4.2)
+
+Proof. An agreement gives two original two-edge paths from a column y
+to a column z: one through a row x with colors b,a, the other through
+a row x' with colors e,c. Since a!=b, properness gives y!=z. If x=x',
+properness at that row forces a=c and b=e, contrary to the pairs being
+different. Thus the agreement gives a genuine C4. A shared color between
+the two ordered pairs makes this C4 nonrainbow. QED.
+
+Conversely, in a properly colored graph every nonrainbow C4 has a repeat
+on its opposite edges, and yields a positive entry forbidden by (4.2).
+Thus, for the ACTUAL partial maps, (4.2) is equivalent to the B property.
+The zero entries from a=c or b=e already follow from properness; the
+cross-role equalities a=e or b=c carry the extra B constraint.
+
+The all-four-colors-distinct entries count permissible rainbow C4s.
+They need not be small. In particular, replacing G by a global product
+equality count would discard precisely these genuine local agreements.
+
+Let B=sum_a B_a be the uncolored biadjacency matrix, let d_X(x) be the
+degree of x, and let k(y,z) be the number of common neighbors of y,z in X.
+The exact trace and total-mass identities are
+
+        tr G = sum_x d_X(x)(d_X(x)-1),
+        sum_(ab),(ce) G_(ab),(ce) = sum_{y!=z} k(y,z)^2.                (4.3)
+
+For the second identity, sum_{a!=b}Q_ab(y,z)=k(y,z) when y!=z, and
+the diagonal is zero. The first identity counts ordered pairs of
+different incident colors at each row.
+
+More concretely, for each ordered pair of distinct columns y,z, the
+color pairs furnished by their common neighbors form a directed matching
+on the palette: no color can occur twice, in either role. Therefore
+k(y,z)<=floor(q/2). This is an exact local interpretation of (4.2),
+but by itself yields only constant-density restrictions.
+
+5. THE COHERENCE LOST BY A BARE GRAM RELAXATION
+
+The matrices in (3.1) satisfy much more than positivity and the zero
+pattern. Write D_b^X=B_b B_b^T, the diagonal projection onto the original
+row domain of color b. Then
+
+        Q_ab^T=Q_ba,
+        Q_ab Q_bc=B_a^T D_b^X B_c.                    (5.1)
+
+The second formula is Q_ac restricted to underlying rows belonging to
+D_a intersect D_b intersect D_c. In particular, with perfect color
+matchings on the same two n-element sides,
+
+        Q_ab are permutation matrices,
+        Q_ab Q_bc=Q_ac,
+        Q_ab Q_ba=I.                                  (5.2)
+
+These exact compatibility relations express that all relative maps
+come from the SAME family of color matchings. They are absent from a
+free positive-semidefinite matrix having the sparsity (4.2).
+
+6. THE FIRST INTRINSIC GRAM CONSTRAINTS STILL HAVE A DENSE ABSTRACT MODEL
+
+The following is an abstract moment model, NOT a graph construction.
+It shows that the listed positivity, overlap zeros, diagonal sizes,
+orientation symmetry and first regularity moments alone do not force
+vanishing density. Additional coherence such as (5.1) is needed.
+
+Take q divisible by 4, n=4q-3 and k=q/4. On a q-color set choose uniformly
+an oriented matching M of size k. Let v_M be its 0/1 incidence vector on
+the q(q-1) ordered pairs of distinct colors. Define
+
+                      G_*=n(n-1) E[v_M v_M^T].        (6.1)
+
+It is positive semidefinite. Distinct overlapping ordered pairs never
+co-occur, so it has exactly the required overlap zeros. Symmetry under
+reversing every arc gives the transpose symmetry required by Q_ab^T=Q_ba.
+For each ordered pair,
+
+       Pr((a,b) in M)=k/[q(q-1)],
+       (G_*)_(ab),(ab)=n(n-1)k/[q(q-1)]=n.             (6.2)
+
+Thus its diagonal matches n-edge perfect color classes. Also
+
+       tr G_*=nq(q-1),
+       sum G_*=n(n-1)k^2.                             (6.3)
+
+A q-regular bipartite graph on n+n vertices would have average off-
+diagonal column codegree q(q-1)/(n-1)=k, so (6.3) is exactly the
+constant-codegree first-moment model, including equality in its Jensen
+lower bound. Its index-space dimension q(q-1) is below n(n-1), so a
+naive Gram-rank upper bound from the off-diagonal Y by Y matrix space
+does not exclude it either.
+
+Here q/n tends to 1/4, a fixed POSITIVE bipartite edge density. This
+fraction is unrelated to the earlier global N^2/4 endpoint-method
+threshold: N=2n, and this abstract model has nq approximately N^2/16.
+Its relevance is nonvanishing density, not that particular number.
+
+No actual partial permutation matrices satisfying (5.1) are supplied.
+The model therefore establishes only a limitation of the specified
+first Gram relaxation, and is not a counterexample to #810.
+
+6A. ADDING THE OTHER BIPARTITION'S GRAM MATRIX STILL DOES NOT REMOVE IT
+
+Include also the diagonal color pairs in the two kernels. On the left
+side use Q^X_ac=B_a B_c^T, and on the right use Q^Y_ab=B_a^T B_b.
+Cyclic invariance of trace, together with transposition, gives the exact
+reshuffling identity
+
+                   G^Y_(ab),(ce)=G^X_(ac),(be).        (6.4)
+
+Thus both matricizations of the same four-color tensor must be PSD.
+This is additional genuine information beyond one arbitrary Gram
+matrix, but it does not exclude the model above. In the perfect case,
+all Q_aa equal I, so their Gram block is nJ_q and their inner products
+with off-diagonal Q_ab are zero. Extend (6.1) by this block.
+
+The extended matrix is PSD. Its entries are n when a=b,c=e or when
+a=c,b=e; they are zero for reversed off-diagonal pairs and all other
+overlap patterns; and they have one constant value for all-four-colors-
+distinct patterns, by symmetry of the random matching. These cases are
+invariant under the reshuffling (ab,ce)->(ac,be). Hence the reshuffled
+matrix is exactly the same PSD matrix. Its total rank is at most
+q(q-1)+1<=n^2, also consistent with the ambient matrix-space bound.
+
+Therefore adding the second-side PSD condition, perfect-class identity
+block, and the reshuffling equality still leaves this positive-density
+abstract model. The missing issue is realization by coherent nonnegative
+partial permutation matrices, not just either scalar Gram matrix.
+
+7. RESEARCH CONSEQUENCES
+
+The earlier vanishing-global-energy theorem is a valid necessary
+condition with a conditional group-structure application. It is not
+by itself evidence that density must force a contradiction: Section 1
+realizes its local/global asymptotics in dense complete graphs, even
+without completion choices, and Section 2 makes minimum completion
+energy almost trivial for any partial graph.
+
+The intrinsic kernel (3.2) is a more faithful object: its overlap zeros
+encode B exactly and cannot be altered by unused permutation freedom.
+But its first scalar/PSD constraints also admit a positive-density
+abstract model. A potentially useful next step must exploit the actual
+partial-map composition and support compatibility in (5.1), or higher
+simultaneous agreement information; no theorem doing so sufficiently
+to obtain o(N^2) is established here.

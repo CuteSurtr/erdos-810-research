@@ -1,0 +1,193 @@
+Full-shadow extraction and nonlinear corrections, 2026-10-14
+
+STATUS AND SCOPE
+These are independently derived mathematical deductions, checked adversarially
+and by finite tests. Publication novelty remains unverified. They strengthen
+exact comparisons with the Brown-Erdos-Sos extremal function, but do not settle
+the quadratic-versus-subquadratic question in Erdos problem #810. The general
+proofs below are written mathematical proofs, not claimed Lean formalizations.
+
+Write g(N) for the maximum size of a simple 3-uniform (7,4)-free family on N
+vertices, and g_lin(N) for the maximum restricted to linear families. Write
+M(N) for the maximum number of edges of an N-vertex graph admitting at most N
+colors with every C4 rainbow. A triple family is (7,4)-free if four distinct
+triples always have union of size at least eight.
+
+THEOREM A: FULL-SHADOW EXTRACTION
+
+    M(N) >= 3 g_lin(N).
+
+In fact the resulting coloring is proper. Let H be linear. Its 2-shadow has
+an edge uv for every pair contained in a triple. The color of uv is the unique
+third vertex w for which uvw belongs to H. Linearity makes the color unique,
+and every original triple contributes three distinct graph edges. Hence the
+shadow has exactly 3|H| edges on N vertices and uses only the original N
+vertices as color labels.
+
+It is proper: two incident edges uv and ux with equal color w would come from
+triples uvw and uxw sharing the pair uw, contrary to linearity unless v=x.
+
+To prove that every C4 is rainbow, use the following more general localization
+lemma, which also supplies the nonlinear extension.
+
+LOCALIZATION LEMMA
+For an arbitrary (7,4)-free H, take its entire 2-shadow and, for each graph
+edge, select any containing triple and color the edge by its omitted vertex.
+Every nonrainbow C4 is supported either by:
+  (i) two triples sharing a pair, whose union has four points; or
+  (ii) three triples whose union has at most five points.
+
+Proof. If the four selected triples are distinct, the four graph vertices and
+at most three colors contain them all, contradicting (7,4)-freeness. Thus two
+selected triples coincide. They cannot correspond to opposite cycle edges,
+which together have four distinct endpoints. Relabel the cycle a-b-c-d-a so
+that ab and bc both select abc. Their colors are c and a. Write the remaining
+selected triples as cdx and day, so their colors are x and y. Colors are never
+equal to an endpoint of the edge they color. The only possible repetitions in
+the list c,a,x,y are consequently
+
+    x=a, or y=c, or x=y.
+
+If x=a and y=c, the selected triples are just abc and acd, case (i). In any
+other case, the distinct selected triples number three and their union is
+contained in {a,b,c,d,z} for a single additional point z, case (ii).
+
+For linear H, neither (i) nor (ii) is possible: two linear triples span at
+least five points, and three distinct linear triples span at least six. This
+proves Theorem A.
+
+STRUCTURAL FACTS USED BELOW
+Join triples if their intersection has two points. Every connected component
+of this overlap graph has at most three triples. Different nontrivial overlap
+components have disjoint vertex supports. These facts and the basic 2N/5
+subfamily deletion argument are prior art in Furedi, Section 8 (2012):
+https://iuuk.mff.cuni.cz/~samal/DS/S0963548311000563a.pdf
+
+More generally, every three-edge family spanning five points is an isolated
+block: any other edge meeting its support would make four edges span at most
+seven points. Three edges spanning four points must be the entire family.
+Outside these isolated blocks, every nontrivial overlap component is therefore
+a two-edge diamond abc,abd. No external triple meets its support in two
+points: a third such triple would create an isolated three-edge block on at
+most five points.
+
+The outside pairs of all external triples meeting a diamond's four-point
+support are pairwise disjoint. Otherwise the diamond and two external triples
+would have union at most seven. Furthermore, a triple disjoint from the support
+cannot contain both outside vertices of a triple that meets the support, for
+the same reason.
+
+THEOREM B: REWIRING IMPROVES THE LINEAR EXTREMAL COMPARISON
+
+    g(N) <= g_lin(N) + floor(N/4), for N >= 5.
+
+This is a statement about replacing edges, not a stronger linear-subfamily
+deletion theorem. On each isolated three-edge/five-point block, replace its
+triples by two linear triples on the same five points, losing one edge.
+This preserves (7,4)-freeness: new and old supports are disjoint, and mixed
+four-edge selections span at least eight points. Remove one edge from each
+remaining two-edge diamond. All remaining triples are linear. If there are
+a isolated five-point blocks and b diamonds, the supports are disjoint, so
+5a+4b<=N and the loss a+b<=floor(N/4). The exceptional entire three-edge
+family on four points can, when N>=5, be replaced by two linear triples on
+five points, again losing only one.
+
+DIRECT NONLINEAR SHADOW CONSTRUCTION
+On each ordinary diamond abc,abd, the full shadow has five pairs. Its only
+four-cycle has edges ac,bc,bd,ad. Delete any one of those four edges, retaining
+four shadow edges. On an isolated three-edge/five-point block, first replace
+the block by a three-edge path, for instance abc,abd,ade. Retain the six shadow
+edges supplied by the linear pair abc,ade. This replacement is valid because
+the block is isolated; any mixed four-edge selection still spans at least
+eight points. Keep the full shadow of all other triples.
+
+The localization lemma proves the resulting graph is rainbow-C4: every possible
+bad cycle would lie inside one diamond or one isolated five-point block, and
+the selected graphs in those supports have no C4 at all. An ordinary diamond
+retains four graph edges; its coloring need not be proper. With a isolated
+three-edge blocks and b diamonds the resulting graph has
+
+    3|H| - 3a - 2b
+
+edges. This already gives an additive O(N) correction to factor-three
+extraction for arbitrary nonlinear H.
+
+TWO EXTREMAL REPLACEMENT LEMMAS
+
+(1) An extremal H has at most one isolated three-edge/five-point block.
+Two such blocks have six edges on ten isolated vertices. Replace them by the
+linear seven-edge (7,4)-free family
+    457,349,248,189,367,058,016.
+Its pair and four-edge conditions are independently checked in
+linear10-seven-certificate.json and extremal-overlap-checks.json. This
+replacement preserves all mixed four-edge conditions and gains one edge.
+
+(2) An extremal H cannot contain both an isolated five-point block and an
+ordinary diamond. Let T be the isolated five-point support and S the diamond's
+four-point support. Replace the five local edges by the six row/column triples
+of a 3-by-3 grid on S union T. This gadget is linear and (7,4)-free: any four
+row/column triples have distribution 3+1, 2+2, or 1+3, and span at least eight.
+
+The replacement is safe even though external edges can meet S. For three new
+edges and one external edge, the union has at least 6+3-1=8 points. For two
+new and two external edges, the new union has at least five points and the
+two external edges supply at least four points outside S, giving at least
+nine. The latter assertion follows from the two diamond boundary facts above.
+
+For one new edge and three external edges, let r be the number of distinct
+points of S used by the three external edges. If r=0 their union has at least
+five points, by the original (7,4)-condition with any old local edge. If r=1
+it has at least six points, using an old diamond edge containing that point.
+If r=2 it has at least seven points: two external edges through distinct ports
+have disjoint outside pairs; a third edge entirely contained in their six-point
+union would either meet S and violate outside-pair disjointness, or avoid S
+and contain both points of one outside pair. If r=3, all three external edges
+meet S and their outside pairs are disjoint, giving nine points. The new edge
+overlaps this external union in at most r points. In every case the full union
+has at least eight points. We gained one edge, contrary to extremality.
+
+THEOREM C: SHARPER NONLINEAR COMPARISON
+
+    M(N) >= 3 g(N) - 2 floor(N/4), for N >= 5.
+
+For N>=8, take an extremal H. If it has no isolated five-point block, its
+diamonds number at most floor(N/4), giving the stated correction. If it has
+one such block, it has no diamonds by replacement lemma (2), and the direct
+construction loses only three graph edges. Since 2floor(N/4)>=4, this is even
+better. The exceptional entire three-edge/four-point family is not extremal
+for N>=8, since the four triples 012,234,456,670 are linear and (7,4)-free on
+eight vertices. For N=5,6,7, g(N)=3 and the asserted lower bound is seven;
+this follows from the already independently verified M(5)=7 and monotonicity.
+
+OPTIONAL STRONGER STRUCTURAL OBSERVATION
+For N>=8, if an extremizer has an isolated three-edge/five-point block T, its
+complement is linear, by the two replacement lemmas. Choose an outside triple
+abc, and label T by 1,2,3,4,5. Replace its three edges by a12,b23,c45, keeping
+abc. The four local triples are linear and span eight points. All other edges
+meet abc in at most one point. Mixed selections with three local edges span
+at least 6+3-1=8; with two local edges, at least 5+5-2=8; with one new local
+edge and three old edges, at least 3+6-1=8 because the old family is linear.
+The resulting entire hypergraph is linear with the same number of triples.
+Thus an extremizer with such an isolated block implies g(N)=g_lin(N), and
+Theorem A then yields M(N)>=3g(N) for that case. This observation is not needed
+for the stated uniform correction bound.
+
+LIMITATIONS
+These comparisons do not establish whether g(N) or M(N) is o(N^2). They do
+not justify reversing a rainbow-C4 coloring into a (7,4)-free lift. In
+particular, contracting a diamond is unsafe: the verified family
+{012,013,245,367,468,579} becomes non-(7,4)-free after identifying tips 3 and 2.
+
+FINITE VERIFICATION
+shadow_localization_check.py checked 8,835 families, including 2,284 linear
+families, and localized every one of 10,974 nonrainbow shadow C4s. It exhausts
+families of at most three triples through seven vertices and tests 120 greedy
+larger families on 8,9,10,12,15,18 vertices. These are stress tests supporting,
+not replacing, the general mathematical proofs.
+
+ExtremalReplacementCertificate.lean also passed Lean 4.24.0 with exit 0.
+It checks the seven-edge replacement gadget: cardinality, uniformity,
+linearity, injective indexed representation, and every increasing four-index
+union. All six printed axiom sets contain only propext, Classical.choice,
+and Quot.sound. It does not formalize the general replacement or shadow
+proofs above. See replacement-verification-status.json for hashes and command.

@@ -1,0 +1,352 @@
+ARBITRARY AFFINE PALETTES WITH NEAR-COMMON DOMAINS
+2026-10-15, finite_audit agent. Independent audit: PASS.
+
+This is a qualitative extension of the crossed-reflection argument. It
+uses the earlier independently audited global color-energy theorem and
+small-difference theorem, which in turn use substantial standard inputs
+including BGT structure, noncommutative BSG, and density Hales-Jewett.
+No priority claim, Lean verification, or solution of the unrestricted
+Erdos problem is asserted.
+
+UPDATE: Section 7 gives a second proof using the published PRRW affine
+energy theorem and Solymosi's group-table theorem directly. This second
+route avoids the earlier BGT-based input and also avoids heavy-color
+pruning. Its two exact source statements have been independently checked.
+
+THEOREM
+
+For each odd prime p let A subset F_p^*, let beta:A->F_p be arbitrary, and
+let X subset F_p. For each a choose D_a subset X, and select precisely
+
+                 (x,a*x+beta(a)), x in D_a,
+
+with color a. Suppose the selected graph is simple, properly colored, and
+every C4 is rainbow. Define the number of missing parameter incidences
+relative to the common domain by
+
+                   R=sum_(a in A) |X minus D_a|.
+
+If R=o(p^2), then m=o(p^2). In particular, this holds with no regularity
+assumption on beta when every D_a is the SAME set X.
+
+One color per nonzero slope is part of the statement. The asymptotic is
+uniform in all the data subject to the stated missing-incidence condition.
+
+1. TWO PREVIOUSLY AUDITED INPUTS
+
+(E) If d distinct permutations of an n-point set extend d original color
+matchings, each of size at least eta*n, of a proper B graph, then uniformly
+as d->infinity their global multiplicative energy is o(d^3).
+
+(D) For a proper B graph represented by q distinct color permutations on
+an n-point set, |SS^(-1)|<=Kq with fixed K and q->infinity implies
+m=o(qn), uniformly over the actual partial supports.
+
+The exact statements and complete proofs are saved in
+../multicolor-2026-10-15/multiplicative-energy-obstruction.txt and
+../multicolor-2026-10-15/partial-small-difference-theorem.txt.
+
+These results apply to ORIGINAL partial matchings; they do not assume the
+completed permutation graphs are B. This distinction is essential here.
+
+2. GEOMETRIC FOURTH-MOMENT BOUND FOR EVERY BETA
+
+Let d=|A|, S=sum_a U_(tau_a), with
+tau_a(x,y)=((y-beta(a))/a, a*x+beta(a)). Define
+
+ L=max{|{a in A:(a,beta(a)) lies on ell}|: ell an affine line},
+ E_aff=E({sigma_a:a in A}), sigma_a(x)=a*x+beta(a).
+
+The coordinate-axis block has norm to the fourth power at most (p-1)E_aff,
+by the affine permutation character calculation. The nonzero xi*eta blocks
+satisfy
+
+             tr(M_t^4) <= p(L+2)d^2 + 2sqrt(p)d^3.       (1)
+
+Here is the point needing no polynomial assumption. In the fourth-moment
+coordinates a=rs/t, q=u/r, h=v/s, the weighted exceptional phases outside
+q=1 or h=1 are precisely the collinear quadruples with slopes
+a,qa,qha,ha. For each ordered pair a!=qa the first two points determine a
+line, and ha has at most L choices on it. The fourth slope is then fixed.
+Thus the exceptional count is at most L*d*(d-1)+2d^2-d. All other terms are
+complete Kloosterman sums, bounded by 2sqrt(p), and the total weighted triple
+count is at most d^3.
+
+The coefficient-row proof of the equivalence with collinearity, including
+repeated slopes, is in pass4-polynomial-palette-independent-audit.txt.
+Only the upper bound L is substituted for its polynomial degree D.
+
+Consequently the nonconstant operator norm obeys
+
+ lambda^4 <= max((p-1)E_aff, p(L+2)d^2+2sqrt(p)d^3).       (2)
+
+3. DENSE ACTUAL COLOR CLASSES FORCE L=o(p) AND E_aff=o(p^3)
+
+Suppose d=Omega(p) and every color has at least eta*p actual edges, with eta
+fixed. The completions sigma_a are distinct, because their slopes differ.
+Input (E) therefore gives E_aff=o(d^3)=o(p^3).
+
+Vertical lines contain at most one palette point. A line containing L>=2
+palette points consequently has equation beta(a)=u*a+v. For those colors
+
+ sigma_a(x)=a*(x+u)+v,
+ sigma_a sigma_b^(-1)(y)=(a/b)*(y-v)+v.
+
+Their quotient set lies in a group of at most p-1 dilations about v.
+Writing T for the L colors on this line, Cauchy-Schwarz gives
+
+                E_aff >= E(T) >= L^4/(p-1).
+
+Since E_aff=o(p^3), this implies L=o(p). Thus input (E) alone suffices for
+this step. Alternatively a hypothetical L>=epsilon*p would contradict
+input (D) directly, because |TT^(-1)|<=p-1<=|T|/epsilon and all of its
+original color matchings are heavy.
+
+Equation (2) now gives lambda=o(p). No effective uniform rate is claimed,
+since inputs (E) and (D) are qualitative.
+
+4. THE MISSING-INCIDENCE CHARGE, INCLUDING EXTRA FIXED LOOPS
+
+Let E be the actual edge-point set. Consider an internal transition
+e=(x,y) -> tau_a(e)=(z,w) with both points in E. If the two closing color-a
+incidences (a,x) and (a,z) are present, B forces x=z, and the transition is
+the actual color-a loop. Summing these allowed loops gives exactly m.
+
+Every other internal transition has at least one of (a,x),(a,z) missing.
+For a fixed missing (a,x), at most deg_E(x)<=d choices of the first edge
+point e can use it. The same bound applies with it as the second row,
+by the involution symmetry. Thus
+
+                     <1_E,S1_E> <= m+2dR.               (3)
+
+This also charges an extra fixed loop when the point is an actual edge of
+another color but the corresponding color-a incidence is missing. There
+is no assumption that the completed common-domain coloring is proper.
+
+The constant/nonconstant decomposition gives the lower bound
+
+ <1_E,S1_E> >= d*m^2/p^2 - lambda*(m-m^2/p^2).            (4)
+
+5. HEAVY-COLOR PRUNING AND CONTRADICTION
+
+Suppose, contrary to the theorem, that m>=delta*p^2 on a sequence, for fixed
+delta>0, while R=o(p^2). Since m<=d|X| and d,|X|<=p, both d and |X| are at
+least delta*p.
+
+Discard every color missing more than |X|/2 incidences. Their number is at
+most 2R/|X|=o(p), and they carry at most 2pR/|X|=o(p^2) actual edges. Thus
+the retained graph has m'=Omega(p^2), d'=Omega(p), and every retained class
+has at least |X|/2>=delta*p/2 edges. Its missing count R' is at most R.
+
+Section 3 applies to the retained palette, giving lambda=o(p). The right
+side of (4) is then Omega(p^3), whereas (3) is at most
+p^2+2pR'=o(p^3). This contradiction proves the theorem.
+
+6. COROLLARY: ARBITRARY AFFINE PALETTES WITH NESTED DOMAINS
+
+If the D_a are ordered by inclusion, then m=o(p^2), for arbitrary beta.
+Indeed fix epsilon>0, order the colors by their domains, and split them
+into consecutive full blocks of w=ceil(epsilon*p) colors. In each full
+block retain only its minimum domain; discard the last short block. The
+telescoping argument in pass4-nested-support-theorem.txt loses at most
+2wp<=2epsilon*p^2+O(p) edges. There are at most 1/epsilon full blocks.
+For each fixed epsilon, the common-domain theorem bounds the total number
+of retained edges by o(p^2). Thus limsup m/p^2<=2epsilon. Letting epsilon
+tend to zero proves the assertion. The quantifier order is fixed epsilon,
+then p->infinity, then epsilon->0; no effective rate is inferred.
+
+For a fixed nonlinear polynomial beta the separate explicit spectral bounds
+give the stronger quantitative nested-domain bound O_D(p^(35/18)).
+
+DEPENDENCY/SCOPE CHECK
+
+The new argument retains the actual supports throughout. It combines the
+already proved global-energy obstruction with a new Fourier-to-support
+transfer valid in the common/near-common setting. Arbitrary unrelated
+domains need not have R=o(p^2) or an inclusion-chain decomposition, so the
+unrestricted affine-support problem and Erdős #810 remain unresolved.
+
+7. SECOND PROOF USING ONLY DIRECT PUBLISHED INPUTS
+
+Theorem 2.1 of Petridis--Roche-Newton--Rudnev--Warren, "An Energy Bound in
+the Affine Group", bounds the energy of a finite affine palette S by
+
+ E(S) << v^(1/2)|S|^(5/2) + L|S|^2,
+
+where v is its maximum vertical-line occupancy, L its maximum line
+occupancy, and v|S|<=p^2 in characteristic p. Here v=1 and d<=p-1, so
+
+                    E_aff << d^(5/2)+L*d^2.              (5)
+
+The source's energy convention counts g^(-1)h=u^(-1)v. This equals our
+right-quotient energy: a*b^(-1)=c*d^(-1) if and only if
+c^(-1)*a=d^(-1)*b, a bijective rearrangement of the four palette entries.
+The source was checked at Theorem 2.1, printed page 3:
+https://arxiv.org/pdf/1911.03401 .
+
+Assume m>=delta*p^2 and R=o(p^2). Then |X|>=delta*p and d>=delta*p. If some
+palette line has q>=epsilon*p points, its colors have at least
+
+                     q|X|-R = Omega(p^2)
+
+actual edges. Write its equation beta(a)=u*a+v and relabel rows and columns
+by r=x+u and s=y-v. Its edges now satisfy s=a*r and carry color a=s/r.
+At r=0, all such edges would have s=0; simplicity permits at most one
+actual edge there. Remove it. All remaining rows and columns belong to
+G=F_p^*, and the remaining point set still has positive density in G x G.
+
+Solymosi's Theorem 5 says every positive-density subset of G x G, as the
+finite group order grows, contains a rectangle whose opposite products
+coincide. Applied after the coordinate bijection (r,s)->(s,r^(-1)), this
+gives an actual rectangle with equal opposite ratios s/r, hence equal
+opposite colors. This contradicts B. Therefore L=o(p).
+The exact source statement was checked at Theorem 5, printed page 4:
+https://arxiv.org/pdf/1309.0133 .
+
+Equation (5) now gives E_aff=o(p^3), and (2) gives lambda=o(p), directly
+for the original palette. The contradiction between (3) and (4) completes
+the proof, with no pruning and no use of inputs (E) or (D).
+
+This is a dependency simplification, not a claim to have proved either
+published theorem. The novel-status question concerns the combined
+crossed-operator/support argument and remains unverified.
+
+8. QUANTITATIVE COMMON-DOMAIN REFINEMENT VIA INTEGER ROTH NUMBERS
+
+Independent audit of root's quantitative refinement: PASS. This section
+assumes the domain is exactly common, R=0. It does not assert this rate
+for an arbitrary sequence R=o(p^2).
+
+Let r_3(n) be the largest size of a subset of {0,...,n-1} containing no
+nonconstant integer three-term arithmetic progression. Define
+
+             F(p)=r_3(p-1)/p.
+
+Then every common-domain proper B coloring with arbitrary beta satisfies
+
+        m/p^2 << p^(-1/11) + F(p)^(1/6).                 (6)
+
+8A. The exact pencil bound
+
+For a palette line beta(a)=u*a+v containing L colors, normalize rows and
+columns to r=x+u and s=y-v. Remove the possible row r=0. Choose a generator
+of the cyclic group F_p^* of order n=p-1. Write C for the logarithms of the
+L colors, and B for the logarithms of (X+u) minus {0}. For each t in Z/nZ put
+
+                         H_t=C intersect (B-t).
+
+Suppose h-r,h,h+r lie in H_t, with r!=0 in Z/nZ. The selected multiplicative
+table then has the following rectangle in logarithmic coordinates:
+
+ rows:       t+h-r,       t+h;
+ columns:    t+2h-r,      t+2h;
+ colors:         h        h+r
+                 h-r      h.
+
+Both rows belong to B, and all three displayed color values belong to C.
+Thus all four edges are ACTUALLY selected under the common-domain
+hypothesis. Since r!=0, the rows and columns are each distinct. This is a
+nonrainbow C4. If 2r=0, the two cross colors coincide, but the same genuine
+four-cycle contradiction remains valid.
+
+Hence H_t contains no such cyclic progression. Its representatives in
+{0,...,n-1} are in particular free of nonconstant INTEGER progressions,
+and |H_t|<=r_3(n). Averaging intersections gives
+
+        L |B| = sum_t |H_t| <= n*r_3(n).
+
+As |B|>=|X|-1, this proves the exact bound
+
+             L(|X|-1) <= (p-1)*r_3(p-1).                (7)
+
+Vertical palette lines contain at most one point and cause no difficulty:
+the maximum L is attained on a nonvertical line whenever d>=2; for d=1
+any nonvertical line through the sole point may be used.
+
+8B. Normalization and exponent arithmetic
+
+The cases d=0 or |X|<=1 have m<=p and are harmless. Otherwise set
+
+       kappa=d/p, theta=|X|/p, rho=m/p^2=kappa*theta.
+
+Thus 0<rho<=kappa<=1. From (7), because |X|-1>=|X|/2,
+
+                        L/p <= 2F(p)*kappa/rho.          (8)
+
+PRRW gives E_aff << d^(5/2)+Ld^2. Combining this with the nonzero-block
+moment bound and using L>=1, d<=p gives
+
+ lambda/p << p^(-1/8) kappa^(5/8)
+                         + (L/p)^(1/4) kappa^(1/2).     (9)
+
+Here the term 2sqrt(p)d^3 contributes p^(-1/8)kappa^(3/4), which is at most
+the first term in (9); the additive 2 in L+2 is absorbed using L>=1.
+
+The exact internal-count identity and spectral decomposition imply
+
+ rho <= (1+lambda)/d.
+
+Substitution of (8)-(9), followed by kappa>=rho, gives
+
+ rho << p^(-1)rho^(-1)
+          + p^(-1/8)rho^(-3/8)
+          + F(p)^(1/4)rho^(-1/2).                       (10)
+
+At least one summand on the right is a fixed positive fraction of rho.
+The three respective possibilities give
+
+ rho << p^(-1/2),   rho << p^(-1/11),   rho << F(p)^(1/6).
+
+Absorbing the first into the second proves (6). All implied constants are
+absolute and uniform over beta, A, and X.
+
+8C. Published progression input and resulting rate
+
+The Kelley--Meka bound, in Bloom--Sisask's published exposition, states
+r_3(n)<=n*exp[-c(log n)^(1/12)] for an absolute c>0. Theorem 1, page 1,
+was checked directly in its version-3 source:
+https://arxiv.org/pdf/2302.07211v3 .
+Published version: Essential Number Theory 2 (2023), 15--44,
+https://doi.org/10.2140/ent.2023.2.15 .
+
+Consequently (6) gives absolute C,c'>0 such that
+
+            m <= C*p^2*exp[-c'(log p)^(1/12)].           (11)
+
+This uses a verified published progression bound, and makes no claim that
+1/12 is the best available exponent. Formula (6) also transparently
+transfers any stronger independently verified bound for r_3.
+
+9. QUANTITATIVE NESTED AND INTERVAL SUPPORTS
+
+Suppose a uniform common-domain upper bound is m<=G(p)*p^2, with G(p)->0.
+We may assume G(p)>=1/p, because a single-color perfect matching is one
+of the common-domain B graphs. Then support chains and bounded-interval
+domains admit the upper bound
+
+                       m << p^2*sqrt(G(p)).              (12)
+
+For a chain, choose an integer K comparable to G(p)^(-1/2) and let
+w=ceil(p/K). Divide the colors, ordered by inclusion of domains, into
+consecutive full blocks of w colors. Restrict each to its minimum domain,
+and discard the final short block. At most 2wp edges are lost by the
+previous telescoping argument, and at most K common-domain blocks remain.
+Thus
+
+ m <= K*G(p)*p^2 + 2p^2/K + 2p = O(p^2*sqrt(G(p))).
+
+For domains which are intervals in ONE common ordering of the p rows,
+partition those rows into full consecutive blocks of w rows. For each
+color retain only blocks wholly contained in its domain. Its two partial
+boundary blocks and the final short block account for at most 3w deleted
+edges. Over all colors the loss is at most 3wp. In each retained row block,
+all its retained colors share that block as a common domain. There are at
+most K such blocks, so the same bound proves (12). A union of at most r
+intervals changes the boundary loss to at most (2r+1)wp, yielding (12) with
+a constant depending on fixed r.
+
+In particular, substituting G(p)=C*exp[-c(log p)^(1/12)] from (11) gives
+the same stretched-logarithmic form, with a different positive constant
+in the exponent, for arbitrary beta and nested domains or a fixed bounded
+number of intervals in any common row ordering. No arithmetic structure
+of this ordering is used.

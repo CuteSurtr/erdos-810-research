@@ -1,0 +1,283 @@
+ARBITRARY-SUPPORT HOMOGENEOUS AFFINE COLORS AND AN ORBIT-SUM CRITERION
+15 October 2026. Independent audit of finite_audit's homogeneous-affine
+theorem and the parent agent's subgroup-orbit extension. Both pass
+with the explicit distinct-completion condition stated below.
+Hand proofs only, no finite search or Lean certificate. These are
+conditional consequences of the previously audited group-table bound;
+no general #810 solution or historical novelty claim is asserted.
+
+Scope clarification added during audit: the strongest abstract cover
+criterion below is an elementary weighted corollary of the earlier
+UNIFORM m=o(q*n) small-difference theorem. It needs no free-action or
+exceptional-set hypothesis. The explicit orbit decomposition remains
+a transparent specialization and verification of the affine example;
+it is not a stronger abstract structural theorem.
+
+0. UNIFORM GROUP-TABLE INPUT
+
+There is a function epsilon(h)->0 with the following property. For any
+finite group H of order h, a partial bipartite group table, with rows
+t in H, columns u in H, and color u*t^(-1), has at most
+
+                       epsilon(h)*h^2                  (0.1)
+
+actual edges if every actual C4 is rainbow. The bound is uniform in H.
+
+One may use the earlier audited partial-small-difference theorem:
+the at most h color permutations are left multiplications on H;
+their difference set has size at most h, so its N-scale form applies
+on the two h-element sides. This proves precisely the needed uniform
+version of (0.1), including arbitrary actual supports and missing
+colors. This note does not need an explicit rate for epsilon.
+
+0A. STRONGER WEIGHTED COVER COROLLARY: NO ACTION-FREENESS NEEDED
+
+Suppose distinct permutation completions of a B-colored graph on an
+n-point action domain are covered by cosets g_i H_i, with h_i=|H_i|.
+Assume
+
+  sum_i h_i=O(n),
+  for every fixed T, sum_{i:h_i<=T}h_i=o(n).             (0A.1)
+
+Then m=o(n^2), regardless of stabilizers or orbit sizes. In particular,
+min_i h_i->infinity is a sufficient replacement for the second condition.
+
+Proof. Assign every color to one containing coset and write q_i for
+the number assigned there. Distinctness gives q_i<=h_i. Fix delta>0.
+Families with q_i<delta*h_i have altogether at most
+
+  n*sum q_i <= delta*n*sum h_i=O(delta*n^2)              (0A.2)
+
+edges. For the other families, their assigned palette S_i satisfies
+
+  |S_i S_i^(-1)|<=h_i<=q_i/delta.                      (0A.3)
+
+The earlier uniform small-difference theorem therefore bounds their
+actual edge counts by epsilon_delta(q_i)*q_i*n, where
+epsilon_delta(q)->0 as q->infinity, independently of the action size.
+For h_i>T, q_i>=delta*T. Summing their bounds gives at most
+
+  n*(sum q_i)*sup_{q>=delta*T}epsilon_delta(q)=o_T(1)*n^2,
+
+because sum q_i<=sum h_i=O(n). The families with h_i<=T contribute
+at most n*sum_{h_i<=T}h_i=o(n^2), by (0A.1). First send n to infinity,
+then T to infinity, and finally delta to zero. This proves the claim.
+
+The duplicate-completion reduction in Section 1(c) and the allowance
+of o(n^2) uncovered actual edges apply here as well. This argument is
+just a weighted use of the already proved uniform theorem; it does
+not constitute a new inverse theorem producing a useful cover.
+
+1. AN EXPLICIT SUBGROUP-ORBIT SPECIALIZATION
+
+Let B be a properly colored B graph whose two sides are separately
+embedded in an n-point set Omega. Suppose its actual colors have
+DISTINCT permutation completions sigma_c. Cover these permutations by
+left cosets g_i H_i of finite subgroups of Sym(Omega). Write h_i=|H_i|.
+Assign each color to one containing coset, so an edge is counted in
+only one family, even if the cosets overlap.
+
+For each i assume that H_i has an invariant exceptional set Z_i and
+acts freely on Omega\Z_i. Assume also
+
+  sum_i h_i <= C*n,                                    (1.1)
+  min_i h_i -> infinity,                               (1.2)
+  sum_i h_i*|Z_i| = o(n^2),                            (1.3)
+
+where C is fixed. Then the actual graph has o(n^2) edges.
+
+Proof. Fix one family and write g=g_i, H=H_i, h=h_i, Z=Z_i. Because
+the completions in this family are distinct, there are at most h
+colors, each of the form g*s with s in H. On an H-orbit O outside Z,
+choose a base point x_0. The free action gives a bijection
+
+                 t in H -> t*x_0 in O.
+
+The corresponding column set is g*O, labeled by u in H via g*u*x_0.
+An edge of color g*s from row t*x_0 has column g*s*t*x_0. In these
+coordinates it is exactly the group-table edge with column u=s*t and
+color s=u*t^(-1). The original actual supports are retained unchanged.
+
+Restricting colors and vertices and relabeling the row and column
+sets preserve B. Thus each free orbit contributes at most
+epsilon(h)*h^2 edges by (0.1). There are at most n/h such orbits, so
+their total is at most n*epsilon(h)*h.
+
+Rows in Z contribute at most h*|Z| edges, because there are at most
+h colors and every color is a matching. Invariance ensures that these
+edges go to g*Z and that the orbit decomposition did not miss other
+rows. Summing all the families gives the exact upper bound
+
+  m <= n*sum_i epsilon(h_i)*h_i + sum_i h_i*|Z_i|.       (1.4)
+
+The first term is at most C*n^2*sup_{h>=min h_i}epsilon(h), which is
+o(n^2); the second is o(n^2) by assumption. This proves the criterion.
+
+Useful precise variants.
+
+(a) Condition (1.2) can be replaced by the weaker weighted condition
+
+  for every fixed T,  sum_{i:h_i<=T} h_i=o(n).
+
+Split (1.4) at T, bound epsilon<=1 on the small orders, and choose T
+large enough that sup_{h>T}epsilon(h) is as small as desired.
+
+(b) Leaving o(n^2) actual edges uncovered does not affect the result.
+
+(c) Distinctness of completions cannot simply be dropped inside a
+block. Different original colors may have identical completions;
+merging their symbols can create a nonrainbow C4 which the original
+coloring did not have. For a graph with q<=C_0*n colors, however, the
+dense-case reduction handles duplicates correctly. If m>=delta*n^2,
+discard classes smaller than eta*n with eta=delta/(2C_0), retaining
+at least delta*n^2/2 edges. At most 1/eta of these heavy classes can
+share a completion, since their actual edges are disjoint subsets of
+the same n-edge matching. Selecting one representative per completion
+retains a fixed positive proportion of the remaining edges. It still
+satisfies the same coset cover and budgets, so the distinct-completion
+criterion gives a contradiction. This proves a q=O(n) extension under
+the same cover assumptions without incorrectly merging colors.
+
+2. HOMOGENEOUS AFFINE PALETTES: NO DEFECT ASSUMPTION
+
+Let F be a finite field of size n and H<=F* a multiplicative subgroup
+of size h. Assume h tends to infinity. Let beta:F*->F obey
+
+                   beta(u*a)=u*beta(a)  (u in H).        (2.1)
+
+There is at most one color for each nonzero slope a; its completion is
+
+                   sigma_a(x)=a*x+beta(a).              (2.2)
+
+The original color class may be ANY restriction of this permutation.
+If the actual coloring is B, its total edge count is o(n^2), uniformly
+over F, H, beta, and the actual supports.
+
+Here is a direct block proof, giving all counts explicitly. Let
+L=(n-1)/h, and partition slopes into the L cosets gH. In one such
+family write a=g*u, u in H. Relabel its rows by the bijection
+
+                       x'=g*x+beta(g).
+
+Using (2.1), the color map becomes
+
+  sigma_(gu)(x)=gu*x+u*beta(g)=u*x'.                     (2.3)
+
+At x'=0 every color in the family maps to column 0. Because the
+original graph is simple and its edges have unique colors, at most
+ONE actual edge of this family occurs at (0,0). Discard this edge.
+
+For x'!=0, equation (2.3) puts x' and its output in the same H-coset
+vH of F*. There are L such cosets. In a block vH x vH, label rows
+and columns by dividing by v. The color u is now the multiplication
+table symbol y/x'=u on H. Missing slopes or missing edges simply give
+a partial table. Therefore each block has at most epsilon(h)*h^2
+actual edges. Different row relabelings for different color families
+cause no problem: B is being used separately in each restricted
+family, and the original edge sets of the families are disjoint.
+
+There are L families and L blocks per family, so
+
+  m <= L^2*epsilon(h)*h^2 + L
+     = (n-1)^2*epsilon(h) + (n-1)/h
+     = o(n^2).                                        (2.4)
+
+This proof permits arbitrary supports. It is strictly a statement
+about the specified representation class, not arbitrary affine
+intercept functions.
+
+The same result also follows from Section 1. For each family,
+sigma_(gu)=M_u R_g, where R_g(x)=g*x+beta(g). Rewrite this right coset
+as the left coset R_g*(R_g^(-1) H R_g). The conjugated dilation group
+has order h and acts freely except at the one fixed point R_g^(-1)(0).
+Thus sum_i h_i=Lh=n-1 and sum_i h_i|Z_i|=n-1. The direct argument
+improves the exceptional term from n-1 to L but either is o(n^2).
+
+3. EXAMPLES AND BOUNDED UNIONS
+
+For F=F_(s^2) and beta(a)=a^s, take H=F_s*. Then beta(ua)=u*beta(a)
+and h=s-1 tends to infinity. Hence EVERY B subgraph formed by arbitrary
+restrictions of the complete palette x->a*x+a^s has o(n^2) edges.
+This does not assert that the unreduced dense proper coloring from
+the Frobenius construction is B; it proves that it cannot retain
+positive density after imposing B.
+
+More generally, any map beta linear over a subfield F_s satisfies
+(2.1) for H=F_s*, and the conclusion holds as s tends to infinity,
+with no restriction on the extension degree. Additivity of beta is
+unnecessary: equivariance (2.1) alone is the exact hypothesis.
+
+The palette may also be the union of a fixed number K of such families
+beta_j, with at most one color per slope in each family. Restrict to
+each family and apply (2.4); summing a bounded number of o(n^2) terms
+still gives o(n^2). In the subgroup formulation it is enough that the
+total group-order budget remain O(n) and the weighted small-order
+and exceptional conditions hold. Identical-completion multiplicities
+must be handled as in Section 1(c), not by merging symbols.
+
+4. STATUS AND THE REMAINING STRUCTURAL PROBLEM
+
+The weighted extension permits the number of structured palette
+pieces to grow: it is their total group-order budget that controls
+the proof. A bounded number of cosets is not required, and no global
+small-difference bound for the entire palette is assumed. Section 0A
+shows that this is already a consequence of the earlier uniform
+theorem, without free-orbit assumptions. Sections 1--3 give an explicit
+orbit-based verification and a concrete homogeneous-affine application.
+
+However, no theorem here shows that arbitrary dense B colorings admit
+such a cover. That representation theorem is the missing general
+step. The argument above gives a complete arbitrary-support conditional
+class and an exact structural target, rather than a universal density
+bound or a solution of Erdős #810.
+
+5. AN EXACT SIDON OBSTRUCTION TO FORCING SUCH A COVER
+
+Call a finite permutation palette S multiplicatively Sidon if all its
+nonidentity ordered quotients a*b^(-1), a!=b, are distinct. For every
+nonempty subset U of size q this means exactly
+
+                       |U U^(-1)|=q(q-1)+1.            (5.1)
+
+If an assigned palette piece U_i of size q_i lies in g_i H_i, its
+quotients lie in the conjugate g_i H_i g_i^(-1), so
+
+  q_i(q_i-1)+1<=h_i,     q_i<=2*sqrt(h_i).              (5.2)
+
+Consequently a Sidon palette covered under sum h_i<=C*n and
+min h_i->infinity must have
+
+  |S|=sum q_i<=2*sum sqrt(h_i)
+                <=2*C*n/sqrt(min h_i)=o(n).            (5.3)
+
+The weighted escape version (0A.1) gives the same result. For fixed T,
+small groups contribute at most sum_{h_i<=T}h_i=o(n) colors. Large
+groups contribute at most 2*sum h_i/sqrt(T)<=2*C*n/sqrt(T). Letting
+T tend to infinity proves |S|=o(n).
+
+In particular, a Theta(n)-sized Sidon palette cannot satisfy this
+weighted subgroup-cover criterion. More generally, a Sidon subset
+with |U U^(-1)|<=K|U| has |U|<=K+1 by (5.1). Hence a method seeking
+large fixed-doubling subsets also cannot extract them from such a
+palette without additional information or a changed representation.
+
+There are two explicit reasons this limitation matters here:
+
+  - The parabolic affine palette sigma_a(x)=a*x+a^2 on an antipodal
+    half-set of F_p* is Sidon, has Theta(p) colors, and admits proper
+    classes of size (3/4+o(1))*p. It is NOT B, as shown by an explicit
+    forced rectangle in pass1-affine-independent-audit.txt. Thus
+    properness, affine representation, and large supports do not
+    force the cover criterion.
+
+  - The earlier padding construction gives arbitrary proper partial
+    colorings Sidon permutation completions after doubling the action
+    size. Therefore choosing arbitrary completions and expecting this
+    criterion to hold is not justified. The existing theorem supplies
+    an implication IF a useful cover exists; it does not construct one.
+
+These observations do not refute a theorem constructing favorable
+completions or structured actual restrictions using the full B
+condition. They identify exactly where such a new theorem is required
+and prevent the weighted corollary from being mistaken for a general
+inverse result.

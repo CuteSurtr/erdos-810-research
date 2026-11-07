@@ -1,0 +1,180 @@
+AFFINE COLOR CLASSES WITH A BOUNDED NUMBER OF MISSING POINTS
+Overnight pass 1, 15 October 2026.
+Complete hand proof using an established group-table theorem.
+No claim of historical novelty; not Lean checked.
+
+THEOREM
+
+Fix a nonnegative integer r. Let F range over finite fields of order n.
+Consider a bipartite simple graph with its two sides labeled by F, with
+a proper edge coloring for which every C4 is rainbow. Suppose each
+nonempty color c is represented by an affine permutation
+
+                  sigma_c(x)=a_c x+b_c,   a_c!=0,
+
+and its actual color class contains at least n-r edges of that
+permutation matching. Then the number d of colors is o(n), and the
+number m of edges is o(n^2), uniformly as n tends to infinity.
+
+There is no assumption that the full affine group has order O(n), that
+the color permutations commute, or that their relative difference set
+has size O(n). The conclusion concerns the bounded-deficit subclass;
+it does not establish the assertion for a fixed support fraction eta<1.
+
+The combinatorial steps below use only properness. They give both a
+bounded cover by parallel or concurrent pencils of affine lines and a
+sharper bound d<=(r+1)L, where L is the largest number of palette lines
+in any one such pencil. The rainbow-C4 condition is used afterwards
+through Solymosi's known theorem.
+
+1. PENCIL-COVER LEMMA
+
+Let d distinct affine lines of nonzero slope in F^2 have selected subsets
+of at least n-r points each. Suppose no point is selected on two lines.
+If d>=r+1, the lines can be covered by at most
+
+               L(r)=(r+1)+r(r+1)=(r+1)^2.               (1)
+
+parallel or concurrent pencils. A concurrent pencil means all lines
+through one specified point; a parallel pencil means all lines of one
+specified slope. A cover, rather than a disjoint partition, is enough.
+
+Proof. Choose k=r+1 of the lines as base lines. List these pencils:
+
+ (i) the k pencils parallel to a base line;
+ (ii) the pencils through every unselected point of a base line,
+      numbering at most kr.
+
+Repeated pencils in this list can be ignored. Every base line is already
+covered by (i). Suppose another line L is not covered. It is parallel to
+none of the base lines, so it meets each one. Each intersection point is
+selected on its base line: otherwise L belongs to (ii). The k points
+are distinct, because a coincident pair would be selected on two base
+lines, contrary to properness. Since selected sets are disjoint, L must
+omit all k of these distinct points. This contradicts its deficit at
+most r. QED.
+
+The sharper count (r+1)^2 uses properness at base/base intersections;
+separately listing their concurrent pencils would overcount them.
+
+For affine color classes, the hypotheses apply to their graph lines.
+If two colors had the same affine completion, their selected domains
+would be disjoint by properness; for n>2r, two sets of size at least n-r
+cannot be disjoint. Thus the representing lines are automatically
+distinct once n>2r.
+
+1A. A SHARPER DEFICIT-VERSUS-PENCIL INEQUALITY
+
+Let L be the maximum number of palette lines in any parallel or
+concurrent pencil. Then
+
+                         d <= (r+1)L.                (1a)
+
+This refinement was found independently in the root and finite-audit
+passes; the proof does not require a cover or a choice of base lines.
+
+For each slope, let d_a be the number of lines with that slope, so
+d_a<=L and sum_a d_a=d. The number of parallel pairs is at most
+
+              sum_a binomial(d_a,2) <= d(L-1)/2.
+
+For every finite point P incident with at least two palette lines, let
+t_P be that multiplicity. Properness forces at least t_P-1 of these
+line-point incidences to be omitted. Thus, writing R for the total
+number of omitted incidences, we have
+
+                 sum_P(t_P-1) <= R <= rd.
+
+Every pair of nonparallel lines meets in exactly one finite point.
+Since t_P<=L, the number of nonparallel pairs is at most
+
+       sum_P binomial(t_P,2) <= (L/2)sum_P(t_P-1) <= Lrd/2.
+
+These two categories partition all unordered line pairs. Therefore
+d(d-1)<=d(L-1)+Lrd, which gives (1a) when d>0. More generally, without
+a common deficit bound the same argument gives
+
+                       d(d-L) <= LR.                 (1b)
+
+Hence (1a) needs only an average deficit bound R/d<=r; the later
+group-table edge estimate will still use a lower bound on each class.
+
+2. EACH PENCIL IS A PARTIAL GROUP TABLE
+
+Input: Solymosi, The (7,4)-conjecture in finite groups, Theorem 5,
+https://arxiv.org/pdf/1309.0133 (PDF page 4), implies that a partial group
+table whose entries are colored by y x^(-1), and whose every C4 is
+rainbow, has o(|G|^2) entries, uniformly over finite groups G.
+The change of coordinates from Solymosi's product formulation is given
+in ../multicolor-2026-10-15/group-representation-vanishing-density.txt.
+Only additive and multiplicative groups of finite fields are used here.
+
+For a parallel pencil of slope a_0, replace the right coordinate y by
+a_0^(-1)y. Its color-b edges now have
+
+                         y=x+b/a_0.
+
+Different lines have different translations. The resulting colored
+subgraph is a partial table of the additive group (F,+). Its equality
+pattern of colors is preserved exactly, so it still has all C4s rainbow.
+It therefore has o(n^2) edges.
+
+For a concurrent pencil through (x_0,y_0), replace x by x-x_0 and y by
+y-y_0. A line of slope a now has equation y=a x. Apart from the point
+(0,0), its points have both coordinates nonzero. Delete that one graph
+position if it is selected. The remaining graph is a partial table of
+the multiplicative group F^*, colored by y/x=a. Different lines have
+different slopes. Again Solymosi gives o((n-1)^2)=o(n^2) edges, and the
+single deleted position does not affect the conclusion.
+
+The uniformity in the input theorem permits the field and pencils to
+vary with n. It is not an assumption about a fixed ambient group.
+
+3. CONCLUSION
+
+If d<r+1 then m<=rn=o(n^2). Otherwise apply the pencil-cover lemma.
+Partition the palette among its at most L(r) pencils in any manner
+consistent with the cover, and retain the associated colored subgraphs.
+Each has o(n^2) edges by Section 2. Since L(r) is fixed, m=o(n^2).
+Finally d(n-r)<=m, so d=o(n).
+
+The proof in fact gives a useful quantified reduction. Let h(n) denote
+the maximum fraction of entries in a B-colored partial table of either
+(F,+) or F^*, with the latter normalized by n^2, maximized over fields
+of order n. Then h(n)->0. Whenever n>2r, a pencil with L colors has at
+least L(n-r) edges and, by Section 2, at most h(n)n^2+1. Combining this
+with (1a) yields the stronger estimate
+
+            d <= (r+1)[h(n)n^2+1]/(n-r),
+            m <= (r+1)n[h(n)n^2+1]/(n-r).             (2)
+
+For a growing deficit r(n), (2) proves m=o(n^2) whenever r(n)=o(n) and
+
+                    (r(n)+1)[h(n)+n^(-2)]->0.
+
+No explicit growth rate for r(n) is extracted here, and (2) does not
+justify replacing the bounded deficit by an arbitrary o(n) deficit.
+The completed quantitative refinement in
+pass1-affine-quantitative-audit.txt proves
+
+        m <= C(r+1)n^2 exp[-c(log n)^(1/12)]
+
+when n>4r+1. It uses a robust strong-progression-free palette argument
+and a quantitative abelian Roth bound, separately from this group-table
+proof. Its independent check is recorded in
+pass1-affine-quantitative-independent-audit.txt.
+
+4. WHY THE SAME PENCIL ARGUMENT STOPS AT FIXED-DENSITY SUPPORTS
+
+If each class has only eta n edges, its deficit can be (1-eta)n. The
+cover above then has order n^2 pencils. A separate o(n^2) estimate on
+each pencil does not imply an o(n^2) estimate for their union. The
+quadratic example in pass1-affine-global-relations-barrier.txt has
+Theta(n) colors, constant-density supports, and no three concurrent
+lines; consequently any such pencil cover has Theta(n) members.
+This is a concrete obstruction to extending this particular bounded-
+cover proof by simply dropping the bounded-deficit hypothesis. The
+additional Frobenius family in pass1-affine-sublinear-deficit-barrier.txt
+has deficits only sqrt(n)+1 yet still needs an unbounded pencil cover.
+It is not B, and therefore obstructs only the properness-based structural
+lemma, not a possible stronger theorem using the full B condition.

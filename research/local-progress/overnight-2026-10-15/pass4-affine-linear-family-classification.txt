@@ -1,0 +1,237 @@
+ALL NONDEGENERATE AFFINE-LINEAR TWO-PARAMETER ROOT FAMILIES
+15 October 2026, overnight pass 4. Complete algebraic proof.
+
+Status: theorem proved below and independently checked by the formal-
+audit agent. This classifies one precise type of recurrence family;
+it does not prove common-mask sparsity or Erdős #810. Historical
+novelty is unverified.
+
+1. STATEMENT
+
+Let k have characteristic different from 2. Work over an algebraic
+closure when discussing algebraic sets. Let V be the seven-coordinate
+variety with ordered-root slots
+
+  (a,b), (a,c), (d,e), (f,g)
+
+and equations
+
+  a+b=d+e,   ac=de,   a+c=f+g,   ab=fg.             (1)
+
+Let L be an affine 2-plane contained in V. Assume that none of
+a,d,f,b-c is identically zero on L. Thus its generic points have
+valid nonzero color coordinates and describe nondegenerate repeated-
+color rectangles.
+
+THEOREM. L is one of exactly four linear planes. Every one satisfies
+
+  b+c+2a=0.                                          (2)
+
+Using the free parameters (a,b), put c=-2a-b. The four planes are
+obtained by the two independent root-order choices
+
+  (d,e) = (-a,2a+b) or (2a+b,-a),
+  (f,g) = (-a,-b)   or (-b,-a).                      (3)
+
+There are no additional affine translates. There is also no
+nondegenerate affine-linear family of dimension greater than 2.
+
+The graph rows of the two diagonal edges are
+
+  x=-(a+b),       z=-(a+c)=a+b=-x.                   (4)
+
+Thus EVERY such two-parameter affine-linear root family has opposite
+rows. The choice d=2a+b, f=-b has d+f=2a and gives the familiar
+arithmetic-progression color template. Each of the other three
+choices has an antipodal color -a.
+
+2. THE GENERIC DETERMINANT FORMULAS
+
+Set Delta=df-a^2. From (1), b,c satisfy
+
+  db-ac=d(d-a),      ab-fc=f(a-f).                   (5)
+
+When Delta!=0, the other coordinates are uniquely determined by a,d,f:
+
+  P=d^2-ad+af-a^2,       Q=f^2-af+ad-a^2,
+  b=fP/Delta,           c=dQ/Delta,
+  e=aQ/Delta,           g=aP/Delta.
+
+In particular,
+
+  Delta(b-c)=(d-f)(d-a)(f-a).                        (6)
+
+These formulas and their exceptional cases were independently
+established in pass3-quadratic-variety-and-cubic-phase-obstruction.txt.
+
+Suppose first that Delta is not identically zero on L. Projection
+onto (a,d,f) is injective on the open subset Delta!=0, because (5)
+has a unique solution and e,g are then determined. Since projection
+is an affine-linear map on L, it has zero kernel and identifies L
+with an affine 2-plane H in the three-dimensional (a,d,f) space.
+In particular b,c,e,g are affine-linear functions on H.
+
+3. THE PROJECTED PLANE MUST PASS THROUGH THE ORIGIN
+
+Write Q_0(a,d,f)=df-a^2. This is a nondegenerate quadratic form in
+three variables when char(k)!=2. Its restriction to the direction
+space of an affine 2-plane cannot vanish identically: otherwise
+that two-dimensional direction space would be totally isotropic,
+contained in its polar orthogonal complement of dimension one.
+Thus Q_0 restricted to H has degree exactly two.
+
+Equation (6), in the polynomial ring k[H], says that Q_0|H divides
+the product of the three affine-linear functions d-f,d-a,f-a.
+None of those functions is identically zero, since otherwise (6)
+would force b=c. Consequently Q_0|H factors into two affine-linear
+factors, allowing repetition.
+
+Each resulting factor line in H lies in the cone Q_0=0 and in at
+least one of the three planes d=f,d=a,f=a. Those intersections are
+unions of only the following four lines through the origin:
+
+  ell_0 = {(t,t,t)},
+  ell_1 = {(0,0,t)},
+  ell_2 = {(0,t,0)},
+  ell_3 = {(t,-t,-t)}.                               (7)
+
+For example Q_0|_{d=a}=a(f-a), and Q_0|_{d=f}=d^2-a^2.
+An affine line contained in the union of these finitely many lines
+must equal one of them. Thus H contains an entire line through the
+origin, and hence contains the origin itself. H is a linear plane.
+
+4. SECANT AND TANGENT CASES
+
+If Q_0|H has two distinct factor lines, H is the span of two distinct
+lines from (7). There are six possibilities:
+
+  span(ell_0,ell_1): d=a, forcing b=c;
+  span(ell_0,ell_2): f=a, forcing b=c;
+  span(ell_0,ell_3): d=f, forcing b=c;
+  span(ell_1,ell_2): a=0, inadmissible;
+  span(ell_1,ell_3): d=-a;
+  span(ell_2,ell_3): f=-a.
+
+Only the last two are possible nondegenerate families.
+
+If Q_0|H has a double factor line ell_i, then H is the tangent plane
+to Q_0 at a nonzero point of that line. One can see this by polarizing:
+the derivative of the square restriction vanishes at every point
+of ell_i, so the polar form with that point vanishes on all H.
+The four tangent planes are
+
+  at ell_0: d+f=2a;
+  at ell_1: d=0, inadmissible;
+  at ell_2: f=0, inadmissible;
+  at ell_3: d+f=-2a.
+
+The last one cannot satisfy (6). On it,
+
+  Delta=-(a+d)^2,
+  (d-f)(d-a)(f-a)=-2(a+d)(d-a)(d+3a).
+
+The numerator has only one factor a+d: neither d-a nor d+3a
+vanishes identically on d=-a in odd characteristic. Therefore
+Delta cannot divide the numerator. This also checks characteristic
+3 explicitly; the only excluded characteristic is 2.
+
+We are left with exactly three generic projected planes:
+
+  d=-a,    f=-a,    d+f=2a.                          (8)
+
+Substitution in the determinant formulas gives b+c=-2a in all three.
+For clarity:
+
+  d=-a, f=t: b=-t, c=t-2a, e=2a-t, g=-a;
+  f=-a, d=t: b=t-2a, c=-t, e=-a, g=2a-t;
+  d=a+h, f=a-h: b=h-a, c=-h-a, e=g=-a.
+
+5. THE EXCEPTIONAL DETERMINANT-ZERO CASE
+
+Suppose instead that Delta is identically zero on L. Work in the
+function field of L, where a,d,f are nonzero. Write d=ar, f=a/r.
+Consistency of (5) gives
+
+  (r-1)^2(r+1)=0.
+
+Since the coordinate ring is a domain, either d=f=a identically,
+or d=f=-a identically. The first case forces b=c and is excluded.
+The second forces
+
+  d=f=-a,   b+c=-2a,   e=-c,   g=-b.                 (9)
+
+These equations define a linear 2-plane. Since L also has dimension
+two and is contained in it, L equals that plane. This supplies the
+fourth family and completes the classification.
+
+6. THE HYPERPLANE SECTION AND MAXIMAL DIMENSION
+
+Conversely, impose (2) in (1). The roots in the third slot have
+sum a+b and product -a(2a+b), so they are -a and 2a+b. Those in
+the fourth slot have sum -a-b and product ab, so they are -a,-b.
+This gives exactly (3). Thus V intersect {b+c+2a=0} is, set-theoretically,
+the union of precisely the four displayed linear planes.
+
+If a nondegenerate affine-linear space of dimension at least three
+were contained in V, generic affine 2-planes inside it would satisfy
+the theorem. They would all lie in b+c+2a=0; consequently the whole
+space would lie in that hyperplane. An irreducible affine space
+contained in a finite union of four 2-planes is contained in one of
+them, which contradicts its larger dimension.
+
+7. FINITE-FIELD INTERPRETATION
+
+The statement is about formal algebraic parameter families, and so
+avoids an inference from sparse finite-field samples. In particular
+it applies whenever all seven roots are affine-linear in two formal
+parameters and (1) holds as polynomial identities.
+
+If p>=7, a,d,f,b-c are each nonzero as affine functions, and an
+injective affine parametrization over F_p satisfies (1) for EVERY
+parameter pair for which a,d,f,b-c are all nonzero,
+the same conclusion follows. The four inadmissible affine equations
+remove at most 4p parameter pairs. Each relation in (1) has degree
+at most two; if it were a nonzero polynomial, it would vanish at
+at most 2p pairs. Since p^2-4p>2p for p>=7, all relations must be
+polynomial identities. The classification then applies after base
+extension to the algebraic closure.
+
+8. CONSEQUENCE AND EXACT LIMIT FOR THE COMMON-MASK TARGET
+
+Suppose all actual color supports are the same row domain X. If
+X intersect (-X) is empty, no nondegenerate configuration lying in
+ANY of the classified affine 2-planes can occur, regardless of the
+palette. Thus a recurrence argument whose seven root coordinates
+are all affine-linear in two independent parameters sees only a
+pattern that an antisymmetric row domain can exclude completely.
+
+This is a meaningful obstruction because proper dense common-mask
+graphs with antisymmetric X exist. For example, for primes p>240,
+take A=X={1,...,floor(p/10)} and all edges y=ax+a^2, a in A,x in X.
+They are proper: an intersection would require x+a+b=0 mod p for
+distinct a,b in A, whereas this positive integer is less than p.
+Also X intersect (-X) is empty and the edge density tends to 1/100.
+
+This graph is NOT B. It contains the explicit rectangle
+
+  rows 9,24; columns 52,112; colors
+
+       4   7
+       2   4.
+
+Its root coordinates are
+
+  (a,b,c,d,e,f,g)=(4,-13,-28,7,-16,2,-26),
+
+which satisfy (1) but have b+c+2a=-33!=0 mod p. Therefore this
+actual forbidden rectangle lies on none of the nondegenerate
+affine 2-planes. The general three-dimensional rational family
+contains configurations beyond all of the linear recurrence families.
+
+No claim is made that every possible use of a linear recurrence
+theorem is ruled out. Nonlinear changes of variables, parameter
+families lying on curved surfaces, affine one-parameter families,
+or arguments combining several families are outside this theorem.
+In particular, this classification does not settle common-mask
+sparsity; it identifies why the most direct two-parameter affine
+root recurrences cannot settle it.

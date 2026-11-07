@@ -1,0 +1,98 @@
+BOUNDED ABELIAN-COSET COVERS OF THE COLOR PERMUTATIONS
+2026-10-15. Complete conditional deduction from Solymosi's established
+partial-group-table theorem. No historical novelty is claimed; not Lean
+checked. This is a different structural restriction from |G|=O(N).
+
+THEOREM. Fix positive constants C,D and an integer L. Let a bipartite simple
+graph have N vertices in total, a proper coloring with at most DN colors,
+and every four-cycle rainbow. Suppose its two sides separately inject into
+a finite set Omega
+of size at most CN. Each color c is represented by a permutation sigma_c of
+Omega such that an edge xy of color c satisfies y=sigma_c x.
+
+Assume the palette can be partitioned into L families, with family i's
+permutations contained in a left coset g_i H_i of an abelian subgroup
+H_i <= Sym(Omega). (One can instead assume the permutations within each
+family pairwise commute, by taking g_i to be the identity.) Then
+
+                              |E|=o(N^2),
+
+uniformly over such graphs and representations as N tends to infinity.
+In particular, the generated group itself may have much more than O(N)
+elements. Duplicate permutations for different colors can even be allowed;
+the number of colors and the heavy-color selection below handle them.
+
+INPUT. Solymosi, The (7,4)-conjecture in finite groups, Theorem 5,
+https://arxiv.org/pdf/1309.0133 (PDF page 4), implies that any partial group
+table colored by y x^{-1}, with every C4 rainbow, has o(|G|^2) entries,
+uniformly over finite groups G. The accompanying note
+group-representation-vanishing-density.txt gives the exact change of
+coordinates and an alternative DHJ proof. Only abelian G is needed here.
+
+PROOF. Suppose, contrary to the theorem, m>=epsilon N^2 along a subsequence.
+Choose one family carrying at least m/L edges. Write its representing
+permutations sigma_c=g h_c with h_c in the abelian group H. Relabel the right
+vertices by y -> g^{-1} y, preserving their distinctness and all edge colors.
+The retained edges now satisfy y=h_c x. They are still B-colored and number
+at least aN^2, where a=epsilon/L.
+
+Split the retained graph by H-orbits of the endpoint labels. Every retained
+edge lies in one such orbit. Let n_i count its original vertices on both
+sides, and m_i its edges. The sums are N and at least aN^2 (isolated vertices
+can be counted), and m_i<=n_i^2/4. Some orbit O therefore satisfies
+
+                  m_O/n_O>=aN,
+                  n_O>=4aN,
+                  m_O>=4a^2 N^2.
+
+Put beta=4a^2 and v=|O|. Then 2aN<=v<=CN. The action of H on O is transitive
+and abelian, so the stabilizer H_x of one point equals the kernel of the
+action on O. The quotient K=H/H_x acts regularly on O. Identify O with the
+abelian group K using a basepoint. Each color c now determines a translation
+tau_c in K, and every color-c edge has group-table position (x,x+tau_c).
+Different original colors can determine the same translation; this is why
+we cannot immediately invoke the input theorem.
+
+Let eta=beta/(2D). Discard every color whose class within this orbit has
+fewer than eta N edges. At most DN colors are discarded, so at most
+D eta N^2=beta N^2/2 edges are lost. At least beta N^2/2 edges remain.
+
+For each translation tau, all remaining original colors inducing tau occupy
+disjoint subsets of a single matching of size v. The disjointness uses that
+the original graph is simple and each edge has exactly one color. Every
+such color has at least eta N edges. Hence at most
+
+                            v/(eta N)<=C/eta
+
+remaining colors induce tau. For each tau, retain the original color with
+the largest class and discard the others. This keeps at least an eta/C
+fraction of the remaining edges, and hence at least
+
+                       beta^2 N^2/(4CD)
+
+edges. Now distinct retained original colors have distinct translations.
+Replacing their color names with their translations preserves precisely
+which edges have equal colors. The retained graph is therefore a B-colored
+partial group table on K, whose order v tends to infinity and is at most CN.
+Its relative density is at least beta^2/(4C^3D), a fixed positive constant.
+This contradicts Solymosi's theorem and proves the result.
+
+CONSEQUENCES AND LIMITS.
+
+1. A positive-density B-coloring family with O(N) colors cannot have its
+   partial color matchings extended, on O(N) points, to permutations that
+   admit a bounded cover by commuting families.
+
+2. The same conclusion holds if the generated permutation group has an
+   abelian subgroup of bounded index: partition the color permutations
+   into its left cosets. This allows generated groups of superlinear size.
+
+3. For perfect color matchings the duplicate-translation issue disappears
+   on an orbit whenever all retained colors occur at every row: distinct
+   colors cannot agree at a row of a simple properly colored graph. The
+   heavy-color argument is what extends the conclusion to partial classes.
+
+4. A general B coloring need not admit commuting extensions or a bounded
+   abelian-coset cover. No assertion establishing such a cover is made.
+   This is not a solution of #810, and it does not make the established
+   group-table theorem a new result.

@@ -1,0 +1,256 @@
+FEW FIXED POINTS FORCE FEW REPEATED RECTANGLES;
+THE FIRST TWO-SIDED GRAM RELAXATION STILL HAS AN INTEGRAL DENSE MODEL
+15 October 2026. Hand proofs, no finite search or Lean certificate.
+No historical novelty claim. This is an obstruction and a conditional
+corollary, not a vanishing-density theorem for arbitrary B colorings.
+
+The new input used below is the previously audited global-energy theorem
+in ../multicolor-2026-10-15/multiplicative-energy-obstruction.txt:
+
+  For every fixed eta>0, if d distinct permutation completions represent
+  B color classes having at least eta*n actual edges each, then
+  E(S)=#{(a,b,c,e):a b^(-1)=c e^(-1)}=o(d^3), uniformly as d tends to
+  infinity. The action size n may vary independently of d.
+
+All remaining arguments in this note are elementary. The fixed-point
+assumption below applies to the whole acting group (or, sufficiently,
+to the particular four-letter words), not just color differences.
+
+1. ACTUAL RECTANGLE PATTERNS AND THE CORRECT WORD
+
+Let X,Y be separately embedded in an n-point set Omega. Write
+f_a:D_a subset X -> Y for the actual partial bijection of color a and
+sigma_a for its permutation completion on Omega. Let B_a be its X-by-Y
+matching matrix, padded with zeros if necessary, and put
+
+  Q_ab=B_a^T B_b,
+  t_abce=<Q_ab,Q_ce>_F.
+
+Here all color pairs, including a=b, are permitted. A contribution to
+t_abce is an agreement of the DEFINED partial maps
+
+  f_a f_b^(-1) and f_c f_e^(-1).
+
+Equivalently, it is a rectangle whose first row has colors b,a and whose
+second row has colors e,c, with the ordered columns being the input and
+output of the two relative maps. We allow degenerate rectangles. Thus
+
+  R=sum_(a,b,c,e) t_abce^2                              (1.1)
+
+counts pairs of identically labeled ordered rectangles, including
+degeneracies. Any nondegenerate octahedron convention is bounded above
+by R, up to at most a fixed ordering factor.
+
+Every point counted by t_abce is fixed by
+
+  w_abce=sigma_e sigma_c^(-1) sigma_a sigma_b^(-1).       (1.2)
+
+The original supports are still required; a fixed point of (1.2) need
+not give an actual rectangle. The inequality
+
+  t_abce <= |Fix(w_abce)|                               (1.3)
+
+is always valid. Also w_abce=1 if and only if
+
+  sigma_a sigma_b^(-1)=sigma_c sigma_e^(-1),
+
+so the number of identity-word quadruples is exactly E(S), when the
+completion permutations are distinct.
+
+There is a simple bound using properness alone:
+
+  sum t_abce <= n*d^3.                                 (1.4)
+
+Indeed choose the first row x and the three colors a,b,e. The first two
+edges determine its two columns, color e determines the second row if
+its required edge exists, and then the last edge has at most one color
+c because the graph is simple. This also handles degeneracies. It is
+essential here to count only actual edges, not arbitrary completions.
+
+2. A CONDITIONAL OCTAHEDRON-COUNT THEOREM
+
+Assume every color has at least eta*n actual edges, the d completions
+are distinct, d tends to infinity, and every nonidentity word (1.2)
+has at most f points fixed. Then
+
+  R <= f*n*d^3 + n^2 E(S).                              (2.1)
+
+For a nonidentity word, (1.3) gives t^2<=f*t. For an identity word use
+t^2<=n^2, and sum using (1.4). This proves (2.1), without replacing any
+partial map by a completed edge in the rectangle count.
+
+Consequently, if f=o(n), the earlier energy theorem implies
+
+  R=o(n^2*d^3).                                        (2.2)
+
+In the dense palette regime d=Theta(n), this becomes
+
+  R=o(n^5).                                           (2.3)
+
+For partial affine maps of a finite field, every nonidentity affine
+permutation fixes at most one point: (u-1)x=-v has at most one solution
+unless u=1,v=0. Hence (2.3) holds for heavy B color classes with distinct
+affine completions and d=Theta(n).
+
+Duplicate completions do not create a hidden assumption in passing
+from a dense graph to this situation. If each of several colors has
+at least eta*n edges and all have the same completion, their actual
+edge sets are disjoint subsets of its n-edge permutation graph. There
+are therefore at most 1/eta of them. Keeping one representative per
+distinct completion retains a fixed positive fraction of the colors
+and edges, with all retained colors still heavy. A graph with at most
+C*n colors and at least delta*n^2 edges first retains a positive
+fraction of its edges by deleting classes smaller than
+eta*n, for example eta=delta/(2C). The retained palette has Theta(n)
+colors; representative selection preserves this scale.
+
+Scope of the consequence. Gowers--Long's inverse theorem for partial
+Latin squares assumes Omega(n^5) pairs of identically labeled rectangles.
+Equation (2.3) says that the heavy, distinct-completion subgraph of a
+putative dense B example in a few-fixed-points action lies strictly
+below that input threshold. Thus a proof that B itself forces the
+Gowers--Long threshold would immediately rule out this representation
+class. No such concentration theorem is established here. The result
+does not rule out partial affine dense B graphs by itself, and does not
+obstruct a different theorem that works below the n^5 scale.
+
+For the exact prior-source scope, see literature-bridges.md, section
+"What Gowers--Long actually provides". Its primary reference is
+https://doi.org/10.1007/s00039-020-00553-1 . The earlier energy theorem is
+a proved local research result, not asserted here to be published.
+
+3. WHY THE FIRST-POINT ENERGY BRIDGE DOES NOT SUFFICE
+
+For complete permutations put
+
+  E_x(S)=#{(a,b,c,e): sigma_a sigma_b^(-1)(x)
+                        =sigma_c sigma_e^(-1)(x)}.
+
+There are d^2 outputs distributed among n points, hence
+
+  sum_x E_x(S)>=d^4.
+
+The fixed-point bound gives, in the opposite direction,
+
+  sum_x E_x(S)<=n E(S)+f(d^4-E(S)).                     (3.1)
+
+When f=1 the two leading terms are both d^4. Therefore (3.1) does not
+force E(S)=Omega(d^3). The fact that original supports might avoid the
+single fixed point of each nonidentity word is exactly the correlation
+problem; completing the maps does not remove it.
+
+The completion-independent count R in (1.1) is a more faithful statistic.
+Nevertheless a generic dense-graph calculation gives only Omega(n^4),
+one factor n short of the concentration needed above. The following
+integral Gram model demonstrates that several natural extra constraints
+do not supply that factor.
+
+4. AN INTEGRAL TWO-SIDED GRAM MODEL AT POSITIVE DENSITY
+
+Fix any integer q>=4 and set n=5q. Index a symmetric matrix G by the
+q(q-1) ordered pairs (a,b), a!=b, of colors. Define
+
+  G_(ab),(ce) = n, if (a,b)=(c,e);
+               1, if a,b,c,e are all distinct;
+               0, otherwise.                           (4.1)
+
+Every entry is a nonnegative INTEGER. Distinct overlapping ordered
+color pairs have zero inner product, exactly the B overlap zeros. The
+four-distinct entries satisfy the strongest possible integer bound
+0<=G<=1 for distinct relative maps in a one-fixed-point action.
+
+4a. Positive semidefiniteness, proved without a spectral citation.
+
+Write A for the ordered-disjoint adjacency matrix, so G=nI+A. Split
+functions on ordered pairs into reversal-symmetric and reversal-
+antisymmetric parts. A vanishes on the latter. On the symmetric part
+it acts as twice the disjointness adjacency K on unordered 2-subsets.
+
+Let U be the vertex-versus-2-subset incidence matrix. Then
+
+  K=J+I-U^T U,     U U^T=(q-2)I+J.
+
+The eigenvalues of K are binom(q-2,2) on constants, -(q-3) on centered
+vertex-incidence functions, and 1 on ker U. Thus the least eigenvalue
+of A is -2(q-3), and G is PSD whenever n>=2q-6, in particular at n=5q.
+
+4b. The second side, identity block, and exact reshuffling.
+
+Adjoin the diagonal color pairs (a,a), with block nJ_q, and set their
+cross terms with off-diagonal color pairs to zero. The full four-index
+tensor is n on the two pairing patterns a=b,c=e and a=c,b=e; it is 1
+on all-four-distinct patterns and zero otherwise. This is invariant
+under the reshuffling
+
+  (ab,ce) -> (ac,be).
+
+Consequently both bipartition-side Gram matricizations are PSD and
+obey the exact identity
+
+  <B_a^T B_b,B_c^T B_e> = <B_a B_c^T,B_b B_e^T>.
+
+This is a check on the abstract tensor, NOT a construction of the B_a.
+The full tensor rank is at most q(q-1)+1<n^2, consistent with the
+ambient matrix-space rank bound.
+
+4c. First moments, the all-ones vector, and codegree upper bounds.
+
+Put L=q(q-1). Each row of the off-diagonal block has sum
+
+  lambda_0=n+(q-2)(q-3)=q^2+6.
+
+Its trace is nL, exactly the value required for q perfect matchings.
+Its total mass L*lambda_0 is at least the mandatory codegree Jensen
+bound n L^2/(n-1), since
+
+  lambda_0 - nL/(n-1)
+    = (4q^2+30q-6)/(5q-1)>0.                            (4.2)
+
+Equality in Jensen is not required of an actual graph. The opposite
+bound coming from codegree<=q/2 is also satisfied:
+
+  L*lambda_0 <= (q/2)*nL,
+
+because q^2+6 <= (5/2)q^2 for q>=4.
+
+For a permutation Q_ab with zero diagonal, its inner product with
+W=J-I is n and ||W||_F^2=n(n-1). Adjoining this W requires the Schur
+complement G-[n/(n-1)]J_L to be PSD. The only affected eigenvalue is
+the constant one, so (4.2) proves this condition too. The diagonal
+identity block is orthogonal to W.
+
+4d. The repeated-pattern count remains on the n^4 scale.
+
+The sum of squares of the full tensor entries is exactly
+
+  n^2(2q^2-q) + q(q-1)(q-2)(q-3) = Theta(n^4).          (4.3)
+
+The first term is precisely the contribution of the unavoidable
+identity-product pairings. Formula (4.3) is compatible with (2.3) and
+is one factor n below the Gowers--Long scale. The associated abstract
+regular graph density would be q/n=1/5. With total graph vertex count
+N=2n this would correspond to N^2/20 edges, not the unrelated earlier
+N^2/4 endpoint-method threshold.
+
+5. PRECISE GAP AND NEXT TARGET
+
+This model survives integrality of the four-index counts, overlap
+zeros, the one-fixed-point upper bound, both PSD matricizations and
+their reshuffling, ambient rank, first degree moments, the Jensen
+lower bound, the local codegree upper bound, and adjoining J-I.
+It still need not realize actual nonnegative permutation matrices.
+In particular it does not supply the common-factor/product coherence
+
+  Q_ab Q_bc = B_a^T D_b^X B_c,
+
+or Q_ab Q_bc=Q_ac in the perfect case. It also is not a construction
+of an affine palette, a Frobenius action, or a counterexample to #810.
+Perfect colorings in a Frobenius action are already covered by the
+earlier conditional theorem; the unresolved case here is partial.
+
+A genuinely new route would have to use the simultaneous actual
+supports to show concentration of relative-map agreements (or a
+different structure theorem). Neither a first-point collision count
+nor the audited two-sided four-index Gram constraints force that
+concentration. This pass proves a quantitative obstruction to those
+specific mechanisms and does not claim a new general density bound.

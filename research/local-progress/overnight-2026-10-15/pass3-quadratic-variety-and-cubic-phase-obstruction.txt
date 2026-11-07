@@ -1,0 +1,255 @@
+THE FOUR-SLOT QUADRATIC VARIETY AND A CUBIC MIXING OBSTRUCTION
+15 October 2026, overnight pass 3. Analytic algebra only; no finite graph search.
+
+Status: elementary identities and estimates proved below. These are barriers
+to proposed counting arguments, not a proof or counterexample to Erdős #810.
+No historical originality claim is made.
+
+1. EXACT PARAMETRIZATION AND COUNT
+
+Work over F_p, p odd. The four ordered-root slots are
+
+  (a,b), (a,c), (d,e), (f,g),       a,d,f != 0,
+
+with the other coordinates arbitrary, and equations
+
+  a+b=d+e,  ac=de,  a+c=f+g,  ab=fg.                  (1)
+
+The associated graph edge of (r,u) has row -(r+u), column -ru,
+and color r. Its repeated-color rectangle is nondegenerate iff b!=c.
+This is exactly the convention of pass2-quadratic-removal-target-audit.txt.
+
+Put Delta=df-a^2. If Delta!=0, there is exactly one solution for each
+choice of nonzero a,d,f:
+
+  P=d^2-ad+af-a^2,             Q=f^2-af+ad-a^2,
+  b=fP/Delta,                 c=dQ/Delta,
+  e=aQ/Delta,                 g=aP/Delta.              (2)
+
+One way to derive (2) is to solve the two linear equations
+
+  db-ac=d(d-a),               ab-fc=f(a-f),
+
+and then set e=a+b-d and g=a+c-f. Direct subtraction gives
+
+  b-c=(d-f)(d-a)(f-a)/Delta.                          (3)
+
+Thus the generic parametrization is nondegenerate exactly when a,d,f
+are pairwise distinct.
+
+If Delta=0, write d=ar and f=a/r. Consistency of the two linear
+equations is equivalent to
+
+  (r-1)^2(r+1)=0.
+
+There are exactly two exceptional families:
+
+  d=f=a:     b=c,        e=g=b;
+  d=f=-a:    b+c=-2a,    e=-c, g=-b.                  (4)
+
+The first is degenerate. The second is nondegenerate except when b=-a.
+It is the antipodal two-color rectangle family.
+
+For fixed a, there are (p-1)(p-2) choices of (d,f) with Delta!=0.
+The two exceptional families each contribute p choices. Consequently
+the exact total number X_p of solutions of (1) is
+
+  |X_p|=(p-1)^2(p-2)+2p(p-1)
+       =(p-1)(p^2-p+2).                              (5)
+
+For generic nondegenerate solutions, start with ordered pairwise
+distinct nonzero a,d,f, then exclude Delta=0. For each a the latter
+exclusions are r!=1,-1, of which there are p-3. Hence the generic
+nondegenerate count is (p-1)(p-3)^2. Adding the nondegenerate second
+family in (4) gives
+
+  |X_p^nondeg|=(p-1)(p-3)^2+(p-1)^2
+             =(p-1)(p^2-5p+8).                      (6)
+
+As a separate check, the degenerate count is (p-1)(4p-6): for b!=0,a
+there are four choices of the two crossed root orders, while b=0
+and b=a each give one. This is exactly the difference of (5) and (6).
+
+2. AN EXACT CUBIC PHASE IDENTITY
+
+On every solution of (1), including exceptional and degenerate ones,
+
+  a^2 b-a^2 c + de(d+e)-fg(f+g)=0.                   (7)
+
+Indeed de(d+e)=ac(a+b)=a^2c+abc, whereas
+fg(f+g)=ab(a+c)=a^2b+abc.
+
+Write e_p(t)=exp(2 pi i t/p). Define four bounded functions on
+Omega=F_p* x F_p:
+
+  F_1(r,u)= e_p(r^2u),       F_2(r,u)=e_p(-r^2u),
+  F_3(r,u)= e_p(ru(r+u)),    F_4(r,u)=e_p(-ru(r+u)).
+
+Their product on the respective four slots of every configuration
+is identically 1. Therefore the four-linear count is exactly |X_p|,
+and its restriction to nondegenerate configurations is |X_p^nondeg|.
+Both are (1+o(1))p^3. Yet F_1 and F_2 have mean exactly zero.
+
+This already disproves a product-of-global-means mixing assertion.
+The stronger point is that all four functions have vanishing L2
+conditional averages on each of the following natural one-coordinate
+factors: color r, row-sum r+u, and column-product ru.
+
+3. ELEMENTARY MARGINAL ESTIMATES; NO KLOOSTERMAN INPUT NEEDED
+
+All conditional expectations below use the uniform distribution on
+Omega. Color fibers have p elements, and sum/product fibers have p-1
+elements. Both the sum and product are uniform on F_p. Normalize L2
+using the uniform distribution on the appropriate factor.
+
+The estimates are uniform if every phase is multiplied by any fixed
+nonzero lambda in F_p. Conjugation has no effect on these bounds.
+
+For P(r,u)=e_p(lambda r^2u):
+
+  COLOR: E_u P(r,u)=0 for every r!=0.
+
+  PRODUCT t: E[P | ru=t] is 1 at t=0 and -1/(p-1) otherwise.
+  Its squared L2 norm is exactly 1/(p-1).
+
+  SUM s: M(s)=(p-1)^-1 sum_{r!=0} e_p(lambda(r^2s-r^3)).
+  Orthogonality in s gives
+
+    E_s |M(s)|^2
+      =(p-1)^-2 sum_{r,v!=0:r^2=v^2} e_p(lambda(v^3-r^3))
+      <=2/(p-1).                                     (8)
+
+No cubic exponential-sum theorem is required for this averaged bound.
+
+For Q(r,u)=e_p(lambda ru(r+u)):
+
+  COLOR r: the sum over u is a nondegenerate quadratic Gauss sum,
+  so the conditional mean has modulus p^-1/2. Squared L2 is 1/p.
+
+  SUM s: the phase is lambda(s^2r-sr^2). At s=0 the mean is 1.
+  At s!=0, completing a quadratic Gauss sum and removing r=0 gives
+  modulus at most (sqrt(p)+1)/(p-1). Thus squared L2 is at most
+
+    1/p + (sqrt(p)+1)^2/[p(p-1)] = O(1/p).            (9)
+
+  PRODUCT t: the conditional mean is
+
+    K(t)=(p-1)^-1 sum_{r!=0} e_p(lambda(tr+t^2/r)).
+
+  Expand its squared L2 norm, then sum over t. Terms r=v contribute
+  p; terms r!=v are quadratic sums with nonzero t^2 coefficient
+  lambda(1/r-1/v), hence have modulus sqrt(p). Consequently
+
+    E_t |K(t)|^2
+      <= 1/(p-1) + (p-2)/[(p-1)sqrt(p)]
+       = O(p^-1/2).                                 (10)
+
+The standard quadratic-sum modulus used here follows directly by
+expanding |sum_x e_p(Ax^2+Bx)|^2, changing variables x-y and x+y,
+and using additive-character orthogonality; p odd and A!=0 suffice.
+
+In particular, every displayed natural marginal has L2 norm o(1),
+while the normalized four-slot correlation tends to 1. A counting
+estimate that treats small color/sum/product marginals as sufficient
+uniformity is therefore false.
+
+This does not address conditioning on a much richer joint factor, a
+higher-order uniformity norm, or the fully selected common support.
+
+4. FOUR DENSE NONNEGATIVE SUPPORTS WITH THE SAME MARGINAL BARRIER
+
+The phase example can be made into an exact zero-configuration example
+for four DIFFERENT sets, without relying on cancellation.
+
+Let J_p={j in {0,...,p-1}: p/16<j<3p/16}, and alpha_p=|J_p|/p.
+For each slot i, let R_i contain precisely those (r,u) whose respective
+signed phase polynomial
+
+  H_1=r^2u, H_2=-r^2u, H_3=ru(r+u), H_4=-ru(r+u)
+
+has its standard residue in J_p. Then R_1,...,R_4 contain NO solution
+of (1): all four signed residues would have sum strictly between p/4
+and 3p/4, whereas (7) says that sum is divisible by p.
+
+Nevertheless each R_i has density alpha_p+o(1)->1/8 in Omega, and
+each of its color, sum, and product marginal densities differs from
+alpha_p by o(1) in normalized L2.
+
+Proof of the latter statement: expand 1_{J_p} in the additive Fourier
+basis on F_p. Its zero coefficient is alpha_p, while the sum of the
+absolute values of its other normalized Fourier coefficients is
+O(log p), by the finite geometric-series formula and the bound
+|hat{1_J}(k)|<=min(|J|/p, O(1/min(k,p-k))). Apply the uniform-in-lambda
+estimates (8)--(10) and the L2 triangle inequality. The worst resulting
+bound is O(p^-1/4 log p)=o(1).
+
+Therefore even positive-density four-partite supersaturation under
+these natural marginal conditions is false. The raw phase-defined
+sets need not be properly oriented, but the strengthening below
+removes this issue.
+
+4A. ALL FOUR SUPPORTS CAN SHARE ONE PROPER ORIENTATION
+
+There is one properly oriented set O subset Omega such that the four
+sets R'_i=R_i intersect O still contain no four-slot solution, each
+has density 1/16+o(1), and each has color/sum/product marginal density
+1/16+o(1) in normalized L2. In particular, their union is also
+properly oriented: the same graph edge never receives two colors
+even across different supports.
+
+Choose O randomly as follows, independently for each unordered root
+pair. For distinct nonzero r,u, put exactly one of (r,u),(u,r) into O,
+with equal probabilities. For the singleton diagonal pair (r,r), and
+for (r,0) whose reverse has invalid first coordinate, use an independent
+fair retention coin. Thus every point of Omega is in O with probability
+exactly 1/2, and O is properly oriented in every outcome.
+
+Fix i and one color, sum, or product fiber L. The count |R_i intersect
+O intersect L| is a sum of independent random variables, indexed by
+the unordered pairs meeting the fiber. Each contribution lies in
+[0,1]: if both orientations of a nonzero pair lie in R_i intersect L,
+their contribution is exactly 1, whereas if only one does, its
+contribution is a fair Bernoulli variable. A color fiber has no two
+distinct points with the same unordered pair. Sum/product fibers can
+have a reversed pair, which is exactly the case just handled.
+
+There are at most p independent contributions, and the expected count
+is |R_i intersect L|/2. The bounded-variable Hoeffding estimate gives
+
+  P( | |R_i intersect O intersect L|-|R_i intersect L|/2 | > t )
+      <=2 exp(-2t^2/p).
+
+Take t=C sqrt(p log p) with a fixed sufficiently large C. There are
+fewer than 12p fibers to check over all four supports and all three
+types. A union bound shows that with probability tending to 1 all
+fiber counts differ from half their original counts by at most t.
+Dividing by p or p-1, all conditional densities simultaneously differ
+from half their original values by O(sqrt(log p/p)). Combining this
+with Section 4 proves the asserted L2 marginals and densities.
+
+No configurations can have been added by taking subsets. This proves
+the claim by the probabilistic method, without constructing any
+finite graph or invoking a computational search.
+
+Both versions DO NOT disprove the four-partite removal target from pass 2:
+there are already no solutions, so removal has nothing to do. Nor
+does it disprove supersaturation/removal for FOUR IDENTICAL properly
+oriented supports. In that case the diagonal configurations force a
+very different obstruction, and remain the substantive open target.
+
+Indeed the first two phase-defined supports here are disjoint, as are
+the last two: J_p and -J_p are disjoint. Common proper orientation
+must not be confused with using one common support in all four slots.
+
+5. INTERPRETATION AND FOLLOW-UP
+
+The natural triangle coordinates retain color/sum/product tests, but
+there is also the exact cubic compatibility (7). A proof based on
+ordinary one-variable marginal pseudorandomness would lose this data.
+
+The companion pass3-polynomial-phase-classification.txt classifies
+formal polynomial slotwise phase identities in characteristic zero
+(and bounded degree in positive characteristic). Within that class,
+the cubic term is the only extra term beyond separate color, sum,
+and product potentials. This is a statement about polynomial phase
+identities, not a classification of all analytic obstructions.

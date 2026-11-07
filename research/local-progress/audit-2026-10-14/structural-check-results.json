@@ -1,0 +1,10 @@
+{
+  "exhaustive_small_hypergraphs": 8720,
+  "projection_partitions": 126700,
+  "eight_vertex_four_triple_systems": 72380,
+  "random_greedy_hypergraphs": 240,
+  "sharp_linearization_examples": 58,
+  "proper_bipartite_four_edge_colorings": 7352,
+  "nonrainbow_C4": 9,
+  "alternating_P5": 60
+}

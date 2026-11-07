@@ -1,0 +1,147 @@
+CLASSIFICATION OF FORMAL POLYNOMIAL PHASE IDENTITIES FOR THE FOUR SLOTS
+15 October 2026, overnight pass 3.
+
+Status: complete elementary algebraic proof. Independent checks by the
+root and formal-audit agents. This is not a solution of the selected-
+support counting problem, and no historical originality is asserted.
+
+This is an independent proof/audit of the SAME classification saved in
+pass3-all-polynomial-slot-potentials.txt, which may be used as the
+canonical consolidated theorem statement. They are not separate results.
+
+1. PRECISE DOMAIN OF THE STATEMENT
+
+Let k be a field of characteristic zero. Alternatively let k have
+positive characteristic p and suppose every polynomial P_i below
+has total degree strictly less than p.
+
+Work over an algebraic closure of k, and assume that the formal
+polynomial identity
+
+  P_1(a,b)+P_2(a,c)+P_3(d,e)+P_4(f,g)=0              (1)
+
+holds on the full algebraic solution variety
+
+  a+b=d+e, ac=de, a+c=f+g, ab=fg,   a,d,f!=0.      (2)
+
+Here P_i is a polynomial in its displayed ordered pair. “Formal”
+means an identity on this algebraic variety, not merely an equality
+of functions on the F_p-rational points for one fixed small p.
+No differentiation of an arbitrary finite-field function is used.
+
+Then there are univariate polynomials U_3,V_3,U_4,V_4,A and a
+constant kappa such that
+
+ P_1(a,b)= kappa a^2b - U_3(a+b) - V_4(ab) + A(a),
+ P_2(a,c)=-kappa a^2c - U_4(a+c) - V_3(ac) - A(a),
+ P_3(d,e)= kappa de(d+e) + U_3(d+e) + V_3(de),
+ P_4(f,g)=-kappa fg(f+g) + U_4(f+g) + V_4(fg).     (3)
+
+Conversely every choice in (3) gives an identity (1) on (2).
+
+Thus the separate shared color, sum and product potentials, together
+with one cubic compatibility term, generate ALL polynomial slotwise
+additive identities in this precise formal/bounded-degree sense.
+
+2. THE CROSSED POLYNOMIALS ARE SYMMETRIC
+
+Swapping d and e preserves the equations (2); on the dense open set
+where both are nonzero it preserves the color-coordinate restrictions
+as well. Subtracting the identities before and after the swap gives
+
+  P_3(d,e)=P_3(e,d).
+
+The projection of that open set onto (d,e) is dominant: for generic
+d,e choose a!=0, set b=d+e-a and c=de/a, then take f,g to be roots of
+the polynomial with sum a+c and product ab. Generically both roots
+are nonzero. Hence the displayed symmetry is a polynomial identity
+in d,e. The same argument applies independently to P_4(f,g).
+
+By the elementary symmetric-polynomial theorem, write
+
+  P_3(d,e)=H_3(d+e,de),
+  P_4(f,g)=H_4(f+g,fg).
+
+The identity now becomes
+
+  P_1(a,b)+P_2(a,c)
+    +H_3(a+b,ac)+H_4(a+c,ab)=0                     (4)
+
+as a polynomial identity in a,b,c. Indeed all generic a,b,c lift
+to (2) over the algebraic closure. Polynomial identities extend
+from this dense open set.
+
+3. THE MIXED DERIVATIVES ARE OPPOSITE CONSTANTS
+
+Differentiate (4) once in b and once in c. For a!=0 this yields
+
+  (H_3)_{st}(a+b,ac)+(H_4)_{st}(a+c,ab)=0.         (5)
+
+Set c=b. The map (a,b)->(a+b,ab) is dominant, so (5) implies
+
+  (H_4)_{st}=-(H_3)_{st}.
+
+Putting H=(H_3)_{st}, equation (5) becomes
+
+  H(a+b,ac)=H(a+c,ab).                              (6)
+
+Here is an elementary invariant-polynomial lemma. Set c=0 and put
+f(s)=H(s,0). Then (6) says
+
+  H(a,ab)=f(a+b).                                    (7)
+
+If f has degree m>0 and nonzero leading coefficient, compare the
+coefficient of b^m. On the left it is divisible by a^m in k[a]; on
+the right it is the nonzero constant leading coefficient of f.
+This is impossible. Thus f is constant, and (7) makes H constant
+because the substitution (a,b)->(a,ab) is dominant.
+
+Equivalently, in the Laurent ring k[s,s^-1,t], (7) says
+H(s,t)=f(s+t/s); a nonconstant f would give a highest t coefficient
+with a negative power of s, impossible for a polynomial H.
+
+We have proved
+
+  (H_3)_{st}=kappa,       (H_4)_{st}=-kappa.
+
+In characteristic zero, integration gives
+
+  H_3(s,t)=kappa st+U_3(s)+V_3(t),
+  H_4(s,t)=-kappa st+U_4(s)+V_4(t).                 (8)
+
+The same conclusion holds in positive characteristic under the
+degree hypothesis. The symmetric-polynomial representations H_i
+have weighted degree at most deg(P_i), with s of weight 1 and t
+of weight 2, so each variable's degree is less than p. A monomial
+s^i t^j with i,j>0 therefore has nonzero mixed derivative unless
+it is absent; Frobenius derivative-zero terms cannot occur.
+
+4. RECOVER THE TWO DIAGONAL POLYNOMIALS
+
+Substitute (8) into (4), using
+
+  (a+b)ac-(a+c)ab=a^2(c-b).
+
+The result separates into a polynomial in (a,b) plus a polynomial
+in (a,c). Each must depend only on a, with opposite signs. Denote
+the first by A(a). Rearranging gives precisely the first two
+formulas in (3). Direct substitution verifies the converse.
+
+5. WHAT THIS DOES AND DOES NOT SAY
+
+The kappa=0 terms are the obvious cancellations along variables
+shared by pairs of slots: a, a+b, a+c, ab, ac. The kappa term is
+the additional cubic identity recorded and quantitatively tested in
+pass3-quadratic-variety-and-cubic-phase-obstruction.txt.
+
+This is a classification of formal polynomial ADDITIVE potentials.
+It does not classify rational or analytic potentials, multiplicative
+character obstructions, functions of growing degree, nilsequence
+factors, or all possible mechanisms obstructing a counting lemma.
+
+Most importantly, the proof uses both choices of each crossed root
+pair. A single properly oriented support may keep only one choice,
+so symmetry of arbitrary selected-support test functions must NOT
+be inferred from Section 2. The formal classification does not
+justify throwing away the fourth membership test, nor does it prove
+supersaturation for one common properly oriented support.

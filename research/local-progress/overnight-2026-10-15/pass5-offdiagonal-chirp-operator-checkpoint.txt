@@ -1,0 +1,111 @@
+PASS 5: OFF-DIAGONAL CHIRP OPERATOR — EXACT CHECKPOINT
+Date: 2026-10-15
+Status: exact identities only; the requested norm saving remains UNPROVED.
+
+1. Setup and unresolved target
+
+Let p be an odd prime, A a subset of F_p^*, and s in F_p^*.
+Write e(t)=exp(2*pi*i*t/p), and equip functions on F_p^2 with the
+counting-measure Hilbert norm. Define
+
+  sigma_a(x)=a*x+a^2,
+  u_a(x)=a^2*x+a^3=a*sigma_a(x),
+  tau_a(x,y)=(y/a-a, a*x+a^2),
+  U_tau f=f composed with tau,
+  R_a=M_{e(s*u_a(x))} U_{tau_a},
+  R_s=sum_{a in A} R_a.
+
+Each tau_a is an involution, and each R_a is unitary. The elementary
+upper bound is ||R_s||<=|A|. This probe did not prove a uniform o(p)
+bound for ||R_s||, and did not find an Omega(p) lower-bound example.
+In particular, none of the identities below supplies either conclusion.
+
+2. Chirp conjugation
+
+For Q(x,y)=x*y, direct substitution gives
+
+  Q(tau_a(x,y))=x*y+a*y-a^2*x-a^3.
+
+Consequently
+
+  R_a M_{e(s*Q)}=M_{e(s*Q)} M_{e(s*a*y)} U_{tau_a}.
+
+Thus R_s is unitarily conjugate to
+
+  sum_{a in A} M_{e(s*a*y)} U_{tau_a}.
+
+This is an exact alternative form, not a norm estimate.
+
+3. Fourier action and failure of the old block decomposition
+
+On the character e(xi*x+eta*y), R_a produces the character with
+frequency
+
+  (xi,eta) -> (a*eta+s*a^2, xi/a)
+
+and scalar phase e(a^2*eta-a*xi+s*a^3).
+The new coordinate product is xi*eta+s*a*xi. Therefore xi*eta is not
+preserved when s!=0. The product-frequency blocks used for the completed
+unweighted crossed operator cannot simply be reused for this operator.
+
+4. Exact pair-product identity
+
+Set F_ab=tau_b composed with tau_a. Then
+
+  F_ab(x,y)=((a/b)*x+(a^2-b^2)/b,
+             (b/a)*y+b*(b-a)).
+
+Since the adjoint of R_b is U_{tau_b} M_{e(-s*u_b(x))},
+
+  R_a R_b^* f(x,y)
+    = e(s*a*(a-b)*(x+a)) f(F_ab(x,y)).                 (1)
+
+Indeed the phase difference is
+
+  u_a(x)-u_b(F_ab(x,y)_x)=a*(a-b)*(x+a).
+
+This calculation fixes the pullback convention explicitly: U_tau_a
+U_tau_b is pullback by tau_b composed with tau_a.
+
+5. A one-dimensional compression
+
+Equation (1) shows that R_s R_s^* preserves the subspace of functions
+independent of y. Identify that subspace isometrically with functions
+on F_p by f(x)->p^(-1/2)*f(x). Define
+
+  C_s f(x)=sum_{a in A} e(s*a*(a*x+a^2)) f(a*x+a^2).
+
+Writing W_a for its a-th summand, W_a W_b^* has exactly the x-pullback
+and phase appearing in (1). Hence the restriction of R_s R_s^* to this
+subspace is C_s C_s^*. In particular,
+
+  ||R_s|| >= ||C_s||.                                 (2)
+
+IMPORTANT DIRECTION: (2) is a LOWER bound on ||R_s||. An upper bound
+for ||C_s|| alone would not give an upper bound for ||R_s||.
+
+In the orthonormal character basis on F_p, the matrix of C_s is
+
+  C_hat_s(xi,t)
+    = sum_{a in A: xi=a*(t+s*a)} e(a*xi).              (3)
+
+For xi=0, the admissible input frequencies are t=-s*a, one for each
+a in A, and every corresponding entry is 1. Therefore
+
+  ||C_s|| >= sqrt(|A|),
+
+which only yields a square-root lower bound for R_s, not a linear one.
+
+6. Precise stopping point
+
+The remaining issue is an oscillatory affine-operator estimate with
+color-dependent modulation. The old unweighted Kloosterman block proof
+does not apply because the invariant frequency product is lost.
+Even a saving for the one-dimensional operator (3) has not been
+established here; furthermore, it would still leave the other blocks
+of R_s R_s^* to control.
+
+No finite graph enumeration, numerical norm search, or symbolic
+calculation was used to establish the identities in this note. They
+follow by the displayed substitutions. No implication for arbitrary
+actual supports or for the full Erdos problem is claimed.

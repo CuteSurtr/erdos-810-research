@@ -1,0 +1,140 @@
+An asymptotic obstruction to uniform B-to-C extraction
+2026-10-15
+
+STATUS
+This is a complete written deduction from the density Hales-Jewett theorem.
+It has not been formalized in Lean. Its publication novelty has not been
+established. It disproves a proposed general-purpose reduction, not Erdos
+#810 or the Brown-Erdos-Sos (7,4) conjecture.
+
+DEFINITIONS
+A B-coloring is a proper edge coloring in which every four-cycle is rainbow.
+A C-coloring is a B-coloring with no alternating two-color path of four
+edges on five distinct vertices. For bipartite graphs, the latter extra
+condition is precisely what makes the standard linear tripartite lift
+(7,4)-free. The B/C terminology and lift characterization are prior art in
+Gyarfas-Sarkozy (2023), Proposition 1.6 and its preceding discussion:
+https://real.mtak.hu/191892/1/012-article-p109.pdf
+
+THEOREM
+There is a sequence of properly B-colored bipartite graphs G_d such that
+
+    |V(G_d)| = 2*3^d,
+    |E(G_d)| = 6^d,
+    number of colors = 2^d,
+
+but every subgraph whose inherited coloring is C has o(6^d) edges.
+
+More strongly, for each fixed K, even if each original color can be split
+arbitrarily into at most K new colors, every C-colored retained subgraph
+has o(6^d) edges. The same holds if each original left and right vertex can
+also be split into a bounded number of labelled copies and every retained
+edge is assigned arbitrarily to copies of its original endpoints.
+
+Thus no universal positive constant fraction can be retained by inherited
+color deletion, bounded color refinement, or bounded endpoint/color splitting,
+even in proper B-colorings with fewer colors than vertices.
+
+CONSTRUCTION
+Let X_d and Y_d be disjoint copies of F_3^d. Set S_d={0,1}^d. Include the
+edge x_L y_R if and only if y-x belongs to S_d; its color is y-x.
+Each color is a perfect matching. Hence the coloring is proper, and the
+cardinality statements follow immediately.
+
+WHY EVERY C4 IS RAINBOW
+First, S_d has no nontrivial solution b+c=2a with a,b,c in S_d. In any
+coordinate, if a_i=0 then b_i+c_i=0 modulo 3 forces b_i=c_i=0, since
+b_i+c_i belongs to {0,1,2}; if a_i=1, the equation forces b_i=c_i=1.
+Consequently a=b=c.
+
+In a properly colored C4, any repeated color must occur on opposite edges.
+Suppose the opposite edges x_1y_1 and x_2y_2 have color a. Put
+b=y_1-x_2 and c=y_2-x_1, the colors of the other two edges. Then b+c=2a.
+All three colors lie in S_d, so a=b=c. But y_1-x_2=y_1-x_1 forces x_1=x_2,
+contrary to a genuine four-cycle. Therefore the C4 is rainbow.
+
+THE DENSITY ARGUMENT
+Let A be the six-symbol alphabet
+
+    A={(0,0),(0,1),(1,1),(1,2),(2,2),(2,0)}.
+
+It is the edge set of the two-colored C6, with diagonal edges colored 0
+and the other three edges colored 1. Coordinatewise identification gives
+a bijection E(G_d) <-> A^d.
+
+The density Hales-Jewett theorem says that for every fixed delta>0 and
+finite alphabet A, all sufficiently large d have the following property:
+every F subset A^d of size at least delta*|A|^d contains a combinatorial
+line. Such a line is obtained by taking a nonempty coordinate set I,
+fixing symbols outside I, and using one common variable symbol of A
+in all coordinates of I.
+
+Apply this to any retained edge set F of positive fixed relative density.
+Outside I, the left endpoint, right endpoint, and color are fixed. Inside
+I, let x^t have every coordinate t and let y^t have every coordinate t,
+for t in F_3. Including the fixed outside coordinates, the six line edges
+are exactly
+
+    x^0 y^0, x^0 y^1, x^1 y^1,
+    x^1 y^2, x^2 y^2, x^2 y^0.
+
+The x^t are three distinct left vertices, and the y^t are three distinct
+right vertices, because I is nonempty. The diagonal edges all have one
+color (0 on I), and the off-diagonal edges all have another color (1 on
+I). They form an alternating two-color C6, which contains an alternating
+four-edge path on five distinct vertices. This contradicts C-colorability.
+Since delta was arbitrary, the maximum retained fraction tends to zero.
+
+BOUNDED REFINEMENT AND BOUNDED SPLITTING
+Suppose every original color is split into at most K new colors. Index
+its subclasses by 1,...,K independently for each original color. This
+assigns one extra index to each retained edge. A positive-density retained
+set has a positive-density class of one common extra index. Apply the
+previous density argument to that class. The alternating C6 has only two
+original colors and one common index, so still has only two refined colors.
+
+If left vertices have at most L copies and right vertices at most R copies,
+label these copies locally. Partition retained original edges by their
+left-copy, right-copy, and color-subclass indices. There are at most LRK
+classes. A combinatorial line in one class still gives three distinct left
+vertex copies, three distinct right vertex copies, and two refined colors.
+The same contradiction follows.
+
+If c(d,6) denotes the largest size of a combinatorial-line-free subset of
+A^d, the arguments give the explicit inequalities
+
+    retained edges <= c(d,6)             (inherited colors),
+    retained edges <= K*c(d,6)           (K color subclasses),
+    retained edges <= L*R*K*c(d,6)       (also bounded endpoint copies).
+
+Density Hales-Jewett says c(d,6)=o(6^d). Here each retained original edge is
+assigned to one pair of endpoint copies. Allowing a bounded number of output
+copies per original edge only changes the fixed multiplicative constant.
+
+LIMITATIONS AND CONSEQUENCES FOR THE RESEARCH ROUTE
+The edge density relative to the complete bipartite graph is (2/3)^d, and
+
+    |E(G_d)|=(|V(G_d)|/2)^(log_3 6),
+    log_3 6 approximately 1.63093.
+
+Thus this does not rule out a conversion assuming |E(G)|>=epsilon*|V(G)|^2
+for a fixed epsilon>0. It also does not rule out arbitrary recoloring using
+O(|V(G)|) colors, a number of subclasses per original color tending to
+infinity, or a transformation not based on bounded copies of the input.
+
+What is ruled out is the tempting density-independent reduction: a fixed
+positive proportion of the edges of every proper rainbow-C4 coloring can
+be made C-colored by deleting edges or a bounded local refinement.
+Any successful reduction along that route must use genuinely quadratic
+density in an essential way, or permit resources that grow with d.
+
+EXTERNAL THEOREM USED
+Density Hales-Jewett: Furstenberg-Katznelson (1991); an elementary proof is
+D. H. J. Polymath, A new proof of the density Hales-Jewett theorem,
+Annals of Mathematics 175 (2012), 1283-1327:
+https://annals.math.princeton.edu/2012/175-3/p06
+https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n3-p06-p.pdf
+
+The construction and its application above were independently derived in
+this session. The short targeted literature search has not established
+whether this exact obstruction has appeared previously.

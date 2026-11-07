@@ -1,0 +1,13 @@
+# Independent audit of the random-support collision bound
+
+18 October 2026. The statement and complete proof are in [random-support-simplicity.md](random-support-simplicity.md). The written argument passes this audit. This is a classical container application to a particular collision hypergraph; no historical novelty is asserted.
+
+The two incidences of colors $a\ne b$ and potentials $-a^2b,-ab^2$ have exactly the same endpoint pair $(-a-b,-ab)$. They are forbidden already by a single-valued edge coloring. Their potential values are distinct. The color pair recovers the hyperedge, so the simple four-uniform hypergraph has exactly $\binom{p-1}{2}$ edges and average degree of order $p$.
+
+The pair-codegree estimates hold in every pair of vertex classes: two colors determine the hyperedge; one color and one potential leave at most three possible partner colors; two specified potentials leave at most three roots for each of the two assignments. Thus all codegrees of order at least two are at most six. A particular incidence has a unique possible collision partner, namely $b=-h/a^2$. This validates the unusually strong deletion multiplicity of one.
+
+For $\varepsilon=c_0\delta^2$ and $\tau=c_1\delta^2/\log^2(e/\delta)$, the container codegree condition reduces to a sufficiently large value of $p\delta^8/\log^6(e/\delta)$. At $\delta=M p^{-1/8}\log p$ this tends to infinity, and it remains adequate at larger thresholds. The entropy retains both logarithms from Saxton–Thomason's Corollary 3.6; it is bounded by a sufficiently small constant times $\alpha\delta^2p$ after choosing $c_1$ small. The omitted-potential count follows from $\binom{|S|}{2}$, the small induced-edge count in a container, and the $2p$ potential-degree bound.
+
+Chernoff's bound and a union bound over the containers and dyadic thresholds therefore give the simultaneous assertion for every palette. The probability exponent at the smallest threshold is of order $p^{3/4}(\log p)^2$. The weaker safe sparse-set threshold $\varepsilon\tau^4 e(\mathcal J_p)$ also suffices for the robustness statement at every fixed positive palette density. Deleting $o(p)$ sampled support values cannot erase a fixed positive multiple of $p$ sampled vertices from a missing-potential set, and $o(p^2)$ incidence omissions cannot cover the resulting positive quadratic number of collisions.
+
+The result concerns random **supports**, uniformly over palettes, and requires no rainbow-cycle hypothesis. It should not be described as another solution to the arbitrary-palette rainbow counting problem. No formal proof assistant was used.

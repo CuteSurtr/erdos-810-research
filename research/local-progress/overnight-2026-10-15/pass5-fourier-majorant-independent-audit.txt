@@ -1,0 +1,158 @@
+INDEPENDENT AUDIT OF THE JOINT FOURIER-MAJORANT THEOREM
+2026-10-15, finite_audit agent. Status: PASS.
+
+Canonical proof: pass5-fourier-majorant-support-theorem.txt.
+This audit checks the main formulas, complex-weight correction, and
+Section 5's growing-complexity Bohr-box consequence. No finite searches,
+historical-priority assertion, or Lean verification are involved.
+
+1. COMPLEX WEIGHTS AND FOURTH SINGULAR MOMENTS
+
+For complex palette weights w(a), the crossed operator S_w need not be
+selfadjoint. The canonical proof correctly uses tr(M_w M_w* M_w M_w*)
+instead of tr(M_w^4). Its cyclic entry product is
+
+ M(r,s) conjugate(M(u,s)) M(u,v) conjugate(M(r,v)).
+
+With a=rs/t, q=u/r, h=v/s, the four palette slopes are a,qa,qha,ha and
+the coefficient product is w(a)conj(w(qa))w(qha)conj(w(ha)). It is
+independent of the free complete-sum variable r. The phase is exactly the
+earlier alpha*r+gamma/r. Thus the same Kloosterman bound applies after
+bounding coefficient magnitudes by ||w||_infinity^4. The exceptional
+collinearity count (L+2)d^2 and total slope count E_times(A)<=d^3 remain
+valid.
+
+The coordinate-axis correction is necessary and is now included correctly.
+Affine-character coefficients in a weighted fourth moment can be complex,
+so nonidentity translations with character -1 cannot simply be discarded.
+Their absolute contribution is at most d^3||w||_infinity^4, since the
+slope-one condition determines the fourth slope from the first three,
+and the palette has one map per slope. Identity words cost at most
+(p-1)E_aff||w||_infinity^4. Other affine maps have zero mean-zero character.
+
+The two off-diagonal axis blocks have equal norms: in original point
+coordinates the permutation matrices are real, so conjugating weights
+conjugates the matrix, and the other block is an adjoint of this matrix.
+This verifies the stated uniform bound
+
+ ||S_w-(sum_a w(a))P|| <= Lambda||w||_infinity.
+
+2. THE EXACT MASKED EXPANSION AND ITS POSITIVE MAIN TERM
+
+For the real binary row masks D_a,
+
+ T_D=sum_a M_Da U_(tau_a) M_Da
+    =sum_(k,l) M_k S_(hat D_a(k)hat D_a(l)) M_l.
+
+There is no conjugate in this Fourier product, since it expands two
+multiplication operators directly. After replacing each middle operator
+by its constant projection, Fourier inversion recombines the terms into
+
+ T_0=sum_a M_Da P M_Da=(1/p^2)sum_a |v_a><v_a|,
+ v_a(x,y)=1_Da(x).
+
+This is positive because the masks are real. Unit norm of the Fourier
+multipliers and the triangle inequality give
+
+ ||T_D-T_0|| <= Lambda sum_(k,l) sup_a|hat D_a(k)hat D_a(l)|
+             <= Lambda [sum_k sup_a|hat D_a(k)|]^2
+              = Lambda W^2.
+
+Interchanging the supremum and sum would not be valid. The canonical
+definition of W has them in the required order.
+
+3. ACTUAL-EDGE TRANSFER AND EXPONENTS
+
+The two masks in T_D require both closing color-a incidences to be actual.
+Thus every internal non-fixed transition would give a genuine nonrainbow
+C4. Fixed masked transitions are precisely the actual color-a edges;
+properness gives one per actual edge. Hence <1_E,T_D1_E>=m exactly.
+
+With r_x=sum_a 1_Da(x) the actual row degree,
+
+ <1_E,T_0 1_E>
+  =p^(-2)sum_a [sum_x 1_Da(x)r_x]^2
+  >=(dp^2)^(-1)[sum_x r_x^2]^2
+  >=m^4/(dp^4).
+
+The first inequality is color Cauchy-Schwarz, the second is row
+Cauchy-Schwarz. Since ||1_E||^2=m, the canonical master inequality
+
+                       m^3<=dp^4(1+Lambda W^2)
+
+follows. For fixed nonlinear polynomial degree D, Lambda=O_D(p^(7/8))
+and d<=p, giving m<=C_D p^(47/24)W^(2/3). The extra p^(5/3) term is
+absorbed because a nonempty mask has Fourier l1 norm at least one by
+Fourier inversion, and hence W>=1.
+
+The same Lambda estimate holds when the palette has at most C_0 sqrt(p)
+points on any coefficient-plane line, using PRRW with vertical occupancy
+one. In both cases the exact vanishing-density threshold is
+W=o(p^(1/16)), because 2-47/24=1/24 and (1/24)/(2/3)=1/16.
+
+4. COMMON ENVELOPE FOR ARBITRARY CYCLIC INTERVALS
+
+Let I be any cyclic interval in F_p of any length and position. For l!=0
+write j=min(l,p-l). The normalized geometric-series formula gives
+
+ |hat 1_I(l)|<=min(|I|/p, 1/[p |sin(pi*l/p)|])
+             <=min(1,1/(2j)),
+
+using sin(pi*j/p)>=2j/p for 1<=j<=p/2. At l=0 use the bound 1.
+The same nonnegative envelope b therefore works for EVERY interval, and
+
+                         sum_l b(l)<=C log(2p).
+
+If the mask is 1_I(k*x) for k!=0, its Fourier coefficient at frequency l
+is hat 1_I(l/k); thus its common envelope is a permutation of b. For
+
+ D_a={x:k_j*x belongs to I_(a,j) for all 1<=j<=r},
+
+the indicator is the product of r such masks. Under normalized Fourier
+coefficients, the transform of a product is the ordinary convolution of
+the transforms. Convolving the r shared nonnegative envelopes bounds
+every color's transform simultaneously. The total mass of a convolution
+is the product of the masses, so
+
+                         W<=(C log(2p))^r.
+
+Repeated frequencies, empty or full intervals, varying interval lengths,
+and arbitrary cyclic shifts do not invalidate this bound. What matters
+is that the LIST OF FREQUENCIES is shared across the colors; otherwise
+the same small collection of common envelopes is unavailable.
+
+5. GROWING COMPLEXITY AND CONSTANTS
+
+If
+
+ limsup_(p->infinity) r(p)*log log p/log p < 1/16,
+
+choose a fixed positive gap from 1/16. Since
+log(C log(2p))=log log p+O(1), and the limsup hypothesis implies
+r(p)=O(log p/log log p), the additional O(r(p)) in the logarithm of the
+majorant is o(log p). Therefore for some fixed epsilon>0, eventually
+
+ (C log(2p))^r <= p^(1/16-epsilon)=o(p^(1/16)).
+
+This verifies the claimed growing-r consequence without dropping the
+C^r factor. The implicit polynomial-palette constant depends on its
+fixed degree D, not on r or on the shared frequencies. The result is
+therefore stronger in scope than merely fixing one VC dimension.
+
+6. OPTIONAL ARBITRARY-BETA STATEMENT
+
+The W=O(1), arbitrary-intercept extension also passes. Heavy-color pruning
+loses at most half of a hypothetical positive edge density and cannot
+increase W. Solymosi rules out a palette line of linear size among the
+remaining heavy colors. PRRW then gives E_aff=o(p^3), and the corrected
+weighted Lambda formula gives Lambda=o(p), including its d^3 term.
+The master inequality contradicts m=Omega(p^2). This proof gives no
+growing-W rate for arbitrary beta and makes no such claim.
+
+SCOPE
+
+The negative-spectrum obstruction for arbitrary masks is compatible with
+this theorem: it has no proved small JOINT Fourier majorant. The proof
+approximates T_D by a positive support-dependent main term and controls
+the error under an explicit hypothesis. It does not assume T_D itself is
+a uniform expander or has o(p) negative spectrum without that hypothesis.

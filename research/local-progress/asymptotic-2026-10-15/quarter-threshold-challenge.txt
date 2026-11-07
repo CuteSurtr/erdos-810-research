@@ -1,0 +1,80 @@
+Adversarial checks for a trivial stronger quarter-density bound
+2026-10-15
+
+STATUS
+These checks do not prove a quarter-density bound. They identify two
+plausible shortcuts and precisely what they actually establish. They also
+show that the palette size cannot be discarded in endpoint estimates.
+Publication comparison remains a separate literature task.
+
+1. THE ENDPOINT BOUND e(S)<=k^2 IS SHARP WITHOUT A PALETTE BOUND
+Let the vertices be a_1,...,a_k,b_1,...,b_k. Include the k edges a_i b_i,
+all edges a_i a_j with i<j, and all edges a_i b_j with i<j. Give the k
+matching edges a_i b_i one common color c. Give every other edge its own
+fresh color. The graph has exactly
+
+    k+binom(k,2)+binom(k,2)=k^2
+
+edges. The coloring is proper. A nonrainbow C4 would have to use two
+c-colored edges. For i<j, the only cross edges between {a_i,b_i} and
+{a_j,b_j} are a_i a_j and a_i b_j, sharing the endpoint a_i. Neither pair
+of disjoint cross edges needed for that C4 is present. Thus every C4 is
+rainbow, and the endpoint inequality is attained exactly.
+
+This construction uses k^2-k+1 colors. It does not refute a stronger bound
+when the palette is only O(k), but does refute any palette-independent
+improvement e(S)=o(k^2).
+
+2. WHY A PALETTE-DEPENDENT o(k^2) ENDPOINT BOUND WOULD BE A BREAKTHROUGH
+Starting with any proper rainbow-C4 graph G, attach one new leaf to every
+vertex. Give all new leaf edges the same new color, absent from G. The
+new coloring remains proper and every C4 remains in the old graph. The
+new color class is a perfect matching spanning all 2|V(G)| vertices.
+If every endpoint-induced graph of this type, with only O(k) colors,
+had o(k^2) edges, applying that assertion here would make |E(G)|=o(|V(G)|^2).
+Together with properification, this would solve the original asymptotic
+Erdos #810 question. It is not a harmless application of triangle removal.
+
+3. A DIRECT NEIGHBORHOOD/TRIANGLE BOUND GIVES 3/8, NOT 1/4
+Let G be properly B-colored with q available colors. Fix v, put W=N(v),
+and d=|W|. For each color c present at v, let vz be its unique edge at v.
+If uw is an edge of color c inside W, neither u nor w is adjacent to z:
+otherwise a C4 using uw and vz would repeat c. Thus the endpoints of
+c-colored edges in G[W] lie among the nonneighbors of z inside W. There
+are d-1-d_{G[W]}(z) such vertices.
+
+For each of the q-d colors absent at v, its matching in W has at most d
+endpoints. Summing endpoint counts over all colors gives
+
+    2e(G[W]) <= sum_{z in W}(d-1-d_{G[W]}(z))+(q-d)d
+               =d(q-1)-2e(G[W]).
+
+Therefore
+
+    e(G[N(v)]) <= d(v)(q-1)/4.
+
+Summing over v gives an upper bound on triangles T:
+
+    3T <= (q-1)*(2m)/4,
+    T <= (q-1)m/6.
+
+On the other hand, each edge uv has at least d(u)+d(v)-N common neighbors,
+so
+
+    3T >= sum_v d(v)^2-Nm >= 4m^2/N-Nm.
+
+Combining these inequalities yields
+
+    m <= N*(N+(q-1)/2)/4.
+
+For q=N this is 3N^2/8-O(N), weaker than the audited recursive bound near
+0.299225*N^2. Thus this natural triangle-supersaturation shortcut does not
+supply a hidden quarter threshold.
+
+4. FURTHER CAUTION
+A claim that all proper B-colored graphs with O(N) colors have o(N^3)
+triangles would itself imply the (7,4) Brown-Erdos-Sos conjecture: the full
+shadow of a dense linear (7,4)-free triple family is properly B-colored and
+contains a positive quadratic number of edge-disjoint triangles, so triangle
+removal would force a positive cubic number of triangles. Such a claim should
+not be treated as an automatic consequence of the coloring conditions.

@@ -1,0 +1,103 @@
+INDEPENDENT AUDIT OF THE TWO-SIDED INTRINSIC GRAM RELAXATION
+15 October 2026. Hand proof; no graph search or Lean certificate.
+
+Scope: Section 6A of formal-audit-energy-and-partial-kernel.txt.
+Verdict: PASS. The dense abstract model survives both PSD matricizations
+and their exact reshuffling identity. This is a relaxation obstruction,
+not a graph construction or a counterexample to Erdos #810.
+
+1. TRACE IDENTITY, WITH ALL INDEX ORDERS CHECKED
+
+For real X-by-Y color matching matrices B_a, put
+
+  Q^Y_ab = B_a^T B_b,       Q^X_ac = B_a B_c^T.
+
+The Frobenius Gram entry on Y is
+
+  G^Y_(ab),(ce) = tr(B_b^T B_a B_c^T B_e).
+
+Transpose the product, then cyclically rotate the factors:
+
+  tr(B_e^T B_c B_a^T B_b)
+    = tr(B_c B_a^T B_b B_e^T)
+    = G^X_(ac),(be).
+
+The dimensions agree also when |X| differs from |Y|. Neither the B
+condition nor perfect matchings are needed for this identity. Each
+matricization is PSD because it is separately an actual Frobenius Gram
+matrix.
+
+2. THE EXPLICIT TENSOR OF THE ABSTRACT MODEL
+
+Let q be a positive multiple of 4, n=4q-3, k=q/4. For distinct colors
+consider a uniformly chosen oriented k-matching M on the q-color set.
+The off-diagonal-pair Gram model is
+
+  G_* = n(n-1) E[v_M v_M^T].
+
+For a specified ordered arc, its probability of membership is
+k/[q(q-1)]. For two specified vertex-disjoint ordered arcs, their joint
+probability is k(k-1)/[q(q-1)(q-2)(q-3)]. Consequently the complete
+four-index tensor, after adjoining the diagonal-pair nJ_q block, is
+
+  T_abce = n,       if (a=b and c=e) or (a=c and b=e);
+           gamma,  if a,b,c,e are all distinct;
+           0,      otherwise,
+
+where
+
+  gamma = n(n-1)k(k-1)/[q(q-1)(q-2)(q-3)]
+        = n(q-4)/[4(q-2)(q-3)].
+
+The all-equal case belongs to both n-cases but is assigned n once.
+The other pairing, a=e and b=c with a!=b, has value zero. Every overlap
+pattern not explicitly assigned n also has value zero.
+
+Exchanging b and c interchanges the two n-cases. It preserves the
+all-distinct case and the union of all remaining cases. Therefore
+
+                   T_abce = T_acbe
+
+entry by entry. The reshuffled matrix is literally the same matrix,
+not merely another matrix with the same spectrum. Its PSD property
+follows from the block decomposition nJ_q direct-sum G_*.
+
+The rank bound is at most 1+q(q-1), which is below n^2. Simultaneously
+reversing both ordered pairs also preserves these cases, as required
+by Q_ab^T=Q_ba. This checks all claims made in Section 6A.
+
+3. A FURTHER FIRST-MOMENT CHECK: THE ALL-ONES MATRIX
+
+Perfect permutation matrices satisfy <Q_ab,J>=n as well as
+<Q_ab,I>=0 for a!=b. It is natural to ask whether adjoining the fixed
+all-ones matrix J to the abstract Gram model immediately excludes it.
+It does not.
+
+Let L=q(q-1), let G denote its off-diagonal-pair block, and let
+W=J-I. The forced data are <Q_ab,W>=n and ||W||^2=n(n-1).
+Adjoining W to G is PSD exactly when
+
+                   G - [n/(n-1)] J_L >= 0.
+
+Every row sum of G is nk: indeed every v_M has exactly k nonzero
+entries, and G has diagonal n. Also L/(n-1)=k. Thus the rank-one
+subtraction kills precisely the constant-vector eigenvalue nk and
+leaves all orthogonal eigenvalues unchanged. They are nonnegative
+because G is PSD. The augmented Gram is therefore PSD. The diagonal
+pair vector I is orthogonal to this off-diagonal block and to W, and
+has norm squared n, so it introduces no further problem.
+
+This additional observation concerns only scalar Gram constraints. It
+does not supply row-by-row permutation supports, common domains, or the
+matrix identities Q_ab Q_bc=Q_ac. Those realization and multiplication
+constraints remain essential and unresolved.
+
+CHECKPOINT
+
+The other completed note from this pass,
+finite-sampling-and-removal-barrier.txt, gives an independent obstruction
+to ordinary fixed-size colored sampling and n^4-scale C4 removal.
+Together the notes identify two concrete losses of information:
+fixed-size vertex sampling loses the 1/n collision scale, while the
+first two Gram matricizations lose actual composition of the partial
+maps. No universal o(N^2) proof is obtained in this pass.

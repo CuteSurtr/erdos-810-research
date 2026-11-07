@@ -1,0 +1,249 @@
+SUPPORT-WEIGHTED CROSSED REFLECTIONS WITH A COMMON FOURIER MAJORANT
+15 October 2026, continuation 5. Complete analytic proof.
+
+Status: restricted-class result with independent hand audits. No
+historical-priority claim, Lean certificate, or unrestricted #810
+conclusion is asserted. This argument keeps the actual color-dependent
+supports; it does not assume the masked operator is an expander.
+
+1. SETUP AND STATEMENT
+
+Let p be an odd prime, A subset F_p*, d=|A|, and beta:A->F_p.
+For each a choose D_a subset F_p and put in precisely the edges
+
+                  (x, ax+beta(a)), x in D_a,
+
+with color a. Assume the selected graph is simple and proper and
+every C4 is rainbow (B). Let m=sum_a |D_a|.
+
+Use normalized Fourier coefficients
+
+ hat D_a(k)=(1/p) sum_x 1_Da(x)e_p(-kx).
+
+The JOINT Fourier majorant is
+
+             W=sum_(k in F_p) sup_(a in A) |hat D_a(k)|.
+
+For the empty palette or empty graph all conclusions are immediate.
+For a nonempty graph, Fourier inversion implies W>=1.
+
+THEOREM A. If beta is a polynomial of fixed degree 2<=D<p, then
+
+                   m <= C_D p^(47/24) W^(2/3).               (1)
+
+Thus W=o(p^(1/16)) implies m=o(p^2). Domains need not coincide,
+be nested, or be intervals in any common ordering.
+
+More generally (1) holds with a constant depending on C_0 if the
+coefficient points {(a,beta(a)):a in A} have at most C_0 sqrt(p)
+points on any affine line. This uses the published PRRW energy bound.
+
+The joint quantity W must not be replaced by
+sup_a sum_k |hat D_a(k)|: interchanging the supremum and sum
+would invalidate the operator error bound below.
+
+2. WEIGHTED COMPLETED OPERATORS
+
+Write sigma_a(x)=ax+beta(a) and
+
+ tau_a(x,y)=((y-beta(a))/a, ax+beta(a)).
+
+For arbitrary COMPLEX weights w(a), set S_w=sum_a w(a)U_(tau_a),
+where U_tau f=f composed with tau. Each permutation preserves
+constants and mean-zero functions. Let P be orthogonal projection
+onto constants in counting-measure l2(F_p^2):
+
+                 Pf=(1/p^2)(sum_(x,y) f(x,y)) 1.
+
+Let E_aff be the quotient energy of the affine palette, L its
+maximum coefficient-plane line occupancy, and E_x(A) its
+multiplicative slope energy. Put
+
+ Lambda^4=max{(p-1)E_aff+d^3,
+                         p(L+2)d^2+2sqrt(p)E_x(A)}.          (2)
+
+Then
+
+       ||S_w-(sum_a w(a))P|| <= Lambda ||w||_infinity.       (3)
+
+PROOF. The invariant Fourier product blocks are the same as in
+Pass 4. For t!=0 the block matrix is
+
+ M_w(r,s)=w(rs/t)1_A(rs/t)
+                e_p((r-s)beta(rs/t)/(rs/t)), r,s!=0.
+
+It need not be Hermitian. Use its fourth SINGULAR moment
+tr(M_w M_w* M_w M_w*) instead. With a=rs/t, q=u/r, h=v/s,
+the weights are
+
+ w(a) conjugate(w(qa)) w(qha) conjugate(w(ha))
+
+and the phase remains exactly alpha*r+gamma/r from the Pass 4
+polynomial-intercept proof. The weights do not depend on r.
+At most (L+2)d^2 supported triples have alpha=gamma=0;
+there are E_x(A)<=d^3 supported triples altogether. The classical
+Kloosterman bound, including the elementary one-zero cases, gives
+
+ tr(M_w M_w* M_w M_w*)
+   <=||w||_infinity^4 [p(L+2)d^2+2sqrt(p)E_x(A)].
+
+On the coordinate-axis block, apply the affine permutation
+character calculation to C_w C_w* C_w C_w*, where
+C_w=sum_a w(a)P_(sigma_a) on mean-zero functions on F_p.
+Identity words are bounded in absolute value by
+(p-1)E_aff ||w||_infinity^4. Nontrivial translations have
+character -1, but their coefficients can be complex: they CANNOT
+simply be dropped as in the unweighted proof. Bound them in
+absolute value. All slope-one four-words number at most d^3,
+since three palette slopes determine the fourth. Other affine
+maps have zero mean-zero character. This gives the first term
+in (2). The two off-diagonal axis blocks have the same norm,
+by complex conjugation and adjoint.
+
+The singular fourth moments dominate the fourth powers of the
+respective operator norms. Together the blocks prove (3). QED.
+
+For fixed-degree nonlinear beta, E_aff=O_D(d^2), L<=D,
+E_x(A)<=d^3 and d<=p give Lambda=O_D(p^(7/8)).
+Alternatively PRRW, Theorem 2.1, gives
+E_aff<<d^(5/2)+Ld^2 with one color per slope; hence L<=C_0 sqrt(p)
+also gives Lambda=O_(C_0)(p^(7/8)).
+
+3. THE MASKED OPERATOR AND ITS APPROXIMATION
+
+Let M_g multiply a function on F_p^2 by g(x). Define
+
+ T_D=sum_a M_(1_Da) U_(tau_a) M_(1_Da).
+
+This is selfadjoint. It includes a crossed transition only when
+both closing color-a incidences are actual. Consequently
+
+                       <1_E,T_D 1_E>=m.                    (4)
+
+Indeed a non-fixed internal transition would be an actual
+nonrainbow C4. A fixed transition with nonzero mask is exactly
+the actual color-a edge; simplicity makes the total count m.
+
+For k in F_p put M_k=M_(e_p(kx)). Fourier expansion is finite
+and exact:
+
+       T_D=sum_(k,l) M_k S_(w_kl) M_l,
+       w_kl(a)=hat D_a(k)hat D_a(l).
+
+Using (3), replace each S_(w_kl) by (sum_a w_kl(a))P.
+The resulting operator is
+
+       T_0=(1/p^2) sum_a |v_a><v_a|,
+       v_a(x,y)=1_Da(x).
+
+This follows directly by Fourier inversion on the two row
+coordinates; D_a is real so the resulting rank-one operators
+are positive. Every M_k is unitary, and therefore
+
+                     ||T_D-T_0|| <= Lambda W^2.             (5)
+
+This step uses sum_(k,l) sup_a |hat D_a(k)hat D_a(l)|<=W^2.
+No color-independent support function or random mask is assumed.
+
+4. POSITIVE MAIN TERM AND THE EDGE BOUND
+
+Let r_x be the actual degree of row x. Properness and simplicity
+give r_x=sum_a 1_Da(x), and sum_x r_x=m. Hence
+
+ <1_E,T_0 1_E>
+   =(1/p^2)sum_a (sum_x 1_Da(x)r_x)^2
+   >=(1/(d p^2))(sum_x r_x^2)^2
+   >=m^4/(d p^4).                                        (6)
+
+The first inequality is Cauchy--Schwarz over colors, the second
+over the p rows. Since ||1_E||^2=m, (4)--(6) imply the general
+master inequality
+
+                      m^3 <= d p^4(1+Lambda W^2).            (7)
+
+For Lambda<=C_D p^(7/8) and d<=p, taking cube roots gives
+
+        m<=p^(5/3)+C_D p^(47/24)W^(2/3).
+
+Since W>=1 for a nonempty graph, this implies (1). The ratio of
+its right side to p^2 is C_D (W/p^(1/16))^(2/3), proving the
+vanishing-density criterion.
+
+5. CONCRETE COLOR-DEPENDENT BOHR-BOX SUPPORTS
+
+Choose nonzero frequencies k_1,...,k_r in F_p, shared by the
+colors but otherwise arbitrary and allowed to depend on p.
+For each a and j choose any cyclic interval I_(a,j) in F_p,
+of arbitrary position and length. Suppose
+
+             D_a={x:k_j x in I_(a,j) for every j}.
+
+The supports may have many components in the usual row ordering.
+The normalized Fourier coefficients of ANY cyclic interval
+satisfy a common bound
+
+ b(0)=1,  b(l)<=min(1,C/min(l,p-l)) for 1<=l<=p-1,
+                        sum_l b(l)<=C log(2p).
+
+This is the finite geometric-series formula; the interval's
+position changes only a phase. Multiplication by k_j permutes
+the frequency indices. The Fourier transform of a product is
+convolution, so convolution of these r common nonnegative
+majorants bounds |hat D_a| for every a. Consequently
+
+                       W <= (C log(2p))^r.                  (8)
+
+For fixed r and fixed nonlinear polynomial degree D, (1) gives
+
+             m <<_D p^(47/24)(C log(2p))^(2r/3).
+
+The exact criterion (8)=o(p^(1/16)) even permits growing r.
+For example,
+
+ limsup_(p->infinity) r(p) log log p / log p < 1/16
+
+suffices. Thus this is not merely a theorem for a single fixed
+VC-dimension class. It still requires a shared list of frequencies
+and does not cover arbitrary color-dependent frequency systems.
+
+6. OPTIONAL QUALITATIVE EXTENSION FOR ARBITRARY INTERCEPTS
+
+If W is uniformly bounded, arbitrary beta also gives m=o(p^2).
+Under a hypothetical m>=epsilon p^2, discard colors with fewer
+than epsilon p/2 actual edges. At least epsilon p^2/2 edges
+remain, d'=Theta(p), and the joint W cannot increase.
+
+A coefficient line carrying Omega(p) retained colors would give
+Omega(p^2) actual edges in a partial multiplicative-group table,
+contradicting Solymosi's Theorem 5 after deleting the single
+exceptional vertex-pair edge. Thus L=o(p). PRRW then gives
+E_aff=o(p^3). Formula (2) implies Lambda=o(p), and (7) contradicts
+the retained positive density when W=O(1).
+
+This is an additional hypothesis, not a deduction that arbitrary
+heavy B supports have bounded W. No growing-W rate for arbitrary
+intercepts is asserted in this argument.
+
+7. SOURCES, AUDIT AND LIMITS
+
+Weil input, Iwaniec--Kowalski, Theorem 11.11, printed p.280:
+https://people.math.ethz.ch/~kowalski/ik-ant-exp-sums.pdf
+
+PRRW, An Energy Bound in the Affine Group, Theorem 2.1:
+https://arxiv.org/pdf/1911.03401
+
+Solymosi, The (7,4)-conjecture in finite groups, Theorem 5:
+https://arxiv.org/pdf/1309.0133
+
+Pass 4 supplies the fully expanded unweighted phase, collinearity
+calculation and polynomial quotient-energy estimate. This proof
+states the changes needed for complex weights explicitly.
+
+A general lower-spectrum bound for T_D is false, even for proper
+heavy quadratic supports; see the separate negative-spectrum
+construction. Here T_D is instead approximated by a positive
+support-dependent operator under a stated Fourier hypothesis.
+The actual-edge identity (4), rather than completed edges, then
+finishes the argument. No conclusion about unrestricted domains
+or universal #810 density follows without a further structural
+or transfer theorem.

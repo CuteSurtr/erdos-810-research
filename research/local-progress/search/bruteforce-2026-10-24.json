@@ -1,0 +1,301 @@
+{
+ "source": "CuteSurtr/erdos-810-research branch bruteforce-2026-10, commit 4de51ed (bruteforce/RESULTS.md)",
+ "exact": {
+  "0": 0,
+  "1": 0,
+  "2": 1,
+  "3": 3,
+  "4": 5,
+  "5": 7,
+  "6": 11,
+  "7": 14,
+  "8": 17,
+  "9": 23,
+  "10": 30,
+  "11": 34,
+  "12": 40
+ },
+ "exact_notes": {
+  "10": "SAT DRAT cubes + exhaustive geng",
+  "11": "SAT DRAT cubes + exhaustive geng",
+  "12": "pruned geng (2 checkers) + unpruned geng with 4 independent checkers, 2,411,961,516 classes = Polya count"
+ },
+ "lower_bounds": {
+  "13": {
+   "edges": 47,
+   "task": "SAT"
+  },
+  "14": {
+   "edges": 55,
+   "task": "LB"
+  },
+  "15": {
+   "edges": 63,
+   "task": "LB"
+  },
+  "16": {
+   "edges": 70,
+   "task": "LB"
+  },
+  "17": {
+   "edges": 78,
+   "task": "LB"
+  },
+  "18": {
+   "edges": 90,
+   "task": "LB"
+  },
+  "19": {
+   "edges": 96,
+   "task": "LB"
+  },
+  "20": {
+   "edges": 109,
+   "task": "LB"
+  },
+  "21": {
+   "edges": 126,
+   "task": "LB"
+  },
+  "22": {
+   "edges": 133,
+   "task": "LB"
+  },
+  "23": {
+   "edges": 141,
+   "task": "LB"
+  },
+  "24": {
+   "edges": 150,
+   "task": "LB"
+  },
+  "25": {
+   "edges": 160,
+   "task": "LB"
+  },
+  "26": {
+   "edges": 169,
+   "task": "LB"
+  },
+  "27": {
+   "edges": 189,
+   "task": "CONSTR"
+  },
+  "28": {
+   "edges": 196,
+   "task": "LB"
+  },
+  "29": {
+   "edges": 210,
+   "task": "LB"
+  },
+  "30": {
+   "edges": 225,
+   "task": "LB"
+  },
+  "31": {
+   "edges": 248,
+   "task": "CONSTR"
+  },
+  "32": {
+   "edges": 256,
+   "task": "CONSTR"
+  },
+  "33": {
+   "edges": 264,
+   "task": "CONSTR"
+  },
+  "34": {
+   "edges": 274,
+   "task": "CONSTR"
+  },
+  "35": {
+   "edges": 288,
+   "task": "CONSTR"
+  },
+  "36": {
+   "edges": 324,
+   "task": "CONSTR"
+  },
+  "37": {
+   "edges": 333,
+   "task": "CONSTR"
+  },
+  "38": {
+   "edges": 342,
+   "task": "CONSTR"
+  },
+  "39": {
+   "edges": 351,
+   "task": "CONSTR"
+  },
+  "40": {
+   "edges": 400,
+   "task": "CONSTR"
+  },
+  "41": {
+   "edges": 410,
+   "task": "CONSTR"
+  },
+  "42": {
+   "edges": 420,
+   "task": "CONSTR"
+  },
+  "43": {
+   "edges": 430,
+   "task": "CONSTR"
+  },
+  "44": {
+   "edges": 440,
+   "task": "CONSTR"
+  },
+  "45": {
+   "edges": 450,
+   "task": "CONSTR"
+  },
+  "46": {
+   "edges": 506,
+   "task": "CONSTR"
+  },
+  "47": {
+   "edges": 518,
+   "task": "CONSTR"
+  },
+  "48": {
+   "edges": 528,
+   "task": "CONSTR"
+  },
+  "49": {
+   "edges": 539,
+   "task": "CONSTR"
+  },
+  "50": {
+   "edges": 550,
+   "task": "CONSTR"
+  },
+  "51": {
+   "edges": 561,
+   "task": "CONSTR"
+  },
+  "52": {
+   "edges": 624,
+   "task": "CONSTR"
+  },
+  "53": {
+   "edges": 636,
+   "task": "CONSTR"
+  },
+  "54": {
+   "edges": 648,
+   "task": "CONSTR"
+  },
+  "55": {
+   "edges": 660,
+   "task": "CONSTR"
+  },
+  "56": {
+   "edges": 672,
+   "task": "CONSTR"
+  },
+  "57": {
+   "edges": 684,
+   "task": "CONSTR"
+  },
+  "58": {
+   "edges": 702,
+   "task": "CONSTR"
+  },
+  "59": {
+   "edges": 767,
+   "task": "CONSTR"
+  },
+  "60": {
+   "edges": 780,
+   "task": "CONSTR"
+  },
+  "61": {
+   "edges": 793,
+   "task": "CONSTR"
+  },
+  "62": {
+   "edges": 806,
+   "task": "CONSTR"
+  },
+  "63": {
+   "edges": 812,
+   "task": "CONSTR"
+  },
+  "64": {
+   "edges": 835,
+   "task": "CONSTR"
+  },
+  "67": {
+   "edges": 909,
+   "task": "CONSTR_L"
+  },
+  "71": {
+   "edges": 1005,
+   "task": "CONSTR_L"
+  },
+  "73": {
+   "edges": 1057,
+   "task": "CONSTR_L"
+  },
+  "79": {
+   "edges": 1214,
+   "task": "CONSTR_L"
+  },
+  "81": {
+   "edges": 1273,
+   "task": "CONSTR_L"
+  },
+  "83": {
+   "edges": 1325,
+   "task": "CONSTR_L"
+  },
+  "89": {
+   "edges": 1519,
+   "task": "CONSTR_L"
+  },
+  "97": {
+   "edges": 1740,
+   "task": "CONSTR_L"
+  },
+  "101": {
+   "edges": 1867,
+   "task": "CONSTR_L"
+  },
+  "103": {
+   "edges": 1938,
+   "task": "CONSTR_L"
+  },
+  "107": {
+   "edges": 2065,
+   "task": "CONSTR_L"
+  },
+  "109": {
+   "edges": 2136,
+   "task": "CONSTR_L"
+  },
+  "113": {
+   "edges": 2277,
+   "task": "CONSTR_L"
+  },
+  "121": {
+   "edges": 2568,
+   "task": "CONSTR_L"
+  },
+  "125": {
+   "edges": 2716,
+   "task": "CONSTR_L"
+  },
+  "127": {
+   "edges": 2798,
+   "task": "CONSTR_L"
+  },
+  "128": {
+   "edges": 2831,
+   "task": "CONSTR_L"
+  }
+ }
+}

@@ -1,0 +1,128 @@
+PERMUTATION PROGRESSIONS AND THE ORBIT/GROUP-GROWTH GAP
+2026-10-15. Independent hand audit. No finite graph search or Lean claim.
+
+1. THE PERFECT-B PALETTE IS STRONGLY TRANSLATIONAL-3-AP-FREE
+
+Identify the two n-element sides of a perfect B graph with one set Omega.
+Every color is a permutation a:Omega->Omega, and any two distinct colors
+have disjoint graphs. Let S be the set of these d permutations.
+
+Claim. If a,b,c are in S and c=a b^(-1) a, then a=b=c.
+
+Proof. Suppose a!=b and choose any x in Omega. Put y=b^(-1)a(x).
+Disjointness gives a(x)!=b(x), hence y!=x. The two column labels a(x)
+and a(y) are distinct because a is a permutation. The resulting rectangle
+has the four edges
+
+           x -> a(x) : a,       y -> a(x) : b,
+           y -> a(y) : a,       x -> a(y) : c.
+
+It is a genuine C4 with repeated opposite color a, contrary to B.
+The argument permits c=b; it excludes alternating two-color C4s as well.
+If a=b, the equation itself gives c=a. QED.
+
+Now let u,ut,ut^2 all belong to S. Set b=u, a=ut and c=ut^2. Then
+c=a b^(-1)a, so t=1. Thus S is AP-free in the STRONG sense used in
+Schildkraut's Theorem 1.10: the endpoints of a nontrivial progression
+are allowed to coincide. There is no missing 2-torsion exception.
+
+The exact pointwise strengthening is also valid. For a,b,c in S,
+
+          a^(-1) c a^(-1) b
+
+has no fixed point unless a=b=c. For example, a fixed point z gives
+b(z)=a c^(-1)a(z); using a and c for the two distinct colors in the
+rectangle argument gives the forbidden C4. If a=c but a!=b, the word is
+a^(-1)b, already a derangement by disjoint supports. This is the same
+four-cycle identity as <P_b,T_a(P_c)>=0 in the operator note, expressed
+as a permutation word.
+
+2. WHAT THE EXTERNAL GROWTH THEOREM ACTUALLY SUPPLIES
+
+Primary source checked:
+Carl Schildkraut, "Abelian structure in approximate groups and Alon's
+conjecture on Ramsey Cayley graphs," arXiv:2512.15125v1, Theorem 1.10:
+https://arxiv.org/html/2512.15125v1#Thmtheorem1.10
+
+Under its stated ambient-group hypotheses (in particular, for solvable
+groups), the theorem gives a lower bound
+
+        |SS^(-1)|/|S| >= exp(c (log|S|)^(1/1305)).
+
+The AP-free hypothesis has been verified above. Solvability is an extra
+hypothesis: arbitrary perfect color permutations lie in Sym(n), and their
+generated group need not be solvable. The theorem's alternative hypothesis
+concerning elementary abelian 2-subgroups must likewise be checked, rather
+than silently assumed. No claim about all ambient groups is needed for
+the direct application stated here.
+
+Remark 12.3 in the source sketches a qualitative approximate-group result
+using Breuillard-Green-Tao. A general-group qualitative corollary requires
+also carrying out the Section 9 reduction; it is not the quantitative
+Theorem 1.10 with its hypotheses removed.
+
+This growth result concerns distinct GLOBAL permutations. It is not yet
+an upper bound on d as a function of n.
+
+3. DENSITY GIVES SMALL ORBITS, NOT SMALL GLOBAL PRODUCT SETS
+
+If d>=delta n, then for every x in Omega,
+
+            |SS^(-1) x| <= n <= |S|/delta.
+
+This is small growth in the permutation ACTION. It does not assert
+|SS^(-1)|<=|S|/delta. Many distinct permutations may agree at a point.
+
+The energy formulation makes the direction of the gap explicit. Put
+
+ E_x = #{(a,b,c,e) in S^4 : (a b^(-1))(x)=(c e^(-1))(x)},
+ E_G = #{(a,b,c,e) in S^4 : a b^(-1)=c e^(-1)}.
+
+Cauchy-Schwarz gives E_x>=d^4/n, since the d^2 ordered products have at
+most n different images. But the automatic comparison is
+
+                       n E_G <= sum_x E_x,
+
+which is in the wrong direction to obtain high group energy from high
+pointwise energy. Nonidentical permutations can contribute agreements at
+different points. The B rule removes the repeated-color four-step words,
+but no argument here upgrades the remaining pointwise agreements to
+global product equalities.
+
+4. DENSITY ALONE CANNOT REPAIR THAT GAP
+
+Here is an explicit family without the B assumption. On Z/6Z let T_s be
+translation by s and tau be the transposition of 0 and 3. Take
+
+       S_0={tau, T_3 tau, T_1, T_2, T_4, T_5}.
+
+These six permutations have disjoint graphs and sum to the complete
+bipartite graph: at inputs 0 and 3 the outputs of T_0 and T_3 have merely
+been exchanged; all other outputs are unchanged.
+
+The difference products of T_1,T_2,T_4,T_5 already include all six
+translations. The additional product tau T_1^(-1) is not a translation,
+so |S_0 S_0^(-1)|>=7. Take r coordinatewise copies. Then the palette S
+has d=n=6^r, still gives the complete bipartite graph, and satisfies
+
+         |SS^(-1)|/|S| >= (7/6)^r -> infinity.
+
+Every product orbit still has size at most n=d. These examples are not
+B-colorings and are not AP-free; they do not disprove a bridge exploiting
+the B condition. They rule out deriving bounded global doubling from
+density and disjoint perfect matchings alone.
+
+5. CURRENT STATUS
+
+Subsequent update: partial-small-difference-theorem.txt and its independent
+audit prove the qualitative bounded-doubling consequence for partial color
+matchings using the full BGT structure theorem. Thus that consequence no
+longer rests on the sketch discussed in Section 2. The global/pointwise
+distinction in Sections 3--4 remains the unresolved universal obstruction.
+
+The strong AP-free and pointwise derangement conclusions are proved.
+The applicable known growth theorem supplies a genuine superconstant
+lower bound on product growth in its specified ambient groups. The
+missing step for an asymptotic #810 application is a structural relation
+between density, these derangement words, and GLOBAL product growth or
+an approximate subgroup. No such universal relation is proved here.

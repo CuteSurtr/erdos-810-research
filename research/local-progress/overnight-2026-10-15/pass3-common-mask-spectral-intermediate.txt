@@ -1,0 +1,218 @@
+COMMON ROW MASKS: A SPECTRAL INTERMEDIATE AND THE REMAINING GAP
+15 October 2026, overnight pass 3. Analytic proof only.
+
+Status: the operator and discrepancy estimates below are proved and
+independently checked by the formal-audit agent. They do NOT establish
+o(p^2) edges for common-mask B graphs. No historical novelty claim.
+
+PASS 4 UPDATE: the target left open by this particular method is now proved
+by a different crossed-involution operator. See
+pass4-crossed-operator-independent-audit.txt for a complete independent
+audit of m=O(p^(19/10)) for arbitrary A and a common row domain X. The
+one-point estimate below remains an input to its coordinate-axis block.
+The earlier limitations below describe the methods considered in this
+pass, and are not a claim that the common-mask target remains unresolved.
+
+1. THE PRECISE COMMON-MASK TARGET
+
+Let p be odd, A subset F_p* of size d, and X subset F_p of size k.
+For every a in A and x in X select the edge
+
+  x -> sigma_a(x)=ax+a^2
+
+with color a. There are m=dk selected colored incidences. They form
+a proper simple graph exactly when
+
+  X intersect -(A restricted-sum A) is empty,         (1)
+
+where the restricted sum uses two distinct elements. This follows
+from sigma_a(x)-sigma_b(x)=(a-b)(x+a+b).
+
+The actual color-by-row support matrix is the rank-one matrix
+1_A(a)1_X(x). Thus any failure of a simple spectral transfer already
+occurs at the lowest possible nonzero rank for this support matrix.
+
+The open target in this note is: if the graph is proper and every
+C4 is rainbow, must d*k=o(p^2)? No affirmative conclusion is proved.
+
+2. A UNIFORM COMPLETED-PALETTE OPERATOR ESTIMATE FOR EVERY A
+
+Let P_g be the permutation operator of an affine bijection g on F_p,
+and let
+
+  C_A=sum_{a in A} P_{sigma_a}.
+
+Let J be the p-by-p all-ones matrix. Then
+
+  ||C_A-(d/p)J||_op
+    <= [(p-1)(3d^2-2d)]^(1/4)
+    = O(p^(1/4)*sqrt(d)).                            (2)
+
+This applies to an arbitrary palette subset A, without assuming a
+small multiplicative Fourier norm or approximate subgroup structure.
+
+Proof. First bound the multiplicative energy of S={sigma_a:a in A}.
+The quotient sigma_a sigma_b^-1 has slope rho=a/b and intercept
+
+  a^2-ab = rho(rho-1)b^2.
+
+The identity quotient has multiplicity d. If rho!=1, a fixed quotient
+has at most two representing pairs (a,b), since its intercept fixes
+b^2. Therefore
+
+  E(S)=sum_g #{(a,b):sigma_a sigma_b^-1=g}^2
+       <=d^2+2(d^2-d)=3d^2-2d.                      (3)
+
+Each affine permutation preserves the constants and their orthogonal
+complement W. On W its character (trace) is the number of its fixed
+points minus 1. Hence that trace equals
+
+  p-1 at the identity;
+  -1 at a nonidentity translation;
+   0 at an affine map whose slope differs from 1.
+
+Let T=C_A restricted to W. Expand tr((TT*)^2) as a sum over four
+palette elements. Every group-word coefficient is a nonnegative
+integer. The identity words number E(S), nonidentity translations
+contribute negatively, and all other terms vanish. Consequently
+
+  ||T||_op^4 <= tr((TT*)^2) <= (p-1)E(S).
+
+The constant vector has singular value d and is invariant on both
+sides, so removing (d/p)J leaves exactly T. Equations (2)--(3) follow.
+
+3. THE ACTUAL COMMON-MASK GRAPH IS CUT-QUASIRANDOM ON ITS ROW STRIP
+
+Choose the matrix convention C_A(x,y)=#{a in A:sigma_a(x)=y}.
+Under properness (1), its restriction G to the rows X has entries
+0 or 1 and is exactly the selected graph's adjacency matrix.
+
+For every U subset X and V subset F_p, (2) gives
+
+  | e_G(U,V) - d|U||V|/p |
+    <= [(p-1)(3d^2-2d)]^(1/4) sqrt(|U||V|).          (4)
+
+In particular, if d,|U|,|V| are each at least a fixed positive
+multiple of p, the error is O(p^(7/4))=o(p^2). The estimate is
+uniform over all choices of A,X,U,V satisfying these hypotheses.
+
+This is a genuine intermediate restriction on a putative dense
+common-mask example. It counts ordinary edges, rather than the
+much rarer repeated-color squares relevant to the problem.
+
+4. THE EXACT FIXED-COLOR CROSS MATRICES
+
+For each a in A, define a k-by-k binary matrix indexed by X:
+
+  K_a(x,z)=G(x,sigma_a(z)).                           (5)
+
+Every diagonal entry is 1, since every color a is present at every
+row in X. A repeated-color C4 with a on its opposite edges exists
+precisely when, for some x!=z,
+
+  K_a(x,z)=K_a(z,x)=1.
+
+Consequently B is exactly the simultaneous condition
+
+  K_a(x,z)K_a(z,x)=0 for all a in A and x!=z.         (6)
+
+Column permutation and row/column restriction of (2) imply
+
+  ||K_a-(d/p)J_X||_op <= [(p-1)(3d^2-2d)]^(1/4).   (7)
+
+Thus every color-local matrix is close to a dense constant matrix
+in normalized operator norm if d and k have positive density.
+Nevertheless (6) and this type of spectral closeness are compatible.
+
+For example, for any fixed 0<theta<=1/2 and each unordered pair of
+k vertices, independently choose one forward arc with probability
+theta, the reverse arc with probability theta, and no arc otherwise.
+Put ones on the diagonal. The resulting binary matrix K has no
+reciprocal off-diagonal pair and mean
+
+  E K=theta J+(1-theta)I.
+
+There exist outcomes with ||K-E K||_op=O(sqrt(k)). One direct proof
+uses a fixed 1/4-net of the two real unit spheres: for fixed unit
+vectors u,v, the bilinear form u^T(K-EK)v is a sum of independent
+bounded pair contributions whose squared ranges sum to O(1).
+Hoeffding gives a tail exp(-c t^2); a union bound over at most
+9^(2k) net pairs, with t=C sqrt(k), and the standard net inequality
+give the asserted operator bound. Thus even a stronger spectral
+approximation than (7) does not contradict (6) for one color.
+
+This random-matrix observation is an analytic existence argument,
+not a claim that these matrices can be realized simultaneously by
+the quadratic palette. Their simultaneous realization, including
+the shared G and the permutations in (5), is the remaining issue.
+
+5. WHY THE SIMPLE PAIR-ACTION TRACE TRANSFER LOSES TOO MUCH
+
+On ordered distinct vertex pairs, write a pair as
+
+  r=z-x !=0,   t=x/r.
+
+The affine map sigma_a sends it to
+
+  r'=ar,      t'=t+a/r=t+r'/r^2.                    (8)
+
+For the FULL palette, Fourier transformation in t makes each
+nonzero-frequency block a submatrix of the additive Fourier matrix,
+with at most two repeated columns (r and -r). Its norm is at most
+sqrt(2p). The zero-frequency block is the all-ones matrix. Equivalently,
+this is ordinary point-line incidence: (r,t) encodes the line
+y=r^-2 x+t, and (r',t') encodes a point. It is a completed-palette
+incidence estimate, not an actual-support theorem.
+
+For the actual common-mask count, let
+
+  H((x,z),(y,w))=G(x,w)G(z,y),
+
+on ordered distinct pairs. The number of ordered repeated-color
+squares is the pairing of H with the A-restricted pair-action sum.
+Although H is independent of a, it is NOT a product of a single
+input-pair function and a single output-pair function.
+
+The zero-additive-frequency part of this pairing is exactly
+
+  (1/p) sum_{a in A} sum_{r!=0} sum_{x,y}
+                   G(x,y)G(x+r,y-ar).               (9)
+
+For each a, partition F_p^2 into its p lines of direction (1,-a).
+Cauchy--Schwarz on their G-edge occupancies gives
+
+  sum_{r!=0,x,y} G(x,y)G(x+r,y-ar) >= m^2/p-m.
+
+Thus (9) is at least d(m^2/p^2-m/p), of order p^3 at fixed density.
+
+The remaining modes cannot simply be discarded. The crossed test is
+a restriction of a swapped tensor G tensor G. Its nuclear norm is
+at most ||G||_*^2, which can be large. A direct operator-norm times
+nuclear-norm estimate therefore fails at the required p^3 scale.
+Low rank of the COLOR-BY-ROW support matrix does not control the
+rank or nuclear norm of G or of this crossed tensor.
+
+Even a resulting bound of order rank(G)>=p^(1/4) would be weaker
+than the generic fooling-set observation: a color matching of size
+k gives a submatrix B with diagonal ones and B_ij B_ji=0, hence
+
+  I_k=B circ B^T,  k<=rank(B)^2<=rank(G)^2.
+
+So a common-mask B graph already satisfies rank(G)>=sqrt(k),
+without using any quadratic-palette structure.
+
+6. CHECKPOINT
+
+The common-mask class is genuinely narrower than arbitrary supports
+and would be a useful positive target. This pass proves (2)--(4)
+and isolates the precise matrix conditions (5)--(7). It does not
+turn those individual spectral conditions into a contradiction.
+
+A successful continuation must exploit joint compatibility of the
+K_a, or count directly the five one-dimensional tests in
+
+  b^2+bx=a^2+az,    c^2+cz=a^2+ax,
+  a,b,c in A,      x,z in X,       x!=z.
+
+Replacing their actual membership tests by completed-palette mixing
+or by ordinary graph quasirandomness would leave the central gap.

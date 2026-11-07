@@ -1,0 +1,68 @@
+INDEPENDENT AUDIT OF THE GROUP-REPRESENTATION VANISHING-DENSITY PROOF
+2026-10-15. Reviewed by the formal_audit agent independently of its author.
+
+Reviewed artifact:
+group-representation-vanishing-density.txt
+
+Verdict: its mathematical reductions pass the adversarial checks below,
+conditional on the two stated established inputs (density Hales-Jewett and
+the existence of abelian subgroups of unbounded size in finite groups of
+unbounded order). This audit is not a Lean certificate or novelty claim.
+
+1. The weighted cube construction does not require injectivity. Averaging
+   over its two translations gives the correct density for every word
+   separately, which is enough to apply DHJ. Choosing w_i outside the
+   negatives of the 2^(i-1) prior subset sums prevents every nonempty
+   zero-sum subset. The condition |H|>2^(r-1) suffices through step r.
+   In characteristic 2, the resulting t is still nonzero and the four
+   square corners are distinct. There is no hidden odd-order assumption.
+
+2. A dense coset rectangle gH x kH yields precisely the required equal
+   diagonal group-table colors. The cancellation
+   (k h_2 t)(g h_1 t)^(-1)=k h_2 h_1^(-1)g^(-1)
+   is valid in a nonabelian ambient group. Abelianity is used only inside
+   H to obtain the square, not in that cancellation.
+
+3. In the stabilizer lift, every original edge has exactly h lifts and
+   the lifted color is exactly its injectively labeled group element.
+   The potentially dangerous projected degeneracy is handled correctly:
+   equal diagonal lifted colors and equal projected rows force equal
+   projected columns. Then all four projected edges are the same simple
+   original edge, so every lifted cross-edge must have its one color.
+   That forces the lifted rows to coincide, contradicting a genuine C4.
+   If the projected rows differ, the projected columns also differ and
+   the original B condition directly forbids the cycle.
+
+4. Nontransitive actions cause no density loss of an uncontrolled kind.
+   From m>=epsilon N^2 and sum n_i=N, some orbit has
+   m_i/n_i>=epsilon N. The bound m_i<=n_i^2/4 gives
+   n_i>=4epsilon N and m_i>=4epsilon^2 N^2. Its orbit has size at least
+   n_i/2, so |G| tends to infinity. With |G|<=KN, the lifted density is
+   at least 4epsilon^2/K^2. This is a fixed positive density, to which
+   the uniform group-table theorem applies.
+
+5. The statement permits the left and right label sets to overlap and
+   the action to be unfaithful. Neither issue affects the preceding proof.
+   Separate injectivity on each side and injective color labels are used
+   and must remain in the theorem. Arbitrary matching completions do not
+   provide the crucial |G|=O(N) hypothesis.
+
+Conclusion: the stated o(N^2) result is valid for the described restricted
+class. Its novelty and relationship to finite-group recurrence literature
+are separate questions. The result does not establish o(N^2) for arbitrary
+B-colorings or solve Erdős #810.
+
+ADDENDUM: COMMUTING-COLOR-COVER COROLLARY
+
+Also audited commuting-color-cover-corollary.txt. Its extension to bounded
+abelian-coset palette covers passes. The potentially missing injectivity
+of colors after quotienting an abelian orbit is repaired correctly by
+discarding classes smaller than eta N, with eta=beta/(2D). At most DN
+colors then cost beta N^2/2 edges. Each quotient translation can carry
+at most C/eta remaining labels, since the separate side injections give
+a matching of size at most v<=CN. Selecting one largest class for each
+translation retains at least beta^2 N^2/(4CD) edges, of relative density
+at least beta^2/(4C^3D) in the quotient group table. The subsequent
+application of the group-table theorem is therefore legitimate. The
+bounded-cover assumption is essential and is not established for arbitrary
+permutation palettes.

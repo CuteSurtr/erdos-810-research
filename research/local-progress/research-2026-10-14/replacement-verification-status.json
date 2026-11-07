@@ -1,0 +1,24 @@
+{
+  "python_check": "passed all 21 pair intersections and 35 four-edge unions",
+  "lean_check": "PASSED; final rewritten indexed certificate, process exit 0",
+  "lean_version": "4.24.0 (root workspace toolchain)",
+  "lean_command": "ELAN_HOME=\"$PWD/.elan\" .elan/bin/lake env lean -s 65536 erdos-810-lean/research-2026-10-14/ExtremalReplacementCertificate.lean",
+  "source_sha256": "617a522c7d2bef27af6e0a20c69f19d84cc616b7ff0730d6ed656099f9f8c15f",
+  "kernel_log": "replacement-kernel-check.txt",
+  "log_sha256": "e7081c8f48670a382de4eb5b6ffbc4de465f83cd360cf1f584813b9515ec701b",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "checked_claims": [
+    "seven distinct triples",
+    "each triple has three points",
+    "linearity",
+    "indexed representation image equals gadget",
+    "indexed representation injective",
+    "all 35 increasing four-index selections span at least eight points"
+  ],
+  "general_proofs": "written proofs in shadow-extraction-proof.txt; not Lean-formalized",
+  "earlier_attempts": "Earlier powerset-based certificate exhausted resources; replaced by this successful indexed certificate."
+}

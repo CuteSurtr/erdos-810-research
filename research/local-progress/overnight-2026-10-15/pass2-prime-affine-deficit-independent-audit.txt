@@ -1,0 +1,175 @@
+INDEPENDENT AUDIT: PRIME-FIELD AFFINE DEFICITS VIA INCIDENCE BOUNDS
+Overnight pass 2, 15 October 2026.
+Finite-audit agent's hand check of the formal-audit agent's derivation.
+No finite searches, no Lean certificate, no novelty claim.
+
+PRIMARY SOURCE CHECKED
+
+Stevens--de Zeeuw, An improved point-line incidence bound over arbitrary
+fields, https://arxiv.org/pdf/1609.06284 .
+Corollary 14, printed page 16, states: for d points over characteristic
+p with d<<p^(7/6), either Omega(d) points lie on a line or the point set
+determines Omega(d^(8/7)) lines. Its proof, and Theorem 3, provide the
+dyadic estimates used below. The theorem and the displayed exponents
+were independently read in the primary PDF.
+
+SETUP AND DUAL INCIDENCE BUDGET
+
+Let a B-colored graph on two copies of F_p have d distinct affine color
+completions, each missing at most r of its p edges. Distinctness follows
+from properness when p>2r. Dualize y=ax+b to the point (a,b).
+
+A nonvertical line determined by the dual points has equation
+b=-x a+y and corresponds to one original intersection point (x,y).
+If t>=2 original color lines pass through that point, properness
+forces at least t-1 missing incidences there. Therefore the total
+number of nonvertical determined lines is at most rd, and their total
+incidence count with the d dual points is at most 2rd, using t<=2(t-1).
+
+Vertical determined lines correspond to parallel classes. They number
+at most d/2 and have total incidence count at most d, since their point
+sets are disjoint. Thus the determined dual lines have incidence budget
+
+                         I <= d(2r+1).                (1)
+
+Their maximum richness L is exactly the maximum number of original
+palette lines in any parallel or concurrent pencil.
+
+The B condition and p>4r+1 imply strong progression-freeness of the
+completion palette, as audited in pass1-affine-quantitative-independent-
+audit.txt. The quantitative Roth bound then gives
+
+                     L <= C p exp[-c(log p)^(1/12)].  (2)
+
+FIRST CONSEQUENCE: THE DIRECT BECK DICHOTOMY
+
+If r<p/4, properness and d(p-r)<=p^2 give d<2p, so the characteristic
+condition d<<p^(7/6) holds for large p. Corollary 14 and the determined-
+line budget imply either L>=c_0 d, or d=O((r+1)^7).
+Together with (2) and m<=dp, this gives
+
+       m <= C p(r+1)^7 + C p^2 exp[-c(log p)^(1/12)].
+
+In particular r=o(p^(1/7)) suffices for m=o(p^2).
+
+STRONGER CONSEQUENCE: r=o(p^(4/7)) SUFFICES
+
+The formal-audit agent's dyadic refinement also passes independent
+audit. Suppose for contradiction that r=o(p^(4/7)) but m>=epsilon p^2
+along a sequence. Then epsilon p<=d<2p, so d=Theta(p), r=o(d^(4/7)),
+and (2) gives L=o(d). By (1), I=o(d^(11/7)).
+
+Fix a sufficiently large absolute constant C_0 and put K=C_0 d^(3/7).
+The pairs of dual points on determined lines of richness below K total
+at most K I/2=o(d^2).
+
+For each remaining dyadic richness range [k,2k), let T be its number of
+lines. Since k>=K, the incidence budget gives
+
+                      T <= I/k = o(d^(8/7)).
+
+Split these ranges into three cases.
+
+1. T>d^(7/8).
+
+   The size comparison needed for Theorem 3 holds because
+   d^(7/8)<T<d^(8/7) eventually. Its characteristic condition holds:
+
+                  d^(-2)T^13 <= O(d^(90/7))=o(p^15).
+
+   Therefore kT<=O(d^(11/15)T^(11/15)), which rearranges to
+
+                      T<=O(d^(11/4)k^(-15/4)).
+
+   This range contributes O(k^2 T)<=O(d^(11/4)k^(-7/4)) pairs.
+   Summing geometrically over k>=K gives
+
+                      O(C_0^(-7/4)d^2).              (3)
+
+2. d^(1/2)<=T<=d^(7/8).
+
+   The elementary incidence inequality I_range<=sqrt(d)T+d gives
+   k=O(sqrt(d)). Hence the pair count per range is O(dT), at most
+   O(d^(15/8)). There are O(log d) ranges, so the total is o(d^2).
+
+3. T<d^(1/2).
+
+   The same elementary inequality gives kT=O(d), so the pair count
+   per range is O(dk). The geometric sum of the dyadic k values is
+   O(L), yielding O(dL)=o(d^2).
+
+Every pair of distinct dual points determines exactly one line. Thus
+their total pair count must be binomial(d,2). After C_0 is fixed large
+enough, (3), the low-richness contribution, and Cases 2--3 sum to less
+than binomial(d,2) for all sufficiently large d. This contradiction
+proves the claimed o(p^2) bound.
+
+TOTAL-DEFICIT PRUNING AND THE QUANTITATIVE FINAL FORM
+
+The stronger final formulation requested by the root and formal-audit
+agents also passes. For the ORIGINAL coloring let
+
+                         D=sum_c (p-|E_c|).
+
+No common upper bound on individual deficits is assumed here. Discard
+every color with deficit at least p/8. There are at most 8D/p such
+colors, and each has at most p edges, so the edge loss is at most 8D.
+
+Each remaining class has more than 7p/8 edges. Consequently:
+
+ * its completion is distinct from every other retained completion,
+   since two disjoint actual domains of that size cannot lie on the
+   same affine line;
+ * the number d of retained colors is less than 8p/7;
+ * a putative nontrivial affine progression C=A B^(-1) A loses fewer
+   than p/2 choices of initial row to its four support omissions, and
+   at most one further row to degeneracy. For p>2 at least one valid
+   rectangle remains. Thus the retained palette is strongly
+   progression-free, including its pencils.
+
+The retained dual incidence budget is
+
+                          I<=2D+d.                   (4)
+
+The dyadic proof above can be read quantitatively: there are absolute
+constants c_1,c_2>0 such that, for sufficiently large d<8p/7, either
+
+                      I>=c_1 d^(11/7)
+             or       L>=c_2 d.                      (5)
+
+To verify the quantifiers, first choose the constant C_0 in K large
+enough that the high-richness tail is a small fraction of d^2. Next
+choose c_1 small enough that the low-richness term K I is a small
+fraction, and c_2 small enough for the O(dL) term. The intermediate
+dyadic contribution is o(d^2) with no additional parameter. These
+choices make the no-alternative hypothesis contradict binomial(d,2).
+The characteristic condition holds uniformly for d<8p/7 once d,p
+are large; bounded d is handled separately by the final constants.
+
+In the first alternative, (4) gives
+
+                  c_1 d^(11/7)<=2D+d.
+
+For d above a fixed constant, the final d is absorbed into the left
+side, yielding d<=C(D+1)^(7/11). In the second alternative, the robust
+progression exclusion and the previously audited quantitative Roth
+bound give d<=C p exp[-c(log p)^(1/12)]. Restoring discarded colors
+and using at most p edges per retained color proves
+
+  m <= C p(D+1)^(7/11) + 8D
+                         + C p^2 exp[-c(log p)^(1/12)].              (6)
+
+In particular D=o(p^(11/7)) implies m=o(p^2). Formula (6) permits
+arbitrary individual deficits; its conclusion is useful when their
+total is small. This verifies the final pruning argument and each
+exponent in the quantitative bound independently.
+
+VERDICT AND SCOPE
+
+The characteristic restriction, comparability range, and every exponent
+in the 4/7 refinement and total-deficit formulation check. This is a
+conditional prime-field theorem, including the per-color regime
+r=o(p^(4/7)) and the total-deficit regime D=o(p^(11/7)). It neither
+settles arbitrary positive-density supports of the quadratic palette
+nor the unrestricted Erdos problem. The proof combines established
+incidence/Roth inputs with the support-induced incidence budget.

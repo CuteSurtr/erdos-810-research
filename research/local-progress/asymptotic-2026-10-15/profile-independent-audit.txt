@@ -1,0 +1,107 @@
+Independent adversarial audit of the size-profile improvement
+2026-10-15
+
+VERDICT
+The proof in profile-density-bound.txt passes independent audit. The starting
+profile, endpoint decomposition, both concavity arguments, exact polynomial
+factorization, positivity, recurrence direction, limiting fixed point, and
+uniform asymptotic interpretation are sound. The resulting coefficient is
+the algebraic number approximately 0.29844403751. This is a written audit,
+not a Lean verification or a publication-novelty claim.
+
+The complete combinatorial proof is in profile-density-bound.txt; this note
+records the independently checked points most susceptible to error.
+
+1. NORMALIZATION
+The same available palette q is used for every graph and cut, including
+unused colors. All normalized bipartite side sums s are at most one.
+For each fixed iteration, errors are uniform over these side sizes and
+colorings. Taking q->infinity before the iteration count tends to infinity
+is sufficient. No assumption that the actually used colors of a small cut
+tend to infinity is needed or permissible.
+
+2. CONCAVITY
+For A_C(r)=1/(1+Cr), the quantity used in the cross-cut derivative is
+D(r)=1/r+A_C(r). With t=x(r-x),
+
+    d^2/dx^2 [t/(1+D(r)t)]
+      =-2/(1+D(r)t)^2-2D(r)(r-2x)^2/(1+D(r)t)^3.
+
+One simple uniform certificate for C>=1 and r<=1 is
+
+    D(r)t <= [r+r^2/(1+Cr)]/4 <=3/8.
+
+It gives a negative second derivative for the full endpoint integrand:
+2-4/(11/8)^2=-14/121<0. The sharper -14/25 certificate in the main proof
+also checks, using a+b<=1. Both certify the required Jensen step.
+
+The denominator-sum function is
+
+    f_C(r)=r(1+Cr)/(1+(C+1)r),
+    f_C''(r)=-2/[1+(C+1)r]^3<0.
+
+Its concavity justifies replacing f_C(a)+f_C(b) by 2f_C((a+b)/2).
+The loss expression decreases with the edge count, as in the previous
+independent audit, so substituting the current F_A upper bound has the
+claimed direction.
+
+3. STARTING PROFILE
+Applying the exact endpoint recursion to A=0 yields
+
+    Q(s)=(4-s)^2/[(4+s)^2+s^2(4-s)].
+
+Independent expansion gives
+
+    (1+(19/9)s)(4-s)^2-[(4+s)^2+s^2(4-s)]
+       =(4/9)s(1-s)(40-7s)>=0
+
+on [0,1]. Thus C_0=19/9 is valid. The zero profile must not be confused
+with A_C for C=0, which would be the constant profile one.
+
+4. POLYNOMIAL RECURRENCE
+I independently expanded the cleared numerator by exact bivariate integer
+polynomial arithmetic, without using the other auditor's symbolic engine.
+All five coefficients q0,...,q4 agree exactly with section 4 of
+profile-density-bound.txt. The denominator factors are positive for C>=1,
+0<=s<=1; in particular Bn=(1+Cs)*(4-s+s^2/(1+Cs)) is positive despite its
+negative s^2 coefficient when C>1.
+
+The positivity certificate is valid:
+
+    q0+q1*s+q2*s^2+q3*s^3+q4*s^4
+      =q0+q1*s+q2*s^2+q3*s^3*(1-s)+(q3+q4)*s^4.
+
+For C>=1, all five coefficients used on the right are positive. For example,
+771C^2-438C-72>=261C^2, and
+176C^2-18C-72>=86C^2. Thus the q2 and q3+q4 sign checks do not require
+numerical sampling. This verifies Q_C(s)>=1/(1+K(C)s) throughout the domain.
+
+5. RECURRENCE DIRECTION AND FIXED POINT
+The derivative of K has the independently expanded positive numerator
+
+    294C^4+1670C^3+3621C^2+3528C+1296.
+
+The sign of C-K(C) is the sign of
+
+    P(C)=9C^4+32C^3+13C^2-45C-36.
+
+On [1,infinity), P is strictly increasing, with P(1)<0 and P(19/9)>0.
+Therefore there is one root C_*>1, and iterating from 19/9 decreases to it,
+while the profiles increase. The direction of improvement is correct:
+smaller C means larger A_C and consequently a smaller extremal upper bound.
+
+6. GLOBAL TRANSFER
+At side sum one, alpha=A_{C_*}(1)=1/(1+C_*)<1/2. The existing global
+concavity audit therefore applies unchanged. The resulting density root is
+specified by
+
+    4(1+alpha)rho^3-2(1+alpha)rho^2-3rho+1=0.
+
+The polynomial decreases strictly in rho on [0,1/2], so its root is unique.
+Its derivative in C, after alpha=1/(1+C), is positive for fixed
+0<rho<1/2. This agrees with the directions used by the other auditor's
+conservative rational root bracket. The coefficient is asymptotic, not an
+exact finite-N inequality with the o(N^2) term omitted.
+
+The independently audited properification lemma transfers the same bound
+to arbitrary rainbow-C4 colorings with at most N colors.

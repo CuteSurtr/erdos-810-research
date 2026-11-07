@@ -1,0 +1,108 @@
+WHY ORDINARY FIXED-VERTEX SAMPLING AND C4 REMOVAL LOSE THE CONSTRAINT
+2026-10-15. Complete elementary observations and a scope audit. No finite
+graph search. Historical novelty is not claimed.
+
+1. FIXED VERTEX SAMPLES ARE ALMOST ALWAYS FULLY RAINBOW
+
+Proposition. Let G be any properly edge-colored simple graph on N vertices,
+with any number of colors. Choose a uniformly random k-element vertex set,
+where 4<=k<=N and N>=4. Then
+
+ P(the induced sample contains two edges of the same color)
+             <= (k)_4 / [8(N-3)],
+
+where (k)_4=k(k-1)(k-2)(k-3). In particular the probability tends to zero
+for fixed k as N tends to infinity. It also tends to zero for k=o(N^(1/4)).
+
+Proof. A color class is a matching of size k_c<=N/2. Write m=|E(G)|.
+The number P of unordered same-color edge pairs is
+
+ P=sum_c binom(k_c,2) <= ((N-2)/4) sum_c k_c = (N-2)m/4.
+
+Each such pair has four distinct endpoints by properness. The probability
+all four appear in the random sample is (k)_4/(N)_4. The union bound gives
+
+ P(sample has a color repeat)
+   <= m (k)_4/[4N(N-1)(N-3)]
+   <= (k)_4/[8(N-3)],
+
+using m<=N(N-1)/2. QED.
+
+Consequently any ordinary finite-vertex sampling limit of proper colorings
+looks fully rainbow on its present edges. This applies equally to valid B
+colorings and to dense Latin-square colorings that fail B badly. A method
+using only fixed-order, unrescaled colored subgraph densities cannot retain
+the needed equal-color information. Conditioning on a color or retaining
+the natural 1/N collision scale avoids this particular obstruction; the
+proposition does not rule out those stronger methods.
+
+2. A DENSE EXAMPLE THAT IS FAR FROM B BUT HAS o(n^4) BAD C4s
+
+Let n be odd. Take K_{n,n} with both sides labeled by Z/nZ, and color edge
+(x,y) by y-x. This is a proper coloring with exactly n colors. Each color
+is a perfect matching of size n. All n^2 edges are present.
+
+A same-color pair determines a unique four-cycle in the complete bipartite
+graph. No four-cycle can contain two same-color diagonal pairs: those two
+equalities would imply 2(x_1-x_2)=0, which is impossible when n is odd and
+x_1!=x_2. Since properness rules out adjacent repeats, it follows that the
+number of nonrainbow four-cycles is exactly
+
+                n binom(n,2) = n^2(n-1)/2 = Theta(n^3).
+
+The total number of four-cycles is binom(n,2)^2. Thus the fraction of bad
+four-cycles is exactly 2/(n-1), tending to zero.
+
+Nevertheless, at least n^2/4 edges must be deleted to make every remaining
+four-cycle rainbow while retaining the original colors. To see this, each
+edge belongs to exactly 2(n-1) bad four-cycles: choose the other row, and
+there is one other column for which its own diagonal repeats and one for
+which the opposite diagonal repeats. Oddness makes these columns distinct.
+Every deleted edge can therefore hit at most 2(n-1) original bad cycles,
+so every hitting set has size at least
+
+             [n^2(n-1)/2]/[2(n-1)] = n^2/4.
+
+This is an elementary deletion lower bound. Solymosi's established group
+table theorem in fact implies that only o(n^2) edges can survive, but that
+stronger input is unnecessary for the present obstruction.
+
+Thus there is NO uniform colored-C4 removal statement of the form
+
+  o(n^4) nonrainbow four-cycles in a proper O(n)-coloring
+       => o(n^2) deletions suffice to reach a B-coloring.
+
+Growing palettes invalidate that ordinary dense-graph normalization. The
+natural bad-configuration scale in this example is n^3, not n^4. A removal
+theorem at the n^3 scale would be a genuinely stronger and presently
+unprovided ingredient; it cannot be replaced by ordinary C4 removal.
+
+3. CAUTION ABOUT B-TO-C AND INDUCED-MATCHING EXTRACTION
+
+The 2023 paper of Gyárfás--Sárközy distinguishes:
+  A: proper, with no alternating two-color four-edge path or four-cycle;
+  B: proper, with every C4 rainbow;
+  C: both A and B.
+
+Its Proposition 1.6 identifies the C-variant with the open (7,4) Brown--
+Erdős--Sós problem. Hence a fixed-positive-density theorem extracting a
+constant fraction of a B graph into a C graph, with O(N) colors and O(N)
+vertices, would reduce #810 to that open problem; it would not by itself
+prove the required o(N^2) bound.
+
+Strong colorings, whose classes are induced matchings, are different:
+their O(N)-color extremal bound o(N^2) is the Ruzsa--Szemerédi (6,3) theorem.
+Extracting a positive fraction of any fixed-density B graph into that
+stronger class would settle #810, so such an extraction cannot be treated
+as a routine application of the known removal lemma.
+
+The earlier tensor/DHJ obstruction excludes a uniform retained fraction
+for B-to-C extraction in the near-quadratic regime. Its input densities
+tend to zero. It does not eliminate a retained fraction depending on a
+fixed positive quadratic density.
+
+Primary source for these definitions and the distinction:
+A. Gyárfás, G. N. Sárközy, “Less” strong chromatic indices and the
+(7,4)-conjecture, Studia Sci. Math. Hungar. 60 (2023), 109--122;
+definitions on printed p.111 and Proposition 1.6 on p.113.
+https://real.mtak.hu/191892/1/012-article-p109.pdf

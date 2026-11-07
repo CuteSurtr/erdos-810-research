@@ -1,0 +1,306 @@
+PARTIAL COLOR MATCHINGS WITH SMALL PERMUTATION DIFFERENCE SET
+2026-10-15. Complete conditional vanishing-density deduction. Uses established
+theorems of Tao, Breuillard--Green--Tao, density Hales--Jewett, and large
+abelian subgroups of finite groups. Not Lean verified. Historical novelty
+of the assembled corollary has not been established.
+
+This extends the perfect-matching arithmetic-progression argument to partial
+color matchings WITHOUT assuming that their permutation completions remain
+B-colored. The proof does not require the completed palette to be AP-free.
+
+MAIN THEOREM. Fix C,D,K. For each N, let a bipartite simple graph have N
+vertices in total, a proper coloring with at most DN colors, and every
+four-cycle rainbow. Suppose
+the two sides separately inject into a finite set Omega with |Omega|<=CN.
+For every color c choose a permutation sigma_c of Omega extending that
+color's partial matching: y=sigma_c x for every edge xy of color c.
+Let S={sigma_c:c is a used color}. If
+
+                             |S S^{-1}| <= K N,
+
+then the graph has o(N^2) edges, uniformly as N tends to infinity.
+
+The representing permutations may initially coincide for different colors.
+The theorem has no solvability assumption, no bound on the order of the
+generated group, and no regularity or perfect-matching assumption.
+
+Consequently, a hypothetical positive-density counterexample family with
+O(N) colors must, for EVERY permutation representation on O(N) points,
+have |S S^{-1}|/N tend to infinity along that family. This is a structural
+obstruction to such a family, not a proof that no such family exists.
+
+Definitions. A properly edge-colored graph with every four-cycle rainbow is
+called B-colored. The permutation representation itself forces properness,
+because each color is a subset of a permutation matching.
+A finite set A in a group is a K_0-approximate group if it contains the
+identity, is symmetric, and A^2 can be covered by K_0 left translates of A.
+In particular |A^j|<=K_0^(j-1)|A| for every positive integer j.
+
+1. ESTABLISHED INPUTS
+
+(i) Tao's small-product covering theorem: if |U U^{-1}|<=Q|U|, then U
+is covered by L_Q left translates of a K_Q-approximate group A with
+|A|<=B_Q|U|, where L_Q,K_Q,B_Q depend only on Q.
+T. Tao, Product set estimates for non-commutative groups, Theorem 4.6,
+PDF pp.11--12, applied to the pair (U,U^{-1}).
+https://arxiv.org/pdf/math/0601431
+
+(ii) Breuillard--Green--Tao's structure theorem: a K_0-approximate group A
+contains in A^4 a coset nilprogression P of size at least c(K_0)|A|,
+with bounded rank and bounded normal-form constant depending only on K_0.
+E. Breuillard, B. Green, T. Tao, The structure of approximate groups,
+Theorem 2.10, and Definitions 2.6 and 2.8 (PDF pp.12--13).
+https://arxiv.org/pdf/1110.5008
+
+(iii) The largest abelian subgroup of a finite group has order tending to
+infinity uniformly with the group order. Erdős--Straus, Theorem 1.1,
+printed p.308 / PDF p.2, already suffices.
+https://www.renyi.hu/~p_erdos/1975-16.pdf
+
+(iv) The density Hales--Jewett theorem for an alphabet of four letters.
+Write DHJ(4,delta) for a dimension that forces a combinatorial line in every
+word subset of density at least delta.
+D. H. J. Polymath, Annals of Mathematics 175 (2012), 1283--1327.
+https://annals.math.princeton.edu/2012/175-3/p06
+
+No quantitative assertion from an informal remark or conjecture is used.
+The recent Schildkraut theorem is not needed for this qualitative result.
+
+2. FIXED-DIMENSION COMMUTING CUBES IN APPROXIMATE GROUPS
+
+Lemma 1. Fix K_0 and a positive integer r. Every sufficiently large finite
+K_0-approximate group A contains elements w_1,...,w_r with these properties:
+  (a) the w_i commute pairwise;
+  (b) every nonempty subset product is different from the identity;
+  (c) every subset product, including the empty product, belongs to A^4.
+The ambient group can be arbitrary.
+
+Proof. Apply input (ii). In its global-group notation P=pi^{-1}(Q), where
+pi:G_0 -> G_0/H is a quotient by a finite normal subgroup H, and
+Q=P(u_1,...,u_l;L_1,...,L_l) is a nilprogression in C_0-normal form.
+Here l,C_0 are bounded in terms of K_0, |P|>=c(K_0)|A|, and P subset A^4.
+Normal form supplies the two specific properties needed below:
+
+  |Q| <= C_0 product_{i=1}^l (2 floor(L_i)+1),
+  u_1^{a_1}...u_l^{a_l} are distinct for |a_i|<=L_i/C_0.
+
+If H is sufficiently large in terms of r, input (iii) gives an abelian
+subgroup J<=H with |J|>2^(r-1). Choose w_i greedily in J. At step i avoid
+the inverses of all subset products of the previous i-1 choices, including
+the empty product. There are at most 2^(i-1) excluded elements. No nonempty
+subset product is then the identity. All products stay in J<=H<=P<=A^4.
+
+Otherwise |H| is bounded in terms of r. As |A| tends to infinity, |P|
+tends to infinity and |Q|=|P|/|H| tends to infinity. The volume bound and
+bounded rank force some length L_i to grow without bound. For sufficiently
+large A choose such an i with L_i/C_0 >=2^r. Lift u_i to an element g of
+G_0, and set w_j=g^(2^(j-1)) for j=1,...,r.
+
+These elements commute. Every nonempty subset product is g^a with
+1<=a<=2^r-1. Local properness in the quotient gives u_i^a!=1, so g^a!=1.
+Moreover u_i^a belongs to Q whenever 0<=a<=2^r-1<=L_i. Thus every subset
+product g^a belongs to pi^{-1}(Q)=P<=A^4. This proves all three claims.
+
+The dichotomy is uniform: if H stays below the finite threshold for the
+first case and all L_i stay below the threshold for the second, the volume
+bound gives an upper bound on |P|, hence on |A|, depending only on K_0,r.
+QED.
+
+Remark. No injectivity of the whole subset-product map is required in the
+finite-subgroup case. Only the absence of a nonempty identity product is
+needed. This explicitly handles large elementary abelian 2-groups.
+
+3. A LOCAL GROUP-TABLE SQUARE THEOREM
+
+Lemma 2. Fix K_0,delta>0 and positive integers a,b. If A is a sufficiently
+large K_0-approximate group and F subset A^a x A^b has size at least
+delta |A|^2, then F contains
+
+                       (x,y),(xt,y),(x,yt),(xt,yt)
+
+with t!=1. In particular, coloring F by color(x,y)=y x^{-1} cannot make
+every four-cycle rainbow.
+
+Proof. Put delta_0=delta/K_0^(a+b+6), decreasing it to 1 if necessary, and
+r=DHJ(4,delta_0). Choose weights w_1,...,w_r from Lemma 1. For a word
+((c_i,d_i)) in {(0,0),(1,0),(0,1),(1,1)}^r, put
+
+ h_c=product_i w_i^{c_i},  h_d=product_i w_i^{d_i}.
+
+Both products lie in A^4. Use basepoints p in A^(a+4), q in A^(b+4), and
+map the word to (p h_c,q h_d). For each fixed word, every (x,y) in F has
+exactly one basepoint pair mapping to it, namely
+
+                         p=x h_c^{-1}, q=y h_d^{-1}.
+
+These basepoints belong to the specified sets because A is symmetric and
+h_c,h_d are in A^4. Thus the average, over basepoint pairs, of the fraction
+of good words is exactly |F|/(|A^(a+4)| |A^(b+4)|), at least delta_0.
+Some basepoint pair therefore gives a word set to which DHJ applies.
+
+In the resulting combinatorial line, let I be the nonempty variable set.
+Because the weights commute, its four images are exactly the four corners
+displayed in the lemma, with t=product_{i in I} w_i. This t is nonidentity
+by Lemma 1. The two rows and two columns are consequently distinct, and
+
+                     (yt)(xt)^{-1}=y x^{-1}.
+
+The diagonal colors coincide. QED.
+
+The ambient group order may be much larger than |A|. This is the difference
+from applying the ordinary finite-group-table theorem directly. No closure
+of A under multiplication is presumed; all translations are averaged over
+the explicitly larger sets A^(a+4) and A^(b+4).
+
+4. DUPLICATE REPRESENTING PERMUTATIONS CAN BE REMOVED AT CONSTANT COST
+
+Assume m>=epsilon N^2, with epsilon>0 fixed, towards a contradiction.
+Discard colors with fewer than eta N edges, where eta=epsilon/(2D).
+This removes at most DN*eta N=epsilon N^2/2 edges. For each permutation
+sigma, the original colors represented by sigma occupy disjoint subsets
+of its matching on Omega, which has at most CN positions. Hence at most
+C/eta retained colors share sigma. Keep one largest color class for each
+sigma. The surviving graph has at least
+
+                (eta/C)*(epsilon N^2/2)=epsilon_1 N^2
+
+edges, where epsilon_1=epsilon^2/(4CD)>0. Its representing permutations
+are distinct. Their set S_1 is a subset of S, so
+|S_1 S_1^{-1}|<=KN. We may now work only with this subgraph.
+
+Its color count d=|S_1| satisfies
+
+                epsilon_1 N/C <= d <= DN,
+
+since each color contains at most CN edges. It follows that
+
+             |S_1 S_1^{-1}| <= (KC/epsilon_1) d.
+
+5. WEIGHTED APPROXIMATE-GROUP EXTRACTION
+
+Apply input (i) with Q=KC/epsilon_1, a fixed constant. Obtain an approximate
+group A and a cover S_1 subset X A, where |X|<=L, |A|<=B d, and A is
+K_0-approximate; the constants L,B,K_0 depend only on C,D,K,epsilon.
+Assign colors to covering translates if the cover overlaps. Some translate
+gA carries at least epsilon_1 N^2/L edges. Retain its colors and relabel
+the right-side vertex labels by y -> g^{-1}y. This preserves simplicity,
+distinct vertex labels, all original colors, and the B property.
+
+The new representing permutations are u=g^{-1}sigma, forming a set U
+contained in A. Write m' for the retained edge count. Then
+
+ m'>=epsilon_1 N^2/L,
+ |U|>=m'/(CN)>=epsilon_1 N/(LC),
+ |A|<=B d<=BDN.
+
+In particular, both |U| and |A| tend to infinity with N and are O(N).
+Selection was by actual edge weight, so no perfectness of the color
+classes or uniformity of their supports has been assumed.
+
+6. A BASEPOINT LIFT THAT PRESERVES THE B PROPERTY
+
+For every z in Omega, form a bipartite graph F_z on two disjoint copies of
+the permutation group. For each u,v in U, put the edge
+
+                             (u^{-1},v u^{-1})
+
+in F_z if the retained original graph has its color-v edge at row label
+u^{-1}z. (That original edge necessarily ends at v u^{-1}z.) The row and
+column labels lie in A and A^2, respectively. The group-table color is v.
+
+For fixed z, distinct pairs (u,v) give distinct lifted edges: the row
+determines u, and then the column determines v. Each original color label
+corresponds to a unique v, by Section 4. For every fixed u, the map
+z -> u^{-1}z is a bijection of Omega. Consequently
+
+                          sum_{z in Omega} |F_z| = |U| m'.
+
+Some z therefore satisfies
+
+ |F_z| >= |U|m'/|Omega|
+       >= epsilon_1^2 N^2/(L^2 C^2)
+       >= delta_1 |A|^2,
+
+where delta_1=epsilon_1^2/(L^2 C^2 B^2 D^2)>0 is fixed.
+
+Claim: every F_z is B-colored. Suppose a nonrainbow four-cycle had distinct
+rows r_1,r_2, distinct columns s_1,s_2, and equal diagonal color v. The
+group-table coloring is proper, so a repeat must indeed be on a diagonal.
+The equal-color equations give s_i=v r_i. Project group elements by
+pi_z(h)=h z. Set x_i=r_i z, y_i=s_i z=v x_i.
+
+If x_1!=x_2, then y_1!=y_2 because v is a permutation. All four original
+edges exist by the definition of F_z, and form a genuine four-cycle with
+equal diagonal color v, contradicting the original B property.
+
+If x_1=x_2, then y_1=y_2. All four lifted edges project to the same original
+simple edge. Its original color is unique, hence its representing
+permutation is v. The lifted cross edge (r_1,s_2) must therefore also have
+group-table color v. Thus s_2=v r_1=v r_2 and r_1=r_2, a contradiction.
+
+This proves the claim even if the map pi_z is far from injective.
+
+7. CONCLUSION
+
+For the basepoint selected above, F_z subset A x A^2 is B-colored and has
+at least delta_1 |A|^2 edges. Lemma 2 with (a,b)=(1,2) contradicts this as
+|A| tends to infinity. The hypothesized m>=epsilon N^2 is impossible for
+every fixed epsilon>0. This proves the main theorem.
+
+8. INTERPRETATION AND LIMITS
+
+* Unlike the perfect-color argument, the proof never infers AP-freeness of
+  the chosen permutation completions. Such an inference would be false in
+  general: the required four original edges may be absent.
+* The parameter |SS^{-1}| is the number of distinct relative permutations,
+  not the order of the generated group. It can remain O(N) while that group
+  is much larger, so the theorem strengthens the small-ambient-group result.
+* The hypothesis is not automatic for B colorings. There can be up to
+  |S|^2=O(N^2) relative permutations, and no argument here bounds them by
+  O(N). Establishing an appropriate structural reduction remains open.
+* The result is qualitative and depends on deep established structure and
+  recurrence theorems. No practical numerical decay rate is obtained.
+* The ordinary finite-group-table case is already Solymosi's Theorem 5
+  (arXiv:1309.0133). The precise local-approximate-group and partial-action
+  formulation here requires a literature audit before any priority claim.
+
+9. STRONGER SCALE-FREE FORMULATION
+
+THEOREM. Fix K. Let a B-colored bipartite graph be represented, with separate
+injections of its two sides, on a set Omega of size n. Let q be its number
+of original used colors, and S the set of their representing permutations;
+the representing permutations need not be distinct. If q tends to infinity
+and |SS^{-1}|<=Kq, then
+
+                                m=o(qn).
+
+This is uniform in n and in the representation, and does not presume that
+q and n have comparable sizes. In particular it rules out bounded doubling
+for palettes whose color classes have a positive average density on Omega.
+
+Proof. Suppose m>=epsilon qn. Discard color classes smaller than epsilon n/2;
+at least epsilon qn/2 edges remain. At most 2/epsilon surviving original
+colors can share one representing permutation, since their positions are
+disjoint subsets of its matching of size n. Keeping one largest class for
+each permutation leaves at least gamma qn edges, where gamma=epsilon^2/4.
+The distinct surviving permutation set S_1 has size d with gamma q<=d<=q.
+Consequently |S_1 S_1^{-1}|<=Kq<=(K/gamma)d.
+
+Tao's covering theorem gives a K_0-approximate group A of size at most Bd
+and a cover of S_1 by L left translates of A; K_0,B,L depend only on
+K,epsilon. Choose a translate carrying at least gamma qn/L edges and
+normalize its colors into A as in Section 5. Its palette U satisfies
+|U|>=gamma q/L because a color class has at most n edges. For the basepoint
+lift of Section 6, averaging over Omega now gives
+
+             |F_z| >= |U|m'/n >= gamma^2 q^2/L^2
+                   >= gamma^2 |A|^2/(L^2 B^2)
+
+for some z. These F_z are B-colored subsets of A x A^2 by the same exact
+projection argument. Since |A|>=|U|>=gamma q/L tends to infinity, Lemma 2
+gives a contradiction. QED.
+
+The number q counts ORIGINAL colors, not only distinct permutation labels;
+the duplicate-label step is therefore part of the argument rather than an
+unstated injectivity assumption. If the original palette is already
+injectively represented, that step may be omitted.

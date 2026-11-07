@@ -1,0 +1,125 @@
+INDEPENDENT AUDIT: CUBIC PHASES, DENSE FOUR-PARTITE SETS, AND GEOMETRY
+15 October 2026. All checks below are algebraic hand proofs.
+No finite search, new asymptotic edge bound, or novelty claim.
+
+1. CUBIC PHASE NOTE: PASS
+
+Audited in full:
+  pass3-quadratic-variety-and-cubic-phase-obstruction.txt
+
+The rational parametrization, determinant-zero families, exact total
+count (p-1)(p^2-p+2), and exact nondegenerate count
+(p-1)(p^2-5p+8) all check. An independent degeneracy count is
+
+  4(p-1)(p-2)+2(p-1)=(p-1)(4p-6),
+
+which equals the difference between the two displayed counts.
+
+The cubic identity follows directly from
+
+ de(d+e)=ac(a+b)=a^2c+abc,
+ fg(f+g)=ab(a+c)=a^2b+abc.
+
+All conditional-expectation normalizations check. In particular,
+color fibers have p points, sum and product fibers have p-1 points,
+and the latter factors are uniform on F_p. For e_p(lambda r^2u),
+the product-marginal squared norm is exactly 1/(p-1). For
+e_p(lambda ru(r+u)), the product-marginal expansion has (p-1)
+diagonal terms of size p and (p-1)(p-2) off-diagonal quadratic sums
+of modulus sqrt(p); division by p(p-1)^2 gives exactly the stated
+upper bound
+
+        1/(p-1)+(p-2)/[(p-1)sqrt(p)].
+
+Thus all conditional L2 norms are o(1), uniformly in every nonzero
+frequency lambda. The weakest bound is O(p^(-1/4)). The sum-fiber
+estimate for r^2u uses only r^2=v^2 after orthogonality, and the
+other estimates require only the elementary quadratic Gauss-sum
+modulus. No unproved Kloosterman or higher-degree estimate enters.
+
+2. THE FOUR DENSE INDICATOR SETS: PASS, WITH THEIR STATED SCOPE
+
+Let J_p consist of standard residues strictly between p/16 and
+3p/16. Select in slot i exactly those pairs whose signed phase
+polynomial lies in J_p. On a solution, the four signed polynomials
+sum to zero modulo p. But four selected standard residues have
+ordinary integer sum strictly between p/4 and 3p/4. This is
+impossible, so there are no configurations at all.
+
+The normalized additive Fourier coefficients of an interval have
+l1 norm O(log p). Expanding its indicator, applying the uniform
+nonzero-frequency conditional L2 estimates, and using the triangle
+inequality gives an error O(p^(-1/4)log p)=o(1) for each color, sum,
+and product marginal. The global density also tends to 1/8 by
+Cauchy--Schwarz (or by taking the expectation of any marginal).
+
+These four supports are different and need not be properly oriented.
+This refutes a proposed four-partite counting/supersaturation theorem
+based solely on these marginal conditions. It does not refute a
+removal theorem: a zero-solution example already needs no deletions.
+It also does not refute the common properly oriented support problem.
+
+3. DIFFERENTIAL LINEARIZATION OBSTRUCTION: PASS ON THE CORRECT OPEN SET
+
+The following calculation independently checks the candidate written
+by the literature agent in
+  pass3-four-projection-linearization-obstruction.txt.
+
+In U=a,V=a+b,W=ac coordinates, with U!=0, the four slot-coordinate
+maps can be expressed as
+
+  (U,V-U),   (U,W/U),   (V,W),
+  (S,T)=(U+W/U, U(V-U)).
+
+Their kernel line fields are respectively
+
+  partial_W, partial_V, partial_U,
+  X=partial_U+(2-V/U)partial_V+(W/U-U)partial_W.
+
+For the last map, this follows immediately from
+
+  dS=(1-W/U^2)dU+dW/U,
+  dT=(V-2U)dU+U dV.
+
+The bracket with partial_U is
+
+  [partial_U,X]=(V/U^2)partial_V+(-W/U^2-1)partial_W.
+
+Taking these three vector fields as columns gives
+
+ det(partial_U,X,[partial_U,X])
+   = -2(U^2-UV+W)/U^2
+   = -2(c-b)/a.
+
+Therefore, in odd characteristic, at every b!=c point the span of
+the third and fourth kernel lines is not closed under brackets.
+For constant kernel lines of affine-linear rank-two maps, their
+span is closed under brackets. Invertible differentiable coordinate
+changes preserve brackets and this closure property; invertible
+output relabelings preserve the kernel distribution. Hence these
+four maps cannot be simultaneously changed into affine-linear maps
+by such coordinate and separate output changes near a genuine point.
+
+The third and fourth maps here use sum/product coordinates. To apply
+the same statement to selected ORDERED root-pair slots, the change
+(d,e)->(d+e,de) is locally invertible only when d!=e, and similarly
+the fourth slot requires f!=g. Thus for ordered root maps one must
+restrict to this additional generic open set. That is enough for
+an obstruction to a birational simultaneous linearization.
+
+This argument is about local transformations with invertible
+differential (or birational transformations on their nonsingular
+open sets). It does not address arbitrary relabelings of finite
+sets, inseparable transformations, larger auxiliary spaces, or
+hypergraph representations.
+
+4. COMBINED INTERPRETATION
+
+The phase obstruction shows that natural one-coordinate marginals
+miss an exact cubic compatibility. The geometric obstruction shows
+that the coupling cannot be eliminated by a nonsingular change to
+an affine-linear three-variable system. Neither supplies the
+uniform inverse or removal theorem still required for quadratic
+affine B-sparsity. The separate polynomial classification in
+pass3-all-polynomial-slot-potentials.txt is also only an algebraic
+classification of formal identities, not an analytic inverse theorem.

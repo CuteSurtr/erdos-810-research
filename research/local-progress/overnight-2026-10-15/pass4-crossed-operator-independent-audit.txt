@@ -1,0 +1,181 @@
+INDEPENDENT AUDIT: QUADRATIC COMMON-DOMAIN COLORINGS
+2026-10-15, finite_audit agent; root's crossed-involution argument.
+
+Status: PASS. This is an analytic proof using the classical Weil bound for
+Kloosterman sums. No finite graph enumeration or Lean verification is claimed.
+Priority has not been established. The common-domain hypothesis is essential
+to the transfer step below; this does not settle Erdős problem #810.
+
+THEOREM
+
+Let p be an odd prime, A a subset of F_p^*, and X a subset of F_p. On the two
+copies of F_p, put in every edge (x,a*x+a^2) for a in A and x in X, with color a.
+Suppose this is a proper coloring of a simple graph and every C4 is rainbow.
+Then, with an absolute implied constant,
+
+                  m = |A| |X| = O(p^(19/10)).
+
+More precisely, put d=|A|. For d>0 set
+
+ lambda = max( [(p-1)(3d^2-2d)]^(1/4),
+               [2p*d^2+2sqrt(p)*d^3]^(1/4) ).
+
+Then
+
+             m <= min(dp, p^2(1+lambda)/(d+lambda)).       (1)
+
+In particular d>=delta*p gives m=O_delta(p^(15/8)).
+
+1. THE OPERATOR AND ITS EXACT SUPPORT INTERPRETATION
+
+On Omega=F_p^2 define the affine involution
+
+       tau_a(x,y)=(y/a-a, a*x+a^2).
+
+Let U_a f=f composed with tau_a and S=sum_(a in A) U_a. These are unitary
+involutions on counting-measure l2(Omega), so S is selfadjoint, and S*1=d*1.
+
+Let E be the set of actual edge points. If e=(x,y) and tau_a(e)=(z,w) both
+belong to E, then x,z belong to X. Since all colors of A have this SAME domain,
+the two additional edges (x,w) and (z,y), both of color a, are also in E.
+If x!=z, invertibility of a gives y!=w. The four positions are consequently a
+genuine C4 with repeated color a, contrary to the hypothesis. Hence every
+internal transition of S on E is a fixed point.
+
+The equality tau_a(x,y)=(x,y) is equivalent to y=a*x+a^2. Every actual edge has
+exactly one such a in A, since the coloring is simple and proper. Therefore
+
+                    <1_E,S 1_E> = m.                    (2)
+
+This is stronger than merely bounding the number of internal transitions.
+It uses the actual support and is precisely where arbitrary separate color
+domains would invalidate the proof.
+
+2. FOURIER DECOMPOSITION
+
+Write e_p(z)=exp(2*pi*i*z/p). In the normalized character basis,
+
+ e_(xi,eta) composed with tau_a
+    = e_p(-a*xi+a^2*eta) e_(a*eta,xi/a).
+
+Thus the product xi*eta is invariant. The zero frequency is the constant
+eigenvector. The two nonzero coordinate axes form one invariant subspace.
+For each t!=0, the frequencies (r,t/r), r!=0, form another invariant subspace.
+Their dimensions add to 1+2(p-1)+(p-1)^2=p^2, so no subspace is omitted.
+
+With row index r and column index s, the t!=0 block is the Hermitian matrix
+
+ M_t(r,s)=1_A(r*s/t) e_p(r*s*(r-s)/t),       r,s!=0.       (3)
+
+Indeed the unique possible color is a=r*s/t. Reversing r and s conjugates the
+phase, and the color indicator is unchanged.
+
+3. THE FOURTH MOMENT, INCLUDING EVERY EXCEPTIONAL CASE
+
+Expanding the trace gives
+
+ tr(M_t^4) = sum_(r,s,u,v !=0)
+   1_A(rs/t) 1_A(su/t) 1_A(uv/t) 1_A(vr/t)
+   e_p((r-u)(s-v)(r+u-s-v)/t).                            (4)
+
+The phase factorization follows by expanding
+rs(r-s)+su(s-u)+uv(u-v)+vr(v-r).
+
+Make the bijective substitution
+
+ a=rs/t, q=u/r, h=v/s;
+ s=t*a/r, u=q*r, v=h*t*a/r.
+
+The color product becomes W(a,q,h)=1_A(a)1_A(qa)1_A(qha)1_A(ha), independent
+of r. The remaining complete sum in r is
+
+ sum_(r!=0) e_p(alpha*r+beta/r),
+ alpha=a(1-q)(1-h)(1+q),
+ beta=-t*a^2(1-q)(1-h)(1+h).                             (5)
+
+Because p is odd and a,t are nonzero, both coefficients vanish exactly when
+q=1, or h=1, or q=h=-1. The W-weighted number of such triples is
+
+        d^2+d^2-d+|A intersect (-A)| <= 2d^2.             (6)
+
+For example q=1 leaves W=1_A(a)1_A(ha), giving d^2; the q=h=1 overlap has d
+triples. The q=h=-1 case contributes |A intersect (-A)| and is disjoint from
+the first two cases in odd characteristic.
+
+The total W-weighted number of triples is at most d^3: specifying a,qa,ha in A
+determines q,h and leaves only the additional restriction qha in A.
+
+If exactly one of alpha,beta is zero, the complete sum in (5) is -1. If both
+are nonzero, its absolute value is at most 2sqrt(p), by the classical Weil
+Kloosterman bound. If both are zero, its value is p-1. Consequently
+
+       tr(M_t^4) <= 2p*d^2+2sqrt(p)*d^3.                 (7)
+
+Since M_t is Hermitian, every eigenvalue to the fourth power is nonnegative,
+and ||M_t||^4 <= tr(M_t^4). No positivity of individual summands in (4) is
+being assumed.
+
+External input, verified at its exact statement: Gergely Harcos, "Weil's
+bound for Kloosterman sums", Theorem 1, page 1, gives
+|sum_(r in F_p^*) e_p(alpha*r+beta/r)|<=2sqrt(p) for odd prime p and nonzero
+alpha,beta. This is a classical theorem due to Weil, not a new estimate here.
+https://users.renyi.hu/~gharcos/weil.pdf
+
+4. THE AXIS BLOCK
+
+The nonzero x-axis and y-axis are swapped by each U_a. In Fourier coordinates
+the block has the form [0 B; B* 0], where B is (up to swapping the two axes)
+the nonconstant Fourier matrix of the one-point operator
+
+                 C_A = sum_(a in A) P_(x -> a*x+a^2).
+
+For completeness, its bound does not require a new exponential-sum estimate.
+If sigma_a(x)=a*x+a^2, the quotient sigma_a sigma_b^(-1) has slope rho=a/b and
+intercept rho(rho-1)b^2. The identity has multiplicity d. Every nonidentity
+quotient has multiplicity at most two: rho!=1 and the intercept fixes b^2.
+Thus the multiplicative energy of the permutation set satisfies
+
+                         E <= 3d^2-2d.
+
+On the zero-sum representation of the affine permutation group, the character
+is p-1 at the identity, -1 at a nonidentity translation, and 0 at every map
+with slope different from 1. The group-algebra coefficients in (C_A C_A*)^2
+are nonnegative counts. Its trace on that representation is therefore at
+most (p-1)E, whence
+
+                  ||B|| <= [(p-1)(3d^2-2d)]^(1/4).        (8)
+
+This is also proved in pass3-common-mask-spectral-intermediate.txt. Either
+convention for pullback permutation matrices gives the same quotient energy.
+
+Equations (7) and (8) establish the displayed lambda bound for S on 1^perp.
+
+5. HOFFMAN-TYPE INEQUALITY AND THE EXPONENT
+
+Let N=p^2 and write 1_E=(m/N)1+v, with v perpendicular to 1. Then
+||v||^2=m-m^2/N. Selfadjointness, (2), and the lower spectral bound give
+
+ m = d*m^2/N + <v,Sv>
+   >= d*m^2/N - lambda*(m-m^2/N).
+
+For m>0 this rearranges to m<=N(1+lambda)/(d+lambda), proving (1). The empty
+case is immediate. In particular
+
+ m <= C [p^2/d + p^(9/4)d^(-1/2) + p^(17/8)d^(-1/4)].   (9)
+
+If d<=p^(9/10), use m<=dp. Otherwise the three terms in (9) are at most
+p^(11/10), p^(9/5), p^(19/10), respectively. This proves the uniform power
+saving m=O(p^(19/10)). If d>=delta*p, (9) instead gives O_delta(p^(15/8)).
+
+SCOPE AND REMAINING ISSUE
+
+The theorem allows every palette A and every common row set X; neither must
+be an interval, a subgroup, or near-full. It does not apply to arbitrary
+color-dependent supports, because the two closing a-edges in Section 1 may
+then be absent. A bounded union of color-row rectangles can be handled by
+applying the theorem to the corresponding inherited B subgraphs and summing.
+Any such extension must count the actual rectangles and their edge overlaps.
+
+The proof is independent of the recent prime-field Szemeredi-Trotter input,
+and uses only the explicitly stated classical Kloosterman estimate beyond
+the elementary linear algebra and Fourier calculations above.

@@ -1,0 +1,12 @@
+{
+  "HypergraphReduction.lean": "135db3d64370d04b34d9603aac9b568d1ffd559db9e15fbd2f9207379ce09099",
+  "BruteForce.lean": "aa3ef0db275ec10a1ac1640c17bad35d19ed8e79111a7f23ee31641815323de3",
+  "AntiRamsey.lean": "b9548a354869f6fd4ab30628384ecbb06cf9629eb6a81e8932131aa0f4766253",
+  "Erdos810.lean": "3f2827fd918a1ab9281d197eecd34ef40aed1e99aaf7d2e51f438dd78879b6de",
+  "Audit.lean": "1e07806d66dd271ddfd67dcf8745a7b0957dde5ce6d76a692251a0b001f1d6b7",
+  "README.md": "7e85ae5ae2716022330305a2e6863f890f7675a51344b24ee8c8582a6af767df",
+  "lakefile.toml": "37946029b89855776454b966fd6e1b92bf31c9a0fa104bfdc23e4bb4a9cb3b6e",
+  "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+  "search/erdos810_search.py": "c6c4fee6de4d4035e61d5e69373eb3fc7d3f9b7437053f5601d3f7f923c6a7b2",
+  "search/results.json": "ae571af9a99bb1b4808e097e422e53b16b8f9353197cf37e71e0cc3bea96c25e"
+}

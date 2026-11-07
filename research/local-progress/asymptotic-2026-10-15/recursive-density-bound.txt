@@ -1,0 +1,227 @@
+Recursive endpoint bound for rainbow-C4 colorings
+2026-10-15. Complete proof draft, independently checked by multiple agents.
+Not Lean verified. No assertion that the result improves published bounds.
+
+THEOREM. Let M(N) be the maximum number of edges in an N-vertex graph with
+at most N edge colors in which every four-cycle is rainbow. Then
+
+                 limsup M(N)/N^2 <= rho_* = 0.29922502883245506...
+
+Define alpha_* as the unique nonnegative root of
+
+                 2alpha^3+17alpha^2+35alpha-18=0.
+
+It lies in (0,1/2), and equals 0.42303632978613243.... The constant rho_* is
+the unique root in [0,1/2] of
+
+        4(1+alpha_*)rho^3-2(1+alpha_*)rho^2-3rho+1=0.
+
+The limit is taken with the number of vertices. This is not an o(N^2) bound.
+
+A. Properification.
+The companion properification-and-regularization.txt proves that any
+rainbow-C4 coloring on N vertices becomes proper after deleting o(N^2)
+edges, uniformly in the palette size. The proof packs edge-disjoint
+monochromatic two-edge paths. Each path's endpoints have a unique common
+neighbor. On three copies of the vertex set the packed paths close to
+edge-disjoint triangles with no other triangles, so the triangle-removal
+lemma bounds the packing by o(N^2). Deleting both legs of an inclusion-maximal
+packing eliminates all monochromatic adjacent edge pairs. Thus any constant
+upper bound for proper B-colorings transfers to arbitrary B-colorings.
+The classical external input is the triangle-removal lemma, e.g. Fox,
+Annals of Mathematics 174 (2011), 561-579:
+https://annals.math.princeton.edu/2011/174-1/p17
+
+B. Statement of the bipartite induction.
+Normalize the palette size to N, and allow bipartite graphs whose parts have
+sizes A,B with A+B<=N. Put a=A/N, b=B/N, s=a+b. For 0<=alpha<=1/2 set
+
+ F_alpha(a,b)=ab s/[s+ab(1+alpha s)]       when s>0,
+ F_alpha(0,0)=0.
+
+Property U(alpha) means that every properly B-colored such graph, with at
+most N colors, has at most
+
+                 N^2 F_alpha(a,b)+epsilon_N N^2
+
+edges, for some epsilon_N tending to zero uniformly over A,B and the graph.
+Padding with unused colors is harmless. We prove U(0), and
+
+ U(alpha) => U(Phi(alpha)),
+ Phi(alpha)=(3+alpha)^2/[(5+alpha)^2/(1+alpha/2)+3+alpha].       (6)
+
+C. Base case.
+Let E be the edge count. A color class of size K is a matching. Among its
+matched endpoints, the bipartite graph has at most K(K+1)/2 edges: each pair
+of matching edges permits at most one cross edge, since two would make a
+non-rainbow four-cycle. The sum of endpoint degrees is at most
+K(A+B+1-K). Summing over N colors and using Cauchy-Schwarz gives
+
+ E^2/A+E^2/B <= sum_v d(v)^2 <= (A+B+1)E-E^2/N.
+
+Consequently
+
+ E <= NAB(A+B+1)/[N(A+B)+AB]
+   = N^2 F_0(a,b) + N ab/(s+ab).
+
+The final coefficient is at most 1/4 for s<=1. This proves U(0), uniformly.
+Empty parts and E=0 are immediate.
+
+D. Endpoint decomposition and Jensen.
+Assume U(alpha), with alpha in [0,1/2]. For a color matching of size K,
+its endpoint degree sum is at most
+
+ K(K+1)+N^2 F_alpha(k,b-k)+N^2 F_alpha(a-k,k)+2epsilon_N N^2,
+
+where k=K/N. The first term counts edges between matched endpoints twice;
+the other terms bound the two rectangles to outside vertices. Those
+rectangles have total vertices B and A respectively, so U(alpha) applies.
+
+Define h(k)=k^2+F_alpha(k,b-k)+F_alpha(a-k,k). This function is concave
+on [0,min(a,b)]. To see this, for a fixed part size u in (0,1] write
+z=k(u-k), d=1/u+alpha. Then
+
+ F_alpha(k,u-k)=z/(1+dz),
+ (d^2/dk^2)F_alpha(k,u-k)
+       =-2/(1+dz)^2-2d(u-2k)^2/(1+dz)^3.
+
+Here dz<=u(1+alpha u)/4<=3/8. Therefore
+
+ h'' <= 2-4/(11/8)^2 = -14/121 < 0.
+
+The normalized color class sizes have average E/N^2, since there are N
+colors after padding. Jensen and the degree-square lower bound imply, with
+m=E/N^2,
+
+       m^2 s/(ab) <= h(m)+2epsilon_N+O(1/N).                (7)
+
+The O(1/N) is uniform: the additional K term sums to E<=N^2.
+
+E. The scalar improvement.
+First work in a limit with a,b,m positive, so the errors in (7) vanish.
+Write each F_alpha term as its complete rectangle minus a loss. Then
+
+ h(m)=sm-m^2-m^2 L,
+
+ L=(a-m)^2/[a/(1+alpha a)+m(a-m)]
+       +(b-m)^2/[b/(1+alpha b)+m(b-m)].
+
+Cauchy-Schwarz and concavity of u/(1+alpha u) give
+
+ L >= R(s,m):=(s-2m)^2/[s/(1+alpha s/2)+m(s-2m)].           (8)
+
+Thus (7) gives m <= ab s/[s+ab(1+R(s,m))].
+The induction hypothesis itself bounds
+
+ m<=F_alpha(a,b)<=s^2/[4+s+alpha s^2].                       (9)
+
+The function R(s,m) decreases in m for 0<=m<=s/2. Indeed its derivative
+has, apart from the positive squared denominator, numerator
+
+ -(s-2m)[4s/(1+alpha s/2)+s(s-2m)] <=0.
+
+Put D=4+s+alpha s^2 and B=4-s+alpha s^2. Inserting (9) into (8) gives
+
+ R(s,m)/s >= B^2/[D^2/(1+alpha s/2)+s^2 B] = 1/K(s),
+
+ K(s)=D^2/[(1+alpha s/2)B^2]+s^2/B.
+
+For s in (0,1], K is increasing. The derivative of its second summand is
+s(8-s)/B^2>0. The logarithmic derivative of its first summand is
+
+       -alpha/(2+alpha s)+4(4-alpha s^2)/(DB).
+
+Because alpha<=1/2, D<=11/2 and B<=4, this is at least
+14/22-1/4=17/44>0. Therefore the minimum of 1/K(s) occurs at s=1, proving
+
+                         R(s,m)>=s Phi(alpha).
+
+Substitution gives m<=F_{Phi(alpha)}(a,b), as required.
+
+F. Uniform errors and induction boundary cases.
+The preceding limiting argument proves U(Phi(alpha)) uniformly. If not,
+there would be an eta>0 and a sequence of counterexamples with normalized
+edge counts m exceeding F_{Phi(alpha)}(a,b) by at least eta. Compactness
+allows a convergent subsequence of (a,b,m) in the closed feasible region
+0<=a,b, a+b<=1, 0<=m<=ab. Because F is nonnegative, the limiting m is at
+least eta, so a,b,s are positive. Formula (7) then passes to the limit,
+and U(alpha) gives (9). Sections D-E contradict the eta excess. Cases
+m->0, a->0, b->0, or s->0 cannot produce a fixed positive excess.
+
+This argument is repeated only finitely many times for each U(alpha_j).
+No estimate uniform in the number of iterations is needed below.
+
+G. The sequence and its limit.
+Let alpha_0=0 and alpha_{j+1}=Phi(alpha_j). Algebra gives
+
+ Phi(alpha)=(alpha^3+8alpha^2+21alpha+18)/(3alpha^2+25alpha+56).
+
+Its derivative is positive for alpha>=0: after multiplying by its squared
+denominator, the numerator is
+
+             3alpha^4+50alpha^3+305alpha^2+788alpha+726.
+
+The fixed-point equation is
+
+                2alpha^3+17alpha^2+35alpha-18=0.
+
+This polynomial is strictly increasing on [0,infinity), is negative at 0,
+and positive at 1/2. Its unique root alpha_* is therefore in (0,1/2).
+For 0<=alpha<alpha_*, Phi(alpha)>alpha, and monotonicity gives
+Phi(alpha)<Phi(alpha_*)=alpha_*. Consequently alpha_j increases to alpha_*.
+All induction parameters stay in the verified interval [0,1/2].
+
+The first values are
+ alpha_1=9/28,
+ alpha_2=562185/1412516=0.3980025712983074...,
+ alpha_3=0.4168344849338080... .
+
+For every fixed j, U(alpha_j) holds. Take N->infinity first, and then
+j->infinity. Continuity of F_alpha gives the bound with alpha_* for every
+subsequential graph-density limit. Equivalently U(alpha_*) also follows
+by choosing a fixed sufficiently large j for each desired error tolerance.
+
+H. Global endpoint bound.
+Now let G be a general proper B-colored graph on N vertices with <=N colors.
+For a color matching of size K, let S be its 2K endpoints. Between two
+matching edges there are at most two additional edges: three would include
+a disjoint pair and yield a non-rainbow four-cycle. Thus e(G[S])<=K^2.
+The endpoint degree sum is at most 2K^2+e(S,V\S).
+
+Use U(alpha_j) on this bipartite cut. With x=K/N and z=2x(1-2x), the
+normalized endpoint degree sum is at most
+
+ H_alpha(x)=2x^2+z/[1+(1+alpha)z] + o(1),
+
+uniformly in x. For alpha<=1/2 and 0<=x<=1/2,
+
+ H_alpha''=4-8/[1+(1+alpha)z]^2
+          -2(1+alpha)(2-8x)^2/[1+(1+alpha)z]^3
+          <=4-8/(11/8)^2 <0.
+
+Summing over N colors, Jensen, and sum_v d(v)^2>=4E^2/N therefore give,
+for every subsequential density limit rho=lim E/N^2,
+
+              4rho^2 <= H_{alpha_j}(rho).
+
+For rho>0 this rearranges to
+
+           4(1+alpha_j)rho^3-2(1+alpha_j)rho^2-3rho+1 >=0.
+
+For any c=1+alpha_j in [1,3/2], the cubic 4c r^3-2c r^2-3r+1 is strictly
+decreasing on [0,1/2]. Its derivative is 12c r^2-4c r-3, whose maximum on
+this interval is max(-3,c-3)<0. The cubic is positive at 0 and negative
+at 1/2, so it has a unique root there. Letting j->infinity gives rho<=rho_*.
+
+As a fully rational finite-iteration alternative, alpha_2 gives
+
+ rho <= 0.2997928854558638...,
+ 3949402rho^3-1974701rho^2-2118774rho+706258=0.
+
+I. Limitations.
+The bipartite proof and the proper global bound use elementary counting,
+Cauchy-Schwarz, and one-variable calculus. Only transfer to nonproper
+colorings needs triangle removal. The bound is an asymptotic constant; no
+polynomial decay in N is obtained. The exact induction limit above belongs
+to this chosen family of estimates and is not asserted to be optimal even
+within the endpoint method. External novelty remains a literature question.

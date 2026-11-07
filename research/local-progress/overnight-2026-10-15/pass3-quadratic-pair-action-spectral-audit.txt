@@ -1,0 +1,141 @@
+EXACT TWO-POINT MIXING FOR THE COMPLETED QUADRATIC AFFINE PALETTE
+15 October 2026. Parent's spectral lemma independently audited.
+Elementary finite Fourier proof; no graph search or novelty claim.
+
+1. STATEMENT
+
+Let p be an odd prime and sigma_a(x)=a*x+a^2 for a in F_p*.
+On the ordered distinct-pair space
+
+              Omega_2={(x,z) in F_p^2 : x!=z},
+
+define the unnormalized operator
+
+       (C_2 f)(x,z)=sum_{a!=0} f(sigma_a(x),sigma_a(z)).  (1)
+
+Then for every f with sum_{Omega_2} f=0,
+
+                       ||C_2 f||_2 <= sqrt(2p)||f||_2.  (2)
+
+Either counting measure or uniform measure can be used for these
+norms, provided the same normalization is used on both sides.
+
+Consequently, for arbitrary fixed A,B subset Omega_2,
+
+ | sum_{a!=0} |{u in A : sigma_a^{(2)}u in B}|
+       - |A||B|/p |
+ <= sqrt(2p) sqrt(|A||B|).                              (3)
+
+Here sigma_a^{(2)} acts on both coordinates. The stronger centered
+bound replaces the last square root by
+
+ sqrt[|A|(1-|A|/[p(p-1)]) |B|(1-|B|/[p(p-1)])].         (4)
+
+In particular, fixed positive-density pair sets have the expected
+transition count, with relative error O(p^(-1/2)). This statement
+concerns the completed maps and fixed pair sets. It does not count
+configurations whose selected pair support varies with the color a.
+
+2. FOURIER BLOCKS ON ALL OF F_p^2
+
+First define C_2 on the whole square F_p^2 by the same formula.
+Write e_p(t)=exp(2*pi*i*t/p) and use the orthogonal Fourier basis
+
+             chi_(u,v)(x,z)=e_p(u*x+v*z).
+
+The zero frequency is an eigenvector of eigenvalue p-1. Nonzero
+frequencies split into projective scalar orbits. Fix a nonzero
+representative v=(v_1,v_2), write frequencies as s*v with s!=0,
+and put c=v_1+v_2. Then
+
+ C_2 chi_(s*v)
+   =sum_{a!=0} e_p(c*s*a^2) chi_(a*s*v)
+   =sum_{r!=0} e_p(c*r^2/s) chi_(r*v).
+
+Thus the matrix in this invariant Fourier block is
+
+                  M_(r,s)=e_p(c*r^2/s), r,s!=0.         (5)
+
+3. NONEXCEPTIONAL BLOCKS
+
+If c!=0, additive-character orthogonality and the permutation
+s->1/s of F_p* give
+
+ (M M*)_(r,t)=sum_{s!=0} e_p(c*(r^2-t^2)/s)
+             = p-1, if r^2=t^2;
+             = -1,  otherwise.
+
+Since p is odd and r,t are nonzero, r^2=t^2 precisely when t=r or
+t=-r. Let K be the permutation matrix r->-r and let J be the
+all-ones matrix of size p-1. Then
+
+                         M M*=p(I+K)-J.                (6)
+
+On functions odd under r->-r, this is zero. On the constant vector
+it has eigenvalue 2p-(p-1)=p+1. On the even mean-zero subspace it
+has eigenvalue 2p. Consequently ||M||<=sqrt(2p).
+
+For p>=5 the even mean-zero sector is nonempty. For p=3 it is
+empty, and the block norm is sqrt(p+1); the stated bound still holds.
+
+4. THE EXCEPTIONAL PROJECTIVE ORBIT
+
+Exactly one projective orbit has c=0, represented by (1,-1).
+Its matrix M is J. The large singular direction is
+
+ sum_{s!=0} chi_(s,-s)(x,z)=p*1_{x=z}-1,
+
+with eigenvalue p-1; the other p-2 directions are in the kernel.
+Together with the zero Fourier frequency, the only uncontrolled
+directions are therefore the span of
+
+                           1, 1_{x=z}.                 (7)
+
+Every other block has the bound from Section 3. Both this span and
+its orthogonal complement are reducing subspaces: each completed
+map, and its inverse, preserves the diagonal and the whole square.
+
+5. RESTRICTION TO DISTINCT PAIRS AND MIXING
+
+Extend a mean-zero f on Omega_2 by zero on the diagonal. It is
+orthogonal to 1 because its sum is zero, and orthogonal to 1_{x=z}
+because it vanishes there. The estimate on the complement of (7)
+therefore applies. The operator preserves the off-diagonal space,
+proving (2).
+
+Let N=|Omega_2|=p(p-1), and center the two indicators:
+
+       f_A=1_A-|A|/N,       f_B=1_B-|B|/N.
+
+Each sigma_a^{(2)} is a permutation, so both row and column sums of
+C_2 are p-1. Hence, using counting-measure inner products,
+
+ <1_A,C_2 1_B> = (p-1)|A||B|/N + <f_A,C_2 f_B>.
+
+The first term is |A||B|/p. Cauchy--Schwarz and (2) give (3), with
+the refinement (4) from ||f_A||_2^2=|A|(1-|A|/N).
+
+6. GROUP INTERPRETATION AND THE ACTUAL-SUPPORT GAP
+
+The full affine group of F_p acts sharply transitively on ordered
+distinct pairs: a unique affine map sends any such pair to any
+other. Thus C_2 can also be regarded as a Cayley convolution operator
+on Aff(F_p) for the palette {(a,a^2):a!=0}. The proof above already
+establishes the bound directly, without needing group expansion
+theorems or an assertion that this estimate is historically new.
+
+For an actual partial color a with row support D_a, its relevant
+two-point action is multiplied by
+
+                         1_{D_a}(x)1_{D_a}(z).
+
+This weight depends on a as well as the input pair. It cannot in
+general be moved outside the sum in (1), and it need not define a
+fixed set A to which (3) applies. Crossed selected-edge conditions
+introduce further dependence on input and output coordinates.
+
+Accordingly, strong two-point mixing of the completions does not
+prove the required four-slot counting/removal assertion. The cubic
+phase note supplies a separate exact obstruction to a simple
+four-partite counting assertion even when natural marginals are
+uniform. Neither fact alone resolves arbitrary-support B-sparsity.

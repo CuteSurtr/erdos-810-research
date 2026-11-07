@@ -1,0 +1,42 @@
+Four-edge obstruction classification (mathematical proof; converse not formalized)
+
+Let G be a simple bipartite graph with a proper edge coloring. Lift each edge uv
+of color k to the triple {u,v,k}, where the vertex and color sets are disjoint.
+Then the lifted hypergraph is (7,4)-free if and only if:
+  (1) every C4 in G is rainbow; and
+  (2) G has no 4-edge path on 5 distinct vertices whose colors alternate p,q,p,q.
+Here p and q must be different because the original coloring is proper.
+
+Proof. Fix any four distinct graph edges, let v be the number of their distinct
+endpoints and let t be the number of their colors. Their lifted union has exactly
+v+t points. The proper coloring restricts to a proper coloring of this four-edge
+support graph.
+
+If v+t <= 7 and t=1, properness makes the four edges a matching, giving v=8,
+a contradiction. Therefore t>=2 and v<=5. Four distinct edges in a simple
+bipartite graph require at least four incident vertices.
+
+If v=4, its bipartition must have sizes 2 and 2: a 1+3 bipartition permits only
+three edges. All four possible edges are consequently present, giving a C4.
+Since t<=3, that C4 is not rainbow.
+
+If v=5, then t=2. Properness gives maximum degree at most two. Each component of
+the support is a path or an even cycle. A cycle would have to use all four edges
+as a C4, leaving only four incident vertices, contrary to v=5. Thus the support
+is a forest. A forest with five vertices and four edges is connected, so the
+support is a single path with five distinct vertices. Its proper two-coloring
+must alternate p,q,p,q.
+
+Conversely a non-rainbow C4 has v=4 and t<=3, and an alternating two-color path
+on five vertices has v=5 and t=2. Either therefore gives four distinct triples
+spanning at most seven points. This proves both directions.
+
+Scope and formal verification:
+- This is an elementary structural classification derived in this audit; no
+  literature novelty claim is made.
+- BipartiteHypergraphExtraction.lean proves the general forward consequences
+  from actual global (7,4)-freeness, with finite sets of arbitrary triples.
+- ProperBipartiteLift.lean kernel-checks the properly colored, bipartite,
+  alternating-P5 counterexample, including exact lift, linearity, and span 7.
+- The general sufficiency direction above is supplied as a mathematical proof,
+  not claimed to have been checked in Lean.

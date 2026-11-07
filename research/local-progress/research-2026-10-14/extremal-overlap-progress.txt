@@ -1,0 +1,106 @@
+SUPERSEDED WORKING NOTE: see shadow-extraction-proof.txt for stronger final
+comparison bounds and complete written proofs. The initial powerset-based
+Lean attempt exhausted resources. The final rewritten indexed finite gadget
+certificate PASSED with exit 0; see replacement-verification-status.json.
+General replacement and extraction arguments remain written proofs only.
+
+Extremal overlap-component refinement, 2026-10-14
+
+STATUS: A proved additive refinement for the extremal comparison, with an
+independently checked finite replacement gadget. It does not change the
+quadratic-versus-subquadratic issue in Erdos #810. Publication novelty has not
+been established. The general replacement argument is a written proof; the
+finite gadget is independently checked by exhaustive Python enumeration and
+the successful final indexed Lean certificate.
+
+Notation: g(N) is the maximum number of triples in a simple (7,4)-free
+3-uniform hypergraph on N vertices. g_lin(N) imposes linearity as well.
+Here (7,4)-free means every four distinct triples have union of size at least 8.
+
+THEOREM: For every N >= 5,
+
+    g(N) <= g_lin(N) + ceil(N/4).
+
+Prior art: Furedi, "2-Cancellative Hypergraphs and Codes" (2012), Section 8,
+proves the overlap-component argument giving a linear subfamily after at most
+2N/5 deletions. Its ingredients include isolated three-edge components on five
+points and disjoint supports for remaining two-edge overlaps. The improvement
+here uses extremality plus a finite replacement, so it is not a sharper
+deletion theorem for arbitrary input hypergraphs.
+Source: https://iuuk.mff.cuni.cz/~samal/DS/S0963548311000563a.pdf
+
+1. Isolated three-edge blocks.
+If three distinct triples have union S of size 5, every other triple is
+disjoint from S: otherwise those four triples have union at most 5+3-1=7.
+If their union has size 4, no fourth triple exists anywhere at all.
+
+2. Replacement gadget.
+The following seven triples on vertices 0,...,9 form a linear (7,4)-free system:
+
+    457, 349, 248, 189, 367, 058, 016.
+
+The certificate lists all edges in linear10-seven-certificate.json. The Python
+checker enumerates all 21 pair intersections and 35 four-edge unions.
+ExtremalReplacementCertificate.lean is an attempted additional verification;
+uniformity, edge count, and linearity passed, but the full quantified
+(7,4)-free step exhausted resources and is not reported as a completed proof.
+
+3. At most one isolated three-edge/five-point block in an extremizer.
+Suppose two such blocks existed. Their disjoint supports use ten vertices and
+their total edge count is six. Replace those six triples by the seven-edge
+gadget from step 2. No remaining edge meets these ten vertices.
+
+The resulting family is still (7,4)-free. Four new triples are safe by the
+gadget certificate. Three new triples span at least six points by linearity,
+so with an old triple they span at least nine. Two new triples span at least
+five points and two old triples at least four, so they span at least nine.
+One new triple has three points; three old triples span at least five points,
+since a three-old-edge union of size four would already contradict the
+original family together with any edge in either isolated block. Thus the
+remaining mixed distribution spans at least eight points. We gained one edge,
+contradicting extremality.
+
+4. Count the deletions.
+Form the graph on hyperedges joining pairs that share two vertices. Every
+component has at most three edges. A three-edge component spans at most five
+points. Supports of distinct nontrivial overlap components are disjoint.
+
+An extremizer therefore has at most one three-edge component on five points.
+If there is no such component, the number of two-edge components is at most
+floor(N/4), and removing one edge from each makes the family linear.
+If there is one, remove two edges from it and one from every two-edge component.
+The deletion count is at most
+
+    2 + floor((N-5)/4) = ceil(N/4).
+
+The exceptional three-edge component on four points is the entire hypergraph;
+at most two deletions suffice, and 2 <= ceil(N/4) for N >= 5.
+
+Taking the maximum over linear subfamilies proves the theorem.
+
+RELATED EXTREMAL PROJECTION REFINEMENT (N=2n >= 8).
+For the balanced two-part projection write
+    p = 3n / [4(2n-1)],
+    q = n(n-1) / [4(2n-1)(2n-3)].
+The earlier exact averaging identity has collision loss q times W, where
+    W = (#pairs of codegree 2) + (5/2)(#pairs of codegree 3).
+For an extremal H, the component argument now gives
+    W <= max(floor(N/4), 5/2 + floor((N-5)/4)).
+Consequently, setting c_n=1/2 for even n and c_n=1 for odd n,
+    M(n) >= ceil(p*g(2n) - q*(n/2+c_n)), n>=4.
+This improves the previous leading additive correction from about n/16 to
+about n/32, but still does not affect the asymptotic question in #810.
+
+FAILED STRONGER ROUTE: IDENTIFYING THE TIPS OF A DIAMOND.
+The six-edge hypergraph
+    H = {012,013,245,367,468,579}
+is (7,4)-free (all 15 four-edge unions checked). The first two edges form a
+diamond, with tips 2 and 3. Identifying 3 with 2 and deduplicating those first
+two edges creates the four triples
+    {245,267,468,579},
+whose union is {2,4,5,6,7,8,9}, of size seven. Hence tip identification does not
+preserve (7,4)-freeness. The diamond's outside-pair matching property alone does
+not justify contracting it away, and no O(1)-loss comparison has been proved.
+
+The gap remaining is substantial: controlling how many diamonds can coexist
+with a dense core, or replacing them while preserving all external incidences.

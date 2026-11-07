@@ -1,0 +1,105 @@
+INDEPENDENT AUDIT: FIXED-DEGREE NONLINEAR POLYNOMIAL PALETTES
+2026-10-15, finite_audit agent. Status: PASS.
+
+This checks formal_audit's extension of root's crossed-involution proof.
+The canonical full extension is saved in
+pass4-polynomial-intercept-common-support-theorem.txt; this file isolates
+the two new algebraic points. It does not claim historical novelty.
+
+Let beta in F_p[T] have degree 2<=D<p, p odd. Use color permutations
+sigma_a(x)=a*x+beta(a), a in A subset F_p^*, and the crossed involutions
+
+       tau_a(x,y)=((y-beta(a))/a, a*x+beta(a)).
+
+For common row domains, the exact support argument is unchanged: every
+nontrivial internal transition produces an actual C4 with repeated color a,
+and each actual edge has exactly one fixed-color loop under properness.
+
+1. NONZERO FOURIER BLOCKS
+
+On the xi*eta=t!=0 block, the Hermitian entry is
+
+ M_t(r,s)=1_A(rs/t) e_p((r-s)*beta(rs/t)/(rs/t)).
+
+In its fourth trace moment use a=rs/t, q=u/r, h=v/s. The color weight is
+W=1_A(a)1_A(qa)1_A(qha)1_A(ha). Direct expansion gives phase alpha*r+gamma/r,
+where
+
+ alpha=[h beta(a)-h beta(qa)+beta(qha)-beta(ha)]/(h*a),
+ gamma=(t/q)[-q beta(a)+beta(qa)-beta(qha)+q beta(ha)].
+
+For q=1 or h=1 both coefficients vanish. These weighted triples number
+2d^2-d, where d=|A|.
+
+Now assume q!=1 and h!=1. The two equations for vanishing have coefficient
+rows, in the ordered values at a,qa,qha,ha,
+
+                 [ h, -h,  1, -1 ],
+                 [-q,  1, -1,  q ].
+
+These rows are independent. If row2 were a multiple of row1, coordinate 3
+would force the multiplier to be -1; coordinate 2 would then give h=1 and
+coordinate 1 would give q=1, impossible. Their kernel contains
+
+                   (1,1,1,1), (a,qa,qha,ha).
+
+These vectors are independent because a!=qa. Thus the kernel consists
+exactly of vectors whose four values are an affine function of the four
+slopes. Both coefficients vanish if and only if the four graph points
+
+ (a,beta(a)), (qa,beta(qa)), (qha,beta(qha)), (ha,beta(ha))
+
+are collinear. This remains true when slopes repeat, including q=h=-1;
+there is no tacit assumption of four distinct points.
+
+For each ordered pair of distinct palette slopes a,b=qa, their graph points
+determine a nonvertical line. A line intersects the graph of beta in at
+most D slopes, since beta is genuinely nonlinear of degree D<p. Therefore
+c=ha has at most D choices. It then determines h and the fourth slope qha;
+the additional palette/collinearity restrictions only reduce the count.
+There are at most D*d*(d-1) such exceptional triples.
+
+The total weighted triple count is still at most d^3. The complete sum in r
+is a Kloosterman sum, with the same one-coefficient-zero treatment as in the
+quadratic audit. Consequently
+
+      tr(M_t^4) <= (D+2)*p*d^2 + 2sqrt(p)*d^3.            (1)
+
+2. COORDINATE AXES
+
+The quotient sigma_a sigma_b^(-1) has slope rho=a/b and intercept
+
+                    beta(rho*b)-rho*beta(b).
+
+If c_D is the leading coefficient of beta, the coefficient of b^D here is
+c_D(rho^D-rho). For rho^(D-1)!=1 the polynomial is nonconstant of degree D,
+so every prescribed intercept has at most D representing b. There are at
+most D-1 other nonzero ratios. Classifying ALL of these ratios as exceptional
+is valid even if their quotient polynomial is still nonconstant.
+
+For an exceptional ratio the total number of pairs is at most d, so the
+sum of squared quotient multiplicities at that ratio is at most d^2.
+For every other ratio, that energy is at most D times the number of pairs.
+Summing gives the safe bound
+
+                  E({sigma_a:a in A}) <= (2D-1)d^2.      (2)
+
+The affine permutation character argument from the quadratic proof now
+gives an axis norm to the fourth power at most (p-1)(2D-1)d^2.
+
+3. CONSEQUENCE AND HYPOTHESES
+
+Equations (1)-(2) give
+lambda=O_D(p^(1/4)d^(1/2)+p^(1/8)d^(3/4)). The exact support identity and
+the constant-vector decomposition therefore prove m=O_D(p^(19/10)) for
+common domains. The argument in pass4-nested-support-theorem.txt gives
+m=O_D(p^(35/18)) for domains ordered by inclusion.
+
+The degree must be genuinely at least two; the collinearity count fails
+for an affine-linear beta. The restriction D<p prevents a nonlinear formal
+polynomial from representing an affine function on the entire field. A
+uniform asymptotic constant is asserted only when D is fixed.
+
+This extension uses the same classical Weil Kloosterman bound as the
+quadratic proof: Harcos, Theorem 1, page 1,
+https://users.renyi.hu/~gharcos/weil.pdf .

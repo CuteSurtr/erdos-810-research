@@ -1,0 +1,175 @@
+QUADRATIC AFFINE PALETTES: AN EXACT ARITHMETIC SUPPORT CONSTRAINT
+Overnight pass 2, 15 October 2026.
+Hand proofs and a precise limitation; no finite graph searches.
+No historical novelty claim and no general vanishing-density theorem.
+
+SETTING
+
+Let p be an odd prime. For a palette A subset F_p^* use the completed
+color matching sigma_a(x)=a x+a^2, and retain arbitrary actual domains
+D_a subset F_p. The graph is proper when every selected grid point has
+at most one color. Assume additionally that A is antipodal-free:
+
+                         A intersect (-A) is empty.
+
+This is a useful test class; a general palette can be restricted to an
+antipodal-free part, but that restriction alone proves no density bound.
+
+1. A FAMILY OF FORCED POTENTIAL SQUARES
+
+Let t!=0 and a-t,a,a+t all lie in A. On rows -t,t and columns
+a(a-t),a(a+t), the completed palette contains the color matrix
+
+                         a       a+t
+                         a-t     a.                  (1)
+
+The rows and columns are distinct, because a,t and 2 are nonzero.
+Each of these four positions lies on only ONE palette line. Indeed
+the two possible color parameters at (x,y) are the roots of
+
+                         z^2+xz-y=0.
+
+At the positions in (1), the alternative roots are -(a-t), -a, -a,
+and -(a+t), respectively. All lie outside A. Consequently properness
+never forces deletion of these four incidences, and resolving double
+intersections of other palette lines does not affect them.
+
+The B condition therefore imposes the exact support restriction
+
+  1_Da(-t) 1_Da(t) 1_D(a+t)(-t) 1_D(a-t)(t)=0          (2)
+
+for every such additive progression in the slope palette.
+This is an ADDITIVE progression of slopes, not a global three-term
+relation among the affine permutations.
+
+2. EACH OMITTED INCIDENCE CAN HIT AT MOST TWO OF THESE SQUARES
+
+Let T(A) count these nontrivial slope progressions, identifying t and
+-t, which give the same geometric square. Different remaining choices
+give different squares: their repeated color determines a, and their
+row pair determines {t,-t}.
+
+Fix a colored incidence (c,x), meaning the point (x,sigma_c(x)). If it
+occurs on a square (1), there are only two possible centers:
+
+ * c, if it is one of the repeated-color diagonal edges;
+ * c+x, if it is a cross edge.
+
+In either case the step is determined up to sign by x. If x=0 it
+occurs in none of the nontrivial squares. Thus every incidence belongs
+to at most two of the T(A) squares. To satisfy (2), the actual domains
+must omit at least
+
+                              T(A)/2                              (3)
+
+incidences at unique-line points. Equivalently, the potential squares
+have an incidence cover number at least T(A)/2.
+
+There is also a collection of at least T(A)/5 pairwise edge-disjoint
+potential squares. Make a graph whose vertices are the squares, joining
+two when they share an edge. Each square has four edges and each edge
+belongs to at most one other square, so this graph has maximum degree
+at most four. A greedy independent set has size at least T(A)/5.
+
+3. A SHARP PROPERNESS BASELINE, AND AN ADDITIONAL B LOSS
+
+Write d=|A|. Any two distinct quadratic palette lines meet once, and no
+three meet, since z^2+xz-y has at most two roots. Thus the union of the
+completed lines has exactly
+
+                         dp-binomial(d,2)
+
+grid positions. This is the maximum edge count allowed by properness
+alone: retain every unique-line point and choose one owner at every
+double intersection.
+
+The incidences counted in (3) are all unique-line points, disjoint from
+the intersection loss already forced by properness. Therefore every
+actual B-colored subgraph of this antipodal-free palette satisfies
+
+                  m <= dp-binomial(d,2)-T(A)/2.        (4)
+
+Formula (4) is a local-support constraint. It is not asserted to be
+the best numerical bound, and it does not imply m=o(p^2).
+
+4. DENSE PALETTES GIVE QUADRATICALLY MANY SUCH LOCAL CONSTRAINTS
+
+For every fixed delta>0 there is c_delta>0 such that, if |A|>=delta p
+and p is sufficiently large, then
+
+                            T(A)>=c_delta p^2.        (5)
+
+For completeness this follows from the usual finite Varnavides argument.
+Choose a fixed integer M so large that every subset of {1,...,M} of
+size at least delta M/2 contains a nonconstant three-term progression.
+Such an M follows from Roth's theorem; one may use the quantitative
+odd-cyclic input already audited in pass1-affine-quantitative-audit.txt.
+
+For all x in F_p and t in F_p^*, average |A intersect
+{x+t,...,x+Mt}|. The mean is at least delta M. Since every size is at
+most M, at least a delta/2 fraction of these p(p-1) progressions have
+at least delta M/2 marked positions. Each such progression contains an
+A-progression. A fixed unordered three-term progression in F_p is
+represented at most 2M^2 times in this counting: choose its orientation
+and the two integer positions that determine the arithmetic step, and
+then x,t are fixed. Thus (5) holds, for example with a sufficiently
+small positive constant proportional to delta/M^2.
+
+This proves that a dense antipodal-free palette forces an additional
+positive fraction of missing UNIQUE-LINE incidences in any B support.
+It identifies where the extra omissions must occur, rather than merely
+counting unavoidable collisions at intersections of completed lines.
+
+5. WHY THESE ADDITIVE TEMPLATES DO NOT SETTLE DENSE SUPPORTS
+
+Take a prime p>240, put k=floor(p/10), and use
+
+                   A={1,...,k},    D={1,...,k},
+                   D_a=D for every a in A.
+
+This is a proper coloring. Distinct lines a,b intersect only at the row
+x=-(a+b). Its integer representative lies between p-2k and p-2,
+which is outside D. The edge count is k^2=(1/100+o(1))p^2.
+
+Yet D intersect (-D) is empty, so EVERY template (1), whose rows are
+t and -t, already loses at least one row. Thus the entire family of
+constraints (2) is satisfied in this positive-density proper example.
+
+It is certainly not B. The following four selected positions are all
+present for p>240:
+
+                         column 52     column 112
+             row 9        color 4       color 7
+             row 24       color 2       color 4.
+
+The identities are 4*9+4^2=52, 7*9+7^2=112,
+2*24+2^2=52, and 4*24+4^2=112. All specified rows and colors lie in
+D and A, and the two rows and columns are distinct modulo p.
+
+This verifies a precise limitation: additive-progressions-on-rows
+{t,-t} can all be absent while a dense properly colored quadratic graph
+still has different repeated-color rectangles. A proof for arbitrary
+supports must control more of the coupled four-pair sum-product
+pattern. It cannot stop after proving (2) or its supersaturation (5).
+The complementary root-oriented construction in
+pass2-quadratic-arithmetic-progression-obstruction.txt gives another
+explicit obstruction; its proof is not duplicated here.
+
+6. THE COMMON-DOMAIN GAP REMAINS
+
+With a common row domain D and palette A, properness is equivalent to
+
+      D avoids -(a+b) for all distinct a,b in A.
+
+A forbidden rectangle with diagonal color a, cross colors b,c, and
+rows x,z satisfies
+
+      b^2+bx=a^2+az,     c^2+cz=a^2+ax,
+      a,b,c in A,       x,z in D,       x!=z.           (6)
+
+The two equations can be solved rationally for x,z for generic a,b,c,
+but positive density of A and D alone does not justify counting their
+values as independent random field elements. The inspected rational
+Roth theorems concern fixed rational shifts of a common additive base,
+not this coupled map A^3->D^2. No valid mixing theorem or parametrization
+resolving (6) is established in this note.

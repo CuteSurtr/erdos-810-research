@@ -1,0 +1,161 @@
+BOUNDED VC SUPPORTS: INDEPENDENT LIMIT-AND-BRACKETING AUDIT
+15 October 2026, pass 5. Audit verdict: PASS.
+
+The following qualitative deduction is sound. Let p range over odd primes,
+A subset F_p*, beta:A->F_p arbitrary, and D_a subset F_p be the actual
+color-a row domains for a simple proper B coloring by x->ax+beta(a).
+If the set family {D_a:a in A} has VC dimension at most a FIXED v, then
+
+                                 m=o(p^2).
+
+There is still one color per slope. This is a restricted-class theorem,
+not a solution of arbitrary affine supports or unrestricted Erdos #810.
+No explicit rate, Lean certificate or historical-priority claim is made.
+The previous failure of a naive finite metric cover does not apply to
+this proof: finite bracketing is used only in a fixed limit measure space,
+before extracting one positive rectangle.
+
+1. REDUCTION TO A POSITIVE-DENSITY SUPPORT LIMIT
+
+If m>=delta p^2 along a counterexample sequence, then d=|A|>=delta p.
+Form the bipartite support graph whose parts are the d colors and p rows,
+with incidence a~x iff x in D_a. Its density m/(dp) is at least delta.
+After a subsequence and the standard bipartite graphon compactness and
+alignment procedure, its kernels W_n converge in cut norm to a kernel W
+on probability spaces. The edge density of W is positive.
+
+The induced shattering bigraph with v+1 column vertices and 2^(v+1) row
+vertices realizing all binary patterns has induced density zero in every
+finite support graph, and hence in W. Noninjective induced samples do
+not cause a problem: different required patterns force the relevant
+vertices to be distinct, and ordinary collision errors vanish in any
+case because both finite parts tend to infinity.
+
+2. RANDOM-FREENESS CAN BE CHECKED DIRECTLY
+
+Suppose W is fractional on a positive-measure set. Some region
+epsilon<W<1-epsilon then has positive measure. Its indicator has positive
+density of the finite complete bipartite graph with the shattering graph's
+part sizes (by iterated Jensen/Hölder, or the usual positive-density
+complete-bipartite count). On those samples every prescribed edge and
+nonedge factor of the induced shattering graph is at least epsilon.
+That would give positive induced shattering density, a contradiction.
+Thus W is {0,1}-valued almost everywhere.
+
+This direct argument agrees with the thin-bigraphon theorem of Lovasz
+and Szegedy. Their Theorem 3.1 provides pure representatives; Theorem 4.1
+makes a thin pure bigraphon binary with compact row metric; Lemma 4.7
+gives finite essential dual VC dimension. These exact statements were
+independently checked at https://arxiv.org/pdf/1002.4377 . The direct
+row-law argument below avoids needing pointwise choices in a pure version.
+
+3. A COUNTABLE ROW FAMILY HAS ORDINARY FINITE VC AFTER NULL CLEANUP
+
+View the rows W(x,.) as random elements of the separable L1 column space.
+The row map is measurable; this follows, for example, by approximating
+the jointly measurable kernel by finite rectangle functions. Choose a
+countable family C of actual binary row functions that is dense in the
+support of this row law. Such a family may be obtained by an iid sample
+and restricting to an event of probability one. Choose representatives.
+
+For every finite subfamily of C, remove all its Boolean atoms that have
+column measure zero. There are only countably many such atoms in total,
+so the remaining column space is conull. Every nonempty Boolean atom of
+a finite row subfamily now has positive measure.
+
+The family C has VC dimension at most v on this conull space. Otherwise
+choose v+1 shattered column points and the 2^(v+1) witnessing row sets.
+The required column atoms for this finite row tuple are nonempty and
+hence positive-measure. Its conditional induced shattering density is
+therefore positive.
+
+That conditional density is continuous in the row functions under L1:
+each Boolean-atom integral is Lipschitz, by telescoping products of factors
+in [0,1], and the conditional density is a finite product of such integrals.
+Every chosen row function lies in the support of the row law. Hence small
+product neighborhoods of the witnessing tuple have positive probability
+and still positive conditional density. The unconditional induced density
+would then be positive, contradiction. This justifies the step from
+essential patterns to an ordinary countable VC class without assuming
+that arbitrary null point modifications preserve VC dimension.
+
+4. FINITE BRACKETS YIELD AN ACTUAL POSITIVE RECTANGLE IN THE LIMIT
+
+Adams--Nobel Corollary 1 states that a separable measurable VC class has
+finite epsilon-bracketing numbers for every epsilon>0. A countable class
+is separable in their stated sense. The brackets can be taken to have
+indicator lower and upper endpoints. The exact statement and definitions
+were checked directly on PDF pages 4--5 of
+https://arxiv.org/pdf/1010.4515 .
+Published source: Uniform approximation of Vapnik--Chervonenkis classes,
+Bernoulli 18(4) (2012), 1310--1319, DOI 10.3150/11-BEJ379.
+
+Apply it to C with bracket width epsilon less than one-quarter of the
+positive edge density of W. Modulo null sets, each bracket [L_i,U_i] is
+closed in L1: the two inequalities L_i<=f<=U_i are preserved by L1
+convergence. A finite union of these closed brackets therefore covers the
+entire row-law support, since it contains the dense subfamily C.
+
+At least one bracket has both a positive-measure lower set V=L_i and a
+positive-measure class U of rows lying in it. If no such bracket existed,
+almost every row would lie in a bracket with null lower endpoint and so
+have integral at most epsilon, contradicting positive mean edge density.
+The row class is measurable: membership is equivalent to the vanishing
+of the two nonnegative measurable integrals
+
+          integral L_i(y)(1-W(x,y))dy,
+          integral W(x,y)(1-U_i(y))dy.
+
+Fubini now gives W=1 almost everywhere on U x V, with both U,V of positive
+measure. This is one fixed rectangle; there is no dependence on an
+increasing finite covering number.
+
+5. CUT CONVERGENCE UPGRADES TO L1 AT A BINARY LIMIT
+
+After the chosen alignment, W_n->W in cut norm and 0<=W_n<=1. Since W is
+binary,
+
+ ||W_n-W||_1=integral W_n+integral W-2 integral W_n W.
+
+Approximate W in L1 by a finite rectangle simple function. The integrals
+against that function converge by cut convergence, and the L1 approximation
+error is bounded uniformly because 0<=W_n<=1. Thus integral W_n W tends
+to integral W, proving L1 convergence. In particular,
+
+                       integral_(U x V) (1-W_n)=o(1).        (1)
+
+6. DETERMINISTIC FINITE VERTEX EXTRACTION
+
+The alignment may split finite vertex cells; it need not be a mere
+vertex permutation. Let alpha=measure(U)>0 and beta_0=measure(V)>0.
+For each color cell C_a of measure 1/d, put u_a=d*measure(C_a intersect U).
+For each row cell C_x of measure 1/p, put v_x=p*measure(C_x intersect V).
+These numbers lie in [0,1], with averages alpha and beta_0. Equation (1)
+means
+
+        sum_(a,x) (1-1_Da(x)) u_a v_x=o(dp).
+
+Select A'={a:u_a>=alpha/2}, X'={x:v_x>=beta_0/2}. Each selected part
+has positive proportional size: for example |A'|/d>=alpha/(2-alpha).
+Every selected pair has u_a v_x>=alpha beta_0/4. Consequently the number
+of missing incidences in A' x X' is o(dp)=o(p^2).
+
+Since d>=delta p, both |A'| and |X'| are Omega(p), so their actual support
+rectangle contains Omega(p^2) incidences. Restricting the original colored
+graph to these colors and rows preserves simplicity, properness and B.
+Its domains are subsets of common X', with total omissions o(p^2).
+The arbitrary-intercept near-common theorem from pass 4 therefore forces
+o(p^2) edges, the desired contradiction.
+
+7. AUDIT CONCLUSION AND SCOPE
+
+The main delicate steps all pass: the forbidden induced pattern survives
+limits; fractional limits are impossible; null atom cleanup gives an
+ordinary countable VC class; finite brackets are L1-closed and have a
+measurable positive row cluster; and fractional vertex-cell intersections
+are converted to actual linear-size vertex subsets by thresholding.
+
+No uniform finite bracketing bound over changing finite probability spaces
+is assumed. No rate of convergence is extracted. The argument proves a
+qualitative fixed-VC support theorem using the independently audited
+near-common affine theorem, and does not address unbounded-VC supports.

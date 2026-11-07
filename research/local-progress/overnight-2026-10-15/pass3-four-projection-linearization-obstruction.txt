@@ -1,0 +1,172 @@
+AN OBSTRUCTION TO SIMULTANEOUS LOCAL LINEARIZATION OF THE FOUR SLOT MAPS
+15 October 2026.
+
+Status: elementary differential-algebra calculation checked by the root
+agent and independently passed in
+pass3-independent-phase-and-geometry-audit.txt. This is a
+representation obstruction, not a density bound or a proof of the
+four-slot removal conjecture. No priority claim is made.
+
+1. THE FOUR PROJECTIONS
+
+Work over a field of characteristic different from two. Initially one
+may work over R or C with smooth/analytic local coordinate changes; the
+calculation is also an identity in a rational function field.
+
+Let U!=0 and define the four maps to two-dimensional coefficient spaces:
+
+    pi_1(U,V,W) = (U,V-U),
+    pi_2(U,V,W) = (U,W/U),
+    pi_3(U,V,W) = (V,W),
+    pi_4(U,V,W) = (U+W/U, U(V-U)).
+
+These are the four marked-support projections of the quadratic relation
+after writing U=a, V=a+b, W=ac. For slots 3 and 4, the displayed pair is
+the sum and product of the two roots representing the original label.
+Every map has differential of rank two on U!=0. For pi_4 this follows
+already from the V and W derivative columns, whose determinant is -1.
+
+Claim. There is no invertible local input-coordinate change, together
+with separate invertible local changes of the two output coordinates
+of each pi_i, that makes all four resulting maps affine-linear of rank
+two on any open set containing a point with U^2-UV+W != 0.
+
+In fact the obstruction already comes from pi_3 and pi_4.
+
+2. THE KERNEL LINE FIELDS
+
+Write e_U=d/dU, e_V=d/dV, e_W=d/dW. The kernels of the first three
+differentials are, respectively,
+
+    L_1=span(e_W), L_2=span(e_V), L_3=span(e_U).
+
+For pi_4, differentiating its two components gives
+
+    d(U+W/U) = (1-W/U^2)dU + (1/U)dW,
+    d(U(V-U)) = (V-2U)dU + U dV.
+
+Consequently its kernel is L_4=span(X), where
+
+    X = e_U + (2-V/U)e_V + (W/U-U)e_W.
+
+Indeed both displayed differentials annihilate X.
+
+3. THE NON-INTEGRABLE PAIR
+
+The bracket is
+
+    [e_U,X] = (V/U^2)e_V + (-W/U^2-1)e_W.
+
+Relative to the ordered frame (e_U,e_V,e_W),
+
+    det(e_U, X, [e_U,X])
+      = (2-V/U)(-W/U^2-1) - (W/U-U)(V/U^2)
+      = -2 + 2V/U - 2W/U^2
+      = -2(U^2-UV+W)/U^2.                         (3.1)
+
+When this is nonzero, e_U and X span a two-dimensional distribution
+D=L_3+L_4, but their bracket is not a section of D. Thus D is not
+involutive. Over R or C it is not an integrable plane distribution by
+the necessary direction of the Frobenius theorem.
+
+In original parameters the determinant is
+
+    -2(a^2-a(a+b)+ac)/a^2 = -2(c-b)/a.
+
+It is therefore nonzero precisely at a!=0, b!=c in odd characteristic.
+The same condition b!=c makes the original rectangle nondegenerate.
+At b=c the determinant vanishes at that point; this does not assert
+integrability on a neighborhood of that hypersurface.
+
+4. WHY THIS RULES OUT THE STATED COORDINATE CHANGES
+
+The differential kernel of a rank-two affine-linear map on a
+three-dimensional affine space is a constant line. The sum of two
+distinct constant lines is a constant plane distribution, which is
+involutive. If the two lines coincide, their sum has dimension one;
+that cannot be the image of our two independent lines at a point where
+(3.1) is nonzero.
+
+An invertible change of input coordinates carries tangent vector fields
+and their brackets to the corresponding transformed fields. It hence
+preserves whether the sum of two kernel line distributions is
+involutive. Separate changes of output coordinates with invertible
+differentials do not change the differential kernels at all: composing
+D pi_i with an invertible 2-by-2 matrix leaves its kernel unchanged.
+
+The non-involutive pair L_3+L_4 cannot consequently become the pair of
+kernels of two rank-two affine-linear maps. This proves the claim.
+
+The argument is insensitive to permuting the four slots. One
+non-involutive pair remains non-involutive under any permutation.
+
+5. ALGEBRAIC AND ROOT-LABEL VERSIONS
+
+All formulas are rational identities with the sole displayed
+denominator a power of U. Algebraically, use closure under Lie bracket
+of the corresponding rank-two submodule of derivations instead of
+analytic integrability. Isomorphisms on open algebraic subsets preserve
+that property. Therefore no birational input-coordinate change with
+birational separate output-coordinate changes can simultaneously make
+these four maps affine-linear on a dense open set in odd
+characteristic. A birational coordinate change restricts to an
+isomorphism on suitable nonempty open sets; no inference about
+arbitrary inseparable maps is needed.
+
+Passing between ordered roots (d,e) and their coefficients
+(d+e,de) has Jacobian d-e. Away from repeated roots it is locally
+invertible in the analytic setting, or etale in the algebraic setting.
+Thus allowing a local choice of ordered roots does not remove the
+obstruction on the generic unramified locus: the same kernels pull
+back, and the nonzero bracket class remains nonzero. The conclusion
+does not rely on making a global rational choice of square roots.
+
+6. WEB-GEOMETRY COMPARISON AND LIMITATIONS
+
+On the further generic locus V!=2U and W!=U^2, these four line fields
+are in general position. Five of the six pairs are involutive:
+
+    the three pairs among e_U,e_V,e_W commute;
+    [e_V,X]=-(1/U)e_V;
+    [e_W,X]=(1/U)e_W.
+
+The sixth is not involutive by (3.1). Thus the integrable-pair count is
+five, while it is six for four constant line fields in general
+position.
+
+This is the elementary invariant discussed in Dufour--Lehmann,
+"Etude des (n+1)-tissus de courbes en dimension n",
+Comptes Rendus Mathematique 361 (2023), 1491--1497, p.1493:
+    https://www.numdam.org/item/10.5802/crmath.500.pdf
+Their main rank theorem concerns abelian 2-form relations. It is NOT
+being used as a theorem classifying the scalar polynomial identity
+G(a+b,ac)-G(a+c,ab)=H(a,c)-H(a,b).
+
+The result excludes one concrete strategy: an invertible local
+three-parameter change of coordinates, with invertible separate
+relabelings of the four two-coordinate slots, turning the relation
+into a system of affine-linear pair projections.
+
+It does NOT exclude:
+  * arbitrary bijections of the finite sets, with no algebraic or
+    differential regularity;
+  * a higher-dimensional representation, covers with extra variables,
+    or a combinatorial graph/hypergraph encoding;
+  * a direct nonlinear Fourier, polynomial, recurrence, removal, or
+    supersaturation argument;
+  * a different mathematical model that is not obtained by the
+    invertible coordinate changes specified above.
+
+In particular it does not exclude a nonabelian group representation.
+For example, in the solvable Lie algebra with basis A,B,C and brackets
+[A,B]=B, [A,C]=-C, [B,C]=0, the four left-invariant lines generated by
+A,B,C,A+B+C also have exactly five integrable pairs. The exceptional
+pair is span(A,A+B+C), since [A,A+B+C]=B-C is outside that span in
+characteristic different from two. Constant coordinate directions
+and left-invariant directions on a nonabelian group are different
+notions; only the former were excluded above.
+
+This calculation therefore neither disproves the sought removal lemma
+nor gives a dense counterexample. It explains why merely replacing the
+four nonlinear projections by standard linear square/corner
+projections through such coordinate changes cannot work.

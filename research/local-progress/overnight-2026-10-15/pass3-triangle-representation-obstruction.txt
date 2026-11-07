@@ -1,0 +1,136 @@
+AN OBSTRUCTION TO EDGE-LOCAL TRIANGLE ENCODINGS OF THE FOUR-SLOT SYSTEM
+15 October 2026. Hand proof; no finite search or Lean certification.
+
+STATUS AND SCOPE
+
+The exact four-slot removal lemma proposed in
+pass2-quadratic-removal-target-audit.txt remains unproved. The result
+below excludes a specific natural way of obtaining it: an exact
+triangle representation with O(p) vertices in each part in which
+each of the four slot values is determined by one triangle edge.
+
+This does NOT disprove the removal lemma, exclude hypergraph or
+unbounded-witness representations, or exclude an argument exploiting
+the special common, properly oriented support R. It is a counting
+obstruction to a general arbitrary-four-support triangle encoding.
+
+1. THE CONFIGURATION SET HAS ORDER p^3
+
+For an odd prime p, let X_p be the set of tuples (a,b,c,d,e,f,g) with
+a,d,f nonzero and
+
+    a+b=d+e,    ac=de,    a+c=f+g,    ab=fg.               (1)
+
+Its four ordered-pair slots are
+
+    S_1=(a,b),  S_2=(a,c),  S_3=(d,e),  S_4=(f,g).
+
+Fix pairwise distinct nonzero a,d,f with a^2 != df. The equations
+e=a+b-d and g=a+c-f reduce the two product equations to
+
+    d b - a c = d(d-a),
+    a b - f c = f(a-f).                                  (2)
+
+The determinant of this linear system in b,c is a^2-df, so it has
+exactly one solution. It then determines e,g. For each of the
+(p-1)(p-2) choices of a,d there are at least p-4 permissible f:
+exclude 0,a,d and the at most one further value a^2/d. Consequently
+
+    |X_p| >= (p-1)(p-2)(p-4).                            (3)
+
+Every configuration just constructed has b!=c. Indeed if b=c,
+the sum/product equations give d,f in {a,b}, incompatible with
+pairwise distinct a,d,f. Thus (3) also lower-bounds the number of
+nondegenerate configurations.
+
+Conversely, fixing a,b,c gives at most two orders for each crossed
+root pair (d,e),(f,g), so |X_p| <= 4(p-1)p^2. Hence the complete
+configuration system genuinely has the p^3 solution scale.
+
+2. ANY TWO SLOT VALUES HAVE FIBERS OF SIZE AT MOST FOUR
+
+For every distinct i,j in {1,2,3,4}, the map
+
+                 X_p --> (S_i,S_j)
+
+has fibers of size at most four. Explicitly:
+
+  * S_1,S_2 fix a,b,c. Each of S_3,S_4 is an ordered root pair
+    with prescribed sum and product: at most 2*2 possibilities.
+
+  * S_1,S_3 fix c=de/a; S_4 has at most two possibilities.
+
+  * S_1,S_4 fix c=f+g-a; S_3 has at most two possibilities.
+
+  * S_2,S_3 fix b=d+e-a; S_4 has at most two possibilities.
+
+  * S_2,S_4 fix b=fg/a; S_3 has at most two possibilities.
+
+  * S_3,S_4 force a to solve
+
+                a^2-(f+g)a+de=0.
+
+    There are at most two a; then b=d+e-a and c=f+g-a are fixed.
+    Any remaining equation only reduces this number.
+
+In particular, any subset Y_p of X_p with |Y_p|>=c*p^3 has at
+least (c/4)*p^3 distinct joint values for EVERY pair of slots.
+
+3. THE PRECISE TRIANGLE MODEL THAT IS IMPOSSIBLE
+
+Suppose there are three finite vertex sets V_1,V_2,V_3 and a set
+of triangles T subset V_1 x V_2 x V_3, together with a surjection
+
+                    pi:T --> Y_p subset X_p.
+
+For each slot i, suppose a fixed triangle edge type E_i in
+{12,13,23} and a deterministic edge-label function ell_i satisfy
+
+                  S_i(pi(t)) = ell_i(t restricted to E_i).
+
+This is the usual locality property that permits arbitrary slot
+membership restrictions R_i to be enforced by retaining or deleting
+edges of a tripartite graph. Multiple triangle lifts of the same
+configuration are permitted; pi need not be injective.
+
+Two of the four slots, say i,j, use the same edge type uv. Therefore
+their joint image on Y_p has size at most |V_u|*|V_v|. Section 2 gives
+
+                    |Y_p| <= 4 |V_u| |V_v|.              (4)
+
+If |Y_p|=Omega(p^3), (4) contradicts |V_i|=O(p) for all three
+parts. In particular this model cannot encode all X_p, or even a
+positive proportion of its nondegenerate configurations, at the
+ordinary p-vertex triangle-removal scale.
+
+The argument permits arbitrary nonlinear labels and changes of
+coordinates. It also survives a bounded number of encoding types:
+partition the represented configurations among those types, choose
+a type with Omega(p^3) configurations, and apply the same argument.
+Allowing a bounded number of possible slot labels per edge merely
+changes the constant in (4). Unbounded choices are outside the model.
+
+One necessary cost for this model is an edge universe of size
+Omega(p^3). If all three parts have the same order, this requires
+Omega(p^(3/2)) vertices in a part. This necessary size increase alone
+does not prove that every possible deletion-transfer argument fails;
+such an argument would need additional multiplicity control.
+
+4. RELATION TO THE THREE-SLOT COORDINATES
+
+The earlier coordinates U=a,V=a+b,W=ac successfully put S_1 on UV,
+S_2 on UW, and the selected root pair S_3 on VW. The fourth root
+pair has sum U+W/U and product U(V-U), so it uses all three variables.
+
+Section 3 proves that this defect cannot be repaired merely by
+finding another three-coordinate, deterministic edge-local encoding
+of all four slots with O(p) choices per coordinate. It does not rule
+out a fourth variable, a hypergraph, a growing witness alphabet, or
+a structural argument restricted to actual proper B supports.
+
+5. WHAT REMAINS OPEN IN THIS PASS
+
+No uniform four-partite removal theorem at the p^3 scale has been
+proved here, and no counterexample to that theorem has been found.
+In particular this note supplies no new o(p^2) edge bound for
+arbitrary supports of the quadratic affine palette.

@@ -1,0 +1,92 @@
+INDEPENDENT AUDIT OF THE PRIME-FIELD TOTAL-DEFECT UPGRADE
+15 October 2026. Result: PASS as a deduction from the attributed input.
+
+Audited artifact:
+  pass3-conditional-prime-incidence-defect-upgrade.txt
+
+1. SOURCE BOUNDARY
+
+I independently opened the official arXiv v3 abstract:
+https://arxiv.org/abs/2609.27023v3
+Mark Lewko, A Szemeredi--Trotter Theorem in Arbitrary Fields,
+revised 7 October 2026.
+
+It states that v points and w lines over the prime field F_p have
+at most 3(vw)^(2/3)+v+w+vw/p incidences. Thus the exact external
+input used in the deduction is genuinely the stated prime-field
+theorem, with the claimed constants and no size restriction in
+the abstract. The paper is a recent preprint.
+
+This independent audit checks the deduction, not a fresh build of
+the external Lean formalization. The fuller source/proof inspection
+is recorded separately by the root and literature agents.
+
+2. PRUNING AND GEOMETRIC INCIDENCE COST
+
+Write d_0 for the original label count, m for edges, and D=d_0*p-m.
+Deleting labels with defect at least p/8 removes at most 8D edges.
+Each surviving class has >7p/8 edges. Two surviving labels cannot
+have the same affine completion, as their supports would overlap
+and assign two colors to one simple-graph edge. Also d<8p/7.
+
+A nontrivial completion relation C=A B^-1 A produces a forbidden
+four-cycle after excluding fewer than 4p/8 support failures and at
+most one fixed point of B^-1 A. This validates the previously used
+strong progression-free pencil bound
+
+  L <= C p exp[-c(log p)^(1/12)].
+
+The dual incidence cost is exact: a finite intersection with t>=2
+completed color lines forces at least t-1 missing colored incidences.
+Each missing incidence belongs to only one such geometric point.
+Since t<=2(t-1), determined nonvertical dual lines contribute at
+most 2D incidences. Vertical determined lines partition points by
+slope and contribute at most d. Hence I_*<=2D+d.
+
+3. BECK DICHOTOMY AND CONSTANTS
+
+For the dyadic class of T_k lines of richness in [k,2k), the input
+with d<8p/7 gives, for k>=8,
+
+  (k/2)T_k <=3 d^(2/3) T_k^(2/3)+d.
+
+One right-hand term is at least kT_k/4. If it is the first, cubing
+gives T_k<=1728d^2/k^3; if the second, T_k<=4d/k. Their sum is a
+valid bound without choosing a case.
+
+Each line in the class contributes fewer than 2k^2 pairs. Summing
+dyadically over k>=K and k<=L therefore gives
+
+  high-richness pairs <=6912d^2/K+16dL.
+
+There is no logarithmic loss: sum 1/k<=2/K and sum k<=2L along
+the dyadic sequence. Low-richness lines contribute at most K I_*/2.
+
+With K=131072, the first coefficient is less than 1/16. If L<=d/256,
+the second term is at most d^2/16. For d>=2,
+
+  d^2/4 <=binom(d,2)
+           <=K I_*/2+d^2/8,
+
+so I_*>=d^2/(4K). Thus either L>d/256 or this incidence lower bound
+holds. Combining with I_*<=2D+d gives d=O(sqrt(D+1)) in the second
+case. The first case is controlled by the Roth pencil bound.
+
+4. CONCLUSION AND SCOPE
+
+Multiplying the retained color bound by p and restoring at most 8D
+edges gives exactly
+
+  m <= C p sqrt(D+1)+8D
+       +C p^2 exp[-c(log p)^(1/12)].
+
+Thus D=o(p^2) implies m=o(p^2). If the average defect D/d_0=o(p)
+and d_0>0, the identity m=d_0(p-D/d_0)<=p^2 first gives
+d_0<=p/(1-o(1)), and then D=o(p^2). This implication does not assume
+d_0=O(p) without justification.
+
+The result is limited to prime fields and affine completions with
+sublinear average defect. It does not handle a common row mask
+of fixed density below 1, nor arbitrary quadratic-palette supports.
+The improvement here is a deduction using the explicitly attributed
+recent incidence theorem; it is not a replacement proof of that input.

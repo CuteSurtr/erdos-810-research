@@ -1,0 +1,146 @@
+[
+  {
+    "B_cycle": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "cycle_overlap": 5,
+    "C4_count": 130,
+    "Q_has_K12": false
+  },
+  {
+    "B_cycle": [
+      0,
+      1,
+      2,
+      4,
+      3
+    ],
+    "cycle_overlap": 3,
+    "C4_count": 128,
+    "Q_has_K12": false
+  },
+  {
+    "B_cycle": [
+      0,
+      1,
+      3,
+      2,
+      4
+    ],
+    "cycle_overlap": 3,
+    "C4_count": 128,
+    "Q_has_K12": false
+  },
+  {
+    "B_cycle": [
+      0,
+      1,
+      3,
+      4,
+      2
+    ],
+    "cycle_overlap": 2,
+    "C4_count": 127,
+    "Q_has_K12": true
+  },
+  {
+    "B_cycle": [
+      0,
+      1,
+      4,
+      2,
+      3
+    ],
+    "cycle_overlap": 2,
+    "C4_count": 127,
+    "Q_has_K12": true
+  },
+  {
+    "B_cycle": [
+      0,
+      1,
+      4,
+      3,
+      2
+    ],
+    "cycle_overlap": 3,
+    "C4_count": 128,
+    "Q_has_K12": false
+  },
+  {
+    "B_cycle": [
+      0,
+      2,
+      1,
+      3,
+      4
+    ],
+    "cycle_overlap": 3,
+    "C4_count": 128,
+    "Q_has_K12": false
+  },
+  {
+    "B_cycle": [
+      0,
+      2,
+      1,
+      4,
+      3
+    ],
+    "cycle_overlap": 2,
+    "C4_count": 127,
+    "Q_has_K12": true
+  },
+  {
+    "B_cycle": [
+      0,
+      2,
+      3,
+      1,
+      4
+    ],
+    "cycle_overlap": 2,
+    "C4_count": 127,
+    "Q_has_K12": true
+  },
+  {
+    "B_cycle": [
+      0,
+      2,
+      4,
+      1,
+      3
+    ],
+    "cycle_overlap": 0,
+    "C4_count": 125,
+    "Q_has_K12": true
+  },
+  {
+    "B_cycle": [
+      0,
+      3,
+      1,
+      2,
+      4
+    ],
+    "cycle_overlap": 2,
+    "C4_count": 127,
+    "Q_has_K12": true
+  },
+  {
+    "B_cycle": [
+      0,
+      3,
+      2,
+      1,
+      4
+    ],
+    "cycle_overlap": 3,
+    "C4_count": 128,
+    "Q_has_K12": false
+  }
+]

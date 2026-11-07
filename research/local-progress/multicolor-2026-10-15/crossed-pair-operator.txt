@@ -1,0 +1,280 @@
+CROSSED-PAIR OPERATORS FOR PERFECT B-COLORINGS
+Research note, 2026-10-15. Hand proofs; not Lean checked. No historical
+novelty claim, and no unconditional improvement toward o(N^2) is claimed.
+
+The useful output is an exact conditional criterion for vanishing density,
+plus a precise limitation of the first multicolor compression. The criterion
+is a Hoffman-type independent-set calculation in a derived conflict graph.
+
+1. SETUP
+
+A perfect B-coloring is a d-regular bipartite simple graph with n vertices
+on each side, whose d colors are perfect matchings and whose every C4 is
+rainbow. Write its n by n biadjacency matrix as
+
+             C = P_1 + ... + P_d,
+
+where the P_c are permutation matrices with pairwise disjoint supports.
+Use <X,Y>=tr(X^T Y) on real matrices. Let J be the all-one matrix and
+
+             E=C-(d/n)J,     W={X: X1=X^T1=0}.
+
+Thus E belongs to W and ||E||_F^2=nd-d^2. The total number of graph
+vertices is N=2n and the number of edges is nd. Assume d>0. The trivial
+case n=d=1 can be separated throughout. A nontrivial perfect B-coloring
+has d<n: if d=n>=2 then C=J, and any two edges of any one color complete
+to a forbidden nonrainbow C4.
+
+Define a linear operator on the n^2-dimensional matrix space by
+
+             T(X)=(1/d) sum_c P_c X^T P_c.
+
+Each summand T_c(X)=P_c X^T P_c is an orthogonal involution, since
+T_c^2(X)=X. Thus T is self-adjoint, has norm at most 1, and has real
+eigenvalues in [-1,1]. It preserves W and satisfies T(J)=J.
+
+If P_c(i,p_c(i))=1, then
+
+             (T_c X)_{ij}=X_{p_c^{-1}(j),p_c(i)}.
+
+This coordinate formula is useful both for the forbidden-cycle argument
+and for interpreting the spectrum.
+
+2. EXACT FORBIDDEN-CYCLE IDENTITIES
+
+For every color c,
+
+             <C,T_c(C)>=tr((C P_c^T)^2)=n.                (2.1)
+
+Indeed the left side counts original edge positions (i,j) for which
+(p_c^{-1}(j),p_c(i)) is also an original edge. If (i,j) is a c-edge,
+the two positions agree. Otherwise, the two c-edges joining the opposite
+corners, together with these two edges, give a genuine C4 with c repeated
+on opposite edges. This is forbidden. Exactly the n c-edges survive.
+
+Subtracting the constant part C=(d/n)J+E gives
+
+             <E,T(E)>=n-d^2.                             (2.2)
+
+There is a stronger identity retaining individual colors:
+
+             <P_a,T(P_b)>=(n/d) delta_ab.                (2.3)
+
+To prove it, expand the inner product as
+
+       (1/d) sum_c tr(P_a^T P_c P_b^T P_c).
+
+Every term is a nonnegative fixed-point count. The case a=b=c contributes
+n. If c equals exactly one of a,b, the trace reduces to <P_a,P_b>=0.
+If c differs from a,b, a fixed point gives a four-cycle with the two
+opposite c-edges; the other two edges have colors a,b, which may coincide.
+Properness makes all vertices of this cycle distinct. Hence the B rule
+excludes every other contribution.
+
+An independent audit by the finite_audit agent verified (2.3), including
+its degeneracies. Equations (2.1) and (2.2) also follow by summing (2.3).
+
+3. A CONDITIONAL VANISHING-DENSITY THEOREM
+
+Let theta=max(0,-lambda_min(T restricted to W)). Since E is in W, (2.2)
+implies
+
+           d^2-n <= theta (nd-d^2),
+           (1+theta)d^2-theta nd-n <= 0.                 (3.1)
+
+Consequently
+
+  d/n <= [theta+sqrt(theta^2+4(1+theta)/n)]/[2(1+theta)]
+      <= theta/(1+theta)+1/sqrt((1+theta)n).             (3.2)
+
+In particular theta=o(1) implies d=o(n), and therefore nd=o(N^2).
+Conversely, if d/n tends to delta>0, then
+
+           theta >= delta/(1-delta)+o(1).              (3.3)
+
+The uniform error in (3.2) is O(n^(-1/2)), not O(n^(-1)). An O(n^(-1))
+expansion requires theta to stay bounded away from zero.
+
+This is a condition on negative pair-space spectrum. Requiring the full
+norm ||T|W|| to tend to zero would be unnecessarily strong: even abelian
+translation examples have many positive eigenvalues equal to 1.
+
+4. THE HOFFMAN INTERPRETATION AND ITS LIMIT
+
+View the n^2 matrix coordinates as vertices. Each T_c pairs the two
+possible cross-edges of a rectangle whose other diagonal consists of two
+c-edges. It fixes exactly the n positions of the matching P_c. Different
+colors send any given position to different positions, by disjointness
+of the permutation supports. Thus dT is the adjacency matrix of a simple
+d-regular graph with loops: there is one loop precisely at each original
+edge position, and no loop at a nonedge position.
+
+The B condition says that the nd original edge positions form an
+independent set after those loops are removed. Centering their indicator
+gives E. The estimate in Section 3 is the corresponding Hoffman argument,
+with a loop correction and restriction to W using the balanced row and
+column sums. It is not a new general spectral principle.
+
+For the classical ratio-bound context, see W. H. Haemers, "Hoffman's ratio
+bound," Linear Algebra and its Applications 617 (2021), arXiv:2102.05529:
+https://arxiv.org/abs/2102.05529
+
+No theorem here proves theta=o(1) for arbitrary perfect B-colorings.
+Establishing that condition, or extracting useful structure when it fails,
+is precisely the remaining difficulty. No reduction from arbitrary B
+graphs to this perfect setting is asserted in this note.
+
+5. THE ENTIRE FIRST COLOR COMPRESSION HAS ONLY ONE NEGATIVE MODE
+
+Set V_a=P_a-J/n. All V_a belong to W. Their Gram matrix and their T-form
+are exactly
+
+       <V_a,V_b>       = n delta_ab-1,
+       <V_a,T(V_b)>    = (n/d) delta_ab-1.               (5.1)
+
+The Gram matrix is nI_d-J_d, positive definite when d<n. Therefore the
+orthogonal compression of T to span{V_1,...,V_d} has generalized
+eigenvalues
+
+       (n-d^2)/(d(n-d))     in the aggregate direction sum_a V_a=E,
+       1/d                 with multiplicity d-1.       (5.2)
+
+For example, if the coefficients t_a sum to zero, the two quadratic
+forms in (5.1) are n sum t_a^2 and (n/d) sum t_a^2, respectively.
+In the all-one coefficient direction they are d(n-d) and n-d^2.
+
+This is a compression statement. The span of the V_a need not be
+T-invariant, and E need not be an eigenmatrix of the full operator.
+
+Thus keeping all pairwise matching orthogonality at this first level
+forces only one negative aggregate direction. It does not force a growing
+number of negative directions, a rank explosion, or a density decrement.
+Higher-order information must involve how T sends this span into its
+orthogonal complement, or constraints not captured by (5.1).
+
+There is also a useful elementary positivity restriction: for every real
+rank-one matrix X=f g^T,
+
+       <X,T(X)>=(1/d) sum_c (f^T P_c g)^2 >= 0.          (5.3)
+
+A negative witness therefore cannot have rank one. No bound on the rank
+or useful factorization of a negative witness is proved here.
+
+6. ORDINARY SINGULAR VALUES DESCRIBE ONLY THE STRIPE SECTORS
+
+The matrix space splits orthogonally into constants, row/column stripes,
+and W. On mean-zero stripes u1^T and 1v^T, T exchanges them through C/d
+and C^T/d. Consequently the stripe eigenvalues are
+
+                   +/- sigma_i(C)/d,    i=2,...,n,
+
+where the Perron singular value d has been removed. These ordinary
+singular-value modes do not determine the restriction of T to W.
+
+A concrete obstruction to a purely singular-value inference is available
+without the B assumption. Let G=S_3 x Z_t and take all n=6t regular
+permutation matrices P_g. They are disjoint and sum to C=J, so the
+nonprincipal singular values of C are all zero. Nevertheless T|W has
+an eigenvalue -1/2.
+
+Here is the algebra. The real standard two-dimensional representation rho
+of S_3 occurs twice in its regular representation. On the corresponding
+four-dimensional subspace U, the regular matrices have the form
+rho(g) tensor I_2. This subspace is orthogonal to the constant vector;
+use the constant mode on the Z_t factor. Let X act on U as
+
+              I_2 tensor [[0,1],[-1,0]],
+
+and vanish on its orthogonal complement. Then X^T=-X, X belongs to W,
+and X commutes with every regular matrix on U. In S_3, the identity and
+the three reflections have square I_2. The squares of the two rotations
+sum to -I_2. Hence
+
+              average_g rho(g)^2=(1/2)I_2,
+              T(X)=-(1/2)X.
+
+The occurrence of rho twice can alternatively be checked using its four
+matrix coefficient functions on S_3: they are orthogonal, have mean zero,
+and split into two copies under left translation.
+
+These complete bipartite colorings ARE NOT B-colorings. Therefore this
+example does not disprove a theorem using B plus ordinary quasirandomness.
+It proves that ordinary singular-value information by itself cannot bound
+the negative spectrum needed in (3.1).
+
+7. ABELIAN TRANSLATIONS RECOVER THE FAMILIAR FOURIER OBSTRUCTION
+
+For an abelian group G of size n and a translation set S of size d, take
+P_s(i,j)=1 exactly when j=i+s. Let mu be uniform on S. On character
+matrices f_{alpha,beta}(i,j)=chi_alpha(i)chi_beta(j),
+
+       T(f_{alpha,beta})=mu_hat(beta-alpha) f_{beta,alpha}.
+
+Equal indices give eigenvalue +1. Unequal indices give a two-dimensional
+block with eigenvalues +/-|mu_hat(beta-alpha)|. The subspace W retains
+exactly the character matrices with both indices nontrivial. If n>=3,
+each nonzero character difference can be realized with both indices
+nontrivial. Therefore
+
+       theta=max_{gamma != 0}|mu_hat(gamma)|=sigma_2(C)/d.
+
+In this special setting (3.3) is a large Fourier-coefficient obstruction,
+consistent with standard density-increment reasoning for progression-free
+sets. This is not claimed as a new additive-combinatorial theorem. The
+step missing for general permutation colorings is a useful structure
+theorem for their negative pair-space modes.
+
+8. EXACT HIGHER-WORD FORMULAS AND WHY AN ODD MOMENT DOES NOT CLOSE THE GAP
+
+Use Tr for the trace of a superoperator on the n^2-dimensional matrix
+space, and tr for the ordinary n-dimensional matrix trace. Then
+
+                 Tr(T)=n,        Tr(T^2)=n^2/d.          (8.1)
+
+The first formula counts n fixed coordinates for every T_c. For the
+second, T_a T_b(X)=P_a P_b^T X P_b^T P_a. The trace of this operator is
+tr(P_a P_b^T)tr(P_b^T P_a), which is n^2 for a=b and zero otherwise.
+
+After removing the constant and stripe sectors,
+
+       Tr(T|W)=n-1,
+       Tr((T|W)^2)=(n^2-2n)/d+1.                       (8.2)
+
+Indeed the stripe square trace is
+2 sum_{i>=2} sigma_i(C)^2/d^2=2(n/d-1).
+
+For three colors, direct composition gives
+
+  Tr(T_a T_b T_c)
+       =tr(P_a P_b^T P_c P_a^T P_b P_c^T).              (8.3)
+
+This is a nonnegative fixed-point count. Whenever at least two indices
+coincide, the trace equals n. Thus
+
+                 Tr(T^3)>=n(3/d-2/d^2).                (8.4)
+
+The all-distinct terms encode six-step color words, including colored
+hexagons allowed by the B condition. Their values are not supplied by
+the four-cycle exclusion. For instance, commuting translations make every
+word in (8.3) the identity, so Tr(T^3)=n. This remains compatible with B
+when the translation set is suitable.
+
+Therefore the third moment introduces genuinely further multicolor data,
+but neither its nonnegativity nor the contribution from repeated indices
+gives a proof that the negative eigenvalue in (3.3) vanishes. Higher words
+are a possible place for additional structure, not an established new
+asymptotic bound.
+
+9. WHAT IS AND IS NOT ESTABLISHED
+
+Established by the displayed hand proofs: the exact operator identities,
+the quantitative conditional criterion (3.2), the compression (5.2), the
+singular-value separation example, and the moment identities (8.1)-(8.4).
+The first compression was independently audited. No finite graph search
+was used, and none of these assertions is labeled Lean certified.
+
+Not established: a universal estimate theta=o(1), a general density
+increment from a negative pair eigenmatrix, a general passage to a small
+group representation, or a solution of problem #810. The operator is a
+concrete way to locate the missing multicolor information, not evidence
+that that information has already been controlled.

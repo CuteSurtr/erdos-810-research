@@ -1,0 +1,9 @@
+'Erdos810GlobalExtraction.rectangle_rainbow_of_global_seven_four_free' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Erdos810GlobalExtraction.coloring_rainbow_of_global_seven_four_free' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Erdos810GlobalExtraction.no_alternating_path_of_global_seven_four_free' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

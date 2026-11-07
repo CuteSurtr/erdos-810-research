@@ -1,0 +1,6 @@
+$ erdos-810-lean/audit-2026-10-14/exhaustive 10 31
+d0=7 total=753459 clique=753459 coloring_obstruction=0
+d0=8 total=2165615 clique=2165615 coloring_obstruction=0
+d0=9 total=2735357 clique=2735357 coloring_obstruction=0
+VERIFIED n=10 m=31 total=2735357 clique=2735357 coloring_obstruction=0
+elapsed_seconds=9.2623

@@ -120,3 +120,15 @@ executed bytes and historical deadlines for provenance.
   to that machine. The saved supervisors contain absolute Mac paths and expired
   deadlines: prepare a fresh bounded run with new deadlines and resource limits
   before launching it.
+
+## Included earlier Erdős #810 work
+
+This handoff branch also includes the earlier SAT checkpoint records under
+`bruteforce/results/RESUME_20261106/` and the saved Claude-era source, notes,
+formalization snapshots, and small verification logs under
+[`research/local-progress/`](../../../../research/local-progress/).
+The archive's 249 manifest-listed files were checked against the local originals;
+all SHA-256 values match. See the archive's
+[manifest](../../../../research/MANIFEST.json) and
+[index](../../../../research/README.md). Archived draft claims retain their
+original status and are not newly certified by this publication.

@@ -1,0 +1,171 @@
+VANISHING DENSITY FOR HOMOGENEOUS AFFINE PALETTES
+Overnight pass 1, 15 October 2026.
+Complete hand proof; independently checked by root and formal-audit agents.
+No Lean certificate. This is a conditional deduction from Solymosi's
+known theorem; historical priority of this affine formulation is unverified.
+
+THEOREM
+
+Let F be a finite field of size n, let H be a subgroup of F^* of size h,
+and suppose beta:F^*->F satisfies
+
+                     beta(ua)=u beta(a)
+                     for every u in H and a in F^*.                 (1)
+
+Consider a properly colored bipartite simple graph whose two sides are
+labeled by F, with at most one color a for each a in F^*. The actual
+color-a edges may be an ARBITRARY subset of the matching
+
+                     sigma_a(x)=a x+beta(a).
+
+If every C4 is rainbow, then, uniformly as h tends to infinity,
+
+                              m=o(n^2).                            (2)
+
+There is no minimum support-size condition and no bounded-deficit
+condition. The number of colors is automatically at most n-1. Unused
+slopes are allowed. No assumption that the affine group has size O(n)
+or that the palette has a small global difference set is imposed.
+
+More exactly, put L=(n-1)/h and let R_B(H) be the maximum number of
+positions in a B-colored partial group table on H, with its prescribed
+coloring (x,y)->y x^(-1). Then
+
+                         m <= L^2 R_B(H)+L.                        (3)
+
+The proof works for the cyclic subgroup H without depending on the
+extension degree or characteristic of F.
+
+ESTABLISHED INPUT
+
+Solymosi, The (7,4)-conjecture in finite groups, Theorem 5,
+https://arxiv.org/pdf/1309.0133 (PDF page 4), implies uniformly over
+finite groups H that
+
+                         R_B(H)/|H|^2 -> 0
+                         as |H| -> infinity.                       (4)
+
+The theorem there uses a rectangle satisfying alpha beta=delta gamma.
+Under the coordinate change (x,y)->(y,x^(-1)), this is precisely a
+rectangle with equal diagonal colors y x^(-1). The detailed translation
+is in ../multicolor-2026-10-15/group-representation-vanishing-density.txt.
+The group-table statement is known; it is not a new theorem of this
+research pass. The prior small-difference theorem also supplies (4),
+but the established direct input suffices.
+
+PROOF OF THE EXACT BLOCK BOUND
+
+Partition F^* into its L multiplicative cosets gH. Partition the color
+palette accordingly. Work with one family whose slopes have the form
+a=gu, u in H. By (1), its completions satisfy
+
+              sigma_(gu)(x)=gu x+u beta(g)
+                            =u[gx+beta(g)].                         (5)
+
+Within this color family, relabel the left vertices by the bijection
+
+                         x'=gx+beta(g).
+
+The right labels are unchanged. Its color-gu edges are now of the form
+y=u x'. This operation preserves the graph and the equality pattern
+of colors, so the retained subgraph is still proper and every C4 is
+rainbow.
+
+If x'=0, then y=0. Since the graph is simple and each edge has just one
+color, at most one actual edge in this family occurs at (0,0). Delete
+that edge if present. Every remaining edge has x',y in F^* and satisfies
+y/x'=u in H. Hence its endpoints lie in the SAME multiplicative coset
+vH of H in F^*.
+
+This splits the family into L blocks indexed by vH. On one such block
+write x'=v x_0 and y=v y_0, with x_0,y_0 in H. Equation (5) becomes
+
+                           y_0=u x_0.
+
+Thus the block is exactly a partial group table on H. The original
+color gu corresponds bijectively to u, so equal and unequal colors
+are preserved; no merging of distinct original colors occurs. The
+rainbow-C4 condition is consequently inherited by this group table.
+Its edge count is at most R_B(H).
+
+There are L color families and L blocks in each, plus at most one
+exceptional zero edge per family. Families partition the original
+colors, so their edge counts add even though they use different row
+relabelings. This proves m<=L^2 R_B(H)+L.
+
+Divide by n^2. Since Lh=n-1,
+
+       m/n^2 <= [(n-1)^2/n^2] [R_B(H)/h^2] +(n-1)/(h n^2).
+
+The first term tends to zero by (4) when h->infinity; the second is at
+most 1/(hn). This proves the theorem.
+
+EXAMPLES AND EXTENSIONS
+
+1. FROBENIUS PALETTES, WITH ARBITRARY SUPPORTS.
+
+   Let F=F_(s^k), where k may vary, and use beta(a)=a^s. For
+   H=F_s^*, beta(ua)=u beta(a), so h=s-1. Consequently every B-colored
+   subgraph of this affine palette has o(n^2) edges as s->infinity,
+   without any restriction on the color supports or on k.
+
+   More generally, the same conclusion holds for beta given by any
+   F_s-linear map F->F, including linearized polynomials
+   beta(a)=sum_j c_j a^(s^j). Only its homogeneity over F_s is used;
+   additivity is not needed in the theorem itself.
+
+2. THE PREVIOUS DEFICIT BARRIER IS A SOLVED PALETTE CLASS.
+
+   In pass1-affine-sublinear-deficit-barrier.txt, n=s^2 and beta(a)=a^s
+   give a nearly complete properly colored graph, with deficit s+1 per
+   class, low global energy, and an unbounded pencil-cover requirement.
+   The present theorem shows that every inherited B-colored subgraph
+   of that example retains only o(n^2) edges. Thus the obstruction to
+   a bounded pencil cover does not prevent a different proof for its
+   particular palette: the relevant group-table blocks have size h,
+   and their total possible edge capacity remains O(n^2).
+
+3. FIXED TRANSLATIONS AND BOUNDED UNIONS.
+
+   The conclusion is unchanged if beta(a)-b_0, rather than beta(a),
+   satisfies (1), for one fixed b_0: first replace y by y-b_0.
+
+   It also holds for a bounded union of such palettes, with potentially
+   different subgroups H_i and functions beta_i, provided min_i |H_i|
+   tends to infinity. Partition colors among their assigned palettes,
+   apply the theorem to each inherited B-colored subgraph, and add the
+   bounded number of o(n^2) estimates. Each palette must still have at
+   most one color for each slope; a fixed multiplicity can be handled
+   by making that many separate copies of a palette in the partition.
+
+4. SCALAR-MONOMIAL EXAMPLES.
+
+   For beta(a)=a^k, any subgroup satisfying u^(k-1)=1 for every u in H
+   gives (1). The theorem applies whenever the size of such a subgroup
+   grows along the chosen fields. In contrast, beta(a)=a^2 has only
+   the trivial such subgroup. Therefore this theorem does not dispose
+   of the quadratic affine family from the separate barrier note.
+
+SCOPE AND REMAINING GAP
+
+The proof handles an unbounded number of abelian color families because
+their orbit blocks shrink in precisely the compensating proportion.
+It is also a concrete application of the earlier uniform scale-free
+small-difference theorem, after a piecewise palette argument; it does
+not transcend that theorem plus partitioning. Indeed the palette is
+covered by L cosets of subgroups of order h, with total cover volume
+Lh=n-1. For a fixed delta>0, pieces containing fewer than delta h
+actual colors together contribute at most delta n^2 edges. On each
+remaining piece the relative difference set has size at most h, hence
+at most 1/delta times its palette size. The prior uniform m=o(q n)
+theorem applies, since these palette sizes tend to infinity with h.
+Summing its uniform estimates and then sending delta to zero proves
+the same conclusion. This argument needs no special semiregularity of
+the action. The block proof above is an independent, direct route using
+only the known Solymosi input, and gives the explicit bound (3).
+
+It is not an inference that every arbitrary affine intercept function
+has this homogeneity. For an unrestricted beta, H may be trivial and
+(3) yields no asymptotic improvement. The general affine problem with
+fixed positive color-support densities remains open in this pass, as
+does the unrestricted Erdos #810 problem.
