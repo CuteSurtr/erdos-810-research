@@ -1,0 +1,56 @@
+{
+  "created_utc": "2026-11-05T20:07:29.907266+00:00",
+  "files": [
+    {
+      "path": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/cyclic/src/closecheck.py",
+      "bytes": 3860,
+      "sha256": "273e9346d22a5e530660648702ad81f2a4257769a646c743727afae3e788b5dc"
+    },
+    {
+      "path": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/cyclic/src/check.py",
+      "bytes": 1424,
+      "sha256": "ebbf1de5b10eef6b1c7849658d3801e1aad44afeb58b592be8d172a4f5d478a1"
+    },
+    {
+      "path": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/cyclic/src/background_n56.py",
+      "bytes": 7243,
+      "sha256": "bc99b4cec638dc4b22d611a15a20924c21cf062467850e7dcc8640e4a1101ae6"
+    },
+    {
+      "path": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/cyclic/src/certcheck.py",
+      "bytes": 1059,
+      "sha256": "a56d5f2ebc5e32597b60bcd287fef41f9f98c656c567067e84f37dcb99fa9865"
+    },
+    {
+      "path": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/cyclic/src/audit_native.py",
+      "bytes": 2235,
+      "sha256": "76c4716c57d87105335ce543c91ea3d37e01e11ad485bc5a0a2faa3816bc4388"
+    },
+    {
+      "path": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/cyclic/src/resume_native.py",
+      "bytes": 15183,
+      "sha256": "5bd1ae55cb00907b298fe1ad45c34ef114e83e3ed524838019845b17e80daa38"
+    },
+    {
+      "path": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/cyclic/src/cycenc.c",
+      "bytes": 7470,
+      "sha256": "7a23149b7068a54eedc7837e05110683dd37d1d234579ecee95f2265dbe9a8ee"
+    },
+    {
+      "path": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/cyclic/work/c_43_11_3.cnf",
+      "bytes": 6915664,
+      "sha256": "67c8465bc7bb834875a8f5fc599579e3e30c3f1946f0a82f5190990faa74b33e"
+    },
+    {
+      "path": "/Users/jiho/work/sat/src/cadical/build/cadical",
+      "bytes": 1571160,
+      "sha256": "e9ab5da4f8952681da85c9f2a0c6009c35d633c3f36446e96aa1635c8dd068c4"
+    },
+    {
+      "path": "/Users/jiho/work/m12/drat-trim-master/drat-trim",
+      "bytes": 70120,
+      "sha256": "f58f63b0f76945d4c4c9ff6e87afaf870f579e67c0f7cca589492df8fc7ebd47"
+    }
+  ],
+  "updated_utc": "2026-11-05T20:09:38.207174+00:00"
+}

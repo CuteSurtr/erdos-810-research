@@ -1,0 +1,188 @@
+[
+  {
+    "n": 66,
+    "previous": 997,
+    "edges": 998,
+    "gain": 1
+  },
+  {
+    "n": 67,
+    "previous": 1015,
+    "edges": 1019,
+    "gain": 4
+  },
+  {
+    "n": 68,
+    "previous": 1028,
+    "edges": 1037,
+    "gain": 9
+  },
+  {
+    "n": 69,
+    "previous": 1029,
+    "edges": 1055,
+    "gain": 26
+  },
+  {
+    "n": 70,
+    "previous": 1050,
+    "edges": 1072,
+    "gain": 22
+  },
+  {
+    "n": 71,
+    "previous": 1069,
+    "edges": 1092,
+    "gain": 23
+  },
+  {
+    "n": 72,
+    "previous": 1090,
+    "edges": 1112,
+    "gain": 22
+  },
+  {
+    "n": 73,
+    "previous": 1111,
+    "edges": 1130,
+    "gain": 19
+  },
+  {
+    "n": 74,
+    "previous": 1133,
+    "edges": 1138,
+    "gain": 5
+  },
+  {
+    "n": 80,
+    "previous": 1301,
+    "edges": 1303,
+    "gain": 2
+  },
+  {
+    "n": 81,
+    "previous": 1321,
+    "edges": 1325,
+    "gain": 4
+  },
+  {
+    "n": 85,
+    "previous": 1457,
+    "edges": 1458,
+    "gain": 1
+  },
+  {
+    "n": 86,
+    "previous": 1480,
+    "edges": 1481,
+    "gain": 1
+  },
+  {
+    "n": 87,
+    "previous": 1502,
+    "edges": 1505,
+    "gain": 3
+  },
+  {
+    "n": 88,
+    "previous": 1503,
+    "edges": 1509,
+    "gain": 6
+  },
+  {
+    "n": 93,
+    "previous": 1687,
+    "edges": 1688,
+    "gain": 1
+  },
+  {
+    "n": 94,
+    "previous": 1712,
+    "edges": 1713,
+    "gain": 1
+  },
+  {
+    "n": 95,
+    "previous": 1736,
+    "edges": 1739,
+    "gain": 3
+  },
+  {
+    "n": 100,
+    "previous": 1919,
+    "edges": 1921,
+    "gain": 2
+  },
+  {
+    "n": 101,
+    "previous": 1946,
+    "edges": 1948,
+    "gain": 2
+  },
+  {
+    "n": 102,
+    "previous": 1972,
+    "edges": 1974,
+    "gain": 2
+  },
+  {
+    "n": 103,
+    "previous": 1998,
+    "edges": 2000,
+    "gain": 2
+  },
+  {
+    "n": 104,
+    "previous": 2012,
+    "edges": 2019,
+    "gain": 7
+  },
+  {
+    "n": 105,
+    "previous": 2019,
+    "edges": 2026,
+    "gain": 7
+  },
+  {
+    "n": 106,
+    "previous": 2024,
+    "edges": 2031,
+    "gain": 7
+  },
+  {
+    "n": 111,
+    "previous": 2189,
+    "edges": 2197,
+    "gain": 8
+  },
+  {
+    "n": 115,
+    "previous": 2325,
+    "edges": 2341,
+    "gain": 16
+  },
+  {
+    "n": 116,
+    "previous": 2328,
+    "edges": 2370,
+    "gain": 42
+  },
+  {
+    "n": 117,
+    "previous": 2361,
+    "edges": 2369,
+    "gain": 8
+  },
+  {
+    "n": 123,
+    "previous": 2617,
+    "edges": 2625,
+    "gain": 8
+  },
+  {
+    "n": 126,
+    "previous": 2749,
+    "edges": 2750,
+    "gain": 1
+  }
+]

@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+STOP
+constructions/STOP
+constructions/fourset_check
+constructions/worker*/current.cnf
+recolor/STOP
+recolor/recolor
+cyclic/STOP
+cyclic/work/
+cyclic/proofs/
+cyclic/src/cycenc

@@ -1,0 +1,12 @@
+{
+  "time_utc": "2026-11-06T09:14:11.224703+00:00",
+  "old_status": {
+    "state": "STOPPED",
+    "time": 1793956420.98656,
+    "deadline": 1793960400.0,
+    "peak_sampled_machine_cpu": 1.0,
+    "pause_count": 187
+  },
+  "new_supervisor": 1000,
+  "change": "Sort sizes by extension target; retain UNSAT cache and plateau states"
+}

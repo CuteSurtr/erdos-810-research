@@ -1,0 +1,110 @@
+{
+  "negative": {
+    "n": 56,
+    "k": 14,
+    "cube": [
+      "-1"
+    ],
+    "cnf_sha256": "72df075b059e80cc758f05b2536b5b91deadbec5604d0442fa796a2713f7bb67",
+    "res": "UNSAT",
+    "solver": "cadical 3.0.1",
+    "cap": 30,
+    "started_utc": "2026-11-06T20:06:40.913629+00:00",
+    "solver_returncode": 20,
+    "solver_secs": 0.176,
+    "checker_returncode": 0,
+    "checker": "drat-trim native",
+    "check_secs": 0.773,
+    "checker_output": "\rc turning on binary mode checking\n\rc parsing input formula with 23272 variables and 1144582 clauses\n\rc finished parsing, read 8363780 bytes from proof file\n\rc detected empty clause; start verification via backward checking\n\rc 13972 of 1144582 clauses in core                            \n\rc 3196 of 41400 lemmas in core using 104019 resolution steps\n\rc 0 RAT lemmas in core; 437 redundant literals in core lemmas\n\rs VERIFIED\n\rc verification time: 0.768 seconds\n",
+    "check": "s VERIFIED UNSAT",
+    "proof_bytes": 8363780,
+    "proof_sha256": "7736b989f43e412bad3a0438b63d866c001ecc74d4c336c53eda23aeab5f7561",
+    "proof_gzip": "proofs/control_72df075b059e80cc758f05b2.drat.gz",
+    "proof_gzip_bytes": 3609185,
+    "secs": 1.033
+  },
+  "positive": {
+    "n": 56,
+    "k": 13,
+    "cube": [
+      "1:0",
+      "2:48",
+      "3:40",
+      "5:33",
+      "6:20",
+      "7:16",
+      "8:29",
+      "13:10",
+      "16:4",
+      "17:43",
+      "21:39",
+      "23:25",
+      "24:30"
+    ],
+    "cnf_sha256": "3ef26f42c95a87407067b146de1aa1e921a4661c13796728addfd3b91cf912be",
+    "res": "SAT",
+    "solver": "cadical 3.0.1",
+    "cap": 30,
+    "started_utc": "2026-11-06T20:06:42.573589+00:00",
+    "solver_returncode": 10,
+    "solver_secs": 0.125,
+    "Dg": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        48
+      ],
+      [
+        3,
+        40
+      ],
+      [
+        5,
+        33
+      ],
+      [
+        6,
+        20
+      ],
+      [
+        7,
+        16
+      ],
+      [
+        8,
+        29
+      ],
+      [
+        13,
+        10
+      ],
+      [
+        16,
+        4
+      ],
+      [
+        17,
+        43
+      ],
+      [
+        21,
+        39
+      ],
+      [
+        23,
+        25
+      ],
+      [
+        24,
+        30
+      ]
+    ],
+    "check": "OK",
+    "edges": 728,
+    "detail": "50960",
+    "secs": 0.306
+  }
+}

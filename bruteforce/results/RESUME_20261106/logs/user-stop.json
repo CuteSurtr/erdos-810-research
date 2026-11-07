@@ -1,0 +1,20 @@
+{
+  "stopped_at_utc": "2026-11-05T19:01:43.686229+00:00",
+  "requested_by": "user",
+  "interrupted_extensions": [
+    {
+      "directory": "bruteforce/results/RESUME_20261106/extensions/n67",
+      "target": "target-20",
+      "cnf_sha256": "532474cadc55415b373644e1d48833519f9de5e22325393885c052f4b793877f",
+      "result": "UNKNOWN",
+      "reason": "User requested stop; no completed solver output retained"
+    },
+    {
+      "directory": "bruteforce/results/RESUME_20261106/small_extensions/n39",
+      "target": "target-18",
+      "cnf_sha256": "e46dcda68df271a6acc713e75f8db4f957c1ec86c7b3aad687c4e0f9f995fa75",
+      "result": "UNKNOWN",
+      "reason": "User requested stop; no completed solver output retained"
+    }
+  ]
+}

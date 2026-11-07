@@ -1,0 +1,33 @@
+{
+  "finished_epoch": 1793960401.538849,
+  "all_checked": true,
+  "all_valid": true,
+  "checks": [
+    {
+      "n": 94,
+      "edges": 1712,
+      "ok": true,
+      "native": "94 1712 edges 206136 4-cycles OK",
+      "python": "94 1712 edges 206136 4-cycles OK"
+    },
+    {
+      "n": 101,
+      "edges": 1946,
+      "ok": true,
+      "native": "101 1946 edges 268025 4-cycles OK",
+      "python": "101 1946 edges 268025 4-cycles OK"
+    }
+  ],
+  "improvements_over_resume_baseline": [
+    {
+      "n": 94,
+      "before": 1710,
+      "after": 1712
+    },
+    {
+      "n": 101,
+      "before": 1945,
+      "after": 1946
+    }
+  ]
+}

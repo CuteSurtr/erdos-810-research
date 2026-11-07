@@ -1,0 +1,10 @@
+{
+  "supervisor": 17216,
+  "worker": 17217,
+  "search_deadline_utc_epoch": 1794009300.0,
+  "verification_deadline_utc_epoch": 1794009900.0,
+  "stop_file": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/compute-20261107T0505KST/recolor/STOP",
+  "global_stop_file": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/compute-20261107T0505KST/STOP",
+  "pause_cpu": 0.9,
+  "resume_cpu": 0.85
+}

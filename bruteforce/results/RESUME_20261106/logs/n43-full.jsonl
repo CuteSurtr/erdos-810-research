@@ -1,0 +1,1 @@
+{"n": 43, "k": 11, "cube": [], "res": "UNKNOWN", "cnf_sha256": "67c8465bc7bb834875a8f5fc599579e3e30c3f1946f0a82f5190990faa74b33e", "solver": "cadical 3.0.1", "opts": [], "solver_returncode": -9, "proof_bytes": 3235323904, "checker_returncode": 1, "checker_output": "CakeML heap space exhausted.", "stream_returncode": 0, "secs": 2125.4}

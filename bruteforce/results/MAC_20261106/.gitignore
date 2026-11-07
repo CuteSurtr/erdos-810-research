@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+constructions/fourset_check
+constructions/worker*/current.cnf
+cyclic/work/
+recolor/recolor
+STOP_ALL
+constructions/STOP
+recolor/STOP
+cyclic/STOP
+cyclic/n56/STOP

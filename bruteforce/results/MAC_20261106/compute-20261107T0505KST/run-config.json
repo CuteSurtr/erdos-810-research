@@ -1,0 +1,35 @@
+{
+  "started_utc": "2026-11-06T20:06:14.991693+00:00",
+  "search_cutoff_utc": "2026-11-06T23:55:00Z",
+  "finalization_deadline_utc": "2026-11-07T00:05:00Z",
+  "cpu_target": 0.95,
+  "workers": {
+    "construction": 4,
+    "cyclic": 9,
+    "recolor": 1
+  },
+  "construction_ranges": [
+    [
+      57,
+      80
+    ],
+    [
+      81,
+      98
+    ],
+    [
+      99,
+      114
+    ],
+    [
+      115,
+      128
+    ]
+  ],
+  "previous_cyclic_leaves": 10458,
+  "previous_open_branches": 430,
+  "baseline_sizes": 123,
+  "inherited_plateaus": 42,
+  "inherited_unsat_cache": 18259,
+  "automatic_checkpoints": true
+}

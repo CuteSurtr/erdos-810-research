@@ -1,0 +1,20 @@
+[
+  {
+    "result": "SAT",
+    "target": 2,
+    "seed": 810,
+    "cnf_sha256": "015488c64cf0d0dc23226c5123f1e839d1df131fb55eed1786012ae99ab3ca4a",
+    "returncode": 10,
+    "seconds": 0.004,
+    "check": "3 3 edges 0 4-cycles OK",
+    "edges": 3
+  },
+  {
+    "result": "UNSAT_RESTRICTED",
+    "target": 3,
+    "seed": 810,
+    "cnf_sha256": "dba4fe24af684ac52e5c28bb33a93e8522d180089a24521c7d0ed77a0152ae53",
+    "returncode": 20,
+    "seconds": 0.003
+  }
+]

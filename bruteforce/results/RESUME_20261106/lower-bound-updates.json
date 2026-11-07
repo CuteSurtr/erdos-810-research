@@ -1,0 +1,302 @@
+[
+  {
+    "n": 26,
+    "old_lower_bound_including_padding": 169,
+    "new_lower_bound": 170,
+    "improvement": 1
+  },
+  {
+    "n": 28,
+    "old_lower_bound_including_padding": 196,
+    "new_lower_bound": 198,
+    "improvement": 2
+  },
+  {
+    "n": 32,
+    "old_lower_bound_including_padding": 256,
+    "new_lower_bound": 258,
+    "improvement": 2
+  },
+  {
+    "n": 33,
+    "old_lower_bound_including_padding": 264,
+    "new_lower_bound": 269,
+    "improvement": 5
+  },
+  {
+    "n": 34,
+    "old_lower_bound_including_padding": 274,
+    "new_lower_bound": 281,
+    "improvement": 7
+  },
+  {
+    "n": 35,
+    "old_lower_bound_including_padding": 288,
+    "new_lower_bound": 298,
+    "improvement": 10
+  },
+  {
+    "n": 37,
+    "old_lower_bound_including_padding": 333,
+    "new_lower_bound": 336,
+    "improvement": 3
+  },
+  {
+    "n": 38,
+    "old_lower_bound_including_padding": 342,
+    "new_lower_bound": 348,
+    "improvement": 6
+  },
+  {
+    "n": 39,
+    "old_lower_bound_including_padding": 351,
+    "new_lower_bound": 371,
+    "improvement": 20
+  },
+  {
+    "n": 43,
+    "old_lower_bound_including_padding": 430,
+    "new_lower_bound": 434,
+    "improvement": 4
+  },
+  {
+    "n": 44,
+    "old_lower_bound_including_padding": 440,
+    "new_lower_bound": 463,
+    "improvement": 23
+  },
+  {
+    "n": 49,
+    "old_lower_bound_including_padding": 539,
+    "new_lower_bound": 554,
+    "improvement": 15
+  },
+  {
+    "n": 50,
+    "old_lower_bound_including_padding": 550,
+    "new_lower_bound": 584,
+    "improvement": 34
+  },
+  {
+    "n": 51,
+    "old_lower_bound_including_padding": 612,
+    "new_lower_bound": 616,
+    "improvement": 4
+  },
+  {
+    "n": 52,
+    "old_lower_bound_including_padding": 624,
+    "new_lower_bound": 651,
+    "improvement": 27
+  },
+  {
+    "n": 54,
+    "old_lower_bound_including_padding": 690,
+    "new_lower_bound": 702,
+    "improvement": 12
+  },
+  {
+    "n": 55,
+    "old_lower_bound_including_padding": 691,
+    "new_lower_bound": 717,
+    "improvement": 26
+  },
+  {
+    "n": 57,
+    "old_lower_bound_including_padding": 741,
+    "new_lower_bound": 755,
+    "improvement": 14
+  },
+  {
+    "n": 58,
+    "old_lower_bound_including_padding": 754,
+    "new_lower_bound": 791,
+    "improvement": 37
+  },
+  {
+    "n": 59,
+    "old_lower_bound_including_padding": 767,
+    "new_lower_bound": 830,
+    "improvement": 63
+  },
+  {
+    "n": 60,
+    "old_lower_bound_including_padding": 780,
+    "new_lower_bound": 871,
+    "improvement": 91
+  },
+  {
+    "n": 62,
+    "old_lower_bound_including_padding": 916,
+    "new_lower_bound": 928,
+    "improvement": 12
+  },
+  {
+    "n": 63,
+    "old_lower_bound_including_padding": 917,
+    "new_lower_bound": 943,
+    "improvement": 26
+  },
+  {
+    "n": 64,
+    "old_lower_bound_including_padding": 918,
+    "new_lower_bound": 959,
+    "improvement": 41
+  },
+  {
+    "n": 65,
+    "old_lower_bound_including_padding": 919,
+    "new_lower_bound": 976,
+    "improvement": 57
+  },
+  {
+    "n": 66,
+    "old_lower_bound_including_padding": 920,
+    "new_lower_bound": 993,
+    "improvement": 73
+  },
+  {
+    "n": 67,
+    "old_lower_bound_including_padding": 938,
+    "new_lower_bound": 1011,
+    "improvement": 73
+  },
+  {
+    "n": 68,
+    "old_lower_bound_including_padding": 952,
+    "new_lower_bound": 965,
+    "improvement": 13
+  },
+  {
+    "n": 69,
+    "old_lower_bound_including_padding": 966,
+    "new_lower_bound": 1006,
+    "improvement": 40
+  },
+  {
+    "n": 74,
+    "old_lower_bound_including_padding": 1110,
+    "new_lower_bound": 1125,
+    "improvement": 15
+  },
+  {
+    "n": 75,
+    "old_lower_bound_including_padding": 1125,
+    "new_lower_bound": 1169,
+    "improvement": 44
+  },
+  {
+    "n": 81,
+    "old_lower_bound_including_padding": 1296,
+    "new_lower_bound": 1314,
+    "improvement": 18
+  },
+  {
+    "n": 82,
+    "old_lower_bound_including_padding": 1312,
+    "new_lower_bound": 1361,
+    "improvement": 49
+  },
+  {
+    "n": 89,
+    "old_lower_bound_including_padding": 1519,
+    "new_lower_bound": 1535,
+    "improvement": 16
+  },
+  {
+    "n": 90,
+    "old_lower_bound_including_padding": 1530,
+    "new_lower_bound": 1585,
+    "improvement": 55
+  },
+  {
+    "n": 95,
+    "old_lower_bound_including_padding": 1710,
+    "new_lower_bound": 1734,
+    "improvement": 24
+  },
+  {
+    "n": 96,
+    "old_lower_bound_including_padding": 1711,
+    "new_lower_bound": 1787,
+    "improvement": 76
+  },
+  {
+    "n": 105,
+    "old_lower_bound_including_padding": 1940,
+    "new_lower_bound": 1965,
+    "improvement": 25
+  },
+  {
+    "n": 106,
+    "old_lower_bound_including_padding": 1941,
+    "new_lower_bound": 2015,
+    "improvement": 74
+  },
+  {
+    "n": 108,
+    "old_lower_bound_including_padding": 2066,
+    "new_lower_bound": 2086,
+    "improvement": 20
+  },
+  {
+    "n": 111,
+    "old_lower_bound_including_padding": 2138,
+    "new_lower_bound": 2172,
+    "improvement": 34
+  },
+  {
+    "n": 112,
+    "old_lower_bound_including_padding": 2139,
+    "new_lower_bound": 2224,
+    "improvement": 85
+  },
+  {
+    "n": 116,
+    "old_lower_bound_including_padding": 2280,
+    "new_lower_bound": 2298,
+    "improvement": 18
+  },
+  {
+    "n": 117,
+    "old_lower_bound_including_padding": 2281,
+    "new_lower_bound": 2350,
+    "improvement": 69
+  },
+  {
+    "n": 118,
+    "old_lower_bound_including_padding": 2282,
+    "new_lower_bound": 2404,
+    "improvement": 122
+  },
+  {
+    "n": 119,
+    "old_lower_bound_including_padding": 2283,
+    "new_lower_bound": 2458,
+    "improvement": 175
+  },
+  {
+    "n": 120,
+    "old_lower_bound_including_padding": 2284,
+    "new_lower_bound": 2512,
+    "improvement": 228
+  },
+  {
+    "n": 123,
+    "old_lower_bound_including_padding": 2570,
+    "new_lower_bound": 2602,
+    "improvement": 32
+  },
+  {
+    "n": 124,
+    "old_lower_bound_including_padding": 2571,
+    "new_lower_bound": 2659,
+    "improvement": 88
+  },
+  {
+    "n": 126,
+    "old_lower_bound_including_padding": 2717,
+    "new_lower_bound": 2741,
+    "improvement": 24
+  }
+]

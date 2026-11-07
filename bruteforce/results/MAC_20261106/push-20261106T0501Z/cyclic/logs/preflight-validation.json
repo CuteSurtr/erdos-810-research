@@ -1,0 +1,9 @@
+{
+  "verified_cubes_reused": 4430,
+  "deadline_killed_checker_is_unknown": true,
+  "cached_hash_matches_full_hash": true,
+  "workers": 9,
+  "disk_limit": 80000000000,
+  "disk_bytes": 31973127891,
+  "search_deadline_epoch": 1793947500.0
+}

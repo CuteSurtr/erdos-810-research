@@ -1,0 +1,8 @@
+{
+  "verified_cubes_reused": 8327,
+  "base_sha256": "7a96db2d27407c3b3f971800021e1d2f7c97ec58614e558820ce6256270b09ad",
+  "workers": 9,
+  "disk_limit": 80000000000,
+  "disk_bytes": 49494989730,
+  "search_deadline_epoch": 1793960400.0
+}

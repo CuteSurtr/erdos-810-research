@@ -1,0 +1,254 @@
+[
+  {
+    "n": 37,
+    "previous": 336,
+    "edges": 337,
+    "gain": 1
+  },
+  {
+    "n": 43,
+    "previous": 440,
+    "edges": 441,
+    "gain": 1
+  },
+  {
+    "n": 47,
+    "previous": 524,
+    "edges": 525,
+    "gain": 1
+  },
+  {
+    "n": 48,
+    "previous": 536,
+    "edges": 539,
+    "gain": 3
+  },
+  {
+    "n": 56,
+    "previous": 733,
+    "edges": 734,
+    "gain": 1
+  },
+  {
+    "n": 57,
+    "previous": 755,
+    "edges": 756,
+    "gain": 1
+  },
+  {
+    "n": 58,
+    "previous": 791,
+    "edges": 792,
+    "gain": 1
+  },
+  {
+    "n": 68,
+    "previous": 1019,
+    "edges": 1024,
+    "gain": 5
+  },
+  {
+    "n": 69,
+    "previous": 1020,
+    "edges": 1025,
+    "gain": 5
+  },
+  {
+    "n": 72,
+    "previous": 1088,
+    "edges": 1090,
+    "gain": 2
+  },
+  {
+    "n": 73,
+    "previous": 1105,
+    "edges": 1111,
+    "gain": 6
+  },
+  {
+    "n": 74,
+    "previous": 1127,
+    "edges": 1132,
+    "gain": 5
+  },
+  {
+    "n": 77,
+    "previous": 1223,
+    "edges": 1236,
+    "gain": 13
+  },
+  {
+    "n": 78,
+    "previous": 1248,
+    "edges": 1257,
+    "gain": 9
+  },
+  {
+    "n": 79,
+    "previous": 1270,
+    "edges": 1279,
+    "gain": 9
+  },
+  {
+    "n": 80,
+    "previous": 1290,
+    "edges": 1294,
+    "gain": 4
+  },
+  {
+    "n": 81,
+    "previous": 1315,
+    "edges": 1316,
+    "gain": 1
+  },
+  {
+    "n": 84,
+    "previous": 1433,
+    "edges": 1434,
+    "gain": 1
+  },
+  {
+    "n": 85,
+    "previous": 1451,
+    "edges": 1456,
+    "gain": 5
+  },
+  {
+    "n": 86,
+    "previous": 1467,
+    "edges": 1479,
+    "gain": 12
+  },
+  {
+    "n": 87,
+    "previous": 1468,
+    "edges": 1497,
+    "gain": 29
+  },
+  {
+    "n": 88,
+    "previous": 1496,
+    "edges": 1499,
+    "gain": 3
+  },
+  {
+    "n": 92,
+    "previous": 1662,
+    "edges": 1663,
+    "gain": 1
+  },
+  {
+    "n": 93,
+    "previous": 1683,
+    "edges": 1687,
+    "gain": 4
+  },
+  {
+    "n": 94,
+    "previous": 1702,
+    "edges": 1708,
+    "gain": 6
+  },
+  {
+    "n": 98,
+    "previous": 1852,
+    "edges": 1868,
+    "gain": 16
+  },
+  {
+    "n": 99,
+    "previous": 1881,
+    "edges": 1893,
+    "gain": 12
+  },
+  {
+    "n": 100,
+    "previous": 1907,
+    "edges": 1919,
+    "gain": 12
+  },
+  {
+    "n": 101,
+    "previous": 1908,
+    "edges": 1945,
+    "gain": 37
+  },
+  {
+    "n": 102,
+    "previous": 1909,
+    "edges": 1968,
+    "gain": 59
+  },
+  {
+    "n": 103,
+    "previous": 1938,
+    "edges": 1993,
+    "gain": 55
+  },
+  {
+    "n": 104,
+    "previous": 1968,
+    "edges": 2007,
+    "gain": 39
+  },
+  {
+    "n": 105,
+    "previous": 1975,
+    "edges": 2014,
+    "gain": 39
+  },
+  {
+    "n": 106,
+    "previous": 2017,
+    "edges": 2018,
+    "gain": 1
+  },
+  {
+    "n": 108,
+    "previous": 2093,
+    "edges": 2095,
+    "gain": 2
+  },
+  {
+    "n": 110,
+    "previous": 2144,
+    "edges": 2167,
+    "gain": 23
+  },
+  {
+    "n": 111,
+    "previous": 2178,
+    "edges": 2184,
+    "gain": 6
+  },
+  {
+    "n": 115,
+    "previous": 2313,
+    "edges": 2320,
+    "gain": 7
+  },
+  {
+    "n": 116,
+    "previous": 2315,
+    "edges": 2322,
+    "gain": 7
+  },
+  {
+    "n": 117,
+    "previous": 2360,
+    "edges": 2361,
+    "gain": 1
+  },
+  {
+    "n": 123,
+    "previous": 2608,
+    "edges": 2613,
+    "gain": 5
+  },
+  {
+    "n": 126,
+    "previous": 2748,
+    "edges": 2749,
+    "gain": 1
+  }
+]

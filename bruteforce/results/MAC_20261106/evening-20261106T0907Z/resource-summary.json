@@ -1,0 +1,24 @@
+{
+  "updated_utc": "2026-11-06T10:21:19.532413+00:00",
+  "after_individual_cyclic_guard": {
+    "samples": 8620,
+    "last_busy": 0.5452653485952133,
+    "mean_busy": 0.8787167416076465,
+    "peak_busy": 1.0,
+    "guard": "individual_child",
+    "paused_processes": 0,
+    "running_processes": 0,
+    "active_processes": 0,
+    "max_workers": 9,
+    "active_worker_limit": 9,
+    "pause_load": 0.93,
+    "resume_load": 0.9,
+    "pause_actions": 1646,
+    "resume_actions": 3119,
+    "all_paused_samples": 0
+  },
+  "constructor_monitor_overall_mean_machine_cpu": 0.8222628596432546,
+  "constructor_monitor_samples": 415,
+  "strict_instantaneous_95_percent_cap_achieved": false,
+  "note": "Whole-machine CPU samples include other applications; short samples exceeded 95%. The guarded workload targets high utilization with headroom."
+}

@@ -1,0 +1,11 @@
+{
+  "new_verified_leaves": 3705,
+  "new_records": 3770,
+  "raw_proof_bytes": 8229106486,
+  "compressed_proof_bytes": 3878812436,
+  "retained_proof_hashes_ok": true,
+  "lower_bound_edges": 430,
+  "lower_bound_four_cycles": 16813,
+  "coverage_exit": 0,
+  "errors": []
+}

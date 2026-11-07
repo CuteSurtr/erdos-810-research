@@ -1,0 +1,95 @@
+{
+  "negative": {
+    "n": 43,
+    "k": 11,
+    "cube": [
+      "-1"
+    ],
+    "cnf_sha256": "615f2aac6dc319b2a2c61cfa02b2f9fc74e225f2a2cfe91bcc9577286fe847af",
+    "res": "UNSAT",
+    "solver": "cadical 3.0.1",
+    "cap": 30,
+    "started_utc": "2026-11-05T20:04:40.640780+00:00",
+    "solver_returncode": 20,
+    "solver_secs": 0.061,
+    "checker_returncode": 0,
+    "checker": "drat-trim native",
+    "check_secs": 0.17,
+    "checker_output": "\rc turning on binary mode checking\n\rc parsing input formula with 11446 variables and 410617 clauses\n\rc finished parsing, read 4856 bytes from proof file\n\rc UNSAT via unit propagation on the input instance\n\rc 23 of 410617 clauses in core                            \n\rc 1 of 1170 lemmas in core using 23 resolution steps\n\rc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\rs VERIFIED\n\rc verification time: 0.164 seconds\n",
+    "check": "s VERIFIED UNSAT",
+    "proof_bytes": 4856,
+    "proof_sha256": "86188432bce3763f45466ec8e6ada4215b6cfb3ceefb970013831a8b000f5761",
+    "proof_gzip": "proofs/control_615f2aac6dc319b2a2c61cfa.drat.gz",
+    "proof_gzip_bytes": 2089,
+    "secs": 0.232
+  },
+  "positive": {
+    "n": 43,
+    "k": 10,
+    "cube": [
+      "1:0",
+      "2:38",
+      "3:9",
+      "5:27",
+      "7:21",
+      "8:31",
+      "10:20",
+      "11:15",
+      "18:26",
+      "19:35"
+    ],
+    "cnf_sha256": "cedd44458079eb9875d66e23c45935812b5c5e6c008b208e406b40aec12644aa",
+    "res": "SAT",
+    "solver": "cadical 3.0.1",
+    "cap": 30,
+    "started_utc": "2026-11-05T20:04:41.188068+00:00",
+    "solver_returncode": 10,
+    "solver_secs": 0.058,
+    "Dg": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        38
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        5,
+        27
+      ],
+      [
+        7,
+        21
+      ],
+      [
+        8,
+        31
+      ],
+      [
+        10,
+        20
+      ],
+      [
+        11,
+        15
+      ],
+      [
+        18,
+        26
+      ],
+      [
+        19,
+        35
+      ]
+    ],
+    "check": "OK",
+    "edges": 430,
+    "detail": "16813",
+    "secs": 0.136
+  }
+}

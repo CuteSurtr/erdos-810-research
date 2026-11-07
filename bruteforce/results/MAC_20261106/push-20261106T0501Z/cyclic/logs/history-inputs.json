@@ -1,0 +1,23 @@
+{
+  "sources": [
+    {
+      "path": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/resume-20261106T0056Z/cyclic/boost-20261106T0339Z/logs/prior-run-normalized.jsonl",
+      "sha256": "9664a985970f180c97f6c0cc036214faac578217eb31a42f98e52a39501152f5"
+    },
+    {
+      "path": "/Users/jiho/work/erdos810-20261106/repo/bruteforce/results/MAC_20261106/resume-20261106T0056Z/cyclic/boost-20261106T0339Z/logs/new-leaves.jsonl",
+      "sha256": "6c50cb54a330f75394a121467f088368dffd4ec6bfd14fe3def09e754d960c16"
+    }
+  ],
+  "deadline_interruption_cubes": [
+    [
+      "1",
+      "2",
+      "-3",
+      "-4",
+      "2:31",
+      "5",
+      "5:52"
+    ]
+  ]
+}

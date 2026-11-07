@@ -1,0 +1,17 @@
+68 1028 edges 100630 4-cycles OK
+69 1029 edges 100530 4-cycles OK
+81 1321 edges 134123 4-cycles OK
+87 1502 edges 167466 4-cycles OK
+88 1503 edges 167264 4-cycles OK
+94 1712 edges 206136 4-cycles OK
+95 1736 edges 210046 4-cycles OK
+101 1946 edges 268025 4-cycles OK
+102 1972 edges 272662 4-cycles OK
+103 1998 edges 277438 4-cycles OK
+104 2012 edges 278247 4-cycles OK
+105 2019 edges 278140 4-cycles OK
+106 2024 edges 278031 4-cycles OK
+111 2189 edges 280618 4-cycles OK
+115 2325 edges 312493 4-cycles OK
+116 2328 edges 312320 4-cycles OK
+123 2617 edges 384845 4-cycles OK

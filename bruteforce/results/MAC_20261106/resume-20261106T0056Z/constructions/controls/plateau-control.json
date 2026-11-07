@@ -1,0 +1,10 @@
+{
+  "result": "SAT",
+  "target": 1,
+  "seed": 810,
+  "cnf_sha256": "17b10ac8445fdcb63b183d27989c2077aebc0b2b9499e35110cdf4b7a9d2d1f4",
+  "returncode": 10,
+  "seconds": 0.003,
+  "check": "2 1 edges 0 4-cycles OK",
+  "edges": 1
+}
