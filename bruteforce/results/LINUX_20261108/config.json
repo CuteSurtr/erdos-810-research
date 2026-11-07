@@ -1,0 +1,19 @@
+{
+  "source_commit": "26b47d3dbbb621d223ab5348ee5919517882af6c",
+  "created_utc": "2026-11-07T15:33:20.623023+00:00",
+  "compute_deadline_utc": "2026-11-07T20:50:00+00:00",
+  "audit_deadline_utc": "2026-11-07T20:58:00+00:00",
+  "hard_stop_utc": "2026-11-07T21:00:00+00:00",
+  "cpus": [
+    30,
+    31
+  ],
+  "nice": 19,
+  "cyclic_workers": 1,
+  "construction_workers": 1,
+  "proof_process_address_space_bytes": 3221225472,
+  "constructor_address_space_bytes": 1073741824,
+  "proof_disk_limit_bytes": 20000000000,
+  "cadical": "/home/jay/research/data/erdos810-20261106/cadical/build/cadical",
+  "drat_trim": "/home/jay/research/sat/erdos-810-research/bruteforce/results/LINUX_20261108/tools/drat-trim"
+}
