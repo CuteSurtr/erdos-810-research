@@ -1,0 +1,247 @@
+ERDOS #810: PUBLISHED LITERATURE AND CANDIDATE-CONTRIBUTION COMPARISON
+8 November 2026 KST / 7 November 2026 UTC
+
+Scope: a targeted primary-source search, not an exhaustive priority search.
+The ten numbered entries below are journal publications. Open arXiv copies
+are linked where available; their repository status is not being confused
+with peer review. Three additional preprints are separated at the end.
+No author was contacted. No manuscript submission or publication occurred.
+
+MAIN CONSEQUENCE FOR THIS PROJECT
+
+The p^(-3/4) random-potential threshold has a published general framework:
+Chen-Greenhill (2021), and also Kim-Lund-Pham-Yoo (2023). Our construction's
+specific counts and overlap estimates supply the hypotheses. The possible
+contribution is therefore an algebraic application, not a new general
+threshold method. The earlier estimate of 15-20 substantive result families
+in the archive was NOT a count of historically novel theorems.
+
+The strongest remaining candidates are the explicit quadratic operator
+factorization and its actual-column-support consequence, and the older
+fixed-formula quadratic application. Their underlying character-sum and
+regularity machinery is established. This search did not identify an exact
+published statement subsuming those applications, but that does not prove
+novelty, correctness of every archived lemma, or publication significance.
+
+The search also prompted a new deduction within the project: the previously
+open distinct-potential-set count is now proved in potential-set-orbits.txt.
+Its generic labeling argument supplies an explicit arithmetic critical-window
+law when combined with Chen-Greenhill. This is an application candidate,
+not an assertion that the general probabilistic machinery is new.
+
+PUBLISHED SOURCES
+
+1. Changhao Chen and Catherine Greenhill,
+   Threshold functions for substructures in random subsets of finite
+   vector spaces.
+   Journal of Combinatorics 12(1) (2021), 157-183.
+   DOI: https://doi.org/10.4310/JOC.2021.v12.n1.a6
+   Open manuscript: https://arxiv.org/abs/1805.03778
+   Publication record:
+   https://research.unsw.edu.au/people/professor-catherine-greenhill/publications
+
+   Direct relevance: Theorem 1.1 is the appropriate existing framework for
+   our potential-set obstruction family. It covers the coarse threshold
+   and a Poisson limit. The exact application is recorded below and in
+   Appendix B of random-potential-threshold.txt.
+
+   Read: arXiv v3, 1 April 2020, Theorem 1.1 and Section 3 proof.
+   Publication metadata was checked against the author's UNSW record and
+   the indexed publisher PDF. Direct publisher-PDF download failed; no
+   claim of comparing every line of preprint and final journal text.
+
+2. Jeong Han Kim, Ben Lund, Thang Pham, and Semin Yoo,
+   Threshold functions for incidence properties in finite vector spaces.
+   Finite Fields and Their Applications 87 (2023), article 102149.
+   DOI: https://doi.org/10.1016/j.ffa.2022.102149
+   Open manuscript: https://arxiv.org/abs/2203.12801
+
+   Direct relevance: Propositions 1.2-1.3 give general set-family threshold
+   criteria. Proposition 1.3 also applies here: for a four-element pattern
+   family of size M=Theta(p^3), our j-point bounds O(p^2), O(p), O(1) are
+   at most O(M^(1-j/4)), j=1,2,3. Thus the scale M^(-1/4)=Theta(p^(-3/4))
+   is already supplied by established probability theory.
+
+   Read: arXiv v2, 23 December 2022, Propositions 1.2-1.3 and their context.
+   Metadata checked against the publisher and the authors' IBS records.
+
+3. Andras Gyarfas, Gabor N. Sarkozy, and Adam Zsolt Wagner,
+   Perfect proper edge colorings of regular bipartite graphs with
+   rainbow C4-s.
+   Discrete Mathematics 349(6) (2026), article 115005.
+   DOI: https://doi.org/10.1016/j.disc.2026.115005
+   Publisher:
+   https://www.sciencedirect.com/science/article/pii/S0012365X26000294
+
+   Closest recent coloring comparison: perfect color classes in regular
+   bipartite graphs, including shifted and translation-invariant cases.
+   Our common-potential colors have endpoint sets H/a and H/a^2-a, which
+   vary with a. The perfect-matching assumptions do not follow from our
+   hypotheses. No density-preserving completion supplying them is proved.
+
+   Fresh check: publisher metadata and abstract. Full publisher access
+   returned errors in this pass. The project's October full-text audit
+   already compares Theorems 2.3 and 2.7 and the actual proof hypotheses:
+   research/local-progress/research-2026-10-18/
+     perfect-colorings-full-text-comparison.md
+   That earlier audit supersedes older notes saying the body was unseen;
+   it is not being represented as a new full-text reading in this pass.
+
+4. Andras Gyarfas and Gabor N. Sarkozy,
+   "Less" Strong Chromatic Indices and the (7,4)-Conjecture.
+   Studia Scientiarum Mathematicarum Hungarica 60(2-3) (2023), 109-122.
+   DOI: https://doi.org/10.1556/012.2023.01539
+   Published open PDF:
+   https://www.renyi.hu/~gyarfas/Cikkek/204_studia.pdf
+
+   Relevance: the B-coloring formulation and its connection to (7,4).
+   Theorem 2.2 imposes matching size (2/3+epsilon)n and bounds the number
+   of colors. It does not immediately cover our arbitrary H, and in the
+   random family |H|<= (p-1)/2 on p-by-p vertex classes.
+   Read: journal PDF, definitions and Theorem 2.2 with proof context.
+
+5. Terence Tao,
+   Expanding polynomials over finite fields of large characteristic,
+   and a regularity lemma for definable sets.
+   Contributions to Discrete Mathematics 10(1) (2015), 22-98.
+   DOI: https://doi.org/10.55016/ojs/cdm.v10i1.62182
+   Publisher: https://cdm.ucalgary.ca/article/view/62182
+   Open manuscript: https://arxiv.org/abs/1211.2894
+
+   Relevance: the established algebraic regularity and finite-cover
+   expansion machinery behind the fixed-formula theorem. The project's
+   p^(63/32) result should credit this framework and its inherited losses.
+   Its application-specific work is compatibility of the coupled cover
+   restrictions and positivity on the relevant restricted cells.
+
+   Fresh check: publisher metadata and abstract. The exact theorem/proof
+   comparison was read in the existing project audit:
+   research/local-progress/research-2026-10-18-followup/
+     fixed-formula-publication-novelty-audit.md
+   The claim remains a specialized application with broader priority open.
+
+6. Andre Weil,
+   On Some Exponential Sums.
+   Proceedings of the National Academy of Sciences 34(5) (1948), 204-207.
+   DOI: https://doi.org/10.1073/pnas.34.5.204
+   Archive: https://pmc.ncbi.nlm.nih.gov/articles/PMC1079093/
+
+   Relevance: the classical square-root character-sum input, including the
+   cubic additive bound underlying our 2sqrt(p) completed-operator norm.
+   The original scan was not successfully inspected. The precise modern
+   statement used in the proof was checked in Kowalski, Theorem 3.2:
+   https://people.math.ethz.ch/~kowalski/exponential-sums-elementary.pdf
+   No new exponential-sum estimate is claimed by this project.
+
+7. Lucas Reis,
+   Arithmetic constraints of polynomial maps through discrete logarithms.
+   Journal of Number Theory 229 (2021), 432-443.
+   DOI: https://doi.org/10.1016/j.jnt.2020.10.015
+   Open manuscript: https://arxiv.org/abs/2007.04114
+
+   Relevance: prescribed multiplicative-character conditions and the
+   standard multiplicative Weil input. Our direct p^3/64+O(p^(5/2)) cycle
+   count uses an expansion into seven nonconstant character sums, with
+   exceptional ratios removed. The source estimate is established;
+   verifying the concrete polynomial factors is our application work.
+   Read: manuscript Theorem 3.2 in the preceding proof audit; journal
+   publication metadata newly confirmed at the publisher in this pass.
+
+8. Igor Balla, Lianna Hambardzumyan, and Istvan Tomon,
+   Factorization norms and an inverse theorem for MaxCut.
+   Mathematische Annalen 394 (2026), article 52.
+   DOI: https://doi.org/10.1007/s00208-026-03355-2
+   Open manuscript: https://arxiv.org/abs/2506.23989
+   Published full text:
+   https://pmc.ncbi.nlm.nih.gov/articles/PMC12916507/
+
+   Relevance: existing matrix sparsification and homogeneous-rectangle
+   results used in our arbitrary-intercept support-norm application.
+   The project already uses the stronger final form of Lemma 4.4, rather
+   than the weaker exponent in arXiv v1. These matrix results are theirs.
+   Read: published Lemmas 4.4, 5.1 and Theorem 5.2 in this session's earlier
+   audit; publisher publication metadata rechecked in this pass.
+
+9. Jiri Matousek, Aleksandar Nikolov, and Kunal Talwar,
+   Factorization Norms and Hereditary Discrepancy.
+   International Mathematics Research Notices 2020(3), 751-780
+   (first published online 16 March 2018).
+   DOI: https://doi.org/10.1093/imrn/rny033
+   Open manuscript: https://arxiv.org/abs/1408.1376
+
+   Relevance: established comparisons between gamma_2, determinant lower
+   bounds, and hereditary discrepancy. These supply our discrepancy
+   corollaries; they should not be counted as new norm inequalities.
+   Read: manuscript Section 3.1 in the preceding proof audit; journal
+   metadata and abstract newly verified on Oxford Academic.
+
+10. S. A. Burr, Paul Erdos, Ronald L. Graham, and Vera T. Sos,
+    Maximal anti-Ramsey graphs and the strong chromatic number.
+    Journal of Graph Theory 13(3) (1989), 263-282.
+    DOI: https://doi.org/10.1002/jgt.3190130302
+    Author-hosted copy:
+    https://fanchung.ucsd.edu/ron/papers/89_04_maximal_antiramsey.pdf
+    Institutional record: https://real.mtak.hu/110588/
+
+    Relevance: original anti-Ramsey framework for this project. The
+    connection with the (7,4) problem is established background, not a
+    newly discovered bridge. This pass verified bibliographic metadata;
+    it did not re-audit the complete 1989 paper.
+
+EXACT TRANSLATION FOR THE NEW THRESHOLD COMPARISON
+
+Use the random family and notation of random-potential-threshold.txt.
+Let F be the collection of distinct four-potential sets of three-color
+cycles, and M_p its cardinality. The written proofs give
+
+   N_4pot~p^3/64,  N_4pot/72<=M_p<=N_4pot,
+   Delta_1<=p^2, Delta_2<=108p, Delta_3<=216, Delta_4<=72.
+
+Therefore M_p=Theta(p^3). The same upper bounds apply after deduplication.
+In Chen-Greenhill's notation take q=p, n=1, a=4, b=3, c=0. Sampling the
+whole field and intersecting with J realizes our original H distribution.
+This verifies their hypotheses, and their threshold evaluates to p^(-3/4).
+The O(p^2) three-potential and two-color exceptional cycles vanish below
+this scale by the first moment. This is a concrete application of their
+theorem, not a claim that the paper studies this particular coloring.
+
+The additional Poisson conclusion gives X_p -> Poisson(lambda) whenever
+M_p eta^4 -> lambda in (0,infinity), with X_p counting DISTINCT sets.
+The exceptional obstructions also vanish at that scale, so the rainbow
+probability tends to exp(-lambda). Appendix B supplies the full short
+deduction. The companion potential-set-orbits.txt now establishes
+M_p=N_4pot/g+O(p^2), g=gcd(3,p-1), by controlling nontrivial permutations
+of the potential slots. This supplies the leading constant 1/(64g).
+For eta=c p^(-3/4), the explicit rainbow probability tends to
+exp(-c^4/(64g)), along either fixed prime residue class. Raw cycles converge
+to g times a Poisson(c^4/(64g)) variable, because exceptional orbit
+collisions and three-potential cycles vanish with high probability.
+The general limit theorem is attributed to Chen-Greenhill; the slot
+classification and its consequence are new to this project, with broader
+historical priority unverified.
+
+RELEVANT PREPRINTS WITHOUT VERIFIED JOURNAL PUBLICATION IN THIS PASS
+
+* Arthur Forey, Javier Fresan, Emmanuel Kowalski, and Yuval Wigderson,
+  Spectrally indistinguishable pseudorandom graphs (2025).
+  https://arxiv.org/abs/2511.21351
+  Its cubic Cayley sum graphs use classical Birch sums in their spectra.
+  Theorem 1.1 and Section 3 were read in the session. This is relevant
+  prior spectral technology, even though a journal reference was not found.
+
+* Alexis Chevalier and Elad Levi, An Algebraic Hypergraph Regularity Lemma.
+  https://arxiv.org/abs/2204.01158
+* Anand Pillay and Atticus Stonestrom, An arithmetic algebraic regularity lemma.
+  https://arxiv.org/abs/2412.11206
+  These two are compared in the October fixed-formula audit. Their exact
+  hypotheses matter: arbitrary finite covers cannot simply be declared
+  independent, and joint restricted-cell positivity is additional work.
+  This fresh pass did not verify a journal publication for either title.
+
+SEARCH LIMITS
+
+Title/author searches and targeted combinations involving affine rainbow
+C4 colorings, quadratic potentials, cubic convolution, and support norms
+were used. Search engines can miss preprints, alternate terminology, or
+an implication hidden in another paper. The list is a research bibliography
+and a correction to attribution; it is not a certificate of novelty.

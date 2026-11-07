@@ -1,0 +1,197 @@
+POTENTIAL-SET MULTIPLICITIES AND AN EXPLICIT CRITICAL WINDOW
+8 November 2026. Written deduction prompted by the journal literature audit.
+
+Status: exact algebraic certificate, written counting proof, and independent
+small-field checks. Historical novelty and external review remain unverified.
+The Poisson step explicitly applies Chen-Greenhill's published theorem.
+
+1. STATEMENTS
+
+Use the random model in random-potential-threshold.txt: p is an odd prime,
+A is the nonzero quadratic residues, J consists of nonzero h with quadratic
+character -chi(-1), and H selects each element of J independently with
+probability eta. The color-a edge of potential h is
+
+                       (h/a^2-a, h/a).
+
+Let N_4pot be the number of three-color cycles of the unthinned graph with
+four distinct potentials. Let M_p count DISTINCT four-element potential
+sets of those cycles, and put g=gcd(3,p-1). The preceding note proves
+
+                      N_4pot=p^3/64+O(p^(5/2)).
+
+THEOREM (multiplicity). All but O(p^2) of these graph cycles have a
+potential set realized by exactly g graph cycles. In particular,
+
+            0 <= N_4pot/g - M_p <= 220 p^2/g,              (1)
+            M_p=p^3/(64g)+O(p^(5/2)).                     (2)
+
+The constant in (1) is deliberately loose. This proves the multiplicity
+asymptotic previously posed as a question in the random-potential note.
+
+COROLLARY (critical window, using Chen-Greenhill). Fix c>0 and take
+eta=c p^(-3/4), for all sufficiently large primes. Let N_3 be the sampled
+graph's three-color cycle count. Along a prime sequence on which g is fixed,
+
+                N_3/g  ->  Poisson(c^4/(64g))             (3)
+
+in distribution, and
+
+        P(every C4 is rainbow) -> exp(-c^4/(64g)).         (4)
+
+Thus for primes p=2 mod 3 the raw count has limit Poisson(c^4/64).
+For primes p=1 mod 3 its limit is THREE TIMES a Poisson(c^4/192) variable.
+It is not an ordinary Poisson limit for raw cycles in the latter case.
+The expected raw cycle count tends to c^4/64 in either residue class.
+These are coarse-threshold critical-window statements, not a sharp
+threshold in the technical (1+/-epsilon) sense.
+
+2. THE RELATION SATISFIED BY A LABELED POTENTIAL QUADRUPLE
+
+Label a three-color C4 as in the preceding note, with repeated color a,
+other colors b,c, and ordered potentials h,k,u,v. Put q=b/a, r=c/a and
+zeta=a^3. The equations are
+
+        k=q h+zeta q(q-1),   h=r k+zeta r(r-1),
+        u=qk,               v=rh.                        (5)
+
+All potentials are nonzero. Properness gives q,r!=1 and q!=r; the earlier
+calculation proves qr!=1. Solving the linear equations gives
+
+ (h,k,u,v) = zeta/(1-qr) * (H,K,U,V),
+ H=r(q^2-q+r-1),  K=q(r^2-r+q-1),  U=qK,  V=rH.          (6)
+
+On the other hand, eliminating zeta directly from (5) gives
+
+ F(h,k,u,v) := k(k^2-uh)v(v-h) - h(h^2-vk)u(u-k) = 0.    (7)
+
+For example zeta=k(k^2-uh)/(u(u-k)); its denominator is nonzero since
+u=qk, k!=0 and q!=1. The analogous expression using h gives (7).
+Only necessity of (7) for an actual cycle is used below: no false
+converse about arbitrary solutions is required.
+
+The polynomial F is homogeneous of degree five and
+
+                     F(k,h,v,u)=-F(h,k,u,v).             (8)
+
+The reversal (h,k,u,v)->(k,h,v,u) simply changes the orientation of the
+same cycle. For a permutation sigma of the four slots, define
+
+                  R_sigma(q,r)=F(sigma(H,K,U,V)).         (9)
+
+Each coordinate in (6) has total degree at most four, so R_sigma has
+degree at most twenty. For the identity and reversal it is identically
+zero. Every OTHER permutation gives a nonzero polynomial over EVERY
+prime field. Here is an explicit coefficient certificate; the second
+member of each sign pair is covered by (8):
+
+ order supplied to F      coefficient in R_sigma          degree
+ hkvu                    [q^12 r^3]  = -1                  17
+ hukv                    [q^13 r^4]  =  1                  20
+ huvk                    [q^13 r^1]  = -1                  18
+ hvku                    [q^12 r^6]  =  1                  20
+ hvuk                    [q^11 r^5]  =  1                  18
+ kuhv                    [q^13 r^4]  =  1                  20
+ kuvh                    [q^13 r^2]  =  1                  18
+ kvhu                    [q^12 r^6]  =  1                  20
+ kvuh                    [q^12 r^3]  =  1                  18
+ uvhk                    [q^13 r^3]  =  1                  19
+ uvkh                    [q^13 r^2]  =  1                  19
+
+These coefficients follow by expanding (6)-(9) over the integers. The
+complete coefficient lists and a standard-library exact polynomial
+calculator are retained in potential-set-collision-audit.json and
+audit_potential_set_collisions.py. In particular, this is a symbolic
+certificate over Z, not an inference from finitely many prime evaluations.
+As a separate arithmetic check, q=2,r=4 gives (H,K,U,V)=(20,26,52,80);
+the displayed eleven orders all give nonzero integer values of F there.
+
+3. COUNTING EXCEPTIONAL LABELINGS AND IDENTIFYING GENERIC ORBITS
+
+A nonzero bivariate polynomial of total degree D has at most Dp zeros
+over the p-by-p grid. One elementary proof writes it as a polynomial
+of degree j in the first variable. Its leading coefficient has degree
+at most D-j in the other variable: outside its at most D-j roots there
+are at most j roots per fiber, and the remaining fibers have at most p.
+
+Call a ratio pair (q,r) exceptional if one of the 22 nontrivial R_sigma
+vanishes. The preceding certificate and root bound give at most 440p
+exceptional ratio pairs. For each ratio pair and each a in A, equations
+(5) determine at most one oriented cycle. Therefore at most
+
+                     440p |A| <= 220p^2                 (10)
+
+unoriented graph cycles have an exceptional ratio pair. Counting oriented
+cycles as an upper bound only makes this inequality looser.
+
+Consider a nonexceptional cycle C with ordered potentials (h,k,u,v).
+Any other cycle C' with the same unordered potential set supplies a
+permutation of these four distinct entries. It must satisfy (7). Because
+the scale in (6) is nonzero and F is homogeneous, nonexceptionality forces
+that permutation to be the identity or reversal. After reversing C' if
+needed, both cycles have the SAME ordered potentials.
+
+Then q=u/k and r=v/h agree, and
+
+                       zeta=k(k^2-uh)/(u(u-k))
+
+agrees as well. Their repeated colors a,a' consequently satisfy a'^3=a^3,
+so a'=omega a with omega^3=1. Equations (5) and the edge definition give
+precisely the common cube-root action
+
+                 (x,y,a)->(omega x, omega^2 y, omega a).
+
+Every cube root omega lies in A: its order divides the odd number three,
+so it is a square. The action preserves all edge potentials and the
+palette, and is free on three-color cycles because their unique repeated
+color cannot be fixed by nonidentity omega. Thus this orbit contains
+exactly g cycles, and these are all realizations of a generic potential set.
+
+All potential sets, generic or otherwise, have multiplicity divisible by
+g by the same free action. If m_S denotes that multiplicity, then
+
+  N_4pot/g-M_p = sum_S (m_S/g-1).
+
+Only exceptional cycles can contribute a nonzero term; (10) bounds the
+sum by 220p^2/g. This proves (1), and the base count proves (2).
+
+4. THE LIMIT LAW AND THE ROLE OF THE PUBLISHED THEOREM
+
+Let X_p count distinct four-potential sets contained in H. The preceding
+random-potential note verifies Chen-Greenhill Theorem 1.1 with q=p,n=1,
+a=4,b=3,c=0; its overlap hypotheses do not require the new multiplicity
+asymptotic. Equation (2) now makes the mean explicit:
+
+                   E X_p=M_p eta^4 -> c^4/(64g).
+
+The published theorem yields the corresponding Poisson law for X_p.
+At this sampling rate the expected number of surviving exceptional
+four-potential cycles is O(p^2 eta^4)=O(p^(-1)). The expected number of
+three-potential three-color cycles is O(p^2 eta^3)=O(p^(-1/4)). With
+probability tending to one neither occurs. On that event N_3=g X_p,
+which proves (3). The O(p^2) two-color cycles each have four distinct
+potentials and hence also vanish with high probability. This proves (4).
+
+Source: Changhao Chen and Catherine Greenhill, Threshold functions for
+substructures in random subsets of finite vector spaces, Journal of
+Combinatorics 12(1) (2021), 157-183, Theorem 1.1.
+https://doi.org/10.4310/JOC.2021.v12.n1.a6
+https://arxiv.org/abs/1805.03778
+
+5. AUDIT AND NOVELTY SCOPE
+
+The exact script verifies all 24 integer-polynomial expansions, the two
+identically zero cases, the 22 unit coefficients, and the sign pairing.
+Separate actual-graph rectangle enumeration at p=13,23,31,61,101 checks
+the potential relation, generic multiplicity, every cube-symmetry orbit,
+and the count deficit. Four of these cases also match the earlier C
+enumerator's retained results. At p=101 the nongeneric sets include
+multiplicity three even though g=1; the theorem correctly allows this.
+The run took under one second on one of the already designated low-priority
+CPU cores. No additional long-running search was started.
+
+The generic labeling argument and its explicit arithmetic critical-window
+consequence are additions to this project. They may be useful in a focused
+research note. Their historical novelty has NOT been established. The
+underlying Poisson theorem, polynomial zero bound, Weil estimate and
+earlier quadratic-residue construction are all credited existing inputs.

@@ -1,5 +1,5 @@
 RANDOM POTENTIAL THINNING: A p^(-3/4) THRESHOLD AND A THREE-COLOR COUNT
-8 November 2026. Candidate deduction from the quadratic character estimate.
+8 November 2026. Specialized counting application; literature audit updated.
 
 Status: written proof with exact finite consistency checks. Historical
 novelty and external review are unverified. This is a theorem for one
@@ -36,11 +36,16 @@ THEOREM. The following statements hold for this distribution.
      in probability. In particular the graph fails the rainbow-C4
      condition with probability tending to one.
 
-Thus p^(-3/4) is a threshold scale for this random model. In its critical
-range eta is of that order, m is of order p^(5/4) with high probability.
-No limiting probability or Poisson law in the constant-factor critical
-window is asserted. The sparse construction in (i) is not claimed to
-improve the archive's best lower-bound constructions.
+Thus p^(-3/4) is a COARSE threshold scale for this random model. In its
+critical range eta is of that order, m is of order p^(5/4) with high
+probability. Appendix B applies the published Chen-Greenhill theorem to
+deduplicated potential sets, obtaining a Poisson limit with normalization
+by their exact number M_p. The companion potential-set-orbits.txt now
+proves M_p=p^3/(64g)+O(p^(5/2)), g=gcd(3,p-1), and the corresponding
+explicit critical-window law. Raw cycles have an ordinary Poisson limit
+only when g=1; when g=3 the limit is three times a Poisson variable.
+The sparse construction in (i) is not claimed to improve the archive's
+best lower-bound constructions.
 
 For every eta there is also the uniform expectation formula
 
@@ -219,6 +224,20 @@ asymptotic, vanishing sampling probabilities, and a two-sided threshold
 scale. The old example, the first/second moment methods, and the classical
 Weil estimate are not claimed as new.
 
+The fresh literature audit found that the threshold conclusion follows
+from Chen and Greenhill, Journal of Combinatorics 12(1) (2021), 157-183,
+Theorem 1.1, once the counting and overlap bounds here are supplied:
+https://doi.org/10.4310/JOC.2021.v12.n1.a6
+https://arxiv.org/abs/1805.03778
+Their general probabilistic theorem must be credited. The possible
+contribution is this algebraic pattern family, its coefficient 1/64,
+its degeneracy and overlap calculations, and the resulting application.
+Kim-Lund-Pham-Yoo, Finite Fields and Their Applications 87 (2023), 102149,
+Propositions 1.2-1.3, provide another existing threshold criterion:
+https://doi.org/10.1016/j.ffa.2022.102149
+https://arxiv.org/abs/2203.12801
+See journal-literature-comparison.txt for the exact parameter translation.
+
 The proof does not require a small Fourier norm for the sampled H. It
 also does not assert a deterministic spectral bound for every H or forbid
 exceptional adversarial supports above the random threshold. Historical
@@ -256,11 +275,15 @@ Its total cycle counts agree with the separate Python methods on shared
 inputs. The run used one low-priority CPU core, a 768 MiB memory limit,
 and about 11.5 seconds. Source and binary hashes are in the manifest.
 
-A concrete next question is whether the number M_p of distinct four-value
-sets equals N_4pot/g+O(p^2), as these data suggest. This would require
-bounding collisions between different cube-symmetry orbits; no such
-asymptotic has been proved here. The threshold and counting theorems above
-do not depend on it, or on an unproved critical-window limit law.
+The initially open question was whether the number M_p of distinct
+four-value sets equals N_4pot/g+O(p^2), as these data suggest. The companion
+potential-set-orbits.txt now proves this by bounding exceptional
+permutations of the four potential slots. Its exact integer-polynomial
+certificate shows that only the identity and orientation reversal vanish
+identically; all other slot permutations contribute O(p^2) cycles.
+The threshold and counting theorems above, and the normalized limit in
+Appendix B, do not need this additional multiplicity theorem. With it,
+the critical-window probability becomes explicit in each class p mod 3.
 
 APPENDIX. A DIRECT PROOF OF THE BASE COUNT
 
@@ -333,3 +356,66 @@ quadratic-character sum is bounded by (z-1)sqrt(p), where z is the
 number of distinct roots in its splitting field. Here z<=6.
 The direct color-ratio count is also checked against the separate
 cycle enumeration in random-thinning-audit.json.
+
+APPENDIX B. A DISTINCT-SET POISSON COROLLARY OF CHEN-GREENHILL
+
+This is an application of an existing general theorem, identified in the
+fresh literature search. It is not a new probability theorem.
+
+Let F_p be the family of DISTINCT four-element subsets of J occurring as
+the potential set of a three-color cycle in the unthinned graph. Write
+M_p=|F_p|. The symbol F_p here names a set family, not the finite field.
+Let X_p count members of this family contained in the sampled H. In
+particular X_p counts each potential set once, irrespective of its graph
+cycle multiplicity.
+
+COROLLARY. For any fixed lambda>0, take
+
+                       eta=(lambda/M_p)^(1/4).
+
+Then X_p converges in distribution to Poisson(lambda), and
+
+                 P(every C4 is rainbow) -> exp(-lambda).
+
+More generally, the same conclusions hold whenever M_p eta^4 -> lambda
+in (0,infinity). This normalization does not require an explicit leading
+constant for M_p or a law for N_3. The stronger statements follow using
+the separate multiplicity theorem in potential-set-orbits.txt.
+
+Proof. Equations (8)-(9) give
+
+       N_4pot/72 <= M_p <= N_4pot,   N_4pot~p^3/64.
+
+Thus M_p=Theta(p^3). Deduplication can only reduce the number of members
+containing any prescribed set. Equation (9) therefore gives the required
+incidence bounds O(p^2), O(p), O(1) for one, two, and three prescribed
+points; four prescribed points belong to at most one member. Larger
+prescribed sets belong to none.
+
+Apply Chen-Greenhill Theorem 1.1 with their parameters
+
+                q=p, n=1, a=4, b=3, c=0.
+
+Their ambient independent random subset E of the whole finite field is
+compatible with our model: set H=E intersect J. Every member of F_p lies
+inside J, so its containment indicator is unchanged. The hypotheses above
+are uniform as p grows, b<a, and E X_p=M_p eta^4 -> lambda. Their theorem
+gives the asserted Poisson convergence.
+
+The assumption on the mean implies eta=Theta(p^(-3/4)). The expected
+number of three-potential three-color cycles and of two-color cycles is
+at most C[p^2 eta^3+p^2 eta^4]=O(p^(-1/4))+O(p^(-1))=o(1).
+By Markov, these additional obstructions occur with probability o(1).
+All remaining nonrainbow C4s are exactly detected by X_p>0. Hence the
+rainbow probability differs from P(X_p=0) by o(1), proving the conclusion.
+For the discrete Poisson law, convergence at the continuity points -1/2
+and 1/2 gives convergence of the probability of zero. QED.
+
+Version and attribution: Changhao Chen and Catherine Greenhill, Threshold
+functions for substructures in random subsets of finite vector spaces,
+Journal of Combinatorics 12(1) (2021), 157-183,
+https://doi.org/10.4310/JOC.2021.v12.n1.a6 . Theorem 1.1 was inspected in
+arXiv:1805.03778v3 (1 April 2020), printed pages 3-4, and its proof in
+Section 3. Journal metadata was verified using the author's UNSW
+publication record and the indexed publisher PDF. The publisher PDF was
+not successfully downloaded during this pass.

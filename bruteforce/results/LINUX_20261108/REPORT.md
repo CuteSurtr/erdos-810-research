@@ -70,7 +70,18 @@ and similar-tagged controls.
   residue family. Above that scale, N_3~eta^4 p^3/64 in probability;
   below it, every C4 is rainbow with high probability. The proof includes
   overlap bounds and an independent direct character-sum proof of the
-  unthinned count. This is a result for a specified random model.
+  unthinned count. This is a coarse threshold for a specified random model.
+  The fresh literature comparison identifies it as an application of
+  Chen-Greenhill's published general framework. Appendix B derives a
+  Poisson limit for distinct potential sets, normalized by their number.
+- `analytic/potential-set-orbits.txt` proves the missing generic multiplicity
+  bound: all but O(p^2) four-potential cycles occur in potential sets of
+  multiplicity g=gcd(3,p-1). Thus M_p=p^3/(64g)+O(p^(5/2)). Together with
+  Chen-Greenhill this gives, at eta=c p^(-3/4), the limiting rainbow
+  probability exp(-c^4/(64g)) and raw cycle law g*Poisson(c^4/(64g)), along
+  each fixed class p mod 3. Exact integer-polynomial certificates and
+  separate small-field graph enumeration passed. This is an application
+  candidate prompted by the literature audit; historical novelty is open.
 - `analytic/factorization-and-defects.txt` develops a gamma_2 support bound,
   a three-color C4 counting formula, a degree-weighted robust inequality,
   and discrepancy/trace-norm consequences for fixed nonlinear polynomial
@@ -126,3 +137,23 @@ confirmed that both full and time-limited audits save their report and
 clearly distinguish an incomplete hash pass from corrupted proof data.
 This test did not affect the live workers. The searches remain authorized
 until 05:50 KST, with the independent hard stop at 06:00 KST.
+
+## Fresh journal literature comparison
+
+`analytic/journal-literature-comparison.txt` records ten relevant published
+papers, their DOI/open-manuscript links, and the scope of the comparison.
+The main new prior-art finding is Chen-Greenhill (Journal of Combinatorics,
+2021), with a second route through Kim-Lund-Pham-Yoo (Finite Fields and
+Their Applications, 2023). Their general threshold results cover the
+probabilistic step after our algebraic counts and overlap bounds are
+verified. The corresponding novelty assessment has been narrowed.
+The same literature supplied a useful next step: the generic multiplicity
+argument now makes the critical-window limit explicit, distinguishing
+single cycles from triples according to p mod 3.
+
+The fixed-formula result should be presented as an application of Tao's
+published algebraic regularity machinery. The quadratic operator proof
+uses the classical Weil estimate. Forey-Fresan-Kowalski-Wigderson's related
+cubic spectral construction remains labeled a preprint: this pass did
+not verify a journal publication. None of these comparisons establishes
+historical priority or journal acceptance for the project's applications.
