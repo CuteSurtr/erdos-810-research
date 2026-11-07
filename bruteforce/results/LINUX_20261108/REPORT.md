@@ -42,3 +42,34 @@ claim, or historical-priority claim is made.
 Analytic work for this session belongs under `analytic/`. Its mathematical
 assumptions and literature comparisons must be stated separately from these
 finite computational certificates.
+
+## First live checkpoint
+
+`verified/0100KST/` freezes the results at 15:58 UTC (00:58 KST): nine strict
+construction improvements passed both graph checkers; 146 new UNSAT leaves
+passed native DRAT verification and a retained-proof hash audit. Combined
+n=56 coverage used 18,337 checked leaves, with 487 branches still open.
+These are partial results, and the workers continue toward the configured
+deadline. An isolated test of the production watchdog confirmed that it
+kills only processes carrying its exact run tag, preserving both untagged
+and similar-tagged controls.
+
+## Analytic deductions
+
+- `analytic/factorization-and-defects.txt` develops a gamma_2 support bound,
+  a three-color C4 counting formula, a degree-weighted robust inequality,
+  and discrepancy/trace-norm consequences for fixed nonlinear polynomial
+  intercepts. It includes a concrete dense family with asymptotically
+  p^3/16384 three-color C4s.
+- `analytic/arbitrary-intercepts-norm-growth.txt` combines the archived
+  common-support theorem with published matrix extraction results. For
+  arbitrary intercepts, normalized trace norm t gives the explicit bound
+  m/p^2 <= C[t/(log p)^(1/27) + sqrt(t)/(log p)^(1/18)
+  + exp(-c(log p)^(1/9))].
+- `analytic/proof-and-literature-audit.txt` records the proof checks,
+  source versions, overlap with existing results, and remaining review work.
+
+The exact local identity audit and dense-example counts passed. Theorems
+from the archive and the literature are not thereby formally verified.
+These are candidate research contributions; novelty and paper readiness
+have not been established.

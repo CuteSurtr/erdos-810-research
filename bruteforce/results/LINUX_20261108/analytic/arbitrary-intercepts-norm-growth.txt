@@ -1,0 +1,235 @@
+GROWING SUPPORT COMPLEXITY WITH ARBITRARY AFFINE INTERCEPTS
+8 November 2026. Corollaries of existing common-support and matrix theorems.
+
+Status: written deduction; external review and historical novelty checks
+remain outstanding. No unrestricted Erdos #810 conclusion is asserted.
+The intercept beta below is arbitrary, not necessarily polynomial.
+
+1. STATEMENT
+
+Let p be an odd prime, A subset F_p*, d=|A|>0, and beta:A->F_p arbitrary.
+Select precisely the color-a edges (x,ax+beta(a)) with F(a,x)=1, where
+F is a binary d-by-p matrix. Suppose the colored graph is simple, proper,
+and every four-cycle is rainbow. Let m be its edge count. Define
+
+ g=gamma_2(F),   t=||F||_tr/sqrt(dp),   r=rank_R(F),
+                    L_p=(log p)^(1/9).
+
+Here gamma_2 is the real Euclidean factorization norm, and ||.||_tr is
+the sum of real singular values. For every fixed delta>0, there are
+positive c_delta and p_delta such that m>=delta p^2, p>=p_delta imply
+
+             g>=c_delta (log p)^(1/27),
+             t>=c_delta (log p)^(1/27).                    (1)
+
+There are also absolute C,c>0 such that, for every such graph,
+
+             m<=C 2^r p^2 exp(-c L_p).                    (2)
+
+The constants in (1) need not be the same on its two lines. In particular
+each of the following conditions separately forces m=o(p^2):
+
+ g=o((log p)^(1/27)),  or t=o((log p)^(1/27)),
+                         or r=o((log p)^(1/9)).           (3)
+
+The rank condition from (2) is stronger than substituting g<=sqrt(r)
+into (1). It uses Boolean row types rather than a norm comparison.
+These rates are conservative consequences of specified published inputs;
+they are not claims to optimize known Roth or matrix-theorem exponents.
+
+2. THE ARCHIVED COMMON-SUPPORT INPUT
+
+For every palette A' subset F_p* and row set X subset F_p, an actual
+simple proper rainbow-C4 coloring containing ALL edges
+
+                   (x,ax+beta(a)), (a,x) in A' x X,
+
+has at most
+
+                  C_0 p^2 exp(-c_0 L_p)                  (4)
+
+edges, uniformly in beta, A', X. This is Section 9, equation (Q), of
+research/local-progress/overnight-2026-10-15/
+pass4-arbitrary-intercept-common-support-theorem.txt.
+
+Its earlier, more explicit form is
+ |A'||X|/p^2 << p^(-1/11)+(r_3([p-1])/p)^(1/6).
+The archived proof uses affine energy and crossed-operator estimates,
+and an integer three-term-progression bound. The last input can be the
+published Bloom--Sisask exposition of Kelley--Meka, Theorem 1:
+https://msp.org/ent/2023/2-1/ent-v2-n1-p02-p.pdf .
+For the stronger exponent used here, substitute Bloom--Sisask, An
+improvement to the Kelley--Meka bounds on three-term arithmetic
+progressions, Theorem 1: r_3([N])/N<=exp(-c(log N)^(1/9)).
+https://arxiv.org/html/2309.02353v1 . Taking a sixth root only changes c;
+the p^(-1/11) term is smaller and can be absorbed. This is an update of
+the published Roth input, not a new Roth bound.
+This note assumes the archived common-support deduction. It does not
+transfer the polynomial weighted estimate to arbitrary intercepts.
+
+3. THE PUBLISHED MATRIX INPUTS AND THE COLOR OF THE RECTANGLE
+
+We use Balla--Hambardzumyan--Tomon, Factorization norms and an inverse
+theorem for MaxCut, Math. Ann. 394 (2026), article 52:
+https://doi.org/10.1007/s00208-026-03355-2
+https://pmc.ncbi.nlm.nih.gov/articles/PMC12916507/
+The preprint with the same lemma numbers is
+https://arxiv.org/html/2506.23989v1 .
+
+Their Lemma 4.4 says that a Boolean matrix of density at most 1-epsilon
+and gamma_2 at most H has a submatrix with each row and column density
+at most xi, retaining at least a fraction
+2^(-C(H/epsilon)log(1/xi)) of each dimension.
+Their Theorem 5.2 says that a square Boolean matrix of density at most
+1/2 and gamma_2 at most H has an all-zero square submatrix retaining a
+fraction 2^(-C H^3) of its side length. Constants are absolute. The published Lemma 4.4
+improves the preprint's epsilon^2 denominator to epsilon; we use the
+published version here.
+Their Lemma 5.1 is the trace-to-factorization trimming statement used
+in Section 5 below. These three matrix statements are published inputs.
+
+The all-zeros OR all-ones conclusion of their headline theorem alone
+would be insufficient here: a large all-zero rectangle contains no
+actual graph edges. We force the desired all-one rectangle as follows.
+
+Suppose m>=delta p^2. Then d>=delta p, and the support density
+eta=m/(dp) is at least delta. Set M=J-F. Its density is at most
+1-delta and gamma_2(M)<=g+1=:H, by the triangle inequality.
+Apply Lemma 4.4 to M with epsilon=delta and xi=1/10. It supplies a
+submatrix with dimensions d',p' satisfying
+
+        d'>=alpha d, p'>=alpha p,
+        alpha=2^(-C H/delta),                            (5)
+
+and total one-density at most 1/10. The harmless integer roundings can
+be absorbed in C; in the nontrivial asymptotic range the retained
+dimensions tend to infinity. If a claimed lower dimension is below
+one, the desired eventual lower bound on H already follows, since
+that case requires H/delta of order log p.
+
+Let s=min(d',p'). Retain s rows and s columns with no increase in
+one-density, by averaging subsets on the larger side. This is a square
+submatrix of M with gamma_2 at most H and density at most 1/10.
+Theorem 5.2 therefore gives an all-zero square of side at least
+
+                 delta p 2^(-C(H^3+H/delta)).            (6)
+
+In F this is an all-one rectangle. Each of its entries is an actual
+colored edge, so it gives a genuine common-support subgraph with at
+least
+
+           delta^2 p^2 2^(-2C(H^3+H/delta))              (7)
+
+edges. Properness, simplicity and the rainbow-C4 property are inherited.
+There are still distinct nonzero slopes. Thus (4) applies to this
+subgraph, with the ORIGINAL field size p. It is not necessary to pretend
+the extracted palette or row set is itself a field.
+
+Comparing (7) with (4) and taking logarithms gives
+
+ c_0 L_p <= 2C log(2)(H^3+H/delta)+log(C_0/delta^2).
+
+For fixed delta, H>=1 allows the linear H term to be absorbed into
+C_delta H^3. For sufficiently large p this proves the first line of
+(1), since H=g+1. This proves a quantitative density obstruction; the
+matrix extraction theorem itself is not a new theorem of this project.
+
+4. REAL RANK: A SIMPLER AND STRONGER DEDUCTION
+
+A binary matrix of real rank r has at most 2^r distinct rows. Choose r
+coordinate columns on which restriction of its row space is injective;
+the binary restrictions determine each row and have at most 2^r values.
+Partition A by its identical support rows. Each nonempty class is a
+common-support subgraph to which (4) applies. Sum over the at most 2^r
+classes to prove (2). This proof requires no deep matrix theorem.
+
+More generally if b all-one rectangles cover the support's one-entries,
+then m<=b C_0 p^2 exp(-c_0 L_p). Overlap does not cause a problem, since
+we only bound a union by the sum of its sizes. Thus log b=o(L_p) suffices
+for vanishing density. The same conclusion follows if the nonnegative
+rank is b: each nonnegative rank-one summand has rectangular support
+contained in the one-support of F, and these rectangles cover F.
+These are straightforward consequences of (4), not new matrix facts.
+
+5. TRACE NORM AND PRESERVING DENSITY WHILE TRIMMING
+
+For any real d-by-p matrix with normalized trace norm t and any
+0<epsilon<=1/2, one can delete fewer than epsilon d rows and epsilon p
+columns so the remaining matrix has gamma_2<=t/epsilon.
+One proof factors the SVD as UV with squared Frobenius norms both equal
+to the trace norm, then removes factor rows/columns above their Markov
+thresholds. This is precisely the cited Lemma 5.1.
+
+Under m>=delta p^2 take epsilon=delta/4. Applied to binary F, at most
+2epsilon dp<=delta p^2/2 actual edges are deleted. At least delta p^2/2
+edges remain, and the surviving support has gamma_2<=4t/delta. Pad its
+removed row-vertex columns with zeros; discard the removed colors. This
+is a valid affine subgraph on the original field, and zero padding does
+not change gamma_2. Applying the already proved first line of (1) with
+density delta/2 proves its second line.
+
+This step cannot be replaced by the inequality t<=gamma_2(F): that
+inequality alone has the wrong direction for deducing a lower bound
+on t from a lower bound on gamma_2(F).
+
+6. COMPARISON AND LIMITS
+
+The archive already proves the qualitative statement m=o(p^2) for
+bounded-VC support families and arbitrary beta. Bounded gamma_2 implies
+bounded VC dimension: a shattered k-column set contains all sign patterns
+after subtracting complementary support rows, whence sqrt(k)<=2gamma_2(F).
+So the fixed-gamma_2 qualitative conclusion is not an advance over that
+archive. The additional content here is the explicit GROWING thresholds
+in (3), and the normalized trace-norm formulation with density-preserving
+trimming. Formula (2) is an elementary further corollary of the already
+available common-support rate.
+
+For a nonlinear polynomial of fixed degree, the companion note gives
+much stronger polynomial thresholds g,t=o(p^(1/16)) and real rank
+o(p^(1/8)). The slower logarithmic thresholds here compensate for the
+absence of a degree restriction on beta.
+
+The norm hypotheses concern the ACTUAL binary supports. No extension to
+arbitrary [0,1] approximations with small entrywise error is claimed in
+this note: the extraction input is Boolean. Supports of a hypothetical
+dense counterexample could have large values of every complexity
+parameter used here. Neither (1) nor (2) settles that case.
+
+7. AN EXPLICIT UNIFORM TRACE-NORM BOUND
+
+The density dependence above also yields a uniform bound, useful when
+one wants more than an asymptotic threshold. For absolute C,c>0,
+
+ m/p^2 <= C[t L_p^(-1/3)+sqrt(t)L_p^(-1/2)+exp(-c L_p)].     (8)
+
+Thus bounded normalized trace norm gives the explicit rate
+m=O(p^2/(log p)^(1/27)) for arbitrary intercepts.
+
+Proof. Put delta=m/p^2>0. Testing F against the all-ones matrix in
+trace/operator-norm duality gives t>=m/(dp)>=delta. Trim with
+ epsilon=delta/4 as before. The retained graph has density at least
+ delta/2 relative to p^2, and H'=1+gamma_2(F')<=1+4t/delta<=5t/delta.
+Apply (5)-(7) to this graph, and compare with (4). After enlarging
+absolute constants this gives
+
+ L_p <= C[t^3/delta^3+t/delta^2+log(C/delta)].               (9)
+
+At least one summand on the right is at least L_p/3. The three
+alternatives give respectively delta<=C t L_p^(-1/3),
+delta<=C sqrt(t)L_p^(-1/2), or delta<=C exp(-c L_p). Their sum proves
+(8). Cases where integer rounding makes the extracted rectangle smaller
+than one already satisfy a stronger alternative, since then the same
+exponent is at least a constant multiple of log p, hence of L_p.
+For small p all bounds follow by increasing C. The empty graph is
+immediate and requires no division by delta.
+
+Similarly, writing H=g+1, the untrimmed comparison shows that if
+H^3<=c L_p for a sufficiently small absolute c, then
+m/p^2<=C H/L_p+C exp(-c' L_p). No quantitative approximation statement
+for non-Boolean support masks is implied.
+
+The proofs have been checked within this session, not by an independent
+agent or an external referee. Targeted literature searches did not
+establish historical priority for these applications. The named source
+theorems and the archived affine input should remain explicit in any
+paper draft; these deductions alone are not a claim of publishability.

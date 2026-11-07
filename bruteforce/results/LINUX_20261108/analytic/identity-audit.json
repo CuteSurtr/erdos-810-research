@@ -1,0 +1,13 @@
+{
+  "utc": "2026-11-07T15:52:37.345686+00:00",
+  "seed": 20261108,
+  "graph_cases": 360,
+  "two_color_cycles_counted": 397,
+  "three_color_cycles_counted": 3688,
+  "dyadic_binary_rows": 8190,
+  "binary_matrices_rank_checked": 4096,
+  "checks": "exact integer/rational counting, charging, positivity and exponent checks passed",
+  "not_verified": "asymptotic operator theorem, external literature theorems, historical novelty",
+  "script_sha256": "600deada63104f69f14cd6c2b140a3139c0c459e836eb639e1b048a5e8c518d7",
+  "seconds": 0.349
+}

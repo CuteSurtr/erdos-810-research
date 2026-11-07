@@ -1,0 +1,119 @@
+PROOF AND LITERATURE AUDIT, 8 NOVEMBER 2026
+
+This is a self-audit in the same session, not an independent agent review
+or a formal proof. No historical-priority or publication-readiness claim.
+
+MATERIAL CHECKS
+
+1. Counting identity: every repeated opposite pair contributes TWO ordered
+crossed transitions. A two-color C4 contributes four; a three-color C4 two.
+Fixed transitions count actual edges exactly once only because the graph
+is simple with unambiguous colors. The exact script checked 360 randomly
+generated simple proper affine graphs, including 397 two-color and 3,688
+three-color cycles. Thus the audit exercises both multiplicities.
+
+2. Two-color exception: subtracting the two equations gives a+b=0.
+The row involution has a unique fixed point because p is odd. A color pair
+therefore supplies at most (p-1)/2 cycles; there are at most floor(d/2)
+pairs. This conclusion would fail for unrestricted permutations and must
+not be silently transferred there.
+
+3. Robustness: the tested quadratic form, rather than a general operator
+norm perturbation, charges each error at (a,x) at most rho_x times.
+The masks must be in [0,1]. The second product error uses the involution
+to interchange the two states. Cauchy-Schwarz is over d colors and then
+p rows. These steps, including the positive-part lower bound, were tested
+with exact rational masks. For fractional gamma_2<1, the displayed bound
+retains max{1,gamma_2}; dropping it would be unjustified.
+
+4. Exponents: (5+7/8)/3=47/24. Trace trimming produces
+(3*(47/24)+2)/5=63/40 as the p exponent before replacing d by p, and
+63/40+2/5=79/40 afterwards. Its zero-density threshold is again p^(1/16).
+These arithmetic identities are checked with exact fractions.
+
+5. Norm direction: normalized trace norm is at most gamma_2. That does
+NOT transfer a gamma_2 lower bound to a trace-norm lower bound. The proofs
+instead trim the SVD factors, preserve a specified positive fraction of
+actual graph edges, and apply the gamma_2 theorem to that actual subgraph.
+
+6. Dyadic factorization: at most 2k blocks per level, at most L levels,
+and each column lies in one dyadic block per level. The two squared factor
+norms are 2kL and L, giving sqrt(2k)*L, not sqrt(2kL).
+All 8,190 binary rows of lengths 1 through 12 passed the decomposition
+checks. The q-ordering construction enlarges the squared column norm by
+q, giving sqrt(q) in gamma_2. The existing one-ordering interval result
+has a better exponent for fixed k and is explicitly acknowledged.
+
+7. Dense example: A=[1,floor(p/8)], X=[0,floor(p/4)-1], beta(a)=a^2.
+The collision factor x+a+b is nonzero modulo p, so the graph really is
+simple and proper. Its gamma_2 is one and it has no antipodal palette
+pair. The three-color count is
+|A|^3|X|^2/(2p^2)+O(p^(23/8)), hence p^3/16384+O(p^(23/8)).
+An exact O(|A|^3) enumeration through p=1009 agrees with a separate
+common-neighbor enumeration through p=251. At p=1009 the exact count is
+60,983; this is a finite check, not an estimate of the asymptotic error
+constant. Counts and script hashes are saved separately.
+
+8. Arbitrary intercepts: only the archived common-support theorem is
+used here, not the polynomial weighted operator bound. The extracted
+all-one support rectangle is an actual subgraph on the original field.
+There is no claim that the extracted vertex set is itself a field.
+The matrix theorem's all-zero OR all-one alternative would not suffice;
+the proof first sparsifies the COMPLEMENT and then applies its one-sided
+zero-rectangle theorem. The palette and density losses are explicit.
+
+9. The rank count: pivot-coordinate restriction is injective on a real
+row space of rank r. Binary rows therefore have at most 2^r types. This
+was checked on all 4,096 binary 3-by-4 matrices, although the short linear
+algebra proof, not this finite check, establishes the general assertion.
+
+10. Uniform trace bound for arbitrary intercepts: write delta=m/p^2 and
+L=(log p)^(1/9). Nuclear/operator duality gives t>=m/(dp)>=delta. After
+trimming, H'<=5t/delta and at least delta p^2/2 edges survive. The comparison
+with the common-support bound gives
+L<=C[t^3/delta^3+t/delta^2+log(C/delta)]. The three alternatives yield
+delta<=C[t L^(-1/3)+sqrt(t)L^(-1/2)+exp(-cL)]. Thus the logarithmic
+threshold is t=o((log p)^(1/27)); bounded t gives an explicit
+O(p^2/(log p)^(1/27)) bound. No Boolean-to-fractional-mask extension is made.
+
+PRIMARY SOURCES CHECKED ON 7 NOVEMBER UTC / 8 NOVEMBER KST
+
+A. Matousek, Nikolov, Talwar, Factorization Norms and Hereditary Discrepancy.
+https://arxiv.org/html/1408.1376
+Section 3.1, Theorem 3.1: gamma_2 is bounded by a logarithmic rank factor
+times the determinant lower bound, hence hereditary discrepancy. We use
+log(2r) to handle rank one. This comparison is existing mathematics.
+
+B. Balla, Hambardzumyan, Tomon, Factorization norms and an inverse theorem
+for MaxCut. Math. Ann. 394 (2026), article 52.
+https://doi.org/10.1007/s00208-026-03355-2
+https://pmc.ncbi.nlm.nih.gov/articles/PMC12916507/
+Lemmas 4.4 and 5.1, Theorem 5.2. IMPORTANT VERSION DIFFERENCE: the final
+Lemma 4.4 has H/epsilon in the exponent; arXiv v1 had H/epsilon^2.
+The current arbitrary-intercept note uses the published stronger form.
+The trace trimming lemma, homogeneous-rectangle theorem, and bounded-norm
+structural theory are theirs, not discoveries of this project.
+
+C. Bloom, Sisask, An improvement to the Kelley-Meka bounds on three-term
+arithmetic progressions, Theorem 1.
+https://arxiv.org/html/2309.02353v1
+The explicit exponent 1/9 was checked directly. Substituting it into the
+archive's common-support formula replaces 1/12 by 1/9, changing constants
+after the sixth root. This is an updated input, not a new Roth theorem.
+
+NOVELTY AND PAPER ASSESSMENT
+
+Targeted searches for Erdos 810 / affine rainbow C4 supports combined with
+factorization norms, hereditary discrepancy and supersaturation did not
+establish historical priority. Absence of a search result is not a novelty
+proof. The coherent research contribution to investigate further is the
+application package: a three-color counting formula with a concrete dense
+example, quantitative support-norm obstructions, and a growing-complexity
+extension to arbitrary intercepts. The elementary rank and interval
+corollaries should remain supporting observations, not headline claims.
+
+Before calling this paper-ready: independently review the archived weighted
+and common-support inputs and the new applications, compare with the
+relevant coloring literature beyond keyword searches, and decide whether
+the quantitative scope is substantial enough for the intended venue.
+No such external review or venue judgment has been completed here.

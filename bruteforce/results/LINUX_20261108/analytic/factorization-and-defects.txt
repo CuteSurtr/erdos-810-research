@@ -1,0 +1,329 @@
+SUPPORT FACTORIZATION, DISCREPANCY, AND THREE-COLOR FOUR-CYCLES
+8 November 2026. Research deductions from archived operator estimates.
+
+Status: written proofs; the local exact identity audit passed. External review
+and historical-priority checks remain outstanding.
+These are restricted affine-coloring results, not a solution of Erdos #810.
+The standard factorization ingredients are not claimed as new. Historical
+priority of their applications here has not been established.
+
+1. SETTING AND THE PRECISE INPUT
+
+Let p be an odd prime, A subset F_p*, d=|A|, and beta:A->F_p. The two vertex
+classes are separate copies of F_p. The actual color-a edges are
+
+                  (x, ax+beta(a)) for F(a,x)=1,
+
+where F is a binary d-by-p matrix. The selected colored graph must be simple
+and proper; in particular, if two affine maps meet, at most one copy of that
+edge is selected. Let m be the number of edges. N_j denotes the number of
+unordered four-cycles using exactly j colors. Properness allows only j=2,3,4.
+
+For counting-measure l2(F_p^2), define
+
+ tau_a(x,y)=((y-beta(a))/a, ax+beta(a)), U_a f=f composed with tau_a,
+ P f=p^(-2)(sum f)1.
+
+Assume the following WEIGHTED completed-operator estimate, for real weights w:
+
+       ||sum_a w(a)(U_a-P)|| <= Lambda max_a |w(a)|.          (1)
+
+This is exactly Section 2 of the archived
+research/local-progress/overnight-2026-10-15/
+pass5-fourier-majorant-support-theorem.txt, which proves the stronger complex
+weight version. For beta a polynomial of fixed degree 2<=D<p it gives
+
+                     Lambda <= C_D p^(7/8).                 (2)
+
+All results below through (12), before using (2), hold for any beta and any
+valid bound (1). No assertion that (2) holds for arbitrary beta is made.
+The archive proves (1) from fourth singular moments, including the d^3
+axis-translation term. This note does not improve or reprove that input.
+
+2. TWO STANDARD FACTORIZATION NORMS
+
+For a real matrix B define
+
+ gamma_2(B)=inf [max_a ||u_a||_2][max_x ||v_x||_2],
+                         B(a,x)=<u_a,v_x>,
+
+and the real separated norm
+
+ Gamma(B)=inf sum_j ||s_j||_infinity ||t_j||_infinity,
+                         B(a,x)=sum_j s_j(a)t_j(x).
+
+The following elementary form of the Grothendieck factorization comparison
+is enough here:
+
+          Gamma(B)<=K gamma_2(B), K=sinh(pi/2).              (3)
+
+Proof. Normalize any factorization by g=(max||u_a||)(max||v_x||), so B/g is
+a matrix of inner products of vectors of norm at most one. Pad row and
+column vectors in separate orthogonal directions to make them unit vectors.
+Gaussian sign rounding gives a convex combination Z of rank-one sign
+matrices with Z(a,x)=(2/pi)arcsin(B(a,x)/g). Every positive entrywise integer
+power of Z is again such a convex combination: multiply independent copies
+of the row and column signs. Entrywise sine inversion has total absolute
+coefficient sum sinh(pi/2), hence Gamma(B/g)<=K. The convex hull of the
+finitely many rank-one sign matrices is closed, so the convergent sine series
+also has a finite representation. Infimize over factorizations; B=0 is
+immediate. This is the argument in the previous low-rank note with its John
+ellipsoid step removed, not a new comparison theorem.
+
+Write M_b for multiplication by b(x) on functions of (x,y), and set
+
+ T_B=sum_a M_Ba U_a M_Ba,       Q_B=sum_a M_Ba P M_Ba.
+
+Real masks make Q_B positive semidefinite. Expanding a separated expression
+for B twice in T_B-Q_B and applying (1) proves
+
+              ||T_B-Q_B||<=Lambda Gamma(B)^2
+                           <=K^2 Lambda gamma_2(B)^2.       (4)
+
+The infimum causes no gap: the bound holds for every finite expansion, and
+the right side decreases to the infimum. Neither bounded rank nor a common
+Fourier envelope is needed in (4).
+
+3. AN EXACT DEFECT IDENTITY
+
+Let f=1_E for the actual uncolored edge set, as a subset of F_p^2. Then
+
+               <f,T_F f>=m+2N_3+4N_2.                      (5)
+
+Proof. A fixed transition tau_a(x,y)=(x,y) has y=ax+beta(a). The masks and
+f make it exactly an actual color-a edge. Simplicity counts each edge once.
+A nonfixed transition e=(x,y) -> e'=(z,w) with both masks and both edge
+indicators nonzero has x!=z and y!=w. Its two closing edges (x,w),(z,y)
+are actually present and have color a. Conversely any repeated opposite
+pair in a proper four-cycle supplies precisely two ordered transitions,
+from either edge of the other pair. A three-color cycle has one repeated
+pair; a two-color cycle has two. This proves (5).
+
+Put rho_x=sum_a F(a,x). Simplicity gives sum rho_x=m, rho_x<=p, and
+
+ <f,Q_F f>=p^(-2)sum_a (sum_x F(a,x)rho_x)^2
+            >=(d p^2)^(-1)(sum_x rho_x^2)^2
+            >=m^4/(d p^4).                                (6)
+
+For d>0, (4)-(6) imply the explicit supersaturation inequality
+
+  2N_3+4N_2 >= m^4/(d p^4)-(1+K^2 Lambda gamma_2(F)^2)m.    (7)
+
+For zero palettes all graph counts vanish; no division is needed.
+
+In this affine setting two-color cycles are scarce for an elementary
+additional reason:
+
+              N_2<=floor(d/2)(p-1)/2.                      (8)
+
+Indeed if opposite edges have colors a and b, subtraction of the two row
+equations gives (a+b)(x-z)=0. Thus b=-a. For a fixed unordered pair {a,-a},
+the rows of an alternating cycle satisfy x+z=(beta(-a)-beta(a))/a. This is
+an involution with one fixed row and at most (p-1)/2 unordered distinct row
+pairs, each determining at most one four-cycle. At most floor(d/2) palette
+pairs are antipodal. Actual supports can only remove cycles. Therefore
+
+ N_3 >= m^4/(2d p^4)
+          -(1+K^2 Lambda gamma_2(F)^2)m/2
+          -floor(d/2)(p-1).                               (9)
+
+POLYNOMIAL SUPERSATURATION COROLLARY. Fix D and delta>0. If (2) holds,
+m>=delta p^2, and gamma_2(F)=o(p^(1/16)), then
+
+                 N_3 >= (delta^4/2-o(1))p^3.              (10)
+
+The scale p^3 is intentional; it is smaller than the p^4 scale of all
+four-cycles. In fact (4) gives an asymptotic COUNTING FORMULA, not only
+a lower bound. Put
+
+          C(F)=p^(-2)sum_a (sum_x F(a,x)rho_x)^2.
+
+Then, with beta as in (2), (5) and (8) give
+
+         N_3=C(F)/2+O_D(p^(23/8)gamma_2(F)^2).              (10a)
+
+The error absorbs m/2 and 2N_2, each O(p^2), using gamma_2(F)>=1 for
+a nonempty graph. If gamma_2(F)=o(p^(1/16)), the error is o(p^3).
+The statistic C(F) uses actual row degrees; replacing it by a function
+of the edge density alone generally loses information.
+
+For a concrete nonvacuous example, take beta(a)=a^2,
+A={1,...,floor(p/8)} and X={0,...,floor(p/4)-1}, retaining all A-by-X
+incidences. For a!=b, a collision at row x would require x+a+b=0 mod p,
+impossible because 0<x+a+b<p. Thus this is simple and proper. Its
+support has rank and gamma_2 equal to one (when nonempty), with
+m=|A||X|~p^2/32; it is not claimed to be rainbow-C4. There are no
+antipodal palette pairs, hence N_2=0. Formula (10a) yields
+
+ N_3=|A|^3|X|^2/(2p^2)+O(p^(23/8))
+                         =p^3/16384+O(p^(23/8)).           (10b)
+
+This demonstrates the p^3 scale with a concrete affine family. The
+counting statement is an application of the existing spectral input,
+not a new exponential-sum theorem.
+
+Moreover making all four-cycles rainbow by edge deletions
+while retaining the colors requires at least
+
+                       (delta^4/4-o(1))p^2
+
+deletions. To see this, a fixed edge e can belong to at most p+d-2 bad
+cycles: at most p-1 from repeating its own color on the opposite edge,
+and at most d-1 from a repeated other color on the other opposite pair.
+For each other color, properness determines both adjacent closing edges
+uniquely. Hence each deleted edge hits at most 2p bad cycles. Apply (10).
+This is a lower bound on deletions in the restricted low-norm class, not
+a general colored removal lemma.
+
+4. DEGREE-WEIGHTED ROBUSTNESS
+
+Let B have entries in [0,1], and set
+
+ W=sum_x rho_x sum_a |F(a,x)-B(a,x)|,
+ H=1+K^2 Lambda gamma_2(B)^2,     Q=2N_3+4N_2.
+
+Here W measures approximation error weighted by ACTUAL row degrees.
+In particular errors on empty rows have zero cost. The bound is
+
+             (m^2/p-W)_+^2/(d p^2) <= Hm+Q+2W.            (11)
+
+Proof. Since both masks lie in [0,1],
+|F(a,x)F(a,z)-B(a,x)B(a,z)|<=|F(a,x)-B(a,x)|+|F(a,z)-B(a,z)|.
+In the quadratic form on f, the first term has at most rho_x choices of
+y for each a,x. Swapping the two states using the involution handles the
+second term. Consequently |<f,(T_F-T_B)f>|<=2W.
+Also sum_a <f,B_a>=sum_x rho_x sum_a B(a,x)
+ >=sum_x rho_x^2-W>=m^2/p-W. Nonnegative B permits replacing this lower
+bound by its positive part. Cauchy-Schwarz over colors and (4),(5) prove
+(11). The argument does not assume B is a graph, binary, or low rank.
+
+When every four-cycle is rainbow, Q=0. Since W<=d p^2<=p^3, (11) gives
+
+ m<=2p^(5/3)H^(1/3)+2p^(5/4)W^(1/4).                      (12)
+
+If m^2<=2pW, the second term already suffices, using W<=p^3. Otherwise
+(11) yields m^4<=4p^5 Hm+8p^5 W; one summand is at least half of m^4,
+which proves (12). For fixed nonlinear polynomial beta this implies
+
+ m<=C_D p^(47/24)max{1,gamma_2(B)}^(2/3)
+                           +2p^(5/4)W^(1/4).              (13)
+
+The max is needed for fractional B with gamma_2(B)<1. For ordinary
+entrywise error R=sum|F-B|, W<=pR recovers a p^(3/2)R^(1/4) error term.
+
+5. CONSEQUENCES FOR ACTUAL RAINBOW-C4 SUPPORTS
+
+Assume henceforth every four-cycle is rainbow and beta has fixed nonlinear
+polynomial degree D. A nonzero binary matrix has gamma_2(F)>=1, so (7) gives
+
+             m<=C_D p^(47/24)gamma_2(F)^(2/3).              (14)
+
+(a) Hereditary discrepancy. Define
+ h(F)=max_{J subset F_p} min_{epsilon in {-1,1}^J}
+                                  max_a |sum_{x in J}F(a,x)epsilon_x|.
+Matousek--Nikolov--Talwar prove gamma_2(F)<=C log(2r) h(F), where r is real
+rank (their Theorem 3.1, together with the determinant discrepancy bound).
+Thus a convenient weaker form is
+
+        m<=C_D p^(47/24)[log(2p)h(F)]^(2/3).               (15)
+
+For fixed positive density this forces h(F)>=c_{D,delta}p^(1/16)/log(2p).
+Their theorem also gives gamma_2(F)<=C log(2r)detlb(F), where detlb is the
+largest k-th root of an absolute k-by-k minor determinant. The same density
+obstruction therefore holds with detlb instead of h. These norm comparisons
+are published facts, not results of this project.
+Source: https://arxiv.org/html/1408.1376, Section 3.1, Theorem 3.1.
+
+(b) Normalized trace norm. Let t=||F||_tr/sqrt(dp), with ||.||_tr the sum
+of real singular values. Then
+
+           m<=C_D p^(63/40)d^(2/5)t^(2/5)
+             <=C_D p^(79/40)t^(2/5).                     (16)
+
+Proof. Put eta=m/(dp), epsilon=eta/4. The SVD factorization F=UV can be
+chosen with sum_a||u_a||^2=sum_x||v_x||^2=||F||_tr. Remove rows whose
+squared factor norm exceeds ||F||_tr/(epsilon d), and columns whose
+squared factor norm exceeds ||F||_tr/(epsilon p). Fewer than epsilon d
+rows and epsilon p columns are removed. At least m/2 one-entries remain,
+and the surviving submatrix has gamma_2<=t/epsilon=4tdp/m. Extend its
+missing columns by zeros and discard the removed colors: it is an actual
+subgraph, and its gamma_2 is unchanged. Applying (14) gives
+m/2<=C_D p^(47/24)(4tdp/m)^(2/3). Raising to the third power and solving
+for m proves (16), since 47/8+2=63/8.
+
+The trimming lemma is standard and appears explicitly as Lemma 5.1 of
+Balla--Hambardzumyan--Tomon, Factorization norms and an inverse theorem
+for MaxCut: https://arxiv.org/html/2506.23989v1 . The application to this
+archived affine operator bound is the deduction here.
+
+Thus t=o(p^(1/16)) forces m=o(p^2), even when F has full real rank.
+Equivalently a fixed-density valid support needs
+t>=c_{D,delta}p^(1/16). A nuclear norm lower bound is not an algorithm for
+proving the original conjecture: generic supports have much larger norms.
+
+(c) Relation to the previous rank theorem. The standard bound
+gamma_2(B)<=sqrt(rank_R B)||B||_infinity recovers the previous low-rank
+theorem. Statements (7),(11),(14)-(16) express further consequences in
+different parameters; they do not claim a new operator estimate.
+
+6. MULTIPLE ORDERINGS AND GROWING GEOMETRIC DESCRIPTIONS
+
+There is a useful explicit factorization, requiring no relation between
+the field operations and the ordering of its rows. Write L=1+ceil(log_2 p).
+If each D_a is a union of at most k intervals in one common ordering, then
+
+                        gamma_2(F)<=sqrt(2k)L.             (17)
+
+Pad the ordered set to a power of two. Decompose each interval into maximal
+dyadic blocks. At most two blocks of each size are needed per interval.
+Let u_a record which blocks occur in the disjoint dyadic decomposition of
+D_a, and v_x record which blocks contain x. Then <u_a,v_x>=F(a,x),
+||u_a||^2<=2kL, and ||v_x||^2<=L, proving (17).
+
+If the colors are partitioned into q classes, each with its own arbitrary
+common ordering, concatenate the q coordinate systems for v_x and use
+only the appropriate system in u_a. This gives
+
+ gamma_2(F)<=sqrt(2kq)L,
+ m<=C_D p^(47/24)(kq)^(1/3)L^(2/3).                        (18)
+
+In particular kq L^2=o(p^(1/8)) suffices for m=o(p^2). This allows a
+growing number of unrelated orderings. All colors within one class still
+share its ordering; a separate ordering for every color gives no useful
+conclusion in general.
+
+For q=1 the archive already has the stronger interval-support estimate
+O_{D,k}(p^(35/18)) for fixed k. Optimizing its displayed block inequality
+also handles k=o(p^(1/8)). Thus (17) is NOT promoted as a better interval
+theorem. It is a convenient factorization tool for (18).
+
+Similarly if every support is a box described by s arbitrary shared real
+coordinate maps phi_j:F_p->R, with color-dependent interval endpoints,
+then gamma_2(F)<=(sqrt(2)L)^s. Indeed it is an entrywise product of s
+interval-incidence matrices; tensoring their factor vectors multiplies
+their gamma_2 bounds. Consequently
+
+         m<=C_D p^(47/24)(sqrt(2)L)^(2s/3).                (19)
+
+The sufficient growing-dimension condition is
+limsup s log log p/log p <1/16. Coordinate maps may depend on p and need
+not be field-linear. Ties can be broken once in a common order without
+changing an interval support. The earlier Fourier-majorant argument had
+an analogous rate for shared field frequencies; (19) permits arbitrary
+shared coordinate maps. The tensor factorization itself is standard.
+
+7. LIMITS AND EVIDENCE
+
+The substantive input is the previously archived weighted affine estimate.
+All added deductions are conditional on its correctness and on the stated
+simple, proper affine representation with one color per nonzero slope.
+No extension to arbitrary permutations, sign rank, or finite-field rank is
+proved. The robust bound requires B in [0,1]. No formal Lean verification
+or independent external review is claimed.
+
+The accompanying audit checked (5), (8), the exact quadratic-form
+inequalities in (11), and dyadic decompositions with integer/rational
+arithmetic: 360 graph cases, 8,190 binary rows and 4,096 small binary
+matrices passed. See identity-audit.json for the seed and script hash. Finite checks support these algebraic steps; they cannot prove
+the asymptotic operator or literature inputs. Historical novelty remains
+unverified even if all local checks pass.

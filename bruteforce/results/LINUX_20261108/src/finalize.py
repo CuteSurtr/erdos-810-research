@@ -3,6 +3,7 @@
 import datetime,gzip,hashlib,json,os,pathlib,subprocess,sys,time
 R=pathlib.Path(__file__).resolve().parents[1];REPO=R.parents[2]
 C=json.loads((R/'config.json').read_text())
+controller_status=json.loads((R/'logs/status.json').read_text())
 deadline=datetime.datetime.fromisoformat(C['audit_deadline_utc']).timestamp()
 os.sched_setaffinity(0,{30})
 sys.path.insert(0,str(R/'cyclic/src'))
@@ -48,6 +49,7 @@ cmd +=[','.join(c) for c in native.ROOTS]+['--logs']+[str(p) for p in native.his
 coverage=subprocess.run(cmd,text=True,capture_output=True,timeout=60)
 (R/'cyclic/logs/final-closecheck.txt').write_text(coverage.stdout+coverage.stderr)
 summary={'finished_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'improved_sizes':len(best),
+    'worker_exit_status':controller_status.get('jobs',{}),
     'total_edge_gain':sum(x['gain'] for x in updates),'new_verified_leaves':len(verified),'proof_hashes_checked':checked,
     'proof_errors':errors,'coverage_exit':coverage.returncode,'historical_proofs_replayed_here':False,
     'new_compressed_proof_bytes':sum(x.get('proof_gzip_bytes',0) for x in verified),
@@ -77,6 +79,9 @@ requires those earlier archives in addition to this run's local proofs.
 
 The source of truth is `logs/final-summary.json`, with the coverage report
 in `cyclic/logs/final-closecheck.txt`. No unrestricted #810 solution is claimed.
+Worker exit codes are retained in the summary; -15 can be the planned
+SIGTERM at the search cutoff. Other unexpected exits require inspecting
+the worker logs even when all saved certificates pass verification.
 '''
 (R/'FINAL-COMPUTE-REPORT.md').write_text(report)
 print(json.dumps(summary),flush=True)
