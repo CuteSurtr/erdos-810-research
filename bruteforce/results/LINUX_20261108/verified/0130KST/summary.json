@@ -1,0 +1,86 @@
+{
+  "utc": "2026-11-07T16:29:24.941737+00:00",
+  "phase": "live_snapshot",
+  "improvements": [
+    {
+      "n": 70,
+      "before": 1072,
+      "after": 1073,
+      "gain": 1
+    },
+    {
+      "n": 72,
+      "before": 1112,
+      "after": 1113,
+      "gain": 1
+    },
+    {
+      "n": 73,
+      "before": 1130,
+      "after": 1131,
+      "gain": 1
+    },
+    {
+      "n": 74,
+      "before": 1138,
+      "after": 1140,
+      "gain": 2
+    },
+    {
+      "n": 88,
+      "before": 1509,
+      "after": 1511,
+      "gain": 2
+    },
+    {
+      "n": 103,
+      "before": 2000,
+      "after": 2001,
+      "gain": 1
+    },
+    {
+      "n": 104,
+      "before": 2019,
+      "after": 2020,
+      "gain": 1
+    },
+    {
+      "n": 105,
+      "before": 2026,
+      "after": 2028,
+      "gain": 2
+    },
+    {
+      "n": 106,
+      "before": 2031,
+      "after": 2033,
+      "gain": 2
+    },
+    {
+      "n": 116,
+      "before": 2370,
+      "after": 2371,
+      "gain": 1
+    },
+    {
+      "n": 117,
+      "before": 2371,
+      "after": 2373,
+      "gain": 2
+    },
+    {
+      "n": 123,
+      "before": 2625,
+      "after": 2626,
+      "gain": 1
+    }
+  ],
+  "total_edge_gain": 17,
+  "new_verified_leaves": 358,
+  "proof_hashes_checked": 0,
+  "coverage_exit": 1,
+  "new_log_sha256": "254c7f42f4ab22b3aa6167e8bcd956126e70a78bcc3cb1624d971f2b26813a65",
+  "certs_sha256": "a11a07032dcbba8e1ed9cfaff9beea44c2cc1d6d4eb01262a01543a354f4a215",
+  "historical_proofs_replayed_here": false,
+  "searches_still_authorized_until": "2026-11-07T20:50:00+00:00"
+}

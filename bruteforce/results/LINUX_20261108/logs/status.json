@@ -1,6 +1,6 @@
 {
   "phase": "running",
-  "utc": "2026-11-07T16:04:10.648312+00:00",
+  "utc": "2026-11-07T16:35:41.051524+00:00",
   "jobs": {
     "cyclic": {
       "pid": 40831,
@@ -11,7 +11,7 @@
       "returncode": null
     }
   },
-  "sampled_system_cpu": 0.06593749999999998,
+  "sampled_system_cpu": 0.06532270667291762,
   "constructor_paused": false,
   "compute_deadline_utc": "2026-11-07T20:50:00+00:00"
 }

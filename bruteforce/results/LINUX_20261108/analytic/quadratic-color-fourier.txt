@@ -1,0 +1,299 @@
+QUADRATIC PALETTES: SQUARE-ROOT CHARACTER BLOCKS AND COLOR FOURIER MASKS
+8 November 2026. Written proof; local algebraic audit recorded separately.
+
+Status: candidate research result. Historical novelty and external review
+are unverified. The new specialization below uses the classical cubic Weil
+bound; no new exponential-sum theorem or unrestricted #810 solution is claimed.
+
+1. A CHARACTER-WEIGHTED COMPLETED-OPERATOR ESTIMATE
+
+Let p be odd and beta(a)=alpha*a^2+b*a+c with alpha!=0 in F_p. On counting
+measure l2(F_p^2), put
+
+ tau_a(x,y)=((y-beta(a))/a, ax+beta(a)), U_a f=f composed with tau_a,
+ P=p^(-2)|1><1|,              a in F_p*.
+
+For EVERY multiplicative character chi of F_p*, including the trivial one,
+
+ ||sum_(a!=0) chi(a)(U_a-P)|| <=2sqrt(p).                   (1)
+
+The sum in (1) is over ALL nonzero slopes. It is not a bound for a
+character restricted to an arbitrary palette without an additional cost.
+It allows complex chi and is an operator-norm statement, not only a
+quadratic-form estimate. Its square-root order cannot be improved uniformly:
+each nonzero product-frequency block has p-1 rows of unit-modulus entries,
+so its Frobenius norm forces operator norm at least sqrt(p-1).
+
+Proof of (1). On additive Fourier characters e_p(xi*x+eta*y), U_a acts by
+
+ e_p(beta(a)(eta-xi/a)) e_p((a eta)x+(xi/a)y).              (2)
+
+The product xi*eta is invariant. Constants are an isolated block on which
+sum chi(a)U_a acts by sum chi(a); subtracting sum chi(a)P removes it.
+
+For t!=0, index the product-t block by frequencies (r,t/r), r!=0. Its
+row-r, column-s entry is
+
+ M_chi,t(r,s)=chi(rs/t)
+           e_p((r-s)beta(rs/t)/(rs/t)).                    (3)
+
+For p>3, define on r!=0
+
+ q_t(r)=alpha*r^3/(3t)+b*r-c*t/r,
+             K_t(u)=e_p(-alpha*u^3/(3t)), u in F_p.
+
+The polynomial identity r^3-s^3-(r-s)^3=3rs(r-s) gives
+
+ (r-s)beta(rs/t)/(rs/t)
+       =q_t(r)-q_t(s)-alpha*(r-s)^3/(3t).                 (4)
+
+Since chi(rs/t)=chi(r)chi(s)/chi(t), the block (3) is, up to unitary
+diagonal factors on its two sides and a unit scalar, the restriction to
+r,s!=0 of the p-by-p additive convolution matrix K_t(r-s). The two
+diagonal factors need not be adjoints: singular/operator norms are
+unchanged by independent unitary factors on the left and right.
+
+The convolution eigenvalues are the UNNORMALIZED sums
+
+          sum_(u in F_p) e_p(-alpha*u^3/(3t)-k*u).
+
+Their absolute values are at most 2sqrt(p) by the additive polynomial
+Weil bound: the polynomial has degree 3, p>3, and nonzero cubic coefficient.
+Restriction to nonzero coordinates cannot increase operator norm.
+
+It remains to check the product-zero frequencies; they must not be omitted.
+Besides the removed constant, they consist of the two axes (r,0),(0,r),
+r!=0. The operator interchanges these two orthogonal spaces. One off-diagonal
+block, with output index s and input index r, is
+
+ chi(r/s) e_p(-s beta(r/s))
+       =chi(r)chi(s)^(-1)e_p(-alpha*r^2/s-b*r-c*s).         (5)
+
+After unitary factors and the row permutation s->1/s, this is a Fourier
+matrix with columns indexed by r^2. The full p-by-p unnormalized Fourier
+matrix has norm sqrt(p); every nonzero square occurs at most twice among
+these columns. Duplicating columns therefore costs at most sqrt(2), and
+restricting rows does not increase norm. This block has norm <=sqrt(2p).
+The other axis block has entries
+
+            chi(s/r)e_p(alpha*s^2/r+b*s+c*r)
+
+and the same norm bound. For an operator [[0,B],[C,0]] on an orthogonal
+direct sum the norm is max{||B||,||C||}; no adjoint relation is required.
+Thus both axes fit under 2sqrt(p). For p=3 the elementary bound
+sum_(a!=0)|chi(a)|=2 on the mean-zero space suffices. This proves (1).
+
+Published input: A. Weil's degree-d additive-character bound
+|sum_x psi(f(x))|<=(d-1)sqrt(p) when d<p and p does not divide d.
+It is stated as Theorem 3.2, printed page 31 (PDF page 33), in
+E. Kowalski, Exponential sums over finite fields: elementary methods:
+https://people.math.ethz.ch/~kowalski/exponential-sums-elementary.pdf .
+The classical source is A. Weil, On Some Exponential Sums, PNAS 34 (1948),
+204-207, https://doi.org/10.1073/pnas.34.5.204 .
+
+For a general complex weight w on F_p*, normalized multiplicative Fourier
+inversion and the triangle inequality consequently give
+
+ ||sum_a w(a)(U_a-P)|| <=2sqrt(p)||w_hat||_1.              (6)
+
+This does NOT improve the archived uniform bound for arbitrary bounded
+weights: their Fourier l1 norms can be of order sqrt(p).
+
+An exact observation also saves a palette factor in applications. For ANY
+intercept function beta and ANY palette A, character weighting preserves
+the mean-zero operator norm:
+
+ ||sum_(a in A)chi(a)(U_a-P)||=||sum_(a in A)(U_a-P)||.    (6a)
+
+To prove this, work in the Fourier basis with (xi,eta)!=(0,0). Define
+unitary diagonal factors
+
+ L_chi(xi,eta)=chi(xi) if xi!=0, else conjugate(chi(eta));
+ R_chi(xi,eta)=conjugate(chi(eta)) if eta!=0, else chi(xi).
+
+For the transition (xi,eta)->(a eta,xi/a) in (2), the product of the
+output L factor and input R factor is exactly chi(a), whether eta is zero
+or nonzero. Thus the weighted operator on the mean-zero space equals
+L_chi (sum_(a in A)U_a) R_chi there. Centering removes the separate constant
+block on both sides. This proves (6a), without a polynomial hypothesis.
+
+For quadratic beta and M_A=||widehat(1_A)||_1, (1), Fourier expansion of
+1_A and (6a) give the palette-specific bound
+
+ lambda_A:=||sum_(a in A)(U_a-P)||<=2sqrt(p)M_A.           (6b)
+
+If a prescribed support mask G(a,y) is defined on all nonzero colors but
+only colors in A are used, expanding G and using (6a) consequently gives
+||T-Q||<=lambda_A V(G)^2. Values of G outside A are an extension used for
+the Fourier expansion, not actual graph incidences. Actual masks on A
+remain required for the counting and positivity identities.
+
+2. ACTUAL COLUMN SUPPORTS AND THE JOINT COLOR ENVELOPE
+
+Consider a simple properly colored bipartite graph with color-a edges
+(x,ax+beta(a)), a!=0. Define its actual COLOR-BY-COLUMN matrix
+
+ F(a,y)=1 if the color-a edge ((y-beta(a))/a,y) is present,
+                              and 0 otherwise.
+
+All p-1 nonzero colors are included as matrix rows, including zero rows
+for unused colors. This zero extension is essential. Define
+
+ f_chi(y)=(p-1)^(-1)sum_(a!=0)F(a,y)conjugate(chi(a)),
+                  V(F)=sum_chi max_y |f_chi(y)|.           (7)
+
+The maximum is INSIDE the sum. Separate Fourier l1 bounds for each column
+cannot in general be substituted for this joint envelope.
+
+Let M_h multiply by h(y), and define actual masked operators
+
+             T_F=sum_a M_Fa U_a M_Fa,
+             Q_F=sum_a M_Fa P M_Fa.
+
+Fourier inversion in the COLOR coordinate gives F(a,y)=sum_chi chi(a)f_chi(y).
+Expanding twice in T_F-Q_F, the inner color weight is a product of two
+multiplicative characters, hence again a character. Applying (1) gives
+
+                     ||T_F-Q_F||<=2sqrt(p)V(F)^2.          (8)
+
+This is a finite exact expansion. Although individual terms are complex,
+their sum Q_F is positive semidefinite because F is real. The arbitrary
+dependence of f_chi on the column y causes no problem: multiplication has
+operator norm max_y |f_chi(y)|.
+
+Let m be the edge count, d the number of available colors (d<=p-1), and
+nu_y=sum_a F(a,y) the ACTUAL column degrees. If every C4 is rainbow, the
+actual-support identity and Cauchy-Schwarz give
+
+ <1_E,T_F1_E>=m,
+ <1_E,Q_F1_E>=p^(-2)sum_a(sum_y F(a,y)nu_y)^2
+                                      >=m^4/(d p^4).
+
+Thus, for m>0,
+
+ m^3<=d p^4(1+2sqrt(p)V(F)^2),
+                     m<=C p^(11/6)V(F)^(2/3).            (9)
+
+For a nonzero binary F, inversion at a one-entry gives V(F)>=1; this
+absorbs the lower-order p^(5/3) term. Therefore V(F)=o(p^(1/4)) implies
+m=o(p^2). No unrestricted bound on V(F) is claimed.
+
+The same operator argument works for actual color-by-row supports, but
+the column version is especially useful: simplicity alone can already
+give stronger bounds for some row-mask families. The example in Section 5
+shows that low V for COLUMN masks permits genuinely dense proper graphs.
+
+3. EXPLICIT COLUMN-COLOR FAMILIES
+
+Fix a primitive root g modulo p and identify colors with exponents in
+Z/(p-1)Z. Suppose that, at EACH column y, the available color exponents
+form a union of at most k cyclic intervals. The intervals may depend
+arbitrarily on y. The geometric-series formula supplies a shared Fourier
+majorant of total C k log(2p), hence
+
+              m<=C p^(11/6)(k log(2p))^(2/3).             (10)
+
+The sufficient growing-complexity condition is k log p=o(p^(1/4)).
+This describes colors at columns, not intervals in the field's row order.
+
+More generally let shared frequencies h_1,...,h_s in Z/(p-1)Z specify
+conditions h_j log_g(a) in I_(y,j), with column-dependent cyclic intervals.
+Then V(F)<=(C log(2p))^s by convolution of shared nonnegative Fourier
+majorants, so (9) is subquadratic if
+
+            limsup s log log p/log p <1/4.                (11)
+
+The frequencies need not be invertible modulo p-1: grouping coefficients
+under a frequency pullback cannot increase the sum of the majorant.
+
+For the archive's quadratic common-potential model beta(a)=a^2 with
+A,H subset F_p*, its COLUMN support is F(a,y)=1_A(a)1_H(ay). If M_A and
+M_H are their normalized multiplicative Fourier l1 norms, convolution
+in the color character gives V(F)<=M_A M_H. A better bound keeps A
+outside the mask: put G(a,y)=1_H(ay), so V(G)=M_H. Equations (6a)-(6b)
+then bound the operator error by 2sqrt(p)M_A M_H^2. Thus, without omissions,
+
+                m<=C p^(11/6)M_A^(1/3)M_H^(2/3).          (12)
+
+The 18 October note growing-index-wiener-palettes.md had the bound
+C p^(11/6)M_A M_H for this Fourier hypothesis. Equation (12) improves
+the dependence on both norms. Its separate coset-union estimate
+C ell p^(5/3) can be stronger, and is not superseded in general.
+
+4. ROBUSTNESS AND COUNTING
+
+Let F be actual and B any [0,1]-valued color-by-column matrix, zero-extended
+over all p-1 colors. Define V(B) as in (7), and
+
+ W=sum_y nu_y sum_a |F(a,y)-B(a,y)|, H_B=1+2sqrt(p)V(B)^2.
+
+The degree-weighted charging proof in the companion note gives, when
+every C4 is rainbow,
+
+ (m^2/p-W)_+^2/((p-1)p^2)<=H_B*m+2W,
+ m<=C p^(11/6)max{1,V(B)}^(2/3)+2p^(5/4)W^(1/4).          (13)
+
+If R=sum|F-B| then W<=pR. In the common-potential model with R omitted
+incidences, keep the palette A and use (6b) with the prescribed mask G.
+This yields C p^(11/6)M_A^(1/3)M_H^(2/3)+C p^(3/2)R^(1/4).
+The previous configuration
+method has a better R^(1/3) dependence with a different leading term;
+neither robust bound dominates the other for all parameters.
+
+Without assuming the rainbow property, let N_j count unordered C4s with
+j colors. The exact identity <1_E,T_F1_E>=m+2N_3+4N_2 still holds.
+Two-color cycles require opposite slopes and satisfy
+N_2<=floor(d/2)(p-1)/2. Therefore
+
+ N_3= (1/(2p^2))sum_a(sum_y F(a,y)nu_y)^2
+                                      +O(p^(5/2)V(F)^2). (14)
+
+For nonempty F, V(F)>=1 absorbs the O(p^2) loop and two-color terms.
+In particular V(F)=o(p^(1/4)) makes this an asymptotic formula at the
+p^3 scale for dense proper graphs. The graph need not have low real rank.
+
+5. A DENSE PROPER FAMILY WITH V=1
+
+Take beta(a)=a^2. Let chi_2 be the quadratic character,
+A={a!=0:chi_2(a)=1}, epsilon=-chi_2(-1), and
+H={y!=0:chi_2(y)=epsilon}. Retain all color-a edges at columns y in H,
+so F(a,y)=1_A(a)1_H(y). There are
+
+                         m=(p-1)^2/4
+
+edges. Different a,b meet at column y=-ab, whose character is chi_2(-1),
+so no collision is selected. Every color is a matching; the graph is
+simple and proper. This is the dense example already used in the
+18 October common-potential-analysis.md remainder obstruction.
+Its color Fourier support contains only the trivial and quadratic
+characters, each with coefficient 1_H(y)/2, hence V(F)=1 exactly.
+
+Writing d=|A|=|H|=(p-1)/2, all selected column degrees equal d. Formula
+(14) now proves the sharper counting statement
+
+            N_3=(p-1)^5/(64p^2)+O(p^(5/2))
+                           =p^3/64+O(p^(5/2)).             (15)
+
+The family is therefore far from having every C4 rainbow. It validates
+that (14) is not a vacuous assertion about nonexistent dense proper
+column-mask graphs. The example itself is old within the repository;
+the square-root character estimate and its quantitative counting
+application are the deductions being assessed in this note.
+
+6. SCOPE AND PRIORITY
+
+The full-palette character restriction, quadratic intercept, actual
+support masks, zero extension, and the joint envelope in (7) are all
+essential hypotheses of this argument. It does not give square-root
+cancellation for arbitrary bounded weights or arbitrary intercepts.
+It does not bound V for arbitrary supports, and does not solve #810.
+The matrix factorization in (4) uses a standard cubic convolution and
+a classical Weil bound. A complete novelty assessment must investigate
+earlier uses of this operator, not merely search for the final exponent.
+
+LOCAL CHECKS. audit_quadratic_characters.py passed 78,640 exact character
+separation cases, 290,144 cubic phase cases and 24,384 axis phase cases.
+Its small-prime floating-point Weil-sum evaluations are consistency checks,
+not a proof of the general estimate. The dense example was counted exactly
+through p=1009 (15,872,976 three-color C4s), with an independent four-cycle
+enumeration through p=61. See quadratic-character-audit.json for details.

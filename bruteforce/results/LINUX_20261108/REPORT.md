@@ -56,6 +56,15 @@ and similar-tagged controls.
 
 ## Analytic deductions
 
+- `analytic/quadratic-color-fourier.txt` proves a square-root completed
+  operator bound for quadratic intercepts and multiplicative-character
+  color weights. For the actual color-by-column Fourier envelope V it gives
+  m <= C p^(11/6) V^(2/3), hence vanishing density when V=o(p^(1/4)).
+  In the common-potential model it improves the October Fourier bound from
+  C p^(11/6) M_A M_H to C p^(11/6) M_A^(1/3) M_H^(2/3).
+  The proof includes both exceptional frequency axes. Its dense proper
+  example has p^3/64+O(p^(5/2)) three-color four-cycles, counted exactly
+  through p=1009. This is the strongest analytic lead of this session.
 - `analytic/factorization-and-defects.txt` develops a gamma_2 support bound,
   a three-color C4 counting formula, a degree-weighted robust inequality,
   and discrepancy/trace-norm consequences for fixed nonlinear polynomial
@@ -73,3 +82,17 @@ The exact local identity audit and dense-example counts passed. Theorems
 from the archive and the literature are not thereby formally verified.
 These are candidate research contributions; novelty and paper readiness
 have not been established.
+
+## Second live checkpoint
+
+`verified/0130KST/` freezes the results at 16:29 UTC (01:29 KST): twelve
+graph sizes improved, with seventeen edges of total gain over the merged
+baseline. Both graph checkers passed. There are 358 new native-DRAT-checked
+UNSAT leaves, giving 18,549 combined leaves and 385 still-open branches.
+This snapshot rechecks the CNF hashes; it does not repeat the retained-proof
+hash pass from the first checkpoint. Final verification is still scheduled.
+
+The additional common-potential spectrum probe used six small examples
+at p=193 and 379. Its floating-point Ritz values are exploratory lower
+bounds on extremal magnitudes, not certified spectral upper bounds or a
+proof of a general estimate. See `analytic/potential-spectrum-probe.json`.

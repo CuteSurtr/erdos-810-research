@@ -1,0 +1,12 @@
+70 1073 edges 106524 4-cycles OK
+72 1113 edges 110210 4-cycles OK
+73 1131 edges 112241 4-cycles OK
+74 1140 edges 112644 4-cycles OK
+88 1511 edges 168567 4-cycles OK
+103 2001 edges 278571 4-cycles OK
+104 2020 edges 280743 4-cycles OK
+105 2028 edges 281092 4-cycles OK
+106 2033 edges 280950 4-cycles OK
+116 2371 edges 323899 4-cycles OK
+117 2373 edges 323909 4-cycles OK
+123 2626 edges 387475 4-cycles OK

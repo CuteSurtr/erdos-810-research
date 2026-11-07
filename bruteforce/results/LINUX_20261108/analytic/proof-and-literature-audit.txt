@@ -101,16 +101,78 @@ The explicit exponent 1/9 was checked directly. Substituting it into the
 archive's common-support formula replaces 1/12 by 1/9, changing constants
 after the sixth root. This is an updated input, not a new Roth theorem.
 
+D. E. Kowalski, Exponential sums over finite fields: elementary methods,
+Theorem 3.2, printed page 31 / PDF page 33.
+https://people.math.ethz.ch/~kowalski/exponential-sums-elementary.pdf
+The classical Weil estimate gives 2sqrt(p) for the nondegenerate cubic
+additive sums in quadratic-color-fourier.txt, for p>3. The p=3 case is
+bounded separately by the two available colors. The original attribution
+is A. Weil, On Some Exponential Sums, PNAS 34 (1948), 204-207,
+https://doi.org/10.1073/pnas.34.5.204 . The original scan was not inspected;
+the theorem statement was checked in Kowalski's text.
+
+QUADRATIC CHARACTER-OPERATOR AUDIT
+
+11. Character weighting preserves the mean-zero completed-operator norm
+for any intercept function and any palette. The diagonal factors depend
+on which frequency coordinate is zero; using the nonzero-product formula
+on the axes would be invalid. The exact modular-log audit checked 78,640
+transitions covering both axes and all nonconstant frequency vectors.
+
+12. For a full quadratic palette the nonzero-product block is a principal
+compression of cubic convolution, up to unitary diagonal factors. The
+two factors are not necessarily adjoints for a complex character; norm
+invariance still holds. The audit checked 290,144 exact cubic identities.
+The two frequency-axis blocks are compressed Fourier matrices with at
+most two copies of each squared index, giving sqrt(2p); 24,384 exact
+axis-phase cases passed. The constant block is removed before estimating.
+The published Weil bound, rather than finite evaluations, establishes
+the general 2sqrt(p) theorem.
+
+13. The mask is COLOR-BY-COLUMN. Fourier coefficients use all p-1 colors,
+with zero extension of unused colors, and max_y is inside the sum over
+characters. Palette restriction costs M_A in the operator norm, not in
+each mask. This gives M_A^(1/3) M_H^(2/3) after taking the cube root.
+The binary mask ensures V>=1; fractional robustness retains max{1,V}.
+The actual-support and positivity identities are the column versions of
+items 1 and 3, obtained by exchanging the coordinate roles.
+
+14. The quadratic-residue example already appears in the 18 October
+common-potential notes. Its properness is essential: intersections have
+column character chi_2(-1), while the selected columns have the opposite
+character. Its V is exactly one, and the positive main term is
+(p-1)^5/(64p^2). Exact counts reach p=1009 (N_3=15,872,976); direct
+four-cycle enumeration independently agrees through p=61. The new part
+being assessed is the counting application, not the example itself.
+
+15. The October follow-up growing-index-wiener-palettes.md already has
+p^(11/6) M_A M_H. The new character argument improves the powers of the
+norms, not that p exponent. The old coset-union estimate ell*p^(5/3)
+may still be stronger. The robust errors p^(3/2)R^(1/4) here and
+p^(4/3)R^(1/3) there must not be described as a uniform improvement.
+For some ROW-mask families, simplicity gives stronger bounds; the
+column formulation has a genuinely dense proper example and avoids
+mistaking such a vacuous row specialization for progress.
+
+16. Six exploratory Lanczos runs at p=193,379 for proper common-potential
+graphs returned small Ritz magnitudes. These are floating-point estimates
+from 24 iterations, with no certified enclosure of the true spectrum.
+They cannot establish a universal square-root bound for arbitrary masks.
+The probe is kept separately from the written character-envelope theorem.
+
 NOVELTY AND PAPER ASSESSMENT
 
 Targeted searches for Erdos 810 / affine rainbow C4 supports combined with
 factorization norms, hereditary discrepancy and supersaturation did not
 establish historical priority. Absence of a search result is not a novelty
-proof. The coherent research contribution to investigate further is the
-application package: a three-color counting formula with a concrete dense
-example, quantitative support-norm obstructions, and a growing-complexity
-extension to arbitrary intercepts. The elementary rank and interval
-corollaries should remain supporting observations, not headline claims.
+proof. The strongest new lead is the explicit quadratic character-operator
+factorization and the resulting column-support theorem. Its only external
+analytic input is the classical cubic Weil estimate. The accompanying
+package gives three-color counting formulas, quantitative support-norm
+obstructions, and growing-complexity consequences for arbitrary intercepts.
+The elementary rank and interval corollaries should remain supporting
+observations, not headline claims. Searches for cubic convolution, affine
+rainbow C4 operators, and the kernel rs(r-s) did not establish priority.
 
 Before calling this paper-ready: independently review the archived weighted
 and common-support inputs and the new applications, compare with the
