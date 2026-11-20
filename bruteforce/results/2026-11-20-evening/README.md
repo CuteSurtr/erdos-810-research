@@ -1,0 +1,5 @@
+# Evening graph search for Erdős #810
+
+At 3 p.m. Seoul time on November 20, the search had improved the 1 p.m. certified lower bounds at **24 graph orders**, gaining 75 edges summed over those orders. On 81 vertices the bound rose from 1,333 to 1,339 edges. On 109 vertices it rose from 2,187 to 2,193 edges, with all 319,069 four-cycles rainbow. These are lower bounds on the maximum at each order. [Graphs](certs.json) · [Before and after counts](improvements.json) · [Cycle counts](checks.txt)
+
+The frozen starting catalog takes the best verified graph at each order through 128 from the previous archive and the 1 p.m. release. Its SHA-256 is `67ffcf9f13af768eaa965e45b24f66bcb13ef913a1203db539f6427a0c261d81`. Each JSON key is the vertex count and each triple gives two endpoints and a color, numbered from zero. A C checker enumerates four-vertex subsets and a separate Python program enumerates pairs of common neighbors. Both check the color budget, edge count and every four-cycle, and agreed on every line of the release. [Previous checkpoint and reproduction commands](../2026-11-20/README.md)
