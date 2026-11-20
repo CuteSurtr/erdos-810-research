@@ -22,7 +22,7 @@ The finite spectral estimate describes a separate obstruction to high edge count
 
 ### Neighborhoods in arbitrary graphs
 
-For an $n$-vertex graph satisfying #810, any fixed positive edge density requires neighborhood VC dimension at least a constant times $\log n$. If the uncolored neighborhoods have VC dimension at most a fixed $d\ge 1$, the graph has $O_d(n^{2-1/(2d+1)})$ edges. [Finite packing bound and proof](research/neighborhood-packing/README.md)
+Positive edge density in #810 requires open-neighborhood VC dimension at least a constant times $\log n$. At any fixed dimension $d\ge2$, the graph has $O_d(n^{2-1/(2d)})$ edges. At dimension at most one, the exact leading term is $n^{3/2}/\sqrt e$, and the connected maximum is $n\log n+O(n)$. [Packing and vertex order](research/neighborhood-packing/ordering.md) · [Sharp dimension-one result](research/neighborhood-packing/vc-one.md)
 
 If the vertices can be ordered so that every neighborhood is a union of at most $k$ intervals, the maximum is $\sqrt{k}\,n^{3/2}+O_k(n)$ for fixed $k$. Consecutive windows give the upper bound, and properly colored bipartite bands attain the leading constant. [Sharp interval theorem and constructions](research/interval-neighborhoods/README.md)
 

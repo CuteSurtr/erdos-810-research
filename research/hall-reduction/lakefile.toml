@@ -401,3 +401,6 @@ name = "FoolingSetSpecialization"
 
 [[lean_lib]]
 name = "MatchingDartsRank"
+
+[[lean_lib]]
+name = "NeighborhoodVCOne"
