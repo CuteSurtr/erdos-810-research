@@ -1,8 +1,13 @@
 # Evening graph search for Erdős #810
 
-At 3:45 p.m. Seoul time on November 20, the search had strengthened the 1 p.m. lower bounds at **51 graph orders**, gaining 813 edges across those orders. On 128 vertices the bound rose from 2,833 to **2,881 edges**. All 500,262 four-cycles in that graph use four distinct colors. [Graphs](certs.json) · [Before and after counts](improvements.json) · [Cycle counts](checks.txt)
+At 4:30 p.m. Seoul time on November 20, the search had strengthened the 1 p.m. lower bounds at **62 graph orders**, gaining 2,309 edges across those orders. On 128 vertices the bound rose from 2,833 to **2,944 edges**. All 542,384 four-cycles in that graph use four distinct colors. [Graphs](certs.json) · [Before and after counts](improvements.json) · [Cycle counts](checks.txt)
 
-The 3 p.m. checkpoint had improved 24 orders by 75 edges in total. The 3:33 p.m. check found gains at 50 orders totaling 546 edges. [Earlier release](https://github.com/CuteSurtr/erdos-810-research/commit/be9937fd8770dc9daea7283c1ed2646555aaa902)
+| Seoul checkpoint | Improved orders | Total gain over 1 p.m. |
+| --- | ---: | ---: |
+| [3 p.m.](https://github.com/CuteSurtr/erdos-810-research/commit/be9937fd8770dc9daea7283c1ed2646555aaa902) | 24 | 75 |
+| [3:33 p.m.](https://github.com/CuteSurtr/erdos-810-research/commit/34b1a20d69c3e15352302eed1e9baa6946f14009) | 50 | 546 |
+| [3:45 p.m.](https://github.com/CuteSurtr/erdos-810-research/commit/1e1228acc10d112315b06950dfe455d1c2f93321) | 51 | 813 |
+| 4:30 p.m. | 62 | 2,309 |
 
 The frozen starting catalog takes the best verified graph at each order through 128 from the previous archive and the 1 p.m. release. Its SHA-256 is `67ffcf9f13af768eaa965e45b24f66bcb13ef913a1203db539f6427a0c261d81`. Each JSON key is the vertex count and each triple gives two endpoints and a color, numbered from zero. A C checker enumerates four-vertex subsets and a separate Python program enumerates pairs of common neighbors. Both check the color budget, edge count and every four-cycle, and agreed on every line of the release. [Previous checkpoint and reproduction commands](../2026-11-20/README.md)
 
