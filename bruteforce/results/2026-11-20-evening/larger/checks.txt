@@ -1,0 +1,5 @@
+144 3617 edges 770131 4-cycles OK
+160 4342 edges 1051191 4-cycles OK
+192 5963 edges 1812258 4-cycles OK
+224 7792 edges 2864134 4-cycles OK
+256 9828 edges 4273043 4-cycles OK
