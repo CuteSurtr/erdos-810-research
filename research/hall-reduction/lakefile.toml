@@ -386,3 +386,6 @@ name = "LinearPalette"
 
 [[lean_lib]]
 name = "ShadowDiscrepancy"
+
+[[lean_lib]]
+name = "IntervalWindows"
