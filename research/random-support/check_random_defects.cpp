@@ -10,6 +10,42 @@
 
 using Count = std::int64_t;
 
+// Count four-cycles two ways on every induced subgraph of each five-vertex graph.
+// The upper bound uses one minimum-degree ordering and the host's maximum codegree.
+void check_induced_cycles(const std::array<unsigned,5>& neighbors) {
+    int max_codegree = 0;
+    for (int x = 0; x < 5; ++x) for (int y = 0; y < x; ++y)
+        max_codegree = std::max(max_codegree, __builtin_popcount(neighbors[x] & neighbors[y]));
+    for (unsigned subset = 0; subset < 32; ++subset) {
+        int twice_cycles = 0, twice_edges = 0;
+        for (int x = 0; x < 5; ++x) {
+            if (!(subset & (1U << x))) continue;
+            twice_edges += __builtin_popcount(neighbors[x] & subset);
+            for (int y = 0; y < x; ++y) if (subset & (1U << y)) {
+                int common = __builtin_popcount(neighbors[x] & neighbors[y] & subset);
+                twice_cycles += common*(common-1)/2;
+            }
+        }
+        int degeneracy = 0, later_pairs = 0;
+        unsigned remaining = subset;
+        while (remaining) {
+            int first = -1, least_degree = 6;
+            for (int x = 0; x < 5; ++x) if (remaining & (1U << x)) {
+                const int degree = __builtin_popcount(neighbors[x] & remaining);
+                if (degree < least_degree) {
+                    first = x;
+                    least_degree = degree;
+                }
+            }
+            degeneracy = std::max(degeneracy, least_degree);
+            later_pairs += least_degree*(least_degree-1)/2;
+            remaining &= ~(1U << first);
+        }
+        assert(twice_cycles <= 2*max_codegree*later_pairs);
+        assert(4*later_pairs <= degeneracy*twice_edges);
+    }
+}
+
 int main() {
     constexpr int n = 5, e = 10, boards = 1 << e;
     std::array<std::pair<int,int>,e> edges{};
@@ -21,10 +57,13 @@ int main() {
     }
     for (int h = 0; h < boards; ++h) {
         std::array<int,n> degree{};
+        std::array<unsigned,n> neighbors{};
         std::vector<int> products;
         for (int i = 0; i < e; ++i) {
             if ((h & (1 << i)) == 0) continue;
             auto [a,b] = edges[i];
+            neighbors[a] |= 1U << b;
+            neighbors[b] |= 1U << a;
             ++degree[a];
             ++degree[b];
             for (int j = 0; j < i; ++j) {
@@ -35,6 +74,7 @@ int main() {
                 products.push_back((1 << id[a][y]) | (1 << id[b][x]));
             }
         }
+        check_induced_cycles(neighbors);
         std::array<int,boards> scores{};
         std::array<int,boards> multiplicity{};
         for (int crosses : products) assert(++multiplicity[crosses] <= 2);
@@ -71,11 +111,12 @@ int main() {
         }
     }
     std::cout << boards*boards << " host and candidate pairs passed exact expectation and influence checks.\n";
+    std::cout << boards*(1 << n) << " induced-subgraph ordering and cycle bounds passed.\n";
 
     Count partitions = 0;
     for (int num = 1; num <= 32; ++num) for (int den = 1; den <= 9; ++den)
-    for (int size = 0; size <= 300; ++size) {
-        int b = (2*num+den-1)/den;
+    for (int size = 0; size <= 300; ++size) for (const int factor : {2, 4}) {
+        int b = (factor*num+den-1)/den;
         std::vector<int> pieces;
         if (size < 2*b) pieces.push_back(size);
         else {
@@ -89,6 +130,11 @@ int main() {
             squares += k*k;
         }
         assert(sum == size && den*den*squares >= 2*num*den*size-num*num);
+        if (factor == 4) {
+            int excess = den*den*squares - (2*num*den*size-num*num);
+            if (size < 2*b) assert(excess == (den*size-num)*(den*size-num));
+            else assert(excess >= 2*num*den*size+num*num);
+        }
         ++partitions;
     }
     std::cout << partitions << " tangent-bound class splits passed.\n";

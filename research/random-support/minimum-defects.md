@@ -61,9 +61,32 @@ For arbitrary \(q\ge n\ge4\), inject into an abelian group of order \(q\) and le
 \]
 To see this fix distinct opposite images \(x,z\) and let \(y\) be the next random vertex, different from both. The candidate fourth values are \(x+y-z\) and \(z+y-x\). If \(2(x-z)=0\) they coincide and are valid. Otherwise they differ, and each fails to be a new vertex for exactly one choice among the \(q-2\) possible values of \(y\). Average over \(x-z\). Taking a binary group times an odd cyclic group allows \(t=2^{v_2(q)}\). In particular the collision probability is at most \(2/(q-3)\) for every order.
 
+## Structure at the lower bound
+
+On the same high-probability event, consider any sequence of colorings with \(q\asymp n\) and \(R=(1+o(1))p^4n^4/(8q)\). Almost every bad four-cycle then alternates between **two distinct colors**. Deleting \(o(p^2n^2)\) edges makes the given coloring proper, with every retained label preserved. Furthermore, if \(s_c\) is the size of color class \(c\), including empty labels, then
+\[
+                      \sum_{c=1}^q |s_c-m/q|=o(m).
+\]
+The binary orders above supply examples attaining the hypothesis.
+
+The sum of completions anchored at equal-colored opposite edges is at least \((1-o(1))p^4n^4/(4q)=2R-o(R)\), by (1) and the splitting argument. Each bad cycle has at most two such opposite pairs. Thus only \(o(R)\) bad cycles have fewer than two. A cycle with both pairs equal either alternates between distinct colors or is monochromatic.
+
+To bound monochromatic cycles throughout the stated range of \(p\), let \(d_c(x)\) be the degree of \(x\) in color \(c\) and fix \(\eta>0\). Put \(D=\eta p^2n\). For a vertex pair \(x,y\), let \(t_c(x,y)\) be the number of common neighbors joined to both in color \(c\). Then \(\sum_{c,x<y} t_c(x,y)=W=O(p^2n^2)\). A monochromatic cycle passing through a vertex of color degree at most \(D\) has an opposite pair with \(t_c(x,y)\le D\). Summing \(\binom{t_c(x,y)}2\) over these pairs counts at most \(DW/2=O(\eta p^4n^3)\) such cycles.
+
+For the remaining cycles take \(S_c=\{x:d_c(x)>D\}\) and \(H=\sum_c |S_c|\). Since \(D\to\infty\) and \(d^2\le4\binom d2\) for \(d\ge2\), we have \(H\le4W/D^2=O_\eta(p^{-2})\). With high probability **every** \(s\)-vertex subset of the host spans \(O(s(ps+\log n))\) edges. Indeed the chance of exceeding \(K s(ps+\log n)\) for a fixed set is at most \((e p s^2/(2K s(ps+\log n)))^{K s(ps+\log n)}\) by the binomial tail bound. A sufficiently large constant \(K\) permits a union bound over at most \(n^s\) choices at each size.
+
+Consequently each induced graph on \(S_c\) has an ordering with at most \(O(p|S_c|+\log n)\) later neighbors per vertex, by successively removing a minimum-degree vertex. Count a cycle from its earliest vertex. Choose two later neighbors and then a common neighbor of that pair. The whole host has maximum codegree \(O(p^2n)\). Summing this bound across the color classes gives at most
+\[
+ O(p^2 n)\sum_c |S_c|(p|S_c|+\log n)^2
+   \le O_\eta\bigl(n(p^{-1}+\log n)^2\bigr)=o(p^4n^3).
+\]
+For the last comparison, the ratio is \(O_\eta(((1+p\log n)/(np^3))^2)\). Taking \(\eta\) arbitrarily small proves that monochromatic cycles are \(o(R)\). This leaves only \(o(R)\) cycles containing any equally colored incident pair. Each such pair extends to \((1+o(1))p^2n\) cycles and each cycle has at most four incident-pair marks, so \(W=o(p^2n^2)\). Deleting one edge from each conflicting pair suffices.
+
+For class-size balance put \(a=m/q\) and repeat the splitting argument with \(b=\lceil4a\rceil\). Exactly the same error bound in (1) now gives \(\sum_i k_i^2=m^2/q+o(m^2/q)\). Subtract \(2as_c-a^2\) for each original class \(c\). A class of size \(s_c<2b\) contributes \((s_c-a)^2\) to the excess. Every other class has pieces of size at least \(4a\), contributing at least \(2as_c+a^2\) to the excess. Its sum over all classes is \(o(qa^2)\). The large classes therefore contain \(o(m)\) edges in total and occupy \(o(q)\) labels. On the remaining classes, Cauchy–Schwarz gives \(\sum |s_c-a|=o(qa)=o(m)\).
+
 ## Finite checks
 
-The C++ audit exhausts all **1,048,576** pairs of five-vertex candidate graphs and host graphs. It checks the expectation at \(p=1/2\) and \(1/3\) by exact weighted enumeration, the one-edge influence bound, the maximum multiplicity two, and the bound on the dependency sum for each of the two simple families. It also checks 86,688 finite class splits and the group labeling probability for every order from 4 through 32. In a fixed 64-vertex half-density test there were 1,003 edges and 114,751 four-cycles. The fixed binary coloring had 1,882 bad cycles. [C++ audit](check_random_defects.cpp)
+The C++ audit exhausts all **1,048,576** pairs of five-vertex candidate graphs and host graphs. It checks the expectation at \(p=1/2\) and \(1/3\) by exact weighted enumeration, the one-edge influence bound, the maximum multiplicity two, and the bound on the dependency sum for each of the two simple families. It also checks the bounds for the minimum-degree ordering on all 32,768 pairs of hosts and vertex subsets, both splitting inequalities on 173,376 classes, and the group labeling probability for every order from 4 through 32. In a fixed 64-vertex half-density test there were 1,003 edges and 114,751 four-cycles. The fixed binary coloring had 1,882 bad cycles. [C++ audit](check_random_defects.cpp)
 
 A finite search can improve the choice of binary labels on a particular host. In the 64-vertex sample, exchanging vertex labels reduced the bad count from 1,882 to **1,559** without changing its 1,003 edges. On a second sample with 128 vertices, 4,100 edges and 2,062,976 cycles, the count fell from 16,571 to **15,203**. These are achievable counts. An independent C checker enumerates every four-cycle and compares its four labels directly. The expected count under a random permutation is \(N_4/(n-3)\), about 1,881 and 16,504 on the two respective hosts. [64-vertex sample](samples/binary-sample-64.txt) · [128-vertex sample](samples/binary-sample-128.txt)
 
