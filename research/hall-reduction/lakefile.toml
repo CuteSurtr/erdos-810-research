@@ -410,3 +410,6 @@ name = "IncidenceClones"
 
 [[lean_lib]]
 name = "FoolingSetDefects"
+
+[[lean_lib]]
+name = "ReciprocalRank"

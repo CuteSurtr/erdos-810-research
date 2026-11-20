@@ -30,3 +30,5 @@ For a color $c$, put $m_c=|E_c|$ and let $P_c$ count unordered incident pairs of
 For example, $m\ge\delta n^2$ and $q\le Cn$ imply $r\ge 2\delta\sqrt{n/(3C)}$ over every field, by $T\le r^2/2$ and $m+n(n-1)\le3n^2/2$. A candidate construction with rank $o(\sqrt n)$ in even one field therefore cannot give positive density in #810. The matrix-rank bounds on matchings above are machine-checked. Inequality (1) and the real-symmetric inertia refinement have the written proofs given here.
 
 If a positive-density graph has rank $r=o(\sqrt n)$ and a linear palette, every coloring produces at least $\Omega(n^3/r^2)$ four-cycles with a repeated color. The argument allows equal colors at a vertex. At constant rank the cubic order is sharp. [Defect counts and extremal examples](defects.md)
+
+The support obstruction also tolerates edits. In a rainbow graph an approximating rank-$r$ matrix that covers $\delta n^2$ ordered edges must fill at least $\Omega(n^2/r^2)$ nonedges whenever $r=o(\sqrt n)$ and the palette is linear. There is a weighted version over the complex numbers. [Approximate support bounds](edits.md)
