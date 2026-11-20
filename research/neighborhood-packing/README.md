@@ -4,6 +4,8 @@ Let $G$ be a simple graph on $n$ vertices with at most $n$ edge colors, in which
 
 A minimum spanning tree in the neighborhood metric improves the fixed-dimensional edge bound to $O_d(n^{2-1/(2d)})$ for $d\ge2$. At VC dimension at most one the exact leading term is $n^{3/2}/\sqrt e$, with a finite formula for every $n\ge5$. [Neighborhood ordering](ordering.md) · [Sharp dimension-one theorem](vc-one.md)
 
+Paraboloid constructions have $\Omega(n^{5/3})$ edges at dimension at most two and $\Omega(n^{7/4})$ at dimension at most three. The same progression-free coloring turns concrete coordinates from the ES project into a 598-vertex #810 witness. [Geometric lower bounds and ES example](geometric-lower.md)
+
 **Result.** If $G$ has at least $\delta n^2$ edges, there are at least $\delta^2n/2$ vertices whose neighborhoods have pairwise symmetric differences larger than $\delta^2n/12$. In particular a positive-density sequence must have neighborhood VC dimension of order at least $\log n$. For fixed neighborhood VC dimension $d\ge1$ the number of edges satisfies
 ```math
 |E(G)|=O_d\bigl(n^{2-1/(2d+1)}\bigr).

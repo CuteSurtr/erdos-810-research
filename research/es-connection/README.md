@@ -7,6 +7,8 @@ repository lists $310$ as its Lean-checked octagon bound. The results below
 concern polygon transversals, cup extensions and rainbow colorings.
 [Octagon record](https://github.com/CuteSurtr/erdos-szekeres-lean/blob/0ad8f6ee17a7003671e1e79e9b2a120597179934/archive/es7-2026-10-19/results/ES307N20261118/README.md)
 
+The 17-point integer octagon example also gives an explicit #810 coloring through a progression-free cyclic projection. Its graph has 598 vertices, 17 colors and 14,950 rainbow four-cycles. [Projection and graph construction](../neighborhood-packing/geometric-lower.md)
+
 ## A sharp ten-point obstruction
 
 **Theorem (computer-assisted).** Suppose a finite planar set in general
