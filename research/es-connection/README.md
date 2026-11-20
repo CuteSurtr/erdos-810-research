@@ -11,6 +11,8 @@ The 17-point integer octagon example also gives an explicit #810 coloring throug
 
 Exhausting all finite abelian quotients of these coordinates gives a smaller shift graph. The unique minimum kernel has index 285, giving 570 vertices, 4,845 edges, 17 colors and 11,400 rainbow four-cycles. Two separate enumerations agreed on every kernel through index 299. [Minimum quotient proof and checks](quotients.md)
 
+Coloring a cell by its group sum gives a graph on 152 vertices with 1,292 edges and 16,074 rainbow four-cycles. The smallest possible abelian group for this construction on the same 17 points has order 76. With an integer scalar as the slope the minimum is 77, attained by a four-term-progression-free projection. [Exact minima, finite graphs and proof](sum-colors.md)
+
 Using the points and their consecutive connecting lines gives a second construction on the same coordinates. With 17 copies of each point and line there are 578 vertices, 9,826 edges and 1,965,200 rainbow four-cycles. For all incidence constructions on general-position points, with arbitrary multiplicities and a budget of $n$ colors, the maximum is $n^{3/2}/\sqrt2+O(n)$. [Sharp incidence bound and ES example](../neighborhood-packing/incidence.md)
 
 The order type also supplies a side-of-line predicate through each signed determinant. When graph adjacency is exactly such a halfplane test, the sharp edge order with $n$ colors is $n^{3/2}$. It follows from the palette bound and a point–halfspace incidence theorem. [Side-of-line tests and sign rank](../support-rank/sign-rank.md)
