@@ -1,11 +1,8 @@
 # What rainbow four-cycles say about the Erdős–Szekeres project
 
-20 November 2026. The ES inputs come from the November 18 GitHub snapshot.
-[Pinned ES revision](https://github.com/CuteSurtr/erdos-szekeres-lean/commit/0ad8f6ee17a7003671e1e79e9b2a120597179934)
-The November 18 record gives $ES(8)\le307$ by a computer-assisted proof. The
-repository lists $310$ as its Lean-checked octagon bound. The results below
-concern polygon transversals, cup extensions and rainbow colorings.
-[Octagon record](https://github.com/CuteSurtr/erdos-szekeres-lean/blob/0ad8f6ee17a7003671e1e79e9b2a120597179934/archive/es7-2026-10-19/results/ES307N20261118/README.md)
+The November 20 ES update records a computer-assisted $ES(8)\le304$. The full Lean bound is $310$. The budget-68 search toward $303$ stopped after 24,938 of 32,755 contexts. The two new capacity constraints lead to an exact fractional bound, six possible pairs of integer totals at budget 68, and a 182-vertex graph with a six-color rainbow certificate. [November 20 handoff](https://github.com/CuteSurtr/erdos-szekeres-lean/blob/2d1cb6baa0f5dca2977fd03086f3edcd01eb8a7e/archive/es7-2026-10-19/results/STATUS20261120/README.md) · [Counting proof, graph and checks](omission-layers.md)
+
+The polygon transversals, cup extensions and coordinate constructions below use the November 18 inputs. [Pinned earlier ES revision](https://github.com/CuteSurtr/erdos-szekeres-lean/commit/0ad8f6ee17a7003671e1e79e9b2a120597179934)
 
 The 17-point integer octagon example also gives an explicit #810 coloring through a progression-free cyclic projection. Its graph has 598 vertices, 17 colors and 14,950 rainbow four-cycles. [Projection and graph construction](../neighborhood-packing/geometric-lower.md)
 

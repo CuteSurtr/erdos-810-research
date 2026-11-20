@@ -33,6 +33,20 @@ def check_anchor():
             cap4.append(mask(t))
     has_bad = upward_closure(m, bad)
     has_cap = upward_closure(m, cap4)
+    # Put any three additional points in blue. A blue heptagon would have to
+    # contain all four original blue points, one of which lies inside the other three.
+    blue = mask((6, 8, 9, 14))
+    assert inside_triangle(pts[8], pts[6], pts[9], pts[14])
+    assert has_bad[blue] and not has_cap[full ^ blue]
+    packing = [mask(t) for t in ((0, 5, 8, 10), (1, 2, 6, 11),
+                                 (3, 4, 9, 15), (12, 13, 14, 16))]
+    assert len(cap4) == 121 and set(packing) <= set(cap4)
+    assert all(not (a & b) for a, b in combinations(packing, 2))
+    minimum_covers = [mask(t) for t in combinations(labels, 4)
+                      if not has_cap[full ^ mask(t)]]
+    assert minimum_covers == [mask((6, 8, 9, j)) for j in (12, 13, 14)]
+    assert all(has_bad[b] for b in minimum_covers)
+    print("121 four-caps, four disjoint, exactly three minimum transversals, all nonconvex")
     gons, octagons, cups, five_caps = [], [], [], []
     for k in (5, 7, 8):
         for t in combinations(labels, k):
