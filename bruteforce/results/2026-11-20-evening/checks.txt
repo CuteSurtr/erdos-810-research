@@ -9,10 +9,10 @@
 73 1157 edges 119426 4-cycles OK
 74 1184 edges 123483 4-cycles OK
 75 1210 edges 127586 4-cycles OK
-76 1236 edges 131758 4-cycles OK
+76 1237 edges 132092 4-cycles OK
 77 1263 edges 136516 4-cycles OK
 78 1286 edges 138956 4-cycles OK
-79 1309 edges 142254 4-cycles OK
+79 1314 edges 144157 4-cycles OK
 80 1338 edges 147203 4-cycles OK
 81 1366 edges 152285 4-cycles OK
 82 1394 edges 157624 4-cycles OK
@@ -28,7 +28,7 @@
 92 1691 edges 217168 4-cycles OK
 93 1721 edges 222958 4-cycles OK
 94 1752 edges 229883 4-cycles OK
-95 1782 edges 235986 4-cycles OK
+95 1783 edges 236419 4-cycles OK
 96 1814 edges 242311 4-cycles OK
 98 1877 edges 258130 4-cycles OK
 99 1913 edges 267664 4-cycles OK
@@ -49,7 +49,7 @@
 114 2421 edges 391932 4-cycles OK
 115 2457 edges 401917 4-cycles OK
 116 2492 edges 410907 4-cycles OK
-117 2529 edges 421312 4-cycles OK
+117 2530 edges 421893 4-cycles OK
 118 2566 edges 431880 4-cycles OK
 119 2604 edges 443124 4-cycles OK
 120 2643 edges 454298 4-cycles OK
@@ -57,7 +57,7 @@
 122 2717 edges 475376 4-cycles OK
 123 2754 edges 486294 4-cycles OK
 124 2792 edges 496653 4-cycles OK
-125 2830 edges 508328 4-cycles OK
+125 2831 edges 508982 4-cycles OK
 126 2872 edges 521755 4-cycles OK
-127 2913 edges 534556 4-cycles OK
+127 2914 edges 535228 4-cycles OK
 128 2952 edges 546586 4-cycles OK

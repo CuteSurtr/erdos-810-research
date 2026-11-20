@@ -4,7 +4,7 @@ Extremal bounds, finite constructions, and affine models for graphs in which eve
 
 Lean verifies $M(n)\le(1/4+o(1))n^2$ for the unrestricted graph problem and $g(n;7,4)\le(1/18+o(1))n^2$ for unrestricted triple systems. The latter coefficient is 25% below Gishboliner and Solymosi's $2/27$ for linear systems. Whether either problem admits positive quadratic density remains open. Both proofs are local research results. External review and historical priority are pending. [Graph theorem in Lean](research/hall-reduction/QuarterDensity.lean) · [Triple theorem in Lean](research/hall-reduction/HalfBoundedModel.lean) · [Gishboliner and Solymosi](https://arxiv.org/html/2606.25931v1)
 
-The argument approximates the adjacency matrix by one whose entries lie between zero and one half. For a triple system, its shadow graph also has a local upper bound on triangles. Together the two counts give $1/18$. A sequence attaining this last coefficient would have a shadow approaching three equally large groups, with limiting edge probability one half between groups and zero inside. [Short graph proof](research/graph-limits/quarter-short.md) · [Finite proof and verification](research/graph-limits/finite-model.md) · [Triple-system proof and equality](research/shadow-density/eighteenth.md) · [Finite graph constructions](bruteforce/results/2026-11-20/README.md)
+The argument approximates the adjacency matrix by one whose entries lie between zero and one half. For a triple system, its shadow graph also has a local upper bound on triangles. Together the two counts give $1/18$. A sequence attaining this last coefficient would have a shadow approaching three equally large groups, with limiting edge probability one half between groups and zero inside. [Short graph proof](research/graph-limits/quarter-short.md) · [Finite proof and verification](research/graph-limits/finite-model.md) · [Triple-system proof and equality](research/shadow-density/eighteenth.md) · [Finite graph constructions](bruteforce/results/2026-11-20/README.md) · [Evening certificates through 256 vertices](bruteforce/results/2026-11-20-evening/README.md)
 
 ## Setting
 
@@ -28,6 +28,8 @@ If the vertices can be ordered so that every neighborhood is a union of at most 
 
 For constructions that replace real points and lines by copies, the sharp edge order is $n^{8/5}$. If the base points are in general position, as in the Erdős–Szekeres project, the maximum is $n^{3/2}/\sqrt2+O(n)$. The project's 17-point example realizes the leading term at 578 vertices. [Incidence theorems and ES construction](research/neighborhood-packing/incidence.md)
 
+An additive construction from the same 17 coordinates gives a 152-vertex graph that can be colored with 22 labels. Copying its two sides gives a graph on 1,064 vertices with 62,016 edges and 1,056 labels. All 57,918,384 four-cycles are rainbow. [Construction and C certificate checker](research/es-connection/sum-colors.md#fewer-colors-on-the-same-es-graph)
+
 Every positive-density example with a linear palette would require matrix rank $\Omega(\sqrt n)$ over every field, for any matrix that is nonzero exactly on its edges. The characteristic-zero matching bound uses a sharp size theorem for fooling-set matrices. [Rank obstruction](research/support-rank/README.md) · [Sharp matrix bound](research/support-rank/fooling-sets.md)
 
 ### Random graphs
@@ -35,6 +37,8 @@ Every positive-density example with a linear palette would require matrix rank $
 For the full binomial random graph $G(n,p)$, the threshold order for an $n$-coloring with every four-cycle rainbow is $p=(\log n/n)^{1/3}$. A sparse-neighborhood coloring argument gives existence below a small constant times this scale. Counting possible one-color matchings gives failure above it. [Random-graph theorem and proof](research/random-support/README.md)
 
 For fixed $0<p\le1$, with high probability every colorable subgraph using $O(n)$ colors retains at most a $1-p/2+o(1)$ fraction of the host's edges. [Relative density proof](research/random-support/subgraphs.md)
+
+When $np^3/\log n\to\infty$ and $n$ is a power of two, the minimum number of four-cycles with a repeated color on the full random graph is $(1+o(1))p^4n^3/8$ with high probability, using at most $n$ labels. Almost all such cycles in a coloring attaining this bound alternate between two distinct colors. [Minimum and stability proof](research/random-support/minimum-defects.md)
 
 ### Bounded-VC supports
 

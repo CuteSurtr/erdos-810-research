@@ -1,6 +1,6 @@
 # Evening graph search for Erdős #810
 
-At 5:15 p.m. Seoul time on November 20, the search had strengthened the 1 p.m. lower bounds at **63 graph orders**, gaining 2,668 edges across those orders. On 128 vertices the bound rose from 2,833 to **2,952 edges**. All 546,586 four-cycles in that graph use four distinct colors. [Graphs](certs.json) · [Before and after counts](improvements.json) · [Cycle counts](checks.txt)
+At 5:54 p.m. Seoul time on November 20, the search had strengthened the 1 p.m. lower bounds at **63 graph orders**, gaining 2,678 edges across those orders. On 128 vertices the bound rose from 2,833 to **2,952 edges**. All 546,586 four-cycles in that graph use four distinct colors. [Graphs](certs.json) · [Before and after counts](improvements.json) · [Cycle counts](checks.txt)
 
 | Seoul checkpoint | Improved orders | Total gain over 1 p.m. |
 | --- | ---: | ---: |
@@ -9,6 +9,7 @@ At 5:15 p.m. Seoul time on November 20, the search had strengthened the 1 p.m. l
 | [3:45 p.m.](https://github.com/CuteSurtr/erdos-810-research/commit/1e1228acc10d112315b06950dfe455d1c2f93321) | 51 | 813 |
 | [4:30 p.m.](https://github.com/CuteSurtr/erdos-810-research/commit/0f4c37d59834ab764fc530b3b503e995570d8af3) | 62 | 2,309 |
 | [5:15 p.m.](https://github.com/CuteSurtr/erdos-810-research/commit/b0174ed50a105b851aeecddd89feb4d4c062030b) | 63 | 2,668 |
+| 5:54 p.m. | 63 | 2,678 |
 
 The frozen starting catalog takes the best verified graph at each order through 128 from the previous archive and the 1 p.m. release. Its SHA-256 is `67ffcf9f13af768eaa965e45b24f66bcb13ef913a1203db539f6427a0c261d81`. Each JSON key is the vertex count and each triple gives two endpoints and a color, numbered from zero. A C checker enumerates four-vertex subsets and a separate Python program enumerates pairs of common neighbors. Both check the color budget, edge count and every four-cycle, and agreed on every line of the release. [Previous checkpoint and reproduction commands](../2026-11-20/README.md)
 
@@ -42,4 +43,4 @@ At the final check all five selected sizes improved on the first release. The 25
 
 For each fixed $\varepsilon>0$, a graph with at least $(1/4+\varepsilon)n^2$ edges and a linear color budget has $\Omega(n^3)$ four-cycles with a repeated color. In a random graph, the leading count of these cycles can also be determined at powers of two. [General counting theorem](../../../research/graph-limits/repeated-cycles.md) · [Random-graph theorem and stability](../../../research/random-support/minimum-defects.md)
 
-The 17-point Erdős–Szekeres construction gives a separate colored graph on 152 vertices through an abelian group of order 76. [Construction and minimum group size](../../../research/es-connection/sum-colors.md)
+The 17 Erdős–Szekeres points give a 152-vertex graph over a group of order 76. Recoloring its edges with just 22 labels gives a larger example with 1,064 vertices, 62,016 edges and 1,056 colors. [Construction, certificates and C checker](../../../research/es-connection/sum-colors.md#fewer-colors-on-the-same-es-graph)
