@@ -30,6 +30,8 @@ PRUNE_K=14 "$SCRATCH/rainbow-cover" -u 14 35:35
 
 ## The 11,461 extremal graphs on 13 vertices
 
+These graphs admit **173,139** optimal colorings up to vertex and color relabeling. Two independent counting algorithms give the same answer on every graph. [Colored census and Burnside calculation](coloring-census.md)
+
 Checker A and the C++ cover solver independently found **11,461** nonisomorphic 47-edge graphs with 13 colors. Their complement graph6 records agree byte for byte in all 64 shards. Traces canonicalization found 11,461 distinct isomorphism classes. A third C program produced a coloring for every graph and verified every four-cycle. The archive contains the original graphs, one per line. Its SHA-256 is `965474347e8cc9efdd316d2b21e273823eb3ba1a488a17a9c8d33811dd32be69`. [Complete catalog](data/optimal-13.g6) · [Checker A counts](data/13-47-k13-A.tsv) · [C++ counts](data/13-47-k13-cover.tsv) · [Third checker](../V12/V2/src/checker.c)
 
 | Colorings admitted by an optimal graph | Graphs |

@@ -7,7 +7,7 @@ mkdir -p "$2"
 out=$(cd "$2" && pwd)
 cadical=
 if [ -n "${3:-}" ]; then cadical=$(cd "$3" && pwd); fi
-make -C "$nauty" geng
+make -C "$nauty" geng nauty.a
 cd "$out"
 cc_bin=${CC:-cc}
 cxx_bin=${CXX:-c++}
@@ -20,6 +20,9 @@ cxx_bin=${CXX:-c++}
     "$nauty/schreier.o" "$nauty/naurng.o" -o rainbow-cover
 "$cxx_bin" -O3 -std=c++17 "$here/check_graphs.cpp" coloring.o -o check-cover
 "$cxx_bin" -O3 -std=c++17 "$here/classify_proper.cpp" coloring.o -o classify-proper
+"$cxx_bin" -O3 -std=c++17 "$here/count_colorings.cpp" -o count-colorings
+"$cc_bin" -O3 -I"$nauty" -c "$here/orbit_group.c" -o orbit_group.o
+"$cxx_bin" -O3 -std=c++17 "$here/burnside_count.cpp" orbit_group.o "$nauty/nauty.a" -o burnside-count
 if [ -n "$cadical" ]; then
     "$cxx_bin" -O3 -std=c++17 -I"$cadical/src" "$here/audit_proper_sat.cpp" \
         "$cadical/build/libcadical.a" -o audit-proper-sat
