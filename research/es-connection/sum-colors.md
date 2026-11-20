@@ -1,5 +1,7 @@
 # Coloring an additive table from the 17 octagon coordinates
 
+For the fixed binary sum coloring, the maximum on a 16-by-16 board lies between 144 and 153. Any board preserving two independent translations of the affine construction has maximum 144. [Square-free XOR board bounds](xor-squares/README.md)
+
 The same 17 points project to a rainbow-four-cycle graph on **152 vertices** with **1,292 edges**, using **76 colors**. Among all finite abelian targets, 76 is the exact minimum group size for the construction below with these coordinates and an arbitrary additive endomorphism. If the endomorphism must be an integer scalar, the minimum is 77. In the other construction that labels each edge by its shift, the minimum is 285 and the graph uses only 17 colors. [Pinned coordinates](octagon-anchor.json) · [Exhaustive search and graph checks](check_square_quotients.py) · [Shift-color construction](quotients.md)
 
 ## Opposite edges and four-term progressions
