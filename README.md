@@ -4,7 +4,7 @@ Extremal bounds, finite constructions, and affine models for graphs in which eve
 
 On 13 vertices the exact maximum is **47 edges**. Two exhaustive searches excluded 48 edges. With 12 colors on the same vertices, the maximum is 46. Larger constructions now reach 31,696 edges on 512 vertices. [Proof, search counts and graph certificates](bruteforce/results/2026-11-21/README.md)
 
-On 14 vertices the exact maximum is **55 edges**. There are **11,461** optimal graphs on 13 vertices, of which **312** require an improper coloring. [Complete census, proof and certificates](bruteforce/results/2026-11-21-0600/README.md)
+On 14 vertices the exact maximum is **55 edges**. All 52 optimal graphs admit only proper colorings. The 11,461 optimal graphs on 13 vertices give 173,139 coloring classes, and 312 of the graphs require an improper coloring. [Complete census, proof and certificates](bruteforce/results/2026-11-21-0600/README.md)
 
 With 14 colors on 13 vertices, the maximum rises to **49 edges**. With 13 colors on 14 vertices, it is **54 edges**. [Fixed-palette bounds and witnesses](bruteforce/results/2026-11-21-0600/README.md)
 

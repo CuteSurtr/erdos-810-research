@@ -19,6 +19,7 @@ cxx_bin=${CXX:-c++}
     "$nauty/nautyW1.o" "$nauty/nautilW1.o" "$nauty/naugraphW1.o" \
     "$nauty/schreier.o" "$nauty/naurng.o" -o rainbow-cover
 "$cxx_bin" -O3 -std=c++17 "$here/check_graphs.cpp" coloring.o -o check-cover
+"$cxx_bin" -O3 -std=c++17 "$here/extend_catalog.cpp" coloring.o -o extend-catalog
 "$cxx_bin" -O3 -std=c++17 "$here/classify_proper.cpp" coloring.o -o classify-proper
 "$cxx_bin" -O3 -std=c++17 "$here/count_colorings.cpp" -o count-colorings
 "$cc_bin" -O3 -I"$nauty" -c "$here/orbit_group.c" -o orbit_group.o

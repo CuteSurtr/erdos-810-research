@@ -1,0 +1,77 @@
+{
+  "vertices": 14,
+  "edges": 55,
+  "supports": 52,
+  "degree_sequences": {
+    "6 7 8 8 8 8 8 8 8 8 8 8 8 9": 1,
+    "7 7 7 7 7 8 8 8 8 8 8 9 9 9": 1,
+    "7 7 7 7 8 8 8 8 8 8 8 8 9 9": 9,
+    "7 7 7 8 8 8 8 8 8 8 8 8 8 9": 27,
+    "7 7 8 8 8 8 8 8 8 8 8 8 8 8": 14
+  },
+  "minimum_degree": {
+    "6": 1,
+    "7": 51
+  },
+  "maximum_degree": {
+    "8": 14,
+    "9": 38
+  },
+  "four_cycles": {
+    "308": 2,
+    "309": 1,
+    "310": 1,
+    "311": 2,
+    "312": 3,
+    "313": 8,
+    "314": 3,
+    "315": 2,
+    "316": 5,
+    "317": 3,
+    "318": 5,
+    "319": 9,
+    "321": 2,
+    "323": 3,
+    "324": 1,
+    "325": 1,
+    "326": 1
+  },
+  "triangles": {
+    "68": 4,
+    "69": 19,
+    "70": 17,
+    "71": 7,
+    "72": 3,
+    "73": 2
+  },
+  "incident_pairs_on_no_four_cycle": {
+    "0": 47,
+    "1": 5
+  },
+  "edge_exchange": {
+    "distinct_cards": 2712,
+    "components": 41,
+    "component_sizes": {
+      "1": 39,
+      "2": 1,
+      "11": 1
+    },
+    "adjacent_pairs": 17,
+    "isolated": 39,
+    "minimum_neighbors": 0,
+    "maximum_neighbors": 6
+  },
+  "vertex_exchange": {
+    "distinct_cards": 682,
+    "components": 40,
+    "component_sizes": {
+      "1": 37,
+      "2": 2,
+      "11": 1
+    },
+    "adjacent_pairs": 20,
+    "isolated": 37,
+    "minimum_neighbors": 0,
+    "maximum_neighbors": 6
+  }
+}

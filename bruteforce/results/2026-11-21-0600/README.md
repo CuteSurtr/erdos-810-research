@@ -6,8 +6,11 @@ Write $F(n,k)$ for the maximum number of edges on $n$ vertices using at most $k$
 | ---: | ---: | ---: | ---: |
 | 13 | 14 | 49 | 265 |
 | 14 | 13 | 54 | 284 |
+| 14 | 15 | 56 | 337 |
 
 On 13 vertices, two C checkers each ran a full, unsharded complement enumeration at 50 edges with 14 colors. Both found zero supports. There are 78 pairs, so the generator searches graphs of 28 missing pairs. A graph with more than 50 edges would yield a valid 50-edge graph by deleting edges. The 49-edge witness uses all 14 colors. [Witnesses](palette-witnesses.json) · [Complement generation and checker builds](../2026-11-21/README.md#the-upper-bound)
+
+On 14 vertices with 15 colors, the 56-edge witness attains the maximum. All 256 unrestricted shards with 57 edges and 15 colors returned zero graphs. [All shard counts](data/14-57-k15-cover.tsv) · [Witness](palette-witnesses.json)
 
 On 14 vertices with 13 colors, deleting any vertex leaves at most $F(13,13)=47$ edges. Each edge survives 12 of the 14 vertex deletions, so $12m\le14\cdot47$. It follows that $m\le54$. The 54-edge witness attains the bound with 13 colors. [The 13-vertex optimum](../2026-11-21/README.md) · [Witnesses](palette-witnesses.json)
 
@@ -21,11 +24,26 @@ PRUNE_K=14 "$SCRATCH/rainbow-b" -u 13 28:28
 
 ## Exact maximum on 14 vertices
 
-**$M(14)=55$.** The 55-edge witness has 308 four-cycles. The complement search excluded every 56-edge graph using 14 colors. It completed all 256 shards with 35 missing pairs, allowing every degree and connectedness pattern. Edge deletion then excludes all higher edge counts. [All shard counts](data/14-56-k14-cover.tsv) · [Lean lower-bound theorem](../../../research/hall-reduction/SmallGraphCertificates.lean#L50) · [Explicit coloring, key 14](../LB/certs.json) · [Search algorithm](native/README.md)
+**$M(14)=55$.** The 55-edge witness has 308 four-cycles. The complement search excluded every 56-edge graph using 14 colors. Both checker A and the C++ cover solver completed all 256 shards with 35 missing pairs, allowing every degree and connectedness pattern. Their counts of accepted and rejected partial graphs also agree in every shard. [Checker A counts](data/14-56-k14-A.tsv) Edge deletion then excludes all higher edge counts. [All shard counts](data/14-56-k14-cover.tsv) · [Lean lower-bound theorem](../../../research/hall-reduction/SmallGraphCertificates.lean#L50) · [Explicit coloring, key 14](../LB/certs.json) · [Search algorithm](native/README.md)
 
 ```sh
 sh native/build.sh "$NAUTY" "$SCRATCH"
 PRUNE_K=14 "$SCRATCH/rainbow-cover" -u 14 35:35
+```
+
+There are exactly **52 optimal 14-vertex supports**. All 1,151 optimal coloring classes are proper. Five potential incident equalities survive the elementary four-cycle test across these supports, and SAT excludes all five. The census uses complementary maximum degree seven because deleting any vertex from a 55-edge candidate leaves at most $F(13,14)=49$ edges. [Optimal graphs](data/optimal-14.g6) · [Census counts](data/14-55-k14-cover.tsv) · [Both independent coloring counters](coloring-census.md) · [Exchange and cycle statistics](data/geometry-14.json)
+
+A second upper-bound argument deletes a minimum-degree vertex. In a putative 56-edge graph its degree is seven or eight, since deleting it leaves at most 49 edges and the average degree is eight. At degree seven the parent is one of six 49-edge graphs. Restoring minimum degree seven gives 10,296 candidates. At degree eight the graph is regular and its parent has 48 edges and minimum degree seven. nauty finds 37,014 admissible parents under that cap. Exactly 31,356 have eight vertices of degree seven and five of degree eight, and each gives a unique candidate. Two independent C checkers reject all **41,652** candidates across the two cases. The V2 checker finds a conflict clique exceeding the palette in 41,517 cases and rules out the remaining 135 by coloring search. [Parent search counts](data/13-48-k14-D5-cover.tsv) · [Extension program](native/extend_catalog.cpp) · [Six dense parents](data/order13-k14-e49.g6) · [Independent C checker](../M12/src/prune810b.c)
+
+The following commands reproduce the regular-parent calculation using a nauty installation that includes `complg`. The extension program reads original supports and generates every neighborhood of the specified new minimum degree.
+
+```sh
+PRUNE_K=14 "$SCRATCH/rainbow-cover" -D5 13 30:30 | "$NAUTY/complg" -q > "$SCRATCH/parent48.g6"
+"$SCRATCH/extend-catalog" 14 56 14 8 cover < "$SCRATCH/parent48.g6"
+"$SCRATCH/extend-catalog" 14 56 14 7 cover < data/order13-k14-e49.g6
+cc -O3 ../V12/V2/src/checker.c -o "$SCRATCH/check-independent"
+"$SCRATCH/extend-catalog" 14 56 14 8 all < "$SCRATCH/parent48.g6" | "$SCRATCH/check-independent" 14
+"$SCRATCH/extend-catalog" 14 56 14 7 all < data/order13-k14-e49.g6 | "$SCRATCH/check-independent" 14
 ```
 
 ## The 11,461 extremal graphs on 13 vertices

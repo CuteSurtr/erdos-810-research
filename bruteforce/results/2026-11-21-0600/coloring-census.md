@@ -22,6 +22,8 @@ cmp "$SCRATCH/direct-five.txt" "$SCRATCH/burnside.txt"
 
 Both methods also agree at every order from two through twelve. On ten vertices the two optimal graphs each have a unique coloring up to the two relabelings. On twelve vertices 3,330 optimal supports yield 226,758 colored classes. On four and six vertices the unique optimal support requires a repeated incident color. Imposing properness lowers the edge maximum from five to four on four vertices and from eleven to ten on six. [Full table](data/census-by-order.tsv) · [Previous exact uncolored bounds](../M12/REPORT.md)
 
+On 14 vertices there are **1,151** optimal coloring classes across **52** underlying graphs. Every one of these colorings is proper. Both counters give the same values on every support. [Per-graph counts](data/color-counts-14.tsv.gz) · [Graphs](data/optimal-14.g6)
+
 ## Comparison with public finite results
 
 Tao's December 2025 AlphaEvolve experiments gave 47, 54 and 62 edges at orders 13, 14 and 15, respectively, and explicitly left optimality open. A July 2026 computational report establishes optimality through order ten. The sources checked on 21 November 2026 yielded no earlier exact 14-vertex maximum or complete 13-vertex coloring census. Historical priority remains unverified. The original problem asks for a positive edge density at all sufficiently large orders. [Tao's table](https://www.erdosproblems.com/forum/thread/810) · [July 2026 report](https://www.erdosproblemaday.com/report/810) · [Original problem](https://www.erdosproblems.com/810)
