@@ -7,14 +7,23 @@ Write $F(n,k)$ for the maximum number of edges on $n$ vertices using at most $k$
 | 13 | 14 | 49 | 265 |
 | 14 | 13 | 54 | 284 |
 | 14 | 15 | 56 | 337 |
+| 14 | 16 | 57 | 379 |
 
 On 13 vertices, two C checkers each ran a full, unsharded complement enumeration at 50 edges with 14 colors. Both found zero supports. There are 78 pairs, so the generator searches graphs of 28 missing pairs. A graph with more than 50 edges would yield a valid 50-edge graph by deleting edges. The 49-edge witness uses all 14 colors. [Witnesses](palette-witnesses.json) · [Complement generation and checker builds](../2026-11-21/README.md#the-upper-bound)
 
 On 14 vertices with 15 colors, the 56-edge witness attains the maximum. All 256 unrestricted shards with 57 edges and 15 colors returned zero graphs. [All shard counts](data/14-57-k15-cover.tsv) · [Witness](palette-witnesses.json)
 
+On 14 vertices with 16 colors, a 57-edge graph attains the maximum. All 256 unrestricted shards with 58 edges and 16 colors were empty. The 57-edge witness comes from adding an edge to a 56-edge graph and recoloring the enlarged graph. [All shard counts](data/14-58-k16-cover.tsv) · [Witness with 379 four-cycles](palette-witnesses.json)
+
 On 14 vertices with 13 colors, deleting any vertex leaves at most $F(13,13)=47$ edges. Each edge survives 12 of the 14 vertex deletions, so $12m\le14\cdot47$. It follows that $m\le54$. The 54-edge witness attains the bound with 13 colors. [The 13-vertex optimum](../2026-11-21/README.md) · [Witnesses](palette-witnesses.json)
 
 The independent Python check enumerates the three possible cycles on every four-vertex set. It verifies the endpoint range, color budget, edge uniqueness, every color constraint and the reported cycle count. [Checker](check_palette.py)
+
+## Bounds on 15 and 16 vertices
+
+With 16 colors on 15 vertices the maximum is 64 or 65. An explicit graph with 64 edges has 458 rainbow four-cycles. For the upper bound, each edge survives 13 of the 15 vertex deletions, so $13m\le15F(14,16)=855$. A separate search excludes 66 edges using only the weaker bound $F(14,16)\le58$. That weaker bound forces minimum degree eight and complement maximum degree six at 66 edges. All 512 shards under this cap were empty. In turn, $14M(16)\le16\cdot65$, yielding $M(16)\le74$. The known 16-vertex lower bound is 70. [Coloring](palette-witnesses.json) · [14-vertex search at 59 edges](data/14-59-k16-cover.tsv) · [15-vertex search at 66 edges](data/15-66-k16-D6-cover.tsv) · [16-vertex lower-bound certificate](../../../research/hall-reduction/SmallGraphCertificates.lean)
+
+With 14 colors on 15 vertices the maximum is 61 or 62. The lower witness has 356 four-cycles. A 63-edge graph would have minimum degree at least eight because $F(14,14)=55$. The complement search at maximum degree six returned zero across all 512 shards. [Coloring](palette-witnesses.json) · [All shard counts](data/15-63-k14-D6-cover.tsv)
 
 ```sh
 python3 check_palette.py palette-witnesses.json
