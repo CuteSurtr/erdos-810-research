@@ -8,7 +8,7 @@ At 5:15 p.m. Seoul time on November 20, the search had strengthened the 1 p.m. l
 | [3:33 p.m.](https://github.com/CuteSurtr/erdos-810-research/commit/34b1a20d69c3e15352302eed1e9baa6946f14009) | 50 | 546 |
 | [3:45 p.m.](https://github.com/CuteSurtr/erdos-810-research/commit/1e1228acc10d112315b06950dfe455d1c2f93321) | 51 | 813 |
 | [4:30 p.m.](https://github.com/CuteSurtr/erdos-810-research/commit/0f4c37d59834ab764fc530b3b503e995570d8af3) | 62 | 2,309 |
-| 5:15 p.m. | 63 | 2,668 |
+| [5:15 p.m.](https://github.com/CuteSurtr/erdos-810-research/commit/b0174ed50a105b851aeecddd89feb4d4c062030b) | 63 | 2,668 |
 
 The frozen starting catalog takes the best verified graph at each order through 128 from the previous archive and the 1 p.m. release. Its SHA-256 is `67ffcf9f13af768eaa965e45b24f66bcb13ef913a1203db539f6427a0c261d81`. Each JSON key is the vertex count and each triple gives two endpoints and a color, numbered from zero. A C checker enumerates four-vertex subsets and a separate Python program enumerates pairs of common neighbors. Both check the color budget, edge count and every four-cycle, and agreed on every line of the release. [Previous checkpoint and reproduction commands](../2026-11-20/README.md)
 
@@ -36,4 +36,10 @@ Two further C++ modes use topologies found on larger orders. With `--compress`, 
 
 The search also grew graphs beyond the 128-vertex baseline. It starts from a verified 128-vertex graph, adds one vertex with the matching oracle, and tries edge insertions with recoloring after each extension. It retains the best graph at each intermediate size. Five selected sizes are archived with their complete edge and color lists. [Growth driver](grow_orders.py) · [Graphs](larger/certs.json) · [Counts](larger/checks.txt)
 
-At the first check the 256-vertex graph had **9,828 edges and 4,273,043 rainbow four-cycles**. The C four-vertex checker and an independent Python check by pairs of opposite vertices agree on each cycle count. The Lean runtime checker also accepted all five graphs. Run `python3 check_common.py larger/certs.json` and use `larger/certs.json` as input to the Lean generation command above. [Python checker](check_common.py)
+At the final check all five selected sizes improved on the first release. The 256-vertex graph grew from 9,828 to **9,838 edges**, with **4,287,264 rainbow four-cycles**. [First larger-graph release](https://github.com/CuteSurtr/erdos-810-research/commit/14a84fb55c9583acd9c93266206a43d834aa29c3) The C four-vertex checker and an independent Python check by pairs of opposite vertices agree on each cycle count. The Lean runtime checker also accepted all five graphs. Run `python3 check_common.py larger/certs.json` and use `larger/certs.json` as input to the Lean generation command above. [Python checker](check_common.py)
+
+## Related results
+
+For each fixed $\varepsilon>0$, a graph with at least $(1/4+\varepsilon)n^2$ edges and a linear color budget has $\Omega(n^3)$ four-cycles with a repeated color. In a random graph, the leading count of these cycles can also be determined at powers of two. [General counting theorem](../../../research/graph-limits/repeated-cycles.md) · [Random-graph theorem and stability](../../../research/random-support/minimum-defects.md)
+
+The 17-point Erdős–Szekeres construction gives a separate colored graph on 152 vertices through an abelian group of order 76. [Construction and minimum group size](../../../research/es-connection/sum-colors.md)

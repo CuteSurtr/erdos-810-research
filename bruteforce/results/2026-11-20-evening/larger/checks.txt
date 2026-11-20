@@ -1,5 +1,5 @@
-144 3617 edges 770131 4-cycles OK
-160 4342 edges 1051191 4-cycles OK
-192 5963 edges 1812258 4-cycles OK
-224 7792 edges 2864134 4-cycles OK
-256 9828 edges 4273043 4-cycles OK
+144 3628 edges 780434 4-cycles OK
+160 4360 edges 1069447 4-cycles OK
+192 5966 edges 1815567 4-cycles OK
+224 7811 edges 2887225 4-cycles OK
+256 9838 edges 4287264 4-cycles OK
