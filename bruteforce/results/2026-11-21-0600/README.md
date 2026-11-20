@@ -4,10 +4,27 @@ Write $F(n,k)$ for the maximum number of edges on $n$ vertices using at most $k$
 
 | Vertices | Palette | Exact maximum | Four-cycles in the witness |
 | ---: | ---: | ---: | ---: |
+| 12 | 15 | 44 | 243 |
+| 12 | 16 | 45 | 269 |
 | 13 | 14 | 49 | 265 |
+| 13 | 15 | 50 | 302 |
+| 13 | 16 | 51 | 329 |
+| 13 | 17 | 52 | 355 |
+| 13 | 18 | 54 | 420 |
 | 14 | 13 | 54 | 284 |
 | 14 | 15 | 56 | 337 |
 | 14 | 16 | 57 | 379 |
+
+For both 12-vertex entries and for palettes 15 through 18 on 13 vertices, three programs each completed an unrestricted enumeration at one edge above the claimed maximum. Every search returned zero supports. Their pruning counts agree on each input. Deleting edges preserves the four-cycle condition, so each exclusion is an upper bound for every larger edge count as well. The archive supplies a coloring attaining every entry. [Counts from both C checkers and the C++ checker](data/fixed-palette-upper.tsv) · [Edge triples](palette-witnesses.json)
+
+To reproduce a row, set `PRUNE_K` to its palette and use its number of missing pairs for the generator's fixed edge count. For example, 53 edges on 13 vertices leaves 25 missing pairs.
+
+```sh
+for solver in rainbow-a rainbow-b rainbow-cover
+do
+    PRUNE_K=17 "$SCRATCH/$solver" -u 13 25:25
+done
+```
 
 On 13 vertices, two C checkers each ran a full, unsharded complement enumeration at 50 edges with 14 colors. Both found zero supports. There are 78 pairs, so the generator searches graphs of 28 missing pairs. A graph with more than 50 edges would yield a valid 50-edge graph by deleting edges. The 49-edge witness uses all 14 colors. [Witnesses](palette-witnesses.json) · [Complement generation and checker builds](../2026-11-21/README.md#the-upper-bound)
 

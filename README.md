@@ -8,7 +8,7 @@ On 4,096 vertices an explicit graph has **1,152,423 edges**. Every one of its 12
 
 On 14 vertices the exact maximum is **55 edges**. All 52 optimal graphs admit only proper colorings. The 11,461 optimal graphs on 13 vertices give 173,139 coloring classes, and 312 of the graphs require an improper coloring. [Complete census, proof and certificates](bruteforce/results/2026-11-21-0600/README.md)
 
-With 14 colors on 13 vertices, the maximum rises to **49 edges**. On 14 vertices the maxima with 13, 14, 15 and 16 colors are **54, 55, 56 and 57 edges**, respectively. [Fixed-palette bounds and witnesses](bruteforce/results/2026-11-21-0600/README.md)
+On 13 vertices, palettes of 14 through 18 colors give exact maxima of **49, 50, 51, 52 and 54 edges**. On 14 vertices the maxima with 13, 14, 15 and 16 colors are **54, 55, 56 and 57 edges**, respectively. [Fixed-palette bounds and witnesses](bruteforce/results/2026-11-21-0600/README.md)
 
 Lean verifies $M(n)\le(1/4+o(1))n^2$ for the unrestricted graph problem and $g(n;7,4)\le(1/18+o(1))n^2$ for unrestricted triple systems. The latter coefficient is 25% below Gishboliner and Solymosi's $2/27$ for linear systems. Whether either problem admits positive quadratic density remains open. Both proofs are local research results. External review and historical priority are pending. [Graph theorem in Lean](research/hall-reduction/QuarterDensity.lean) · [Triple theorem in Lean](research/hall-reduction/HalfBoundedModel.lean) · [Gishboliner and Solymosi](https://arxiv.org/html/2606.25931v1)
 
