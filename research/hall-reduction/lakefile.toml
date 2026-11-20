@@ -407,3 +407,6 @@ name = "NeighborhoodVCOne"
 
 [[lean_lib]]
 name = "IncidenceClones"
+
+[[lean_lib]]
+name = "FoolingSetDefects"
