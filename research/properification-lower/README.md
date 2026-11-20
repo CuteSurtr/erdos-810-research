@@ -12,6 +12,8 @@ Within this construction the largest cost is exactly half the order for infinite
 
 Requiring every two disjoint edges of a component to share a four-cycle determines its support. The resulting class has explicit palette thresholds, exact deletion costs and a sharp edge maximum of $n^{3/2}/\sqrt2+O(n)$ over disjoint unions. [Classification and exact extremizers](multipartite.md)
 
+Inserting a missing edge into a fixed proper coloring can require $2(n-2)/3$ old-edge deletions. A fixed positive excess above this rate using the same palette would produce quadratic-density witnesses for #810. [Sharp fresh-label bound and finite same-palette inequality](edge-insertion.md)
+
 ## A graph that loses half its edges
 
 Fix a positive integer $L$ and a set $S\subseteq\{0,\ldots,L-1\}$ in which $a+c=2b$ and $a+2c=3b$ have only constant solutions. Take one set of $L$ centers indexed by $i$, and two disjoint sets of $2L$ outer vertices indexed by $z$. For every pair $(i,a)$ with $a\in S$, join $i$ to the first outer vertex with coordinate $L+i-a$ and the second outer vertex with coordinate $i+a$. Give both edges color $i+2a$. There are $5L$ vertices, fewer than or equal to $3L$ colors, and exactly $2L|S|$ edges.

@@ -431,3 +431,6 @@ name = "OvernightWitnesses"
 
 [[lean_lib]]
 name = "MultipartiteSquares"
+
+[[lean_lib]]
+name = "EdgeInsertion"
