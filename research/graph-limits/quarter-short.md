@@ -60,4 +60,4 @@ $$
 $$
 The charge count was also checked on all 4,246 proper five-vertex colorings with up to four colors, up to renaming the colors. Of them, 2,135 contain a repeated-color four-cycle. [Integer check](check_counts.py)
 
-A complete graph on even $n$ has a proper $(n-1)$-coloring by its one-factorization, so the dense regime already occurs with a linear palette. For colorings allowing equal adjacent edges, deletion of one edge per bad cycle gives the separate lower bound $(\alpha-o(1))n^2$ on bad cycles above $(1/4+\alpha)n^2$, using the linear-palette theorem.
+A complete graph on even $n$ has a proper $(n-1)$-coloring by its one-factorization, so the dense regime already occurs with a linear palette. The cubic lower bound also holds when incident colors can repeat. Counting four-cycles in large monochromatic stars allows the remaining color classes to be split into a fixed linear palette. [Arbitrary-coloring theorem](repeated-cycles.md)

@@ -6,7 +6,7 @@ Every cut-limit graphon of these graphs is bounded by $1/2$ almost everywhere, s
 
 For any fixed $\alpha>0$ in the attainable range, a graph above $(1/4+\alpha)n^2$ edges needs $\Omega_\alpha(n\sqrt{\log^* n})$ colors for every four-cycle to be rainbow. Keeping the palette size in the finite energy recurrence gives this rate. [Quantitative lower bound on colors](finite-model.md#how-many-colors-are-needed-above-one-quarter)
 
-For proper colorings with a linear palette, a fixed positive density gap above one quarter forces order $n^3$ four-cycles with a repeated color. The matching count also gives an upper bound of this same order. [Supersaturation proof](quarter-short.md#supersaturation-for-proper-colorings)
+For arbitrary edge colorings with a linear palette, a fixed positive density gap above one quarter forces at least a constant times $n^3$ four-cycles with a repeated color. For the #810 palette the minimum has exactly cubic order. The extension to repeated incident labels follows by counting large monochromatic stars and splitting retained colors into shades. [General-coloring proof and C++ audit](repeated-cycles.md) · [Proper-coloring proof](quarter-short.md#supersaturation-for-proper-colorings)
 
 For any fixed positive density, the graph of equal-color moves on unordered vertex pairs has a negative adjacency eigenvalue of order $n$. At the one-quarter coefficient it admits a bipartition after $o(n^3)$ edge deletions. The same deletion count measures a constraint on the original adjacency matrix. [Pair graph, proof and finite check](pair-energy.md)
 
