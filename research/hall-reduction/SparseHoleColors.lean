@@ -40,4 +40,22 @@ theorem three_of_four {a b c x : I}
       · exact ac (inn hac ax cx)
     · exact ab (inn hab ax bx)
 
+/-- The ordered four vertices of the hole path recover a same-color triple. -/
+theorem path_recovers_triple {E R C K : Type*}
+    (row : E → R) (col : E → C) (color : E → K)
+    (cell : ∀ {x y}, row x = row y → col x = col y → x = y)
+    (atRow : ∀ {x y}, color x = color y → row x = row y → x = y)
+    (atCol : ∀ {x y}, color x = color y → col x = col y → x = y)
+    {i j k i' j' k' : E}
+    (hi : color i = color j) (hk : color k = color j)
+    (hi' : color i' = color j') (hk' : color k' = color j')
+    (h : (row j, col k, row i, col j) = (row j', col k', row i', col j')) :
+    i = i' ∧ j = j' ∧ k = k' := by
+  rcases Prod.mk.inj h with ⟨rj, h⟩
+  rcases Prod.mk.inj h with ⟨ck, h⟩
+  rcases Prod.mk.inj h with ⟨ri, cj⟩
+  have middle : j = j' := cell rj cj
+  subst j'
+  exact ⟨atRow (hi.trans hi'.symm) ri, rfl, atCol (hk.trans hk'.symm) ck⟩
+
 end Erdos810.SparseHoleColors

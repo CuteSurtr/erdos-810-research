@@ -2,10 +2,12 @@
 // small order, expand the Bose construction and test every same-color pair.
 #include <algorithm>
 #include <array>
+#include <cstdint>
 #include <cstdlib>
 #include <iostream>
 #include <map>
 #include <stdexcept>
+#include <string>
 #include <utility>
 #include <vector>
 using Triple = std::array<int, 3>;
@@ -49,10 +51,58 @@ std::array<int, 216> check_partition() {
 struct Reference {
   int triple = -1, arc = -1, orientation = -1;
 };
-void expand(int s, const std::array<int, 216> &part) {
+using Classes = std::map<int, std::vector<std::pair<Triple, Triple>>>;
+void audit_paths(int s, const Classes &classes) {
+  auto number = [s](Triple x) { return (x[0] * s + x[1]) * s + x[2]; };
+  int t = s * s * s, hole_degree = 3 * s - 2;
+  std::vector<uint64_t> paths;
+  uint64_t lower = 0;
+  for (const auto &entry : classes) {
+    const auto &edges = entry.second;
+    size_t m = edges.size();
+    std::vector<std::vector<bool>> out(m, std::vector<bool>(m));
+    for (size_t i = 0; i < m; ++i)
+      for (size_t j = i + 1; j < m; ++j) {
+        if (distance(edges[i].first, edges[j].second) <= 1)
+          out[i][j] = true;
+        else if (distance(edges[j].first, edges[i].second) <= 1)
+          out[j][i] = true;
+        else
+          throw std::runtime_error("color class lacks a missing cross");
+      }
+    auto before = paths.size();
+    for (size_t i = 0; i < m; ++i)
+      for (size_t j = 0; j < m; ++j)
+        if (out[i][j])
+          for (size_t k = 0; k < m; ++k)
+            if (out[j][k] && out[i][k]) {
+              auto r = number(edges[j].first), c = number(edges[k].second);
+              auto u = number(edges[i].first), v = number(edges[j].second);
+              paths.push_back(((uint64_t(r) * t + c) * t + u) * t + v);
+            }
+    int a = int(m / 2);
+    int minimum = (m % 2) ? int(m) * a * (a - 1) / 2 : a * (a - 1) * (a - 1);
+    if (paths.size() - before < size_t(minimum))
+      throw std::runtime_error("tournament bound failed");
+    lower += minimum;
+  }
+  std::sort(paths.begin(), paths.end());
+  if (std::adjacent_find(paths.begin(), paths.end()) != paths.end())
+    throw std::runtime_error("path collision");
+  int capacity = t * hole_degree * (hole_degree - 1) * (hole_degree - 1);
+  if (paths.size() > size_t(capacity))
+    throw std::runtime_error("too many three-step paths");
+  std::cout
+      << paths.size()
+      << " distinct paths from transitive triples, tournament lower bound "
+      << lower << ", path capacity " << capacity << '\n';
+}
+void expand(int s, const std::array<int, 216> &part, bool paths) {
   if (s < 2 || s > 9)
     throw std::runtime_error(
         "expanded audit accepts alphabet sizes 2 through 9");
+  if (paths && s > 5)
+    throw std::runtime_error("path audit accepts alphabet sizes through 5");
   int m = s;
   while (m % 6 != 3)
     ++m;
@@ -78,7 +128,7 @@ void expand(int s, const std::array<int, 216> &part) {
   if (6 * B != m * (m - 1))
     throw std::runtime_error("wrong design order");
   int t = s * s * s, partition_colors = 36 * B * B * B;
-  std::map<int, std::vector<std::pair<Triple, Triple>>> classes;
+  Classes classes;
   int total = 0, three = 0;
   for (int x = 0; x < t; ++x)
     for (int y = 0; y < t; ++y) {
@@ -118,15 +168,17 @@ void expand(int s, const std::array<int, 216> &part) {
   std::cout << t << " rows, " << t << " columns, " << 3 * s - 2
             << " omissions per row, " << total << " cells, " << three
             << " distance-three cells, " << classes.size() << " colors\n";
+  if (paths)
+    audit_paths(s, classes);
 }
 int main(int argc, char **argv) {
   try {
-    if (argc > 2)
+    if (argc > 3 || (argc == 3 && std::string(argv[2]) != "--paths"))
       return 2;
     auto partition = check_partition();
     std::cout << "Verified 36 compatible classes of six on 216 cells.\n";
-    if (argc == 2)
-      expand(std::stoi(argv[1]), partition);
+    if (argc >= 2)
+      expand(std::stoi(argv[1]), partition, argc == 3);
   } catch (const std::exception &e) {
     std::cerr << e.what() << '\n';
     return 1;
