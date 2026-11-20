@@ -9,7 +9,7 @@ set_option autoImplicit false
 open Filter SimpleGraph
 namespace Erdos810.RowAverage
 open ShadowFlags KernelCut
-variable {V : Type*} [Fintype V] [Nonempty V]
+variable {V : Type*} [Fintype V]
 
 private theorem cut_le_mean (D : Kernel V) (pos : ∀ x y,0≤D x y) (X Y : Finset V) :
     cutMass D X Y ≤ mean D := by
@@ -32,6 +32,8 @@ private theorem sym_cut (D : Kernel V) (X Y : Finset V) :
       unfold cutMass mean
       simp only [div_eq_inv_mul,add_mul,mul_assoc,avg_add,avg_scale]
     _ = _ := congrArg (fun r ↦ (cutMass D X Y+r)/2) (transpose_cut D X Y)
+
+variable [Nonempty V]
 
 /-- Clip the row approximation and average with its transpose. This gives a
 symmetric finite kernel with every entry at most one half. -/
