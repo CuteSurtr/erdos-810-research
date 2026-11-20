@@ -56,8 +56,9 @@ def main():
     item = json.loads(args.catalog.read_text())[str(args.copies)]
     if args.component == "block":
         local(item)
-    elif args.copies == 28:
-        print((args.catalog.parent / "outer-28.txt").read_text(), end="")
+    elif "base_certificate" in item or args.copies == 28:
+        certificate = item.get("base_certificate", "outer-28.txt")
+        print((args.catalog.parent / certificate).read_text(), end="")
     else:
         outer(args.copies, args.base, item.get("base_covers"))
 

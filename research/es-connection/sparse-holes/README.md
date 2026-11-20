@@ -65,6 +65,35 @@ For a regular board, $e=t(t-h)$ and $P=th(h-1)^2$. Thus $h=O(t^{1/3})$ forces a 
 
 The necessary cube-root scale also holds for an irregular complement with average degree $h$. If $h=o(t^{1/3})$, choose a degree cutoff $D_0=o(t^{1/3})$ with $h/D_0=o(1)$. Discard rows and columns above the cutoff. Markov's inequality removes $o(t)$ on each side. The retained board has $(1-o(1))t^2$ occupied cells, maximum hole degree $D_0$, and at most $tD_0^3=o(t^2)$ three-step paths. Every incident pair of retained edges lies in a rectangle for large $t$. Hence $q\ge(1/3-o(1))t^2$. If $h=O(t^{1/3})$, cutting off at $4\max(h,1)$ retains at least three quarters of each side and at least $(9/16-o(1))t^2$ edges. This gives $P=O(t^2)$ and $q=\Omega(t^2)$. In particular a subquadratic palette on nearly complete boards requires $h/t^{1/3}\to\infty$.
 
+## A price bound for holes given by group differences
+
+Let the indices form an abelian group $G$ of order $t$. Omit the cells with $c-r\in D$, where $|D|=h$. Assume properness, which follows from the rainbow condition for $t\ge2h+2$. For $s\notin D$, let $m_s$ count representations
+$$
+s=a-b+c,\qquad a,b,c\in D,\quad a\ne b,\quad c\ne b,
+$$
+where the outer pair $\{a,c\}$ is an **unordered multiset** and $b$ is distinguished. Put $w_s=\max(0,2-m_s)$. Every color class has total weight at most **six** when its cell $(r,c)$ receives weight $w_{c-r}$. Consequently
+$$
+Q(B)\ \ge\ \left\lceil\frac{t}{6}\sum_{s\notin D}w_s\right\rceil
+\ \ge\ \left\lceil\frac{t}{6}\left(2(t-h)-\frac{h^2(h-1)}2\right)\right\rceil .
+$$
+The second inequality counts $h$ choices of the middle label and $\binom h2$ unordered pairs with repetition from the other $h-1$ labels. For three holes this gives $\lceil t(2t-15)/6\rceil$ for **every** such abelian board. The local 32-by-32 ES block attains 262, its exact minimum over all cyclic choices of the three holes. [ES certificates and applications](../sparse-blocks/README.md#the-cost-of-three-or-more-common-omissions)
+
+**Proof.** Discard the zero-weight edges of a class and orient every pair of the remaining matching edges through a missing cross. A transitive triple $i\to j\to k$, $i\to k$ gives the three hole differences $a=c_k-r_j$, $b=c_k-r_i$, $c=c_j-r_i$. They satisfy $a-b+c=c_j-r_j$. For a fixed middle edge, the ordered triple of hole differences recovers $c_k$ and $r_i$, and the matching identifies $k$ and $i$. A weight-two edge can never be a middle. A weight-one edge can be a middle at most twice, since the two possible orders of its outer labels account for all its representations.
+
+A tournament on six vertices has at least twelve transitive triples, by summing $\binom{d^+(v)}2$ over its vertices. Six positive-weight edges could exceed total weight six only if at least one had weight two, allowing at most ten triples. Seven positive-weight edges would allow at most fourteen triples whereas their tournament has at least twenty-one. Any larger positive-weight class would contain seven. With four edges at most two can have weight two by the marked-four argument above. Three edges immediately satisfy the bound.
+
+It remains to consider five positive-weight edges. A violation needs two weight-two edges $u,v$ and three weight-one edges, because no four vertices contain three weight-two edges. Orient $u\to v$. For each other vertex $y$, its incidences with $u,v$ either give $u\to y\to v$ or $v\to y\to u$. The other two possibilities would make $u$ or $v$ a middle. If $x$ had the first type and $y$ the second, forbidding a transitive middle at $u$ would require $x\to y$, while forbidding one at $v$ would require $y\to x$. Thus all three vertices have the same type.
+
+If all lie between $u$ and $v$, there are at least nine transitive triples, three using both endpoints and three each using one endpoint and two of the other vertices. The three weight-one middles allow only six. In the remaining case write $v\to j\to u$ for all three. The triples using exactly one of $u,v$ already account for six. The other three vertices must therefore form a directed cycle. Index them modulo three with $j\to j+1$. Write
+$$
+p_j=c_u-r_j,\qquad q_j=c_j-r_v,\qquad \ell_j=c_{j+1}-r_j .
+$$
+The three $p_j$ are distinct. At vertex $j$ the triples $(j-1,j,u)$ and $(v,j,j+1)$ give the two ordered representations
+$$
+(p_j,p_{j-1},\ell_{j-1}),\qquad(\ell_j,q_{j+1},q_j).
+$$
+Weight one means there is exactly one representation up to swapping the outer entries. Equality of the middle entries gives $q_j=p_{j+1}$ around the cycle. Since $p_j\ne q_j$, equality of the outer multisets forces $\ell_j=p_j$ and $\ell_{j-1}=p_{j+1}$. Applying the first equation at $j-1$ contradicts distinctness of the three $p$'s. This proves the weight bound. Summing over all $t$ translates of each occupied difference proves the result. [Lean check of the final label contradiction](../../hall-reduction/SparseHoleColors.lean) · [Direct cyclic matching audit](../sparse-blocks/cyclic_prices.cpp)
+
 ## Exactly two holes in each row and column
 
 For every $t\ge6$ and every 2-regular hole graph, the palette has at least $\lceil t(t-3)/3\rceil$ colors. Indeed $e=t(t-2)$ and $P=2t$ in the second path inequality. This bound is **exact** for an infinite family, including $t=12,36,108$. It identifies the linear term as well as the leading quadratic coefficient.

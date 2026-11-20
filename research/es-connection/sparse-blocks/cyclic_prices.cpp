@@ -18,7 +18,7 @@ struct Audit {
   int n, capacity;
   Holes holes;
   std::vector<int> weights;
-  std::array<Bits, 36> missing{};
+  std::array<Bits, 64> missing{};
   std::array<int, 8> rows{}, cols{};
   uint64_t visits = 0;
   int largest_price = 0;
@@ -46,12 +46,12 @@ struct Audit {
       }
     }
   }
-  void run() {
+  void run(bool require_equality = true) {
     for (int r = 0; r < n; ++r)
       for (int h : holes)
         missing[r] |= Bits(1) << ((r + h) % n);
     extend(0, 0, 0);
-    if (largest_price != capacity)
+    if (require_equality && largest_price != capacity)
       throw std::runtime_error("capacity did not occur");
   }
 };
@@ -73,7 +73,37 @@ std::set<Holes> shapes(int n) {
     }
   return reps;
 }
-int main() {
+int main(int argc, char **argv) {
+  if (argc == 4 && std::string(argv[1]) == "--formula") {
+    int first = std::stoi(argv[2]), last = std::stoi(argv[3]);
+    if (first < 8 || first > last || last > 63)
+      return 2;
+    uint64_t checked = 0, nodes = 0;
+    for (int n = first; n <= last; ++n)
+      for (Holes d : shapes(n)) {
+        std::vector<int> weights(n, 2);
+        for (int b : d)
+          for (int a : d)
+            for (int c : d)
+              if (a <= c && a != b && c != b)
+                --weights[(a - b + c + n) % n];
+        for (int h : d)
+          weights[h] = 0;
+        for (int &v : weights)
+          v = std::max(v, 0);
+        if (std::accumulate(weights.begin(), weights.end(), 0) < 2 * n - 15)
+          throw std::runtime_error("incorrect total price");
+        Audit audit{n, 6, d, weights};
+        audit.run(false);
+        ++checked;
+        nodes += audit.visits;
+      }
+    std::cout << checked << " cyclic shapes, " << nodes
+              << " matching nodes verified\n";
+    return 0;
+  }
+  if (argc != 1)
+    return 2;
   std::string line;
   std::getline(std::cin, line);
   std::map<int, std::set<Holes>> seen;
@@ -81,8 +111,8 @@ int main() {
   while (std::getline(std::cin, line)) {
     std::istringstream in(line);
     int n, a, b, cap;
-    if (!(in >> n >> a >> b >> cap) || (n != 32 && n != 33 && n != 35) ||
-        a < 1 || a >= b || b >= n || cap < 1)
+    if (!(in >> n >> a >> b >> cap) || (n < 31 || n > 35) || a < 1 || a >= b ||
+        b >= n || cap < 1)
       return 2;
     std::vector<int> weights(n);
     for (int &x : weights)
@@ -98,13 +128,13 @@ int main() {
     if (!seen[n].insert(holes).second)
       return 2;
     int sum = std::accumulate(weights.begin(), weights.end(), 0);
-    if ((n == 35 && 17 * sum <= 152 * cap) || (n != 35 && sum <= 8 * cap))
+    if (6 * sum < (2 * n - 15) * cap)
       return 1;
     Audit audit{n, cap, holes, weights};
     audit.run();
     visited[n] += audit.visits;
   }
-  for (int n : {32, 33, 35}) {
+  for (int n = 31; n <= 35; ++n) {
     if (seen[n] != shapes(n))
       throw std::runtime_error("incomplete list of cyclic hole shapes");
     std::cout << n << " copies, " << seen[n].size() << " shapes, " << visited[n]

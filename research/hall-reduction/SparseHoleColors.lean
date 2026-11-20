@@ -78,4 +78,16 @@ theorem aligned_path_recovers_triple {E R C K B : Type*}
   subst j'
   exact ⟨atRow (hi.trans hi'.symm) ri, rfl, atCol (hk.trans hk'.symm) ck⟩
 
+/-- Two consecutive unordered outer-label equalities are incompatible with
+three distinct incoming labels in the exceptional five-vertex tournament. -/
+theorem cyclic_outer_labels_impossible {A : Type*} {a b c l₀ l₁ l₂ : A}
+    (hab : a ≠ b) (hbc : b ≠ c) (hca : c ≠ a)
+    (atZero : (a = l₀ ∧ l₂ = b) ∨ (a = b ∧ l₂ = l₀))
+    (atTwo : (c = l₂ ∧ l₁ = a) ∨ (c = a ∧ l₁ = l₂)) : False := by
+  rcases atZero with good | bad
+  · rcases atTwo with good' | bad'
+    · exact hbc (good.2.symm.trans good'.1.symm)
+    · exact hca bad'.1
+  · exact hab bad.1
+
 end Erdos810.SparseHoleColors

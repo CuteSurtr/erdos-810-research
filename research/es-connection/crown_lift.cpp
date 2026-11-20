@@ -320,6 +320,18 @@ int main(int argc, char **argv) {
       if (length != std::string(argv[1]).size() || t < 2 || t > 256)
         throw std::runtime_error("unsupported copy count");
     }
+    if (!fractional && std::string(argv[2]) == "--local") {
+      if (argc != 4)
+        throw std::runtime_error("usage: crown_lift copies --local block");
+      Crown local(t, argv[3]);
+      int cells = 0;
+      for (int row = 0; row < t; ++row)
+        for (int col = 0; col < t; ++col)
+          cells += local(row, col) >= 0;
+      std::cout << t << " copies " << cells << " occupied cells "
+                << local.size() << " local colors\n";
+      return 0;
+    }
     const char *block = nullptr;
     for (int i = 3; i < argc; ++i) {
       std::string arg = argv[i];
