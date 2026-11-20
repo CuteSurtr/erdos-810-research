@@ -23,11 +23,11 @@ The base conflict graph $Q$ joins two base edges when they meet or are opposite 
 
 The certificates give the label sets as translates of independent sets of $Q$. Each record lists a multiplicity, a subgroup $H$ of $G=\mathbb Z_2\times\mathbb Z_{38}$, and representatives $(s,r)$ for the rows of each support value $s$. Develop each listed representative over $r+H$, then assign a fresh label for each translate in $G/H$ and each repetition. The checker builds $Q$ directly from the 17 coordinates. It checks independence of the seeds and verifies the coverage of every individual base cell.
 
-A separate certificate gives each cell at least 1,045,331 labels from a common palette of 18,559,366. It proves
+A separate certificate gives each cell at least 1,112,077 labels from a common palette of 19,739,448. It proves
 $$
-17\le\chi_f(Q)\le\frac{2,651,338}{149,333}<17.755.
+17\le\chi_f(Q)\le\frac{19,739,448}{1,112,077}<17.751.
 $$
-The earlier certified upper bound was $91,352/5,100$. A 234-fold cover with 4,104 labels would suffice for 27 copies with the local construction above. The fractional certificate alone does not establish such an integral cover. [Fractional certificate](crown-fractional.txt) · [Clique lower bound](orbit-lifts.md#two-exact-parameters-of-the-base-conflict-graph)
+The preceding certificate gave an upper bound of $2,651,338/149,333$. A 234-fold cover with 4,104 labels would suffice for 27 copies with the local construction above. The fractional certificate alone does not establish such an integral cover. [Fractional certificate](crown-fractional.txt) · [Clique lower bound](orbit-lifts.md#two-exact-parameters-of-the-base-conflict-graph)
 
 ## Reproduction
 

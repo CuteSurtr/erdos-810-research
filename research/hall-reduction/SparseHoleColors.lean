@@ -58,4 +58,24 @@ theorem path_recovers_triple {E R C K : Type*}
   subst j'
   exact ⟨atRow (hi.trans hi'.symm) ri, rfl, atCol (hk.trans hk'.symm) ck⟩
 
+/-- For aligned copies of a board, the middle block and the local path recover
+the entire triple, under properness at the projected row and column. -/
+theorem aligned_path_recovers_triple {E R C K B : Type*}
+    (row : E → R) (col : E → C) (color : E → K) (block : E → B)
+    (cell : ∀ {x y}, block x = block y → row x = row y → col x = col y → x = y)
+    (atRow : ∀ {x y}, color x = color y → row x = row y → x = y)
+    (atCol : ∀ {x y}, color x = color y → col x = col y → x = y)
+    {i j k i' j' k' : E}
+    (hi : color i = color j) (hk : color k = color j)
+    (hi' : color i' = color j') (hk' : color k' = color j')
+    (hb : block j = block j')
+    (h : (row j, col k, row i, col j) = (row j', col k', row i', col j')) :
+    i = i' ∧ j = j' ∧ k = k' := by
+  rcases Prod.mk.inj h with ⟨rj, h⟩
+  rcases Prod.mk.inj h with ⟨ck, h⟩
+  rcases Prod.mk.inj h with ⟨ri, cj⟩
+  have middle : j = j' := cell hb rj cj
+  subst j'
+  exact ⟨atRow (hi.trans hi'.symm) ri, rfl, atCol (hk.trans hk'.symm) ck⟩
+
 end Erdos810.SparseHoleColors

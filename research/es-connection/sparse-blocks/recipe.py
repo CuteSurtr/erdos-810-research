@@ -15,16 +15,35 @@ def local(item):
         print(len(seed), *(v for edge in seed for v in edge))
 
 
-def outer(copies, base):
-    if copies % 8:
-        raise ValueError("this repeated base coloring uses eight-copy increments")
-    rows = (base / "balanced-orbits.txt").read_text().splitlines()
-    print(int(rows[0]))
-    for line in rows[1:]:
-        n, *fields = map(int, line.split())
-        if len(fields) != 2 * n:
-            raise ValueError("invalid archived translated class")
-        print(copies // 8, 2, n, 0, 38, *fields)
+def outer(copies, base, plan=None):
+    if plan is None:
+        if copies % 8:
+            raise ValueError("a base cover is needed for this copy count")
+        plan = ["64"] * (copies // 8)
+    prefixes = {"50": 25, "57": 28, "64": 31}
+    archive = {"200": base / "crown-25.txt", "217": base / "crown-26.txt",
+               "238": base / "sparse-blocks" / "outer-28.txt"}
+    records = {}
+    for cover in plan:
+        if cover in prefixes:
+            rows = (base / "balanced-orbits.txt").read_text().splitlines()[1:]
+            for line in rows[:prefixes[cover]]:
+                n, *fields = map(int, line.split())
+                if len(fields) != 2 * n:
+                    raise ValueError("invalid translated class")
+                key = (2, n, 0, 38, *fields)
+                records[key] = records.get(key, 0) + 1
+        else:
+            rows = archive[cover].read_text().splitlines()
+            if int(rows[0]) != len(rows) - 1:
+                raise ValueError("invalid subgroup cover")
+            for line in rows[1:]:
+                repetitions, *fields = map(int, line.split())
+                key = tuple(fields)
+                records[key] = records.get(key, 0) + repetitions
+    print(len(records))
+    for fields, repetitions in records.items():
+        print(repetitions, *fields)
 
 
 def main():
@@ -40,7 +59,7 @@ def main():
     elif args.copies == 28:
         print((args.catalog.parent / "outer-28.txt").read_text(), end="")
     else:
-        outer(args.copies, args.base)
+        outer(args.copies, args.base, item.get("base_covers"))
 
 
 if __name__ == "__main__":
