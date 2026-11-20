@@ -2,6 +2,33 @@ import MatrixCertificate
 
 namespace Erdos810.OvernightWitnesses
 
+/-- An explicit 16-vertex graph with 71 edges and rainbow four-cycles. -/
+private def rows16 : Array ℕ := #[
+  502158969675928785911808,
+  81698323670832489955328,
+  7097760097664862519296,
+  2877944854734829518848,
+  189230175446485209972736,
+  127504472640629600419840,
+  264452965624916637384704,
+  613039493233028154523648,
+  4725074272145601724416,
+  18188491908477431578624,
+  415576537115843140517888,
+  189079126755522904064,
+  590295810358705651712,
+  3541774862152233910272,
+  528905046081400263933952,
+  0]
+
+set_option maxRecDepth 20000 in
+set_option maxHeartbeats 0 in
+theorem lower_16 : 71 ≤ maxRainbowC4Edges 16 := by
+  apply MatrixCertificate.lower_bound_fast rows16 5
+  · decide +kernel
+  · intro a
+    fin_cases a <;> decide +kernel
+
 /-- An explicit 19-vertex graph with 97 edges and rainbow four-cycles. -/
 private def rows19 : Array ℕ := #[
   8666187748185629099369172992,
