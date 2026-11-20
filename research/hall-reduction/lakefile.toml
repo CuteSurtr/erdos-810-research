@@ -428,3 +428,6 @@ name = "RectangularBlock"
 
 [[lean_lib]]
 name = "OvernightWitnesses"
+
+[[lean_lib]]
+name = "MultipartiteSquares"
