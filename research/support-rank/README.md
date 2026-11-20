@@ -32,3 +32,5 @@ For example, $m\ge\delta n^2$ and $q\le Cn$ imply $r\ge 2\delta\sqrt{n/(3C)}$ ov
 If a positive-density graph has rank $r=o(\sqrt n)$ and a linear palette, every coloring produces at least $\Omega(n^3/r^2)$ four-cycles with a repeated color. The argument allows equal colors at a vertex. At constant rank the cubic order is sharp. [Defect counts and extremal examples](defects.md)
 
 The support obstruction also tolerates edits. In a rainbow graph an approximating rank-$r$ matrix that covers $\delta n^2$ ordered edges must fill at least $\Omega(n^2/r^2)$ nonedges whenever $r=o(\sqrt n)$ and the palette is linear. There is a weighted version over the complex numbers. [Approximate support bounds](edits.md)
+
+If a real matrix represents adjacency by strict positive and negative signs, sign rank two allows $n\log n+O(n)$ edges with $n$ colors. Eight vertex deletions suffice to reach a bipartite chain graph. At sign ranks three and four the sharp order is $n^{3/2}$. [Sign-rank hierarchy](sign-rank.md)

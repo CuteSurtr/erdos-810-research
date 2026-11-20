@@ -13,6 +13,8 @@ Exhausting all finite abelian quotients of these coordinates gives a smaller shi
 
 Using the points and their consecutive connecting lines gives a second construction on the same coordinates. With 17 copies of each point and line there are 578 vertices, 9,826 edges and 1,965,200 rainbow four-cycles. For all incidence constructions on general-position points, with arbitrary multiplicities and a budget of $n$ colors, the maximum is $n^{3/2}/\sqrt2+O(n)$. [Sharp incidence bound and ES example](../neighborhood-packing/incidence.md)
 
+The order type also supplies a side-of-line predicate through each signed determinant. When graph adjacency is exactly such a halfplane test, the sharp edge order with $n$ colors is $n^{3/2}$. It follows from the palette bound and a point–halfspace incidence theorem. [Side-of-line tests and sign rank](../support-rank/sign-rank.md)
+
 ## A sharp ten-point obstruction
 
 **Theorem (computer-assisted).** Suppose a finite planar set in general

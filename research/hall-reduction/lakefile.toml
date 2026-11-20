@@ -413,3 +413,6 @@ name = "FoolingSetDefects"
 
 [[lean_lib]]
 name = "ReciprocalRank"
+
+[[lean_lib]]
+name = "SignRankCharts"
