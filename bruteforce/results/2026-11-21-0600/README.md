@@ -18,3 +18,43 @@ python3 check_palette.py palette-witnesses.json
 PRUNE_K=14 "$SCRATCH/rainbow-a" -u 13 28:28
 PRUNE_K=14 "$SCRATCH/rainbow-b" -u 13 28:28
 ```
+
+## Exact maximum on 14 vertices
+
+**$M(14)=55$.** The 55-edge witness has 308 four-cycles. The complement search excluded every 56-edge graph using 14 colors. It completed all 256 shards with 35 missing pairs, allowing every degree and connectedness pattern. Edge deletion then excludes all higher edge counts. [All shard counts](data/14-56-k14-cover.tsv) · [Lean lower-bound theorem](../../../research/hall-reduction/SmallGraphCertificates.lean#L50) · [Explicit coloring, key 14](../LB/certs.json) · [Search algorithm](native/README.md)
+
+```sh
+sh native/build.sh "$NAUTY" "$SCRATCH"
+PRUNE_K=14 "$SCRATCH/rainbow-cover" -u 14 35:35
+```
+
+## The 11,461 extremal graphs on 13 vertices
+
+Checker A and the C++ cover solver independently found **11,461** nonisomorphic 47-edge graphs with 13 colors. Their complement graph6 records agree byte for byte in all 64 shards. Traces canonicalization found 11,461 distinct isomorphism classes. A third C program produced a coloring for every graph and verified every four-cycle. The archive contains the original graphs, one per line. Its SHA-256 is `965474347e8cc9efdd316d2b21e273823eb3ba1a488a17a9c8d33811dd32be69`. [Complete catalog](data/optimal-13.g6) · [Checker A counts](data/13-47-k13-A.tsv) · [C++ counts](data/13-47-k13-cover.tsv) · [Third checker](../V12/V2/src/checker.c)
+
+| Colorings admitted by an optimal graph | Graphs |
+| --- | ---: |
+| Every valid coloring is proper | 10,809 |
+| Both proper and improper colorings exist | 340 |
+| Every valid coloring is improper | 312 |
+
+Here a proper coloring gives distinct labels to all edges incident with the same vertex. For a proper-coloring test we add every such conflict. An improper coloring must equate a pair of incident edges whose outer endpoints have exactly one common neighbor. Contracting the corresponding two nonadjacent vertices of the conflict graph enforces that equality. The independent SAT audit lists four-cycles directly, validates every positive witness, and checks 6,000 negative queries. For 6,307 graphs every incident pair already lies on a four-cycle. [Classification program](native/classify_proper.cpp) · [Independent CaDiCaL audit](native/audit_proper_sat.cpp) · [Per-graph decisions and colorings](data/colorings-13.txt.gz)
+
+Of the 312 supports that require an improper coloring, 307 admit a coloring with exactly one equal-colored incident pair. The other five require exactly two. For each of those five there are only two geometrically possible pairs, with disjoint edge sets. Ten additional UNSAT queries show that both equalities are forced. Consequently every valid coloring of each of these five graphs loses at least two edges when made proper by deletion with its colors fixed. [Colorings](data/colorings-13.txt.gz) · [SAT verification](native/audit_proper_sat.cpp)
+
+One small certificate explains a forced repeat without a coloring search. Among 14 specified edges, 90 of the 91 pairs occur together on some four-cycle. With 13 colors the only remaining pair must receive the same label. The two edges in that pair meet at a vertex. [Certificate](data/forced-repeat.json) · [Short verifier](check_forced_repeat.py)
+
+Two distinct optimal graphs are adjacent in the edge-exchange calculation if deleting one edge from each gives isomorphic graphs. The resulting graph of optimal supports has 903 components. Its largest contains 10,390 supports, while 782 are isolated. Allowing replacement of an entire vertex neighborhood gives 375 components, with 11,046 supports in the largest. Four-cycle counts among the optima range from 210 through 235. The calculation canonicalizes every deletion with nauty's Traces implementation. [Counts and distributions](data/geometry-13.json) · [Reproduction script, Python 3.10+](support_geometry.py)
+
+```sh
+PRUNE_K=13 "$SCRATCH/rainbow-cover" -u 13 31:31
+cc -O3 ../V12/V2/src/checker.c -o "$SCRATCH/check-independent"
+"$SCRATCH/check-independent" 13 < data/optimal-13.g6 > /dev/null
+"$SCRATCH/classify-proper" 13 --witnesses < data/optimal-13.g6 > "$SCRATCH/proper.txt"
+"$SCRATCH/audit-proper-sat" 13 < "$SCRATCH/proper.txt"
+python3 check_forced_repeat.py
+make -C "$NAUTY" labelg
+python3 support_geometry.py data/optimal-13.g6 "$NAUTY/labelg"
+```
+
+At the two fixed-palette optima above, there are **six** supports with 13 vertices, 14 colors and 49 edges, and **three** with 14 vertices, 13 colors and 54 edges. For the latter, every vertex has degree at least seven since deleting it leaves at most 47 edges. This justifies the complement degree cap of six used for that census. [Six supports](data/order13-k14-e49.g6) · [Their search counts](data/13-49-k14-cover.tsv) · [Three supports](data/order14-k13-e54.g6) · [Their search counts](data/14-54-k13-cover.tsv)

@@ -4,6 +4,8 @@ Extremal bounds, finite constructions, and affine models for graphs in which eve
 
 On 13 vertices the exact maximum is **47 edges**. Two exhaustive searches excluded 48 edges. With 12 colors on the same vertices, the maximum is 46. Larger constructions now reach 31,696 edges on 512 vertices. [Proof, search counts and graph certificates](bruteforce/results/2026-11-21/README.md)
 
+On 14 vertices the exact maximum is **55 edges**. There are **11,461** optimal graphs on 13 vertices, of which **312** require an improper coloring. [Complete census, proof and certificates](bruteforce/results/2026-11-21-0600/README.md)
+
 With 14 colors on 13 vertices, the maximum rises to **49 edges**. With 13 colors on 14 vertices, it is **54 edges**. [Fixed-palette bounds and witnesses](bruteforce/results/2026-11-21-0600/README.md)
 
 Lean verifies $M(n)\le(1/4+o(1))n^2$ for the unrestricted graph problem and $g(n;7,4)\le(1/18+o(1))n^2$ for unrestricted triple systems. The latter coefficient is 25% below Gishboliner and Solymosi's $2/27$ for linear systems. Whether either problem admits positive quadratic density remains open. Both proofs are local research results. External review and historical priority are pending. [Graph theorem in Lean](research/hall-reduction/QuarterDensity.lean) · [Triple theorem in Lean](research/hall-reduction/HalfBoundedModel.lean) · [Gishboliner and Solymosi](https://arxiv.org/html/2606.25931v1)
