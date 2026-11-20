@@ -20,6 +20,8 @@ For every sufficiently large $n$, there is a connected graph whose best initial 
 
 For a given proper coloring and missing edge, the worst cost of inserting the edge while preserving old labels and staying within the $n$-color palette is $(2/3+o(1))n$. Near equality forces each hub to have degree about $2n/3$ and their common neighborhood to have size about $n/3$. [Sharp reinsertion theorem and algorithm](research/properification-lower/reinsertion-sharp.md)
 
+For every fixed $r\ge2$, there are also graphs requiring exactly $r$ deletions with recoloring but $(2r/(2r+1)-o(1))n$ with labels fixed. One graph on 728 vertices requires two deletions with recoloring and 500 with inherited labels. [Affine-line construction and verification](research/properification-lower/matching-hubs.md)
+
 An earlier shared-edge construction gives a connected graph at every sufficiently large order for which keeping the assigned colors forces at least $n/2-O(n^{3/4})$ edge deletions under every admissible initial coloring. A single shared-edge deletion allows a proper recoloring. The sharp cost in this family reaches exactly $n/2$ at infinitely many orders, including six deletions on 12 vertices and 231 on 462 vertices. [All-orders proof](research/properification-lower/shared-edge.md) · [Sharp bound and reproducer](research/properification-lower/bouquet.md)
 
 A nine-vertex example exceeds the half-order inherited deletion cost. Every admissible coloring of its 20 edges needs five deletions to become proper with labels fixed. Deleting a single edge permits a proper nine-color recoloring. [Elementary proof and all 64 color partitions](research/properification-lower/nine-vertex.md)
