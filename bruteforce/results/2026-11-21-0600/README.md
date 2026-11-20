@@ -36,6 +36,18 @@ On 14 vertices with 13 colors, deleting any vertex leaves at most $F(13,13)=47$ 
 
 The independent Python check enumerates the three possible cycles on every four-vertex set. It verifies the endpoint range, color budget, edge uniqueness, every color constraint and the reported cycle count. [Checker](check_palette.py)
 
+## Exact maximum on 15 vertices
+
+**$M(15)=63$.** The lower witness uses 15 colors and has 417 rainbow four-cycles. For the upper bound, a 64-edge graph on 15 vertices has 41 missing pairs. All 1,024 complement classes were exhausted with the full degree range, allowing disconnected graphs and incident edges of equal color. The C++ solver found zero admissible supports in 253,953,834 pruning calls, of which 197,476,906 rejected a partial graph. Each shard has a successful completion record and an empty output file. Any graph with more edges would give a 64-edge example by edge deletion. The lower bound is checked by Lean. The upper bound is a computational enumeration using nauty and the exact coloring solver. [All shard counts](data/15-64-k15-cover.tsv) · [Lower witness, key 15](../LB/certs.json) · [Lean lower-bound theorem](../../../research/hall-reduction/SmallGraphCertificates.lean) · [Solver and completeness argument](native/README.md)
+
+```sh
+sh native/build.sh "$NAUTY" "$SCRATCH"
+for residue in $(seq 0 1023)
+do
+    PRUNE_K=15 "$SCRATCH/rainbow-cover" 15 41:41 "$residue/1024"
+done
+```
+
 ## Bounds on 15 and 16 vertices
 
 With 16 colors on 15 vertices the maximum is 64 or 65. An explicit graph with 64 edges has 458 rainbow four-cycles. For the upper bound, each edge survives 13 of the 15 vertex deletions, so $13m\le15F(14,16)=855$. A separate search excludes 66 edges using only the weaker bound $F(14,16)\le58$. That weaker bound forces minimum degree eight and complement maximum degree six at 66 edges. All 512 shards under this cap were empty. In turn, $14M(16)\le16\cdot65$, yielding $M(16)\le74$. The 16-vertex lower bound is now **71 edges**, giving $71\le M(16)\le74$. The new support has 546 four-cycles and uses 16 colors. Its construction adds a degree-eight vertex to a 63-edge parent. [Coloring](palette-witnesses.json) · [14-vertex search at 59 edges](data/14-59-k16-cover.tsv) · [15-vertex search at 66 edges](data/15-66-k16-D6-cover.tsv) · [71-edge coloring](diagonal-witnesses.json) · [16-vertex Lean certificate](../../../research/hall-reduction/OvernightWitnesses.lean)

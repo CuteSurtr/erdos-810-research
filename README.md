@@ -6,6 +6,8 @@ On 13 vertices the exact maximum is **47 edges**. Two exhaustive searches exclud
 
 On 5,120 vertices an explicit graph has **1,682,268 edges**. Every one of its 23,916,646,744 four-cycles has four different colors. The construction includes a witness at every order from 512 to 5,120. [Download and verify the graphs](bruteforce/results/2026-11-21-0600/large/README.md)
 
+On 15 vertices the exact maximum is **63 edges**. All 1,024 shards of the 64-edge search returned zero graphs. The lower witness has 417 rainbow four-cycles. On 16 vertices, a Lean-checked 71-edge graph gives $71\le M(16)\le74$. [Fifteen-vertex computation and nearby bounds](bruteforce/results/2026-11-21-0600/README.md#exact-maximum-on-15-vertices)
+
 On 14 vertices the exact maximum is **55 edges**. All 52 optimal graphs admit only proper colorings. The 11,461 optimal graphs on 13 vertices give 173,139 coloring classes, and 312 of the graphs require an improper coloring. [Complete census, proof and certificates](bruteforce/results/2026-11-21-0600/README.md)
 
 On 13 vertices, palettes of 14 through 18 colors give exact maxima of **49, 50, 51, 52 and 54 edges**. On 14 vertices the maxima with 13, 14, 15 and 16 colors are **54, 55, 56 and 57 edges**, respectively. [Fixed-palette bounds and witnesses](bruteforce/results/2026-11-21-0600/README.md)
