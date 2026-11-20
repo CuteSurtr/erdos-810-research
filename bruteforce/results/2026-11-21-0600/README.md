@@ -26,7 +26,7 @@ do
 done
 ```
 
-On 13 vertices, two C checkers each ran a full, unsharded complement enumeration at 50 edges with 14 colors. Both found zero supports. There are 78 pairs, so the generator searches graphs of 28 missing pairs. A graph with more than 50 edges would yield a valid 50-edge graph by deleting edges. The 49-edge witness uses all 14 colors. [Witnesses](palette-witnesses.json) · [Complement generation and checker builds](../2026-11-21/README.md#the-upper-bound)
+On 13 vertices with 14 colors, the two C checkers and the C++ checker each found six supports at 49 edges and zero at 50 edges in full, unsharded runs. All three use the same nauty generator. There are 78 pairs, so the generator searches graphs of 28 missing pairs. A graph with more than 50 edges would yield a valid 50-edge graph by deleting edges. The 49-edge witness uses all 14 colors. [All six runs](data/13-k14-three-checkers.tsv) · [Witnesses](palette-witnesses.json) · [Complement generation and checker builds](../2026-11-21/README.md#the-upper-bound)
 
 On 14 vertices with 15 colors, the 56-edge witness attains the maximum. All 256 unrestricted shards with 57 edges and 15 colors returned zero graphs. [All shard counts](data/14-57-k15-cover.tsv) · [Witness](palette-witnesses.json)
 
@@ -41,6 +41,12 @@ The independent Python check enumerates the three possible cycles on every four-
 With 16 colors on 15 vertices the maximum is 64 or 65. An explicit graph with 64 edges has 458 rainbow four-cycles. For the upper bound, each edge survives 13 of the 15 vertex deletions, so $13m\le15F(14,16)=855$. A separate search excludes 66 edges using only the weaker bound $F(14,16)\le58$. That weaker bound forces minimum degree eight and complement maximum degree six at 66 edges. All 512 shards under this cap were empty. In turn, $14M(16)\le16\cdot65$, yielding $M(16)\le74$. The known 16-vertex lower bound is 70. [Coloring](palette-witnesses.json) · [14-vertex search at 59 edges](data/14-59-k16-cover.tsv) · [15-vertex search at 66 edges](data/15-66-k16-D6-cover.tsv) · [16-vertex lower-bound certificate](../../../research/hall-reduction/SmallGraphCertificates.lean)
 
 With 14 colors on 15 vertices the maximum is 61 or 62. The lower witness has 356 four-cycles. A 63-edge graph would have minimum degree at least eight because $F(14,14)=55$. The complement search at maximum degree six returned zero across all 512 shards. [Coloring](palette-witnesses.json) · [All shard counts](data/15-63-k14-D6-cover.tsv)
+
+There is a second proof of the 63-edge exclusion with 14 colors. A minimum-degree vertex would have degree eight, so deleting it would leave a 55-edge parent. One of the 52 parents has degree six and cannot recover minimum degree eight with one added neighbor. The other 51 give 27,384 labeled neighborhoods when every degree-seven vertex is included. The independent C checker excluded 27,370 candidates by conflict cliques and 14 by exact coloring. The parent file and both commands are below. [Parents](data/optimal-14.g6) · [C checker](../V12/V2/src/checker.c)
+
+```sh
+"$SCRATCH/extend-catalog" 15 63 14 8 all < data/optimal-14.g6 | "$SCRATCH/check-independent" 14
+```
 
 A 62-edge witness, if one exists, must have **minimum degree eight**. A degree-seven vertex would leave one of the 52 optimal 14-vertex supports at 55 edges. Together those parents admit 2,109 color partitions when their vertex labels are fixed. Exhausting these partitions and all 176,748 candidate neighborhoods gives zero extensions. An independent C program checked the 176,748 underlying candidate graphs directly. It rejected 173,873 by conflict cliques and the remaining 2,875 by exact coloring. [Parent catalog](data/optimal-14.g6) · [Colored extension algorithm](native/extend_colored.cpp) · [Independent checker](../V12/V2/src/checker.c)
 

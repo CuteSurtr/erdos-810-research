@@ -1,0 +1,7 @@
+vertices	palette	edges	missing_pairs	solver	survivors	cpu_seconds
+13	14	50	28	a	0	2.89
+13	14	49	29	a	6	206.60
+13	14	50	28	b	0	15.10
+13	14	49	29	b	6	2786.85
+13	14	50	28	cover	0	0.49
+13	14	49	29	cover	6	23.39
