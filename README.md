@@ -1,7 +1,10 @@
-# Affine rainbow-four-cycle colorings
+# Rainbow four-cycles and Erdős problem 810
 
-Research notes on restricted cases of Erdős problem #810 and an
-oscillatory affine-operator estimate over prime fields.
+Extremal bounds, finite constructions, and affine models for graphs in which every four-cycle uses four different colors.
+
+Lean verifies $M(n)\le(1/4+o(1))n^2$ for the unrestricted graph problem and $g(n;7,4)\le(1/18+o(1))n^2$ for unrestricted triple systems. The latter coefficient is 25% below Gishboliner and Solymosi's $2/27$ for linear systems. Whether either problem admits positive quadratic density remains open. Both proofs are local research results. External review and historical priority are pending. [Graph theorem in Lean](research/hall-reduction/QuarterDensity.lean) · [Triple theorem in Lean](research/hall-reduction/HalfBoundedModel.lean) · [Gishboliner and Solymosi](https://arxiv.org/html/2606.25931v1)
+
+The argument approximates the adjacency matrix by one whose entries lie between zero and one half. For a triple system, its shadow graph also has a local upper bound on triangles. Together the two counts give $1/18$. A sequence attaining this last coefficient would have a shadow approaching three equally large groups, with limiting edge probability one half between groups and zero inside. [Short graph proof](research/graph-limits/quarter-short.md) · [Finite proof and verification](research/graph-limits/finite-model.md) · [Triple-system proof and equality](research/shadow-density/eighteenth.md) · [Finite graph constructions](bruteforce/results/2026-11-20/README.md)
 
 ## Setting
 
@@ -12,6 +15,14 @@ and every four-cycle is rainbow. Write $`D_a`$ for the actual row domain
 of color $`a`$, and $`m=\sum_a|D_a|`$.
 
 ## Main results
+
+### Eigenvalues and graph limits
+
+The finite spectral estimate describes a separate obstruction to high edge counts. An edge count above $(1/4+\delta)n^2$ forces a least adjacency eigenvalue below $-c_\delta n$ for all sufficiently large $n$. A positive-density sequence also has positive edge variance in every graphon limit. [Spectral theorem and graph-limit obstructions](research/graph-limits/README.md)
+
+### Neighborhoods in arbitrary graphs
+
+For an $n$-vertex graph satisfying #810, any fixed positive edge density requires neighborhood VC dimension at least a constant times $\log n$. If the uncolored neighborhoods have VC dimension at most a fixed $d\ge 1$, the graph has $O_d(n^{2-1/(2d+1)})$ edges. [Finite packing bound and proof](research/neighborhood-packing/README.md)
 
 ### Bounded-VC supports
 
@@ -94,7 +105,7 @@ sums. Published inputs and their precise roles are cited in the notes.
 
 ## Status
 
-These are analytic research proofs, not Lean-certified results.
+The affine results above have written analytic proofs. The linked Lean files give the formal status of the unrestricted results.
 Historical novelty has not been established, and external review is
 pending. No solution of unrestricted Erdős #810, universal $`o(N^2)`$
 bound, or new record is claimed.
@@ -102,3 +113,10 @@ bound, or new record is claimed.
 The remaining obstacle is controlling arbitrary actual support sets.
 A bound for each nonzero Fourier slice does not by itself justify
 summing all slices without additional control of their coefficients.
+
+## Formalized hypergraph lower bound
+
+For every $n\geq 7$, Lean verifies that a triple system in which seven vertices
+contain at most three triples yields a rainbow-four-cycle graph on the same $n$
+vertices, with one edge per triple and at most $n$ colors. This gives
+$g(n;7,4)\leq M(n)$. [Proof, sources, and build instructions](research/hall-reduction/README.md)

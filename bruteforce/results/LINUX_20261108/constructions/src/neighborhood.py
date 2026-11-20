@@ -59,6 +59,8 @@ def main():
             n=int(key)
             if len(E)>=len(best.get(n,[])):best[n]=E
     records=ROOT/'best';records.mkdir(exist_ok=True)
+    # Optional additional verified certificate directories, one file per vertex count.
+    supplemental = [pathlib.Path(p) for p in os.environ.get('ERDOS_EXTRA_CERTIFICATES', '').split(os.pathsep) if p]
     rng=random.Random(202611080028+args.worker); roundno=1; exhausted=set()
     cache=folder/'unsat-neighborhoods.json'
     if cache.exists():exhausted=set(json.loads(cache.read_text()))
@@ -69,7 +71,8 @@ def main():
         for n in sizes:
             if time.time()>=args.deadline or ((ROOT/'STOP').exists() or (ROOT.parent/'STOP').exists()):break
             for size in (n-1,n):
-                for p in (records/f'{size}.json', ROOT.parent/'recolor'/'best'/f'{size}.json'):
+                for directory in [records, ROOT.parent/'recolor'/'best', *supplemental]:
+                    p = directory / f'{size}.json'
                     if p.exists():
                         E=json.loads(p.read_text())[str(size)]
                         if len(E)>len(best.get(size,[])):best[size]=E

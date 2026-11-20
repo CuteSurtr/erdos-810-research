@@ -1,0 +1,388 @@
+name = "erdos810_hall"
+defaultTargets = ["HallReduction", "DiamondRecoloring", "DiamondHub", "ShadowReduction", "ShadowCount", "DiamondDecomposition", "GraphGluing", "IsolatedBlocks", "BlockGadget", "TripleTransfer", "VertexDeletion", "DiamondDegree", "NearQuadratic", "Properification", "SmallTripleNumbers", "EndpointBound", "MatrixCertificate", "Certificate28", "Certificate34", "Certificate106", "Certificate128", "BlockTransfer", "RectangleBound", "GoldenRatio", "MatchingRectangle", "PositivePolynomial", "ProfileFormula", "RectangleProfile", "RectangleSample", "ProfileSigns", "RectangleLimit", "ProfileIteration", "ProfileInterpretation", "ProfileTerminal", "ProfileGlobal", "ProfilePartition", "CertifiedDensity", "WeightedSphere", "LayerBoard", "LayerDeletion", "WeightedDensity", "ProperificationLower", "SmallGraphCertificates", "StarGraph", "WeightedStars", "StarRestriction", "RestrictionMap", "StarTradeoff", "LiftRectangles", "IntegerChart", "LiftAlternation", "ConflictPacking", "AffinePlanePacking", "OptimizedSphere", "SphereBounds", "TripleCertificate", "DiamondPacking", "CensusLower", "FullCutContraction", "ShapeSigns", "ShapeAlgebra", "ShapeCurvature", "ShapeEndpoint", "ShapeFixedPoint", "ShapeDensity", "CertifiedProfiles", "FixedPointSigns", "ShapeTerminalSigns", "IntegerTerminal", "ShapeWeight", "IteratedFormula", "IteratedSigns7", "IteratedSigns8", "ImbalanceGain", "IteratedProfiles", "IteratedTerminal", "IteratedDensity", "TripleIncidence", "IntegerBox", "DirectionalRectangle", "DirectionalDensity", "ShadowGap", "ShadowFlags", "ShadowMoments", "ShadowLocal", "ShadowRoot", "ShadowArms", "ThinRectangle", "ShadowBlocks", "ShadowScatter", "ShadowThreshold", "ShadowUpper", "ShadowCuts", "ShadowDensity", "LinearCleanup", "SevenFourDensity", "ProportionalRectangle", "WidthContraction", "ContractionDensity", "ShadowWidth", "ShadowWidthDensity", "SupportSpectrum", "CutRayleigh", "SpectralDeletion", "RectangleObstructions", "AspectRectangle", "AspectDensity", "DyadicWidth", "MaskBoard", "ShadowTriangleCap", "WeightedMatchingCut", "KernelCutTransfer", "KernelShadowModel", "PartitionGain", "RowAveraging", "RowWeakRegularity", "RowBoard", "RowClasses", "RowGainProof", "QuarterDensity", "HalfBoundedModel", "LinearPalette", "ShadowDiscrepancy"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "v4.24.0"
+
+[[lean_lib]]
+name = "BruteForce"
+srcDir = "../local-progress"
+
+[[lean_lib]]
+name = "HallReduction"
+
+[[lean_lib]]
+name = "DiamondRecoloring"
+
+[[lean_lib]]
+name = "DiamondHub"
+
+[[lean_lib]]
+name = "HubGraph"
+
+[[lean_lib]]
+name = "ShadowReduction"
+
+[[lean_lib]]
+name = "ShadowCount"
+
+[[lean_lib]]
+name = "DiamondDecomposition"
+
+[[lean_lib]]
+name = "GraphGluing"
+
+[[lean_lib]]
+name = "IsolatedBlocks"
+
+[[lean_lib]]
+name = "BlockGadget"
+
+[[lean_lib]]
+name = "TripleTransfer"
+
+[[lean_lib]]
+name = "VertexDeletion"
+
+[[lean_lib]]
+name = "DiamondDegree"
+
+[[lean_lib]]
+name = "NearQuadratic"
+
+[[lean_lib]]
+name = "Properification"
+
+[[lean_lib]]
+name = "SmallTripleNumbers"
+
+[[lean_lib]]
+name = "EndpointBound"
+
+[[lean_lib]]
+name = "MatrixCertificate"
+
+[[lean_lib]]
+name = "Certificate28"
+
+[[lean_lib]]
+name = "Certificate34"
+
+[[lean_lib]]
+name = "Certificate106"
+
+[[lean_lib]]
+name = "Certificate128"
+
+[[lean_lib]]
+name = "BlockTransfer"
+
+[[lean_lib]]
+name = "RectangleBound"
+
+[[lean_lib]]
+name = "GoldenRatio"
+
+[[lean_lib]]
+name = "MatchingRectangle"
+
+[[lean_lib]]
+name = "PositivePolynomial"
+
+[[lean_lib]]
+name = "ProfileFormula"
+
+[[lean_lib]]
+name = "RectangleProfile"
+
+[[lean_lib]]
+name = "RectangleSample"
+
+[[lean_lib]]
+name = "ProfileSigns"
+
+[[lean_lib]]
+name = "RectangleLimit"
+
+[[lean_lib]]
+name = "ProfileIteration"
+
+[[lean_lib]]
+name = "ProfileInterpretation"
+
+[[lean_lib]]
+name = "ProfileTerminal"
+
+[[lean_lib]]
+name = "ProfileGlobal"
+
+[[lean_lib]]
+name = "ProfilePartition"
+
+
+[[lean_lib]]
+name = "CertifiedDensity"
+
+[[lean_lib]]
+name = "WeightedSphere"
+
+[[lean_lib]]
+name = "LayerBoard"
+
+[[lean_lib]]
+name = "LayerDeletion"
+
+[[lean_lib]]
+name = "WeightedDensity"
+
+[[lean_lib]]
+name = "ProperificationLower"
+
+[[lean_lib]]
+name = "SmallGraphCertificates"
+
+[[lean_lib]]
+name = "StarGraph"
+
+[[lean_lib]]
+name = "WeightedStars"
+
+[[lean_lib]]
+name = "StarRestriction"
+
+[[lean_lib]]
+name = "RestrictionMap"
+
+[[lean_lib]]
+name = "StarTradeoff"
+
+[[lean_lib]]
+name = "LiftRectangles"
+
+[[lean_lib]]
+name = "IntegerChart"
+
+
+[[lean_lib]]
+name = "LiftAlternation"
+
+[[lean_lib]]
+name = "ConflictPacking"
+
+[[lean_lib]]
+name = "AffinePlanePacking"
+
+[[lean_lib]]
+name = "OptimizedSphere"
+
+[[lean_lib]]
+name = "SphereBounds"
+
+[[lean_lib]]
+name = "TripleCertificate"
+
+[[lean_lib]]
+name = "DiamondPacking"
+
+[[lean_lib]]
+name = "CensusLower"
+
+
+[[lean_lib]]
+name = "FullCutContraction"
+
+[[lean_lib]]
+name = "ShapeSigns"
+
+
+[[lean_lib]]
+name = "ShapeAlgebra"
+
+[[lean_lib]]
+name = "ShapeCurvature"
+
+[[lean_lib]]
+name = "ShapeEndpoint"
+
+[[lean_lib]]
+name = "ShapeFixedPoint"
+
+[[lean_lib]]
+name = "ShapeDensity"
+
+
+[[lean_lib]]
+name = "CertifiedProfiles"
+
+[[lean_lib]]
+name = "FixedPointSigns"
+
+[[lean_lib]]
+name = "ShapeTerminalSigns"
+
+[[lean_lib]]
+name = "IntegerTerminal"
+
+[[lean_lib]]
+name = "ShapeWeight"
+
+[[lean_lib]]
+name = "IteratedFormula"
+
+[[lean_lib]]
+name = "IteratedSigns7"
+
+[[lean_lib]]
+name = "IteratedSigns8"
+
+[[lean_lib]]
+name = "ImbalanceGain"
+
+[[lean_lib]]
+name = "IteratedProfiles"
+
+[[lean_lib]]
+name = "IteratedTerminal"
+
+[[lean_lib]]
+name = "IteratedDensity"
+
+[[lean_lib]]
+name = "TripleIncidence"
+
+[[lean_lib]]
+name = "IntegerBox"
+
+[[lean_lib]]
+name = "DirectionalRectangle"
+
+[[lean_lib]]
+name = "DirectionalDensity"
+
+[[lean_lib]]
+name = "ShadowGap"
+
+[[lean_lib]]
+name = "ShadowFlags"
+
+[[lean_lib]]
+name = "ShadowMoments"
+
+[[lean_lib]]
+name = "ShadowLocal"
+
+[[lean_lib]]
+name = "ShadowRoot"
+
+[[lean_lib]]
+name = "ShadowArms"
+
+[[lean_lib]]
+name = "ThinRectangle"
+
+[[lean_lib]]
+name = "ShadowBlocks"
+
+[[lean_lib]]
+name = "ShadowScatter"
+
+[[lean_lib]]
+name = "ShadowThreshold"
+
+[[lean_lib]]
+name = "ShadowUpper"
+
+[[lean_lib]]
+name = "ShadowCuts"
+
+[[lean_lib]]
+name = "ShadowDensity"
+
+[[lean_lib]]
+name = "LinearCleanup"
+
+[[lean_lib]]
+name = "SevenFourDensity"
+
+[[lean_lib]]
+name = "ProportionalRectangle"
+
+[[lean_lib]]
+name = "WidthContraction"
+
+[[lean_lib]]
+name = "ContractionDensity"
+
+[[lean_lib]]
+name = "ShadowWidth"
+
+[[lean_lib]]
+name = "ShadowWidthDensity"
+
+[[lean_lib]]
+name = "SupportSpectrum"
+
+[[lean_lib]]
+name = "CutRayleigh"
+
+[[lean_lib]]
+name = "SpectralDeletion"
+
+[[lean_lib]]
+name = "RectangleObstructions"
+
+[[lean_lib]]
+name = "AspectRectangle"
+
+[[lean_lib]]
+name = "AspectDensity"
+
+[[lean_lib]]
+name = "DyadicWidth"
+
+[[lean_lib]]
+name = "MaskBoard"
+
+[[lean_lib]]
+name = "ShadowTriangleCap"
+
+[[lean_lib]]
+name = "WeightedMatchingCut"
+
+[[lean_lib]]
+name = "KernelCutTransfer"
+
+[[lean_lib]]
+name = "KernelShadowModel"
+
+[[lean_lib]]
+name = "PartitionGain"
+
+[[lean_lib]]
+name = "RowAveraging"
+
+[[lean_lib]]
+name = "RowWeakRegularity"
+
+[[lean_lib]]
+name = "RowBoard"
+
+[[lean_lib]]
+name = "RowClasses"
+
+[[lean_lib]]
+name = "RowGainProof"
+
+[[lean_lib]]
+name = "QuarterDensity"
+
+[[lean_lib]]
+name = "HalfBoundedModel"
+
+[[lean_lib]]
+name = "LinearPalette"
+
+[[lean_lib]]
+name = "ShadowDiscrepancy"
