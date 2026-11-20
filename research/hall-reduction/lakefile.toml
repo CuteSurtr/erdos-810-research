@@ -437,3 +437,6 @@ name = "EdgeInsertion"
 
 [[lean_lib]]
 name = "CrossedRectangles"
+
+[[lean_lib]]
+name = "ActiveSpokes"

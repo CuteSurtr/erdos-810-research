@@ -1,0 +1,7 @@
+n	colored_inputs	algorithm_above_optimum	largest_optimum	largest_algorithm_cost	optimum_0	optimum_1	optimum_2	optimum_3	algorithm_0	algorithm_1	algorithm_2	algorithm_3
+2	1	0	0	0	1	0	0	0	1	0	0	0
+3	4	0	0	0	4	0	0	0	4	0	0	0
+4	43	0	1	1	32	11	0	0	32	11	0	0
+5	1558	0	2	2	985	549	24	0	985	549	24	0
+6	224765	0	2	2	121813	93148	9804	0	121813	93148	9804	0
+7	135833154	19320	3	3	64572114	60199860	10786380	274800	64572114	60199860	10767060	294120
