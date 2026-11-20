@@ -53,3 +53,5 @@ $$
 For each fixed $B$, divide by $a^2$ and differentiate along intervals $A$ shrinking to a row $x$. Take first a countable dense family of finite unions of rational intervals $B$, then approximate arbitrary measurable $B$ in measure. For almost every $x$ this gives $(t-b)(\int_B W(x,y)\,dy)^2\le C\int_B(t-W(x,y))_+\,dy$ for every $B$. Taking $B=\{y:W(x,y)\ge t\}$ forces this set to have measure zero. Let rational $t$ decrease to $b$ and integrate $W\le b$. A sequence of subgraphs violating the stated uniform conclusion would have a cut-convergent subsequence contradicting the bound.
 
 This is a written proof. The independent Bernoulli-edge calculation uses the random host beyond its ordinary cut limit. The [whole-host threshold](README.md) answers the separate question of when the sampled graph itself uses at most $n$ colors.
+
+The same bound holds with $o(n^3)$ non-rainbow cycles in an arbitrary coloring. For a fixed inhomogeneous random graphon host $W$, the resulting upper coefficient is $\frac12\int(W-W^2/2)$. [Robust and inhomogeneous host proof](graphon-hosts.md)

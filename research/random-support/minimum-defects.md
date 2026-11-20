@@ -64,3 +64,16 @@ To see this fix distinct opposite images \(x,z\) and let \(y\) be the next rando
 ## Finite checks
 
 The C++ audit exhausts all **1,048,576** pairs of five-vertex candidate graphs and host graphs. It checks the expectation at \(p=1/2\) and \(1/3\) by exact weighted enumeration, the one-edge influence bound, the maximum multiplicity two, and the bound on the dependency sum for each of the two simple families. It also checks 86,688 finite class splits and the group labeling probability for every order from 4 through 32. In a fixed 64-vertex half-density test there were 1,003 edges and 114,751 four-cycles. The fixed binary coloring had 1,882 bad cycles. [C++ audit](check_random_defects.cpp)
+
+A finite search can improve the choice of binary labels on a particular host. In the 64-vertex sample, exchanging vertex labels reduced the bad count from 1,882 to **1,559** without changing its 1,003 edges. On a second sample with 128 vertices, 4,100 edges and 2,062,976 cycles, the count fell from 16,571 to **15,203**. These are achievable counts. An independent C checker enumerates every four-cycle and compares its four labels directly. The expected count under a random permutation is \(N_4/(n-3)\), about 1,881 and 16,504 on the two respective hosts. [64-vertex sample](samples/binary-sample-64.txt) · [128-vertex sample](samples/binary-sample-128.txt)
+
+For a quadruple in the binary group, any opposite collision forces the sum of its four vertex labels to vanish. The C++ search uses the number of host cycles on each such quadruple as its cost. When two vertex labels are exchanged, only quadruples containing exactly one of those vertices can change. The inverse label table finds the required fourth vertex for each candidate pair in quadratic time per exchange. The full cost is independently recounted after each restart. Run these commands from this directory. [C++ search](binary_swaps.cpp) · [C verifier](check_binary_sample.c)
+
+```sh
+c++ -O3 -std=c++17 binary_swaps.cpp -o /tmp/binary_swaps
+cc -O3 -std=c11 check_binary_sample.c -o /tmp/check_binary_sample
+/tmp/binary_swaps 64 810 6000 4 > /tmp/sample64.txt
+/tmp/binary_swaps 128 810 9000 5 > /tmp/sample128.txt
+/tmp/check_binary_sample < /tmp/sample64.txt
+/tmp/check_binary_sample < /tmp/sample128.txt
+```
