@@ -9,7 +9,7 @@
 #include <vector>
 
 using Word = std::uint64_t;
-constexpr int MAX_ORDER = 4096;
+constexpr int MAX_ORDER = 8192;
 using Mask = std::array<Word, (MAX_ORDER + 63) / 64>;
 
 class Growth {
@@ -205,7 +205,7 @@ int main(int argc, char **argv) {
     int n, m, target = std::stoi(argv[1]), passes = std::stoi(argv[3]);
     auto seed = static_cast<unsigned>(std::stoul(argv[2]));
     if (!(std::cin >> n >> m) || n < 1 || n > target || target > MAX_ORDER || m < 0 ||
-        passes < 1)
+        m > static_cast<long long>(n) * (n - 1) / 2 || passes < 1)
         return 2;
     Growth g(n, target, seed);
     g.read(m);
