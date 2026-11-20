@@ -8,6 +8,8 @@ For any fixed $\alpha>0$ in the attainable range, a graph above $(1/4+\alpha)n^2
 
 For proper colorings with a linear palette, a fixed positive density gap above one quarter forces order $n^3$ four-cycles with a repeated color. The matching count also gives an upper bound of this same order. [Supersaturation proof](quarter-short.md#supersaturation-for-proper-colorings)
 
+For any fixed positive density, the graph of equal-color moves on unordered vertex pairs has a negative adjacency eigenvalue of order $n$. At the one-quarter coefficient it admits a bipartition after $o(n^3)$ edge deletions. The same deletion count measures a constraint on the original adjacency matrix. [Pair graph, proof and finite check](pair-energy.md)
+
 ## What a graph at one quarter would look like
 
 If the edges divided by $n^2$ tend to $1/4$, the adjacency matrices converge in cut distance to the constant $1/2$. Indeed a limiting $W\le1/2$ has integral $1/2$ and hence equals $1/2$ almost everywhere. Quantitatively $\|W-1/2\|_\square=1/2-\int W$. Thus every fixed graph has its fair-coin homomorphism density along a sequence reaching this coefficient.
