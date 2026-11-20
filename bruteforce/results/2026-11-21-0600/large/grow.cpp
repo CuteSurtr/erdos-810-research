@@ -9,7 +9,7 @@
 #include <vector>
 
 using Word = std::uint64_t;
-constexpr int MAX_ORDER = 8192;
+constexpr int MAX_ORDER = 12288;
 using Mask = std::array<Word, (MAX_ORDER + 63) / 64>;
 
 class Growth {
@@ -21,7 +21,10 @@ class Growth {
         int through = 0;
         bool bad = false;
     };
-    std::vector<std::int16_t> labels;
+    // Labels of the neighbors of each vertex are kept in vertex order. Within a
+    // 64-vertex word, its bit rank locates the label in the packed row.
+    std::vector<std::vector<std::uint16_t>> labels;
+    std::vector<std::uint16_t> offsets;
     std::vector<Word> adjacency, cached_masks;
     std::vector<Entry> entries;
     std::vector<int> stars, colors, owner, trial_colors;
@@ -32,10 +35,21 @@ class Growth {
     static Word mark(int c) {
         return Word{1} << (c % 64);
     }
+    void append_neighbor(int u, int v, int c) {
+        int slot = u * width + v / 64;
+        if (adjacency[slot] == 0)
+            offsets[slot] = static_cast<std::uint16_t>(labels[u].size());
+        adjacency[slot] |= mark(v);
+        labels[u].push_back(static_cast<std::uint16_t>(c));
+    }
+    int edge_color(int u, int v) const {
+        int slot = u * width + v / 64;
+        auto earlier = adjacency[slot] & (mark(v) - 1);
+        return labels[u][offsets[slot] + __builtin_popcountll(earlier)];
+    }
     void set_edge(int u, int v, int c) {
-        labels[u * target + v] = labels[v * target + u] = static_cast<std::int16_t>(c);
-        adjacency[u * width + v / 64] |= mark(v);
-        adjacency[v * width + u / 64] |= mark(u);
+        append_neighbor(u, v, c);
+        append_neighbor(v, u, c);
     }
     // A null entry means a two-edge path already repeats a color. Otherwise
     // these colors occur on old two-edge paths connecting the two endpoints.
@@ -59,7 +73,7 @@ class Growth {
                     common &= ~Word{0} << (entry.through % 64);
                 while (common) {
                     int h = w * 64 + __builtin_ctzll(common);
-                    int a = labels[u * target + h], b = labels[v * target + h];
+                    int a = edge_color(u, h), b = edge_color(v, h);
                     if (a == b) {
                         entry.bad = true;
                         return nullptr;
@@ -91,6 +105,10 @@ class Growth {
     }
     bool try_spoke(int v) {
         int count = static_cast<int>(stars.size());
+        if (int(trial.size()) <= count) {
+            trial.resize(count + 1);
+            allowed.resize(count + 1);
+        }
         trial[count] = palette;
         for (int i = 0; i < count; ++i) {
             int u = stars[i];
@@ -138,20 +156,38 @@ class Growth {
     }
 
   public:
-    Growth(int base, int end, unsigned seed)
+    Growth(int base, int end, unsigned seed, int one_pass_start)
         : target(end), width((end + 63) / 64), n(base), rng(seed),
-          labels(std::size_t(end) * end, -1), adjacency(std::size_t(end) * width),
+          labels(end), offsets(std::size_t(end) * width), adjacency(std::size_t(end) * width),
           cached_masks(cache_size * width), entries(cache_size), colors(end), owner(end),
-          trial_colors(end), allowed(end), trial(end) {
+          trial_colors(end) {
         if (base < 1 || base > end || end > MAX_ORDER)
             throw std::runtime_error("unsupported order");
+        if (one_pass_start < base) {
+            // Each one-pass vertex shuffles a list of its predecessors once.
+            auto steps = std::uint64_t(base - one_pass_start) *
+                         (base + one_pass_start - 3) / 2;
+            rng.discard(steps);
+        }
     }
     void read(int m) {
+        // Sorting by larger endpoint, then smaller endpoint, also sorts each row.
+        std::vector<std::array<std::uint16_t, 3>> ordered;
+        ordered.reserve(m);
         for (int i = 0; i < m; ++i) {
             int u, v, c;
-            if (!(std::cin >> u >> v >> c) || u < 0 || u >= n || v < 0 || v >= n || u == v ||
-                c < 0 || c >= n || labels[u * target + v] >= 0)
+            if (!(std::cin >> u >> v >> c) || u < 0 || u >= n || v < 0 || v >= n ||
+                u == v || c < 0 || c >= n)
                 throw std::runtime_error("invalid seed edge");
+            if (u > v)
+                std::swap(u, v);
+            ordered.push_back({static_cast<std::uint16_t>(v), static_cast<std::uint16_t>(u),
+                               static_cast<std::uint16_t>(c)});
+        }
+        std::sort(ordered.begin(), ordered.end());
+        for (auto [v, u, c] : ordered) {
+            if (adjacency[u * width + v / 64] & mark(v))
+                throw std::runtime_error("duplicate seed edge");
             set_edge(u, v, c);
         }
     }
@@ -190,24 +226,33 @@ class Growth {
             std::cout << n << ' ' << best.size();
             for (std::size_t i = 0; i < best.size(); ++i) {
                 int u = best[i], c = best_colors[i];
-                set_edge(u, n, c);
                 std::cout << ' ' << u << ' ' << c;
             }
             std::cout << std::endl;
+            std::vector<std::pair<int, int>> additions;
+            additions.reserve(best.size());
+            for (std::size_t i = 0; i < best.size(); ++i)
+                additions.emplace_back(best[i], best_colors[i]);
+            std::sort(additions.begin(), additions.end());
+            for (auto [u, c] : additions)
+                set_edge(u, n, c);
             ++n;
         }
     }
 };
 
 int main(int argc, char **argv) {
-    if (argc != 4)
+    if (argc != 4 && argc != 5)
         return 2;
     int n, m, target = std::stoi(argv[1]), passes = std::stoi(argv[3]);
     auto seed = static_cast<unsigned>(std::stoul(argv[2]));
     if (!(std::cin >> n >> m) || n < 1 || n > target || target > MAX_ORDER || m < 0 ||
         m > static_cast<long long>(n) * (n - 1) / 2 || passes < 1)
         return 2;
-    Growth g(n, target, seed);
+    int origin = argc == 5 ? std::stoi(argv[4]) : n;
+    if (origin < 1 || origin > n || (argc == 5 && passes != 1))
+        return 2;
+    Growth g(n, target, seed, origin);
     g.read(m);
     g.run(passes);
 }

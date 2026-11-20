@@ -18,7 +18,7 @@ int main(int argc, char **argv) {
     if (argc != 1 && !literal)
         return 2;
     int n, m;
-    if (scanf("%d %d", &n, &m) != 2 || n < 1 || n > 8192 || m < 0 ||
+    if (scanf("%d %d", &n, &m) != 2 || n < 1 || n > 12288 || m < 0 ||
         m > (long long)n * (n - 1) / 2)
         return 2;
     int words = (n + 63) / 64;

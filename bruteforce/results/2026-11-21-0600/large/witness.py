@@ -3,6 +3,7 @@ import argparse
 from array import array
 import json
 import lzma
+import re
 from pathlib import Path
 import sys
 
@@ -14,10 +15,10 @@ def open_text(path):
 
 
 def rebuild(seed, start, target, extensions, output):
-    if not 1 <= start <= target <= 8192:
-        raise ValueError("expected 1 <= seed order <= target order <= 8192")
+    if not 1 <= start <= target <= 12288:
+        raise ValueError("expected 1 <= seed order <= target order <= 12288")
     rows = [array("I") for _ in range(target)]
-    color_bits = 13
+    color_bits = max(1, (target - 1).bit_length())
     color_mask = (1 << color_bits) - 1
     edges = 0
 
@@ -45,6 +46,10 @@ def rebuild(seed, start, target, extensions, output):
                 raise ValueError("incorrect number of seed edges")
 
     next_vertex = start
+    # The four-digit filenames grow to five digits beyond order 9,999.
+    segments = [re.fullmatch(r"spokes-(\d+)-(\d+)\.rows\.xz", p.name) for p in extensions]
+    if all(segments):
+        extensions = [p for _, p in sorted(zip((int(m[1]) for m in segments), extensions))]
     for path in extensions:
         if next_vertex == target:
             break
