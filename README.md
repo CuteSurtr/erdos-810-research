@@ -4,7 +4,7 @@ Extremal bounds, finite constructions, and affine models for graphs in which eve
 
 On 13 vertices the exact maximum is **47 edges**. Two exhaustive searches excluded 48 edges. With 12 colors on the same vertices, the maximum is 46. [Proof, search counts and graph certificates](bruteforce/results/2026-11-21/README.md)
 
-On 4,096 vertices an explicit graph has **1,152,423 edges**. Every one of its 12,799,451,456 four-cycles has four different colors. The construction includes a witness at every order from 512 to 4,096. [Download and verify the graphs](bruteforce/results/2026-11-21-0600/large/README.md)
+On 5,120 vertices an explicit graph has **1,682,268 edges**. Every one of its 23,916,646,744 four-cycles has four different colors. The construction includes a witness at every order from 512 to 5,120. [Download and verify the graphs](bruteforce/results/2026-11-21-0600/large/README.md)
 
 On 14 vertices the exact maximum is **55 edges**. All 52 optimal graphs admit only proper colorings. The 11,461 optimal graphs on 13 vertices give 173,139 coloring classes, and 312 of the graphs require an improper coloring. [Complete census, proof and certificates](bruteforce/results/2026-11-21-0600/README.md)
 
