@@ -26,6 +26,8 @@ For an $n$-vertex graph satisfying #810, any fixed positive edge density require
 
 If the vertices can be ordered so that every neighborhood is a union of at most $k$ intervals, the maximum is $\sqrt{k}\,n^{3/2}+O_k(n)$ for fixed $k$. Consecutive windows give the upper bound, and properly colored bipartite bands attain the leading constant. [Sharp interval theorem and constructions](research/interval-neighborhoods/README.md)
 
+Every positive-density example with a linear palette would require matrix rank $\Omega(\sqrt n)$ over every field, for any matrix that is nonzero exactly on its edges. The characteristic-zero matching bound uses a sharp size theorem for fooling-set matrices. [Rank obstruction](research/support-rank/README.md) · [Sharp matrix bound](research/support-rank/fooling-sets.md)
+
 ### Bounded-VC supports
 
 If the family $`\{D_a\}`$ has uniformly bounded VC dimension, then

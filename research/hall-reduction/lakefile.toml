@@ -389,3 +389,15 @@ name = "ShadowDiscrepancy"
 
 [[lean_lib]]
 name = "IntervalWindows"
+
+[[lean_lib]]
+name = "SupportRank"
+
+[[lean_lib]]
+name = "FoolingSetRank"
+
+[[lean_lib]]
+name = "FoolingSetSpecialization"
+
+[[lean_lib]]
+name = "MatchingDartsRank"
