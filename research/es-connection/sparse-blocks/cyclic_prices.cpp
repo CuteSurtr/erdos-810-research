@@ -111,7 +111,8 @@ int main(int argc, char **argv) {
   while (std::getline(std::cin, line)) {
     std::istringstream in(line);
     int n, a, b, cap;
-    if (!(in >> n >> a >> b >> cap) || (n < 31 || n > 35) || a < 1 || a >= b ||
+    if (!(in >> n >> a >> b >> cap) ||
+        (n != 12 && n != 18 && (n < 31 || n > 35)) || a < 1 || a >= b ||
         b >= n || cap < 1)
       return 2;
     std::vector<int> weights(n);
@@ -128,13 +129,14 @@ int main(int argc, char **argv) {
     if (!seen[n].insert(holes).second)
       return 2;
     int sum = std::accumulate(weights.begin(), weights.end(), 0);
-    if (6 * sum < (2 * n - 15) * cap)
+    if ((n == 12 && n * sum <= 22 * cap) || (n == 18 && n * sum <= 64 * cap) ||
+        (n >= 31 && 6 * sum < (2 * n - 15) * cap))
       return 1;
     Audit audit{n, cap, holes, weights};
     audit.run();
     visited[n] += audit.visits;
   }
-  for (int n = 31; n <= 35; ++n) {
+  for (int n : {12, 18, 31, 32, 33, 34, 35}) {
     if (seen[n] != shapes(n))
       throw std::runtime_error("incomplete list of cyclic hole shapes");
     std::cout << n << " copies, " << seen[n].size() << " shapes, " << visited[n]

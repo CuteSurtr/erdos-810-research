@@ -2,6 +2,10 @@
 
 Extremal bounds, finite constructions, and affine models for graphs in which every four-cycle uses four different colors.
 
+For the prescribed XOR coloring of a 16-by-16 board, the largest square-free support lies between **144 and 153 edges**. On the 8-by-8 board all 1,024 maximum supports are equivalent. [Finite proof and C++ verifiers](research/es-connection/xor-squares/README.md)
+
+The original 17 Erdős–Szekeres points give **1,279,080 edges on 5,016 vertices** using three common omitted differences per block. The maximum copy count in this abelian construction is 33 or 34. The local palette lower bound is attained on infinitely many cyclic boards. [ES graphs and independent checks](research/es-connection/sparse-blocks/README.md) · [Sharp three-hole palette theorem](research/es-connection/sparse-holes/README.md#exactly-three-cyclic-holes-on-infinitely-many-orders)
+
 On 13 vertices the exact maximum is **47 edges**. Two exhaustive searches excluded 48 edges. With 12 colors on the same vertices, the maximum is 46. [Proof, search counts and graph certificates](bruteforce/results/2026-11-21/README.md)
 
 At 5,632 vertices a rectangular block construction gives **3,265,658 edges**. An independent C verifier checked all edge colors and counted 247,044,109,888 rainbow four-cycles. At 8,192 vertices the same method gives **6,340,344 edges**. [Affine blocks, proofs and executable recipes](bruteforce/results/2026-11-21-0600/products/affine/README.md)
