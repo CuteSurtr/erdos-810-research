@@ -1,6 +1,6 @@
 # Nested constructions with large palettes
 
-The 5,632-vertex graph contains **1,980,131 edges** and uses 5,632 colors. All 31,363,928,768 four-cycles have four different colors. Its induced subgraphs give explicit lower bounds at every order from 512 through 5,632. The question of positive limiting density in Erdős #810 remains open. [All checked orders and edge-list fingerprints](counts.tsv)
+The 6,144-vertex graph contains **2,298,000 edges** and uses 6,144 colors. All 40,179,656,204 four-cycles have four different colors. Its induced subgraphs give explicit lower bounds at every order from 512 through 6,144. The question of positive limiting density in Erdős #810 remains open. [All checked orders and edge-list fingerprints](counts.tsv)
 
 | Vertices | Edges | Rainbow four-cycles |
 | ---: | ---: | ---: |
@@ -15,11 +15,12 @@ The 5,632-vertex graph contains **1,980,131 edges** and uses 5,632 colors. All 3
 | 4,608 | 1,405,884 | 17,756,774,534 |
 | 5,120 | 1,682,268 | 23,916,646,744 |
 | 5,632 | 1,980,131 | 31,363,928,768 |
+| 6,144 | 2,298,000 | 40,179,656,204 |
 
 The archive stores the new spokes at each vertex, beginning with the project’s colored graph on 512 vertices. To reconstruct any prefix, run these commands in this directory. The reconstruction program orders the numbered segments by their starting vertex. The fingerprint is SHA-256 of the header and sorted `u v color` triples, each followed by a single newline. [Seed graph, key 512](../../2026-11-21/certs.json) · [Edge-list reconstruction](witness.py)
 
 ```sh
-python3 witness.py ../../2026-11-21/certs.json 512 5632 spokes-*.rows.xz > "$SCRATCH/graph.txt"
+python3 witness.py ../../2026-11-21/certs.json 512 6144 spokes-*.rows.xz > "$SCRATCH/graph.txt"
 cc -O3 audit.c -o "$SCRATCH/audit"
 "$SCRATCH/audit" < "$SCRATCH/graph.txt"
 "$SCRATCH/audit" --cycles < "$SCRATCH/graph.txt"
