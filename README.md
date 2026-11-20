@@ -4,6 +4,8 @@ Extremal bounds, finite constructions, and affine models for graphs in which eve
 
 On 13 vertices the exact maximum is **47 edges**. Two exhaustive searches excluded 48 edges. With 12 colors on the same vertices, the maximum is 46. [Proof, search counts and graph certificates](bruteforce/results/2026-11-21/README.md)
 
+At 5,632 vertices a rectangular block construction gives **3,265,658 edges**. An independent C verifier checked all edge colors and counted 247,044,109,888 rainbow four-cycles. At 8,192 vertices the same method gives **6,340,344 edges**. [Affine blocks, proofs and executable recipes](bruteforce/results/2026-11-21-0600/products/affine/README.md)
+
 A product construction on 5,632 vertices has **3,113,070 edges**, a 57.2% increase over the nested graph at that order. Its 207,434,382,800 four-cycles are all rainbow. The cube of a 61-vertex factor gives **3,089,428,875 edges** at 226,981 vertices. [Recipes, proof and independent verifiers](bruteforce/results/2026-11-21-0600/products/README.md)
 
 On 5,632 vertices an explicit graph has **1,980,131 edges**. Every one of its 31,363,928,768 four-cycles has four different colors. The construction includes a witness at every order from 512 to 5,632. [Download and verify the graphs](bruteforce/results/2026-11-21-0600/large/README.md)

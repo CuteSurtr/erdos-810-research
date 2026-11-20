@@ -51,3 +51,5 @@ python3 recipe.py 5632 > /tmp/810-5632.recipe
 ```
 
 The small-factor proof and exact arithmetic apply to every listed recipe, including large orders whose full edge list has billions of entries.
+
+An independent C verifier checked the expanded graphs at 27 orders from 512 through 10,000. The table records each sorted graph fingerprint. At 512, 1,024 and 2,048 vertices a second C program enumerated the individual cycles and tested all six color inequalities. A subsequent rectangular block construction raises the edge count at several of these orders. [Expanded checks](expanded-checks.tsv) · [Rectangular construction](affine/README.md)

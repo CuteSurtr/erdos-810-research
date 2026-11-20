@@ -57,6 +57,20 @@ theorem product_collapse {A : Board R C K} {B : Board R' C' K'}
   have b := hB r.2 s.2 c.2 d.2 hrc.2 hrd.2 hsc.2 hsd.2 (congrArg Prod.snd he)
   exact ⟨Prod.ext a.1 b.1, Prod.ext a.2 b.2⟩
 
+/-- Each base cell may carry its own rectangular board, including a transpose. -/
+def substitute (A : Board R C K) (B : R → C → Board R' C' K') :
+    Board (R × R') (C × C') (K × K') where
+  cell r c := A.cell r.1 c.1 ∧ (B r.1 c.1).cell r.2 c.2
+  label r c := (A.label r.1 c.1, (B r.1 c.1).label r.2 c.2)
+
+theorem substitute_collapse {A : Board R C K} {B : R → C → Board R' C' K'}
+    (hA : Collapse A) (hB : ∀ r c, A.cell r c → Collapse (B r c)) :
+    Collapse (substitute A B) := by
+  rintro ⟨r, i⟩ ⟨s, j⟩ ⟨c, k⟩ ⟨d, l⟩ hrc hrd hsc hsd he
+  obtain ⟨rfl, rfl⟩ := hA r s c d hrc.1 hrd.1 hsc.1 hsd.1 (congrArg Prod.fst he)
+  have eq := hB r c hrc.1 i j k l hrc.2 hrd.2 hsc.2 hsd.2 (congrArg Prod.snd he)
+  exact ⟨Prod.ext rfl eq.1, Prod.ext rfl eq.2⟩
+
 theorem restrict_collapse {A B : Board R C K} (hA : Collapse A)
     (sub : ∀ r c, B.cell r c → A.cell r c) (labels : B.label = A.label) : Collapse B := by
   intro r s c d hrc hrd hsc hsd he
