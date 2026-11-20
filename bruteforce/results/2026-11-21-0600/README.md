@@ -27,6 +27,18 @@ With 14 colors on 15 vertices the maximum is 61 or 62. The lower witness has 356
 
 A 62-edge witness, if one exists, must have **minimum degree eight**. A degree-seven vertex would leave one of the 52 optimal 14-vertex supports at 55 edges. Together those parents admit 2,109 color partitions when their vertex labels are fixed. Exhausting these partitions and all 176,748 candidate neighborhoods gives zero extensions. An independent C program checked the 176,748 underlying candidate graphs directly. It rejected 173,873 by conflict cliques and the remaining 2,875 by exact coloring. [Parent catalog](data/optimal-14.g6) · [Colored extension algorithm](native/extend_colored.cpp) · [Independent checker](../V12/V2/src/checker.c)
 
+## A 97-edge witness on 19 vertices
+
+The project’s lower bound at 19 vertices rises from 96 to **97 edges**. The graph has 996 four-cycles, and all are rainbow with 19 colors. Its 18-vertex parent is the existing 90-edge graph. Recoloring that support allows seven new spokes from a nineteenth vertex. Lean verifies the lower bound directly from the packed edge labels. [Edge triples](diagonal-witnesses.json) · [Lean certificate](../../../research/hall-reduction/OvernightWitnesses.lean) · [Previous 96-edge certificate](../../../research/hall-reduction/SmallGraphCertificates.lean)
+
+The search changes an individual edge color or interchanges two colors on a connected component of their conflict graph. Both moves preserve rainbow four-cycles. For each new parent coloring it tests possible neighborhoods of the new vertex and uses a matching to assign distinct spoke colors. With seed 8102181, 256 trials reproduce the archived support and every edge label. [C++ search](native/spoke_walk.cpp)
+
+```sh
+python3 large/witness.py ../LB/certs.json 18 18 > "$SCRATCH/18.txt"
+"$SCRATCH/spoke-walk" 19 8102181 256 < "$SCRATCH/18.txt"
+python3 check_palette.py diagonal-witnesses.json
+```
+
 ```sh
 python3 check_palette.py palette-witnesses.json
 PRUNE_K=14 "$SCRATCH/rainbow-a" -u 13 28:28
