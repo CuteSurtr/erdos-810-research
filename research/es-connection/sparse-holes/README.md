@@ -65,6 +65,21 @@ For a regular board, $e=t(t-h)$ and $P=th(h-1)^2$. Thus $h=O(t^{1/3})$ forces a 
 
 The necessary cube-root scale also holds for an irregular complement with average degree $h$. If $h=o(t^{1/3})$, choose a degree cutoff $D_0=o(t^{1/3})$ with $h/D_0=o(1)$. Discard rows and columns above the cutoff. Markov's inequality removes $o(t)$ on each side. The retained board has $(1-o(1))t^2$ occupied cells, maximum hole degree $D_0$, and at most $tD_0^3=o(t^2)$ three-step paths. Every incident pair of retained edges lies in a rectangle for large $t$. Hence $q\ge(1/3-o(1))t^2$. If $h=O(t^{1/3})$, cutting off at $4\max(h,1)$ retains at least three quarters of each side and at least $(9/16-o(1))t^2$ edges. This gives $P=O(t^2)$ and $q=\Omega(t^2)$. In particular a subquadratic palette on nearly complete boards requires $h/t^{1/3}\to\infty$.
 
+## Exactly two holes in each row and column
+
+For every $t\ge6$ and every 2-regular hole graph, the palette has at least $\lceil t(t-3)/3\rceil$ colors. Indeed $e=t(t-2)$ and $P=2t$ in the second path inequality. This bound is **exact** for an infinite family, including $t=12,36,108$. It identifies the linear term as well as the leading quadratic coefficient.
+
+On twelve indices modulo 12, omit the differences 0 and 1. Use the six even translates of each of the first two classes below, and all twelve translates of each of the last two.
+
+| Row-column pairs in a class | Translation step |
+| --- | ---: |
+| $(1,3),(2,4),(3,9),(8,2)$ | 2 |
+| $(1,0),(6,1),(11,6),(0,11)$ | 2 |
+| $(0,3),(3,7),(7,0)$ | 1 |
+| $(0,8),(7,4),(3,1)$ | 1 |
+
+The 36 classes partition all 120 occupied cells. For $t=12L$ with $L\equiv3\pmod6$, take $L$ such groups. Keep all cross-group cells and color them by the oriented group-triangle construction above with $b=12$. This adds $144L(L-1)/3$ colors to $36L$, totaling $t(t-3)/3$. The hole graph in this family is the disjoint union of $L$ cycles of length 24. The verifier checks every occupied cell and every same-color pair. [C++ verifier](two_holes.cpp)
+
 ## A subquadratic palette with fewer than square-root many holes
 
 An infinite family of regular boards has $h=o(\sqrt t)$ and $Q(B)=o(t^2)$. The construction is bipartite and each color actually forms an induced matching. It adapts the coordinate flips of Alon, Moitra and Sudakov's code construction. Their unordered edges require a code containing the all-ones word. Here the two vertex parts distinguish the two orientations of each possible pair, so a binary simplex code of relative distance greater than $1/2$ can be used. [Alon, Moitra and Sudakov, §2.2, especially Claims 2.15–2.17](https://people.math.ethz.ch/~sudakovb/induced-matchings.pdf)
@@ -92,6 +107,9 @@ Run the commands below in this directory. The second pair of tools accepts the g
 ```sh
 c++ -O3 -std=c++17 hamming_classes.cpp -o /tmp/810-hamming-classes
 c++ -O3 -std=c++17 hamming_blocks.cpp -o /tmp/810-hamming-blocks
+c++ -O3 -std=c++17 two_holes.cpp -o /tmp/810-two-holes
+/tmp/810-two-holes 1
+/tmp/810-two-holes 9
 c++ -O3 -std=c++17 simplex_matching.cpp -o /tmp/810-simplex
 /tmp/810-simplex 2 3
 /tmp/810-simplex 3 2
