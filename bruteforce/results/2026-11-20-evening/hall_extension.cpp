@@ -13,7 +13,8 @@
 #include <vector>
 
 using Clock = std::chrono::steady_clock;
-using Mask = std::array<std::uint64_t, 4>;
+constexpr int max_colors = 512;
+using Mask = std::array<std::uint64_t, max_colors / 64>;
 
 class Extension {
  public:
@@ -21,7 +22,7 @@ class Extension {
       : n(size), colors(n + 1), words((colors + 63) / 64), rng(seed),
         edges(n, std::vector<int>(n, -1)), forbidden(n, std::vector<Mask>(n)),
         incompatible(n, std::vector<bool>(n)), lists(n), owner(colors), assignment(n) {
-    if (n < 1 || colors > 256) throw std::runtime_error("unsupported order");
+    if (n < 1 || colors > max_colors) throw std::runtime_error("unsupported order");
     for (int c = 0; c < colors; ++c) set_bit(palette, c);
   }
 
@@ -174,7 +175,7 @@ int main(int argc, char** argv) {
   if (argc != 1 && !fixed) return 2;
   int n, count, milliseconds, seed, hints;
   while (std::cin >> n >> count >> milliseconds >> seed >> hints) {
-    if (n < 1 || n > 255 || count < 0 || milliseconds < 0 || hints < 0 || hints > n) return 2;
+    if (n < 1 || n >= max_colors || count < 0 || milliseconds < 0 || hints < 0 || hints > n) return 2;
     Extension problem(n, static_cast<unsigned>(seed));
     problem.read(count);
     std::vector<int> hint(hints);

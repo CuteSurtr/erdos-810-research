@@ -92,7 +92,7 @@ Literature notes are in `LITERATURE.md`.
 - All are weaker than the cyclic family in our range.
 
 ## 7. Open problems
-- M(13), which is at least 47; plain enumeration costs about 10⁴ CPU-hours.
+- Determine $M(14)$. The November 21 computation settled $M(13)=47$. [Enumeration and certificate](../bruteforce/results/2026-11-21/README.md)
 - Is k_max(n) = o(n)?
 - Is k_max(4m) < m for some m? (n = 44 is the first open case.)
 - Certified (DRAT) proofs for M(12).
@@ -142,6 +142,7 @@ Applied the PUSH/AUDIT report (`results/PUSH/AUDIT/AUDIT.md`) and the new PUSH r
 | M(10) = 30 | DRAT-certified (all Δ cubes plus full formula) and exhaustive enumeration | `results/SAT`, `results/M12`, `results/V12` validation |
 | M(11) = 34 | DRAT-certified (all Δ cubes) and exhaustive enumeration | as above |
 | M(12) = 40 | exhaustive enumeration, pruned (2 checkers) and unpruned (4 checkers); partial DRAT | `results/M12`, `results/V12/V0..V3`, `results/SAT` |
+| M(13) = 47 | exhaustive complement generation with two coloring checkers and an explicit 47-edge witness | [November 21 computation](../bruteforce/results/2026-11-21/README.md) |
 | Extremal counts 5, 45, 3, 2, 131 (n = 7..11) | agree across 4 independent checkers | V12 validation tables |
 | Lower bounds, n = 13..128 | certificate-verified (re-checked by `make_tables.py`) | `results/{SAT,LB,CONSTR,CYC,CYCPAT}` |
 | Cyclic k_max(12) | solver UNSAT; brute force | `results/CYCPAT` |

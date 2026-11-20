@@ -5,6 +5,8 @@ graph whose edges can be coloured with n colours so that every 4-cycle gets 4 di
 All computation for this round ran in Claude Code cloud containers on 2026-10-24.
 Each task's `results/<TASK>/REPORT.md` has the full method, logs and code.
 
+The November 21 follow-up determined $M(13)=47$ and the 12-color maximum on 13 vertices. [Exhaustive searches and certificates](results/2026-11-21/README.md)
+
 ## Exact values
 
 | n | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
@@ -200,7 +202,7 @@ certificates beat them for 14 ≤ n ≤ 25.
 
 ## Open
 
-- **M(13).** We know M(13) ≥ 47; deciding it means ruling out 48 edges.
+- **M(13), resolved November 21.** The October plan below estimated the cost of ruling out 48 edges. Enumerating complements subsequently gave the upper bound. [Follow-up](results/2026-11-21/README.md)
   - **Plain pruned enumeration.** This is estimated at 9,800 CPU-h or more
     (`results/M12/M13_PLAN.md`).
   - **Cheaper routes.** Splitting by max degree, SAT cubes for high Δ, and a 64-shard calibration
