@@ -52,6 +52,8 @@ For constructions that replace real points and lines by copies, the sharp edge o
 
 An additive construction from the same 17 coordinates gives a 152-vertex graph that can be colored with 22 labels. Assigning sets of colors to its edges permits eight copies per vertex, the largest balanced full blow-up allowed by the color budget. This gives 82,688 edges on 1,216 vertices using 1,178 colors. A C checker verifies all 103,896,256 four-cycles. [Construction, upper bound and certificate](research/es-connection/orbit-lifts.md)
 
+Omitting a perfect matching from each block of that same ES graph allows 26 copies, giving **839,800 edges on 3,952 vertices**. A counting argument forces at most 27 copies even when each block omits a different matching. [Proof, certificates and C++ verifier](research/es-connection/crown-lifts.md)
+
 Every positive-density example with a linear palette would require matrix rank $\Omega(\sqrt n)$ over every field, for any matrix that is nonzero exactly on its edges. The characteristic-zero matching bound uses a sharp size theorem for fooling-set matrices. [Rank obstruction](research/support-rank/README.md) · [Sharp matrix bound](research/support-rank/fooling-sets.md)
 
 ### Random graphs
