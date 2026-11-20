@@ -17,3 +17,4 @@ vertices	palette	tested_edges	missing_pairs	solver	prune_calls	prune_rejects	sur
 13	18	55	23	cover	863	479	0	0.01
 13	18	55	23	A	863	479	0	0.05
 13	18	55	23	B	863	479	0	0.28
+14	12	53	38	cover	2616367	2079094	0	58.82

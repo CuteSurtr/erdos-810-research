@@ -11,6 +11,7 @@ Write $F(n,k)$ for the maximum number of edges on $n$ vertices using at most $k$
 | 13 | 16 | 51 | 329 |
 | 13 | 17 | 52 | 355 |
 | 13 | 18 | 54 | 420 |
+| 14 | 12 | 52 | 238 |
 | 14 | 13 | 54 | 284 |
 | 14 | 15 | 56 | 337 |
 | 14 | 16 | 57 | 379 |
@@ -27,6 +28,8 @@ done
 ```
 
 On 13 vertices with 14 colors, the two C checkers and the C++ checker each found six supports at 49 edges and zero at 50 edges in full, unsharded runs. All three use the same nauty generator. There are 78 pairs, so the generator searches graphs of 28 missing pairs. A graph with more than 50 edges would yield a valid 50-edge graph by deleting edges. The 49-edge witness uses all 14 colors. [All six runs](data/13-k14-three-checkers.tsv) · [Witnesses](palette-witnesses.json) · [Complement generation and checker builds](../2026-11-21/README.md#the-upper-bound)
+
+On 14 vertices with 12 colors, the exact maximum is **52**. The unrestricted complement search at 53 edges returned zero supports after 2,616,367 pruning calls. Three 52-edge representatives from the minimum-degree-seven search passed both the C++ solver and an independent C solver. Their witness colorings have 238, 240 and 246 rainbow four-cycles. On 15 vertices, a degree-six extension gives **58 edges with 12 colors** and 295 rainbow four-cycles. The deletion bound from 14 vertices gives an upper bound of 60. [Unrestricted exclusion at 53 edges](data/fixed-palette-upper.tsv) · [Verified colorings](palette-witnesses.json)
 
 On 14 vertices with 15 colors, the 56-edge witness attains the maximum. All 256 unrestricted shards with 57 edges and 15 colors returned zero graphs. [All shard counts](data/14-57-k15-cover.tsv) · [Witness](palette-witnesses.json)
 
