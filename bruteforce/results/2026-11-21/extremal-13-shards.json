@@ -1,0 +1,59 @@
+{
+  "parts": 64,
+  "shards": {
+    "0": {
+      "a": {
+        "completions": 118,
+        "cpu_seconds": 54.42
+      },
+      "b": {
+        "completions": 118,
+        "cpu_seconds": 391.91
+      }
+    },
+    "1": {
+      "a": {
+        "completions": 141,
+        "cpu_seconds": 76.75
+      }
+    },
+    "2": {
+      "a": {
+        "completions": 121,
+        "cpu_seconds": 69.8
+      }
+    },
+    "3": {
+      "a": {
+        "completions": 250,
+        "cpu_seconds": 101.2
+      }
+    },
+    "4": {
+      "a": {
+        "completions": 65,
+        "cpu_seconds": 41.14
+      },
+      "b": {
+        "completions": 65,
+        "cpu_seconds": 283.57
+      }
+    },
+    "5": {
+      "a": {
+        "completions": 157,
+        "cpu_seconds": 58.38
+      },
+      "b": {
+        "completions": 157,
+        "cpu_seconds": 368.8
+      }
+    },
+    "6": {
+      "a": {
+        "completions": 296,
+        "cpu_seconds": 120.54
+      }
+    }
+  }
+}

@@ -15,6 +15,8 @@ The two coloring checkers use different implementations. Checker A determines wh
 | Checker A | 64 / 64 | 0 | 122.81 |
 | Checker B | 64 / 64 | 0 | 717.30 |
 
+The 47-edge lower bound also has an explicit Lean theorem checked by the kernel. The upper bound uses the two exhaustive C computations above. [Lean lower bound](../../../research/hall-reduction/SmallGraphCertificates.lean#L25)
+
 To reproduce the unrestricted runs, use a configured nauty 2.8.9 source tree and run the following from this directory. Each command below covers all shards in a single process. To reproduce an individual shard, append its index and modulus, for example `15/64`.
 
 ```sh
@@ -22,6 +24,14 @@ sh build_checkers.sh "$NAUTY" "$SCRATCH"
 PRUNE_K=13 "$SCRATCH/rainbow-a" -u 13 30:30
 PRUNE_K=13 "$SCRATCH/rainbow-b" -u 13 30:30
 ```
+
+Both checkers also completed a fresh unrestricted enumeration at 12 vertices. Each found exactly **3,330** admissible 40-edge supports and zero 41-edge supports. The earlier bounded-degree catalog already contains 3,330 supports, so it exhausts the optimal graphs at this order. Their maximum degrees are seven (1,202 graphs), eight (2,126), and nine (two). To repeat these runs, use `PRUNE_K=12` with `-u 12 26:26` for 40 original edges and `-u 12 25:25` for 41. [Catalog and previous coverage](../M12/REPORT.md)
+
+## How many graphs attain 47 edges?
+
+The partial census contains **1,148 pairwise nonisomorphic optimal graphs** on 13 vertices. It covers 7 of 64 disjoint shards for 47 edges. Both search checkers finished 3 of these shards and agreed on their full outputs. A separate C program found a 13-coloring on every saved support and validated each coloring by checking four-cycles. The exact total number of optimal supports remains open in this census. [Graph6 supports](extremal-13.g6) · [Completed shards](extremal-13-shards.json) · [Coloring verifier](../V12/V2/src/checker.c)
+
+To continue, run either complement checker with `PRUNE_K=13`, `13 31:31`, and an unfinished `i/64`. The native generator writes missing-pair graphs. The archived graph6 file stores their complements, the 47-edge graphs themselves.
 
 ## Twelve colors on the same 13 vertices
 
