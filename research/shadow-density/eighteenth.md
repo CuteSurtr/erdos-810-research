@@ -6,6 +6,8 @@ $$
 $$
 The coefficient is 25% smaller than $2/27$, the leading coefficient in Gishboliner and Solymosi's Theorem 1.1 specialized to linear triple systems. The result uses the pointwise graphon bound $W\le1/2$, which is stronger than the corresponding bound on the integral of $W$. A finite proof of the one-eighteenth coefficient has been verified end to end in Lean, including the cleanup for nonlinear systems. [Pointwise graphon theorem](../graph-limits/quarter.md) · [One-eighteenth Lean theorem](../hall-reduction/HalfBoundedModel.lean) · [Gishboliner and Solymosi](https://arxiv.org/html/2606.25931v1)
 
+In Corollary 1.3 of their June 24 preprint, setting $k=4$ gives the finite threshold $2n^2/27+n/3$ for four triples on at most seven points in a linear system. Their normalized density is $c=3m/\binom n2$. The two leading coefficients in that convention are $4/9$ and $1/3$, again a ratio of $3/4$. The comparison concerns the leading term. [Corollary 1.3 and normalization (1)](https://arxiv.org/html/2606.25931v1)
+
 Take a linear admissible system and color every edge of its shadow graph by the third point of its triple. This is a proper coloring with every four-cycle rainbow. If $x$ lies in $d_x$ triples, its shadow neighborhood splits into $d_x$ disjoint pairs, one for each of those triples. There is at most one shadow edge between any two such pairs. Indeed the two triples through $x$ cover five points. Each cross edge belongs to a further triple, adding at most one point. Two distinct cross edges belonging to distinct triples would give four triples on at most seven points. A single further triple cannot contain two cross edges between these pairs: it would contain both points of one of the pairs, contrary to linearity. Thus
 $$
  e(G[N(x)])\le d_x+\binom{d_x}{2}.
@@ -36,6 +38,8 @@ $$
  0\le I=2p-8D_2+8T\le 6p(1/3-p).
 $$
 At $p=1/3$, $V$ therefore has degree $1/3$ almost everywhere and $I=0$. For almost every $z$, almost every pair of points of $S_z=\{x:V(x,z)>0\}$ satisfy $V(x,y)=1$. Since typical points have degree $1/3$, this gives $|S_z|\le1/3$, while the degree at $z$ gives $|S_z|\ge1/3$. Thus $V$ is one almost everywhere on $S_z^2$, and zero almost everywhere from $S_z$ to its complement. Choosing a typical $z$ and repeating on its complement gives exactly three equal complete parts for $V$. This identifies $W$. For this three-part matrix, $p=1/3$, $D_2=1/9$, and $T=1/36$, so the two limiting moment inequalities alone permit the stated coefficient. Compactness and uniqueness give the cut-distance assertion. Deleting $O(n)$ hyperedges to achieve linearity changes only $O(n)$ shadow edges. The structural implication is conditional on reaching the bound. [Graphon compactness](https://math.osu.edu/sites/math.osu.edu/files/graphons.pdf)
+
+For a limiting shadow whose density is $\delta$ below $1/3$, a three-part model already approximates the kernel in $L^1$ with error $O(\delta)$. Requiring three exactly equal parts gives error $O(\sqrt{\delta})$. [Quantitative stability proof](stability.md)
 
 ## Quasirandom shadows
 

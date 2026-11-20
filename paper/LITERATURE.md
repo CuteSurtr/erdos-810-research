@@ -27,10 +27,10 @@ I also checked whether small values or the cyclic constructions have appeared be
 ## Sárközy, Selkow (2006)
 
 *On an anti-Ramsey problem of Burr, Erdős, Graham, and T. Sós*, J. Graph Theory 52
-(2006), 147–156. I did not read the full text, which is paywalled. Secondary sources
-(erdosproblems.com, the SZTAKI eprint record) say they prove, with the regularity lemma, that
-χ_S(n, αn², L)/n → ∞ for connected bipartite L that are neither stars nor complete bipartite.
-C4 = K_{2,2} is excluded. **No small values are expected; confirm before submission.**
+(2006), 147–156. Theorem 4 in the authors' WPI report proves
+χ_S(n, αn², L)/n → ∞ for each fixed α > 0 and connected, non-complete bipartite L.
+The sentence following the theorem explicitly leaves C4 = K_{2,2} open. This source
+and its hypotheses were checked on November 20. [Authors' report, PDF page 3](https://ftp.cs.wpi.edu/pub/techreports/pdf/04-02.pdf#page=3)
 
 ## erdosproblems.com #810 (T. F. Bloom) and its forum thread
 
@@ -58,9 +58,10 @@ There is no match for 1,3,5,7,11,14,17,23 or for 1,3,5,7,11,14,17,23,30,34,40 (s
 
 - M. Bucić, K. Chen, J. Ma, *On a maximal anti-Ramsey conjecture of Burr, Erdős, Graham,
   and Sós*, arXiv:2603.18952 (March 2026). Covers odd cycles C_{2k+1}, k ≥ 4.
-- Z. Yang, *On the maximal anti-Ramsey problem of Burr, Erdős, Graham, and Sós for P4*,
-  arXiv:2607.05896 (July 2026). It cites a recent negative answer by Li, Ning and Xie; their
-  reference is still to be looked up.
+- For the four-vertex path, Li, Ning and Xie disprove the proposed quadratic color
+  lower bound when the complete graph is missing about n^(2−ε) edges and 0 < ε < 1/2.
+  Yang proves the lower bound for ε ≥ 1/2. Both papers concern P4.
+  [Li–Ning–Xie](https://arxiv.org/abs/2606.30505) · [Yang](https://arxiv.org/abs/2607.05896)
 
 ## Consequences for the note
 
@@ -71,6 +72,6 @@ There is no match for 1,3,5,7,11,14,17,23 or for 1,3,5,7,11,14,17,23,30,34,40 (s
 3. **Cyclic orbit colourings.** I found no prior source for them. The proposition that linear
    rules give o(n) orbits is in the spirit of Tao's remark that colouring schemes yield
    Szemerédi-type statements; cite that remark.
-4. **To do before submission.** Read Sárközy–Selkow and BEGS91 (*Further results on maximal
-   anti-Ramsey graphs*, Kalamazoo proceedings, 1991) in full. Look up Li–Ning–Xie. Ask on the
+4. **To do before submission.** Read BEGS91 (*Further results on maximal
+   anti-Ramsey graphs*, Kalamazoo proceedings, 1991) in full. Ask on the
    forum or OEIS whether anyone has computed exact values.
