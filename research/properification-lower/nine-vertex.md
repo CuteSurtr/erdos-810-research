@@ -1,6 +1,6 @@
 # Five forced deletions on nine vertices
 
-There is a connected graph on nine vertices with 20 edges and 31 four-cycles for which **every admissible nine-coloring requires five inherited edge deletions** to become proper. Deleting the single edge $67$ permits a proper nine-color recoloring of the other 19 edges. Thus $D(G)=5>9/2$ and $R(G)=1$. This rules out a universal $D(G)\le n/2$ bound at every finite order. The asymptotic question for $R(G)=1$ remains open. [Both explicit colorings](nine-vertex.json) · [Definitions and the shared-edge family](bouquet.md)
+There is a connected graph on nine vertices with 20 edges and 31 four-cycles for which **every admissible nine-coloring requires five inherited edge deletions** to become proper. Deleting the single edge $67$ permits a proper nine-color recoloring of the other 19 edges. Thus $D(G)=5>9/2$ and $R(G)=1$. This rules out a universal $D(G)\le n/2$ bound at every finite order. A subsequent family reaches an asymptotic deletion fraction of at least two thirds with $R(G)=1$. [All-orders proof](crossed-rectangles.md) [Both explicit colorings](nine-vertex.json) · [Definitions and the shared-edge family](bouquet.md)
 
 ## The support
 
