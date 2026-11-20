@@ -32,6 +32,8 @@ Every positive-density example with a linear palette would require matrix rank $
 
 For the full binomial random graph $G(n,p)$, the threshold order for an $n$-coloring with every four-cycle rainbow is $p=(\log n/n)^{1/3}$. A sparse-neighborhood coloring argument gives existence below a small constant times this scale. Counting possible one-color matchings gives failure above it. [Random-graph theorem and proof](research/random-support/README.md)
 
+For fixed $0<p\le1$, with high probability every colorable subgraph using $O(n)$ colors retains at most a $1-p/2+o(1)$ fraction of the host's edges. [Relative density proof](research/random-support/subgraphs.md)
+
 ### Bounded-VC supports
 
 If the family $`\{D_a\}`$ has uniformly bounded VC dimension, then

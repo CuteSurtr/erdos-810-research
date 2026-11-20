@@ -10,6 +10,8 @@ More precisely, there is an absolute $c>0$ such that at $p\le c p_0$ a coloring 
 
 For fixed $0<\alpha<1/2$ and $p=n^{-\alpha}$, the typical minimum palette is $\Theta_\alpha(n^2p^3/\log n)$. At any fixed $0<p<1$ it is $\Theta_p(n^2/\log n)$. In particular, the transition at a linear palette takes place at roughly $n^{5/3}(\log n)^{1/3}$ edges in the random-graph process. The argument gives a threshold order, with a constant-factor gap.
 
+If edge deletion is permitted, a fixed-density random host satisfies a different upper bound. With high probability every subgraph that admits a linear palette has at most $(p/2-p^2/4+o(1))n^2$ edges. For example, at $p=1/2$ at least a quarter of the sampled edges must be deleted. [Subgraph theorem and proof](subgraphs.md)
+
 ## A deterministic sufficient condition
 
 For a graph $G$, let $D$ be its maximum degree and $L$ its maximum number of common neighbors of two distinct vertices. Construct a graph $H$ on the edges of $G$. Two edges conflict if they meet or lie opposite each other on a four-cycle. A vertex coloring of $H$ gives a proper edge coloring of $G$ with every four-cycle rainbow. The same conflict-graph formulation of proper rainbow coloring is usually called B-coloring. [Gyárfás, Martin, Ruszinkó and Sárközy](https://arxiv.org/abs/2408.09059)
