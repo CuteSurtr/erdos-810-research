@@ -48,6 +48,15 @@ do
 done
 ```
 
+The 63-edge witness is locally isolated. Up to vertex relabeling, replacing any one or two of its edges yields no other admissible 63-edge graph. Its automorphism group has order three, and it has exactly one color partition even with the vertices fixed. That partition is proper and uses all 15 colors. Both coloring counters agree. All 21 distinct single-edge deletions still need 15 colors under unrestricted recoloring, as checked separately by the C and C++ decision programs. This describes one extremal support. A complete census of extremal 15-vertex supports remains open. [Graph6 representative](data/optimal-15-example.g6) · [Color-count methods](coloring-census.md)
+
+For the one-exchange calculation the 21 deletion types gave 903 possible additions and 883 distinct supports. Both decision programs accepted only the starting support. For two exchanges, removing a second edge yielded 651 distinct 61-edge graphs. The first restoration yielded 27,363 distinct 62-edge candidates, of which 166 were admissible. The second restoration yielded 6,788 distinct 63-edge candidates, of which only the starting support was admissible. At every depth, the intermediate graphs of an admissible output are admissible by edge deletion. Canonical labeling after each operation therefore preserves the full neighborhood up to isomorphism. [Enumeration program](native/exchange_neighbours.py)
+
+```sh
+python3 native/exchange_neighbours.py data/optimal-15-example.g6 15 2 \
+    --labelg "$NAUTY/labelg" --cover "$SCRATCH/check-cover"
+```
+
 ## Bounds on 15 and 16 vertices
 
 With 16 colors on 15 vertices the maximum is 64 or 65. An explicit graph with 64 edges has 458 rainbow four-cycles. For the upper bound, each edge survives 13 of the 15 vertex deletions, so $13m\le15F(14,16)=855$. A separate search excludes 66 edges using only the weaker bound $F(14,16)\le58$. That weaker bound forces minimum degree eight and complement maximum degree six at 66 edges. All 512 shards under this cap were empty. In turn, $14M(16)\le16\cdot65$, yielding $M(16)\le74$. The 16-vertex lower bound is now **71 edges**, giving $71\le M(16)\le74$. The new support has 546 four-cycles and uses 16 colors. Its construction adds a degree-eight vertex to a 63-edge parent. [Coloring](palette-witnesses.json) · [14-vertex search at 59 edges](data/14-59-k16-cover.tsv) · [15-vertex search at 66 edges](data/15-66-k16-D6-cover.tsv) · [71-edge coloring](diagonal-witnesses.json) · [16-vertex Lean certificate](../../../research/hall-reduction/OvernightWitnesses.lean)
