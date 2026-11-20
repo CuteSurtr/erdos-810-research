@@ -12,6 +12,8 @@ For fixed $0<\alpha<1/2$ and $p=n^{-\alpha}$, the typical minimum palette is $\T
 
 If edge deletion is permitted, a fixed-density random host satisfies a different upper bound. With high probability every subgraph that admits a linear palette has at most $(p/2-p^2/4+o(1))n^2$ edges. For example, at $p=1/2$ at least a quarter of the sampled edges must be deleted. [Subgraph theorem and proof](subgraphs.md)
 
+When $np^3/\log n\to\infty$, every $n$-coloring of the whole random graph has at least $(1-o(1))p^4n^3/8$ non-rainbow four-cycles with high probability. The leading constant is sharp when $n$ is a power of two, and at all orders the minimum is within a factor $2+o(1)$ of this bound. The coloring may be chosen after seeing the sampled graph. [Proof, C++ audit and Lean identities](minimum-defects.md)
+
 ## A deterministic sufficient condition
 
 For a graph $G$, let $D$ be its maximum degree and $L$ its maximum number of common neighbors of two distinct vertices. Construct a graph $H$ on the edges of $G$. Two edges conflict if they meet or lie opposite each other on a four-cycle. A vertex coloring of $H$ gives a proper edge coloring of $G$ with every four-cycle rainbow. The same conflict-graph formulation of proper rainbow coloring is usually called B-coloring. [Gyárfás, Martin, Ruszinkó and Sárközy](https://arxiv.org/abs/2408.09059)
