@@ -1,6 +1,7 @@
 // Expand the certificate in the original group table and check the actual colors.
 #include "lift_audit.h"
 #include <limits.h>
+#include <string.h>
 
 enum { MOD = 38, MAX_GROUPS = 64, MAX_COPIES = 12 };
 typedef struct { unsigned char member[M][MOD]; } Seed;
@@ -19,7 +20,7 @@ static int numeric_arg(const char *arg, int upper) {
     return *arg && !*end && value >= 1 && value <= upper ? (int)value : 0;
 }
 
-static void check_seed(const Seed *seed, const int *support) {
+static int check_seed(const Seed *seed, const int *support) {
     int row[M], col[M], length = 0;
     for (int r = 0; r < M; ++r) for (int c = 0; c < M; ++c) {
         int s = shift(r,c);
@@ -36,13 +37,51 @@ static void check_seed(const Seed *seed, const int *support) {
     for (int s = 0; s < M; ++s) for (int r = 0; r < MOD; ++r)
         selected += seed->member[s][r];
     assert(length == 2*selected);
+    return length;
+}
+
+// Anchor one row at zero by translation. Every clique in the conflict graph
+// is contained in the edges of a complete bipartite subgraph.
+static int maximum_clique(const int *support) {
+    enum { DEGREE = 17, MASKS = 1 << DEGREE };
+    int columns[DEGREE], degree = 0;
+    for (int c = 0; c < M; ++c) if (support[shift(0,c)]) {
+        assert(degree < DEGREE);
+        columns[degree++] = c;
+    }
+    assert(degree == DEGREE);
+    int *common = calloc(MASKS,sizeof(*common));
+    assert(common);
+    for (int r = 0; r < M; ++r) {
+        int mask = 0;
+        for (int k = 0; k < degree; ++k)
+            if (support[shift(r,columns[k])]) mask |= 1 << k;
+        ++common[mask];
+    }
+    for (int bit = 1; bit < MASKS; bit <<= 1)
+        for (int mask = 0; mask < MASKS; ++mask)
+            if (!(mask & bit)) common[mask] += common[mask | bit];
+    int largest = 0;
+    for (int mask = 1; mask < MASKS; ++mask) {
+        int bits = 0;
+        for (int v = mask; v; v &= v-1) ++bits;
+        if (bits*common[mask] > largest) largest = bits*common[mask];
+    }
+    free(common);
+    return largest;
 }
 
 int main(int argc, char **argv) {
-    if (argc != 5) return 1;
-    const int a = numeric_arg(argv[2],MAX_COPIES), b = numeric_arg(argv[3],MAX_COPIES);
-    const int orbits = numeric_arg(argv[4],MAX_GROUPS);
-    if (!a || !b || !orbits || orbits*MOD > M*(a+b)) return 1;
+    const int classes_only = argc == 3 && strcmp(argv[2],"--classes") == 0;
+    const int fractional = argc == 3 && strcmp(argv[2],"--fractional") == 0;
+    if (argc != 5 && !classes_only && !fractional) return 1;
+    int a = 0, b = 0, orbits = 0;
+    if (argc == 5) {
+        a = numeric_arg(argv[2],MAX_COPIES);
+        b = numeric_arg(argv[3],MAX_COPIES);
+        orbits = numeric_arg(argv[4],MAX_GROUPS);
+        if (!a || !b || !orbits || orbits*MOD > M*(a+b)) return 1;
+    }
     FILE *cert = fopen(argv[1],"r");
     if (!cert) return 1;
     int support[M] = {0}, x, y, points = 0;
@@ -57,8 +96,13 @@ int main(int argc, char **argv) {
     assert(fscanf(cert,"%d",&groups) == 1 && groups > 0 && groups <= MAX_GROUPS);
     Seed *seeds = calloc((size_t)groups,sizeof(*seeds));
     assert(seeds);
+    int largest_class = 0;
+    long long repetitions = 0, coverage[M] = {0};
     for (int i = 0; i < groups; ++i) {
-        int n;
+        int n, multiplicity = 1;
+        if (fractional) assert(fscanf(cert,"%d",&multiplicity) == 1 &&
+                               multiplicity >= 1 && multiplicity <= 1000000);
+        repetitions += multiplicity;
         assert(fscanf(cert,"%d",&n) == 1 && n >= 1 && n <= MOD);
         for (int k = 0; k < n; ++k) {
             int s,r;
@@ -66,12 +110,30 @@ int main(int argc, char **argv) {
             assert(s >= 0 && s < M && support[s] && r >= 0 && r < MOD);
             assert(!seeds[i].member[s][r]);
             seeds[i].member[s][r] = 1;
+            coverage[s] += multiplicity;
         }
-        check_seed(&seeds[i],support);
+        int size = check_seed(&seeds[i],support);
+        if (size > largest_class) largest_class = size;
     }
     char extra;
     assert(fscanf(cert," %c",&extra) == EOF);
     fclose(cert);
+    if (fractional) {
+        long long fold = LLONG_MAX;
+        for (int s = 0; s < M; ++s)
+            if (support[s] && coverage[s] < fold) fold = coverage[s];
+        assert(fold > 0);
+        printf("%lld colors, minimum fold %lld, ratio %.9f\n",
+               MOD*repetitions, fold, (double)(MOD*repetitions)/fold);
+        free(seeds);
+        return 0;
+    }
+    if (classes_only) {
+        printf("largest certified class %d; exact maximum clique %d\n",
+               largest_class,maximum_clique(support));
+        free(seeds);
+        return 0;
+    }
 
     int (*labels)[MOD][MAX_COPIES*MAX_COPIES] = calloc(M,sizeof(*labels));
     assert(labels);
