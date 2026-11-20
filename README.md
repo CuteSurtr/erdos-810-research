@@ -18,6 +18,8 @@ The argument approximates the adjacency matrix by one whose entries lie between 
 
 For every sufficiently large order there is a connected graph for which keeping the assigned colors forces at least $n/2-O(n^{3/4})$ edge deletions under every admissible initial coloring. A single shared-edge deletion allows a proper recoloring. The sharp cost in this family reaches exactly $n/2$ at infinitely many orders, including six deletions on 12 vertices and 231 on 462 vertices. [All-orders proof](research/properification-lower/shared-edge.md) · [Sharp bound and reproducer](research/properification-lower/bouquet.md)
 
+A nine-vertex example exceeds the half-order inherited deletion cost. Every admissible coloring of its 20 edges needs five deletions to become proper with labels fixed. Deleting a single edge permits a proper nine-color recoloring. [Elementary proof and all 64 color partitions](research/properification-lower/nine-vertex.md)
+
 ## Setting
 
 Let $`p`$ tend to infinity through odd primes. A color $`a`$ is a partial

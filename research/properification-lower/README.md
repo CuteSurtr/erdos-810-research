@@ -8,6 +8,8 @@ In particular, a uniform $O(n^{2-\eta})$ deletion bound is impossible for every 
 
 A connected example now separates the two deletion costs on the same graph. For all sufficiently large orders, every admissible initial coloring forces at least $n/2-O(n^{3/4})$ deletions with labels fixed. One edge deletion permits a proper recoloring of all remaining edges using the original palette budget. [Shared-edge construction and proof](shared-edge.md)
 
+A nine-vertex graph requires five inherited deletions under every admissible coloring, although one deletion with recoloring suffices. All 64 color partitions attain the same cost. [Elementary proof and certificates](nine-vertex.md)
+
 Within this construction the largest cost is exactly half the order for infinitely many orders, even allowing different block sizes. On 12 vertices the two costs are six and one. [Sharp bound for blocks sharing an edge](bouquet.md)
 
 Requiring every two disjoint edges of a component to share a four-cycle determines its support. The resulting class has explicit palette thresholds, exact deletion costs and a sharp edge maximum of $n^{3/2}/\sqrt2+O(n)$ over disjoint unions. [Classification and exact extremizers](multipartite.md)
