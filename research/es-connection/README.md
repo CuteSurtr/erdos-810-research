@@ -9,6 +9,8 @@ concern polygon transversals, cup extensions and rainbow colorings.
 
 The 17-point integer octagon example also gives an explicit #810 coloring through a progression-free cyclic projection. Its graph has 598 vertices, 17 colors and 14,950 rainbow four-cycles. [Projection and graph construction](../neighborhood-packing/geometric-lower.md)
 
+Using the points and their consecutive connecting lines gives a second construction on the same coordinates. With 17 copies of each point and line there are 578 vertices, 9,826 edges and 1,965,200 rainbow four-cycles. For all incidence constructions on general-position points, with arbitrary multiplicities and a budget of $n$ colors, the maximum is $n^{3/2}/\sqrt2+O(n)$. [Sharp incidence bound and ES example](../neighborhood-packing/incidence.md)
+
 ## A sharp ten-point obstruction
 
 **Theorem (computer-assisted).** Suppose a finite planar set in general

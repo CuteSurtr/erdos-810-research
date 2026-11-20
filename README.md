@@ -26,6 +26,8 @@ Positive edge density in #810 requires open-neighborhood VC dimension at least a
 
 If the vertices can be ordered so that every neighborhood is a union of at most $k$ intervals, the maximum is $\sqrt{k}\,n^{3/2}+O_k(n)$ for fixed $k$. Consecutive windows give the upper bound, and properly colored bipartite bands attain the leading constant. [Sharp interval theorem and constructions](research/interval-neighborhoods/README.md)
 
+For constructions that replace real points and lines by copies, the sharp edge order is $n^{8/5}$. If the base points are in general position, as in the Erdős–Szekeres project, the maximum is $n^{3/2}/\sqrt2+O(n)$. The project's 17-point example realizes the leading term at 578 vertices. [Incidence theorems and ES construction](research/neighborhood-packing/incidence.md)
+
 Every positive-density example with a linear palette would require matrix rank $\Omega(\sqrt n)$ over every field, for any matrix that is nonzero exactly on its edges. The characteristic-zero matching bound uses a sharp size theorem for fooling-set matrices. [Rank obstruction](research/support-rank/README.md) · [Sharp matrix bound](research/support-rank/fooling-sets.md)
 
 ### Random graphs

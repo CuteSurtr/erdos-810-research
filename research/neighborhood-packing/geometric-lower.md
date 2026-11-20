@@ -24,6 +24,8 @@ To cover every sufficiently large order, the same construction works at each odd
 
 ## An integer construction in arbitrary fixed dimension
 
+In the plane, the integer example below reaches the sharp order for real point–line incidences with arbitrary multiplicities. The finite-field example reaches the sharp order for blowups of four-cycle-free bipartite graphs. [Matching upper bounds and dependence on the palette](incidence.md)
+
 Let $s=d-1$, fix an integer $L\ge2$, and put $T=4sL^2$. On each side use the $N=L^s T$ points of $\{1,\ldots,L\}^s\times\{1,\ldots,T\}$. Join $(x,t)$ to $(y,u)$ if $u-t=\lVert y-x\rVert^2$, coloring by $y-x$. Strict positivity of the square norm gives the same progression obstruction over the integers. The affine-hyperplane calculation applies over the reals after restricting the common point set to the box.
 
 There are at most $q_0=(2L-1)^s$ colors and at least $(3T/4)L^{2s}$ edges, because for each horizontal pair the time difference is at most $T/4$. Blow up by $h=\lfloor2N/q_0\rfloor=\Theta_d(L^2)$ as above. Then $q_0h^2\le n=2Nh$, $n=\Theta_d(L^{s+4})$, and the number of edges is $\Omega_d(L^{2s+6})$. This gives the stated exponent. The same order holds for all sufficiently large $n$ in this integer construction by taking the largest available size below $n$ and adding isolated vertices. Consecutive construction sizes have asymptotic ratio one.
