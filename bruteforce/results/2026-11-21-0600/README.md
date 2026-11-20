@@ -25,6 +25,8 @@ With 16 colors on 15 vertices the maximum is 64 or 65. An explicit graph with 64
 
 With 14 colors on 15 vertices the maximum is 61 or 62. The lower witness has 356 four-cycles. A 63-edge graph would have minimum degree at least eight because $F(14,14)=55$. The complement search at maximum degree six returned zero across all 512 shards. [Coloring](palette-witnesses.json) · [All shard counts](data/15-63-k14-D6-cover.tsv)
 
+A 62-edge witness, if one exists, must have **minimum degree eight**. A degree-seven vertex would leave one of the 52 optimal 14-vertex supports at 55 edges. Together those parents admit 2,109 color partitions when their vertex labels are fixed. Exhausting these partitions and all 176,748 candidate neighborhoods gives zero extensions. An independent C program checked the 176,748 underlying candidate graphs directly. It rejected 173,873 by conflict cliques and the remaining 2,875 by exact coloring. [Parent catalog](data/optimal-14.g6) · [Colored extension algorithm](native/extend_colored.cpp) · [Independent checker](../V12/V2/src/checker.c)
+
 ```sh
 python3 check_palette.py palette-witnesses.json
 PRUNE_K=14 "$SCRATCH/rainbow-a" -u 13 28:28
@@ -43,6 +45,8 @@ PRUNE_K=14 "$SCRATCH/rainbow-cover" -u 14 35:35
 There are exactly **52 optimal 14-vertex supports**. All 1,151 optimal coloring classes are proper. Five potential incident equalities survive the elementary four-cycle test across these supports, and SAT excludes all five. The census uses complementary maximum degree seven because deleting any vertex from a 55-edge candidate leaves at most $F(13,14)=49$ edges. [Optimal graphs](data/optimal-14.g6) · [Census counts](data/14-55-k14-cover.tsv) · [Both independent coloring counters](coloring-census.md) · [Exchange and cycle statistics](data/geometry-14.json)
 
 A second upper-bound argument deletes a minimum-degree vertex. In a putative 56-edge graph its degree is seven or eight, since deleting it leaves at most 49 edges and the average degree is eight. At degree seven the parent is one of six 49-edge graphs. Restoring minimum degree seven gives 10,296 candidates. At degree eight the graph is regular and its parent has 48 edges and minimum degree seven. nauty finds 37,014 admissible parents under that cap. Exactly 31,356 have eight vertices of degree seven and five of degree eight, and each gives a unique candidate. Two independent C checkers reject all **41,652** candidates across the two cases. The V2 checker finds a conflict clique exceeding the palette in 41,517 cases and rules out the remaining 135 by coloring search. [Parent search counts](data/13-48-k14-D5-cover.tsv) · [Extension program](native/extend_catalog.cpp) · [Six dense parents](data/order13-k14-e49.g6) · [Independent C checker](../M12/src/prune810b.c)
+
+Exhausting the old colorings gives an independent extension test. The six degree-seven parents have 57 color partitions. The 31,356 eligible parents in the regular case have 4,637,631 partitions. Across both cases no partition permits a valid coloring of the restored spokes. [Exact spoke-list test](native/extend_colored.cpp) · [Counts by case](data/colored-extensions.tsv)
 
 The following commands reproduce the regular-parent calculation using a nauty installation that includes `complg`. The extension program reads original supports and generates every neighborhood of the specified new minimum degree.
 

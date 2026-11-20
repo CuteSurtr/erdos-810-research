@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <array>
 #include <cstdint>
+#include <functional>
 #include <iostream>
 #include <limits>
 #include <numeric>
@@ -31,6 +32,7 @@ struct Census {
     std::array<int, 64> color{};
     std::array<Mask, 31> available{};
     std::vector<std::vector<int>> automorphisms;
+    std::function<void()> visit_partition;
     Mask live = 0;
     Census(const std::string &raw, int palette)
         : n(static_cast<unsigned char>(raw.at(0)) - 63), k(palette) {
@@ -182,6 +184,10 @@ struct Census {
             ++total;
             mind = std::min(mind, used);
             maxd = std::max(maxd, used);
+            if (visit_partition) {
+                visit_partition();
+                return;
+            }
             if (representative()) {
                 ++orbits;
                 bool ordinary = true;
@@ -225,7 +231,8 @@ struct Census {
         }
     }
     void run() {
-        symmetries();
+        if (!visit_partition)
+            symmetries();
         Mask anchor = 0;
         for (Mask start = live; start; start &= start - 1) {
             int u = first(start);

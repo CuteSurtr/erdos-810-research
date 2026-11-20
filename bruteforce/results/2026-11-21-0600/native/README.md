@@ -14,7 +14,13 @@ The cover solver agreed with the independent four-subset checker on every one of
 
 Build with a GCC or Clang compiler supporting 128-bit integers. The source handles orders 1 through 16 and up to 31 colors. The third build argument is optional and enables the independent SAT audit of the proper-coloring census.
 
+The colored extension checker takes the final order, edge count, palette and minimum degree. It reads parent graph6 records and tries every possible neighborhood of the restored minimum-degree vertex. For each parent it enumerates all old color partitions up to color relabeling. Once two proposed neighbors are chosen, their old two-edge paths determine which colors the two new spokes must avoid. An old path with repeated colors excludes the neighborhood. Distinct representatives for the spoke lists always suffice. Where two spokes can share a label, an exact list-coloring search also tries that possibility. This handles graphs such as a one-color five-cycle, in which a matching for the two restored spokes is impossible. Parents may have up to 64 edges. [Spoke checker](extend_colored.cpp) · [Parent coloring enumeration](count_colorings.cpp)
+
+The colored extension checker and the direct child solver returned identical labeled extensions in 510 small parameter batches, covering 1,303 accepted extensions. The batches used every unlabeled graph on three through five vertices, a fixed sample of 30 six-vertex graphs, palettes from one through five, and every possible minimum degree consistent with the edge total.
+
 ```sh
 sh native/build.sh "$NAUTY" "$SCRATCH" "$CADICAL"
 "$SCRATCH/check-cover" 13 --colors < data/optimal-13.g6
+"$SCRATCH/extend-colored" 15 62 14 7 < data/optimal-14.g6
+python3 native/check_extensions.py "$NAUTY/geng" "$SCRATCH"
 ```
