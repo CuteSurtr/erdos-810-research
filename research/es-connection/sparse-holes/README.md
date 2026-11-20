@@ -39,6 +39,12 @@ $$
 $$
 For arbitrary $s$, embed the symbols in the least $m\equiv3\pmod6$ above $s$ and restrict. Replacing $s$ by $m\le s+5$ in the upper bound changes the leading $s^6/6$ by $O(s^5)$. Together with the distance-three lower bound this proves the second assertion. For $s=3$ the construction uses 72 colors on 540 occupied cells of the 27-by-27 board.
 
+## How much can be saved below the threshold?
+
+The order of the error term in the universal lower bound is attainable on infinite families. Let $b=s^3$, take $L\equiv3\pmod6$ groups of $b$ indices each, and set $t=Lb$. Omit the Hamming holes inside every group and retain all cross-group cells. The hole graph is regular of degree $h=3s-2$. Use disjoint palettes inside the groups. For cells between groups, take the Bose triples of the $L$ group indices. In an oriented group triple $(A,B,C)$ identify indices within each group with $\mathbb Z_b$. For every $x,y$, put the arcs $(A,x)\to(B,y)\to(C,x+y)\to(A,x)$ in one class. Use the reverse directed triangles for the other orientation. This covers every cross-group cell exactly once, with $L(L-1)b^2/3$ colors. Every pair in a class has a missing crossed diagonal cell.
+
+The upper palette is therefore $t^2/3-tb/6+O(Lb^{5/3})=t^2/3-th^3/162+O(th^2)$. The constant in the error is independent of $L$. The universal lower bound gives $Q(B)\ge t^2/3-O(th^3)$. Consequently the possible saving below $t^2/3$ has order $th^3$ along these families as $s$ grows, even if $L$ also grows and $h=o(t^{1/3})$. Taking an arbitrarily large fixed $L$ shows that, for every constant $c>0$, regular holes of degree at most $ct^{1/3}$ can already save a positive fixed fraction of the quadratic palette.
+
 ## Reproduction
 
 Run the commands below in this directory. The second pair of tools accepts the generated DIMACS instance and an independently checkable proof file. [CaDiCaL](https://github.com/arminbiere/cadical) · [DRAT-trim](https://github.com/marijnheule/drat-trim)

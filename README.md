@@ -56,6 +56,8 @@ An additive construction from the same 17 coordinates gives a 152-vertex graph t
 
 Omitting a perfect matching from each block of that same ES graph allows 26 copies, giving **839,800 edges on 3,952 vertices**. A counting argument forces at most 27 copies even when each block omits a different matching. [Proof, certificates and C++ verifier](research/es-connection/crown-lifts.md)
 
+With two aligned omitted matchings, the same coordinates allow **28 copies** and **940,576 edges**. At most 29 copies are possible in that model. Larger certified blocks give 26,542,848 edges on 29,184 vertices. [ES witnesses and two-matching upper bound](research/es-connection/sparse-blocks/README.md)
+
 For a nearly complete $t$-by-$t$ block with a regular pattern of $h=o(t^{1/3})$ omissions per row, the minimum rainbow-rectangle palette is $(1/3+o(1))t^2$. At $t=s^3$ an explicit pattern with $3s-2$ omissions cuts the leading cost to $t^2/6$. [Proof, finite partition and checked SAT exclusion](research/es-connection/sparse-holes/README.md)
 
 Every positive-density example with a linear palette would require matrix rank $\Omega(\sqrt n)$ over every field, for any matrix that is nonzero exactly on its edges. The characteristic-zero matching bound uses a sharp size theorem for fooling-set matrices. [Rank obstruction](research/support-rank/README.md) · [Sharp matrix bound](research/support-rank/fooling-sets.md)
