@@ -37,6 +37,21 @@ Dimensions choose(int n, int required_side) {
     return best;
 }
 
+Dimensions rounded(int n) {
+    int length = 1;
+    while (length * length < 4 * n)
+        ++length;
+    int a = length / 2, b = length - a;
+    while (a * b > n) {
+        --a;
+        ++b;
+    }
+    int s = a - 1, t = b, spare = n - a * b, blocks = (n - 2) / length;
+    if (s < 2 || t < s || spare < 0 || spare >= s || blocks < 1)
+        throw std::runtime_error("the rounded parameters do not give a positive block loss");
+    return {n, s, t, blocks, spare};
+}
+
 struct Witness {
     Dimensions dim;
     bool recolor;
@@ -173,14 +188,16 @@ int main(int argc, char **argv) {
     if (parsed.ec != std::errc{} || parsed.ptr != end || value < 2 || value > 8192)
         return 2;
     std::string option = argv[1], mode = argv[3];
-    if ((option != "--square" && option != "--order") ||
+    if ((option != "--square" && option != "--order" && option != "--rounded") ||
         (mode != "original" && mode != "recolored"))
         return 2;
     long long n = option == "--square" ? static_cast<long long>(value) * (value + 1) : value;
     if (n > 8192)
         return 2;
     try {
-        Witness(choose(int(n), option == "--square" ? value : 0), mode == "recolored").run();
+        Dimensions dimensions = option == "--rounded" ? rounded(int(n)) :
+                               choose(int(n), option == "--square" ? value : 0);
+        Witness(dimensions, mode == "recolored").run();
     } catch (const std::exception &error) {
         std::cerr << error.what() << '\n';
         return 1;

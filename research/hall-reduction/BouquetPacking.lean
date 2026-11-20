@@ -70,4 +70,23 @@ theorem square_loss_le_side {s a b : ℕ} (hab : a ≤ b)
   rw [eqn, loss_with_slack]
   omega
 
+/-- Exact integer rounding recipe for the initial range of the all-orders proof. -/
+def roundingFeasible (n : ℕ) : Bool :=
+  let L := ((List.range (n+1)).find? fun L => 4*n ≤ L*L).getD n
+  let p := L/2
+  let q := L-p
+  let j := ((List.range (p+1)).find? fun j => (p-j)*(q+j) ≤ n).getD p
+  let s := p-j-1
+  let t := q+j
+  let h := (n-2)/L
+  decide (2 ≤ s ∧ s ≤ t ∧ t*(s+1) ≤ n ∧ n-t*(s+1)<s ∧
+    1 ≤ h ∧ 2+h*(s+t-1) ≤ n ∧ 1+h*(s+t) ≤ n ∧ s+t+1=L)
+
+set_option maxRecDepth 8192 in
+set_option maxHeartbeats 2000000 in
+theorem initial_rounding_feasible : ∀ i : Fin 144, roundingFeasible (112+i.val)=true := by
+  decide +kernel
+
+theorem rounding_fails_at_111 : roundingFeasible 111 = false := by decide +kernel
+
 end Erdos810.BouquetPacking

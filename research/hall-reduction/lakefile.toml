@@ -422,3 +422,6 @@ name = "SharedEdgeBlock"
 
 [[lean_lib]]
 name = "BouquetPacking"
+
+[[lean_lib]]
+name = "RectangularBlock"

@@ -1,6 +1,6 @@
 # One deleted edge can change the cost of making a coloring proper
 
-**For all sufficiently large $n$, there is a connected $n$-vertex graph with the following two properties. Every coloring with at most $n$ colors that makes every four-cycle rainbow requires at least $n/2-O(n^{3/4})$ edge deletions to become proper with its labels fixed. Deleting one specified edge permits a proper rainbow-four-cycle coloring with the same palette.** A coloring is proper when all edges incident with the same vertex have different colors.
+**For every $n\ge112$, there is a connected $n$-vertex graph with the following two properties. Every coloring with at most $n$ colors that makes every four-cycle rainbow requires at least $n/2-O(n^{3/4})$ edge deletions to become proper with its labels fixed. Deleting one specified edge permits a proper rainbow-four-cycle coloring with the same palette.** A coloring is proper when all edges incident with the same vertex have different colors.
 
 For example, one graph on 420 vertices has 4,419 edges and 437,045 rainbow four-cycles. Every admissible 420-coloring forces at least 200 deletions if the surviving edges keep their labels. A coloring attaining 200 exists. Deleting one shared edge and coloring the other 4,418 edges afresh suffices. The lower bound applies to every possible starting coloring. The earlier near-quadratic lower bound in this project concerns a specified coloring. [Construction in C++](shared_edge.cpp) · [Earlier deletion result](README.md) · [Original question](https://www.erdosproblems.com/810)
 
@@ -12,13 +12,13 @@ The least admissible palette is $st+t=t(s+1)$. The cross edges take $st$ exclusi
 
 Write $n=t(s+1)+\delta$ with $0\le\delta<s$. To attain exactly $s-\delta$ necessary deletions, give the spoke to $a_i$ the color of the spoke to $b_{(i+1)\bmod t}$, then split $\delta$ pairs with fresh colors. The two spokes to $a_0$ and $b_0$ have different colors.
 
-Deleting $a_0b_0$ gives a different option. For each $1\le i<s$, give the two disjoint edges $a_0b_i$ and $a_i b_0$ a common color. The missing edge $a_0b_0$ breaks their only potential four-cycle, since there are no edges inside $A$ or $B$. Give every other edge a distinct color. This coloring is proper, every four-cycle is rainbow, and the number of labels used is exactly $st+s+t-1-(s-1)=t(s+1)$. For square blocks, Lean also checks the explicit punctured-board coloring, including all three cycle types, properness and the palette cardinality. [Punctured-board lemmas](../hall-reduction/SharedEdgeBlock.lean)
+Deleting $a_0b_0$ gives a different option. For each $1\le i<s$, give the two disjoint edges $a_0b_i$ and $a_i b_0$ a common color. The missing edge $a_0b_0$ breaks their only potential four-cycle, since there are no edges inside $A$ or $B$. Give every other edge a distinct color. This coloring is proper, every four-cycle is rainbow, and the number of labels used is exactly $st+s+t-1-(s-1)=t(s+1)$. Lean also checks this explicit coloring for rectangular blocks. An injection from the $s-1$ private row indices into the $t-1$ private column indices specifies the pairs. The formal proof covers all three cycle types, properness and the palette cardinality. [Rectangular punctured-board lemmas](../hall-reduction/RectangularBlock.lean)
 
 ## Several blocks share the same edge
 
 Take $h$ copies, identify all their $a_0$ vertices as $u$, and identify all their $b_0$ vertices as $v$. The edge $uv$ occurs once. All other vertices and edges belong to individual blocks. The $h$ sets of apex spokes are disjoint. Restricting any admissible coloring to each block therefore forces at least $h(s-\delta)$ distinct deletions to preserve labels and obtain properness.
 
-The only four-cycles using more than one block are $u,z_i,v,z_j,u$. A cycle crossing blocks must pass through both $u$ and $v$, and the only path of length two between them inside block $i$ goes through $z_i$. In particular these cross-block cycles persist after deleting $uv$.
+The only four-cycles using more than one block are $u,z_i,v,z_j,u$. Removing $u,v$ separates all private vertices of different blocks. A four-cycle meeting two blocks therefore splits into two paths of length two between $u$ and $v$. A cycle using $uv$ and a path of length three stays in one block, since the two internal vertices of the path are adjacent. The only common neighbor of $u$ and $v$ in block $i$ is $z_i$. The mixed cycles persist after deleting $uv$. When $h\ge2$, they require $uz_i$ and $vz_i$ to have different labels even though these spokes can agree in an isolated block.
 
 Suppose $2+h(s+t-1)\le n$ and $h(s+t)\le n-1$. In the original block coloring above, assign $uv$ the same label in every block. Within one block the edges at $u$ or $v$ other than $uv$ use $s+t$ distinct labels. Reserve disjoint sets of that size for the different blocks, and extend each local renaming to a permutation of the palette. The cross-block cycles then have four different colors. The only incident repetitions are the $s-\delta$ pairs at each private apex, so the lower bound on deletions is attained.
 
@@ -32,17 +32,41 @@ For $s=t\ge2$, choose $n=s(s+1)$ and $h=\lfloor s/2\rfloor$. The two size condit
 
 For odd $s\ge3$ one additional block fits if two disjoint boundary edges in different blocks can share a label. The generator uses this refinement. It attains exactly $n/2$ inherited deletions at every such order, the maximum in this family even with unequal blocks. [Sharp packing bound](bouquet.md)
 
-For a general large $n$, let $L=\lceil2\sqrt n\rceil$, $a_0=\lfloor L/2\rfloor$, and $b_0=\lceil L/2\rceil$. Then $D=a_0b_0-n$ is nonnegative and $D=O(\sqrt n)$. Choose the least $j\ge0$ for which $(a_0-j)(b_0+j)\le n$. Since the product falls by $j^2+(b_0-a_0)j$, we have $j=O(n^{1/4})$. The excess fall at the first crossing is at most $2j$, giving
+For a general large $n$, let $L=\lceil2\sqrt n\rceil$, $p=\lfloor L/2\rfloor$, and $q=\lceil L/2\rceil$. Then $D=pq-n$ is nonnegative and $D=O(\sqrt n)$. Choose the least $j\ge0$ for which $(p-j)(q+j)\le n$. Since the product falls by $j^2+(q-p)j$, we have $j=O(n^{1/4})$. The excess fall at the first crossing is at most $2j$, giving
 $$
-a=a_0-j,\qquad b=b_0+j,\qquad 0\le n-ab=O(n^{1/4}).
+a=p-j,\qquad b=q+j,\qquad 0\le n-ab=O(n^{1/4}).
 $$
 Set $s=a-1$, $t=b$, $\delta=n-ab$, and $h=\lfloor(n-2)/L\rfloor$. Then $s,t=\sqrt n+O(n^{1/4})$, $0\le\delta<s$ for large $n$, and $h=\sqrt n/2+O(1)$. Both size conditions hold because $s+t+1=L$. Consequently $h(s-\delta)=n/2-O(n^{3/4})$. The construction has $(1/2+o(1))n^{3/2}$ edges, so its density tends to zero.
 
+### A numerical bound valid from order 112
+
+At every $n\ge112$ the same rounded construction gives
+
+$$
+h(s-\delta)\ \ge\ \frac n2-\frac32n^{3/4}-\frac{16}{5}\sqrt n.
+$$
+
+Put $x=\sqrt n$ and $y=\sqrt x$. First suppose $n\ge256$. Then $2x\le L<2x+1$, $p\ge x-1/2$, and $0\le D<x+1/4$. If $j>0$, its minimality implies $(j-1)^2<D$. Since $D$ and the falling products are integers, the overshoot satisfies $\delta\le 2j-1$. Thus $j<1+y+1/(8y)$ and
+
+$$
+s-\delta \ge x-1/2-3j > x-3y-29/8.
+$$
+
+The last inequality uses $y\ge4$. When $j=0$, $D=\delta=0$ and $s\ge x-3/2$ gives the same bound. Also
+
+$$
+h>\frac{x^2-2}{2x+1}-1
+ =\frac x2-\frac54-\frac{7}{4(2x+1)}
+ >\frac x2-\frac43.
+$$
+
+Both lower bounds are positive because $y(y-3)\ge4$. The part sizes satisfy $2\le s\le t$ and $\delta<s$. Multiplication gives an error of at most $(3/2)xy+(151/48)x$, which implies the displayed bound. For $112\le n\le255$, Lean checks the integer construction at all 144 orders, including its palette and vertex inequalities. The right-hand side of the bound is negative throughout this interval because $y\le4$ gives $y(y-3)/2\le2$. The rounding recipe itself fails at 111. [Finite-range kernel check](../hall-reduction/BouquetPacking.lean)
+
 ## Reproduction
 
-The block lemmas compile with Lean and Mathlib 4.24.0. Run `lake build SharedEdgeBlock` in `research/hall-reduction`. The gluing and the choice of integer part sizes are justified in the proof above.
+The block, rectangular recoloring and packing lemmas compile with Lean and Mathlib 4.24.0. Run `lake build SharedEdgeBlock RectangularBlock BouquetPacking` in `research/hall-reduction`. The mixed-cycle argument and the analytic estimates are given above.
 
-The C++ program can use the exact square family or choose feasible part sizes for a specified order. It writes a complete colored edge list to standard output. The audit checks every four-cycle individually. For the 420-vertex pair it counts 437,045 four-cycles before deletion and 433,055 after. For general $s,t,h$, the original count is
+The C++ program can use the exact square family (`--square`), optimize over homogeneous blocks (`--order`), or follow the rounding proof exactly (`--rounded`). It writes a complete colored edge list to standard output. The audit checks every four-cycle individually. For the 420-vertex pair it counts 437,045 four-cycles before deletion and 433,055 after. For general $s,t,h$, the original count is
 $$
 h\left[\binom{s}{2}\binom{t}{2}+t\binom{s}{2}+s\binom{t}{2}\right]+\binom h2.
 $$
@@ -54,4 +78,5 @@ cc -O3 ../../bruteforce/results/2026-11-21-0600/large/audit.c -o "$SCRATCH/audit
 "$SCRATCH/shared-edge" --square 20 original | "$SCRATCH/audit" --cycles
 "$SCRATCH/shared-edge" --square 20 recolored | "$SCRATCH/audit" --cycles
 "$SCRATCH/shared-edge" --order 809 original | "$SCRATCH/audit" --cycles
+"$SCRATCH/shared-edge" --rounded 112 original | "$SCRATCH/audit" --cycles
 ```
