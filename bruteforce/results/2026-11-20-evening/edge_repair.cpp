@@ -17,18 +17,19 @@ struct Candidate { int conflicts, u, v; std::uint32_t tie; };
 
 class Repair {
  public:
-  Repair(int order, std::vector<Edge> input, unsigned seed, int milliseconds)
+  Repair(int order, std::vector<Edge> input, unsigned seed, int milliseconds, bool partial = false)
       : n(order), edges(std::move(input)), at(n, std::vector<int>(n, -1)), rng(seed),
         deadline(Clock::now() + std::chrono::milliseconds(milliseconds)) {
     for (int i = 0; i < static_cast<int>(edges.size()); ++i) {
       auto [u,v,c] = edges[i];
-      if (u < 0 || v < 0 || u >= n || v >= n || u == v || c < 0 || c >= n || at[u][v] >= 0)
+      if (u < 0 || v < 0 || u >= n || v >= n || u == v || c < (partial ? -1 : 0) ||
+          c >= n || at[u][v] >= 0)
         throw std::runtime_error("invalid graph input");
       at[u][v] = at[v][u] = i;
     }
   }
 
-  void run(bool check_scores = false) {
+  void run(bool check_scores = false, const std::vector<bool>* allowed = nullptr) {
     while (Clock::now() < deadline) {
       std::vector<std::vector<int>> incident(n, std::vector<int>(n, -1));
       std::vector<std::vector<int>> matching(n);
@@ -58,7 +59,7 @@ class Repair {
       }
       std::vector<Candidate> candidates;
       for (int u = 0; u < n; ++u) for (int v = 0; v < u; ++v) {
-        if (at[u][v] >= 0) continue;
+        if (at[u][v] >= 0 || (allowed && !(*allowed)[u*n+v])) continue;
         int conflicts = score[u*n+v];
         if (check_scores) {
           int direct = 0;
@@ -92,6 +93,43 @@ class Repair {
   }
 
   const std::vector<Edge>& result() const { return edges; }
+
+  // Finish a partial palette on a fixed topology. Unresolved edges can be omitted.
+  // The conflict lists refer to the full topology throughout, so omission is safe.
+  void compress() {
+    neighbors.assign(edges.size(), {});
+    locked.assign(edges.size(),false);
+    built.assign(edges.size(),false);
+    std::vector<int> order(edges.size());
+    std::iota(order.begin(),order.end(),0);
+    std::shuffle(order.begin(),order.end(),rng);
+    // Seed hints may come from a smaller graph. Remove their new conflicts first.
+    for (int i : order) {
+      if (edges[i].color < 0) continue;
+      for (int j : conflicts_of(i)) {
+        if (edges[j].color == edges[i].color) { edges[i].color = -1; break; }
+      }
+    }
+    int previous = static_cast<int>(edges.size())+1;
+    int stalled = 0;
+    while (Clock::now() < deadline && stalled < 3) {
+      std::vector<int> dirty;
+      for (int i : order) if (edges[i].color < 0) dirty.push_back(i);
+      if (dirty.empty()) break;
+      if (static_cast<int>(dirty.size()) == previous) ++stalled;
+      else stalled = 0;
+      previous = static_cast<int>(dirty.size());
+      std::shuffle(dirty.begin(),dirty.end(),rng);
+      for (int i : dirty) {
+        if (Clock::now() >= deadline) break;
+        changes.clear();
+        budget = 300;
+        if (!recolor(i, 5)) undo(0);
+      }
+    }
+    edges.erase(std::remove_if(edges.begin(),edges.end(),
+                               [](Edge e) { return e.color < 0; }),edges.end());
+  }
 
  private:
   int n;
@@ -246,9 +284,22 @@ int main(int argc, char** argv) {
   std::vector<Edge> edges(m);
   for (auto& e : edges) if (!(std::cin >> e.u >> e.v >> e.color)) return 2;
   std::string mode = argc > 1 ? argv[1] : "";
-  if (argc > 2 || (mode != "" && mode != "--exchange" && mode != "--check-scores")) return 2;
+  if (argc > 2 || (mode != "" && mode != "--exchange" && mode != "--check-scores" &&
+                   mode != "--compress" && mode != "--guided")) return 2;
+  std::vector<bool> allowed;
+  if (mode == "--guided") {
+    allowed.assign(n*n,false);
+    for (auto [u,v,c] : edges) if (c == -1) {
+      if (u < 0 || v < 0 || u >= n || v >= n || u == v) return 2;
+      allowed[std::max(u,v)*n+std::min(u,v)] = true;
+    }
+    edges.erase(std::remove_if(edges.begin(),edges.end(),[](Edge e){ return e.color == -1; }),
+                edges.end());
+  }
   if (mode == "--exchange") edges = exchange_edges(n,edges,seed,ms);
-  Repair search(n,std::move(edges),seed,mode == "--check-scores" ? 10000 : ms);
-  if (mode != "--exchange") search.run(mode == "--check-scores");
+  Repair search(n,std::move(edges),seed,mode == "--check-scores" ? 10000 : ms,mode == "--compress");
+  if (mode == "--compress") search.compress();
+  else if (mode != "--exchange") search.run(mode == "--check-scores",
+                                            mode == "--guided" ? &allowed : nullptr);
   search.write();
 }

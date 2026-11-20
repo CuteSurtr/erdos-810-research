@@ -5,6 +5,7 @@ from random import Random
 import sys
 
 from repair_search import insert_edges
+from compress_search import compress
 
 
 def check(n, edges):
@@ -52,6 +53,14 @@ def main(binary):
             result = insert_edges(binary, n, input_edges, 8, rng.randrange(1 << 30), "--exchange")
             assert len(result) >= len(input_edges)
             check(n, result)
+            rows = [(u,v,c if rng.randrange(3) else -1) for u,v,c in input_edges]
+            result = compress(binary,n,rows,8,rng.randrange(1 << 30))
+            assert check(n,result) <= check(n,input_edges)
+            old = check(n,input_edges)
+            offered = set(pairs)-old
+            trial = input_edges+[[a,b,-1] for a,b in offered]
+            result = compress(binary,n,trial,8,rng.randrange(1 << 30),"--guided")
+            assert old <= check(n,result) <= old | offered
             count += 1
     control = insert_edges(binary, 5, [], 50, 810)
     assert len(control) >= 5

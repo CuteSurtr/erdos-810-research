@@ -30,6 +30,8 @@ Build with `c++ -O3 -std=c++17 edge_repair.cpp -o "$SCRATCH/edge_repair"`. Its i
 
 The C++ insertion scorer counts obstructions by taking pairs from each color matching. An occupied cross edge raises the score for the opposite missing cross edge. Pass `--check-scores` to compare these scores against a scan of every color at every missing edge. The optional `--exchange` search drops one to five edges and tries short insertions, retaining the best full graph and sampling alternative graphs at the same edge count. The tests cover validity and the edge count in both search modes. The native scores also matched directly on all 62 certificates from the 4:30 checkpoint.
 
+Two further C++ modes use topologies found on larger orders. With `--compress`, marks of `-1` denote edges needing a color. The solver resolves conflicting hints on the full topology and omits any edges it cannot color. With `--guided`, nonnegative labels give a verified base and only the listed edges marked `-1` are eligible for insertion. The driver uses either an induced prefix or a set obtained by successively removing a vertex of minimum degree. [Palette-compression driver](compress_search.py)
+
 ## Larger graphs through 256 vertices
 
 The search also grew graphs beyond the 128-vertex baseline. It starts from a verified 128-vertex graph, adds one vertex with the matching oracle, and tries edge insertions with recoloring after each extension. It retains the best graph at each intermediate size. Five selected sizes are archived with their complete edge and color lists. [Growth driver](grow_orders.py) · [Graphs](larger/certs.json) · [Counts](larger/checks.txt)
