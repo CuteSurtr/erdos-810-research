@@ -94,6 +94,8 @@ $$
 $$
 Weight one means there is exactly one representation up to swapping the outer entries. Equality of the middle entries gives $q_j=p_{j+1}$ around the cycle. Since $p_j\ne q_j$, equality of the outer multisets forces $\ell_j=p_j$ and $\ell_{j-1}=p_{j+1}$. Applying the first equation at $j-1$ contradicts distinctness of the three $p$'s. This proves the weight bound. Summing over all $t$ translates of each occupied difference proves the result. [Lean check of the final label contradiction](../../hall-reduction/SparseHoleColors.lean) · [Direct cyclic matching audit](../sparse-blocks/cyclic_prices.cpp)
 
+An independent C++ audit enumerated every hole set of sizes one through seven up to translation in each of three abelian groups of order 16. It tested 1,732 shapes in $\mathbb F_2^4$, 1,666 in $\mathbb Z_4^2$, and 1,652 in $\mathbb Z_{16}$. For each shape it checked the six-unit ceiling by enumerating compatible positive-weight matchings with an edge translated into row zero. [Group difference verifier](abelian_prices.cpp)
+
 ## Exactly three cyclic holes on infinitely many orders
 
 For each $b\in\{24,30,36\}$, and for $L=1$ or any positive $L\equiv3\pmod6$, there is a cyclic board of order $t=bL$ with exactly three omitted differences whose minimum palette is
