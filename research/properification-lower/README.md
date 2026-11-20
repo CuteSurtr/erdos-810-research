@@ -6,6 +6,8 @@ For every sufficiently large $n$, there is a simple graph on $n$ vertices with a
 ```
 In particular, a uniform $O(n^{2-\eta})$ deletion bound is impossible for every fixed $\eta>0$. This concerns the colors already assigned to the edges. It complements the upper bound of $o(n^2)$ from the triangle removal lemma. Both bounds allow a density tending to zero in Erdős #810. [Properification upper bound](../hall-reduction/Properification.lean) · [Problem statement](https://www.erdosproblems.com/810)
 
+A connected example now separates the two deletion costs on the same graph. For all sufficiently large orders, every admissible initial coloring forces at least $n/2-O(n^{3/4})$ deletions with labels fixed. One edge deletion permits a proper recoloring of all remaining edges using the original palette budget. [Shared-edge construction and proof](shared-edge.md)
+
 ## A graph that loses half its edges
 
 Fix a positive integer $L$ and a set $S\subseteq\{0,\ldots,L-1\}$ in which $a+c=2b$ and $a+2c=3b$ have only constant solutions. Take one set of $L$ centers indexed by $i$, and two disjoint sets of $2L$ outer vertices indexed by $z$. For every pair $(i,a)$ with $a\in S$, join $i$ to the first outer vertex with coordinate $L+i-a$ and the second outer vertex with coordinate $i+a$. Give both edges color $i+2a$. There are $5L$ vertices, fewer than or equal to $3L$ colors, and exactly $2L|S|$ edges.

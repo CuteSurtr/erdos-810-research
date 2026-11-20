@@ -416,3 +416,6 @@ name = "ReciprocalRank"
 
 [[lean_lib]]
 name = "SignRankCharts"
+
+[[lean_lib]]
+name = "SharedEdgeBlock"
