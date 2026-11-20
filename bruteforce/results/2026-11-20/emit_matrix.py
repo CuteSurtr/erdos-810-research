@@ -1,10 +1,10 @@
-"""Emit a Lean kernel proof for graph witnesses stored as colored edges."""
+"""Emit a Lean kernel proof or runtime audit for stored graph witnesses."""
 import argparse
 import json
 from pathlib import Path
 
 
-def certificate(n, edges):
+def matrix_declaration(n, edges):
     width = n.bit_length()
     rows = [0]*n
     for u,v,c in edges:
@@ -19,7 +19,12 @@ def certificate(n, edges):
     return f"""/-- A {len(edges)}-edge witness on {n} vertices in packed upper-triangular rows. -/
 private def rows{n} : Array ℕ := #[
   {data}]
+"""
 
+
+def certificate(n, edges):
+    width = n.bit_length()
+    return matrix_declaration(n, edges) + f"""
 set_option maxRecDepth 20000 in
 set_option maxHeartbeats 0 in
 theorem matrix_lower_bound_{n} : {len(edges)} ≤ maxRainbowC4Edges {n} := by
@@ -41,20 +46,45 @@ def emit(n, edges):
     return emit_many([(n, edges)])
 
 
+def emit_runtime(entries):
+    parts = ["import MatrixCertificate", "namespace Erdos810"]
+    for n, edges in entries:
+        width = n.bit_length()
+        parts.append(matrix_declaration(n, edges))
+        parts.append(f'''#eval do
+  let m := MatrixCertificate.edges {n} rows{n} {width}
+  unless m == {len(edges)} do throw (IO.userError "edge count failed at order {n}")
+  unless (List.finRange {n}).all (MatrixCertificate.fastRow rows{n} {width}) do
+    throw (IO.userError "rainbow condition failed at order {n}")
+  IO.println "{n} {len(edges)} edges OK"''')
+    parts.append("end Erdos810\n")
+    return "\n\n".join(parts)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(__doc__)
     parser.add_argument("input", type=Path)
-    parser.add_argument("vertices", help="One order or an inclusive range such as 13-36.")
+    parser.add_argument("vertices", help="One order, an inclusive range such as 13-36, or all.")
     parser.add_argument("output", type=Path)
     parser.add_argument("--existing", type=int, nargs="*", default=[],
                         help="Import individual CertificateN modules already checked in the range.")
+    parser.add_argument("--runtime", action="store_true",
+                        help="Execute the verified checker as Lean code without emitting witness theorems.")
     args = parser.parse_args()
-    endpoints = [int(x) for x in args.vertices.split("-")]
-    if len(endpoints) not in (1, 2) or endpoints[-1] < endpoints[0]:
-        parser.error("expected an increasing range of orders")
     graphs = json.loads(args.input.read_text())
-    orders = range(endpoints[0], endpoints[-1] + 1)
+    if args.vertices == "all":
+        orders = sorted(map(int, graphs))
+    else:
+        endpoints = [int(x) for x in args.vertices.split("-")]
+        if len(endpoints) not in (1, 2) or endpoints[-1] < endpoints[0]:
+            parser.error("expected an increasing range of orders")
+        orders = range(endpoints[0], endpoints[-1] + 1)
     if any(n not in orders for n in args.existing):
         parser.error("existing modules must belong to the requested range")
+    if args.existing and args.runtime:
+        parser.error("runtime audits read their graph data directly")
     entries = [(n, graphs[str(n)]) for n in orders if n not in args.existing]
-    args.output.write_text(emit_many(entries, ["Certificate" + str(n) for n in args.existing]))
+    if args.runtime:
+        args.output.write_text(emit_runtime(entries))
+    else:
+        args.output.write_text(emit_many(entries, ["Certificate" + str(n) for n in args.existing]))
