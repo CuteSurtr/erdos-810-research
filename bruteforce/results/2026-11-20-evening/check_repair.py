@@ -47,6 +47,11 @@ def main(binary):
                 input_edges = trial
             result = insert_edges(binary, n, input_edges, 8, rng.randrange(1 << 30))
             assert check(n, input_edges) <= check(n, result)
+            scored = insert_edges(binary, n, input_edges, 8, rng.randrange(1 << 30), "--check-scores")
+            assert scored == input_edges
+            result = insert_edges(binary, n, input_edges, 8, rng.randrange(1 << 30), "--exchange")
+            assert len(result) >= len(input_edges)
+            check(n, result)
             count += 1
     control = insert_edges(binary, 5, [], 50, 810)
     assert len(control) >= 5

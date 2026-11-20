@@ -27,6 +27,8 @@ For a missing edge $uv$ in a properly colored witness, each old path $u,a,b,v$ c
 
 Build with `c++ -O3 -std=c++17 edge_repair.cpp -o "$SCRATCH/edge_repair"`. Its input is `n m milliseconds seed` followed by the colored edge triples. Its output is the new edge count followed by the revised triples. The independent tests check the original edges are retained and inspect every four-cycle. Run `python3 check_repair.py "$SCRATCH/edge_repair"` to reproduce them.
 
+The C++ insertion scorer counts obstructions by taking pairs from each color matching. An occupied cross edge raises the score for the opposite missing cross edge. Pass `--check-scores` to compare these scores against a scan of every color at every missing edge. The optional `--exchange` search drops one to five edges and tries short insertions, retaining the best full graph and sampling alternative graphs at the same edge count. The tests cover validity and the edge count in both search modes. The native scores also matched directly on all 62 certificates from the 4:30 checkpoint.
+
 ## Larger graphs through 256 vertices
 
 The search also grew graphs beyond the 128-vertex baseline. It starts from a verified 128-vertex graph, adds one vertex with the matching oracle, and tries edge insertions with recoloring after each extension. It retains the best graph at each intermediate size. Five selected sizes are archived with their complete edge and color lists. [Growth driver](grow_orders.py) · [Graphs](larger/certs.json) · [Counts](larger/checks.txt)

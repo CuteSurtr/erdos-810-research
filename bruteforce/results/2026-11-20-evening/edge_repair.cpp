@@ -6,6 +6,7 @@
 #include <numeric>
 #include <random>
 #include <stdexcept>
+#include <string>
 #include <tuple>
 #include <utility>
 #include <vector>
@@ -27,25 +28,49 @@ class Repair {
     }
   }
 
-  void run() {
+  void run(bool check_scores = false) {
     while (Clock::now() < deadline) {
       std::vector<std::vector<int>> incident(n, std::vector<int>(n, -1));
+      std::vector<std::vector<int>> matching(n);
       for (int i = 0; i < static_cast<int>(edges.size()); ++i) {
         auto [u,v,c] = edges[i];
         if (incident[u][c] >= 0 || incident[v][c] >= 0) return;
         incident[u][c] = v;
         incident[v][c] = u;
+        matching[c].push_back(i);
+      }
+      // An occupied cross between two edges of a matching obstructs the other cross.
+      std::vector<int> score(n*n);
+      auto charge = [&](int u, int v, int a, int b) {
+        if (at[a][b] >= 0) ++score[std::max(u,v)*n+std::min(u,v)];
+      };
+      for (const auto& indices : matching) {
+        for (std::size_t i = 0; i < indices.size(); ++i) {
+          const auto [a,b,first_color] = edges[indices[i]];
+          for (std::size_t j = 0; j < i; ++j) {
+            const auto [x,y,second_color] = edges[indices[j]];
+            charge(a,x,b,y);
+            charge(b,y,a,x);
+            charge(a,y,b,x);
+            charge(b,x,a,y);
+          }
+        }
       }
       std::vector<Candidate> candidates;
       for (int u = 0; u < n; ++u) for (int v = 0; v < u; ++v) {
         if (at[u][v] >= 0) continue;
-        int conflicts = 0;
-        for (int c = 0; c < n; ++c) {
-          int a = incident[u][c], b = incident[v][c];
-          if (a >= 0 && b >= 0 && at[a][b] >= 0) ++conflicts;
+        int conflicts = score[u*n+v];
+        if (check_scores) {
+          int direct = 0;
+          for (int c = 0; c < n; ++c) {
+            int a = incident[u][c], b = incident[v][c];
+            if (a >= 0 && b >= 0 && at[a][b] >= 0) ++direct;
+          }
+          if (conflicts != direct) throw std::logic_error("insertion conflict counts disagree");
         }
         candidates.push_back({conflicts,u,v,static_cast<std::uint32_t>(rng())});
       }
+      if (check_scores) return;
       std::sort(candidates.begin(), candidates.end(), [](const auto& a, const auto& b) {
         return std::tie(a.conflicts,a.tie) < std::tie(b.conflicts,b.tie);
       });
@@ -65,6 +90,8 @@ class Repair {
     std::cout << edges.size() << '\n';
     for (auto [u,v,c] : edges) std::cout << u << ' ' << v << ' ' << c << '\n';
   }
+
+  const std::vector<Edge>& result() const { return edges; }
 
  private:
   int n;
@@ -180,13 +207,48 @@ class Repair {
   }
 };
 
-int main() {
+// Retain the best graph while trying short repairs after deleting a few edges.
+std::vector<Edge> exchange_edges(int n, const std::vector<Edge>& initial, unsigned seed, int ms) {
+  std::mt19937 rng(seed);
+  std::vector<Edge> best = initial, current = initial;
+  const auto deadline = Clock::now() + std::chrono::milliseconds(ms);
+  while (true) {
+    int left = static_cast<int>(std::chrono::duration_cast<std::chrono::milliseconds>(
+        deadline-Clock::now()).count());
+    if (left <= 0) break;
+    auto trial = current;
+    if (!trial.empty()) {
+      int drops = std::min<int>(static_cast<int>(trial.size()), 1+rng()%5);
+      int pivot = static_cast<int>(rng()%n);
+      std::shuffle(trial.begin(),trial.end(),rng);
+      if (rng() & 1)
+        std::stable_partition(trial.begin(),trial.end(),
+                              [pivot](Edge e) { return e.u != pivot && e.v != pivot; });
+      trial.resize(trial.size()-drops);
+    }
+    Repair repair(n,std::move(trial),rng(),std::min(left,180));
+    repair.run();
+    const auto& found = repair.result();
+    if (found.size() >= best.size()) {
+      if (found.size() > best.size()) best = found;
+      current = found;
+    } else if (rng()%3 == 0) {
+      current = best;
+    }
+  }
+  return best;
+}
+
+int main(int argc, char** argv) {
   int n, m, ms;
   unsigned seed;
   if (!(std::cin >> n >> m >> ms >> seed) || n < 2 || n > 256 || m < 0 || ms < 0) return 2;
   std::vector<Edge> edges(m);
   for (auto& e : edges) if (!(std::cin >> e.u >> e.v >> e.color)) return 2;
-  Repair search(n,std::move(edges),seed,ms);
-  search.run();
+  std::string mode = argc > 1 ? argv[1] : "";
+  if (argc > 2 || (mode != "" && mode != "--exchange" && mode != "--check-scores")) return 2;
+  if (mode == "--exchange") edges = exchange_edges(n,edges,seed,ms);
+  Repair search(n,std::move(edges),seed,mode == "--check-scores" ? 10000 : ms);
+  if (mode != "--exchange") search.run(mode == "--check-scores");
   search.write();
 }
