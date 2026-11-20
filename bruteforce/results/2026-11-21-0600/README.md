@@ -147,3 +147,5 @@ python3 support_geometry.py data/optimal-13.g6 "$NAUTY/labelg"
 ```
 
 At the two fixed-palette optima above, there are **six** supports with 13 vertices, 14 colors and 49 edges, and **three** with 14 vertices, 13 colors and 54 edges. For the latter, every vertex has degree at least seven since deleting it leaves at most 47 edges. This justifies the complement degree cap of six used for that census. [Six supports](data/order13-k14-e49.g6) · [Their search counts](data/13-49-k14-cover.tsv) · [Three supports](data/order14-k13-e54.g6) · [Their search counts](data/14-54-k13-cover.tsv)
+
+The proper-recoloring census covers all 12,005,168 ten-vertex graphs. Exactly 398 admissible supports require two edge deletions before a new proper coloring becomes possible. All smaller admissible graphs need at most one. [Deletion costs and certificates](deletion-census.md)

@@ -22,11 +22,14 @@ cxx_bin=${CXX:-c++}
 "$cxx_bin" -O3 -std=c++17 "$here/extend_catalog.cpp" coloring.o -o extend-catalog
 "$cxx_bin" -O3 -std=c++17 "$here/classify_proper.cpp" coloring.o -o classify-proper
 "$cxx_bin" -O3 -std=c++17 "$here/count_colorings.cpp" -o count-colorings
+"$cxx_bin" -O3 -std=c++17 "$here/repair_distance.cpp" -o repair-distance
 "$cxx_bin" -O3 -std=c++17 "$here/extend_colored.cpp" -o extend-colored
 "$cxx_bin" -O3 -std=c++17 "$here/spoke_walk.cpp" -o spoke-walk
 "$cc_bin" -O3 -I"$nauty" -c "$here/orbit_group.c" -o orbit_group.o
 "$cxx_bin" -O3 -std=c++17 "$here/burnside_count.cpp" orbit_group.o "$nauty/nauty.a" -o burnside-count
 if [ -n "$cadical" ]; then
+    "$cxx_bin" -O3 -std=c++17 -I"$cadical/src" "$here/deletion_spectrum.cpp" \
+        coloring.o "$cadical/build/libcadical.a" -o deletion-spectrum
     "$cxx_bin" -O3 -std=c++17 -I"$cadical/src" "$here/audit_proper_sat.cpp" \
         "$cadical/build/libcadical.a" -o audit-proper-sat
 fi
