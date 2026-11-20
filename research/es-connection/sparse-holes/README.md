@@ -76,7 +76,7 @@ $$
 Q(B)\ \ge\ \left\lceil\frac{t}{6}\sum_{s\notin D}w_s\right\rceil
 \ \ge\ \left\lceil\frac{t}{6}\left(2(t-h)-\frac{h^2(h-1)}2\right)\right\rceil .
 $$
-The second inequality counts $h$ choices of the middle label and $\binom h2$ unordered pairs with repetition from the other $h-1$ labels. For three holes this gives $\lceil t(2t-15)/6\rceil$ for **every** such abelian board. The local 32-by-32 ES block attains 262, its exact minimum over all cyclic choices of the three holes. [ES certificates and applications](../sparse-blocks/README.md#the-cost-of-three-or-more-common-omissions)
+The second inequality counts $h$ choices of the middle label and $\binom h2$ unordered pairs with repetition from the other $h-1$ labels. For three holes this gives $\lceil t(2t-15)/6\rceil$ for **every** such abelian board. The local 32-by-32 ES block attains 262, the exact minimum over all abelian difference boards of that order with three holes per row. [ES certificates and applications](../sparse-blocks/README.md#the-cost-of-three-or-more-common-omissions)
 
 **Proof.** Discard the zero-weight edges of a class and orient every pair of the remaining matching edges through a missing cross. A transitive triple $i\to j\to k$, $i\to k$ gives the three hole differences $a=c_k-r_j$, $b=c_k-r_i$, $c=c_j-r_i$. They satisfy $a-b+c=c_j-r_j$. For a fixed middle edge, the ordered triple of hole differences recovers $c_k$ and $r_i$, and the matching identifies $k$ and $i$. A weight-two edge can never be a middle. A weight-one edge can be a middle at most twice, since the two possible orders of its outer labels account for all its representations.
 
@@ -93,6 +93,37 @@ $$
 (p_j,p_{j-1},\ell_{j-1}),\qquad(\ell_j,q_{j+1},q_j).
 $$
 Weight one means there is exactly one representation up to swapping the outer entries. Equality of the middle entries gives $q_j=p_{j+1}$ around the cycle. Since $p_j\ne q_j$, equality of the outer multisets forces $\ell_j=p_j$ and $\ell_{j-1}=p_{j+1}$. Applying the first equation at $j-1$ contradicts distinctness of the three $p$'s. This proves the weight bound. Summing over all $t$ translates of each occupied difference proves the result. [Lean check of the final label contradiction](../../hall-reduction/SparseHoleColors.lean) · [Direct cyclic matching audit](../sparse-blocks/cyclic_prices.cpp)
+
+## Exactly three cyclic holes on infinitely many orders
+
+For each $b\in\{24,30,36\}$, and for $L=1$ or any positive $L\equiv3\pmod6$, there is a cyclic board of order $t=bL$ with exactly three omitted differences whose minimum palette is
+$$
+\boxed{\frac{t(2t-15)}6}.
+$$
+The preceding price bound proves that no three omitted differences in any abelian group of order $t$ can give a smaller palette. In particular, the coefficient of the linear term is sharp on infinitely many orders.
+
+| Seed order $b$ | Occupied cells | Minimum colors | Translation step | Seed classes |
+| ---: | ---: | ---: | ---: | ---: |
+| 24 | 504 | 132 | 2 | 11 |
+| 30 | 810 | 225 | 2 | 15 |
+| 36 | 1,188 | 342 | 2 | 19 |
+
+Each seed board omits the differences $0,1,4$ modulo $b$. Translate each listed class by every even shift. The resulting classes partition the occupied cells, and every pair within a class has a missing cross. A separate C++ check also constructs the full labeled matrix and tests its rectangles. [24-point seed](three-hole-24.txt) · [30-point seed](three-hole-30.txt) · [36-point seed](three-hole-36.txt) · [Matrix verifier](../crown_lift.cpp)
+
+In $\mathbb Z_{bL}$ omit $0,L,4L$ and split the indices into their $L$ residue classes modulo $L$. Each coset carries the seed board on its $b$ indices. Use distinct palettes on these $L$ internal boards. For the cross-coset cells take a Steiner triple system on the $L$ cosets. In each triple $(A,B,C)$ develop the two oriented triangles on $(A,x),(B,y),(C,x+y)$ for every $x,y\in\mathbb Z_b$. Give each oriented triangle its own color. Every directed cross-coset cell occurs once, and each pair of edges of one color has a missing diagonal cross. The total color count is
+$$
+L\,\frac{b(2b-15)}6 + \frac{L(L-1)b^2}3 = \frac{t(2t-15)}6 .
+$$
+The verifier expands the Bose triples for $L\equiv3\pmod6$, tests class compatibility and checks coverage of every required cell. At $L=9$ the three graphs of orders 216, 270 and 324 attain 15,012, 23,625 and 34,182 colors. [Block and lift verifier](two_holes.cpp)
+
+```sh
+c++ -O3 -std=c++17 two_holes.cpp -o /tmp/810-cyclic-lifts
+c++ -O3 -std=c++17 ../crown_lift.cpp -o /tmp/810-cyclic-matrix
+for b in 24 30 36; do
+  /tmp/810-cyclic-matrix "$b" --local "three-hole-$b.txt"
+  for L in 1 3 9; do /tmp/810-cyclic-lifts "$L" "three-hole-$b.txt"; done
+done
+```
 
 ## Exactly two holes in each row and column
 
