@@ -28,7 +28,7 @@ If the vertices can be ordered so that every neighborhood is a union of at most 
 
 For constructions that replace real points and lines by copies, the sharp edge order is $n^{8/5}$. If the base points are in general position, as in the Erdős–Szekeres project, the maximum is $n^{3/2}/\sqrt2+O(n)$. The project's 17-point example realizes the leading term at 578 vertices. [Incidence theorems and ES construction](research/neighborhood-packing/incidence.md)
 
-An additive construction from the same 17 coordinates gives a 152-vertex graph that can be colored with 22 labels. Copying its two sides gives a graph on 1,064 vertices with 62,016 edges and 1,056 labels. All 57,918,384 four-cycles are rainbow. [Construction and C certificate checker](research/es-connection/sum-colors.md#fewer-colors-on-the-same-es-graph)
+An additive construction from the same 17 coordinates gives a 152-vertex graph that can be colored with 22 labels. Assigning sets of colors to its edges permits eight copies per vertex, the largest balanced full blow-up allowed by the color budget. This gives 82,688 edges on 1,216 vertices, and an independent C checker verifies all 103,896,256 four-cycles. [Construction, upper bound and certificate](research/es-connection/orbit-lifts.md)
 
 Every positive-density example with a linear palette would require matrix rank $\Omega(\sqrt n)$ over every field, for any matrix that is nonzero exactly on its edges. The characteristic-zero matching bound uses a sharp size theorem for fooling-set matrices. [Rank obstruction](research/support-rank/README.md) · [Sharp matrix bound](research/support-rank/fooling-sets.md)
 

@@ -39,7 +39,9 @@ A projection can land in a proper subgroup \(H\) of its target. The first image 
 
 ## Fewer colors on the same ES graph
 
-The graph with 152 vertices and 1,292 edges also admits a proper coloring with **22 colors**. At six copies of every vertex this gives **912 vertices, 46,512 edges and 792 colors**. Taking six copies on one side and eight on the other gives **1,064 vertices, 62,016 edges and 1,056 colors**. These are finite witnesses for #810. The minimum palette under arbitrary recoloring is open for this particular support. [22-color certificate](shared-colors.txt) · [Independent C checker](check_shift_colors.c)
+The graph with 152 vertices and 1,292 edges also admits a proper coloring with **22 colors**. At six copies of every vertex this gives **912 vertices, 46,512 edges and 792 colors**. Taking six copies on one side and eight on the other gives **1,064 vertices, 62,016 edges and 1,056 colors**. Allowing sets of labels on base edges yields a balanced eight-copy witness with 82,688 edges on 1,216 vertices. [Multicoloring construction and certificate](orbit-lifts.md)
+
+These are finite witnesses for #810. The minimum palette under arbitrary recoloring is open for this particular support. [22-color certificate](shared-colors.txt) · [Independent C checker](check_shift_colors.c)
 
 There is an exact intermediate result. Require that every label belong to just one of the 17 support values, so each shift matching has its own palette. The minimum is then **39 colors**. To see this, reindex columns by $t=f(y)$, using that the chosen $f$ is a bijection. An edge of support value $s$ at row $x$ has column $s-x$. Two such edges at rows $x$ and $x+d$ are opposite in a rectangle precisely when both $s-d$ and $s+d$ belong to the coordinate image $S$. Thus the number of labels needed for shift $s$ equals the chromatic number of the Cayley graph on the 76 row indices with differences
 $$
