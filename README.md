@@ -28,6 +28,10 @@ If the vertices can be ordered so that every neighborhood is a union of at most 
 
 Every positive-density example with a linear palette would require matrix rank $\Omega(\sqrt n)$ over every field, for any matrix that is nonzero exactly on its edges. The characteristic-zero matching bound uses a sharp size theorem for fooling-set matrices. [Rank obstruction](research/support-rank/README.md) · [Sharp matrix bound](research/support-rank/fooling-sets.md)
 
+### Random graphs
+
+For the full binomial random graph $G(n,p)$, the threshold order for an $n$-coloring with every four-cycle rainbow is $p=(\log n/n)^{1/3}$. A sparse-neighborhood coloring argument gives existence below a small constant times this scale. Counting possible one-color matchings gives failure above it. [Random-graph theorem and proof](research/random-support/README.md)
+
 ### Bounded-VC supports
 
 If the family $`\{D_a\}`$ has uniformly bounded VC dimension, then
