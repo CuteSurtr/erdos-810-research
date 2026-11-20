@@ -37,3 +37,5 @@ Any finite rational planar set in general position has no three-term arithmetic 
 For the 17-point octagon witness from the ES project, the explicit map $(x,y)\mapsto x+279y\bmod299$ gives 17 distinct progression-free shifts. The resulting graph has **598 vertices, 5,083 edges, 17 colors and 14,950 four-cycles**, all rainbow. With 35 copies per vertex it gives 20,930 vertices, 6,226,675 edges and 20,825 colors. The property used from these coordinates is the absence of midpoint triples. The same map was verified directly on the stored witness. [ES coordinates](../es-connection/octagon-anchor.json) · [ES transversal result](../es-connection/README.md) · [Verification code](check_geometric_lower.py)
 
 Run the verification script from the repository root. It exhausts pairs of rows in the displayed finite-field examples and the 598-vertex cyclic graph, and computes the latter cycle count independently from the multiplicities of shift differences.
+
+An exhaustive follow-up allows arbitrary finite abelian targets for the same coordinates. The smallest has 285 elements and gives a 570-vertex shift graph. [Exact quotient search](../es-connection/quotients.md)
