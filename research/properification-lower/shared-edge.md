@@ -30,6 +30,8 @@ Attach any remaining vertices as a path starting at a private vertex of the firs
 
 For $s=t\ge2$, choose $n=s(s+1)$ and $h=\lfloor s/2\rfloor$. The two size conditions above hold. The minimum inherited loss over all admissible colorings is exactly $s\lfloor s/2\rfloor$, while the optimal deletion cost with recoloring is one. At $s=20$ this gives the 420-vertex example.
 
+For odd $s\ge3$ one additional block fits if two disjoint boundary edges in different blocks can share a label. The generator uses this refinement. It attains exactly $n/2$ inherited deletions at every such order, the maximum in this family even with unequal blocks. [Sharp packing bound](bouquet.md)
+
 For a general large $n$, let $L=\lceil2\sqrt n\rceil$, $a_0=\lfloor L/2\rfloor$, and $b_0=\lceil L/2\rceil$. Then $D=a_0b_0-n$ is nonnegative and $D=O(\sqrt n)$. Choose the least $j\ge0$ for which $(a_0-j)(b_0+j)\le n$. Since the product falls by $j^2+(b_0-a_0)j$, we have $j=O(n^{1/4})$. The excess fall at the first crossing is at most $2j$, giving
 $$
 a=a_0-j,\qquad b=b_0+j,\qquad 0\le n-ab=O(n^{1/4}).

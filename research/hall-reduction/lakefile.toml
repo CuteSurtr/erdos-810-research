@@ -419,3 +419,6 @@ name = "SignRankCharts"
 
 [[lean_lib]]
 name = "SharedEdgeBlock"
+
+[[lean_lib]]
+name = "BouquetPacking"

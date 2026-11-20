@@ -25,7 +25,7 @@ Dimensions choose(int n, int required_side) {
         int t = n / (s + 1), spare = n - t * (s + 1);
         if (spare >= s)
             continue;
-        int blocks = std::min((n - 2) / (s + t - 1), (n - 1) / (s + t));
+        int blocks = (n - 2) / (s + t - 1);
         long long value = static_cast<long long>(blocks) * (s - spare);
         if (value > gain) {
             gain = value;
@@ -107,7 +107,21 @@ struct Witness {
         if (int(boundary.size()) != set_size)
             throw std::logic_error("wrong boundary palette");
         int label = index * set_size + (recolor ? 0 : 1);
+        if (!recolor && dim.blocks > 1) {
+            // The edge u b_1 of block i shares its label with a_1 v of
+            // block i+1. These edges are disjoint and belong to no mixed cycle.
+            int outgoing = 1 + index;
+            int incoming = 1 + (index + dim.blocks - 1) % dim.blocks;
+            image[1] = outgoing;
+            image[t] = incoming;
+            used[outgoing] = used[incoming] = true;
+            if (boundary.erase(1) != 1 || boundary.erase(t) != 1)
+                throw std::logic_error("missing designated boundary edge");
+            label = 1 + dim.blocks + index * (set_size - 2);
+        }
         for (int c : boundary) {
+            if (label >= n || used[label])
+                throw std::logic_error("boundary colors exceed the palette");
             image[c] = label;
             used[label++] = true;
         }
