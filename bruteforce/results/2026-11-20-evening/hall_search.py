@@ -47,7 +47,8 @@ def run(scratch, binary, stop, seed, low, high, milliseconds, host_ram):
     records = root/"best"
     records.mkdir(parents=True, exist_ok=True)
     checker = scratch/"fourset_check"
-    folders = [scratch/"best", scratch/"projected/best", scratch/"topology/best", records]
+    folders = [scratch/"best", scratch/"projected/best", scratch/"topology/best",
+               scratch/"repair/best", records]
     seen, alternates = {}, {}
     orders = list(range(low, high + 1))
     if any(n not in best or n-1 not in best for n in orders):

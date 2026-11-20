@@ -84,7 +84,7 @@ def checkpoint(scratch, output, check_workers=1):
     baseline = json.loads((scratch / "baseline.json").read_text())
     best = {}
     for folder in (scratch / "best", scratch / "projected/best", scratch / "topology/best",
-                   scratch / "hall/best"):
+                   scratch / "hall/best", scratch / "repair/best"):
         for path in sorted(folder.glob("*.json")):
             for key, edges in json.loads(path.read_text()).items():
                 if len(edges) > len(best.get(key, baseline[key])):
