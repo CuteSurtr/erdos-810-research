@@ -1,0 +1,5 @@
+vertices	edges	minimum_degree	parents	eligible_parents	neighborhoods	C_clique_rejects	C_search_rejects	C_accepted	C_search_nodes
+14	52	6	97	97	166452	158439	8013	0	47890700
+15	60	8	3	2	2	2	0	0	0
+15	59	7	3	3	10296	10262	34	0	103986
+15	58	6	3	3	9009	8404	604	1	8601441
