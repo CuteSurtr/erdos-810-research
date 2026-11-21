@@ -74,6 +74,8 @@ The extremal support has five automorphisms. With the vertices fixed, it admits 
 
 A potential 73-edge graph must also have minimum degree nine. A degree at most seven would leave at least 66 edges after deletion. For degree eight the parent would again be the unique 65-edge support. All $\binom{15}{8}=6{,}435$ ways to restore a degree-eight vertex failed. Hence the degree sequence at 73 edges has either two tens and fourteen nines, or one eleven and fifteen nines. Any two vertices then have at least two common neighbors, so every pair of incident edges lies on a four-cycle and a valid coloring must be proper.
 
+Two independent checks confirmed all 210 and all 6,435 rejections. The C solver built conflicts by listing four-cycles on every four vertices. A C++ program instead extended the unique color partition of the parent and tested the colors available for the new edges. [Independent C solver](../M12/src/prune810b.c) · [Colored extension program](native/extend_colored.cpp)
+
 To replay from this directory, use the native build and run the following with each shard index from 0 through 511. The `all` mode generates candidate supports without testing their colorings. The standalone checker then tests each candidate. [Native build](native/README.md) · [Earlier 320-shard checkpoint](data/15-65-k16-D6-partial.tsv)
 
 ```sh
@@ -81,6 +83,8 @@ PRUNE_K=16 TARGET_EDGES=65 FINAL_MIN_DEGREE=8 "$SCRATCH/rainbow-cover" -D6 15 40
 python3 check_palette.py data/15-65-k16-coloring.json
 "$SCRATCH/count-colorings" 16 < data/15-65-k16-unique.g6
 "$SCRATCH/burnside-count" 16 < data/15-65-k16-unique.g6
+"$SCRATCH/extend-colored" 16 74 16 9 < data/15-65-k16-unique.g6
+"$SCRATCH/extend-colored" 16 73 16 8 < data/15-65-k16-unique.g6
 "$SCRATCH/extend-catalog" 16 74 16 9 all < data/15-65-k16-unique.g6 | "$SCRATCH/check-cover" 16
 "$SCRATCH/extend-catalog" 16 73 16 8 all < data/15-65-k16-unique.g6 | "$SCRATCH/check-cover" 16
 ```
