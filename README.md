@@ -14,7 +14,7 @@ A product construction on 5,632 vertices has **3,113,070 edges**, a 57.2% increa
 
 The nested construction gives **2,419,827 edges on 6,332 vertices**. All 43,789,015,618 four-cycles have four different colors. Taking prefixes gives a witness at every order from 512 to 6,332. [Download and verify the graphs](bruteforce/results/2026-11-21-0600/large/README.md)
 
-On 15 vertices the exact maximum is **63 edges**. All 1,024 shards of the 64-edge search returned zero graphs. The lower witness has 417 rainbow four-cycles. On 16 vertices, a Lean-checked 71-edge graph gives $71\le M(16)\le74$. [Fifteen-vertex computation and nearby bounds](bruteforce/results/2026-11-21-0600/README.md#exact-maximum-on-15-vertices)
+On 15 vertices the exact maximum is **63 edges**. All 1,024 shards of the 64-edge search returned zero graphs. The lower witness has 417 rainbow four-cycles. With 16 colors, the unique 15-vertex optimum has 65 edges. Exhausting its 210 possible degree-nine extensions on 16 vertices sharpens the bounds to $71\le M(16)\le73$. [Fifteen-vertex computation and nearby bounds](bruteforce/results/2026-11-21-0600/README.md#exact-maximum-on-15-vertices)
 
 On 14 vertices the exact maximum is **55 edges**. All 52 optimal graphs admit only proper colorings. The 11,461 optimal graphs on 13 vertices give 173,139 coloring classes, and 312 of the graphs require an improper coloring. [Complete census, proof and certificates](bruteforce/results/2026-11-21-0600/README.md)
 

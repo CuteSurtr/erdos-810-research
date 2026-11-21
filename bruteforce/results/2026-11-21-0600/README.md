@@ -16,6 +16,7 @@ Write $F(n,k)$ for the maximum number of edges on $n$ vertices using at most $k$
 | 14 | 15 | 56 | 337 |
 | 14 | 16 | 57 | 379 |
 | 15 | 12 | 58 | 295 |
+| 15 | 16 | 65 | 490 |
 
 For both 12-vertex entries and for palettes 15 through 18 on 13 vertices, three programs each completed an unrestricted enumeration at one edge above the claimed maximum. Every search returned zero supports. Their pruning counts agree on each input. Deleting edges preserves the four-cycle condition, so each exclusion is an upper bound for every larger edge count as well. The archive supplies a coloring attaining every entry. [Counts from both C checkers and the C++ checker](data/fixed-palette-upper.tsv) · [Edge triples](palette-witnesses.json)
 
@@ -65,9 +66,20 @@ At the 09:00 KST stop on 21 November, the native enumeration queues had 6,720 co
 
 ## Bounds on 15 and 16 vertices
 
-With 16 colors on 15 vertices the maximum is 64 or 65. An explicit graph with 64 edges has 458 rainbow four-cycles. For the upper bound, each edge survives 13 of the 15 vertex deletions, so $13m\le15F(14,16)=855$. A separate search excludes 66 edges using only the weaker bound $F(14,16)\le58$. That weaker bound forces minimum degree eight and complement maximum degree six at 66 edges. All 512 shards under this cap were empty. In turn, $14M(16)\le16\cdot65$, yielding $M(16)\le74$. The 16-vertex lower bound is now **71 edges**, giving $71\le M(16)\le74$. The new support has 546 four-cycles and uses 16 colors. Its construction adds a degree-eight vertex to a 63-edge parent. [Coloring](palette-witnesses.json) · [14-vertex search at 59 edges](data/14-59-k16-cover.tsv) · [15-vertex search at 66 edges](data/15-66-k16-D6-cover.tsv) · [71-edge coloring](diagonal-witnesses.json) · [16-vertex Lean certificate](../../../research/hall-reduction/OvernightWitnesses.lean)
+**$F(15,16)=65$, with one extremal support up to vertex relabeling.** Its 65 edges use all 16 colors, and each of its 490 four-cycles is rainbow. A graph with $m$ edges on 15 vertices satisfies $13m\le15F(14,16)=855$ by vertex deletion. Thus $m\le65$. At 65 edges, deleting any vertex leaves at most 57 edges, so every degree is at least eight. The complement has 40 edges and maximum degree six. In all 512 nauty shards the exact C++ checker found a single support, in shard 301, after 712,280,761 pruning calls. [512 shard records](data/15-65-k16-D6-cover.tsv) · [Unique support in graph6](data/15-65-k16-unique.g6) · [Edge coloring](data/15-65-k16-coloring.json) · [Native generator and completeness](native/README.md)
 
-For the 65-edge search, deleting any vertex leaves at most 57 edges. A candidate must therefore have minimum degree eight, so its complement has maximum degree six. The archived checkpoint exhausts **320 of 512** nauty shards. All 320 returned zero supports after 441,584,767 pruning calls. The other 192 shard indices remain open. To resume an omitted index `i`, run `PRUNE_K=16 TARGET_EDGES=65 FINAL_MIN_DEGREE=8 "$SCRATCH/rainbow-cover" -D6 15 40:40 "$i/512"`. [Completed shard indices and counts](data/15-65-k16-D6-partial.tsv)
+**$71\le M(16)\le73$.** The fixed-palette deletion bound first gives $14M(16)\le16\cdot65$, hence $M(16)\le74$. If a 74-edge graph existed, every vertex would have degree at least nine. The average degree is $148/16<10$, so deleting a degree-nine vertex would leave the unique 65-edge support. That support has five vertices of degree eight and ten of degree nine. Restoring the deleted vertex must join all five degree-eight vertices and four of the other ten. All $\binom{10}{4}=210$ neighborhoods failed exact coloring with 16 colors. The previously certified 71-edge graph supplies the lower endpoint. [65-edge parent](data/15-65-k16-unique.g6) · [16-vertex witness](diagonal-witnesses.json) · [Lean lower bound](../../../research/hall-reduction/OvernightWitnesses.lean)
+
+A potential 73-edge graph must also have minimum degree nine. A degree at most seven would leave at least 66 edges after deletion. For degree eight the parent would again be the unique 65-edge support. All $\binom{15}{8}=6{,}435$ ways to restore a degree-eight vertex failed. Hence the degree sequence at 73 edges has either two tens and fourteen nines, or one eleven and fifteen nines. Any two vertices then have at least two common neighbors, so every pair of incident edges lies on a four-cycle and a valid coloring must be proper.
+
+To replay from this directory, use the native build and run the following with each shard index from 0 through 511. The `all` mode generates candidate supports without testing their colorings. The standalone checker then tests each candidate. [Native build](native/README.md) · [Earlier 320-shard checkpoint](data/15-65-k16-D6-partial.tsv)
+
+```sh
+PRUNE_K=16 TARGET_EDGES=65 FINAL_MIN_DEGREE=8 "$SCRATCH/rainbow-cover" -D6 15 40:40 "$i/512"
+python3 check_palette.py data/15-65-k16-coloring.json
+"$SCRATCH/extend-catalog" 16 74 16 9 all < data/15-65-k16-unique.g6 | "$SCRATCH/check-cover" 16
+"$SCRATCH/extend-catalog" 16 73 16 8 all < data/15-65-k16-unique.g6 | "$SCRATCH/check-cover" 16
+```
 
 With 14 colors on 15 vertices the maximum is 61 or 62. The lower witness has 356 four-cycles. A 63-edge graph would have minimum degree at least eight because $F(14,14)=55$. The complement search at maximum degree six returned zero across all 512 shards. [Coloring](palette-witnesses.json) · [All shard counts](data/15-63-k14-D6-cover.tsv)
 
