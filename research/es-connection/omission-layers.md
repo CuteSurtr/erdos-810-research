@@ -32,6 +32,14 @@ $$
 $$
 These class totals are $r,s$, and the objective equals the displayed lower bound. Each coordinate and each catalog inequality is affine in $(r,s)$. After multiplication by 9,520 the checker verifies the coordinate bounds and all 3,131 catalog inequalities in integers at the four corners of the square. Feasibility throughout follows by convexity. Only demand 15 in each class is used as a geometric input here. Higher demands describe the sensitivity of the relaxation. [Exact verifier](check_omission_layers.py)
 
+## Adding every balanced chain row
+
+The ES Mac recheck generated 58,950 distinct nontrivial rows from pairs of cap-chain-free and cup-chain-free classes. With the established capacity 55, each class $C$ requires $h(C)\ge |C|-55$. The new integer-arithmetic check proves that the same fractional optimum $42+4(r+s)/5$ holds after adding **all 58,950 rows**, throughout the square $15\le r,s\le35$. Thus all six pairs at budget 68 still pass the stronger fractional test. [Chain definitions and geometric justification](https://github.com/CuteSurtr/erdos-szekeres-lean/blob/1f084cc620e6e9e472b6f61c8c631236a4583caf/archive/es7-2026-10-19/results/ES8CHECK20261121/README.md#3-balanced-row-search-agent-rows-search-12151303-and-dives-main-session) · [C++ certificate checker](check_chain_layers.cpp)
+
+The verifier enumerates the 1,818 maximal cap classes and their 1,818 cup counterparts using the ES threshold construction. For every intersection it counts ordinary states outside the two distinguished classes, the 68 unfixed $Z$ states, the two partners of the fixed states, and the 68 other $Z^*$ states. Together with the class size these counts take 8,730 distinct values. They determine the row sum of the affine witness above. Testing its four corners in exact integers proves feasibility on the entire square. The original 70 catalog rows still prove the matching lower bound.
+
+There is also an exact sensitivity result when the **common** capacity is set to $70-d$ in every chain row and $r=s=d$. The minimum then equals $42+8d/5$ throughout $15\le d\le5355/262$, including integer capacities 55, 54, 53, 52, 51 and 50. This calculation includes intersections that first acquire a positive demand at those stronger capacities. For each class the scaled surplus is $A+Bd$, with $A=3570o+9520(70-|C|)$ and $B=-34o+140z+272p+132t-9520$, where $o,z,p,t$ are the four counts above. The smallest upper endpoint among the inequalities with $B<0$ is $5355/262$. This is the endpoint of this explicit witness. The only geometric capacity assumed for the current octagon bound is 55.
+
 ## What an integer solution at budget 68 would require
 
 The geometric bounds give $z,z^*\ge15$. If $H=68$, the total surplus above three across the 70 selected inequalities is exactly $130-4(z+z^*)$. Every non-tight integer row uses at least one unit of surplus.
