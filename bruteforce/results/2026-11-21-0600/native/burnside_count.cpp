@@ -12,13 +12,16 @@
 #include <vector>
 extern "C" void each_symmetry(int n, const unsigned *rows,
                               void (*visitor)(int *, int, int *, void *), void *context);
-using Mask = std::uint64_t;
+using Mask = unsigned __int128;
+constexpr int edge_limit = 128;
 using Count = std::uint64_t;
 int low(Mask m) {
-    return __builtin_ctzll(m);
+    auto bottom = static_cast<std::uint64_t>(m);
+    return bottom ? __builtin_ctzll(bottom) : 64 + __builtin_ctzll(static_cast<std::uint64_t>(m >> 64));
 }
 int sz(Mask m) {
-    return __builtin_popcountll(m);
+    return __builtin_popcountll(static_cast<std::uint64_t>(m)) +
+           __builtin_popcountll(static_cast<std::uint64_t>(m >> 64));
 }
 Mask one(int i) {
     return Mask{1} << i;
@@ -35,8 +38,8 @@ struct Input {
     bool exposed = false;
     std::array<unsigned, 20> graph{};
     int id[20][20]{};
-    std::vector<std::array<int, 64>> sym;
-    std::array<Mask, 64> q{}, proper{};
+    std::vector<std::array<int, edge_limit>> sym;
+    std::array<Mask, edge_limit> q{}, proper{};
     std::vector<Mask> seeds;
     explicit Input(const std::string &raw) : n(static_cast<unsigned char>(raw[0]) - 63) {
         if (n < 1 || n > 20 || raw.size() != 1u + (n * (n - 1) / 2 + 5) / 6)
@@ -50,7 +53,7 @@ struct Input {
                 if (c < 0 || c > 63)
                     throw std::runtime_error("invalid graph6 block");
                 if (c & (32 >> (pos % 6))) {
-                    if (m == 64)
+                    if (m == edge_limit)
                         throw std::runtime_error("too many edges");
                     graph[u] |= 1u << v;
                     graph[v] |= 1u << u;
@@ -91,7 +94,7 @@ struct Input {
             n, graph.data(),
             [](int *p, int n, int *, void *ptr) {
                 auto &g = *static_cast<Input *>(ptr);
-                std::array<int, 64> perm{};
+                std::array<int, edge_limit> perm{};
                 for (int v = 0; v < n; ++v)
                     for (int u = 0; u < v; ++u)
                         if (g.id[u][v] >= 0)
@@ -110,7 +113,7 @@ struct Cover {
     };
     const Input &graph;
     int k, alpha = 0, omega = 0;
-    const std::array<Mask, 64> &q;
+    const std::array<Mask, edge_limit> &q;
     std::vector<Mask> independent, cliques;
     std::vector<Block> blocks;
     std::array<std::unordered_map<Mask, Count>, 31> memo;
@@ -172,7 +175,7 @@ struct Cover {
             if (d == remaining)
                 tight.push_back(t);
         }
-        std::array<int, 64> freq{};
+        std::array<int, edge_limit> freq{};
         std::vector<int> possible;
         for (int i = 0; i < int(blocks.size()); ++i) {
             const auto &b = blocks[i];
@@ -214,7 +217,7 @@ struct Cover {
         }
         return result;
     }
-    Count invariant(const std::array<int, 64> &perm) {
+    Count invariant(const std::array<int, edge_limit> &perm) {
         if (omega > k)
             return 0;
         auto image = [&](Mask mask) {

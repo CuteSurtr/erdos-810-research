@@ -68,6 +68,8 @@ At the 09:00 KST stop on 21 November, the native enumeration queues had 6,720 co
 
 **$F(15,16)=65$, with one extremal support up to vertex relabeling.** Its 65 edges use all 16 colors, and each of its 490 four-cycles is rainbow. A graph with $m$ edges on 15 vertices satisfies $13m\le15F(14,16)=855$ by vertex deletion. Thus $m\le65$. At 65 edges, deleting any vertex leaves at most 57 edges, so every degree is at least eight. The complement has 40 edges and maximum degree six. In all 512 nauty shards the exact C++ checker found a single support, in shard 301, after 712,280,761 pruning calls. [512 shard records](data/15-65-k16-D6-cover.tsv) · [Unique support in graph6](data/15-65-k16-unique.g6) · [Edge coloring](data/15-65-k16-coloring.json) · [Native generator and completeness](native/README.md)
 
+The extremal support has five automorphisms. With the vertices fixed, it admits exactly one partition of the edges into at most 16 colors, up to renaming colors. It is proper and uses every color. Two independent C++ counters agree on the support group, the unique partition and its orbit. [Direct counter](native/count_colorings.cpp) · [Burnside counter](native/burnside_count.cpp)
+
 **$71\le M(16)\le73$.** The fixed-palette deletion bound first gives $14M(16)\le16\cdot65$, hence $M(16)\le74$. If a 74-edge graph existed, every vertex would have degree at least nine. The average degree is $148/16<10$, so deleting a degree-nine vertex would leave the unique 65-edge support. That support has five vertices of degree eight and ten of degree nine. Restoring the deleted vertex must join all five degree-eight vertices and four of the other ten. All $\binom{10}{4}=210$ neighborhoods failed exact coloring with 16 colors. The previously certified 71-edge graph supplies the lower endpoint. [65-edge parent](data/15-65-k16-unique.g6) · [16-vertex witness](diagonal-witnesses.json) · [Lean lower bound](../../../research/hall-reduction/OvernightWitnesses.lean)
 
 A potential 73-edge graph must also have minimum degree nine. A degree at most seven would leave at least 66 edges after deletion. For degree eight the parent would again be the unique 65-edge support. All $\binom{15}{8}=6{,}435$ ways to restore a degree-eight vertex failed. Hence the degree sequence at 73 edges has either two tens and fourteen nines, or one eleven and fifteen nines. Any two vertices then have at least two common neighbors, so every pair of incident edges lies on a four-cycle and a valid coloring must be proper.
@@ -77,6 +79,8 @@ To replay from this directory, use the native build and run the following with e
 ```sh
 PRUNE_K=16 TARGET_EDGES=65 FINAL_MIN_DEGREE=8 "$SCRATCH/rainbow-cover" -D6 15 40:40 "$i/512"
 python3 check_palette.py data/15-65-k16-coloring.json
+"$SCRATCH/count-colorings" 16 < data/15-65-k16-unique.g6
+"$SCRATCH/burnside-count" 16 < data/15-65-k16-unique.g6
 "$SCRATCH/extend-catalog" 16 74 16 9 all < data/15-65-k16-unique.g6 | "$SCRATCH/check-cover" 16
 "$SCRATCH/extend-catalog" 16 73 16 8 all < data/15-65-k16-unique.g6 | "$SCRATCH/check-cover" 16
 ```

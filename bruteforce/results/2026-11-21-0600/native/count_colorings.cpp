@@ -10,13 +10,16 @@
 #include <string>
 #include <utility>
 #include <vector>
-using Mask = std::uint64_t;
+using Mask = unsigned __int128;
+constexpr int edge_limit = 128;
 using Row = std::uint32_t;
 int first(Mask x) {
-    return __builtin_ctzll(x);
+    auto low = static_cast<std::uint64_t>(x);
+    return low ? __builtin_ctzll(low) : 64 + __builtin_ctzll(static_cast<std::uint64_t>(x >> 64));
 }
 int pop(Mask x) {
-    return __builtin_popcountll(x);
+    return __builtin_popcountll(static_cast<std::uint64_t>(x)) +
+           __builtin_popcountll(static_cast<std::uint64_t>(x >> 64));
 }
 Mask bit(int v) {
     return Mask{1} << v;
@@ -27,9 +30,9 @@ struct Census {
     std::array<Row, 20> graph{};
     int id[20][20]{};
     std::vector<std::pair<int, int>> edges, wedges;
-    std::array<Mask, 64> conflict{};
-    std::array<Row, 64> domains{};
-    std::array<int, 64> color{};
+    std::array<Mask, edge_limit> conflict{};
+    std::array<Row, edge_limit> domains{};
+    std::array<int, edge_limit> color{};
     std::array<Mask, 31> available{};
     std::vector<std::vector<int>> automorphisms;
     std::function<void()> visit_partition;
@@ -48,8 +51,8 @@ struct Census {
                 if (block < 0 || block > 63)
                     throw std::runtime_error("invalid graph6 block");
                 if (block & (32 >> (i % 6))) {
-                    if (m == 64)
-                        throw std::runtime_error("more than 64 edges");
+                    if (m == edge_limit)
+                        throw std::runtime_error("more than 128 edges");
                     graph[u] |= 1u << v;
                     graph[v] |= 1u << u;
                     id[u][v] = id[v][u] = m;
@@ -151,7 +154,7 @@ struct Census {
     bool representative() {
         if (automorphisms.size() == 1)
             return true;
-        std::array<int, 64> normal{};
+        std::array<int, edge_limit> normal{};
         std::array<int, 31> labels;
         labels.fill(-1);
         int used = 0;
