@@ -61,6 +61,8 @@ python3 native/exchange_neighbours.py data/optimal-15-example.g6 15 2 \
     --labelg "$NAUTY/labelg" --cover "$SCRATCH/check-cover"
 ```
 
+At the 09:00 KST stop on 21 November, the native enumeration queues had 6,720 completed runs across 47 searches. These cover 6,691 distinct pairs of search name and shard index. Repeated runs returned byte-identical complement graph lists. Each record gives the generator, parameters, pruning counts, number of survivors and SHA-256 of the graph output. The local copy with the graph6 strings, `native-shards-at-stop.jsonl.xz`, has SHA-256 `1575149ed00140ccccd526c3a2449a1b6a1f1aaae9821c0b5033ce3be6f1ea7d`. [Compressed tab-separated run index](data/native-shards-at-stop.tsv.xz)
+
 ## Bounds on 15 and 16 vertices
 
 With 16 colors on 15 vertices the maximum is 64 or 65. An explicit graph with 64 edges has 458 rainbow four-cycles. For the upper bound, each edge survives 13 of the 15 vertex deletions, so $13m\le15F(14,16)=855$. A separate search excludes 66 edges using only the weaker bound $F(14,16)\le58$. That weaker bound forces minimum degree eight and complement maximum degree six at 66 edges. All 512 shards under this cap were empty. In turn, $14M(16)\le16\cdot65$, yielding $M(16)\le74$. The 16-vertex lower bound is now **71 edges**, giving $71\le M(16)\le74$. The new support has 546 four-cycles and uses 16 colors. Its construction adds a degree-eight vertex to a 63-edge parent. [Coloring](palette-witnesses.json) · [14-vertex search at 59 edges](data/14-59-k16-cover.tsv) · [15-vertex search at 66 edges](data/15-66-k16-D6-cover.tsv) · [71-edge coloring](diagonal-witnesses.json) · [16-vertex Lean certificate](../../../research/hall-reduction/OvernightWitnesses.lean)
